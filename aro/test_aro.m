@@ -29,7 +29,7 @@ drawnow
 % Change the default number of iterations. 
 lb = repmat(-100, 1, dim);
 ub = repmat(100, 1, dim);
-options = arooptions('Generations', 2000);
+options = arooptions;
 options.Generations = 2000;
 [x, f, generation, fvals] = aro(func, dim, lb, ub, options);
 fprintf('Optimized the RASTRIGIN function with %d iterations.  x = %s, fval = %f\n\n', options.Generations, mat2str(x), f);
@@ -56,3 +56,7 @@ legend('Rastrigin')
 xlabel('Iterations')
 ylabel('Function Value')
 title('Optimized by ARO using an initial parent')
+
+% Set ARO to display its iterations 
+options.Display = 'iter'; % use 'off' to display nothing, use 'final' to output final result
+[x, f, generation, fvals] = aro(func, dim, lb, ub, options);

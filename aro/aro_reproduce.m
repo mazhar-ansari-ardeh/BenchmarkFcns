@@ -44,10 +44,12 @@ function bud = aro_reproduce(parent, lb, ub)
                 end
             end
         end
+%         fprintf('parent:\t%s\nlarva:\t%s\t%f\t%f\n\n', parent_component, larva_component, aro_arobin2dec(parent_component), aro_arobin2dec(larva_component));
+        drawnow update
         bud(i) = aro_arobin2dec(larva_component);
     end
     
-    % Check bounds of problem space. 
+    % Check bounds of the problem space. 
     ind = find(ub - bud < 0);
     bud(ind) = ub(ind);
     ind = find(bud - lb <0);

@@ -90,10 +90,26 @@ function [x, fval, generations, fval_generations] = aro(func, nvar, lb, ub, sett
             fval_generations(i) = fit_parent;
         end
         generations(i, :) = parent;
+        aro_display(setting, i, fval_generations(i))
     end
     
     fval = func(parent);
     x = parent;
+end
+
+function aro_display(setting, iteration, fval)
+    switch setting.Display
+        case 'off' 
+            return
+        case 'iter'
+            fprintf('Generation: %d \t f(x): %f\n', iteration, fval)
+            drawnow update
+            return;
+        case 'final'
+            if iteration == setting.Generations
+                fprintf('Generation: %d \t f(x): %f\n', iteration, fval)
+            end
+    end
 end
 
 
