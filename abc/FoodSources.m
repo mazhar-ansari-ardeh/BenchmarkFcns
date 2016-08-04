@@ -8,6 +8,8 @@ classdef FoodSources
  		% 
 		limit
         
+        stallCounter
+        
         % The dimension of problem that is being solved.
         dimension;
         
@@ -71,7 +73,15 @@ classdef FoodSources
     end % Properties
     
     methods
-        function this = FoodSources(a_problem, dimension, foodNumber, limit, lb, ub)
+        function this = FoodSources(a_problem, dimension, foodNumber, limit, lb, ub, initialPopulation)
+            if (exist('initialPopulation', 'var') == false)
+                initialPopulation = [];
+            else
+                if  isempty(initialPopulation) == false
+                    assert(dimension == size(initialPopulation, 2), 'Given Dimension does not match given initial population')
+                    assert(foodNumber == size(initialPopulation, 1), 'Given food source size does not match initial population')
+                end
+            end
 			this.problem = a_problem;
             this.dimension = dimension;
 			this.foodNumber = foodNumber;
@@ -85,13 +95,22 @@ classdef FoodSources
 			this.paramsOfGlobalMin = zeros(1, dimension);
             this.LowerBound = lb;
             this.UpperBound = ub;
-			
-			this = initializeFoodSources(this);
+			this.stallCounter = 0;
+			this = initializeFoodSources(this, initialPopulation);
             this.objValOfGlobalMin = min(this.ofValue);
             this.paramsOfGlobalMin = this.foods(this.ofValue == this.objValOfGlobalMin, :);
         end
         
-        function this = initializeFoodSources(this)
+        function this = initializeFoodSources(this, initialPopulation)
+            if(nargin > 1 && isempty(initialPopulation) == false)
+                this.foods = initialPopulation;
+                for index = 1:size(initialPopulation, 1)
+                    this.ofValue(index) = this.problem(this.foods(index, :));
+                    this.fitness(index) = this.calculateFitness(this.ofValue(index));
+                end
+                return
+            end
+            
             for i = 1:this.foodNumber
                 this = newFoodSource(this, i);
                 this.objValOfGlobalMin = this.ofValue(1);
@@ -132,6 +151,9 @@ classdef FoodSources
             if(minOfVal < this.objValOfGlobalMin) 
                 this.objValOfGlobalMin = min(this.ofValue);
                 this.paramsOfGlobalMin = this.foods(this.ofValue == this.objValOfGlobalMin, :);
+                this.stallCounter = 0;
+            else
+                this.stallCounter = this.stallCounter + 1;
             end
         end
         

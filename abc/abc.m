@@ -1,16 +1,84 @@
-function [x_best, f_best] = abc(func, dim, lb, ub, foodNumber, limit, max_iter)
-    fs = FoodSources(func, dim, foodNumber, limit, lb, ub);
+function [x_best, f_best, generations, fval_generations, populations] = abc(func, nvar, lb, ub, setting)
+
+    if nvar <= 0
+        error('Dimension cannot be zero or negative');
+    end
     
+    if exist('ub', 'var') == 0 || isempty(ub)
+        ub = repmat(double(intmax), 1, nvar);
+    end
+    
+    if exist('lb', 'var') == 0 || isempty(lb)
+        lb = repmat(double(intmin), 1, nvar);
+    end
+    
+    [m, n] = size(lb);
+    if m== 0 || n == 0
+        error('Bounds cannot be empty')
+    end
+    if(m ~= size(ub, 1))
+        error('Dimensions of bounds mismatch')
+    end
+    if(n ~= size(ub, 2))
+        error('Dimensions of bounds mismatch')
+    end
+    if(m ~= 1 && n ~= 1)
+        error('Bounds must be a vector')
+    end
+    
+    if m~= 1 
+        lb = lb';
+        ub = ub';
+    end
+    
+    if exist('setting', 'var') == 0
+        setting = abcoptions('default');
+    end
+    
+    max_iter = setting.Generations;
+    
+    InitialPopulation = setting.InitialPopulation;
+    limit = setting.Limit;
+    foodNumber = setting.PopulationSize;
+    fs = FoodSources(func, nvar, foodNumber, limit, lb, ub, InitialPopulation);
+    
+    generations = zeros(max_iter, n);
+    fval_generations = zeros(max_iter, 1);
+    populations = cell(1, max_iter);
     for i = 1:max_iter
         fs = SendEmployedBees(func, fs);
         fs = SendOnlookerBees(func, fs);
         fs = fs.MemorizeBestSource();
         fs = SendScoutBees(fs);
-        fprintf('%f\n', fs.objValOfGlobalMin);
+        
+        Display(setting, i, fs.objValOfGlobalMin)
+        
+        generations(i, :) = fs.paramsOfGlobalMin;
+        fval_generations = fs.objValOfGlobalMin;
+        populations{i} = fs.foods;
+        
+        if fs.stallCounter > setting.StallLimit
+            break;
+        end
     end
     
     x_best = fs.paramsOfGlobalMin;
     f_best = fs.objValOfGlobalMin;
+end
+
+function Display(setting, iteration, fval)
+    switch setting.Display
+        case 'off' 
+            return
+        case 'iter'
+            fprintf('Generation: %d \t f(x): %f\n', iteration, fval)
+            drawnow update
+            return;
+        case 'final'
+            if iteration == setting.Generations
+                fprintf('Generation: %d \t f(x): %f\n', iteration, fval)
+            end
+    end
 end
 
 % Determines the food sources whose trial counter exceeds the "limit" value. 
