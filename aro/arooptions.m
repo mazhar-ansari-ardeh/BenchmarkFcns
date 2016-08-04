@@ -1,7 +1,11 @@
 % AROOPTIONS Creates a option structure for ARO.
-% OPTIONS = AROOPTIONS returns an option structure that its fields are set
-% to the default values. 
-% OPTIONS = AROOPTIONS('PARAM',VALUE) creates a structure with the default
+% OPTIONS = AROOPTIONS will print the list of available options and their
+% values.
+% OPTIONS = AROOPTIONS('default') will return an option structure that
+% contains default values for the algorithm parameters.
+% OPTIONS = AROOPTIONS('list') will print the list of available options and 
+% their values.
+% AROOPTIONS('PARAM',VALUE) creates a structure with the default
 % parameters used for all PARAM not specified, and will use the passed
 % argument VALUE for the specified PARAM.
 % WARNING: Validity of PARAMs are not checked. 
@@ -10,9 +14,10 @@
 % Google's e-mail service or feel free to kindly modify the repository.
 function setting = arooptions(varargin)
 
-   
     if nargin == 0
-        setting = struct('InitialParent', [], 'Generations', 200, 'Display', 'off');
+        fprintf('InitialParent: [vector]\n');
+        fprintf('Generations  : [positive scalar | 200]\n')
+        fprintf('Display      : [''off'' | ''iter'' | ''final'']\n')
         return;
     end
     

@@ -24,7 +24,7 @@
 % the algorithm. 
 % 
 % Asexual Reproduction Algorithm was first Proposed by Alireza Farasata, 
-% Mohammad B. Menhajb, Taha Mansouric, Mohammad Reza Sadeghi Moghadamd in:
+% Mohammad B. Menhaj, Taha Mansouri, Mohammad Reza Sadeghi Moghadamd in:
 % Alireza Farasat, Mohammad B. Menhaj, Taha Mansouri, Mohammad Reza Sadeghi 
 % Moghadam, ARO: A new model-free optimization algorithm inspired from 
 % asexual reproduction, Applied Soft Computing, Volume 10, Issue 4, 
