@@ -135,7 +135,7 @@ classdef FoodSources
             if(fun >= 0)
                 result = 1 / (fun + 1);
             else
-                result = 1 + Math.abs(fun);
+                result = 1 + abs(fun);
             end
         end
         
