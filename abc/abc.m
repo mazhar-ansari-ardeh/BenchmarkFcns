@@ -1,3 +1,32 @@
+% Optimizes a given function with the Artificial Bee Colony algorithm (ABC). 
+% [X] = ABC(FITNESSFCN, NVARS) finds a local unconstrained minimum X to the
+% FITNESSFCN using abc. NVARS is the dimension (number of design variables)
+% of the FITNESSFCN. FITNESSFCN accepts a vector X of size 1-by-NVARS, and 
+% returns a scalar evaluated at X.
+%
+% X = ABC(FITNESSFCN,NVARS, lb,ub) defines a set of lower and upper bounds 
+% on the design variables, X, so that a solution is found in the range 
+% lb <= X <= ub. Use empty matrices for lb and ub if no bounds exist. 
+%
+% X = ABC(FITNESSFCN,NVARS,lb,ub,options) minimizes with the default 
+% optimization parameters replaced by values in the structure OPTIONS. 
+% OPTIONS can be created with the AROOPTIONS function. See ABCOPTIONS for 
+% details.
+% 
+% [X,FVAL] = ABC(FITNESSFCN, ...) returns FVAL, the value of the fitness
+% function FITNESSFCN at the solution X.
+% 
+% [X,FVAL, GENERATIONS] = ARO(FITNESSFCN, ...) returns GENERATIONS, a 
+% matrix that contains the the food source at each iteration of the 
+% algorithm that had the best fitness at that generation.
+% 
+% [X,FVAL, GENERATIONS, FVAL_GENERATIONS] = ARO(FITNESSFCN, ...) returns
+% FVAL_GENERATIONS, the value of the best fitness at each iteration of 
+% the algorithm. 
+% 
+% [X,FVAL, GENERATIONS, FVAL_GENERATIONS, POPULATIONS] = ARO(FITNESSFCN, ...) 
+% returns POPULATIONS, a cell array that contains values for population 
+% (food sources) of the algorithm at each iterations. 
 function [x_best, f_best, generations, fval_generations, populations] = abc(func, nvar, lb, ub, setting)
 
     if nvar <= 0
