@@ -27,6 +27,15 @@
 % [X,FVAL, GENERATIONS, FVAL_GENERATIONS, POPULATIONS] = ARO(FITNESSFCN, ...) 
 % returns POPULATIONS, a cell array that contains values for population 
 % (food sources) of the algorithm at each iterations. 
+% 
+% Artificial Bee Colony was first Proposed by Dervis Karaboga in:
+% D. Dervis Karaboga, An Idea Based On Honey Bee Swarm for Numerical
+% Optimization, Technical Report-TR06,Erciyes University, Engineering
+% Faculty, Computer Engineering Department 2005.
+% 
+% Author: Mazhar Ansari Ardeh
+% Please forward any comments or bug reports to mazhar.ansari.ardeh at
+% Google's e-mail service or feel free to kindly modify the repository.
 function [x_best, f_best, generations, fval_generations, populations] = abc(func, nvar, lb, ub, setting)
 
     if nvar <= 0
