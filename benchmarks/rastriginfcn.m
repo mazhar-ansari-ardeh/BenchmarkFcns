@@ -1,8 +1,8 @@
 % Computes the value of Rastrigin benchmark function.
-% SCORES = RASTRIGINFCN(X) computes the value of the Ackey function at 
+% SCORES = RASTRIGINFCN(X) computes the value of the Rastrigin function at 
 % point X. RASTRIGINFCN accepts a matrix of size M-by-N and returns a vetor 
 % SCORES of size M-by-1 in which each row contains the function value for
-% each row of X.
+% the corresponding row of X.
 % For more information please visit: 
 % https://en.wikipedia.org/wiki/Rastrigin_function
 % 

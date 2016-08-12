@@ -1,8 +1,8 @@
-% Computes the value of Rosenbrockfcn benchmark function.
-% SCORES = ROSENBROCKFCN(X) computes the value of the Ackey function at 
-% point X. ROSENBROCKFCN accepts a matrix of size M-by-N and returns a  
+% Computes the value of Rosenbrock benchmark function.
+% SCORES = ROSENBROCKFCN(X) computes the value of the Rosenbrock function  
+% at point X. ROSENBROCKFCN accepts a matrix of size M-by-N and returns a  
 % vetor SCORES of size M-by-1 in which each row contains the function value 
-% for each row of X.
+% for the corresponding row of X.
 % For more information please visit: 
 % https://en.wikipedia.org/wiki/Rosenbrock_function
 % 
