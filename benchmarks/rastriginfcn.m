@@ -2,7 +2,7 @@
 % SCORES = RASTRIGINFCN(X) computes the value of the Ackey function at 
 % point X. RASTRIGINFCN accepts a matrix of size M-by-N and returns a vetor 
 % SCORES of size M-by-1 in which each row contains the function value for
-%  each row of X.
+% each row of X.
 % For more information please visit: 
 % https://en.wikipedia.org/wiki/Rastrigin_function
 % 
