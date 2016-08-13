@@ -1,4 +1,4 @@
-% Computes the value of Rosenbrock benchmark function.
+% Computes the value of the Rosenbrock benchmark function.
 % SCORES = ROSENBROCKFCN(X) computes the value of the Rosenbrock function  
 % at point X. ROSENBROCKFCN accepts a matrix of size M-by-N and returns a  
 % vetor SCORES of size M-by-1 in which each row contains the function value 

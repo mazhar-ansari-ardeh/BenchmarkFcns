@@ -1,4 +1,4 @@
-% Computes the value of Beale benchmark function.
+% Computes the value of the Beale benchmark function.
 % SCORES = BEALEFCN(X) computes the value of the Beale function at 
 % point X. BEALEFCN accepts a matrix of size M-by-2 and returns a  
 % vetor SCORES of size M-by-1 in which each row contains the function value 
