@@ -11,7 +11,7 @@
 % Google's e-mail service or feel free to kindly modify the repository.
 function scores = matyasfcn(x)
     n = size(x, 2);
-    assert(n == 2, 'Matyas''s functions is only defined on a 2D space.')
+    assert(n == 2, 'Matyas''s function is only defined on a 2D space.')
     X = x(:, 1);
     Y = x(:, 2);
     
