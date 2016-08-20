@@ -14,11 +14,15 @@ categories: optimization, benchmark
 
 
 # Mathematical Definition
+
 {{%raw}}
+
 $$f(\textbf{x}) = f(x_1, x_2, ..., x_n) = {\sum_{i=1}^{n} x_i^{2}}.$$
+
 {{%endraw}}
 
 # Implementation
+
 {% highlight MATLAB%}
 % Computes the value of Sphere benchmark function.
 % SCORES = SPHEREFCN(X) computes the value of the Ackey function at 
