@@ -38,6 +38,6 @@ $$f(\textbf{x}) = f(x_1, x_2, ..., x_n) = {\sum_{i=1}^{n} x_i^{2}}.$$
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at
 % Google's e-mail service or feel free to kindly modify the repository.
 function f = spherefcn(x)
-    f = sqrt(sum(x .^ 2, 2));
+    f = sum(x .^ 2, 2);
 end
 {% endhighlight %}
