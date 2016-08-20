@@ -21,6 +21,8 @@ $$f(\textbf{x}) = f(x_1, x_2, ..., x_n) = {\sum_{i=1}^{n} x_i^{2}}.$$
 
 {%endraw%}
 
+![Sphere Function]({{site.baseurl}}/spherefcn.png){:class="img-responsive"}
+
 # Implementation
 
 {% highlight MATLAB%}
