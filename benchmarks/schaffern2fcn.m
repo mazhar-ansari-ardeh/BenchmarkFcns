@@ -17,5 +17,5 @@ function scores = schaffern2fcn(x)
     
     sincomponent = sin( (X .^ 2) - (Y .^ 2) ).^2;
     
-    scores = 0.5 + ((sincomponent - 0.5) / (1 + 0.001 * (X .^2 + Y .^2)) .^2 ) ;
+    scores = 0.5 + ((sincomponent - 0.5) ./ (1 + 0.001 * (X .^2 + Y .^2)) .^2 ) ;
 end
