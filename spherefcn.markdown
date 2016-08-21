@@ -20,9 +20,9 @@ categories: optimization, benchmark
 $$f(\textbf{x}) = f(x_1, x_2, ..., x_n) = {\sum_{i=1}^{n} x_i^{2}}.$$
 
 {%endraw%}
-
+<center>
 ![Sphere Function]({{site.baseurl}}/spherefcn.png){:class="img-responsive"}
-
+</center>
 # Implementation
 An implementation of the **Sphere function** is provided below. **Sphere function** can be implemented with a `for` loop that iterates over all the components of the input vector but, MATLAB and Octave have built-in facilities that makes the implementation more efficient and concise.
 
