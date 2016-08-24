@@ -16,7 +16,7 @@ functionname: Schwefel Function
 </head>
 
 
-## Mathematical Definition
+# Mathematical Definition
 
 {%raw%}
 
@@ -24,13 +24,13 @@ $$f(\textbf{x}) = f(x_1, x_2, ..., x_n) = 418.9829d -{\sum_{i=1}^{n} x_i sin(\sq
 
 {%endraw%}
 
-# Description and features
+# Description and Features
 * The function is continuous.
 * The function is not [convex](https://en.wikipedia.org/wiki/Convex_function).
 * The function can be defined on n-dimensional space. 
 * The function is multimodal.
 
-# Inout Domain
+# Input Domain
 The function can be defined on any input domain but it is usually evaluated on the hypercube $x_i \in [-500, 500]$ for $i = 1..n$.
 
 # Global Minima
