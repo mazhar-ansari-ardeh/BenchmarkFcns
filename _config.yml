@@ -9,9 +9,9 @@
 title: 
 email: mazhar.ansari.ardeh@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Benchmarkfcns is a personal effort to provide a public repository of sources 
+  and documents for well-known optimization benchmark functions.
+  Please visit the About page for more information. 
 baseurl: "/optimization" # the subpath of your site, e.g. /blog
 url: "https://mazhar-ansari-ardeh.github.io/" # the base hostname & protocol for your site
 # twitter_username: jekyllrb
