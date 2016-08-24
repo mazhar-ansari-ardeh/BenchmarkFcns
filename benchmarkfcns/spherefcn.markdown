@@ -1,5 +1,6 @@
 ---
 layout: page
+resource: true
 title: Sphere Function
 categories: optimization, benchmark
 tags: unimodal, convex, continuous

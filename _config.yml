@@ -19,3 +19,5 @@ github_username:  mazhar-ansari-ardeh
 
 # Build settings
 markdown: kramdown
+
+category-list: [optimization]

@@ -1,5 +1,6 @@
 ---
 layout: page
+resource: true
 title: Schwefel Function
 categories: optimization, benchmark
 tags: continuous, multimodal
