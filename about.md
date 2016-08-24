@@ -15,5 +15,4 @@ Source codes on this web site are published under the [MIT License](https://open
 Mathematical equations are powered by <a href="http://www.mathjax.org">
     <img title="Powered by MathJax"
     src="http://cdn.mathjax.org/mathjax/badge/mj_logo_60x12.png"
-    border="0" alt="Powered by MathJax" />
-</a>. MathJax requires the Javascript functionality of the browser to be enabled.
+    border="0" alt="Powered by MathJax" /></a>. MathJax requires the Javascript functionality of browsers to be enabled.
