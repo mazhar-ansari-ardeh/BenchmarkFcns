@@ -7,7 +7,7 @@
 
 # Site settings
 title: 
-email: mazhar.ansari.ardeh@gmail.com
+email: mazhar.ansari.ardeh[at]gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Benchmarkfcns is a personal effort to provide a public repository of sources 
   and documents for well-known optimization benchmark functions.
