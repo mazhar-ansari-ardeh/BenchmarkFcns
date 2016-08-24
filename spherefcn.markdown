@@ -2,6 +2,7 @@
 layout: page
 title: Sphere Function
 categories: optimization, benchmark
+tag: unimodal, convex, continuous
 ---
 <head>
 	<script type="text/x-mathjax-config">
@@ -13,7 +14,7 @@ categories: optimization, benchmark
 </head>
 
 
-# Mathematical Definition
+## Mathematical Definition
 
 {%raw%}
 
@@ -21,7 +22,23 @@ $$f(\textbf{x}) = f(x_1, x_2, ..., x_n) = {\sum_{i=1}^{n} x_i^{2}}.$$
 
 {%endraw%}
 
+# Description and features
+* The function is continuous.
+* The function is [convex](https://en.wikipedia.org/wiki/Convex_function).
+* The function can be defined on n-dimensional space. 
+* The function is unimodal.
+
+# Inout Domain
+The function can be defined on any input domain but it is usually evaluated on the hypercube $x_i \in [-5.12, 5.12]$ for $i = 1..n$.
+
+# Global Minima
+$f(\textbf{x}^{\ast}) = 0)$ at $\textbf{x}^{\ast} = (0, ..., 0)$
+
+# Plots
 ![Sphere Function]({{site.baseurl}}/plots/spherefcn.png){:class="fcnplot"}
+
+The contour of the function: 
+![Sphere Function Contour]({{site.baseurl}}/plots/spherefcn_contour.png){:class="fcnplot"}
 
 # Implementation
 An implementation of the **Sphere function** with MATLAB is provided below. **Sphere function** can be implemented with a `for` loop that iterates over all the components of the input vector but, MATLAB and Octave have built-in facilities that makes the implementation more efficient and concise.
@@ -42,3 +59,12 @@ function f = spherefcn(x)
     f = sum(x .^ 2, 2);
 end
 {% endhighlight %}
+
+The function can be represented in Latex as follows:
+{% highlight latex%}
+f(\textbf{x}) = f(x_1, x_2, ..., x_n) = {\sum_{i=1}^{n} x_i^{2}}
+{% endhighlight %}
+
+# References:
+* http://www.sfu.ca/~ssurjano/spheref.html
+* https://en.wikipedia.org/wiki/Test_functions_for_optimization
