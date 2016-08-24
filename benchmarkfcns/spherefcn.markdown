@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Sphere Function
 categories: optimization, benchmark
-tags: unimodal, convex, continuous
+tags: continuous, convex, unimodal
 fname: spherefcn
 ---
 <head>
@@ -24,6 +24,12 @@ $$f(\textbf{x}) = f(x_1, x_2, ..., x_n) = {\sum_{i=1}^{n} x_i^{2}}.$$
 
 {%endraw%}
 
+# Plots
+![Sphere Function]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}.png){:class="fcnplot"}
+
+The contour of the function: 
+![Sphere Function Contour]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_contour.png){:class="fcnplot"}
+
 # Description and Features
 * The function is continuous.
 * The function is [convex](https://en.wikipedia.org/wiki/Convex_function).
@@ -35,12 +41,6 @@ The function can be defined on any input domain but it is usually evaluated on t
 
 # Global Minima
 $f(\textbf{x}^{\ast}) = 0$ at $\textbf{x}^{\ast} = (0, ..., 0)$
-
-# Plots
-![Sphere Function]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}.png){:class="fcnplot"}
-
-The contour of the function: 
-![Sphere Function Contour]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_contour.png){:class="fcnplot"}
 
 # Implementation
 An implementation of the **Sphere function** with MATLAB is provided below. **Sphere function** can be implemented with a `for` loop that iterates over all the components of the input vector but, MATLAB and Octave have built-in facilities that makes the implementation more efficient and concise.

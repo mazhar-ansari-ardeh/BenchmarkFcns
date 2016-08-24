@@ -4,7 +4,7 @@ title: Benchmark functions
 ---
 <div class="home">
 
-  <h1 class="page-heading">Implemented Functions</h1>
+  <h2>Implemented Functions</h2>
 
   <ol >
     {% for post in site.pages %}
@@ -12,6 +12,7 @@ title: Benchmark functions
       <li>
         <h3>
           <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+		  <br /><code>{{ post.tags }}</code>
         </h3>
       </li>
     {% endif %}
