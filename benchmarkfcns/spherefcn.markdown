@@ -2,7 +2,7 @@
 layout: page
 title: Sphere Function
 categories: optimization, benchmark
-tag: unimodal, convex, continuous
+tags: unimodal, convex, continuous
 ---
 <head>
 	<script type="text/x-mathjax-config">
@@ -35,10 +35,10 @@ The function can be defined on any input domain but it is usually evaluated on t
 $f(\textbf{x}^{\ast}) = 0)$ at $\textbf{x}^{\ast} = (0, ..., 0)$
 
 # Plots
-![Sphere Function]({{site.baseurl}}/plots/spherefcn.png){:class="fcnplot"}
+![Sphere Function]({{site.baseurl}}/benchmarkfcns/plots/spherefcn.png){:class="fcnplot"}
 
 The contour of the function: 
-![Sphere Function Contour]({{site.baseurl}}/plots/spherefcn_contour.png){:class="fcnplot"}
+![Sphere Function Contour]({{site.baseurl}}/benchmarkfcns/plots/spherefcn_contour.png){:class="fcnplot"}
 
 # Implementation
 An implementation of the **Sphere function** with MATLAB is provided below. **Sphere function** can be implemented with a `for` loop that iterates over all the components of the input vector but, MATLAB and Octave have built-in facilities that makes the implementation more efficient and concise.
