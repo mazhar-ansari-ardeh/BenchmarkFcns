@@ -1,9 +1,10 @@
 ---
 layout: page
-title: Sphere Function
+title: Schwefel Function
 categories: optimization, benchmark
-tags: unimodal, convex, continuous
-fname: spherefcn
+tags: continuous, multimodal
+fname: schwefelfcn
+functionname: Schwefel Function
 ---
 <head>
 	<script type="text/x-mathjax-config">
@@ -19,30 +20,30 @@ fname: spherefcn
 
 {%raw%}
 
-$$f(\textbf{x}) = f(x_1, x_2, ..., x_n) = {\sum_{i=1}^{n} x_i^{2}}.$$
+$$f(\textbf{x}) = f(x_1, x_2, ..., x_n) = 418.9829d -{\sum_{i=1}^{n} x_i sin(\sqrt{|x_i|})}.$$
 
 {%endraw%}
 
 # Description and features
 * The function is continuous.
-* The function is [convex](https://en.wikipedia.org/wiki/Convex_function).
+* The function is not [convex](https://en.wikipedia.org/wiki/Convex_function).
 * The function can be defined on n-dimensional space. 
-* The function is unimodal.
+* The function is multimodal.
 
 # Inout Domain
-The function can be defined on any input domain but it is usually evaluated on the hypercube $x_i \in [-5.12, 5.12]$ for $i = 1..n$.
+The function can be defined on any input domain but it is usually evaluated on the hypercube $x_i \in [-500, 500]$ for $i = 1..n$.
 
 # Global Minima
-$f(\textbf{x}^{\ast}) = 0$ at $\textbf{x}^{\ast} = (0, ..., 0)$
+$f(\textbf{x}^{\ast}) = 0$ at $\textbf{x}^{\ast} = (420.9687, ..., 420.9687)$
 
 # Plots
-![Sphere Function]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}.png){:class="fcnplot"}
+![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}.png){:class="fcnplot"}
 
 The contour of the function: 
-![Sphere Function Contour]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_contour.png){:class="fcnplot"}
+![{{page.functionname}} Contour]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_contour.png){:class="fcnplot"}
 
 # Implementation
-An implementation of the **Sphere function** with MATLAB is provided below. **Sphere function** can be implemented with a `for` loop that iterates over all the components of the input vector but, MATLAB and Octave have built-in facilities that makes the implementation more efficient and concise.
+An implementation of the **{{page.functionname}}** with MATLAB is provided below. **{{page.functionname}}** can be implemented with a `for` loop that iterates over all the components of the input vector but, MATLAB and Octave have built-in facilities that makes the implementation more efficient and concise.
 
 {% highlight MATLAB%}
 % Computes the value of Sphere benchmark function.
@@ -63,7 +64,7 @@ end
 
 The function can be represented in Latex as follows:
 {% highlight latex%}
-f(\textbf{x}) = f(x_1, x_2, ..., x_n) = {\sum_{i=1}^{n} x_i^{2}}
+f(\textbf{x}) = f(x_1, x_2, ..., x_n) = 418.9829d -{\sum_{i=1}^{n} x_i sin(\sqrt{|x_i|})}
 {% endhighlight %}
 
 # References:
