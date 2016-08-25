@@ -21,7 +21,7 @@ functionname: Drop-Wave Function
 
 {%raw%}
 
-$$f(x, y) = 1 + \frac{cos(12\sqrt{x^{2} + y^{2}})}{(0.5(x^{2} + y^{2}) + 2)}$$
+$$f(x, y) = - \frac{1 + cos(12\sqrt{x^{2} + y^{2}})}{(0.5(x^{2} + y^{2}) + 2)}$$
 
 {%endraw%}
 
@@ -51,23 +51,31 @@ $f(\textbf{x}^{\ast}) = -1$ at $\textbf{x}^{\ast} = (0, 0)$
 An implementation of the **{{page.functionname}}** with MATLAB is provided below. 
 
 {%highlight MATLAB%}
-% Computes the value of the Schwefel benchmark function.
-% SCORES = SCHWEFELFCN(X) computes the value of the Schwefel function at 
-% point X. SCHWEFELFCN accepts a matrix of size M-by-2 and returns a  
+% Computes the value of the Drop-Wave benchmark function.
+% SCORES = DROPWAVEFCN(X) computes the value of the Drop-Wave function at 
+% point X. DROPWAVEFCN accepts a matrix of size M-by-2 and returns a  
 % vetor SCORES of size M-by-1 in which each row contains the function value 
 % for the corresponding row of X.
 % For more information please visit: 
 % 
 % Author: Mazhar Ansari Ardeh
-function scores = schwefelfcn(x)
+% Please forward any comments or bug reports to mazhar.ansari.ardeh at
+% Google's e-mail service or feel free to kindly modify the repository.
+function scores = dropwavefcn(x)
     n = size(x, 2);
-    scores = 418.9829 * n - (sum(x .* sin(sqrt(abs(x))), 2));
+    assert(n == 2, 'Drop-Wave function is only defined on a 2D space.')
+    X = x(:, 1);
+    Y = x(:, 2);
+    
+    numeratorcomp = 1 + cos(12 * sqrt(X .^ 2 + Y .^ 2));
+    denumeratorcom = (0.5 * (X .^ 2 + Y .^ 2)) + 2;
+    scores = - numeratorcomp ./ denumeratorcom;
 end
 {% endhighlight %}
 
 The function can be represented in Latex as follows:
 {% highlight latex%}
-f(x, y) = 1 + \frac{cos(12\sqrt{x^{2} + y^{2}})}{(0.5(x^{2} + y^{2}) + 2)}
+f(x, y) = - \frac{1 + cos(12\sqrt{x^{2} + y^{2}})}{(0.5(x^{2} + y^{2}) + 2)}
 {% endhighlight %}
 
 # References:
