@@ -30,8 +30,8 @@ $$f(x) = \frac{sin(10\pi x)}{2x} + (x-1)^4$$
 
 # Description and Features
 * The function is continuous.
-* The function is [convex](https://en.wikipedia.org/wiki/Convex_function).
-* The function is defined on 2-dimensional space. 
+* The function is not [convex](https://en.wikipedia.org/wiki/Convex_function).
+* The function is defined on 1-dimensional space. 
 * The function is unimodal.
 
 # Input Domain
