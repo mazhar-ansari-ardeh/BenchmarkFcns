@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Zakharov Function
 categories: optimization, benchmark
-tags: continuous, convex, unimodal
+tags: continuous, convex, n-dimensional, unimodal
 fname: zakharovfcn
 functionname: Zakharov Function
 ---
@@ -44,8 +44,7 @@ The function can be defined on any input domain but it is usually evaluated on t
 $f(\textbf{x}^{\ast}) = 0$ at $\textbf{x}^{\ast} = (0, ..., 0)$
 
 # Implementation
-An implementation of the **Sphere function** with MATLAB is provided below. **Sphere function** can be implemented with a `for` loop that iterates over all the components of the input vector but, MATLAB and Octave have built-in facilities that makes the implementation more efficient and concise.
-
+An implementation of the **{{page.functionname}}** with MATLAB is provided below. 
 {% highlight MATLAB%}
 % Computes the value of Zakharov benchmark function.
 % SCORES = ZAKHAROVFCN(X) computes the value of the Zakharov function at 
