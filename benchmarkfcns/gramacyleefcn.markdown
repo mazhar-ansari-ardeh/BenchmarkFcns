@@ -6,6 +6,8 @@ categories: optimization, benchmark
 tags: 1-dimensional, continuous, unimodal
 fname: gramacyleefcn
 functionname: Gramacy & Lee Function
+modal: unimodal
+dimension: 1-dimensional
 ---
 <head>
 	<script type="text/x-mathjax-config">
@@ -31,14 +33,14 @@ $$f(x) = \frac{sin(10\pi x)}{2x} + (x-1)^4$$
 # Description and Features
 * The function is continuous.
 * The function is not [convex](https://en.wikipedia.org/wiki/Convex_function).
-* The function is defined on 1-dimensional space. 
-* The function is unimodal.
+* The function is defined on {{page.dimension}} space. 
+* The function is {{page.modal}}.
 
 # Input Domain
 The function can be defined on any input domain but it is usually evaluated on $x \in [-0.5, 2.5]$.
 
 # Global Minima
-The function has four local minima at: $f(x^*)=-0.869011134989500$ at $\textbf{x}^{\ast} = 0.548563444114526$.
+The function has one local minimum at: $f(x^*)=-0.869011134989500$ at $\textbf{x}^{\ast} = 0.548563444114526$.
 
 # Implementation
 An implementation of the **{{page.functionname}}** with MATLAB is provided below. 
