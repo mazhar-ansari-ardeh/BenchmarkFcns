@@ -21,7 +21,7 @@ functionname: Himmelblau Function
 
 {%raw%}
 
-$$f(x, y) = - \frac{1 + cos(12\sqrt{x^{2} + y^{2}})}{(0.5(x^{2} + y^{2}) + 2)}$$
+$$f(x, y) = (x^{2} + y - 11)^{2} + (x + y^{2} - 7)^{2}$$
 
 {%endraw%}
 
@@ -77,8 +77,8 @@ end
 
 The function can be represented in Latex as follows:
 {% highlight latex%}
-f(x, y) = - \frac{1 + cos(12\sqrt{x^{2} + y^{2}})}{(0.5(x^{2} + y^{2}) + 2)}
+f(x, y) = (x^{2} + y - 11)^{2} + (x + y^{2} - 7)^{2}
 {% endhighlight %}
 
 # References:
-* http://www.sfu.ca/~ssurjano
+* https://en.wikipedia.org/wiki/Himmelblau%27s_function
