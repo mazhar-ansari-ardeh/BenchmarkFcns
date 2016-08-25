@@ -1,11 +1,11 @@
 ---
 layout: page
 resource: true
-title: Gramacy & Lacy Function
+title: Gramacy & Lee Function
 categories: optimization, benchmark
 tags: 1-dimensional, continuous, unimodal
-fname: gramacylacyfcn
-functionname: Gramacy & Lacy Function
+fname: gramacyleefcn
+functionname: Gramacy & Lee Function
 ---
 <head>
 	<script type="text/x-mathjax-config">
@@ -53,5 +53,5 @@ f(x) = \frac{sin(10\pi x)}{2x} + (x-1)^4
 {% endhighlight %}
 
 # References:
-* http://www.sfu.ca/~ssurjano/boha.html
-* http://al-roomi.org/benchmarks/unconstrained/1-dimension/258-gramacy-lee-s-function-no-1
+* [http://www.sfu.ca/~ssurjano/boha.html](http://www.sfu.ca/~ssurjano/boha.html)
+* [http://al-roomi.org/benchmarks/unconstrained/1-dimension/258-gramacy-lee-s-function-no-1](http://al-roomi.org/benchmarks/unconstrained/1-dimension/258-gramacy-lee-s-function-no-1)
