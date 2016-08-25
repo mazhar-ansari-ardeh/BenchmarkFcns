@@ -1,12 +1,12 @@
 ---
 layout: page
 resource: true
-title: Styblinski-Tank Function
+title: Ackley Function
 categories: optimization, benchmark
-tags: n-dimensional, continuous, multimodal
-fname: styblinskitankfcn
-functionname: Styblinski-Tank Function
-modal: multimodal
+tags: n-dimensional, continuous, unimodal
+fname: ackleyfcn
+functionname: Ackley Function
+modal: unimodal
 dimension: n-dimensional
 ---
 <head>
@@ -23,9 +23,10 @@ dimension: n-dimensional
 
 {%raw%}
 
-$$f(\textbf{x}) = f(x_1, ..., x_n)= \frac{1}{2}\sum_{i=1}^{n} (x_i^4 -16x_i^2+5x_i)$$
+$$f(\textbf{x}) = f(x_1, ..., x_n)= -a.exp(-b\sqrt{\frac{1}{n}\sum_{i=1}^{n}x_i^2})-exp(\frac{1}{d}\sum_{i=1}^{n}cos(cx_i))+ a + exp(1)$$
 
 {%endraw%}
+In the above equation, the values $a$, $b$ and $c$ are constants and are usually chosen as $a=20$, $b=0.2$ and $c=2\pi$.
 
 # Plots
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}.png){:class="fcnplot"}
@@ -43,10 +44,10 @@ The contour of the function is as presented below:
 * The function is {{page.modal}}.
 
 # Input Domain
-The function can be defined on any input domain but it is usually evaluated on $x \in [-5, 5]$ for all $i = 1,...,n$.
+The function can be defined on any input domain but it is usually evaluated on $x \in [-32, 32]]$ for all $i = 1,...,n$.
 
 # Global Minima
-The function has one global minimum at: $f(x^*)=-39.16599\textbf{n}$ at $\textbf{x}^{\ast} = (-2.903534, ..., -2.903534)$.
+The function has one global minimum at: $f(x^*)=0$ at $\textbf{x}^{\ast} = (0, ..., 0)$.
 
 # Implementation
 An implementation of the **{{page.functionname}}** with MATLAB is provided below. 
@@ -57,8 +58,11 @@ An implementation of the **{{page.functionname}}** with MATLAB is provided below
 
 The function can be represented in Latex as follows:
 {% highlight latex%}
-f(\textbf{x}) = f(x_1, ..., x_n)= \frac{1}{2}\sum_{i=1}^{n} (x_i^4 -16x_i^2+5x_i)
+f(\textbf{x}) = f(x_1, ..., x_n)= -a.exp(-b\sqrt{\frac{1}{n}\sum_{i=1}^{n}x_i^2})-exp(\frac{1}{d}\sum_{i=1}^{n}cos(cx_i))+ a + exp(1)
 {% endhighlight %}
 
 # References:
-* [http://www.sfu.ca/~ssurjano/stybtang.html](http://www.sfu.ca/~ssurjano/stybtang.html)
+* [http://www.sfu.ca/~ssurjano/ackley.html](http://www.sfu.ca/~ssurjano/ackley.html)
+* [https://en.wikipedia.org/wiki/Test_functions_for_optimization](https://en.wikipedia.org/wiki/Test_functions_for_optimization)
+* [http://www.cs.unm.edu/~neal.holts/dga/benchmarkFunction/ackley.html](http://www.cs.unm.edu/~neal.holts/dga/benchmarkFunction/ackley.html), This resource 
+contains an extensive collection of references for this function. The page also contains an implementation of the function in `Python`.

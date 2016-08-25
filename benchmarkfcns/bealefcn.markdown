@@ -1,13 +1,13 @@
 ---
 layout: page
 resource: true
-title: Styblinski-Tank Function
+title: Beale Function
 categories: optimization, benchmark
-tags: n-dimensional, continuous, multimodal
-fname: styblinskitankfcn
-functionname: Styblinski-Tank Function
+tags: 2-dimensional, continuous, multimodal
+fname: bealefcn
+functionname: Beale Function
 modal: multimodal
-dimension: n-dimensional
+dimension: 2-dimensional
 ---
 <head>
 	<script type="text/x-mathjax-config">
@@ -23,14 +23,12 @@ dimension: n-dimensional
 
 {%raw%}
 
-$$f(\textbf{x}) = f(x_1, ..., x_n)= \frac{1}{2}\sum_{i=1}^{n} (x_i^4 -16x_i^2+5x_i)$$
+$$f(x, y) = (1.5-x+xy)^2+(2.25-x+xy^2)^2+(2.625-x+xy^3)^2$$
 
 {%endraw%}
 
 # Plots
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}.png){:class="fcnplot"}
-
-![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_2.png){:class="fcnplot"}
 
 The contour of the function is as presented below:
 
@@ -43,10 +41,10 @@ The contour of the function is as presented below:
 * The function is {{page.modal}}.
 
 # Input Domain
-The function can be defined on any input domain but it is usually evaluated on $x \in [-5, 5]$ for all $i = 1,...,n$.
+The function can be defined on any input domain but it is usually evaluated on $x \in [-4.5, 4.5]$ for all $i = 1, 2$.
 
 # Global Minima
-The function has one global minimum at: $f(x^*)=-39.16599\textbf{n}$ at $\textbf{x}^{\ast} = (-2.903534, ..., -2.903534)$.
+The function has one global minimum at: $f(x^*)=0$ at $\textbf{x}^{\ast} = (3, 0.5)$.
 
 # Implementation
 An implementation of the **{{page.functionname}}** with MATLAB is provided below. 
@@ -57,8 +55,10 @@ An implementation of the **{{page.functionname}}** with MATLAB is provided below
 
 The function can be represented in Latex as follows:
 {% highlight latex%}
-f(\textbf{x}) = f(x_1, ..., x_n)= \frac{1}{2}\sum_{i=1}^{n} (x_i^4 -16x_i^2+5x_i)
+f(x, y) = (1.5-x+xy)^2+(2.25-x+xy^2)^2+(2.625-x+xy^3)^2
 {% endhighlight %}
 
 # References:
-* [http://www.sfu.ca/~ssurjano/stybtang.html](http://www.sfu.ca/~ssurjano/stybtang.html)
+* [http://www.sfu.ca/~ssurjano/ackley.html](http://www.sfu.ca/~ssurjano/ackley.html)
+* [https://en.wikipedia.org/wiki/Test_functions_for_optimization](https://en.wikipedia.org/wiki/Test_functions_for_optimization)
+* [http://www-optima.amp.i.kyoto-u.ac.jp/member/student/hedar/Hedar_files/TestGO_files/Page288.htm](http://www-optima.amp.i.kyoto-u.ac.jp/member/student/hedar/Hedar_files/TestGO_files/Page288.htm)
