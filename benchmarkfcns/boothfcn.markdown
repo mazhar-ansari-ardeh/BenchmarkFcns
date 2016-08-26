@@ -1,13 +1,16 @@
 ---
 layout: page
 resource: true
-title: Ackley Function
+title: Booth Function
 categories: optimization, benchmark
-tags: n-dimensional, continuous, unimodal
-fname: ackleyfcn
-functionname: Ackley Function
+tags: 2-dimensional, continuous, convex, differentiable, non-separable, non-scalable, unimodal
+fname: boothfcn
+functionname: Booth Function
 modal: unimodal
-dimension: n-dimensional
+dimension: 2-dimensional
+differentiable: differentiable
+separable: non-separable
+scalable: non-scalable
 ---
 <head>
 	<script type="text/x-mathjax-config">
@@ -23,7 +26,7 @@ dimension: n-dimensional
 
 {%raw%}
 
-$$f(\textbf{x}) = f(x_1, ..., x_n)= -a.exp(-b\sqrt{\frac{1}{n}\sum_{i=1}^{n}x_i^2})-exp(\frac{1}{d}\sum_{i=1}^{n}cos(cx_i))+ a + exp(1)$$
+$$f(x,y)=(x+2y-7)^2+(2x+y-5)^2$$
 
 {%endraw%}
 In the above equation, the values $a$, $b$ and $c$ are constants and are usually chosen as $a=20$, $b=0.2$ and $c=2\pi$.
@@ -39,15 +42,18 @@ The contour of the function is as presented below:
 
 # Description and Features
 * The function is continuous.
-* The function is not [convex](https://en.wikipedia.org/wiki/Convex_function).
+* The function is [convex](https://en.wikipedia.org/wiki/Convex_function).
 * The function is defined on {{page.dimension}} space. 
 * The function is {{page.modal}}.
+* The function is {{page.differentiable}}.
+* The function is {{page.separable}}.
+* The function is {{page.scalable}}.
 
 # Input Domain
-The function can be defined on any input domain but it is usually evaluated on $x_i \in [-32, 32]$ for all $i = 1,...,n$.
+The function can be defined on any input domain but it is usually evaluated on $x_i \in [-10, 10]$ for all $i = 1,2$.
 
 # Global Minima
-The function has one global minimum at: $f(x^*)=0$ at $\textbf{x}^{\ast} = (0, ..., 0)$.
+The function has one global minimum at: $f(x^*)=0$ at $\textbf{x}^{\ast} = (1,3)$.
 
 # Implementation
 An implementation of the **{{page.functionname}}** with MATLAB is provided below. 
@@ -58,11 +64,10 @@ An implementation of the **{{page.functionname}}** with MATLAB is provided below
 
 The function can be represented in Latex as follows:
 {% highlight latex%}
-f(\textbf{x}) = f(x_1, ..., x_n)= -a.exp(-b\sqrt{\frac{1}{n}\sum_{i=1}^{n}x_i^2})-exp(\frac{1}{d}\sum_{i=1}^{n}cos(cx_i))+ a + exp(1)
+f(x,y)=(x+2y-7)^2+(2x+y-5)^2
 {% endhighlight %}
 
 # References:
-* [http://www.sfu.ca/~ssurjano/ackley.html](http://www.sfu.ca/~ssurjano/ackley.html)
+* [http://www.sfu.ca/~ssurjano/booth.html](http://www.sfu.ca/~ssurjano/booth.html)
 * [https://en.wikipedia.org/wiki/Test_functions_for_optimization](https://en.wikipedia.org/wiki/Test_functions_for_optimization)
-* [http://www.cs.unm.edu/~neal.holts/dga/benchmarkFunction/ackley.html](http://www.cs.unm.edu/~neal.holts/dga/benchmarkFunction/ackley.html), This resource 
-contains an extensive collection of references for this function. The page also contains an implementation of the function in `Python`.
+* Momin Jamil and Xin-She Yang, A literature survey of benchmark functions for global optimization problems, Int. Journal of Mathematical Modelling and Numerical Optimisation}, Vol. 4, No. 2, pp. 150--194 (2013), [arXiv:1308.4008](arXiv:1308.4008)
