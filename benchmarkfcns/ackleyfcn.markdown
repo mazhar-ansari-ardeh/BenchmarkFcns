@@ -47,7 +47,7 @@ The contour of the function is as presented below:
 The function can be defined on any input domain but it is usually evaluated on $x_i \in [-32, 32]$ for all $i = 1,...,n$.
 
 # Global Minima
-The function has one global minimum at: $f(x^*)=0$ at $\textbf{x}^{\ast} = (0, ..., 0)$.
+The function has one global minimum at: $f(\textbf{x}^{\ast})=0$ at $\textbf{x}^{\ast} = (0, ..., 0)$.
 
 # Implementation
 An implementation of the **{{page.functionname}}** with MATLAB is provided below. 

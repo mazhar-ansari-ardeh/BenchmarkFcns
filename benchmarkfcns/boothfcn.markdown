@@ -29,7 +29,6 @@ scalable: non-scalable
 $$f(x,y)=(x+2y-7)^2+(2x+y-5)^2$$
 
 {%endraw%}
-In the above equation, the values $a$, $b$ and $c$ are constants and are usually chosen as $a=20$, $b=0.2$ and $c=2\pi$.
 
 # Plots
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}.png){:class="fcnplot"}
@@ -53,7 +52,7 @@ The contour of the function is as presented below:
 The function can be defined on any input domain but it is usually evaluated on $x_i \in [-10, 10]$ for all $i = 1,2$.
 
 # Global Minima
-The function has one global minimum at: $f(x^*)=0$ at $\textbf{x}^{\ast} = (1,3)$.
+The function has one global minimum at: $f(\textbf{x}^{\ast})=0$ at $\textbf{x}^{\ast} = (1,3)$.
 
 # Implementation
 An implementation of the **{{page.functionname}}** with MATLAB is provided below. 
