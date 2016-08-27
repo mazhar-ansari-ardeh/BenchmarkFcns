@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Sphere Function
 categories: optimization, benchmark
-tags: continuous, convex, unimodal
+tags: continuous, convex, differentiable, unimodal, separable
 fname: spherefcn
 ---
 <head>
@@ -34,6 +34,8 @@ The contour of the function:
 * The function is continuous.
 * The function is [convex](https://en.wikipedia.org/wiki/Convex_function).
 * The function can be defined on n-dimensional space. 
+* The function is differentiable.
+* The function is separable.
 * The function is unimodal.
 
 # Input Domain
