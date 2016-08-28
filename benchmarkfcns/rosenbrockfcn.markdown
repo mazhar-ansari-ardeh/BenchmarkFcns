@@ -27,6 +27,7 @@ scalable: non-scalable
 {%raw%}
 
 $$f(x, y)=\sum_{i=1}^{n}[b (x_{i+1} - x_i^2)^ 2 + (a - x_i)^2]$$
+
 In this formula, the parameters $a$ and $b$ are constants and are generally set to $a=1$ and $b=100$.
 {%endraw%}
 
