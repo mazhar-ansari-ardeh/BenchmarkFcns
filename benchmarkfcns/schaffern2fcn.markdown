@@ -28,7 +28,6 @@ scalable: non-scalable
 
 $$f(x, y)=0.5 + \frac{sin^2(x^2-y^2)-0.5}{(1+0.001(x^2+y^2))^2}$$
 {%endraw%}
-In this formula, the parameters $a$ and $b$ are constants and are generally set to $a=1$ and $b=100$.
 
 # Plots
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}.png){:class="fcnplot"}
