@@ -77,6 +77,6 @@ f(x, y)=0.5 + \frac{cos^2(sin(|x^2-y^2|))-0.5}{(1+0.001(x^2+y^2))^2}
 {% endhighlight %}
 
 # References:
-* [http://www.sfu.ca/~ssurjano/schaffer4.html](http://www.sfu.ca/~ssurjano/schaffer4.html)
 * [https://en.wikipedia.org/wiki/Test_functions_for_optimization](https://en.wikipedia.org/wiki/Test_functions_for_optimization)
 * [rpackages.ianhowson.com/cran/smoof/man/makeSchafferN4Function.html](rpackages.ianhowson.com/cran/smoof/man/makeSchafferN4Function.html)
+* Momin Jamil and Xin-She Yang, A literature survey of benchmark functions for global optimization problems, Int. Journal of Mathematical Modelling and Numerical Optimisation}, Vol. 4, No. 2, pp. 150--194 (2013), [arXiv:1308.4008](arXiv:1308.4008)
