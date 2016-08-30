@@ -1,11 +1,11 @@
 ---
 layout: page
 resource: true
-title: Schaffer N. 2 Function
+title: Schaffer N. 4 Function
 categories: optimization, benchmark
 tags: 2-dimensional, continuous, differentiable, non-separable, unimodal, non-scalable
-fname: schaffern2fcn
-functionname: Schaffer N. 2 Function
+fname: schaffern4fcn
+functionname: Schaffer N. 4 Function
 modal: unimodal
 dimension: 2-dimensional
 differentiable: differentiable
@@ -26,7 +26,7 @@ scalable: non-scalable
 
 {%raw%}
 
-$$f(x, y)=0.5 + \frac{sin^2(x^2-y^2)-0.5}{(1+0.001(x^2+y^2))^2}$$
+$$f(x, y)=0.5 + \frac{cos(sin(|x^2-y^2|))-0.5}{(1+0.001(x^2+y^2))^2}$$
 {%endraw%}
 
 # Plots
@@ -40,6 +40,9 @@ $$f(x, y)=0.5 + \frac{sin^2(x^2-y^2)-0.5}{(1+0.001(x^2+y^2))^2}$$
 
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_5.png){:class="fcnplot"}
 
+![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_6.png){:class="fcnplot"}
+
+![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_7.png){:class="fcnplot"}
 Two contours of the function are as presented below:
 
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_contour.png){:class="fcnplot"}
@@ -59,7 +62,7 @@ Two contours of the function are as presented below:
 The function can be defined on any input domain but it is usually evaluated on $x_i \in [-100, 100]$ for $i=1, 2$.
 
 # Global Minima
-The function has one global minimum $f(\textbf{x}^{\ast})=0.00156685$ at $\textbf{x}^{\ast} = (0, 1.253115)$.
+The function has one global minimum $f(\textbf{x}^{\ast})=0.292579$ at $\textbf{x}^{\ast} = (0, 1.253115)$.
 
 # Implementation
 An implementation of the **{{page.functionname}}** with MATLAB is provided below. 
@@ -70,7 +73,7 @@ An implementation of the **{{page.functionname}}** with MATLAB is provided below
 
 The function can be represented in Latex as follows:
 {% highlight latex%}
-f(x, y)=0.5 + \frac{sin^2(x^2-y^2)-0.5}{(1+0.001(x^2+y^2))^2}
+f(x, y)=0.5 + \frac{cos(sin(|x^2-y^2|))-0.5}{(1+0.001(x^2+y^2))^2}
 {% endhighlight %}
 
 # References:
