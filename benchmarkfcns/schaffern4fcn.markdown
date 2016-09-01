@@ -51,7 +51,7 @@ Two contours of the function are as presented below:
 
 # Description and Features
 * The function is continuous.
-* The function is [convex](https://en.wikipedia.org/wiki/Convex_function).
+* The function is not [convex](https://en.wikipedia.org/wiki/Convex_function).
 * The function is defined on {{page.dimension}} space.
 * The function is {{page.modal}}.
 * The function is {{page.differentiable}}.
