@@ -10,7 +10,7 @@ modal: multimodal
 dimension: n-dimensional
 differentiable: differentiable
 separable: separable
-convex: not convex
+convex: not [convex](https://en.wikipedia.org/wiki/Convex_function)
 ---
 <head>
 	<script type="text/x-mathjax-config">
@@ -42,7 +42,7 @@ Contour of the function is presented below:
 
 # Description and Features
 * The function is continuous.
-* The function is {{page.convex}} [convex](https://en.wikipedia.org/wiki/Convex_function).
+* The function is {{page.convex}}.
 * The function is defined on {{page.dimension}} space.
 * The function is {{page.modal}}.
 * The function is {{page.differentiable}}.
