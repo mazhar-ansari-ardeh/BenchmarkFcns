@@ -1,6 +1,6 @@
 % Computes the value of the Salomon's benchmark function.
 % SCORES = SALOMONFCN(X) computes the value of the Salomon's   
-% function at point X. SALOMONFCN accepts a matrix of size M-by-2  
+% function at point X. SALOMONFCN accepts a matrix of size M-by-N  
 % and returns a vetor SCORES of size M-by-1 in which each row contains the 
 % function value for the corresponding row of X.
 % For more information please visit: 
