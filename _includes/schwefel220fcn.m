@@ -1,6 +1,6 @@
 % Computes the value of the Schwefel 2.20 function.
 % SCORES = SCHWEFEL220FCN(X) computes the value of the Schwefel 2.20 
-% function at point X. SCHWEFEL220FCN accepts a matrix of size M-by-2 and 
+% function at point X. SCHWEFEL220FCN accepts a matrix of size M-by-N and 
 % returns a vetor SCORES of size M-by-1 in which each row contains the 
 % function value for the corresponding row of X.
 % 
