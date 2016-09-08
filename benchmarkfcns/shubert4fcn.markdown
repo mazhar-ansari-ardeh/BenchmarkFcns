@@ -1,11 +1,11 @@
 ---
 layout: page
 resource: true
-title: Shubert 6 Function
+title: Shubert 4 Function
 categories: optimization, benchmark
 tags: n-dimensional, continuous, differentiable, separable, multimodal
-fname: shubert6fcn
-functionname: Shubert 6 Function
+fname: shubert4fcn
+functionname: Shubert 4 Function
 modal: multimodal
 dimension: n-dimensional
 differentiable: differentiable
