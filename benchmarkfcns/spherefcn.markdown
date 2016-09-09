@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Sphere Function
 categories: optimization, benchmark
-tags: continuous, convex, differentiable, unimodal, separable
+tags: continuous convex differentiable unimodal separable
 fname: spherefcn
 ---
 <head>

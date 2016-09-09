@@ -3,14 +3,13 @@ layout: page
 resource: true
 title: Schaffer N. 4 Function
 categories: optimization, benchmark
-tags: 2-dimensional, continuous, differentiable, non-separable, unimodal, non-scalable
+tags: 2-dimensional continuous differentiable non-convex unimodal non-separable
 fname: schaffern4fcn
 functionname: Schaffer N. 4 Function
 modal: unimodal
 dimension: 2-dimensional
 differentiable: differentiable
-separable: non-separable
-scalable: non-scalable
+separable: not separable
 ---
 <head>
 	<script type="text/x-mathjax-config">
@@ -56,7 +55,6 @@ Two contours of the function are as presented below:
 * The function is {{page.modal}}.
 * The function is {{page.differentiable}}.
 * The function is {{page.separable}}.
-* The function is {{page.scalable}}.
 
 # Input Domain
 The function can be defined on any input domain but it is usually evaluated on $x_i \in [-100, 100]$ for $i=1, 2$.

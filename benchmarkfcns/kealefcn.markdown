@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Keane Function
 categories: optimization, benchmark
-tags: 2-dimensional, continuous, differentiable, non-separable, multimodal
+tags: 2-dimensional continuous differentiable non-separable multimodal non-convex
 fname: keanefcn
 functionname: Keane Function
 modal: multimodal

@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Sum Squares Function
 categories: optimization, benchmark
-tags: n-dimensional, continuous, differentiable, separable, unimodal
+tags: n-dimensional continuous differentiable separable unimodal convex
 fname: sumsquaresfcn
 functionname: Sum Squares Function
 modal: unimodal

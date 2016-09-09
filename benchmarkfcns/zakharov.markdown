@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Zakharov Function
 categories: optimization, benchmark
-tags: continuous, convex, n-dimensional, unimodal
+tags: continuous convex n-dimensional unimodal
 fname: zakharovfcn
 functionname: Zakharov Function
 ---

@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Periodic Function
 categories: optimization, benchmark
-tags: n-dimensional, continuous, differentiable, non-separable, multimodal
+tags: n-dimensional continuous differentiable non-separable multimodal non-convex
 fname: periodicfcn
 functionname: Periodic Function
 modal: multimodal
@@ -14,7 +14,7 @@ convex: is not [convex](https://en.wikipedia.org/wiki/Convex_function)
 ---
 <head>
 	<script type="text/x-mathjax-config">
-	  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+	  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'] ['\\(','\\)']]}});
 	</script>
 	<script type="text/javascript" async
 	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
@@ -26,7 +26,7 @@ convex: is not [convex](https://en.wikipedia.org/wiki/Convex_function)
 
 {%raw%}
 
-$$f(\mathbf{x})=f(x_1, ..., x_n)=1 + \sum_{i=1}^{n}{sin^2(x_i)}-0.1e^{(\sum_{i=1}^{n}x_i^2)}$$
+$$f(\mathbf{x})=f(x_1 ... x_n)=1 + \sum_{i=1}^{n}{sin^2(x_i)}-0.1e^{(\sum_{i=1}^{n}x_i^2)}$$
 
 {%endraw%}
 
@@ -62,10 +62,10 @@ Two contours of the function are presented below:
 * The function is {{page.separable}}.
 
 # Input Domain
-The function can be defined on any input domain but it is usually evaluated on $x_i \in [-10, 10]$ for $i=1, ..., n$.
+The function can be defined on any input domain but it is usually evaluated on $x_i \in [-10 10]$ for $i=1 ... n$.
 
 # Global Minima
-The function has on global minimum $f(\mathbf{x}^{\ast})=0.9$ at $\mathbf{x}^{\ast}=(0, ..., 0)$.
+The function has on global minimum $f(\mathbf{x}^{\ast})=0.9$ at $\mathbf{x}^{\ast}=(0 ... 0)$.
 
 # Implementation
 An implementation of the **{{page.functionname}}** with `MATLAB` is provided below. The function can be implemented with a `for` loop
@@ -77,12 +77,12 @@ that iterates over the input components but `MATLAB` and `Octave` have built-in 
 
 The function can be represented in Latex as follows:
 {% highlight latex%}
-f(\mathbf{x})=f(x_1, ..., x_n)=1 + \sum_{i=1}^{n}{sin^2(x_i)}-0.1e^{(\sum_{i=1}^{n}x_i^2)}
+f(\mathbf{x})=f(x_1 ... x_n)=1 + \sum_{i=1}^{n}{sin^2(x_i)}-0.1e^{(\sum_{i=1}^{n}x_i^2)}
 {% endhighlight %}
 
 # References:
-* Momin Jamil and Xin-She Yang, A literature survey of benchmark functions for global optimization problems, Int. Journal of Mathematical Modelling 
-and Numerical Optimisation}, Vol. 4, No. 2, pp. 150--194 (2013), [arXiv:1308.4008](arXiv:1308.4008)
-* M. M. Ali, C. Khompatraporn, Z. B. Zabinsky, “A Numerical Evaluation of Several
+* Momin Jamil and Xin-She Yang A literature survey of benchmark functions for global optimization problems Int. Journal of Mathematical Modelling 
+and Numerical Optimisation} Vol. 4 No. 2 pp. 150--194 (2013) [arXiv:1308.4008](arXiv:1308.4008)
+* M. M. Ali C. Khompatraporn Z. B. Zabinsky “A Numerical Evaluation of Several
 Stochastic Algorithms on Selected Continuous Global Optimization Test Problems,”
-Journal of Global Optimization, vol. 31, pp. 635-672, 2005.
+Journal of Global Optimization vol. 31 pp. 635-672 2005.

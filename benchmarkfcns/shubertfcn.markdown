@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Shubert Function
 categories: optimization, benchmark
-tags: n-dimensional, continuous, differentiable, non-separable, multimodal
+tags: n-dimensional continuous differentiable non-separable multimodal non-convex
 fname: shubertfcn
 functionname: Shubert Function
 modal: multimodal

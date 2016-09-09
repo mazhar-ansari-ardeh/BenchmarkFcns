@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Bukin N. 6 Function
 categories: optimization, benchmark
-tags: 2-dimensional, continuous, convex, non-differentiable, non-separable, non-scalable, multimodal
+tags: 2-dimensional continuous convex non-differentiable non-separable multimodal convex
 fname: bukinn6fcn
 functionname: Bukin N. 6 Function
 modal: multimodal

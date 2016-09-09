@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Powell Sum Function
 categories: optimization, benchmark
-tags: n-dimensional, continuous, non-differentiable, separable, unimodal
+tags: n-dimensional continuous non-differentiable separable unimodal convex
 fname: powellsumfcn
 functionname: Powell Sum Function
 modal: unimodal

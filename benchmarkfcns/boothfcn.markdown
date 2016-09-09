@@ -3,14 +3,13 @@ layout: page
 resource: true
 title: Booth Function
 categories: optimization, benchmark
-tags: 2-dimensional, continuous, convex, differentiable, non-separable, non-scalable, unimodal
+tags: 2-dimensional continuous convex differentiable non-separable unimodal convex
 fname: boothfcn
 functionname: Booth Function
 modal: unimodal
 dimension: 2-dimensional
 differentiable: differentiable
 separable: non-separable
-scalable: non-scalable
 ---
 <head>
 	<script type="text/x-mathjax-config">
@@ -45,7 +44,6 @@ The contour of the function is as presented below:
 * The function is defined on {{page.dimension}} space. 
 * The function is {{page.modal}}.
 * The function is {{page.differentiable}}.
-* The function is {{page.separable}}.
 * The function is {{page.scalable}}.
 
 # Input Domain

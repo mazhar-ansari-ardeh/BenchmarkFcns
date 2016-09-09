@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Schwefel 2.20 Function
 categories: optimization, benchmark
-tags: n-dimensional, continuous, non-differentiable, separable, unimodal
+tags: n-dimensional continuous non-differentiable separable unimodal convex
 fname: schwefel220fcn
 functionname: Schwefel 2.20 Function
 modal: unimodal

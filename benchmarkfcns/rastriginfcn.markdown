@@ -3,14 +3,13 @@ layout: page
 resource: true
 title: Rastrigin Function
 categories: optimization, benchmark
-tags: n-dimensional, continuous, differentiable, separable, multimodal, non-scalable
+tags: n-dimensional continuous differentiable separable multimodal convex
 fname: rastriginfcn
 functionname: Rastrigin Function
 modal: multimodal
 dimension: n-dimensional
 differentiable: differentiable
 separable: separable
-scalable: non-scalable
 ---
 <head>
 	<script type="text/x-mathjax-config">

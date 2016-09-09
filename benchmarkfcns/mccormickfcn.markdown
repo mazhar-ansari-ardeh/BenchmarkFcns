@@ -3,14 +3,12 @@ layout: page
 resource: true
 title: McCormick Function
 categories: optimization, benchmark
-tags: 2-dimensional, continuous, differentiable, non-separable, multimodal, non-scalable
+tags: 2-dimensional continuous differentiable multimodal non-scalable convex
 fname: mccormickfcn
 functionname: McCormick Function
 modal: multimodal
 dimension: 2-dimensional
 differentiable: differentiable
-separable: non-separable
-scalable: non-scalable
 ---
 <head>
 	<script type="text/x-mathjax-config">
@@ -47,7 +45,6 @@ The contour of the function is as presented below:
 * The function is defined on {{page.dimension}} space.
 * The function is {{page.modal}}.
 * The function is {{page.differentiable}}.
-* The function is {{page.separable}}.
 * The function is {{page.scalable}}.
 
 # Input Domain

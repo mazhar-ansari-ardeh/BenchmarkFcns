@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Gramacy & Lee Function
 categories: optimization, benchmark
-tags: 1-dimensional, continuous, unimodal
+tags: 1-dimensional continuous multimodal non-convex
 fname: gramacyleefcn
 functionname: Gramacy & Lee Function
 modal: unimodal

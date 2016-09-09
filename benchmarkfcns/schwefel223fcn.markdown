@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Schwefel 2.23 Function
 categories: optimization, benchmark
-tags: n-dimensional, continuous, differentiable, separable, unimodal
+tags: n-dimensional continuous differentiable separable unimodal convex
 fname: schwefel223fcn
 functionname: Schwefel 2.23 Function
 modal: unimodal

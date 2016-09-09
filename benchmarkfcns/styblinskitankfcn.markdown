@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Styblinski-Tank Function
 categories: optimization, benchmark
-tags: n-dimensional, continuous, multimodal
+tags: n-dimensional continuous multimodal non-convex
 fname: styblinskitankfcn
 functionname: Styblinski-Tank Function
 modal: multimodal

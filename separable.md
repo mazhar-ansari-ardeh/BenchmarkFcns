@@ -1,15 +1,16 @@
 ---
 layout: default
-title: Benchmark functions
+title: Separable benchmark functions
 ---
 <div class="home">
 
-  <h2>Implemented Functions</h2>
+  <h2>Separable Functions</h2>
 
   <ol >
     {% for post in site.pages %}
 	{% if post.resource == true %}
-      <li>
+	{% unless post.tags contains 'non-separable' %}
+		 <li>
         <h3>
           <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
 		  <br />
@@ -21,6 +22,8 @@ title: Benchmark functions
 		</ul>
         </h3>
       </li>
+	{% endunless %}
+     
     {% endif %}
 	{% endfor %}
   </ol>

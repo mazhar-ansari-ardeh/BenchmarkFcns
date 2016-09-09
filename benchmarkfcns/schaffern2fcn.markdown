@@ -3,14 +3,13 @@ layout: page
 resource: true
 title: Schaffer N. 2 Function
 categories: optimization, benchmark
-tags: 2-dimensional, continuous, differentiable, non-separable, unimodal, non-scalable
+tags: 2-dimensional continuous differentiable non-separable unimodal non-convex
 fname: schaffern2fcn
 functionname: Schaffer N. 2 Function
 modal: unimodal
 dimension: 2-dimensional
 differentiable: differentiable
 separable: non-separable
-scalable: non-scalable
 ---
 <head>
 	<script type="text/x-mathjax-config">

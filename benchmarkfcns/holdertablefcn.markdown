@@ -3,14 +3,13 @@ layout: page
 resource: true
 title: Holder-Table Function
 categories: optimization, benchmark
-tags: 2-dimensional, continuous, non-differentiable, non-separable, non-scalable, multimodal
+tags: 2-dimensional continuous non-differentiable non-separable multimodal non-convex
 fname: holdertablefcn
 functionname: Holder-Table Function
 modal: multimodal
 dimension: 2-dimensional
 differentiable: non-differentiable
 separable: non-separable
-scalable: non-scalable
 ---
 <head>
 	<script type="text/x-mathjax-config">

@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Drop-Wave Function
 categories: optimization, benchmark
-tags: 2-dimensional, continuous, unimodal
+tags: 2-dimensional continuous unimodal non-convex
 fname: dropwavefcn
 functionname: Drop-Wave Function
 ---

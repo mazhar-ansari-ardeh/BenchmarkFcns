@@ -1,15 +1,16 @@
 ---
 layout: default
-title: Benchmark functions
+title: 2-dimensional benchmark functions
 ---
 <div class="home">
 
-  <h2>Implemented Functions</h2>
+  <h2>2-dimensional Functions</h2>
 
   <ol >
     {% for post in site.pages %}
 	{% if post.resource == true %}
-      <li>
+	{% if post.tags contains '2-dimensional' %}
+		 <li>
         <h3>
           <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
 		  <br />
@@ -21,6 +22,8 @@ title: Benchmark functions
 		</ul>
         </h3>
       </li>
+	{% endif %}
+     
     {% endif %}
 	{% endfor %}
   </ol>

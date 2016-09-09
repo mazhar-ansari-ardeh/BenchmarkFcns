@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Griewank Function
 categories: optimization, benchmark
-tags: n-dimensional, continuous, unimodal
+tags: n-dimensional continuous unimodal non-convex
 fname: griewankfcn
 functionname: Griewank Function
 ---

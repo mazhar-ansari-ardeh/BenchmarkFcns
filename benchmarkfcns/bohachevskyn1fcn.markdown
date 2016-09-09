@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Bohachevsky N. 1 Function
 categories: optimization, benchmark
-tags: 2-dimensional, continuous, convex, unimodal
+tags: 2-dimensional continuous convex unimodal
 fname: bohachevskyn1fcn
 functionname: Bohachevskyn N. 1 Function
 ---

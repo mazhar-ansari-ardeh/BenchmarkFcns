@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Beale Function
 categories: optimization, benchmark
-tags: 2-dimensional, continuous, multimodal
+tags: 2-dimensional continuous multimodal non-convex
 fname: bealefcn
 functionname: Beale Function
 modal: multimodal

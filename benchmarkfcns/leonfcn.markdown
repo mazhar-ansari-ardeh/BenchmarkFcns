@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Leon Function
 categories: optimization, benchmark
-tags: 2-dimensional, continuous, differentiable, non-separable, unimodal
+tags: 2-dimensional continuous differentiable non-separable unimodal non-convex
 fname: leonfcn
 functionname: Leon Function
 modal: unimodal

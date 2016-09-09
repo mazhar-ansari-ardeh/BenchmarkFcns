@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Quartic Function
 categories: optimization, benchmark
-tags: n-dimensional, continuous, differentiable, separable, multimodal, random
+tags: n-dimensional continuous differentiable separable multimodal random non-convex
 fname: quarticfcn
 functionname: Quartic Function
 modal: multimodal

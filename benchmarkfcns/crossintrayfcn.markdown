@@ -3,14 +3,12 @@ layout: page
 resource: true
 title: Cross-in-Tray Function
 categories: optimization, benchmark
-tags: 2-dimensional, continuous, non-differentiable, non-separable, non-scalable, multimodal
+tags: 2-dimensional continuous non-differentiable non-separable multimodal non-convex
 fname: crossintrayfcn
 functionname: Cross-in-Tray Function
 modal: multimodal
 dimension: 2-dimensional
 differentiable: non-differentiable
-separable: non-separable
-scalable: non-scalable
 ---
 <head>
 	<script type="text/x-mathjax-config">

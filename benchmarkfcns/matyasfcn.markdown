@@ -3,14 +3,13 @@ layout: page
 resource: true
 title: Matyas Function
 categories: optimization, benchmark
-tags: 2-dimensional, continuous, differentiable, non-separable, unimodal, non-scalable
+tags: 2-dimensional continuous differentiable non-separable unimodal convex
 fname: matyasfcn
 functionname: Matyas Function
 modal: unimodal
 dimension: 2-dimensional
 differentiable: differentiable
 separable: non-separable
-scalable: non-scalable
 ---
 <head>
 	<script type="text/x-mathjax-config">

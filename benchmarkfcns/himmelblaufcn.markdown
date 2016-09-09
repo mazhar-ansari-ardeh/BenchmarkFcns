@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Himmelblau Function
 categories: optimization, benchmark
-tags: 2-dimensional, continuous, multimodal
+tags: 2-dimensional continuous multimodal non-convex
 fname: himmelblaufcn
 functionname: Himmelblau Function
 ---
@@ -36,8 +36,8 @@ The contour of the function:
 # Description and Features
 * The function is continuous.
 * The function is not [convex](https://en.wikipedia.org/wiki/Convex_function).
-* The function is defined on 2-dimensional space. 
-* The function is unimodal.
+* The function is defined on the 2-dimensional space. 
+* The function is multimodal.
 
 # Input Domain
 The function can be defined on any input domain but it is usually evaluated on $x_i \in [-6, 6]$ for $i = 1, 2$.

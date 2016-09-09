@@ -3,14 +3,13 @@ layout: page
 resource: true
 title: Rosenbrock Function
 categories: optimization, benchmark
-tags: n-dimensional, continuous, differentiable, non-separable, multimodal, non-scalable
+tags: n-dimensional continuous differentiable non-separable multimodal non-convex
 fname: rosenbrockfcn
 functionname: Rosenbrock Function
 modal: multimodal
 dimension: n-dimensional
 differentiable: differentiable
 separable: non-separable
-scalable: non-scalable
 ---
 <head>
 	<script type="text/x-mathjax-config">
@@ -48,7 +47,6 @@ The contour of the function is as presented below:
 * The function is {{page.modal}}.
 * The function is {{page.differentiable}}.
 * The function is {{page.separable}}.
-* The function is {{page.scalable}}.
 
 # Input Domain
 The function can be defined on any input domain but it is usually evaluated on $x_i \in [-5, 10]$ for $i=1, ..., n$ .

@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Schwefel Function
 categories: optimization, benchmark
-tags: continuous, multimodal
+tags: continuous multimodal non-convex non-differentiable non-separable
 fname: schwefelfcn
 functionname: Schwefel Function
 ---
@@ -36,6 +36,7 @@ The contour of the function:
 * The function is not [convex](https://en.wikipedia.org/wiki/Convex_function).
 * The function can be defined on n-dimensional space. 
 * The function is multimodal.
+* The function is not {{page.separable}}.
 
 # Input Domain
 The function can be defined on any input domain but it is usually evaluated on the hypercube $x_i \in [-500, 500]$ for $i = 1..n$.

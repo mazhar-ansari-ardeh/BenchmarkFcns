@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Levi N. 13 Function
 categories: optimization, benchmark
-tags: 2-dimensional, continuous, differentiable, non-separable, multimodal
+tags: 2-dimensional continuous differentiable non-separable multimodal non-convex
 fname: levin13fcn
 functionname: Levi N. 13 Function
 modal: multimodal

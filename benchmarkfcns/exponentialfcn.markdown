@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Exponential Function
 categories: optimization, benchmark
-tags: n-dimensional, continuous, differentiable, non-separable, unimodal
+tags: n-dimensional continuous differentiable non-separable unimodal convex
 fname: exponentialfcn
 functionname: Exponential Function
 modal: unimodal
