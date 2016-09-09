@@ -12,7 +12,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Benchmarkfcns is a personal effort to provide a public repository of sources 
   and documents for well-known optimization benchmark functions.
   Please visit the About page for more information. 
-baseurl: "/optimization" # the subpath of your site, e.g. /blog
+#baseurl: "" # the subpath of your site, e.g. /blog
 url: "benchmarkfcns.xyz" # the base hostname & protocol for your site
 # twitter_username: jekyllrb
 github_username:  mazhar-ansari-ardeh
