@@ -9,7 +9,7 @@ project is authored by Mazhar Ansari Ardeh and is hosted on Github at: [http://m
 Please forward any comments to **mazhar.ansari.ardeh [at] gmail.com**.
 
 # Copyright
-The contents of this web site are published under the [Creative Commons Attribution-ShareAlike License](https://creativecommons.org/licenses/by-sa/3.0/us/).
+The contents of this web site are published under the [Creative Commons Attribution-ShareAlike License 3.0](https://creativecommons.org/licenses/by-sa/3.0/us/).
 Source codes on this web site are published under the [MIT License](https://opensource.org/licenses/MIT).
 
 Mathematical formula are written in Latex and rendered by <a href="http://www.mathjax.org">
