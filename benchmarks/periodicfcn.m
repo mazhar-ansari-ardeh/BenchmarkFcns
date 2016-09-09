@@ -1,5 +1,5 @@
-% Computes the value of the Periodic function.
-% SCORES = PERIODICFCN(X) computes the value of the Periodic 
+% Computes the value of the Sum Square function.
+% SCORES = SUMSQUAREFCN(X) computes the value of the Periodic 
 % function at point X. PERIODICFCN accepts a matrix of size M-by-N and 
 % returns a vetor SCORES of size M-by-1 in which each row contains the 
 % function value for the corresponding row of X.
