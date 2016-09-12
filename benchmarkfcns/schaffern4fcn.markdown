@@ -3,13 +3,14 @@ layout: page
 resource: true
 title: Schaffer N. 4 Function
 categories: optimization, benchmark
-tags: 2-dimensional continuous differentiable non-convex unimodal non-separable
+tags: 2-dimensional continuous differentiable non-convex unimodal non-separable non-convex
 fname: schaffern4fcn
 functionname: Schaffer N. 4 Function
 modal: unimodal
 dimension: 2-dimensional
 differentiable: differentiable
 separable: not separable
+convex: not [convex](https://en.wikipedia.org/wiki/Convex_function)
 ---
 <head>
 	<script type="text/x-mathjax-config">
@@ -50,7 +51,7 @@ Two contours of the function are as presented below:
 
 # Description and Features
 * The function is continuous.
-* The function is not [convex](https://en.wikipedia.org/wiki/Convex_function).
+* The function is {{page.convex}}.
 * The function is defined on {{page.dimension}} space.
 * The function is {{page.modal}}.
 * The function is {{page.differentiable}}.
@@ -78,3 +79,5 @@ f(x, y)=0.5 + \frac{cos^2(sin(|x^2-y^2|))-0.5}{(1+0.001(x^2+y^2))^2}
 * [https://en.wikipedia.org/wiki/Test_functions_for_optimization](https://en.wikipedia.org/wiki/Test_functions_for_optimization)
 * [rpackages.ianhowson.com/cran/smoof/man/makeSchafferN4Function.html](rpackages.ianhowson.com/cran/smoof/man/makeSchafferN4Function.html)
 * Momin Jamil and Xin-She Yang, A literature survey of benchmark functions for global optimization problems, Int. Journal of Mathematical Modelling and Numerical Optimisation}, Vol. 4, No. 2, pp. 150--194 (2013), [arXiv:1308.4008](arXiv:1308.4008)
+* S. K. Mishra, “Some New Test Functions For Global Optimization And
+Performance of Repulsive Particle Swarm Method,” [Available Online]: [http://mpra.ub.uni-muenchen.de/2718/](http://mpra.ub.uni-muenchen.de/2718/)
