@@ -3,6 +3,8 @@
 % function at point X. QINGFCN accepts a matrix of size M-by-N and 
 % returns a vetor SCORES of size M-by-1 in which each row contains the 
 % function value for the corresponding row of X.
+% For more information, please visit:
+% benchmarkfcns.xyz/fcns/qingfcn
 % 
 % Author: Mazhar Ansari Ardeh
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at
@@ -15,4 +17,4 @@ function scores = qingfcn(x)
     for i = 1:n
         scores = scores + (x2(:, i) - i) .^ 2;
     end
-end %% TODO: Commit this function and create the page.
+end 
