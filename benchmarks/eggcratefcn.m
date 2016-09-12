@@ -4,12 +4,12 @@
 % returns a vetor SCORES of size M-by-1 in which each row contains the 
 % function value for the corresponding row of X.
 % For more information, please visit:
-% benchmarkfcns.xyz/fcns/eggcratefcnfcn
+% benchmarkfcns.xyz/fcns/eggcratefcn
 % 
 % Author: Mazhar Ansari Ardeh
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at
 % Google's e-mail service or feel free to kindly modify the repository.
-function scores = eggcratefcnfcn(x)
+function scores = eggcratefcn(x)
     n = size(x, 2);
     assert(n == 2, 'The Egg Crate function is defined only on the 2-D space.')
     X = x(:, 1);
