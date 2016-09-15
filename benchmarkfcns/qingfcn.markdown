@@ -65,7 +65,7 @@ Two contours of the function are presented below:
 The function can be defined on any input domain but it is usually evaluated on $x_i \in [-500, 500]$ for $i=1, ..., n$.
 
 # Global Minima
-The global minima $f(\textbf{x}^{\ast})=$ are located at $\mathbf{x^\ast}=(\pm\sqrt{i}, ..., \pm\sqrt{i})$.
+The global minima $f(\textbf{x}^{\ast})=0$ are located at $\mathbf{x^\ast}=(\pm\sqrt{i}, ..., \pm\sqrt{i})$.
 
 # Implementation
 An implementation of the **{{page.functionname}}** with `MATLAB` is provided below. 

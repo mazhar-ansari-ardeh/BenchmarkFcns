@@ -15,4 +15,4 @@ function scores = qingfcn(x)
     for i = 1:n
         scores = scores + (x2(:, i) - i) .^ 2;
     end
-end %% TODO: Commit this function and create the page.
+end 
