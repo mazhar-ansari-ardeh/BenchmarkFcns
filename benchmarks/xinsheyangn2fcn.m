@@ -10,7 +10,5 @@
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at
 % Google's e-mail service or feel free to kindly modify the repository.
 function scores = xinsheyangn2fcn(x)
-    n = size(x, 2);
-    
-    scores = sum(abs(x), 2) .* exp(-sum(sin(x .^2), 2));
+     scores = sum(abs(x), 2) .* exp(-sum(sin(x .^2), 2));
 end 
