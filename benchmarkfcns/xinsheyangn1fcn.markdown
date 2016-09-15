@@ -40,7 +40,7 @@ where $\epsilon$ is a random number that is drawn uniformly from $[0, 1]$
 
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_4.png){:class="fcnplot"}
 
-A contours of the function is presented below:
+A contour of the function is presented below:
 
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_contour.png){:class="fcnplot"}
 
