@@ -3,12 +3,13 @@ layout: page
 resource: true
 title: Xin-She Yang Function
 categories: optimization, benchmark
-tags: n-dimensional separable multimodal non-convex random
+tags: n-dimensional separable multimodal non-convex random non-differentiable
 fname: xinsheyangn1fcn
 functionname: Xin-She Yang Function
 modal: multimodal
 dimension: n-dimensional
 separable: separable
+differentiable: non-differentiable
 convex: is not [convex](https://en.wikipedia.org/wiki/Convex_function)
 ---
 <head>
@@ -46,6 +47,7 @@ A contours of the function is presented below:
 * The function {{page.convex}}.
 * The function is defined on {{page.dimension}} space.
 * The function is {{page.separable}}.
+* The function is {{page.differentiable}}.
 
 # Input Domain
 The function can be defined on any input domain but it is usually evaluated on $x_i \in [-5, 5]$ for $i=1, ..., n$.
