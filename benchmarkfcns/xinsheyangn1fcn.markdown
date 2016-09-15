@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Xin-She Yang Function
 categories: optimization, benchmark
-tags: n-dimensional separable multimodal non-convex
+tags: n-dimensional separable multimodal non-convex random
 fname: xinsheyangn1fcn
 functionname: Xin-She Yang Function
 modal: multimodal
