@@ -28,6 +28,7 @@ convex: is not [convex](https://en.wikipedia.org/wiki/Convex_function)
 
 $$f(\mathbf x)=f(x_1, ...,x_n)=\sum_{i=1}^{n}\epsilon_i|x_i|^i$$
 
+where $\epsilon$ is a random number that is drawn uniformly from $[0, 1]$
 {%endraw%}
 
 # Plots
