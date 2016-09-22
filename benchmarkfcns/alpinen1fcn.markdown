@@ -1,15 +1,15 @@
 ---
 layout: page
 resource: true
-title: Alpine N. 1 Function
+title: Adjiman Function
 categories: optimization, benchmark
-tags: n-dimensional separable multimodal non-convex non-differentiable
-fname: alpinen1fcn
-functionname: Alpine N. 1 Function
+tags: 2-dimensional non-separable multimodal non-convex differentiable
+fname: adjimanfcn
+functionname: Adjiman Function
 modal: multimodal
-dimension: n-dimensional
-separable: separable
-differentiable: non-differentiable
+dimension: 2-dimensional
+separable: non-separable
+differentiable: differentiable
 convex: is not [convex](https://en.wikipedia.org/wiki/Convex_function)
 ---
 <head>
@@ -26,7 +26,7 @@ convex: is not [convex](https://en.wikipedia.org/wiki/Convex_function)
 
 {%raw%}
 
-$$f(\mathbf x)=f(x_1, ..., x_n)=\sum_{i=1}^{n}|x_i sin(x_i) + 0.1x_i|$$
+$$f(x, y)=cos(x)sin(y) - \frac{x}{y^2+1}$$
 
 {%endraw%}
 
@@ -45,8 +45,6 @@ $$f(\mathbf x)=f(x_1, ..., x_n)=\sum_{i=1}^{n}|x_i sin(x_i) + 0.1x_i|$$
 
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_7.png){:class="fcnplot"}
 
-![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_8.png){:class="fcnplot"}
-
 Two contours of the function are presented below:
 
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_contour.png){:class="fcnplot"}
@@ -60,10 +58,10 @@ Two contours of the function are presented below:
 * The function is {{page.differentiable}}.
 
 # Input Domain
-The function can be defined on any input domain but it is usually evaluated on $x_i \in [-10, 10]$ for $i=1, ..., n$.
+The function can be defined on any input domain but it is usually evaluated on $x \in [-1, 2]$ and $x \in [-1, 1]$.
 
 # Global Minima
-The global minimum $f(\textbf{x}^{\ast})=0$ are located at $\mathbf{x^\ast}=(0, ..., 0)$.
+On the on $x \in [-1, 2]$ and $x \in [-1, 1]$ cube, the global minimum $f(\textbf{x}^{\ast})=-2.02181$ is located at $\mathbf{x^\ast}=(0, ..., 0)$.
 
 # Implementation
 An implementation of the **{{page.functionname}}** with `MATLAB` is provided below. 
@@ -74,15 +72,14 @@ An implementation of the **{{page.functionname}}** with `MATLAB` is provided bel
 
 The function can be represented in Latex as follows:
 {% highlight latex%}
-f(\mathbf x)=f(x_1, ..., x_n)=\sum_{i=1}^{n}|x_i sin(x_i) + 0.1x_i|
+f(x, y)=cos(x)sin(y) - \frac{x}{y^2+1}
 {% endhighlight %}
-
-# See Also:
-* [Alpine N. 2 Function]({{site.baseurl}}/benchmarkfcns/alpinen2fcn)
 
 # References:
 * Momin Jamil and Xin-She Yang, A literature survey of benchmark functions for global optimization problems, Int. Journal of Mathematical Modelling 
 and Numerical Optimisation}, Vol. 4, No. 2, pp. 150--194 (2013), [arXiv:1308.4008](arXiv:1308.4008)
-* S. Rahnamyan, H. R. Tizhoosh, N. M. M. Salama, “A Novel Population Initialization
-Method for Accelerating Evolutionary Algorithms,” Computers and Mathematics with
-Applications, vol. 53, no. 10, pp. 1605-1614, 2007.
+* C. S. Adjiman, S. Sallwig, C. A. Flouda, A. Neumaier, "A Global Optimization
+Method, aBB for General Twice-Differentiable NLPs-1, Theoretical Advances," Computers
+Chemical Engineering, vol. 22, no. 9, pp. 1137-1158, 1998.
+* Qing, A., "Differential Evolution: Fundamentals and Applications in Electrical Engineering", Wiley, 2009.
+[https://books.google.com/books?id=Pp-SHz6dIJ0C](https://books.google.com/books?id=Pp-SHz6dIJ0C)
