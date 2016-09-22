@@ -77,6 +77,9 @@ The function can be represented in Latex as follows:
 f(\mathbf x)=f(x_1, ..., x_n)=\sum_{i=1}^{n}|x_i sin(x_i) + 0.1x_i|
 {% endhighlight %}
 
+# See Also:
+* [Alpine N. 2 Function]({{site.baseurl}}/benchmarkfcns/alpinen2fcn)
+
 # References:
 * Momin Jamil and Xin-She Yang, A literature survey of benchmark functions for global optimization problems, Int. Journal of Mathematical Modelling 
 and Numerical Optimisation}, Vol. 4, No. 2, pp. 150--194 (2013), [arXiv:1308.4008](arXiv:1308.4008)
