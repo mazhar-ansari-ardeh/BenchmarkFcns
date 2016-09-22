@@ -5,6 +5,7 @@
 % function value for the corresponding row of X.
 % For more information, please visit:
 % benchmarkfcns.xyz/fcns/alpinen1fcn
+% See also: alpinen2fcn
 % 
 % Author: Mazhar Ansari Ardeh
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at
