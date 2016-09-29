@@ -58,10 +58,10 @@ Two contours of the function are presented below:
 * The function is {{page.differentiable}}.
 
 # Input Domain
-The function can be defined on any input domain but it is usually evaluated on $x \in [-1, 2]$ and $x \in [-1, 1]$.
+The function can be defined on any input domain but it is usually evaluated on $x \in [-1, 2]$ and $y \in [-1, 1]$.
 
 # Global Minima
-On the on $x \in [-1, 2]$ and $x \in [-1, 1]$ cube, the global minimum $f(\textbf{x}^{\ast})=-2.02181$ is located at $\mathbf{x^\ast}=(0, ..., 0)$.
+On the on $x \in [-1, 2]$ and $x \in [-1, 1]$ cube, the global minimum $f(\textbf{x}^{\ast})=-2.02181$ is located at $\mathbf{x^\ast}=(0, 0)$.
 
 # Implementation
 An implementation of the **{{page.functionname}}** with `MATLAB` is provided below. 
