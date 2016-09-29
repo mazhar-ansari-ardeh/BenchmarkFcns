@@ -1,6 +1,6 @@
 % Computes the value of the Ackley N. 2 function.
-% SCORES = BARTELSCONNFCN(X) computes the value of the Ackley N. 2
-% function at point X. BARTELSCONNFCN accepts a matrix of size M-by-2 and 
+% SCORES = ACKLEYN2FCN(X) computes the value of the Ackley N. 2
+% function at point X. ACKLEYN2FCN accepts a matrix of size M-by-2 and 
 % returns a vetor SCORES of size M-by-1 in which each row contains the 
 % function value for the corresponding row of X.
 % 
