@@ -2,6 +2,7 @@
 layout: default
 title: Convex benchmark functions
 ---
+{% include sidebar.html %}
 <div class="home">
 
   <h2>Convex Functions</h2>

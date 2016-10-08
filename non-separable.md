@@ -2,6 +2,7 @@
 layout: default
 title: Non-Separable benchmark functions
 ---
+{% include sidebar.html %}
 <div class="home">
 
   <h2>Non-separable Functions</h2>

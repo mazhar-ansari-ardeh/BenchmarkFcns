@@ -217,3 +217,57 @@ pre {
         }
     }
 }
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+/**
+ * sidebar
+ */
+.sidenav {
+    height: 100%;
+    width: 18%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #0f2d2d;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    transition: 0.5s;
+    padding-top: 20px;
+	border-top: 5px solid $grey-color-dark;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+    display: block;
+}
+
+.sidenav a.active, .offcanvas a:focus{
+    background-color: #4CAF50;
+    color: white;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    background-color: #055;
+    color: white;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}

@@ -2,6 +2,7 @@
 layout: default
 title: Benchmark functions
 ---
+{% include sidebar.html %}
 <div class="home">
 
   <h2>Implemented Functions</h2>

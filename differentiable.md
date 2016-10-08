@@ -2,6 +2,7 @@
 layout: default
 title: Differentiable benchmark functions
 ---
+{% include sidebar.html %}
 <div class="home">
 
   <h2>Differentiable Functions</h2>

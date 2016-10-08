@@ -2,6 +2,7 @@
 layout: default
 title: Separable benchmark functions
 ---
+{% include sidebar.html %}
 <div class="home">
 
   <h2>Separable Functions</h2>

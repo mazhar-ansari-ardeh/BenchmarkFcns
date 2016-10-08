@@ -2,6 +2,7 @@
 layout: default
 title: 2-dimensional benchmark functions
 ---
+{% include sidebar.html %}
 <div class="home">
 
   <h2>2-dimensional Functions</h2>

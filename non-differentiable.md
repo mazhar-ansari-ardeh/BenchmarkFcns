@@ -2,6 +2,7 @@
 layout: default
 title: Non-Differentiable benchmark functions
 ---
+{% include sidebar.html %}
 <div class="home">
 
   <h2>Non-Differentiable Functions</h2>

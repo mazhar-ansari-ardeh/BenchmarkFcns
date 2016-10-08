@@ -1,0 +1,42 @@
+<body onload="AddActiveClass()">
+
+<div id="mySidenav" class="sidenav">
+  <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+  <!-- <a href="#" class="activeable">About</a> -->
+  <a class="activeable" href="{{ 'fcns' | prepend:'/' | prepend: site.baseurl }}">All Functions</a>
+  <a class="activeable" href="{{ '1-dimensional' | prepend:'/' | prepend: site.baseurl }}">1 Dimensional</a>
+  <a class="activeable" href="{{ '2-dimensional' | prepend:'/' | prepend: site.baseurl }}">2 Dimensional</a>
+  <a class="activeable" href="{{ '3-dimensional' | prepend:'/' | prepend: site.baseurl }}">3 Dimensional</a>
+  <a class="activeable" href="{{ 'n-dimensional' | prepend:'/' | prepend: site.baseurl }}">n Dimensional</a>
+  <a class="activeable" href="{{ 'convex' | prepend:'/' | prepend: site.baseurl }}">Convex</a>
+  <a class="activeable" href="{{ 'non-convex' | prepend:'/' | prepend: site.baseurl }}">Non-convex</a>
+  <a class="activeable" href="{{ 'parametric' | prepend:'/' | prepend: site.baseurl }}">Parametric</a>
+  <a class="activeable" href="{{ 'Random' | prepend:'/' | prepend: site.baseurl }}">Random</a>
+  <a class="activeable" href="{{ 'non-separable' | prepend:'/' | prepend: site.baseurl }}">Non-separable</a>
+  <a class="activeable" href="{{ 'separable' | prepend:'/' | prepend: site.baseurl }}">Separable</a>
+  <a class="activeable" href="{{ 'unimodal' | prepend:'/' | prepend: site.baseurl }}">Unimodal</a>
+  <a class="activeable" href="{{ 'multimodal' | prepend:'/' | prepend: site.baseurl }}">Multimodal</a>
+  <a class="activeable" href="{{ 'differentiable' | prepend:'/' | prepend: site.baseurl }}">Differentiable</a>
+  <a class="activeable" href="{{ 'non-differentiable' | prepend:'/' | prepend: site.baseurl }}">Non-differentiable</a>
+</div>
+
+
+<script>
+function AddActiveClass() {
+    var x = document.getElementsByClassName("activeable");
+	for(i = 0; i < x.length; i++)
+	{
+		if(x[i].getAttribute("href") == window.location.pathname)
+			x[i].className = "active";
+	}
+}
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+     
+

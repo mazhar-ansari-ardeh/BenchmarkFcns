@@ -2,6 +2,7 @@
 layout: default
 title: Continuous benchmark functions
 ---
+{% include sidebar.html %}
 <div class="home">
 
   <h2>Continuous Functions</h2>

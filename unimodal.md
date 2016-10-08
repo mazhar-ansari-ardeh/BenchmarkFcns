@@ -2,6 +2,7 @@
 layout: default
 title: Unimodal benchmark functions
 ---
+{% include sidebar.html %}
 <div class="home">
 
   <h2>Unimodal Functions</h2>

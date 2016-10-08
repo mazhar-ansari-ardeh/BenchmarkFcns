@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Ackley Function
 categories: optimization, benchmark
-tags: n-dimensional continuous unimodal non-convex
+tags: n-dimensional continuous unimodal non-convex differentiable
 fname: ackleyfcn
 functionname: Ackley Function
 modal: unimodal

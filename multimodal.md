@@ -2,6 +2,7 @@
 layout: default
 title: Multimodal benchmark functions
 ---
+{% include sidebar.html %}
 <div class="home">
 
   <h2>Multimodal Functions</h2>
