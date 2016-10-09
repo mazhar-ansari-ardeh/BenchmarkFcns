@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Xin-She Yang N. 3 Function
 categories: optimization, benchmark
-tags: n-dimensional non-separable unimodal non-convex differentiable parameteric
+tags: n-dimensional non-separable unimodal non-convex differentiable parametric
 fname: xinsheyangn3fcn
 functionname: Xin-She Yang N. 3 Function
 modal: unimodal
