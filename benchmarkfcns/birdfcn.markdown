@@ -1,5 +1,6 @@
 ---
 layout: page
+author: 'Mazhar Ansari Ardeh'
 resource: true
 title: Bird Function
 categories: optimization, benchmark
@@ -12,6 +13,7 @@ separable: non-separable
 differentiable: differentiable
 convex: is not [convex](https://en.wikipedia.org/wiki/Convex_function)
 nocontour: Two
+description: Bird function is a test function for optimization algorithms. 
 ---
 <head>
 	<script type="text/x-mathjax-config">

@@ -7,6 +7,7 @@
 
 # Site settings
 title: BenchmarkFcns
+author: 'Mazhar Ansari Ardeh'
 email: mazhar.ansari.ardeh[at]gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Benchmarkfcns is a personal effort to provide a public repository of sources 
@@ -21,3 +22,5 @@ github_username:  mazhar-ansari-ardeh
 markdown: kramdown
 
 category-list: [optimization]
+
+gems: [jekyll-seo-tag]
