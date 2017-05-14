@@ -6,7 +6,7 @@ categories: optimization, benchmark
 tags: 2-dimensional continuous differentiable non-separable unimodal non-convex
 fname: threehumpcamelfcn
 functionname: Three-Hump Camel Function
-modal: unimodal
+modal: multimodal
 dimension: 2-dimensional
 differentiable: differentiable
 separable: non-separable
