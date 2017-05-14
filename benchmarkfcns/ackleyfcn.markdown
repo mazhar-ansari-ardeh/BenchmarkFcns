@@ -6,7 +6,7 @@ categories: optimization, benchmark
 tags: n-dimensional continuous unimodal non-convex differentiable
 fname: ackleyfcn
 functionname: Ackley Function
-modal: multi-modal
+modal: multimodal
 dimension: n-dimensional
 ---
 <head>
