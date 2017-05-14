@@ -39,7 +39,7 @@ The contour of the function:
 * The function is continuous.
 * The function is not [convex](https://en.wikipedia.org/wiki/Convex_function).
 * The function is defined on 2-dimensional space. 
-* The function is unimodal.
+* The function is multimodal.
 
 # Input Domain
 The function can be defined on any input domain but it is usually evaluated on $x_i \in [-5.2, 5.2]$ for $i = 1, 2$.
