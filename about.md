@@ -8,12 +8,13 @@ and documents for well-known optimization benchmark functions. The
 project is authored by Mazhar Ansari Ardeh and is hosted on Github at: [http://mazhar-ansari-ardeh.github.io/optimization/](http://mazhar-ansari-ardeh.github.io/optimization/).
 Please forward any comments to **mazhar.ansari.ardeh [at] gmail.com**.
 
-# Copyright
-The contents of this web site are published under the [Creative Commons Attribution-ShareAlike License 3.0](https://creativecommons.org/licenses/by-sa/3.0/us/).
-Source codes on this web site are published under the [MIT License](https://opensource.org/licenses/MIT).
-
 Mathematical formula are written in Latex and rendered by <a href="http://www.mathjax.org">
     <img title="Powered by MathJax"
     src="http://cdn.mathjax.org/mathjax/badge/mj_logo_60x12.png"
     border="0" alt="Powered by MathJax" /></a>. MathJax requires the Javascript functionality of browsers to be enabled.
 Most of the Latex formula were created with the free <a href="http://www.HostMath.com/" target="_blank">HostMath</a> online LaTeX formula editor.
+This website is created by [Jekyll](https://jekyllrb.com/) and is hosted on [Github](https://github.com).
+
+# Copyright
+The contents of this web site are published under the [Creative Commons Attribution-ShareAlike License 3.0](https://creativecommons.org/licenses/by-sa/3.0/us/).
+Source codes on this web site are published under the [MIT License](https://opensource.org/licenses/MIT).
