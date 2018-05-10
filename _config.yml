@@ -23,4 +23,4 @@ markdown: kramdown
 
 category-list: [optimization]
 
-gems: [jekyll-seo-tag]
+plugins: [jekyll-seo-tag]

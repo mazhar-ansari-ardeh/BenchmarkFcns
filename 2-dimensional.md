@@ -15,7 +15,7 @@ title: 2-dimensional benchmark functions
         <h3>
           <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
 		  <br />
-		{% assign tags = post.tags | split:&nbsp; %}
+		{% assign tags = post.tags | split:' ' %}
 		<ul>
 			{% for tag in tags %}
 			<code><a class="fcntag" href="{{ tag | prepend:'/' | prepend: site.baseurl }}">{{ tag}}</a></code>

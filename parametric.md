@@ -17,7 +17,7 @@ A list of functions that have parameters in their definition is presented below.
 			<h3>
 			  <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
 			  <br />
-			{% assign tags = post.tags | split:&nbsp; %}
+			{% assign tags = post.tags | split:' ' %}
 			<ul>
 				{% for tag in tags %}
 				<code><a class="fcntag" href="{{ tag | prepend:'/' | prepend: site.baseurl }}">{{ tag}}</a></code>

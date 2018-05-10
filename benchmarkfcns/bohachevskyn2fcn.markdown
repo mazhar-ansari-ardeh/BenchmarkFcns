@@ -42,7 +42,7 @@ $$f(x, y)=x^2 + 2y^2 -0.3cos(3\pi x)cos(4\pi y)+0.3$$
 
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_4.png){:class="fcnplot"}
 
-{%if page.nocontour == 'A' or page.nocontour == 'One' or page.nocontour == 'one'}%}
+{%if page.nocontour == 'A' or page.nocontour == 'One' or page.nocontour == 'one'%}
 A contour of the function is presented below:
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_contour.png){:class="fcnplot"}
 {%else%}

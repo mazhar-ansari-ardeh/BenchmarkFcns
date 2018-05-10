@@ -48,7 +48,7 @@ $$f(x, y) = -200e^{-0.2\sqrt{x^2 + y^2}} + 5e^{cos(3x) + sin(3y)}$$
 
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_8.png){:class="fcnplot"}
 
-{%if page.nocontour == 'A' or page.nocontour == 'One' or page.nocontour == 'one'}%}
+{%if page.nocontour == 'A' or page.nocontour == 'One' or page.nocontour == 'one'%}
 A contour of the function is presented below:
 {%else%}
 {{page.nocontour}} contours of the function are presented below:
