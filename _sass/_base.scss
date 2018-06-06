@@ -299,6 +299,15 @@ body {
 	.site-footer {padding-left: 200px;}
 }
 
+
+@media screen and (max-width: 450px)
+{
+	.home {padding-left: 0px;}
+	.sidenav {display: none;}
+	.site-title {padding-left: 0px;}
+	.site-footer {padding-left: 0px;}
+}
+
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
