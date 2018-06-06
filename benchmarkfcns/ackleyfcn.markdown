@@ -16,6 +16,14 @@ dimension: n-dimensional
 	<script type="text/javascript" async
 	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
 	</script>
+	
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-9102949842529833",
+            enable_page_level_ads: true
+        });
+    </script>
 </head>
 
 
