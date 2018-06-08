@@ -9,23 +9,6 @@ functionname: Ackley Function
 modal: multimodal
 dimension: n-dimensional
 ---
-<head>
-	<script type="text/x-mathjax-config">
-	  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-	</script>
-	<script type="text/javascript" async
-	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
-	</script>
-	
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-9102949842529833",
-            enable_page_level_ads: true
-        });
-    </script>
-</head>
-
 
 # Mathematical Definition
 
@@ -56,6 +39,17 @@ The function can be defined on any input domain but it is usually evaluated on $
 
 # Global Minima
 The function has one global minimum at: $f(\textbf{x}^{\ast})=0$ at $\textbf{x}^{\ast} = (0, ..., 0)$.
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-9102949842529833"
+     data-ad-slot="7724968666"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 # Implementation
 An implementation of the **{{page.functionname}}** with MATLAB is provided below. 

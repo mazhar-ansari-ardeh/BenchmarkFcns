@@ -15,15 +15,6 @@ convex: is not [convex](https://en.wikipedia.org/wiki/Convex_function)
 nocontour: One
 description: Bohachevskyn N. 2 function is a 2-dimensional, non-separable, multimodal, non-convex, differentiable, continuous, test function for optimization algorithms. 
 ---
-<head>
-	<script type="text/x-mathjax-config">
-	  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-	</script>
-	<script type="text/javascript" async
-	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
-	</script>
-</head>
-
 
 # Mathematical Definition
 
