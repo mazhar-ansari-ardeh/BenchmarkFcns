@@ -1,2 +1,2 @@
-# optimization
-A small collection of optimization algorithms, currently for MATLAB&trade;.
+# BenchmarkFcns
+Benchmarkfcns is an effort to provide a public and free repository of sources and documents for well-known benchmark optimization functions. 
