@@ -25,12 +25,10 @@ In the above equation, the values $a$, $b$ and $c$ are constants and are usually
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_2.png){:class="fcnplot"}
 
 
-{% include adsense.markdown %}
-
-
 The contour of the function is as presented below:
 
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_contour.png){:class="fcnplot"}
+
 
 # Description and Features
 * The function is continuous.
