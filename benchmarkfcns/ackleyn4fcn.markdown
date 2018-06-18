@@ -29,7 +29,7 @@ $$f(\textbf{x})=\sum_{i=1}^{n-1}\left( e^{-0.2}\sqrt{x_i^2+x_{i+1}^2} + 3\left( 
 # Plots
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}.png){:class="fcnplot"}
 
-{% for i in (2..noplots) %}
+{% for i in (2..page.noplots) %}
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_{{i}}.png){:class="fcnplot"}
 {% endfor %}
 
