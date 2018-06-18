@@ -12,6 +12,7 @@ dimension: n-dimensional
 separable: non-separable
 differentiable: differentiable
 convex: is not [convex](https://en.wikipedia.org/wiki/Convex_function)
+noplots: 8
 nocontour: Two
 description: Ackley N. 4 function is a mathematical function for testing optimization algorithms. 
 ---
@@ -28,19 +29,10 @@ $$f(\textbf{x})=\sum_{i=1}^{n-1}\left( e^{-0.2}\sqrt{x_i^2+x_{i+1}^2} + 3\left( 
 # Plots
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}.png){:class="fcnplot"}
 
-![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_2.png){:class="fcnplot"}
+{% for i in (2..noplots) %}
+![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_{{i}}.png){:class="fcnplot"}
+{% endfor %}
 
-![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_3.png){:class="fcnplot"}
-
-![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_4.png){:class="fcnplot"}
-
-![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_5.png){:class="fcnplot"}
-
-![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_6.png){:class="fcnplot"}
-
-![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_7.png){:class="fcnplot"}
-
-![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_8.png){:class="fcnplot"}
 
 {%if page.nocontour == 'A' or page.nocontour == 'One' or page.nocontour == 'one'%}
 A contour of the function is presented below:
