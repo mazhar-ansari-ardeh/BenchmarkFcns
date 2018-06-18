@@ -54,6 +54,12 @@ The function can be represented in Latex as follows:
 f(\textbf{x}) = f(x_1, ..., x_n)= -a.exp(-b\sqrt{\frac{1}{n}\sum_{i=1}^{n}x_i^2})-exp(\frac{1}{d}\sum_{i=1}^{n}cos(cx_i))+ a + exp(1)
 {% endhighlight %}
 
+# See also: 
+* [Ackley N. 2 Function]({{site.baseurl}}/benchmarkfcns/ackleyn2fcn)
+* [Ackley N. 3 Function]({{site.baseurl}}/benchmarkfcns/ackleyn3fcn)
+* [Ackley N. 4 Function]({{site.baseurl}}/benchmarkfcns/ackleyn4fcn)
+
+
 # References:
 * [http://www.sfu.ca/~ssurjano/ackley.html](http://www.sfu.ca/~ssurjano/ackley.html)
 * [https://en.wikipedia.org/wiki/Test_functions_for_optimization](https://en.wikipedia.org/wiki/Test_functions_for_optimization)

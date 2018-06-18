@@ -60,6 +60,8 @@ f(x, y) = -200e^{-0.2\sqrt{x^2 + y^2}}
 
 # See Also:
 * [Ackley Function]({{site.baseurl}}/benchmarkfcns/ackleyfcn)
+* [Ackley N. 3 Function]({{site.baseurl}}/benchmarkfcns/ackleyn3fcn)
+* [Ackley N. 4 Function]({{site.baseurl}}/benchmarkfcns/ackleyn4fcn)
 
 # References:
 * Momin Jamil and Xin-She Yang, A literature survey of benchmark functions for global optimization problems, Int. Journal of Mathematical Modelling 
