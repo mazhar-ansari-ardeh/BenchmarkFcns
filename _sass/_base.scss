@@ -241,6 +241,22 @@ body {
 	border-top: 5px solid $grey-color-dark;
 }
 
+
+.adsbygoogle {
+    height: 100%;
+    width: 18%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    transition: 0.5s;
+    padding-top: 20px;
+}
+
+
 .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -271,6 +287,7 @@ body {
 {
 	.home {padding-left: 100px;}
 	.sidenav {width: 200px;}
+	.adsbygoogle {width: 200px;}
 	.site-title {padding-left: 100px;}
 	.site-footer {padding-left: 100px;}
 }
@@ -279,6 +296,7 @@ body {
 {
 	.home {padding-left: 150px;}
 	.sidenav {width: 200px;}
+	.adsbygoogle {width: 200px;}
 	.site-title {padding-left: 150px;}
 	.site-footer {padding-left: 170px;}
 }
@@ -287,6 +305,7 @@ body {
 {
 	.home {padding-left: 175px;}
 	.sidenav {width: 200px;}
+	.adsbygoogle {width: 200px;}
 	.site-title {padding-left: 175px;}
 	.site-footer {padding-left: 175px;}
 }
@@ -295,6 +314,7 @@ body {
 {
 	.home {padding-left: 200px;}
 	.sidenav {width: 200px;}
+	.adsbygoogle {width: 200px;}
 	.site-title {padding-left: 200px;}
 	.site-footer {padding-left: 200px;}
 }
@@ -304,6 +324,7 @@ body {
 {
 	.home {padding-left: 0px;}
 	.sidenav {display: none;}
+	.adsbygoogle {width: none;}
 	.site-title {padding-left: 0px;}
 	.site-footer {padding-left: 0px;}
 }
