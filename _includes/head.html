@@ -45,6 +45,28 @@
     </script>
     -->
     
+    <script>
+        function AddActiveClass() 
+        {
+            var x = document.getElementsByClassName("activeable");
+            for(i = 0; i < x.length; i++)
+            {
+                if(x[i].getAttribute("href") == window.location.pathname)
+                    x[i].className = "active";
+            }
+        }
+        
+        function openNav() 
+        {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() 
+        {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+    
     {% seo %}
     
 </head>

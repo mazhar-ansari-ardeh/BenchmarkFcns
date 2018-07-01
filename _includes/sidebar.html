@@ -1,5 +1,3 @@
-<body onload="AddActiveClass()">
-
 <div id="mySidenav" class="sidenav">
   <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
   <!-- <a href="#" class="activeable">About</a> -->
@@ -20,23 +18,8 @@
   <a class="activeable" href="{{ 'non-differentiable' | prepend:'/' | prepend: site.baseurl }}">Non-differentiable</a>
 </div>
 
-
-<script>
-function AddActiveClass() {
-    var x = document.getElementsByClassName("activeable");
-	for(i = 0; i < x.length; i++)
-	{
-		if(x[i].getAttribute("href") == window.location.pathname)
-			x[i].className = "active";
-	}
-}
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
+<script type="text/javascript">
+    AddActiveClass()
 </script>
      
 
