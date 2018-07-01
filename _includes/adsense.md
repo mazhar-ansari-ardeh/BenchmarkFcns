@@ -16,7 +16,7 @@
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- MyVerticalAd -->
 <ins class="adsbygoogle"
-     style="display:inline-block;width:300px;height:100%"
+     style="display:inline-block;width:300px"
      data-ad-client="ca-pub-9102949842529833"
      data-ad-slot="5254842676"></ins>
 <script>
