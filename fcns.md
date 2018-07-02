@@ -3,6 +3,7 @@ layout: default
 title: Benchmark functions
 ---
 {% include sidebar.html %}
+{% include adsense.md %}
 <div class="home">
 
   <h2>Implemented Functions</h2>
