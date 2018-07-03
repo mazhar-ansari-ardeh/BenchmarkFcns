@@ -3,6 +3,7 @@ layout: default
 title: Random benchmark functions
 ---
 {% include sidebar.html %}
+{% include adsense.md %}
 <div class="home">
 
   <h2>Random Functions</h2>
