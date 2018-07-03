@@ -3,6 +3,7 @@ layout: default
 title: Separable benchmark functions
 ---
 {% include sidebar.html %}
+{% include adsense.md %}
 <div class="home">
 
   <h2>Separable Functions</h2>
