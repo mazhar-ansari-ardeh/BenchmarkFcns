@@ -3,6 +3,7 @@ layout: default
 title: Parametric benchmark functions
 ---
 {% include sidebar.html %}
+{% include adsense.md %}
 <div class="home">
 
 <h2>Parametric Functions</h2>
