@@ -3,6 +3,7 @@ layout: default
 title: Non-Separable benchmark functions
 ---
 {% include sidebar.html %}
+{% include adsense.md %}
 <div class="home">
 
   <h2>Non-separable Functions</h2>
