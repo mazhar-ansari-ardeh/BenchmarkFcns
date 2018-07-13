@@ -14,7 +14,7 @@ dimension: n-dimensional
 
 {%raw%}
 
-$$f(\textbf{x}) = f(x_1, ..., x_n)= -a.exp(-b\sqrt{\frac{1}{n}\sum_{i=1}^{n}x_i^2})-exp(\frac{1}{d}\sum_{i=1}^{n}cos(cx_i))+ a + exp(1)$$
+$$f(\textbf{x}) = f(x_1, ..., x_n)= -a.exp(-b\sqrt{\frac{1}{n}\sum_{i=1}^{n}x_i^2})-exp(\frac{1}{n}\sum_{i=1}^{n}cos(cx_i))+ a + exp(1)$$
 
 {%endraw%}
 In the above equation, the values $a$, $b$ and $c$ are constants and are usually chosen as $a=20$, $b=0.2$ and $c=2\pi$.
@@ -51,7 +51,7 @@ An implementation of the **{{page.functionname}}** with MATLAB is provided below
 
 The function can be represented in Latex as follows:
 {% highlight latex%}
-f(\textbf{x}) = f(x_1, ..., x_n)= -a.exp(-b\sqrt{\frac{1}{n}\sum_{i=1}^{n}x_i^2})-exp(\frac{1}{d}\sum_{i=1}^{n}cos(cx_i))+ a + exp(1)
+f(\textbf{x}) = f(x_1, ..., x_n)= -a.exp(-b\sqrt{\frac{1}{n}\sum_{i=1}^{n}x_i^2})-exp(\frac{1}{n}\sum_{i=1}^{n}cos(cx_i))+ a + exp(1)
 {% endhighlight %}
 
 # See also: 
