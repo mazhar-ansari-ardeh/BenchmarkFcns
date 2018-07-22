@@ -1,7 +1,7 @@
 ---
 layout: page
 plotting: true
-title: SurfFcn
+title: Surf Function
 categories: optimization, benchmark, plotting
 tags: plotting
 fname: surffcnfcn
