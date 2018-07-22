@@ -6,7 +6,8 @@ title: Benchmark functions
 {% include adsense.md %}
 <div class="home">
 
-  ## Plotting Functions
+  <h2> Plotting Functions </h2>
+  
   <ol>
 	{% for post in site.pages %}
 	{% if post.plotting == true %}
@@ -26,7 +27,7 @@ title: Benchmark functions
     {% endfor %}
   </ol>
   
-  <h2>Implemented Functions</h2>
+  <h2>Benchmark Functions</h2>
 
   <ol >
     {% for post in site.pages %}
