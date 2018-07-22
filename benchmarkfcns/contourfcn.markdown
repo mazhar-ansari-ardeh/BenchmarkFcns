@@ -1,7 +1,7 @@
 ---
 layout: page
 plotting: true
-title: CoutourFunction
+title: ContourFunction
 categories: optimization, benchmark, plotting
 tags: plotting 
 fname: contourfcn
