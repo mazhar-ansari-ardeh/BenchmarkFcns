@@ -34,11 +34,13 @@ if `USE_COLORBAR` is true, a color bar will also be drawn.
 `AXIS`, `CAXIS`, `COLORMAP`, `HOLD`, `SHADING`, `HIDDEN` and `VIEW` set figure,
 axes, and surface properties which affect the display of the mesh.
 
-Example: 
+# Example
 {%highlight MATLAB%}
   x = -10:0.01:10;
   y = x; 
   meshfcn(@ackleyfcn, x, y, 'x_1', 'x_2', 'z', true)
 {% endhighlight %}
 
-See also: contourfcn, surffcn
+# See also
+* [SurfFcn]({{site.baseurl}}/benchmarkfcns/surffcn)
+* [ContourFcn]({{site.baseurl}}/benchmarkfcns/contourfcn)
