@@ -1,7 +1,7 @@
 ---
 layout: page
 plotting: true
-title: MeshFcn
+title: Mesh Function
 categories: optimization, benchmark, plotting
 tags: plotting
 fname: meshfcn
