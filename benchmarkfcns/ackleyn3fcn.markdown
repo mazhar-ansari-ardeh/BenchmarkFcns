@@ -60,6 +60,8 @@ The function can be defined on any input domain but it is usually evaluated on $
 # Global Minima
 The function has two global minima at $f(\textbf{x}^{\ast})\approx -195.629028238419$ located at $\mathbf{x^\ast}=(\pm0.682584587365898, -0.36075325513719)$.
 
+**Note:** Minima values are obtained with Genetic Algorithm and may not be accurate. 
+
 # Implementation
 An implementation of the **{{page.functionname}}** with `MATLAB` is provided below. 
 
