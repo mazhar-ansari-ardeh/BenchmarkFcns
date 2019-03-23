@@ -11,7 +11,7 @@ dimension: 2-dimensional
 separable: non-separable
 differentiable: differentiable
 convex: is not [convex](https://en.wikipedia.org/wiki/Convex_function)
-nocontour: Two
+nocontour: One
 ---
 
 # Mathematical Definition
@@ -29,7 +29,6 @@ $$f(x, y) = (x + 10)^2 + (y + 10)^2 + e^{-x^2 - y^2}$$
 
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_3.png){:class="fcnplot"}
 
-![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_4.png){:class="fcnplot"}
 
 {%if page.nocontour == 'A' or page.nocontour == 'One' or page.nocontour == 'one'%}
 A contour of the function is presented below:
