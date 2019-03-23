@@ -51,7 +51,7 @@ A contour of the function is presented below:
 The function can be defined on any input domain but it is usually evaluated on $x_i \in [-20, 0]$ for $i=1, 2$.
 
 # Global Minima
-The function has one global minimum at $f(\textbf{x}^{\ast})\approx e^{-200}$ located at $\mathbf{x^\ast}=(-10, -10)$.
+The function has one global minimum at $f(\textbf{x}^{\ast})= e^{-200}$ located at $\mathbf{x^\ast}=(-10, -10)$.
 
 # Implementation
 An implementation of the **{{page.functionname}}** with `MATLAB` is provided below. 
