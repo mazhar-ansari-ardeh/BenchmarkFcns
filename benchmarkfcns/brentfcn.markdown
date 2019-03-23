@@ -10,7 +10,7 @@ modal: unimodal
 dimension: 2-dimensional
 separable: non-separable
 differentiable: differentiable
-convex: is not [convex](https://en.wikipedia.org/wiki/Convex_function)
+convex: is [convex](https://en.wikipedia.org/wiki/Convex_function)
 nocontour: One
 ---
 
