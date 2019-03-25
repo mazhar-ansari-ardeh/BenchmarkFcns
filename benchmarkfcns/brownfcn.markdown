@@ -18,7 +18,7 @@ nocontour: Two
 
 {%raw%}
 
-$$f(\textbf{x}) = \sum_{i=1}^{n-1}(x_i^2)^(x_{i+1}^{2}+1)+(x_{i+1}^2)^(x_{i}^{2}+1)$$
+$$f(\textbf{x}) = \sum_{i=1}^{n-1}(x_i^2)^{(x_{i+1}^{2}+1)}+(x_{i+1}^2)^{(x_{i}^{2}+1)}$$
 
 {%endraw%}
 
@@ -28,6 +28,14 @@ $$f(\textbf{x}) = \sum_{i=1}^{n-1}(x_i^2)^(x_{i+1}^{2}+1)+(x_{i+1}^2)^(x_{i}^{2}
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_2.png){:class="fcnplot"}
 
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_3.png){:class="fcnplot"}
+
+
+![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_4.png){:class="fcnplot"}
+
+![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_5.png){:class="fcnplot"}
+
+
+![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_6.png){:class="fcnplot"}
 
 
 {%if page.nocontour == 'A' or page.nocontour == 'One' or page.nocontour == 'one'%}
@@ -48,10 +56,10 @@ A contour of the function is presented below:
 * The function is {{page.differentiable}}.
 
 # Input Domain
-The function can be defined on any input domain but it is usually evaluated on $x_i \in [-20, 0]$ for $i=1, 2$.
+The function can be defined on any input domain but it is usually evaluated on $x_i \in [-1, 4]$ for $i=1, ..., n$.
 
 # Global Minima
-The function has one global minimum at $f(\textbf{x}^{\ast})= e^{-200}$ located at $\mathbf{x^\ast}=(-10, -10)$.
+The function has one global minimum at $f(\textbf{x}^{\ast})= 0$ located at $\mathbf{x^\ast}=\textbf{0}$.
 
 # Implementation
 An implementation of the **{{page.functionname}}** with `MATLAB` is provided below. 
@@ -62,7 +70,7 @@ An implementation of the **{{page.functionname}}** with `MATLAB` is provided bel
 
 The function can be represented in Latex as follows:
 {% highlight latex%}
-f(x, y) = (x + 10)^2 + (y + 10)^2 + e^{-x^2 - y^2}
+f(\textbf{x}) = \sum_{i=1}^{n-1}(x_i^2)^{(x_{i+1}^{2}+1)}+(x_{i+1}^2)^{(x_{i}^{2}+1)}
 {% endhighlight %}
 
 
