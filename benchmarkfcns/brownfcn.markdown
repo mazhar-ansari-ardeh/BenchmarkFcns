@@ -1,24 +1,24 @@
 ---
 layout: page
 resource: true
-title: Brent Function
+title: Brown Function
 categories: optimization, benchmark
-tags: 2-dimensional non-separable unimodal convex differentiable
-fname: brentfcn
-functionname: Brent Function
+tags: n-dimensional non-separable unimodal convex differentiable
+fname: brwonfcn
+functionname: Brown Function
 modal: unimodal
-dimension: 2-dimensional
+dimension: n-dimensional
 separable: non-separable
 differentiable: differentiable
 convex: is [convex](https://en.wikipedia.org/wiki/Convex_function)
-nocontour: One
+nocontour: Two
 ---
 
 # Mathematical Definition
 
 {%raw%}
 
-$$f(x, y) = (x + 10)^2 + (y + 10)^2 + e^{-x^2 - y^2}$$
+$$f(\textbf{x}) = \sum_{i=1}^{n-1}$$
 
 {%endraw%}
 
