@@ -4,7 +4,7 @@ resource: true
 title: Brown Function
 categories: optimization, benchmark
 tags: n-dimensional non-separable unimodal convex differentiable
-fname: brwonfcn
+fname: brownfcn
 functionname: Brown Function
 modal: unimodal
 dimension: n-dimensional
@@ -18,7 +18,7 @@ nocontour: Two
 
 {%raw%}
 
-$$f(\textbf{x}) = \sum_{i=1}^{n-1}$$
+$$f(\textbf{x}) = \sum_{i=1}^{n-1}(x_i^2)^(x_{i+1}^{2}+1)+(x_{i+1}^2)^(x_{i}^{2}+1)$$
 
 {%endraw%}
 
