@@ -8,6 +8,7 @@ fname: ackleyfcn
 functionname: Ackley Function
 modal: multimodal
 dimension: n-dimensional
+excerpt: Ackley function is a multimodal, n-dimensional non-convex mathematical function
 ---
 
 # Mathematical Definition
