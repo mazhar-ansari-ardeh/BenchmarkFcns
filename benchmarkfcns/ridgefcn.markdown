@@ -23,7 +23,7 @@ $$f(\textbf{x}) = x_1 + d\left(\sum_{i=2}^{n}x_i^2\right)^\alpha$$
 
 {%endraw%}
 
-In this formula, $$d$$ and $$\alpha$$ are constants and are usually set to $$d = 1, \lpha=0.5$$.
+In this formula, $$d$$ and $$\alpha$$ are constants and are usually set to $$d = 1, \alpha=0.5$$.
 
 # Plots
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}.png){:class="fcnplot"}
@@ -51,10 +51,10 @@ A contour of the function is presented below:
 * The function is {{page.differentiable}}.
 
 # Input Domain
-The function can be defined on any input domain but it is usually evaluated on $x_i \in [-20, 0]$ for $i=1, 2$.
+The function can be defined on any input domain. It is evaluated on $x_i \in [-5, 5]$ for $i=1, 2$.
 
 # Global Minima
-The function has one global minimum at $f(\textbf{x}^{\ast})= e^{-200}$ located at $\mathbf{x^\ast}=(-10, -10)$.
+The global minimum of the function depends on the hypercube it is defined on. On the hypercube $$[-\gamma, \gamma]^n$$, $f(\textbf{x}^{\ast})= -\gamma$ located at $\mathbf{x^\ast}=(-\gamma, 0, ..., 0)$.
 
 # Implementation
 An implementation of the **{{page.functionname}}** with `MATLAB` is provided below. 
@@ -71,3 +71,5 @@ f(\textbf{x}) = x_1 + d\left(\sum_{i=2}^{n}x_i^2\right)^\alpha
 
 # References:
 * Beyer HG., Finck S. (2012) HappyCat – A Simple Function Class Where Well-Known Direct Search Algorithms Do Fail. In: Coello C.A.C., Cutello V., Deb K., Forrest S., Nicosia G., Pavone M. (eds) Parallel Problem Solving from Nature - PPSN XII. PPSN 2012. Lecture Notes in Computer Science, vol 7491. Springer, Berlin, Heidelberg, [https://doi.org/10.1007/978-3-642-32937-1_37](https://doi.org/10.1007/978-3-642-32937-1_37)
+* Oyman, A.I.: Convergence Behavior of Evolution Strategies on Ridge Functions. Ph.D. Thesis, University of Dortmund, Department of Computer Science (1999)
+

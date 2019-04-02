@@ -3,8 +3,9 @@ layout: page
 resource: true
 title: Sphere Function
 categories: optimization, benchmark
-tags: continuous convex differentiable unimodal separable
+tags: n-dimensional continuous convex differentiable unimodal separable
 fname: spherefcn
+excerpt: Sphere function is a unimodal, n-dimensional convex mathematical function widely used for testing optimization algorithms
 ---
 
 
