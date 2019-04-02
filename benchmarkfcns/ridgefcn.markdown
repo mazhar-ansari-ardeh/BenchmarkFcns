@@ -26,11 +26,23 @@ $$f(\textbf{x}) = x_1 + d\left(\sum_{i=2}^{n}x_i^2\right)^\alpha$$
 In this formula, $$d$$ and $$\alpha$$ are constants and are usually set to $$d = 1, \alpha=0.5$$.
 
 # Plots
+
+For $$d=2, \alpha=0.1$$, the plots are:
+
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}.png){:class="fcnplot"}
 
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_2.png){:class="fcnplot"}
 
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_3.png){:class="fcnplot"}
+
+For $$d=2, \alpha=0.2$$, the plots are:
+
+![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_4.png){:class="fcnplot"}
+
+![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_5.png){:class="fcnplot"}
+
+![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_6.png){:class="fcnplot"}
+
 
 
 {%if page.nocontour == 'A' or page.nocontour == 'One' or page.nocontour == 'one'%}
@@ -38,8 +50,11 @@ A contour of the function is presented below:
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_contour.png){:class="fcnplot"}
 {%else%}
 {{page.nocontour}} contours of the function are presented below:
+For $$d=2, \alpha=0.1$$, the function contour is:
 
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_contour.png){:class="fcnplot"}
+
+For $$d=2, \alpha=0.2$$, the function contour is:
 
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_contour_2.png){:class="fcnplot"}
 {% endif %}

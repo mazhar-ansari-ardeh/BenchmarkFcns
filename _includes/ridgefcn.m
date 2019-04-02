@@ -5,7 +5,7 @@
 % corresponding row of X. 
 % SCORES = RIDGEFCN(X, D) specifies contribution coefficient of the sphere 
 % component of the function.
-% SCORES = RIDGEFCN(X, D, alpha) specifies power of the sphere component of 
+% SCORES = RIDGEFCN(X, D, APLPHA) specifies power of the sphere component of 
 % the function.
 % 
 % For more information please visit: 
