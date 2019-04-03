@@ -8,6 +8,7 @@ fname: gramacyleefcn
 functionname: Gramacy & Lee Function
 modal: unimodal
 dimension: 1-dimensional
+excerpt: The Gramacy and Lee function is a multimodal, 1-dimensional non-convex mathematical function widely used for testing optimization algorithms
 ---
 
 # Mathematical Definition

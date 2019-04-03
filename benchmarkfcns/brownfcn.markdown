@@ -12,6 +12,7 @@ separable: non-separable
 differentiable: differentiable
 convex: is [convex](https://en.wikipedia.org/wiki/Convex_function)
 nocontour: Two
+excerpt: The Brown function is a unimodal, n-dimensional convex mathematical function widely used for testing optimization algorithms
 ---
 
 # Mathematical Definition

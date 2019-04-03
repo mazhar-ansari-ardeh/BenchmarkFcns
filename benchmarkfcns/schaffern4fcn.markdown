@@ -11,6 +11,7 @@ dimension: 2-dimensional
 differentiable: differentiable
 separable: not separable
 convex: not [convex](https://en.wikipedia.org/wiki/Convex_function)
+excerpt: The Schaffer N. 4 function is a unimodal, 2-dimensional non-convex mathematical function widely used for testing optimization algorithms
 ---
 
 # Mathematical Definition

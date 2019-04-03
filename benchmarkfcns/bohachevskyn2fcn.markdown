@@ -14,6 +14,7 @@ differentiable: differentiable
 convex: is not [convex](https://en.wikipedia.org/wiki/Convex_function)
 nocontour: One
 description: Bohachevskyn N. 2 function is a 2-dimensional, non-separable, multimodal, non-convex, differentiable, continuous, test function for optimization algorithms. 
+excerpt: The Bohachevsky N. 2 function is a multimodal, 2-dimensional non-convex mathematical function widely used for testing optimization algorithms
 ---
 
 # Mathematical Definition

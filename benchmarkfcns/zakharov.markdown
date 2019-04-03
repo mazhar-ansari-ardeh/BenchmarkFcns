@@ -6,6 +6,7 @@ categories: optimization, benchmark
 tags: continuous convex n-dimensional unimodal
 fname: zakharovfcn
 functionname: Zakharov Function
+excerpt: The Zakharov function is a unimodal, n-dimensional convex mathematical function widely used for testing optimization algorithms
 ---
 
 # Mathematical Definition

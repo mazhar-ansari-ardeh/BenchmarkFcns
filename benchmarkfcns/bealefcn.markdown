@@ -8,6 +8,7 @@ fname: bealefcn
 functionname: Beale Function
 modal: multimodal
 dimension: 2-dimensional
+excerpt: The Beale function is a multimodal, 2-dimensional non-convex mathematical function widely used for testing optimization algorithms
 ---
 
 # Mathematical Definition

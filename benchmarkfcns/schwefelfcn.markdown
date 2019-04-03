@@ -6,6 +6,7 @@ categories: optimization, benchmark
 tags: continuous multimodal non-convex non-differentiable non-separable
 fname: schwefelfcn
 functionname: Schwefel Function
+excerpt: The Schwefel function is a multimodal, n-dimensional non-convex mathematical function widely used for testing optimization algorithms
 ---
 
 # Mathematical Definition

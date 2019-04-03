@@ -11,6 +11,7 @@ dimension: n-dimensional
 separable: non-separable
 differentiable: differentiable
 convex: is [convex](https://en.wikipedia.org/wiki/Convex_function)
+excerpt: The Xin-She Yang N. 3 function is a unimodal, n-dimensional convex mathematical function widely used for testing optimization algorithms
 ---
 
 

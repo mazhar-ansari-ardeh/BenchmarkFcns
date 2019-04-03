@@ -6,6 +6,7 @@ categories: optimization, benchmark
 tags: 2-dimensional continuous multimodal non-convex
 fname: himmelblaufcn
 functionname: Himmelblau Function
+excerpt: The Himmelblau function is a multimodal, 2-dimensional non-convex mathematical function widely used for testing optimization algorithms
 ---
 
 # Mathematical Definition

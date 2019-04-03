@@ -9,6 +9,7 @@ functionname: Cross-in-Tray Function
 modal: multimodal
 dimension: 2-dimensional
 differentiable: non-differentiable
+excerpt: The Cross-in-Tray function is a multimodal, 2-dimensional non-convex mathematical function widely used for testing optimization algorithms
 ---
 
 # Mathematical Definition

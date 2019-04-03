@@ -11,6 +11,7 @@ dimension: n-dimensional
 differentiable: differentiable
 separable: separable
 convex: not [convex](https://en.wikipedia.org/wiki/Convex_function)
+excerpt: The Quartic function is a multimodal, n-dimensional non-convex mathematical function widely used for testing optimization algorithms
 ---
 
 # Mathematical Definition

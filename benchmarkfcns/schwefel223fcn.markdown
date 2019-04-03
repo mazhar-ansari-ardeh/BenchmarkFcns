@@ -11,6 +11,7 @@ dimension: n-dimensional
 differentiable: non-differentiable
 separable: separable
 convex: is [convex](https://en.wikipedia.org/wiki/Convex_function)
+excerpt: The Schwefel 2.23 function is a unimodal, n-dimensional convex mathematical function widely used for testing optimization algorithms
 ---
 
 

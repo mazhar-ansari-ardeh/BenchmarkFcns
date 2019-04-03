@@ -11,6 +11,7 @@ dimension: 2-dimensional
 separable: non-separable
 differentiable: non-differentiable
 convex: is not [convex](https://en.wikipedia.org/wiki/Convex_function)
+excerpt: The Bartel Conn function is a multimodal, 2-dimensional non-convex mathematical function widely used for testing optimization algorithms
 ---
 
 # Mathematical Definition

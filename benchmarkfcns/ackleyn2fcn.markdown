@@ -11,6 +11,7 @@ dimension: 2-dimensional
 separable: non-separable
 differentiable: differentiable
 convex: is [convex](https://en.wikipedia.org/wiki/Convex_function)
+excerpt: The Ackley N. 2 function is a unimodal, 2-dimensional convex mathematical function widely used for testing optimization algorithms
 ---
 
 # Mathematical Definition

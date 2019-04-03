@@ -9,6 +9,7 @@ functionname: McCormick Function
 modal: multimodal
 dimension: 2-dimensional
 differentiable: differentiable
+excerpt: The McCormick function is a multimodal, 2-dimensional convex mathematical function widely used for testing optimization algorithms
 ---
 
 # Mathematical Definition

@@ -11,6 +11,7 @@ dimension: n-dimensional
 differentiable: differentiable
 separable: separable
 convex: is not [convex](https://en.wikipedia.org/wiki/Convex_function)
+excerpt: The Shubert 3 function is a multimodal, n-dimensional non-convex mathematical function widely used for testing optimization algorithms
 ---
 
 

@@ -6,6 +6,7 @@ categories: optimization, benchmark
 tags: 2-dimensional continuous convex unimodal
 fname: bohachevskyn1fcn
 functionname: Bohachevskyn N. 1 Function
+excerpt: The Bohachevsky N. 1 function is a multimodal, 2-dimensional convex mathematical function widely used for testing optimization algorithms
 ---
 
 # Mathematical Definition

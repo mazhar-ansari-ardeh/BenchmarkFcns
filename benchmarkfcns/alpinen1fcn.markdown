@@ -11,6 +11,7 @@ dimension: n-dimensional
 separable: non-separable
 differentiable: differentiable
 convex: is not [convex](https://en.wikipedia.org/wiki/Convex_function)
+excerpt: The Alpine function is a multimodal, n-dimensional non-convex mathematical function widely used for testing optimization algorithms
 ---
 
 # Mathematical Definition

@@ -11,6 +11,7 @@ dimension: 2-dimensional
 differentiable: differentiable
 separable: non-separable
 scalable: non-scalable
+excerpt: The Easom function is a multimodal, 2-dimensional non-convex mathematical function widely used for testing optimization algorithms
 ---
 
 # Mathematical Definition

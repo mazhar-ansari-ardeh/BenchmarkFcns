@@ -1,7 +1,7 @@
 ---
 layout: page
 resource: true
-title: Shubert 4 Function
+title: Shubert N. 4 Function
 categories: optimization, benchmark
 tags: n-dimensional continuous differentiable separable multimodal non-convex
 fname: shubert4fcn
@@ -11,6 +11,7 @@ dimension: n-dimensional
 differentiable: differentiable
 separable: separable
 convex: is not [convex](https://en.wikipedia.org/wiki/Convex_function)
+excerpt: The Shubert N. 4 function is a multimodal, 2-dimensional non-convex mathematical function widely used for testing optimization algorithms
 ---
 
 # Mathematical Definition

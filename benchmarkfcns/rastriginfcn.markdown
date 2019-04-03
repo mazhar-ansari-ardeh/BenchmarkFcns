@@ -10,6 +10,7 @@ modal: multimodal
 dimension: n-dimensional
 differentiable: differentiable
 separable: separable
+excerpt: The Rastrigin function is a multimodal, n-dimensional convex mathematical function widely used for testing optimization algorithms
 ---
 
 # Mathematical Definition

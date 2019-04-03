@@ -12,6 +12,7 @@ separable: non-separable
 differentiable: differentiable
 convex: is [convex](https://en.wikipedia.org/wiki/Convex_function)
 nocontour: One
+excerpt: The Brent function is a unimodal, 2-dimensional convex mathematical function widely used for testing optimization algorithms
 ---
 
 # Mathematical Definition

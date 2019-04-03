@@ -10,6 +10,7 @@ modal: multimodal
 dimension: 2-dimensional
 differentiable: non-differentiable
 separable: non-separable
+excerpt: The Holder-Table function is a multimodal, 2-dimensional non-convex mathematical function widely used for testing optimization algorithms
 ---
 
 # Mathematical Definition

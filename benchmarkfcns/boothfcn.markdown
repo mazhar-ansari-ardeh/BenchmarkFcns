@@ -10,6 +10,7 @@ modal: unimodal
 dimension: 2-dimensional
 differentiable: differentiable
 separable: non-separable
+excerpt: The Booth function is a unimodal, 2-dimensional convex mathematical function widely used for testing optimization algorithms
 ---
 
 # Mathematical Definition

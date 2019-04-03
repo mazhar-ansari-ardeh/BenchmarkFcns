@@ -6,6 +6,7 @@ categories: optimization, benchmark
 tags: n-dimensional continuous unimodal non-convex
 fname: griewankfcn
 functionname: Griewank Function
+excerpt: The Griewank function is a unimodal, n-dimensional non-convex mathematical function widely used for testing optimization algorithms
 ---
 
 # Mathematical Definition

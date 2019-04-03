@@ -11,6 +11,7 @@ dimension: n-dimensional
 differentiable: differentiable
 separable: separable
 convex: is [convex](https://en.wikipedia.org/wiki/Convex_function)
+excerpt: The Sum Squares function is a unimodal, n-dimensional convex mathematical function widely used for testing optimization algorithms
 ---
 
 

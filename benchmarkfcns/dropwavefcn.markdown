@@ -6,6 +6,7 @@ categories: optimization, benchmark
 tags: 2-dimensional continuous unimodal non-convex
 fname: dropwavefcn
 functionname: Drop-Wave Function
+excerpt: The Drop-Wave function is a unimodal, 2-dimensional non-convex mathematical function widely used for testing optimization algorithms
 ---
 
 # Mathematical Definition

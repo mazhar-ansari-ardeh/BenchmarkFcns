@@ -14,6 +14,7 @@ differentiable: differentiable
 convex: is not [convex](https://en.wikipedia.org/wiki/Convex_function)
 nocontour: Two
 description: Bird function is a test function for optimization algorithms. 
+excerpt: The Bird function is a multimodal, 2-dimensional non-convex mathematical function widely used for testing optimization algorithms
 ---
 
 

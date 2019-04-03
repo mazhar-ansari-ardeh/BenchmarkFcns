@@ -11,6 +11,7 @@ dimension: 2-dimensional
 differentiable: non-differentiable
 separable: non-separable
 scalable: non-scalable
+excerpt: The Bukin N. 6 function is a multimodal, 2-dimensional convex mathematical function widely used for testing optimization algorithms
 ---
 
 # Mathematical Definition

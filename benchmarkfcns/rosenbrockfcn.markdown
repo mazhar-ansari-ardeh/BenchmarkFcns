@@ -10,6 +10,7 @@ modal: multimodal
 dimension: n-dimensional
 differentiable: differentiable
 separable: non-separable
+excerpt: The Rosenbrock function is a multimodal, n-dimensional non-convex mathematical function widely used for testing optimization algorithms
 ---
 
 # Mathematical Definition

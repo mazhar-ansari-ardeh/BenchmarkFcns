@@ -11,6 +11,7 @@ dimension: 2-dimensional
 differentiable: differentiable
 separable: non-separable
 convex: not [convex](https://en.wikipedia.org/wiki/Convex_function)
+excerpt: The Keane function is a multimodal, 2-dimensional non-convex mathematical function widely used for testing optimization algorithms
 ---
 
 # Mathematical Definition

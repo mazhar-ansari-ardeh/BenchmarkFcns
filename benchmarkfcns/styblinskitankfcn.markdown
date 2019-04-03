@@ -8,6 +8,7 @@ fname: styblinskitankfcn
 functionname: Styblinski-Tank Function
 modal: multimodal
 dimension: n-dimensional
+excerpt: The Styblinski-Tank function is a multimodal, n-dimensional non-convex mathematical function widely used for testing optimization algorithms
 ---
 
 

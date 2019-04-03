@@ -11,6 +11,7 @@ dimension: 3-dimensional
 differentiable: differentiable
 separable: non-separable
 convex: is not [convex](https://en.wikipedia.org/wiki/Convex_function)
+excerpt: The Wolfe function is a multimodal, 3-dimensional non-convex mathematical function widely used for testing optimization algorithms
 ---
 
 

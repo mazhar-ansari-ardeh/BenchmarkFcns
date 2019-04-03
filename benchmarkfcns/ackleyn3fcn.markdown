@@ -12,6 +12,7 @@ separable: non-separable
 differentiable: differentiable
 convex: is not [convex](https://en.wikipedia.org/wiki/Convex_function)
 nocontour: Two
+excerpt: The Ackley N. 3 function is a multimodal, 2-dimensional non-convex mathematical function widely used for testing optimization algorithms
 ---
 
 # Mathematical Definition
