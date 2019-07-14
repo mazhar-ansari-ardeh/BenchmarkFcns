@@ -14,7 +14,6 @@ differentiable: differentiable
 convex: is not [convex](https://en.wikipedia.org/wiki/Convex_function)
 noplots: 8
 nocontour: Two
-description: Ackley N. 4 function is a mathematical function for testing optimization algorithms. 
 excerpt: The Ackley N. 4 function is a multimodal, n-dimensional non-convex mathematical function widely used for testing optimization algorithms
 ---
 
