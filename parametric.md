@@ -13,7 +13,7 @@ A list of functions that have parameters in their definition is presented below.
 <ol >
 {% for post in site.pages %}
 	{% if post.resource == true %}
-		{% if post.tags contains 'parameteric' %}
+		{% if post.tags contains 'parametric' %}
 			 <li>
 			<h3>
 			  <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
