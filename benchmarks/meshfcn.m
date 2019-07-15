@@ -34,7 +34,7 @@
 % Author: Mazhar Ansari Ardeh
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at
 % Google's e-mail service or feel free to kindly modify the repository.
-function [h] = meshfcn(fcn, x, y, x_label, y_label, z_label, plt_title, use_colorbar)
+function h = meshfcn(fcn, x, y, x_label, y_label, z_label, plt_title, use_colorbar)
     [X, Y] = meshgrid(x, y);
     Z = arrayfun(@(xx, yy)(fcn([xx, yy])), X, Y);
     [h] = mesh(X, Y, Z);
