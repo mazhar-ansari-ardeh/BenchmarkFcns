@@ -26,6 +26,8 @@ $$f(\textbf{x})=\left[\left(||\textbf{x}||^2 - n\right)^2\right]^\alpha + \frac{
 
 {%endraw%}
 
+In the above definition, $$\alpha$$ is a real-valued parameter. For the value of $$\alpha=\frac{1}{8}$$, the contour of the function resembles a smiling cat, leading to the naming of the function.
+
 # Plots
 For the value of $$\alpha=1/8$$, the function looks as: 
 
