@@ -35,7 +35,7 @@ For $$d=2, \alpha=0.1$$, the plots are:
 
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_3.png){:class="fcnplot"}
 
-For $$d=2, \alpha=0.2$$, the plots are:
+For $$d=2, \alpha=2$$, the plots are:
 
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_4.png){:class="fcnplot"}
 
@@ -54,7 +54,7 @@ For $$d=2, \alpha=0.1$$, the function contour is:
 
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_contour.png){:class="fcnplot"}
 
-For $$d=2, \alpha=0.2$$, the function contour is:
+For $$d=2, \alpha=2$$, the function contour is:
 
 ![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_contour_2.png){:class="fcnplot"}
 {% endif %}
@@ -82,6 +82,9 @@ The function can be represented in Latex as follows:
 {% highlight latex%}
 f(\textbf{x}) = x_1 + d\left(\sum_{i=2}^{n}x_i^2\right)^\alpha
 {% endhighlight %}
+
+# Acknowledgement: 
+* [Prof Hans-Georg Beyer](https://homepages.fhv.at/hgb/) kindly contributed the literature for this function. 
 
 
 # References:
