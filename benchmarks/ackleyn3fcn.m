@@ -14,6 +14,6 @@ function scores = ackleyn3fcn(x)
     X = x(:, 1);
     Y = x(:, 2);
     
-    scores = -200 * exp(-0.02 * sqrt((X .^ 2) + (Y .^ 2))) + ...
+    scores = -200 * exp(-0.2 * sqrt((X .^ 2) + (Y .^ 2))) + ...
              5 * exp(cos(3 * X) + sin(3 * Y));
 end
