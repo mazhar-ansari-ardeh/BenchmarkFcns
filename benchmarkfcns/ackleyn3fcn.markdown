@@ -76,7 +76,7 @@ f(x, y) = -200e^{-0.2\sqrt{x^2 + y^2}} + 5e^{cos(3x) + sin(3y)}
 {% endhighlight %}
 
 # Acknowledgement 
-Yann Chern Jou kindly helped with the correctness of this document and helped discover a bug in the code.
+[Yann Chern Jou](https://github.com/danney9512) kindly helped with the correctness of this document and helped discover a bug in the code.
 
 # See Also:
 * [Ackley Function]({{site.baseurl}}/benchmarkfcns/ackleyfcn)
