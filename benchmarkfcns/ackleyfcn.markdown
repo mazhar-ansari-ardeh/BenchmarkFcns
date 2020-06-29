@@ -55,6 +55,9 @@ The function can be represented in Latex as follows:
 f(\textbf{x}) = f(x_1, ..., x_n)= -a.exp(-b\sqrt{\frac{1}{n}\sum_{i=1}^{n}x_i^2})-exp(\frac{1}{n}\sum_{i=1}^{n}cos(cx_i))+ a + exp(1)
 {% endhighlight %}
 
+# Acknowledgement
+The author would like to thank [https://www.ivo-welch.info/](Prof. Ivo Welch) as he kindly contributed to the correctness of this document by pointing out some inconsistencies in the text.
+
 # See also: 
 * [Ackley N. 2 Function]({{site.baseurl}}/benchmarkfcns/ackleyn2fcn)
 * [Ackley N. 3 Function]({{site.baseurl}}/benchmarkfcns/ackleyn3fcn)
