@@ -56,7 +56,7 @@ f(\textbf{x}) = f(x_1, ..., x_n)= -a.exp(-b\sqrt{\frac{1}{n}\sum_{i=1}^{n}x_i^2}
 {% endhighlight %}
 
 # Acknowledgement
-The author would like to thank [https://www.ivo-welch.info/](Prof. Ivo Welch) as he kindly contributed to the correctness of this document by pointing out some inconsistencies in the text.
+The author would like to thank [Prof. Ivo Welch](https://www.ivo-welch.info/) for kindly contributing to the correctness of this document by pointing out some inconsistencies in the text.
 
 # See also: 
 * [Ackley N. 2 Function]({{site.baseurl}}/benchmarkfcns/ackleyn2fcn)
