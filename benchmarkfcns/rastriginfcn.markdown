@@ -17,7 +17,7 @@ excerpt: The Rastrigin function is a multimodal, n-dimensional convex mathematic
 
 {%raw%}
 
-$$f(x, y)=10n + \sum_{i=1}^{n}(x_i^2 - 10cos(2\pi x_i))$$
+$$f(\textbf{x})=f(x_1, ..., x_n)=10n + \sum_{i=1}^{n}(x_i^2 - 10cos(2\pi x_i))$$
 
 {%endraw%}
 
