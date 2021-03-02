@@ -18,7 +18,7 @@ excerpt: The Easom function is a multimodal, 2-dimensional non-convex mathematic
 
 {%raw%}
 
-$$f(x,y)=−cos(x_1)cos(x_2) exp(−(x − \pi)^2−(y − \pi)^2)$$
+$$f(x,y)=−cos(x)cos(y) exp(−(x − \pi)^2−(y − \pi)^2)$$
 
 {%endraw%}
 
@@ -48,7 +48,7 @@ The contour of the function is as presented below:
 The function can be defined on any input domain but it is usually evaluated on $x \in [-100, 100]$ and $y \in [-100, 100]$ .
 
 # Global Minima
-The function has four global minima $f(\textbf{x}^{\ast})=-1$ at $\textbf{x}^{\ast} = (\pi,\pi)$.
+The function has four global minima $f(x^{\ast}, y^{\ast})=-1$ at $(x^{\ast}, y^{\ast}) = (\pi,\pi)$.
 
 # Implementation
 An implementation of the **{{page.functionname}}** with MATLAB is provided below. 
