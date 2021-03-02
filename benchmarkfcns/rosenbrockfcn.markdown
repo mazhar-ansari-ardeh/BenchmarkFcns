@@ -17,7 +17,7 @@ excerpt: The Rosenbrock function is a multimodal, n-dimensional non-convex mathe
 
 {%raw%}
 
-$$f(x, y)=\sum_{i=1}^{n}[b (x_{i+1} - x_i^2)^ 2 + (a - x_i)^2]$$
+$$f(\textbf{x})=f(x_1, ..., x_n)=\sum_{i=1}^{n-1}[b (x_{i+1} - x_i^2)^ 2 + (a - x_i)^2]$$
 {%endraw%}
 In this formula, the parameters $a$ and $b$ are constants and are generally set to $a=1$ and $b=100$.
 
