@@ -59,8 +59,12 @@ An implementation of the **{{page.functionname}}** with MATLAB is provided below
 
 The function can be represented in Latex as follows:
 {% highlight latex%}
-f(x,y)=−cos(x_1)cos(x_2) exp(−(x − \pi)^2−(y − \pi)^2)
+f(x,y)=−cos(x)cos(y) exp(−(x − \pi)^2−(y − \pi)^2)
 {% endhighlight %}
+
+# Acknowledgement
+Tobias Völk kindly contributed to the correctness of this document. 
+
 
 # References:
 * [http://www.sfu.ca/~ssurjano/easom.html](http://www.sfu.ca/~ssurjano/easom.html)
