@@ -55,8 +55,11 @@ An implementation of the **{{page.functionname}}** with MATLAB is provided below
 
 The function can be represented in Latex as follows:
 {% highlight latex%}
-f(x, y)=\sum_{i=1}^{n}[b (x_{i+1} - x_i^2)^ 2 + (a - x_i)^2]
+f(\textbf{x})=f(x_1, ..., x_n)=\sum_{i=1}^{n-1}[b (x_{i+1} - x_i^2)^ 2 + (a - x_i)^2]
 {% endhighlight %}
+
+# Acknowledgement
+Tobias Völk kindly contributed to the correctness of this document. 
 
 # References:
 * [http://www.sfu.ca/~ssurjano/rosen.html](http://www.sfu.ca/~ssurjano/rosen.html)
