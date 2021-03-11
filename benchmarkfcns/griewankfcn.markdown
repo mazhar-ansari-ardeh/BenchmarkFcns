@@ -78,7 +78,7 @@ f(\textbf{x}) = f(x_1, ..., x_n) = 1 + \sum_{i=1}^{n} \frac{x_i^{2}}{4000} - \pr
 {% endhighlight %}
 
 # Acknowledgement
-[Prof Ender ÖZCAN](http://www.cs.nott.ac.uk/~pszeo/) kindly contributed the correctness of this document.
+[Prof Ender Özcan](http://www.cs.nott.ac.uk/~pszeo/) kindly contributed the correctness of this document.
 
 # References:
 * http://www.sfu.ca/~ssurjano
