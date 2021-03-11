@@ -60,8 +60,11 @@ An implementation of the **{{page.functionname}}** with MATLAB is provided below
 
 The function can be represented in Latex as follows:
 {% highlight latex%}
-f(x, y)=10n + \sum_{i=1}^{n}(x_i^2 - 10cos(2\pi x_i))
+f(\textbf{x})=f(x_1, ..., x_n)=10n + \sum_{i=1}^{n}(x_i^2 - 10cos(2\pi x_i))
 {% endhighlight %}
+
+# Acknowledgement
+Tobias Völk kindly contributed to the correctness of this document. 
 
 # References:
 * [http://www.sfu.ca/~ssurjano/rastr.html](http://www.sfu.ca/~ssurjano/rastr.html)
