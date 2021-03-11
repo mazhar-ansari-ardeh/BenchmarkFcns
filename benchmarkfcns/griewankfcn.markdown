@@ -77,5 +77,8 @@ The function can be represented in Latex as follows:
 f(\textbf{x}) = f(x_1, ..., x_n) = 1 + \sum_{i=1}^{n} \frac{x_i^{2}}{4000} - \prod_{i=1}^{n}cos(\frac{x_i}{\sqrt{i}})
 {% endhighlight %}
 
+# Acknowledgement
+[Prof Ender ÖZCAN](http://www.cs.nott.ac.uk/~pszeo/) kindly contributed the correctness of this document.
+
 # References:
 * http://www.sfu.ca/~ssurjano
