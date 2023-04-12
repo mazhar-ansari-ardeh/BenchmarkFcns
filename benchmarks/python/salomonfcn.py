@@ -4,10 +4,12 @@ def salomonfcn(x: np.ndarray) -> np.ndarray:
     """
     Computes the value of the Salomon's benchmark function.
 
-    Args:
+    Parameters:
+    -----------
     x (ndarray): A matrix of size M-by-N.
 
     Returns:
+    --------
     ndarray: A vector of size M-by-1 in which each row contains the function value for the corresponding row of X.
 
     For more information please visit:
