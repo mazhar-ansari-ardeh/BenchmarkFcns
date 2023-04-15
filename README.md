@@ -1,5 +1,5 @@
 # BenchmarkFcns
-Benchmarkfcns is an effort to provide a public and free repository of sources and documents for well-known benchmark optimization functions. 
+Benchmarkfcns is an effort to provide a public and free implementation of well-known benchmark optimization functions in MATLAB and Python. 
 
 Please also check the project website at: [benchmarkfcns.xyz](http://benchmarkfcns.xyz) which contains comprehensive documents for each function. 
 
