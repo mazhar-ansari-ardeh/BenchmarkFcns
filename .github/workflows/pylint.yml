@@ -20,6 +20,4 @@ jobs:
         pip install pylint
     - name: Analysing the code with pylint
       run: |
-        pylint --variable-rgx="[A-Za-z_][a-z0-9_]{0,30}$" \ 
-               --argument-rgx="[A-Za-z_][a-z0-9_]{0,30}$" \
-               --max-module-lines 5000 $(git ls-files '*.py')
+        pylint --variable-rgx="[A-Za-z_][a-z0-9_]{0,30}$" --argument-rgx="[A-Za-z_][a-z0-9_]{0,30}$" --max-module-lines 5000 $(git ls-files '*.py')
