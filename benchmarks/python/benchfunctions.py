@@ -1795,6 +1795,8 @@ def spherefcn(x: np.ndarray) -> np.ndarray:
     Please forward any comments or bug reports to mazhar.ansari.ardeh at
     Google's e-mail service or feel free to kindly modify the repository.
     """
+    if x.ndim == 1:
+        x = x.reshape(-1, len(x))
     f = np.sum(x**2, axis=1)
     return f.reshape(-1, 1)
 
