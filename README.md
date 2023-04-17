@@ -1,5 +1,5 @@
 # BenchmarkFcns
-Benchmarkfcns is an effort to provide a public and free implementation of well-known benchmark optimization functions in MATLAB and Python. 
+Benchmarkfcns is an effort to provide a public and free implementation of well-known benchmark optimization functions in MATLAB and Python. The repository also contains an implementation of the Artificial Bee Colony algorithm in Python and MATLAB. The implemetation is based on the description of the algorithm in its original paper and is provided as a proof of concept to benchmark the implemented functions.
 
 # How to install
 ## MATLAB
