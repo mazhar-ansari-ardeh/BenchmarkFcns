@@ -6,7 +6,7 @@ Benchmarkfcns is an effort to provide a public and free implementation of well-k
 To install and use this library, it is just required to add the project folders to MATLAB's path. For example, to use the functions in the 'benchmarks/MATLAB' folder, just navigate to this folder with MATLAB's directory explorer or use the command `addpath` with path to the folder on your PC (e.g. `addpath /path/to/benchmarks`).
 
 ## Python 
-To use the functions, please import `benchfunctions.py` from `benchmarks/python` directory. 
+To use the functions, please import `benchfunctions.py` from `benchmarks/python` directory. Please note that this package requires the `numpy` library. 
 
 # Support 
 Any bug reports, code contributions, suggestions, feedback and insights are immensely appreciated and will support this project.
