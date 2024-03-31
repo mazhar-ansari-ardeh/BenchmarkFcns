@@ -11,8 +11,9 @@ function scores = powellsumfcn(x)
     n = size(x, 2);
     absx = abs(x);
     
-    scores = 0;
-    for i = 1:n
-        scores = scores + (absx(:, i) .^ (i + 1));
-    end
+    % Create a vector of powers (1, 2, 3, ..., n+1)
+    powers = 2:(n+1);
+    
+    % Compute the element-wise sum of (absx .^ powers)
+    scores = sum(absx .^ powers, 2);
 end
