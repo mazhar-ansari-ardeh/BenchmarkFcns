@@ -10,10 +10,10 @@
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at
 % Google's e-mail service or feel free to kindly modify the repository.
 function scores = xinsheyangn1fcn(x)
-    n = size(x, 2);
+    [m, n] = size(x, 2);
 
-    scores = 0;
-    for i = 1:n
-        scores = scores + rand * (abs(x(:, i)) .^ i);
-    end
-end 
+    exponents = 1:n;
+    rand_values = rand(m, n);
+
+    scores = sum(rand_values .* (abs(x) .^ exponents), 2);
+end

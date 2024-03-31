@@ -10,12 +10,15 @@
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at
 % Google's e-mail service or feel free to kindly modify the repository.
 function scores = rosenbrockfcn(x)
-    scores = 0;
-    n = size(x, 2);
-    assert(n >= 1, 'Given input X cannot be empty');
-    a = 1;
-    b = 100;
-    for i = 1 : (n-1)
-        scores = scores + (b * ((x(:, i+1) - (x(:, i).^2)) .^ 2)) + ((a - x(:, i)) .^ 2);
-    end
+  assert(size(x, 2) >= 1, 'Given input X cannot be empty');
+
+  a = 1;
+  b = 100;
+
+  x_2 = x.^2;
+
+  term1 = b * ((x(:, 2:end) - x_2(:, 1:end-1)).^2);
+  term2 = (a - x(:, 1:end-1)).^2;
+
+  scores = sum(term1 + term2, 2);
 end

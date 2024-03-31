@@ -8,13 +8,12 @@
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at
 % Google's e-mail service or feel free to kindly modify the repository.
 function scores = quarticfcn(x)
-
     n = size(x, 2);
     
-    scores = 0;
-    for i = 1:n
-        scores = scores + i *(x(:, i) .^ 4);
-    end
-     
+    x_powered = x .^ 4;
+    indices = repmat(1:n, size(x, 1), 1);
+    
+    scores = sum(indices .* x_powered, 2);
+    
     scores = scores + rand;
 end

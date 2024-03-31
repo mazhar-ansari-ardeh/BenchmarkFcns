@@ -10,10 +10,12 @@
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at
 % Google's e-mail service or feel free to kindly modify the repository.
 function scores = styblinskitankfcn(x)
-    n = size(x, 2);
-    scores = 0;
-    for i = 1:n
-        scores = scores + ((x(:, i) .^4) - (16 * x(:, i) .^ 2) + (5 * x(:, i)));
-    end
+    % Calculate the intermediate terms
+    term1 = x .^ 4;
+    term2 = 16 * x .^ 2;
+    term3 = 5 * x;
+    
+    scores = sum(term1 - term2 + term3, 2);
+    
     scores = 0.5 * scores;
 end

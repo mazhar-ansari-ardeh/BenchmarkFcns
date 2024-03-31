@@ -8,15 +8,18 @@
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at
 % Google's e-mail service or feel free to kindly modify the repository.
 function scores = zakharovfcn(x)
-
-    n = size(x, 2);
-    comp1 = 0;
-    comp2 = 0;
+    [m, n] = size(x);
     
-    for i = 1:n
-        comp1 = comp1 + (x(:, i) .^ 2);
-        comp2 = comp2 + (0.5 * i * x(:, i));
-    end
-     
-    scores = comp1 + (comp2 .^ 2) + (comp2 .^ 4);
+    % Calculate component 1
+    comp1 = sum(x.^2, 2);
+    
+    I = repmat(1:n, m, 1)
+    
+    % Calculate component 2
+
+    comp2 = 0.5 * I .* x;
+    comp2 = sum(comp2, 2)
+    
+    % Compute final scores
+    scores = comp1 + comp2.^2 + comp2.^4
 end
