@@ -9,12 +9,9 @@
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at
 % Google's e-mail service or feel free to kindly modify the repository.
 function scores = brownfcn(x)
+    n = size(x, 2);
     
-    n = size(x, 2);  
-    scores = 0;
-    
-    x = x .^ 2;
-    for i = 1:(n-1)
-        scores = scores + x(:, i) .^ (x(:, i+1) + 1) + x(:, i+1).^(x(:, i) + 1);
-    end
+    x_squared = x .^ 2;
+    scores = sum(x_squared(:, 1:n-1) .^ (x_squared(:, 2:n) + 1) + x_squared(:, 2:n) .^ (x_squared(:, 1:n-1) + 1), 2);
 end
+
