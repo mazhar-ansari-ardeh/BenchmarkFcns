@@ -11,10 +11,8 @@
 % Google's e-mail service or feel free to kindly modify the repository.
 function scores = qingfcn(x)
     n = size(x, 2);
-    x2 = x .^2;
+    x2 = x .^ 2;
     
-    scores = 0;
-    for i = 1:n
-        scores = scores + (x2(:, i) - i) .^ 2;
-    end
-end 
+    i_values = 1:n;
+    scores = sum((x2 - i_values) .^ 2, 2);
+end
