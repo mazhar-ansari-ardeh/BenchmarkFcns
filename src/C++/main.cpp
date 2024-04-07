@@ -4,8 +4,6 @@
 # define STRINGIFY(x) #x
 # define MACRO_STRINGIFY(x) STRINGIFY(x)
 
-#define VERSION_INFO 1.0.0
-
 #include "benchmarkfcns.h"
 
 using namespace BenchmarkFcns;

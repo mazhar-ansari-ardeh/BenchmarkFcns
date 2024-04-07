@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "Benchmark Functions"
-version = "0.1.0"
+version = "1.0.0"
 description = "A collection of benchmark functions for mathematical optimization algorithms."
 authors = ["Mazhar Ansari Ardeh"]
 
@@ -11,7 +11,7 @@ build-backend = "scikit_build_core.build"
 
 [project]
 name = "benchmarkfcns"
-version = "0.0.1"
+version = "1.0.0"
 description="A collection of benchmark functions for mathematical optimization algorithms."
 readme = "README.md"
 authors = [
@@ -47,11 +47,11 @@ log_cli_level = "INFO"
 filterwarnings = [
   "error",
 ]
-testpaths = ["tests"]
+testpaths = ["src/tests"]
 
 
 [tool.cibuildwheel]
-test-command = "pytest {project}/tests"
+test-command = "pytest {project}/src/tests"
 test-extras = ["test"]
 test-skip = ["*universal2:arm64"]
 build-verbosity = 1
