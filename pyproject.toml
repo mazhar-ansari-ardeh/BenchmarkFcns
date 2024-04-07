@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "Benchmark Functions"
-version = "0.1.0"
+version = "1.0.0"
 description = "A collection of benchmark functions for mathematical optimization algorithms."
 authors = ["Mazhar Ansari Ardeh"]
 
@@ -11,7 +11,7 @@ build-backend = "scikit_build_core.build"
 
 [project]
 name = "benchmarkfcns"
-version = "0.0.1"
+version = "1.0.0"
 description="A collection of benchmark functions for mathematical optimization algorithms."
 readme = "README.md"
 authors = [
