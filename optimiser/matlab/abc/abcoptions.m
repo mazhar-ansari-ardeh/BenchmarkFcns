@@ -1,15 +1,15 @@
-% AROOPTIONS Creates an option structure for Artificial Bee Colony 
+% AROOPTIONS Creates an option structure for Artificial Bee Colony
 % algorithm.
 % ABCOPTIONS will print the list of available options and their
 % values.
 % OPTIONS = ABCOPTIONS('default') will return an option structure that
 % contains default values for the algorithm parameters.
-% OPTIONS = ABCOPTIONS('list') will print the list of available options and 
+% OPTIONS = ABCOPTIONS('list') will print the list of available options and
 % their values.
 % OPTIONS = ABCOPTIONS('PARAM',VALUE) creates a structure with the default
 % parameters used for all PARAM not specified, and will use the passed
 % argument VALUE for the specified PARAM.
-% WARNING: Validity of PARAMs are not checked. 
+% WARNING: Validity of PARAMs are not checked.
 % Author: Mazhar Ansari Ardeh
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at
 % Google's e-mail service or feel free to kindly modify the repository.
@@ -23,9 +23,9 @@ function setting = abcoptions(varargin)
         fprintf('StallLimit         : [positive scalar | "Inf"]\n');
         return
     end
-    
-    if nargin == 1 
-        if ischar(varargin{1}) 
+
+    if nargin == 1
+        if ischar(varargin{1})
             if strcmpi(varargin{1}, 'default')
                 setting = struct('InitialPopulation', [], ...
                     'Generations', 200, ...
@@ -41,7 +41,7 @@ function setting = abcoptions(varargin)
             end
         end
     end
-    
+
     setting = struct('InitialPopulation', [], ...
                     'Generations', 200, ...
                     'Display', 'off', ...
