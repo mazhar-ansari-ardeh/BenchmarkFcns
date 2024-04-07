@@ -170,7 +170,7 @@ PYBIND11_MODULE(_core, m) {
     m.def("gramacylee", &gramacylee, R"pbdoc(
         gramacylee function
 
-        Some other explanation about the sphere function.   
+        Some other explanation about the sphere function.
     )pbdoc");
 
     m.def("griewank", &griewank, R"pbdoc(
