@@ -23,7 +23,7 @@ VectorXd sphereBenchmark(double** inputMatrix, int rows, int cols)
     // Sum along the rows (axis 0)
     VectorXd result = squaredValues.rowwise().sum();
 
-	return result;
+    return result;
 }
 
 using Eigen::MatrixXd;
@@ -35,7 +35,7 @@ using Eigen::Matrix;
 using namespace Eigen;
 using namespace std;
 
-// VectorXd qing(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) { 
+// VectorXd qing(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
 //     int n = x.cols();
 //     MatrixXd x2 = x.array().square();
 //     VectorXd i_values = RowVectorXd::LinSpaced(n, 1, n).transpose().replicate(x.rows(), 1);
@@ -45,10 +45,10 @@ using namespace std;
 //     return scores;
 // }
 
-VectorXd func() { 
-    // [[10, 20], 
-    //  [20, 30], 
-    //  [30, 40], 
+VectorXd func() {
+    // [[10, 20],
+    //  [20, 30],
+    //  [30, 40],
     //  [40, 50]]
     MatrixXd x(4, 3);
     x(0, 0) = 100.881815; x(0, 1) = 0.132688; x(0, 2) = 0.181562;
@@ -72,18 +72,18 @@ int main()
 
 
 #ifdef EIGEN_VECTORIZE
-	std::cout << "SIMD enabled." << std::endl;
+    std::cout << "SIMD enabled." << std::endl;
 #else
-	std::cout << "SIMD disabled." << std::endl;
-#endif 
+    std::cout << "SIMD disabled." << std::endl;
+#endif
 
-	// double array2D[3][3] = {{1.0, 2.0, 3.0},
+    // double array2D[3][3] = {{1.0, 2.0, 3.0},
     //                        {4.0, 5.0, 6.0},
     //                        {7.0, 8.0, 9.0}};
 
-	// int rows = 3;
-	// int cols = 3;
-	// double** array2D = new double*[rows];
+    // int rows = 3;
+    // int cols = 3;
+    // double** array2D = new double*[rows];
     // for (int i = 0; i < rows; ++i) {
     //     array2D[i] = new double[cols];
     // }
@@ -112,12 +112,10 @@ int main()
     func();
 
     // std::cout << "MatrixXd created from array:\n" << matrixXdMap << std::endl;
-        
+
         // Eigen::VectorXd retval = sphereBenchmark(matrixXdMap);
         // std::cout << retval << std::endl;
 
         // std::cout << sphereBenchmark(array2D, 3, 3) << std::endl;
-	
+
 }
-
-
