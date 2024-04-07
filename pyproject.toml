@@ -10,7 +10,7 @@ build-backend = "scikit_build_core.build"
 
 
 [project]
-name = "BenchmarkFcns"
+name = "benchmarkfcns"
 version = "0.0.1"
 description="A collection of benchmark functions for mathematical optimization algorithms."
 readme = "README.md"
@@ -36,7 +36,8 @@ test = ["pytest"]
 
 [tool.scikit-build]
 wheel.expand-macos-universal-tags = true
-
+minimum-version = "0.8"
+wheel.packages = ["src/python/benchmarkfcns"]
 
 [tool.pytest.ini_options]
 minversion = "6.0"
