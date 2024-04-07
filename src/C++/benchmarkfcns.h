@@ -1,6 +1,9 @@
 #ifndef BENCHMARKFCNS_H
 #define BENCHMARKFCNS_H
 
+#define _USE_MATH_DEFINES
+#include <cmath>
+
 #include <Eigen/Dense>
 
 namespace BenchmarkFcns {
