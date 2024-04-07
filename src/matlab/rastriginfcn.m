@@ -1,11 +1,11 @@
 % Computes the value of Rastrigin benchmark function.
-% SCORES = RASTRIGINFCN(X) computes the value of the Rastrigin function at 
-% point X. RASTRIGINFCN accepts a matrix of size M-by-N and returns a vetor 
+% SCORES = RASTRIGINFCN(X) computes the value of the Rastrigin function at
+% point X. RASTRIGINFCN accepts a matrix of size M-by-N and returns a vetor
 % SCORES of size M-by-1 in which each row contains the function value for
 % the corresponding row of X.
-% For more information please visit: 
+% For more information please visit:
 % https://en.wikipedia.org/wiki/Rastrigin_function
-% 
+%
 % Author: Mazhar Ansari Ardeh
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at
 % Google's e-mail service or feel free to kindly modify the repository.
