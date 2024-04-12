@@ -1,5 +1,7 @@
 # BenchmarkFcns
-Benchmarkfcns is an effort to provide a high-perfomant, public and free implementation of well-known benchmark functions for mathematical optimization algorithms in Python and MATLAB. The Python library is implemented in C++ using the Eigen library's SIMD vector operations to provide.
+Benchmarkfcns is an effort to provide a high-perfomant, public and free implementation of well-known benchmark functions for mathematical optimization algorithms in Python. The Python library is implemented in C++ and utilizes the powerful SIMD vector calucluations offered by the [Eigen library](https://eigen.tuxfamily.org/).
+
+For the documentation of the implemented functions and their features, please visit [https://benchmarkfcns.info](https://benchmarkfcns.info).
 
 # How to install
 ## Python
