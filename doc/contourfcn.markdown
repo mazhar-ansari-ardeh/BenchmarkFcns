@@ -40,5 +40,5 @@ a contour matrix is described in MATLAB's help for `CONTOURC`.
 {% endhighlight %}
 
 # See also 
-* [Mesh Function]({{site.baseurl}}/benchmarkfcns/meshfcn)
-* [Surf Function]({{site.baseurl}}/benchmarkfcns/surffcn)
+* [Mesh Function]({{site.baseurl}}/doc/meshfcn)
+* [Surf Function]({{site.baseurl}}/doc/surffcn)

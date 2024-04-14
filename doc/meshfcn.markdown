@@ -42,5 +42,5 @@ axes, and surface properties which affect the display of the mesh.
 {% endhighlight %}
 
 # See also
-* [Surf Function]({{site.baseurl}}/benchmarkfcns/surffcn)
-* [Contour Function]({{site.baseurl}}/benchmarkfcns/contourfcn)
+* [Surf Function]({{site.baseurl}}/doc/surffcn)
+* [Contour Function]({{site.baseurl}}/doc/contourfcn)

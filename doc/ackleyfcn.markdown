@@ -21,14 +21,14 @@ $$f(\textbf{x}) = f(x_1, ..., x_n)= -a.exp(-b\sqrt{\frac{1}{n}\sum_{i=1}^{n}x_i^
 In the above equation, the values $a$, $b$ and $c$ are constants and are usually chosen as $a=20$, $b=0.2$ and $c=2\pi$.
 
 # Plots
-![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}.png){:class="fcnplot"}
+![{{page.functionname}}]({{site.baseurl}}/doc/plots/{{page.fname}}.png){:class="fcnplot"}
 
-![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_2.png){:class="fcnplot"}
+![{{page.functionname}}]({{site.baseurl}}/doc/plots/{{page.fname}}_2.png){:class="fcnplot"}
 
 
 The contour of the function is as presented below:
 
-![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_contour.png){:class="fcnplot"}
+![{{page.functionname}}]({{site.baseurl}}/doc/plots/{{page.fname}}_contour.png){:class="fcnplot"}
 
 
 # Description and Features
@@ -59,9 +59,9 @@ f(\textbf{x}) = f(x_1, ..., x_n)= -a.exp(-b\sqrt{\frac{1}{n}\sum_{i=1}^{n}x_i^2}
 The author would like to thank [Prof. Ivo Welch](https://www.ivo-welch.info/) for kindly contributing to the correctness of this document by pointing out some inconsistencies in the text.
 
 # See also: 
-* [Ackley N. 2 Function]({{site.baseurl}}/benchmarkfcns/ackleyn2fcn)
-* [Ackley N. 3 Function]({{site.baseurl}}/benchmarkfcns/ackleyn3fcn)
-* [Ackley N. 4 Function]({{site.baseurl}}/benchmarkfcns/ackleyn4fcn)
+* [Ackley N. 2 Function]({{site.baseurl}}/doc/ackleyn2fcn)
+* [Ackley N. 3 Function]({{site.baseurl}}/doc/ackleyn3fcn)
+* [Ackley N. 4 Function]({{site.baseurl}}/doc/ackleyn4fcn)
 
 
 # References:

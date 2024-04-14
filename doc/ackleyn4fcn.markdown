@@ -27,10 +27,10 @@ $$f(\textbf{x})=\sum_{i=1}^{n-1}\left( e^{-0.2}\sqrt{x_i^2+x_{i+1}^2} + 3\left( 
 {%endraw%}
 
 # Plots
-![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}.png){:class="fcnplot"}
+![{{page.functionname}}]({{site.baseurl}}/doc/plots/{{page.fname}}.png){:class="fcnplot"}
 
 {% for i in (2..page.noplots) %}
-![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_{{i}}.png){:class="fcnplot"}
+![{{page.functionname}}]({{site.baseurl}}/doc/plots/{{page.fname}}_{{i}}.png){:class="fcnplot"}
 {% endfor %}
 
 
@@ -39,9 +39,9 @@ A contour of the function is presented below:
 {%else%}
 {{page.nocontour}} contours of the function are presented below:
 {% endif %}
-![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_contour.png){:class="fcnplot"}
+![{{page.functionname}}]({{site.baseurl}}/doc/plots/{{page.fname}}_contour.png){:class="fcnplot"}
 
-![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_contour_2.png){:class="fcnplot"}
+![{{page.functionname}}]({{site.baseurl}}/doc/plots/{{page.fname}}_contour_2.png){:class="fcnplot"}
 
 # Description and Features
 * The function {{page.convex}}.
@@ -68,9 +68,9 @@ f(\textbf{x})=\sum_{i=1}^{n-1}\left( e^{-0.2}\sqrt{x_i^2+x_{i+1}^2} + 3\left( co
 {% endhighlight %}
 
 # See also: 
-* [Ackley Function]({{site.baseurl}}/benchmarkfcns/ackleyfcn)
-* [Ackley N. 2 Function]({{site.baseurl}}/benchmarkfcns/ackleyn2fcn)
-* [Ackley N. 3 Function]({{site.baseurl}}/benchmarkfcns/ackleyn3fcn)
+* [Ackley Function]({{site.baseurl}}/doc/ackleyfcn)
+* [Ackley N. 2 Function]({{site.baseurl}}/doc/ackleyn2fcn)
+* [Ackley N. 3 Function]({{site.baseurl}}/doc/ackleyn3fcn)
 
 # References:
 * Momin Jamil and Xin-She Yang, A literature survey of benchmark functions for global optimization problems, Int. Journal of Mathematical Modelling 

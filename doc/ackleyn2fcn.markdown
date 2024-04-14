@@ -23,17 +23,17 @@ $$f(x, y) = -200e^{-0.2\sqrt{x^2 + y^2}}$$
 {%endraw%}
 
 # Plots
-![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}.png){:class="fcnplot"}
+![{{page.functionname}}]({{site.baseurl}}/doc/plots/{{page.fname}}.png){:class="fcnplot"}
 
-![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_2.png){:class="fcnplot"}
+![{{page.functionname}}]({{site.baseurl}}/doc/plots/{{page.fname}}_2.png){:class="fcnplot"}
 
-![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_3.png){:class="fcnplot"}
+![{{page.functionname}}]({{site.baseurl}}/doc/plots/{{page.fname}}_3.png){:class="fcnplot"}
 
-![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_4.png){:class="fcnplot"}
+![{{page.functionname}}]({{site.baseurl}}/doc/plots/{{page.fname}}_4.png){:class="fcnplot"}
 
 A contour of the function is presented below:
 
-![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_contour.png){:class="fcnplot"}
+![{{page.functionname}}]({{site.baseurl}}/doc/plots/{{page.fname}}_contour.png){:class="fcnplot"}
 
 # Description and Features
 * The function {{page.convex}}.
@@ -60,9 +60,9 @@ f(x, y) = -200e^{-0.2\sqrt{x^2 + y^2}}
 {% endhighlight %}
 
 # See Also:
-* [Ackley Function]({{site.baseurl}}/benchmarkfcns/ackleyfcn)
-* [Ackley N. 3 Function]({{site.baseurl}}/benchmarkfcns/ackleyn3fcn)
-* [Ackley N. 4 Function]({{site.baseurl}}/benchmarkfcns/ackleyn4fcn)
+* [Ackley Function]({{site.baseurl}}/doc/ackleyfcn)
+* [Ackley N. 3 Function]({{site.baseurl}}/doc/ackleyn3fcn)
+* [Ackley N. 4 Function]({{site.baseurl}}/doc/ackleyn4fcn)
 
 # References:
 * Momin Jamil and Xin-She Yang, A literature survey of benchmark functions for global optimization problems, Int. Journal of Mathematical Modelling 

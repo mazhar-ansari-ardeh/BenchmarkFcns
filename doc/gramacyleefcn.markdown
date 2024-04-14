@@ -20,7 +20,7 @@ $$f(x) = \frac{sin(10\pi x)}{2x} + (x-1)^4$$
 {%endraw%}
 
 # Plots
-![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}.png){:class="fcnplot"}
+![{{page.functionname}}]({{site.baseurl}}/doc/plots/{{page.fname}}.png){:class="fcnplot"}
 
 # Description and Features
 * The function is continuous.

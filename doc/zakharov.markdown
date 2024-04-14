@@ -18,10 +18,10 @@ $$f(\textbf{x})=f(x_1, ..., x_n)=\sum_{i=1}^n x_i^{2}+(\sum_{i=1}^n 0.5ix_i)^2 +
 {%endraw%}
 
 # Plots
-![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}.png){:class="fcnplot"}
+![{{page.functionname}}]({{site.baseurl}}/doc/plots/{{page.fname}}.png){:class="fcnplot"}
 
 The contour of the function: 
-![{{ page.functionname }}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_contour.png){:class="fcnplot"}
+![{{ page.functionname }}]({{site.baseurl}}/doc/plots/{{page.fname}}_contour.png){:class="fcnplot"}
 
 # Description and Features
 * The function is continuous.

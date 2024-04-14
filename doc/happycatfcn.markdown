@@ -31,10 +31,10 @@ In the above definition, $$\alpha$$ is a real-valued parameter. For the value of
 # Plots
 For the value of $$\alpha=1/8$$, the function looks as: 
 
-![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}.png){:class="fcnplot"}
+![{{page.functionname}}]({{site.baseurl}}/doc/plots/{{page.fname}}.png){:class="fcnplot"}
 
 {% for i in (2..page.noplots) %}
-![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_{{i}}.png){:class="fcnplot"}
+![{{page.functionname}}]({{site.baseurl}}/doc/plots/{{page.fname}}_{{i}}.png){:class="fcnplot"}
 {% endfor %}
 
 
@@ -43,7 +43,7 @@ For the value of $$\alpha=1/8$$, the function looks as:
 {%else%}
    {{page.nocontour}} contours of the function are presented below:
 {% endif %}
-![{{page.functionname}}]({{site.baseurl}}/benchmarkfcns/plots/{{page.fname}}_contour.png){:class="fcnplot"}
+![{{page.functionname}}]({{site.baseurl}}/doc/plots/{{page.fname}}_contour.png){:class="fcnplot"}
 
 
 # Description and Features
@@ -71,9 +71,9 @@ f(\textbf{x})=\left[\left(||\textbf{x}||^2 - n\right)^2\right]^\alpha + \frac{1}
 {% endhighlight %}
 
 <!--# See also: 
-* [Ackley Function]({{site.baseurl}}/benchmarkfcns/ackleyfcn)
-* [Ackley N. 2 Function]({{site.baseurl}}/benchmarkfcns/ackleyn2fcn)
-* [Ackley N. 3 Function]({{site.baseurl}}/benchmarkfcns/ackleyn3fcn)-->
+* [Ackley Function]({{site.baseurl}}/doc/ackleyfcn)
+* [Ackley N. 2 Function]({{site.baseurl}}/doc/ackleyn2fcn)
+* [Ackley N. 3 Function]({{site.baseurl}}/doc/ackleyn3fcn)-->
 
 # Acknowledgement: 
 * [Prof Hans-Georg Beyer](https://homepages.fhv.at/hgb/) kindly contributed the source code and literature for this function. 

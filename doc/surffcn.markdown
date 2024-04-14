@@ -41,5 +41,5 @@ axes, and surface properties which affect the display of the surf.
 {% endhighlight %}
 
 # See also 
-* [Mesh Function]({{site.baseurl}}/benchmarkfcns/meshfcn)
-* [Contour Function]({{site.baseurl}}/benchmarkfcns/contourfcn)
+* [Mesh Function]({{site.baseurl}}/doc/meshfcn)
+* [Contour Function]({{site.baseurl}}/doc/contourfcn)
