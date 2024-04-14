@@ -4,7 +4,7 @@
 % returns a vetor SCORES of size M-by-1 in which each row contains the
 % function value for the corresponding row of X.
 % For more information, please visit:
-% benchmarkfcns.info/fcns/alpinen1fcn
+% benchmarkfcns.info/doc/alpinen1fcn
 % See also: alpinen2fcn
 %
 % Author: Mazhar Ansari Ardeh

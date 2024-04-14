@@ -4,7 +4,7 @@
 % vetor SCORES of size M-by-1 in which each row contains the function value
 % for the corresponding row of X.
 % For more information, please visit:
-% benchmarkfcns.info/fcns/pichenyfcn
+% benchmarkfcns.info/doc/pichenyfcn
 %
 % Note: The Picheny function is a modification of the Goldstein-Price
 % function.

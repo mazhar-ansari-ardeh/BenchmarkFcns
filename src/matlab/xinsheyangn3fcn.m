@@ -14,7 +14,7 @@
 % SCORES = XINSHEYANGN3FCN(X, BETA, M) computes the function with the given
 % value of M for its 'm' parameter.
 % For more information, please visit:
-% benchmarkfcns.info/fcns/xinsheyangn3fcn
+% benchmarkfcns.info/doc/xinsheyangn3fcn
 %
 % Author: Mazhar Ansari Ardeh
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at

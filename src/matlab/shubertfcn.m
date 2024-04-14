@@ -5,7 +5,7 @@
 % function value for the corresponding row of X.
 % See also: shubert3fcn, shubert4fcn
 % For more information, please visit:
-% benchmarkfcns.info/fcns/shubertfcn
+% benchmarkfcns.info/doc/shubertfcn
 %
 % Author: Mazhar Ansari Ardeh
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at

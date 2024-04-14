@@ -9,7 +9,7 @@
 % the function.
 %
 % For more information, please visit:
-% benchmarkfcns.info/fcns/ridgefcn
+% benchmarkfcns.info/doc/ridgefcn
 %
 % Author: Mazhar Ansari Ardeh
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at

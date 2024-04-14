@@ -6,7 +6,7 @@
 % SCORES = HAPPYCAT(X, ALPHA) specifies power of the sphere component of
 % the function.
 % For more information, please visit:
-% benchmarkfcns.info/fcns/happycatfcn
+% benchmarkfcns.info/doc/happycatfcn
 %
 % Author: Mazhar Ansari Ardeh
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at
