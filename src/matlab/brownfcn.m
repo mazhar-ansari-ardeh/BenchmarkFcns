@@ -2,8 +2,9 @@
 % SCORES = BROWNFCN(X) computes the value of the Brown function at point X.
 % BROWNFCN accepts a matrix of size M-by-N and returns a vetor SCORES of
 % size M-by-1 in which each row contains the function value for the
-% corresponding row of X. For more information please visit:
-% http://benchmarkfcns.xyz/benchmarkfcns/brownfcn
+% corresponding row of X.
+% For more information, please visit:
+% benchmarkfcns.info/fcns/brownfcn
 %
 % Author: Mazhar Ansari Ardeh
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at

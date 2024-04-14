@@ -2,8 +2,9 @@
 % SCORES = EASOMFCN(X) computes the value of the Easom function at point X.
 % EASOMFCN accepts a matrix of size M-by-2 and returns a vetor SCORES of
 % size M-by-1 in which each row contains the function value for the
-% corresponding row of X. For more information please visit:
-% https://en.wikipedia.org/wiki/Test_functions_for_optimization
+% corresponding row of X.
+% For more information, please visit:
+% benchmarkfcns.info/fcns/easomfcn
 %
 % Author: Mazhar Ansari Ardeh
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at

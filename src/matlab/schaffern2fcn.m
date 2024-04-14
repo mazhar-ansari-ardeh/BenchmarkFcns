@@ -2,8 +2,9 @@
 % SCORES = SCHAFFERN2FCN(X) computes the value of the Schaffer N. 2 function
 % at point X. SCHAFFERN2FCN accepts a matrix of size M-by-2 and returns a
 % vetor SCORES of size M-by-1 in which each row contains the function value
-% for the corresponding row of X. For more information please visit:
-% https://en.wikipedia.org/wiki/Test_functions_for_optimization
+% for the corresponding row of X.
+% For more information, please visit:
+% benchmarkfcns.info/fcns/schaffern2fcn
 %
 % Author: Mazhar Ansari Ardeh
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at

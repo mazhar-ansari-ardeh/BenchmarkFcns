@@ -161,6 +161,12 @@ PYBIND11_MODULE(_core, m) {
         Some other explanation about the sphere function.
     )pbdoc");
 
+    m.def("giunta", &giunta, R"pbdoc(
+        giunta function
+
+        Some other explanation about the sphere function.
+    )pbdoc");
+
     m.def("goldsteinprice", &goldsteinprice, R"pbdoc(
         goldsteinprice function
 

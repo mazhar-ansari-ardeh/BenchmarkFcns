@@ -3,8 +3,9 @@
 % point X. PICHENYFCN accepts a matrix of size M-by-2 and returns a
 % vetor SCORES of size M-by-1 in which each row contains the function value
 % for the corresponding row of X.
-% For more information please visit:
-% http://www.sfu.ca/~ssurjano/goldpr.html
+% For more information, please visit:
+% benchmarkfcns.info/fcns/pichenyfcn
+%
 % Note: The Picheny function is a modification of the Goldstein-Price
 % function.
 % See also: goldsteinpricefcn.

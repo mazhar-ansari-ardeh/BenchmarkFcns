@@ -4,6 +4,8 @@
 % returns a vetor SCORES of size M-by-1 in which each row contains the
 % function value for the corresponding row of X.
 % See also: shubert3fcn, shubert4fcn
+% For more information, please visit:
+% benchmarkfcns.info/fcns/shubertfcn
 %
 % Author: Mazhar Ansari Ardeh
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at

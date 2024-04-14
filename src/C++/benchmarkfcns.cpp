@@ -285,18 +285,6 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    /*
-    function scores = elattarfcn(x)
-    n = size(x, 2);
-    assert(n == 2, 'The El-Attar et al. function is defined only on the 2-D space.')
-
-    x1 = x(:, 1)
-    x2 = x(:, 2)
-
-    scores = (x1 .^ 2 + x2 - 10) .^ 2 + (x1 + x2 .^ 2 - 7) .^ 2 + (x1 .^ 2 + x2 .^ 3 - 1) .^ 2
-end
-    */
-
     VectorXd elattar(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
@@ -313,6 +301,13 @@ end
     VectorXd exponential(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         VectorXd scores = -exp(-0.5 * x.array().square().rowwise().sum());
 
+        return scores;
+    }
+
+   VectorXd giunta(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        VectorXd scores = 0.6 + ((sin(1 - (16.0 / 15.0) * x.array()).square())
+                              - (1.0 / 50.0) * sin(4 - (64.0 / 15.0) * x.array())
+                              - sin(1 - (16.0 / 15.0) * x.array())).rowwise().sum();
         return scores;
     }
 

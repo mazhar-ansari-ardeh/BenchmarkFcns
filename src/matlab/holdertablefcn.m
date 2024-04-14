@@ -1,10 +1,10 @@
-% Computes the value of the Hölder table benchmark function.
-% SCORES = HOLDERTABLEFCN(X) computes the value of the Hölder table
+% Computes the value of the Hï¿½lder table benchmark function.
+% SCORES = HOLDERTABLEFCN(X) computes the value of the Hï¿½lder table
 % function at point X. HOLDERTABLEFCN accepts a matrix of size M-by-2 and
 % returns a vetor SCORES of size M-by-1 in which each row contains the
-% function value for the corresponding row of X. For more information
-% please visit:
-% https://en.wikipedia.org/wiki/Test_functions_for_optimization
+% function value for the corresponding row of X.
+% For more information, please visit:
+% benchmarkfcns.info/fcns/holdertablefcn
 %
 % Author: Mazhar Ansari Ardeh
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at
@@ -12,7 +12,7 @@
 function scores = holdertablefcn(x)
 
     n = size(x, 2);
-    assert(n == 2, 'The Hölder table function is only defined on a 2D space.')
+    assert(n == 2, 'The Hï¿½lder table function is only defined on a 2D space.')
     X = x(:, 1);
     Y = x(:, 2);
 

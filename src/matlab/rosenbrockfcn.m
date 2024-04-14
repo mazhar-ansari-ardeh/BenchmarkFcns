@@ -3,8 +3,8 @@
 % at point X. ROSENBROCKFCN accepts a matrix of size M-by-N and returns a
 % vetor SCORES of size M-by-1 in which each row contains the function value
 % for the corresponding row of X.
-% For more information please visit:
-% https://en.wikipedia.org/wiki/Rosenbrock_function
+% For more information, please visit:
+% benchmarkfcns.info/fcns/rosenbrockfcn
 %
 % Author: Mazhar Ansari Ardeh
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at
