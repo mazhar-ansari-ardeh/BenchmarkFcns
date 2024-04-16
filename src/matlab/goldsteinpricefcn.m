@@ -1,5 +1,5 @@
-% Computes the value of GOldstein-Price benchmark function.
-% SCORES = GOLDSTEINPRICEFCN(X) computes the value of the GOLDSTEINPRICEFCN
+% Computes the value of Goldstein-Price benchmark function.
+% SCORES = GOLDSTEINPRICEFCN(X) computes the value of the Goldstein-Price
 % function at point X. GOLDSTEINPRICEFCN accepts a matrix of size M-by-2
 % and returns a vetor SCORES of size M-by-1 in which each row contains the
 % function value for the corresponding row of X.
