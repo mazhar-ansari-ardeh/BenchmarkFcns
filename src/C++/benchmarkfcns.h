@@ -18,7 +18,7 @@ namespace BenchmarkFcns {
 
     VectorXd ackley3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
-    VectorXd ackley4cg(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+    VectorXd ackley4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd adjiman(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 

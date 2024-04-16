@@ -55,7 +55,7 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    VectorXd ackley4cg(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd ackley4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int m = x.rows();
         int n = x.cols();
 
@@ -198,7 +198,6 @@ namespace BenchmarkFcns {
         auto X2 = X.array().square();
         auto Y = x.col(1);
 
-        // scores = 100 * sqrt(abs(Y - 0.01 * X2)) + 0.01 * abs(X  + 10);
         VectorXd scores = 100 * (Y.array() - 0.01 * X2).array().abs().sqrt() + 0.01 * (X.array() + 10).array().abs();
         return scores;
     }
