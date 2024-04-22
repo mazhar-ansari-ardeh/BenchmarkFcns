@@ -20,7 +20,13 @@ PYBIND11_MODULE(_core, m) {
         .. autosummary::
            :toctree: _generate
 
-           sphere
+        Benchmarkfcns is an effort to provide a public, free and high-performance
+        implementation for well-known benchmark optimization functions. The project is
+        open-sourced and is hosted on GitHub.
+        Please forward any bug reports or comments to mazhar.ansari.ardeh [at] gmail.com.
+        For a list of implemented functions and related documents, please visit
+        the https://benchmarkfcns.info.
+
     )pbdoc";
 
     m.def("ackley", &ackley, R"pbdoc(
@@ -445,7 +451,7 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/rastriginfcn
     )pbdoc");
 
-    m.def("ridge", &ridge, R"pbdoc(
+    m.def("ridge", &ridge, py::arg("x"), py::arg("d") = 1, py::arg("alpha") = 0.5, R"pbdoc(
         Computes the value of the Ridge benchmark function.
         SCORES = ridge(X) computes the value of the Ridge function at point X.
         `ridge` accepts a matrix of size M-by-N and returns a vetor SCORES of
@@ -479,9 +485,9 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/salomonfcn
     )pbdoc");
 
-    m.def("schaffern1", &schaffern1, R"pbdoc(
+    m.def("schaffer1", &schaffer1, R"pbdoc(
         Computes the value of the Schaffer N. 1 function.
-        SCORES = schaffern1(X) computes the value of the Schaffer N. 1
+        SCORES = schaffer1(X) computes the value of the Schaffer N. 1
         function at point X. `schaffern1` accepts a matrix of size M-by-2 and
         returns a vetor SCORES of size M-by-1 in which each row contains the
         function value for the corresponding row of X.
@@ -489,30 +495,30 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/schaffern1fcn
     )pbdoc");
 
-    m.def("schaffern2", &schaffern2, R"pbdoc(
+    m.def("schaffer2", &schaffer2, R"pbdoc(
         Computes the value of the Schaffer N. 2 benchmark function.
-        SCORES = schaffern2(X) computes the value of the Schaffer N. 2 function
-        at point X. `schaffern2` accepts a matrix of size M-by-2 and returns a
+        SCORES = schaffer2(X) computes the value of the Schaffer N. 2 function
+        at point X. `schaffer2` accepts a matrix of size M-by-2 and returns a
         vetor SCORES of size M-by-1 in which each row contains the function value
         for the corresponding row of X.
         For more information, please visit:
         benchmarkfcns.info/doc/schaffern2fcn
     )pbdoc");
 
-    m.def("schaffern3", &schaffern3, R"pbdoc(
+    m.def("schaffer3", &schaffer3, R"pbdoc(
         Computes the value of the Schaffer N. 3 function.
-        SCORES = schaffern3(X) computes the value of the Schaffer N. 3
-        function at point X. `schaffern3` accepts a matrix of size M-by-2 and
+        SCORES = schaffer3(X) computes the value of the Schaffer N. 3
+        function at point X. `schaffer3` accepts a matrix of size M-by-2 and
         returns a vetor SCORES of size M-by-1 in which each row contains the
         function value for the corresponding row of X.
         For more information, please visit:
         benchmarkfcns.info/doc/schaffern3fcn
     )pbdoc");
 
-    m.def("schaffern4", &schaffern4, R"pbdoc(
+    m.def("schaffer4", &schaffer4, R"pbdoc(
         Computes the value of the Schaffer N. 4 function.
-        SCORES = schaffern4(X) computes the value of the Schaffer N. 4
-        function at point X. `schaffern4` accepts a matrix of size M-by-2 and
+        SCORES = schaffer4(X) computes the value of the Schaffer N. 4
+        function at point X. `schaffer4` accepts a matrix of size M-by-2 and
         returns a vetor SCORES of size M-by-1 in which each row contains the
         function value for the corresponding row of X.
         For more information, please visit:
@@ -559,7 +565,7 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/schwefel222fcn
     )pbdoc");
 
-    m.def("schwefel223fcn", &schwefel223fcn, R"pbdoc(
+    m.def("schwefel223", &schwefel223, R"pbdoc(
         Computes the value of the Schwefel 2.23 function.
         SCORES = schwefel223fcn(X) computes the value of the Schwefel 2.23
         function at point X. `schwefel223fcn` accepts a matrix of size M-by-N and
@@ -649,50 +655,50 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/wolfefcn
     )pbdoc");
 
-    m.def("xinsheyangn1", &xinsheyangn1, R"pbdoc(
+    m.def("xinsheyang1", &xinsheyang1, R"pbdoc(
         Computes the value of the Xin-She Yang function.
-        SCORES = xinsheyangn1(X) computes the value of the Xin-She Yang
-        function at point X. `xinsheyangn1` accepts a matrix of size M-by-N and
+        SCORES = xinsheyang1(X) computes the value of the Xin-She Yang
+        function at point X. `xinsheyang1` accepts a matrix of size M-by-N and
         returns a vetor SCORES of size M-by-1 in which each row contains the
         function value for the corresponding row of X.
         For more information, please visit:
         benchmarkfcns.info/doc/xinsheyangn1fcn
     )pbdoc");
 
-    m.def("xinsheyangn2", &xinsheyangn2, R"pbdoc(
+    m.def("xinsheyang2", &xinsheyang2, R"pbdoc(
         Computes the value of the Xin-She Yang N. 2 function.
-        SCORES = xinsheyangn2(X) computes the value of the Xin-She Yang N. 2
-        function at point X. `xinsheyangn2` accepts a matrix of size M-by-N and
+        SCORES = xinsheyang2(X) computes the value of the Xin-She Yang N. 2
+        function at point X. `xinsheyang2` accepts a matrix of size M-by-N and
         returns a vetor SCORES of size M-by-1 in which each row contains the
         function value for the corresponding row of X.
         For more information, please visit:
         benchmarkfcns.info/doc/xinsheyangn2fcn
     )pbdoc");
 
-    m.def("xinsheyangn3", &xinsheyangn3, py::arg("x"), py::arg("beta") = 15, py::arg("m") = 5, R"pbdoc(
+    m.def("xinsheyang3", &xinsheyang3, py::arg("x"), py::arg("beta") = 15, py::arg("m") = 5, R"pbdoc(
         Computes the value of the Xin-She Yang N. 3 function.
         The Xin-She Yang N. 3 function is a parametric function and it is
         behaviour can be controlled with two additional parameters 'beta' and
         'm'. In this implementation, the parameters are optional and when not
         given, their default value will be used.
-        SCORES = xinsheyangn3(X) computes the value of the Xin-She Yang N. 3
-        function at point X. `xinsheyangn3` accepts a matrix of size P-by-N and
+        SCORES = xinsheyang3(X) computes the value of the Xin-She Yang N. 3
+        function at point X. `xinsheyang3` accepts a matrix of size P-by-N and
         returns a vetor SCORES of size P-by-1 in which each row contains the
         function value for the corresponding row of X. In this case, the default
         values of 'm=5' and 'beta=15' is used for function parameters.
-        SCORES = xinsheyangn3(X, beta=BETA) computes the function with the given
+        SCORES = xinsheyang3(X, beta=BETA) computes the function with the given
         value of BETA for its 'beta' parameter. In this case, the default value
         of 'm=5' will be used for the parameter.
-        SCORES = xinsheyangn3(X, beta=BETA, m=M) computes the function with the given
+        SCORES = xinsheyang3(X, beta=BETA, m=M) computes the function with the given
         value of M for its 'm' parameter.
         For more information, please visit:
         benchmarkfcns.info/doc/xinsheyangn3fcn
     )pbdoc");
 
-    m.def("xinsheyangn4", &xinsheyangn4, R"pbdoc(
+    m.def("xinsheyang4", &xinsheyang4, R"pbdoc(
         Computes the value of the Xin-She Yang N. 4 function.
-        SCORES = xinsheyangn4(X) computes the value of the Xin-She Yang N. 4
-        function at point X. `xinsheyangn4` accepts a matrix of size M-by-N and
+        SCORES = xinsheyang4(X) computes the value of the Xin-She Yang N. 4
+        function at point X. `xinsheyang4` accepts a matrix of size M-by-N and
         returns a vetor SCORES of size M-by-1 in which each row contains the
         function value for the corresponding row of X.
         For more information, please visit:
