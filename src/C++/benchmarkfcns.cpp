@@ -1,7 +1,5 @@
 #include "benchmarkfcns.h"
 
-// #include <Eigen/Dense>
-
 namespace BenchmarkFcns {
 
     using namespace Eigen;
@@ -168,7 +166,7 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    VectorXd brentfcn(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd brent(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
             throw std::invalid_argument("The Brent function is defined only on the 2-D space.");
@@ -386,7 +384,6 @@ namespace BenchmarkFcns {
         auto X = x.col(0).array();
         auto Y = x.col(1).array();
         VectorXd numeratorcomp = (sin(X - Y).square()) * (sin(X + Y).square());
-        // denominatorcomp = sqrt(X .^2 + Y .^2);
         VectorXd denominatorcomp = (X.square() + Y.square()).sqrt();
         VectorXd scores = - numeratorcomp.array() / denominatorcomp.array();
 
@@ -530,10 +527,10 @@ namespace BenchmarkFcns {
         return 1 - (2 * M_PI * sqrtsumx2.array()).cos() + 0.1 * sqrtsumx2.array();
     }
 
-    VectorXd schaffern1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd schaffer1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
-            throw std::invalid_argument("The Schaffer function N. 1 is only defined on a 2D space.");
+            throw std::invalid_argument("The Schaffer N. 1 function is only defined on a 2D space.");
 
         auto X = x.col(0).array();
         auto Y = x.col(1).array();
@@ -544,10 +541,10 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    VectorXd schaffern2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd schaffer2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
-            throw std::invalid_argument("The Schaffer function N. 2 is only defined on a 2D space.");
+            throw std::invalid_argument("The Schaffer N. 2 function is only defined on a 2D space.");
 
         auto X2 = x.col(0).array().square();
         auto Y2 = x.col(1).array().square();
@@ -558,10 +555,10 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    VectorXd schaffern3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd schaffer3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
-            throw std::invalid_argument("The Schaffer function N. 3 is only defined on a 2D space.");
+            throw std::invalid_argument("The Schaffer N. 3 function is only defined on a 2D space.");
 
         auto X2 = x.col(0).array().square();
         auto Y2 = x.col(1).array().square();
@@ -572,10 +569,10 @@ namespace BenchmarkFcns {
         return 0.5 + numeratorcomp.array() / denominatorcomp.array();
     }
 
-    VectorXd schaffern4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd schaffer4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
-            throw std::invalid_argument("The Schaffer function N. 4 is only defined on a 2D space.");
+            throw std::invalid_argument("The Schaffer N. 4 function is only defined on a 2D space.");
 
         auto X2 = x.col(0).array().square();
         auto Y2 = x.col(1).array().square();
@@ -604,7 +601,7 @@ namespace BenchmarkFcns {
         return absx.rowwise().sum() + absx.rowwise().prod();
     }
 
-    VectorXd schwefel223fcn(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd schwefel223(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         return x.array().pow(10).rowwise().sum();
     }
 
@@ -684,7 +681,7 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    VectorXd xinsheyangn1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd xinsheyang1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         int m = x.rows();
         auto absx = x.array().abs();
@@ -694,12 +691,12 @@ namespace BenchmarkFcns {
         return (rand_values.array() * absx.array().pow(exponents.transpose().array().replicate(m, 1))).rowwise().sum();
     }
 
-    VectorXd xinsheyangn2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd xinsheyang2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         auto absx = x.array().abs();
         return absx.rowwise().sum() * (-sin(x.array().square())).rowwise().sum().exp();
     }
 
-    VectorXd xinsheyangn3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, double beta, double m) {
+    VectorXd xinsheyang3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, double beta, double m) {
         auto x_div_beta = x.array() / beta;
         VectorXd sum_x_div_beta_2m = (-x_div_beta.array().pow(2 * m)).rowwise().sum().exp();
         VectorXd sum_x_2 = (-x.array().square()).rowwise().sum().exp();
@@ -707,7 +704,7 @@ namespace BenchmarkFcns {
         return sum_x_div_beta_2m.array() - (2 * sum_x_2.array() * prod_cos_x_2.array());
     }
 
-    VectorXd xinsheyangn4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd xinsheyang4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         VectorXd sum_sin_x_2 = (x.array().sin().square()).rowwise().sum();
         VectorXd exp_sum_x_2 = (-x.array().square()).rowwise().sum().exp();
         VectorXd sum_sin_sqrt_abs_x_2 = (-sin(x.array().abs().sqrt()).square()).rowwise().sum().exp();
