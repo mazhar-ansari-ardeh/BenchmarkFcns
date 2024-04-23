@@ -5,10 +5,10 @@ warnings.filterwarnings("error")
 from math import pi, sqrt
 
 import benchmarkfcns as m
-import numpy as np
+import pytest
 
 try: 
-    import pytest
+    import numpy as np
 except RuntimeWarning:
     pass
 
