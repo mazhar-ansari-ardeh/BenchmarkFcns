@@ -37,6 +37,8 @@ dependencies = [
 
 [project.optional-dependencies]
 test = ["pytest"]
+[tool.pytest]
+  filterwarnings = "ignore"
 
 
 [tool.scikit-build]
