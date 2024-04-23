@@ -31,7 +31,7 @@ classifiers = [
 ]
 
 [project.dependencies]
-numpy = "^"
+[numpy = "^"]
 
 
 [project.optional-dependencies]
