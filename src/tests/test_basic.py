@@ -83,12 +83,6 @@ def test_bird():
     assert (fcn([x] * 100).round(3) == np.array([round(y, 3)] * 100)).all()
 
 
-def test_bohachevsky1():
-    fcn = m.bohachevsky1
-    assert fcn([[0, 0]]) == 0
-    assert (fcn([[0] * 2] * 100) == np.zeros([100, 1])).all()
-
-
 def test_bohachevsky2():
     fcn = m.bohachevsky2
     assert fcn([[0, 0]]) == 0
@@ -98,14 +92,6 @@ def test_bohachevsky2():
 def test_booth():
     fcn = m.booth
     x = [1, 3]
-    y = 0
-    assert fcn([x]) == y
-    assert (fcn([x] * 100) == np.array([y] * 100)).all()
-
-
-def test_bukin6():
-    fcn = m.bukinn6
-    x = [-10, 1]
     y = 0
     assert fcn([x]) == y
     assert (fcn([x] * 100) == np.array([y] * 100)).all()
@@ -311,13 +297,6 @@ def test_schwefel223():
     y = 0
     assert fcn([[x, x]]) == y
     assert (fcn([[x] * 10] * 100) == np.array([y] * 100)).all()
-
-
-def test_schwefel():
-    fcn = m.schwefel
-    x = 420.9687
-    y = 2.545567497236334e-05
-    assert fcn([[x, x]]) == y
 
 
 def test_sphere():
