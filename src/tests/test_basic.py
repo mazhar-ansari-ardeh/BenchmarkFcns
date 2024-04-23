@@ -1,10 +1,16 @@
 from __future__ import annotations
+import warnings
+warnings.filterwarnings("error")
 
 from math import pi, sqrt
 
 import benchmarkfcns as m
 import numpy as np
-import pytest
+
+try: 
+    import pytest
+except RuntimeWarning:
+    pass
 
 
 def test_version():
