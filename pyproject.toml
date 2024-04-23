@@ -30,8 +30,9 @@ classifiers = [
   "Programming Language :: Python :: 3.12",
 ]
 
-[project.dependencies]
-numpy = ["^"]
+dependencies = [
+  "numpy = ^"
+  ]
 
 
 [project.optional-dependencies]
