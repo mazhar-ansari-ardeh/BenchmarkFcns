@@ -13,7 +13,7 @@ The library is packaged and available on the PyPI index. To install, simply run 
 
 ### Usage
 After installing, using the library is straightforward and all that is needed is to import the needed functions, construct a matrix of input values and call the function.
-All the functions in the library accept a matrix as input. The rows of the matrix represent the data points at which the function should be evaluated and the columns represent the dimensions of data points. The code snippet shows how to use the library.
+It should be noted that all the functions in the library only accept matrices as input. The rows of the matrix represent the data points at which the function should be evaluated and the columns represent the dimensions of data points. The code snippet shows how to use the library.
 
 ```python
 # Import the needed function.
@@ -35,7 +35,6 @@ data = np.array([[0, 0, 0], [1, 1, 1]])
 results = rastrigin(data)
 print(results)
 ```
-Consequently, even if a function evaluation is needed at a single point like `(0, 0, 0`), the function input should be still be a matrix of 1x3 dimension.
 
 ### Plotting the functions
 This library is implemented to be as compatible as possible with all the mainstream plotting libraries. As a result, you are free to select your favourite plotting library to plot the functions in this library.
