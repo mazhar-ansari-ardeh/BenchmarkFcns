@@ -9,10 +9,11 @@ For the documentation of the implemented functions and their features, please vi
 # How to use
 ## Python
 ### Installation
-The library is packaged and available on the PyPI index. To install, simply run `pip install benchmarkfcns`. After installing, using the library is straightforward and all that is needed is to import the needed functions, construct a matrix of input values and call the function.
+The library is packaged and available on the PyPI index. To install, simply run `pip install benchmarkfcns`.
 
 ### Usage
-All the functions in the library accept a matrix as input. The rows of the matrix represent the data points at which the function should be evaluated and the columns represent the dimensions of data points.
+After installing, using the library is straightforward and all that is needed is to import the needed functions, construct a matrix of input values and call the function.
+All the functions in the library accept a matrix as input. The rows of the matrix represent the data points at which the function should be evaluated and the columns represent the dimensions of data points. The code snippet shows how to use the library.
 
 ```python
 # Import the needed function.
@@ -39,7 +40,7 @@ Consequently, even if a function evaluation is needed at a single point like `(0
 ### Plotting the functions
 This library is implemented to be as compatible as possible with all the mainstream plotting libraries. As a result, you are free to select your favourite plotting library to plot the functions in this library.
 
-**Note**: Plotting a mathematical function like `rastrigin` requires evaluating the function at a rather large set of data points. This is where the vectorized implementation of the functions in this package can shine as it allows performing the evaluations in a single function call, which significantly speeds up the plotting and reduces the computation cost. To facilitate this, the library also contains a helper function, `meshgrid`, for drawing 3D plots using the vectorized implemetations the mathematical functions in this library. Given a list of *x* and *y* coordinates and a function, this function will create a meshgrid of points, evaluates the function over the meshgrid and returns the corresponding *x*, *y* and *z* points of the meshgrid that can be plotted with any plotting library.
+Plotting a mathematical function like `rastrigin` requires evaluating the function at a rather large set of data points. This is where the vectorized implementation of the functions in this package can shine as it allows performing the evaluations in a single function call, which significantly speeds up the plotting and reduces the computation cost. To facilitate this, the library also contains a helper function, `meshgrid`, for drawing 3D plots using the vectorized implemetations of the mathematical functions in this library. Given a list of *x* and *y* coordinates and a function, this function will create a meshgrid of points, evaluates the function over the meshgrid and returns the corresponding *x*, *y* and *z* points of the meshgrid that can be plotted with any plotting library.
 
 ```python
 from benchmarkfcns import ackley
