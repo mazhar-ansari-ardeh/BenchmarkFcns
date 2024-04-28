@@ -15,24 +15,24 @@ The library is packaged and available on the PyPI index. To install, simply run 
 All the functions in the library accept a matrix as input. The rows of the matrix represent the data points at which the function should be evaluated and the columns represent the dimensions of data points.
 
 ```python
-    # Import the needed function.
-    from benchmarkfcns import rastrigin
-    import numpy as np
+# Import the needed function.
+from benchmarkfcns import rastrigin
+import numpy as np
 
-    # Look at the function's documentation.
-    print(rastrigin.__doc__)
+# Look at the function's documentation.
+print(rastrigin.__doc__)
 
-    # The input matrix can be list of lists.
-    data = [[0, 0, 0]]
+# The input matrix can be list of lists.
+data = [[0, 0, 0]]
 
-    # Evaluate the Rastrigin function at (0, 0, 0).
-    results = rastrigin(data)
-    print(results)
+# Evaluate the Rastrigin function at (0, 0, 0).
+results = rastrigin(data)
+print(results)
 
-    # The input can also be a Numpy matrix.
-    data = np.array([[0, 0, 0], [1, 1, 1]])
-    results = rastrigin(data)
-    print(results)
+# The input can also be a Numpy matrix.
+data = np.array([[0, 0, 0], [1, 1, 1]])
+results = rastrigin(data)
+print(results)
 ```
 Consequently, even if a function evaluation is needed at a single point like `(0, 0, 0`), the function input should be still be a matrix of 1x3 dimension.
 
