@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://benchmarkfcns.info/</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/fcns</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/about/</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/1-dimensional</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/2-dimensional</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/3-dimensional</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/n-dimensional</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/convex</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/differentiable</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/multimodal</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/non-differentiable</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/non-convex</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/non-separable</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/parametric</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/plotting</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/random</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/separable</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/unimodal</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/contourfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/meshfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/surffcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/ackleyfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/continuous</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/ackleyn2fcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/ackleyn3fcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/ackleyn4fcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/adjimanfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/alpinen1fcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/alpinen2fcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/bartelsconnfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/bealefcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/birdfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/bohachevskyn1fcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/bohachevskyn2fcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/boothfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/brentfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/brownfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/bukinn6fcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/crossintrayfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/deckkersaartsfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/dropwavefcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/easomfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/eggcratefcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/exponentialfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/goldsteinpricefcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/gramacyleefcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/griewankfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/happycatfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/himmelblaufcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/holdertablefcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/kealefcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/leonfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/levin13fcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/matyasfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/mccormickfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/periodicfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/powellsumfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/qingfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/quarticfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/rastriginfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/ridgefcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/rosenbrockfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/salomonfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/schaffern1fcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/schaffern2fcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/schaffern3fcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/schaffern4fcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/schwefel220fcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/schwefel221fcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/schwefel222fcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/schwefel223fcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/schwefelfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/shubert3fcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/shubert4fcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/shubertfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/spherefcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/styblinskitankfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/sumsquaresfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/threehumpcamelfcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/wolfefcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/xinsheyangn1fcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/xinsheyangn2fcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/xinsheyangn3fcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/xinsheyangn4fcn.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/zakharov.html</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/meshfcn</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/surffcn</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/contourfcn</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/ackleyn2fcn</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/ackleyn3fcn</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/ackleyn4fcn</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/ackleyfcn</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/alpinen2fcn</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://benchmarkfcns.info/doc/alpinen1fcn</loc>
+  <lastmod>2024-04-22T19:32:36+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
+</urlset>
