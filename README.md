@@ -55,7 +55,7 @@ x = np.linspace(-5, 5, 10000)
 y = np.linspace(-5, 5, 10000)
 
 # `meshgrid` creates the 3D meshgrid and evaluates `ackley` on it.
-# Evaluation of 10,000,000 points took less than 2 seconds.
+# Evaluation of 100,000,000 points took less than 3 seconds.
 X, Y, Z = meshgrid(x, y, ackley)
 
 # Create the plot
