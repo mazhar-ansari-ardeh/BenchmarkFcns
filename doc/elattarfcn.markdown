@@ -42,7 +42,7 @@ For Python, the function is implemented in the [benchmarkfcns package](github.co
 {%highlight Python%}
 from benchmarkfcns import elattar
 
-print(elattar([[3.4091868222,−2.1714330361]]))
+print(elattar([[3.4091868222,-2.1714330361]]))
 {% endhighlight %}
 
 #### MATLAB
