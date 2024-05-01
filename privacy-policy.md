@@ -2,7 +2,7 @@
 layout: default
 title: Privacy Policy
 ---
-<h2>Privacy Policy</h2>
+<h1>Privacy Policy</h1>
 This Privacy Policy describes how [BenchmarkFcns.info] ("we," "us,", or "our") collects, uses, and discloses your information when you use our website (the "Service").
 
 ## Information We Collect
