@@ -33,9 +33,10 @@ $$f(x, y) = (x^2 + y - 10)^2 + (x + y^2 - 7)^2 + (x^2 + y^3 - 1)^2$$
 The function can be defined on any input domain but it is usually evaluated on $x_i \in [-500, 500]$ for all $i = 1, 2$.
 
 # Global Minima
-The function has one global minimum at: $f({x}^{\ast}, {y}^{\ast})=0$ at $({x}^{\ast}, {y}^{\ast}) = (3.4091868222,−2.1714330361)$.
+The function has one global minimum at: $f({x}^{\ast}, {y}^{\ast})=0$ at $({x}^{\ast}, {y}^{\ast}) = (3.4091868222,-2.1714330361)$.
 
 # Implementation
+## Python
 For Python, the function is implemented in the [benchmarkfcns package](github.com/mazhar-ansari-ardeh/BenchmarkFcns) and can be installed from command line with `pip install benchmarkfcns`.  
 
 {%highlight Python%}
@@ -44,6 +45,7 @@ from benchmarkfcns import elattar
 print(elattar([[3.4091868222,−2.1714330361]]))
 {% endhighlight %}
 
+## MATLAB
 An implementation of the **{{page.functionname}}** with MATLAB is provided below. 
 
 {%highlight MATLAB%}
