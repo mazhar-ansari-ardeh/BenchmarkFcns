@@ -36,7 +36,7 @@ The function can be defined on any input domain but it is usually evaluated on $
 The function has one global minimum at: $f({x}^{\ast}, {y}^{\ast})=0$ at $({x}^{\ast}, {y}^{\ast}) = (3.4091868222,-2.1714330361)$.
 
 # Implementation
-## Python
+#### Python
 For Python, the function is implemented in the [benchmarkfcns package](github.com/mazhar-ansari-ardeh/BenchmarkFcns) and can be installed from command line with `pip install benchmarkfcns`.  
 
 {%highlight Python%}
@@ -45,7 +45,7 @@ from benchmarkfcns import elattar
 print(elattar([[3.4091868222,−2.1714330361]]))
 {% endhighlight %}
 
-## MATLAB
+#### MATLAB
 An implementation of the **{{page.functionname}}** with MATLAB is provided below. 
 
 {%highlight MATLAB%}
