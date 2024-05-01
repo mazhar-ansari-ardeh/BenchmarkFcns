@@ -24,3 +24,6 @@ Any bug reports, code contributions, suggestions, feedback and insights are imme
 # Copyright
 The contents of this web site are published under the [Creative Commons Attribution-ShareAlike License 3.0](https://creativecommons.org/licenses/by-sa/3.0/us/).
 Source codes on this web site are published under the [MIT License](https://opensource.org/licenses/MIT).
+
+# Privacy Policy
+Please refer to [Privacy Policy]({{site.baseurl}}/privacy-policy) page.
