@@ -13,8 +13,8 @@ function scores = elattarfcn(x)
     n = size(x, 2);
     assert(n == 2, 'The El-Attar et al. function is defined only on the 2-D space.')
 
-    X = x(:, 1)
-    Y = x(:, 2)
+    X = x(:, 1);
+    Y = x(:, 2);
 
     scores = (X .^ 2 + Y - 10) .^ 2 + (X + Y .^ 2 - 7) .^ 2 + (X .^ 2 + Y .^ 3 - 1) .^ 2;
 end
