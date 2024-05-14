@@ -6,7 +6,7 @@ title: Ackley N. 4 Function
 categories: optimization, benchmark
 tags: n-dimensional non-separable multimodal non-convex differentiable
 fname: ackleyn4fcn
-fname: ackleyn4
+sname: ackleyn4
 functionname: Ackley N. 4 Function
 modal: multimodal
 dimension: n-dimensional
