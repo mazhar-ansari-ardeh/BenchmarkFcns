@@ -8,9 +8,6 @@
 % SCORES = RIDGEFCN(X, D, APLPHA) specifies power of the sphere component of 
 % the function.
 % 
-% For more information please visit: 
-% http://benchmarkfcns.xyz/benchmarkfcns/ridgefcn
-% 
 % Author: Mazhar Ansari Ardeh
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at
 % Google's e-mail service or feel free to kindly modify the repository.

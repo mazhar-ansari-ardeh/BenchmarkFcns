@@ -3,9 +3,6 @@
 % function at point X. ALPINEN2FCN accepts a matrix of size M-by-N and 
 % returns a vetor SCORES of size M-by-1 in which each row contains the 
 % function value for the corresponding row of X.
-% For more information, please visit:
-% benchmarkfcns.xyz/fcns/alpinen2fcn
-% See also: alpinen1fcn
 % 
 % Author: Mazhar Ansari Ardeh
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at
