@@ -5,6 +5,7 @@ title: Ackley N. 3 Function
 categories: optimization, benchmark
 tags: 2-dimensional non-separable multimodal non-convex differentiable
 fname: ackleyn3fcn
+sname: ackleyn3
 functionname: Ackley N. 3 Function
 modal: multimodal
 dimension: 2-dimensional
@@ -64,6 +65,17 @@ The function has two global minima at $f(\textbf{x}^{\ast})\approx -195.62902823
 **Note:** Minima values are obtained with Genetic Algorithm and may not be accurate. 
 
 # Implementation
+#### Python
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns) and can be installed from command line with `pip install benchmarkfcns`.  
+
+{%highlight Python%}
+from benchmarkfcns import {{page.sname}}
+
+print({{page.sname}}([[0, 0],
+              [1, 1]]))
+{% endhighlight %}
+
+#### MATLAB
 An implementation of the **{{page.functionname}}** with `MATLAB` is provided below. 
 
 {%highlight MATLAB%}

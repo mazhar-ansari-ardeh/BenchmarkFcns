@@ -6,6 +6,7 @@ title: Ackley N. 4 Function
 categories: optimization, benchmark
 tags: n-dimensional non-separable multimodal non-convex differentiable
 fname: ackleyn4fcn
+fname: ackleyn4
 functionname: Ackley N. 4 Function
 modal: multimodal
 dimension: n-dimensional
@@ -56,6 +57,17 @@ The function can be defined on any input domain but it is usually evaluated on $
 On the 2-dimensional space, the function has one global minima at $f(\textbf{x}^{\ast}) = -4.590101633799122$ located at $\mathbf{x^\ast}=(-1.51, -0.755)$.
 
 # Implementation
+#### Python
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns) and can be installed from command line with `pip install benchmarkfcns`.  
+
+{%highlight Python%}
+from benchmarkfcns import {{page.sname}}
+
+print({{page.sname}}([[0, 0, 0],
+              [1, 1, 1]]))
+{% endhighlight %}
+
+#### MATLAB
 An implementation of the **{{page.functionname}}** with `MATLAB` is provided below. 
 
 {%highlight MATLAB%}
