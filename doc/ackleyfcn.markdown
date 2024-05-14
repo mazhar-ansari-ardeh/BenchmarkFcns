@@ -46,7 +46,7 @@ The function has one global minimum at: $f(\textbf{x}^{\ast})=0$ at $\textbf{x}^
 
 # Implementation
 #### Python
-For Python, the function is implemented in the [benchmarkfcns package](github.com/mazhar-ansari-ardeh/BenchmarkFcns) and can be installed from command line with `pip install benchmarkfcns`.  
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns) and can be installed from command line with `pip install benchmarkfcns`.  
 
 {%highlight Python%}
 from benchmarkfcns import {{page.sname}}
