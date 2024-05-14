@@ -5,7 +5,7 @@ title: Ackley N. 2 Function
 categories: optimization, benchmark
 tags: 2-dimensional non-separable unimodal convex differentiable
 fname: ackleyn2fcn
-sname: ackleyn2
+sname: ackley2
 functionname: Ackley N. 2 Function
 modal: unimodal
 dimension: 2-dimensional

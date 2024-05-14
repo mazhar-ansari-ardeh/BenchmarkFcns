@@ -5,7 +5,7 @@ title: Ackley N. 3 Function
 categories: optimization, benchmark
 tags: 2-dimensional non-separable multimodal non-convex differentiable
 fname: ackleyn3fcn
-sname: ackleyn3
+sname: ackley3
 functionname: Ackley N. 3 Function
 modal: multimodal
 dimension: 2-dimensional
