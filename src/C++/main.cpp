@@ -269,6 +269,16 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/exponentialfcn
     )pbdoc");
 
+    m.def("forrester", &forrester, R"pbdoc(
+        Computes the value of the Forrester benchmark function.
+        SCORES = forrester(X) computes the value of the Forrester function at
+        point X. `forrester` accepts a matrix of size M-by-N and returns a vetor
+        SCORES of size M-by-1 in which each row contains the
+        function value for the corresponding row of X.
+        For more information, please visit:
+        benchmarkfcns.info/doc/forresterfcn
+    )pbdoc");
+
     m.def("giunta", &giunta, R"pbdoc(
         Computes the value of the Giunta function.
         SCORES = giunta(X) computes the value of the Alpine N. 1
