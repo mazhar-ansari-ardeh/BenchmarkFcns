@@ -3,6 +3,8 @@
 % function at point X. FORRESTERFCN accepts a matrix of size M-by-1 and
 % returns a vetor SCORES of size M-by-1 in which each row contains the
 % function value for the corresponding row of X.
+% For more information, please visit:
+% benchmarkfcns.info/doc/forresterfcn
 %
 % Author: Mazhar Ansari Ardeh
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at
