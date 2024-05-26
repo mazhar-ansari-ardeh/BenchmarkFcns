@@ -5,6 +5,7 @@ title: Zakharov Function
 categories: optimization, benchmark
 tags: continuous convex n-dimensional unimodal
 fname: zakharovfcn
+sname: zakharov
 functionname: Zakharov Function
 excerpt: The Zakharov function is a unimodal, n-dimensional convex mathematical function widely used for testing optimization algorithms
 ---
@@ -30,12 +31,23 @@ The contour of the function:
 * The function is unimodal.
 
 # Input Domain
-The function can be defined on any input domain but it is usually evaluated on the hypercube $x_i \in [-5, 10]$ for $i = 1..n$.
+The function can be defined on any input domain but it is usually evaluated on the hypercube $x_i \in [-5, 10]$ for $i = 1...n$.
 
 # Global Minima
 $f(\textbf{x}^{\ast}) = 0$ at $\textbf{x}^{\ast} = (0, ..., 0)$
 
 # Implementation
+#### Python
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns), which can be installed from command line with `pip install benchmarkfcns`. 
+
+{%highlight Python%}
+from benchmarkfcns import {{page.sname}}
+
+print({{page.sname}}([[0, 0, 0],
+              [1, 1, 1]]))
+{% endhighlight %}
+
+#### MATLAB
 An implementation of the **{{page.functionname}}** with MATLAB is provided below. 
 {% highlight MATLAB%}
 % Computes the value of Zakharov benchmark function.

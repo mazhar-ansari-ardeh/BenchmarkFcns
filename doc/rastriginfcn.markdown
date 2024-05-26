@@ -5,6 +5,7 @@ title: Rastrigin Function
 categories: optimization, benchmark
 tags: n-dimensional continuous differentiable separable multimodal convex
 fname: rastriginfcn
+sname: rastrigin
 functionname: Rastrigin Function
 modal: multimodal
 dimension: n-dimensional
@@ -46,6 +47,17 @@ The contour of the function is as presented below:
 * The function is {{page.scalable}}.
 
 # Input Domain
+#### Python
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns), which can be installed from command line with `pip install benchmarkfcns`. 
+
+{%highlight Python%}
+from benchmarkfcns import {{page.sname}}
+
+print({{page.sname}}([[0, 0, 0],
+              [1, 1, 1]]))
+{% endhighlight %}
+
+#### MATLAB
 The function can be defined on any input domain but it is usually evaluated on $x_i \in [-5.12, 5.12]$ for $i = 1, ..., n$ .
 
 # Global Minima

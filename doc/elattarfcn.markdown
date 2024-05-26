@@ -5,6 +5,7 @@ title: El-Attar-Vidyasagar-Dutta Function
 categories: optimization, benchmark
 tags: 2-dimensional continuous multimodal non-convex differentiable
 fname: elattarfcn
+sname: elattar
 functionname: El-Attar-Vidyasagar-Dutta Function
 modal: multimodal
 dimension: 2-dimensional
@@ -43,6 +44,17 @@ For Python, the function is implemented in the [benchmarkfcns package](github.co
 from benchmarkfcns import elattar
 
 print(elattar([[3.4091868222,-2.1714330361]]))
+{% endhighlight %}
+
+#### MATLAB
+#### Python
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns), which can be installed from command line with `pip install benchmarkfcns`. 
+
+{%highlight Python%}
+from benchmarkfcns import {{page.sname}}
+
+print({{page.sname}}([[0, 0],
+              [1, 1]]))
 {% endhighlight %}
 
 #### MATLAB

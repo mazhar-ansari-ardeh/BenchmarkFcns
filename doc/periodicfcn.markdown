@@ -5,6 +5,7 @@ title: Periodic Function
 categories: optimization, benchmark
 tags: n-dimensional continuous differentiable non-separable multimodal non-convex
 fname: periodicfcn
+sname: periodic
 functionname: Periodic Function
 modal: multimodal
 dimension: n-dimensional
@@ -60,6 +61,17 @@ The function can be defined on any input domain but it is usually evaluated on $
 The function has on global minimum $f(\mathbf{x}^{\ast})=0.9$ at $\mathbf{x}^{\ast}=(0 ... 0)$.
 
 # Implementation
+#### Python
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns), which can be installed from command line with `pip install benchmarkfcns`. 
+
+{%highlight Python%}
+from benchmarkfcns import {{page.sname}}
+
+print({{page.sname}}([[0, 0, 0],
+              [1, 1, 1]]))
+{% endhighlight %}
+
+#### MATLAB
 An implementation of the **{{page.functionname}}** with `MATLAB` is provided below. The function can be implemented with a `for` loop
 that iterates over the input components but `MATLAB` and `Octave` have built-in facilities that allow a more brief implementation.
 

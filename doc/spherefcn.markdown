@@ -5,6 +5,7 @@ title: Sphere Function
 categories: optimization, benchmark
 tags: n-dimensional continuous convex differentiable unimodal separable
 fname: spherefcn
+sname: sphere
 excerpt: Sphere function is a unimodal, n-dimensional convex mathematical function widely used for testing optimization algorithms
 ---
 
@@ -38,6 +39,17 @@ The function can be defined on any input domain but it is usually evaluated on t
 $f(\textbf{x}^{\ast}) = 0$ at $\textbf{x}^{\ast} = (0, ..., 0)$
 
 # Implementation
+#### Python
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns), which can be installed from command line with `pip install benchmarkfcns`. 
+
+{%highlight Python%}
+from benchmarkfcns import {{page.sname}}
+
+print({{page.sname}}([[0, 0, 0],
+              [1, 1, 1]]))
+{% endhighlight %}
+
+#### MATLAB
 An implementation of the **Sphere function** with MATLAB is provided below. **Sphere function** can be implemented with a `for` loop that iterates over all the components of the input vector but, MATLAB and Octave have built-in facilities that makes the implementation more efficient and concise.
 
 {% highlight MATLAB%}

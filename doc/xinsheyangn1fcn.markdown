@@ -5,6 +5,7 @@ title: Xin-She Yang Function
 categories: optimization, benchmark
 tags: n-dimensional separable multimodal non-convex random non-differentiable
 fname: xinsheyangn1fcn
+sname: xinsheyang1
 functionname: Xin-She Yang Function
 modal: multimodal
 dimension: n-dimensional
@@ -50,6 +51,17 @@ The function can be defined on any input domain but it is usually evaluated on $
 The global minima $f(\textbf{x}^{\ast})=0$ are located at $\mathbf{x^\ast}=(0, ..., 0)$.
 
 # Implementation
+#### Python
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns), which can be installed from command line with `pip install benchmarkfcns`. 
+
+{%highlight Python%}
+from benchmarkfcns import {{page.sname}}
+
+print({{page.sname}}([[0, 0, 0],
+              [1, 1, 1]]))
+{% endhighlight %}
+
+#### MATLAB
 An implementation of the **{{page.functionname}}** with `MATLAB` is provided below. 
 
 {%highlight MATLAB%}

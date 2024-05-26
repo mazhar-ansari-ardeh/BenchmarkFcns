@@ -5,6 +5,7 @@ title: Booth Function
 categories: optimization, benchmark
 tags: 2-dimensional continuous convex differentiable non-separable unimodal convex
 fname: boothfcn
+sname: booth
 functionname: Booth Function
 modal: unimodal
 dimension: 2-dimensional
@@ -45,6 +46,17 @@ The function can be defined on any input domain but it is usually evaluated on $
 The function has one global minimum at: $f(\textbf{x}^{\ast})=0$ at $\textbf{x}^{\ast} = (1,3)$.
 
 # Implementation
+#### Python
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns), which can be installed from command line with `pip install benchmarkfcns`. 
+
+{%highlight Python%}
+from benchmarkfcns import {{page.sname}}
+
+print({{page.sname}}([[0, 0],
+              [1, 1]]))
+{% endhighlight %}
+
+#### MATLAB
 An implementation of the **{{page.functionname}}** with MATLAB is provided below. 
 
 {%highlight MATLAB%}

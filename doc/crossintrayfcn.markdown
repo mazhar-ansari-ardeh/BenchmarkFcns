@@ -5,6 +5,7 @@ title: Cross-in-Tray Function
 categories: optimization, benchmark
 tags: 2-dimensional continuous non-differentiable non-separable multimodal non-convex
 fname: crossintrayfcn
+sname: crossintray
 functionname: Cross-in-Tray Function
 modal: multimodal
 dimension: 2-dimensional
@@ -49,6 +50,17 @@ The function can be defined on any input domain but it is usually evaluated on $
 The function has four global minima $f(\textbf{x}^{\ast})=-2.06261218$ at $\textbf{x}^{\ast} = (\pm1.349406685353340,\pm1.349406608602084)$.
 
 # Implementation
+#### Python
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns), which can be installed from command line with `pip install benchmarkfcns`. 
+
+{%highlight Python%}
+from benchmarkfcns import {{page.sname}}
+
+print({{page.sname}}([[0, 0],
+              [1, 1]]))
+{% endhighlight %}
+
+#### MATLAB
 An implementation of the **{{page.functionname}}** with MATLAB is provided below. 
 
 {%highlight MATLAB%}

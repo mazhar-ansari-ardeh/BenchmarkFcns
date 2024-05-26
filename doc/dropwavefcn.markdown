@@ -5,6 +5,7 @@ title: Drop-Wave Function
 categories: optimization, benchmark
 tags: 2-dimensional continuous unimodal non-convex
 fname: dropwavefcn
+sname: dropwave
 functionname: Drop-Wave Function
 excerpt: The Drop-Wave function is a unimodal, 2-dimensional non-convex mathematical function widely used for testing optimization algorithms
 ---
@@ -40,6 +41,17 @@ The function can be defined on any input domain but it is usually evaluated on $
 $f(\textbf{x}^{\ast}) = -1$ at $\textbf{x}^{\ast} = (0, 0)$
 
 # Implementation
+#### Python
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns), which can be installed from command line with `pip install benchmarkfcns`. 
+
+{%highlight Python%}
+from benchmarkfcns import {{page.sname}}
+
+print({{page.sname}}([[0, 0],
+              [1, 1]]))
+{% endhighlight %}
+
+#### MATLAB
 An implementation of the **{{page.functionname}}** with MATLAB is provided below. 
 
 {%highlight MATLAB%}

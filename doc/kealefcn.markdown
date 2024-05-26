@@ -5,6 +5,7 @@ title: Keane Function
 categories: optimization, benchmark
 tags: 2-dimensional continuous differentiable non-separable multimodal non-convex
 fname: keanefcn
+sname: keane
 functionname: Keane Function
 modal: multimodal
 dimension: 2-dimensional
@@ -53,6 +54,17 @@ The function has two global minima $f(\textbf{x}^{\ast})=0.673667521146855$ at
 * $\textbf{x}^{\ast} = (0,1.393249070031784)$.
 
 # Implementation
+#### Python
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns), which can be installed from command line with `pip install benchmarkfcns`. 
+
+{%highlight Python%}
+from benchmarkfcns import {{page.sname}}
+
+print({{page.sname}}([[0, 0],
+              [1, 1]]))
+{% endhighlight %}
+
+#### MATLAB
 An implementation of the **{{page.functionname}}** with MATLAB is provided below. 
 
 {%highlight MATLAB%}

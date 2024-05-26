@@ -5,6 +5,7 @@ title: Holder-Table Function
 categories: optimization, benchmark
 tags: 2-dimensional continuous non-differentiable non-separable multimodal non-convex
 fname: holdertablefcn
+sname: holdertable
 functionname: Holder-Table Function
 modal: multimodal
 dimension: 2-dimensional
@@ -48,6 +49,17 @@ The function can be defined on any input domain but it is usually evaluated on $
 The function has four global minima $f(\textbf{x}^{\ast})=-19.2085$ at $\textbf{x}^{\ast} = (\pm 8.05502,\pm 9.66459)$.
 
 # Implementation
+#### Python
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns), which can be installed from command line with `pip install benchmarkfcns`. 
+
+{%highlight Python%}
+from benchmarkfcns import {{page.sname}}
+
+print({{page.sname}}([[0, 0],
+              [1, 1]]))
+{% endhighlight %}
+
+#### MATLAB
 An implementation of the **{{page.functionname}}** with MATLAB is provided below. 
 
 {%highlight MATLAB%}

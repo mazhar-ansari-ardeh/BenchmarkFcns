@@ -5,6 +5,7 @@ title: Gramacy & Lee Function
 categories: optimization, benchmark
 tags: 1-dimensional continuous multimodal non-convex
 fname: gramacyleefcn
+sname: gramacylee
 functionname: Gramacy & Lee Function
 modal: unimodal
 dimension: 1-dimensional
@@ -35,6 +36,17 @@ The function can be defined on any input domain but it is usually evaluated on $
 The function has one local minimum at: $f(x^*)=-0.869011134989500$ at $\textbf{x}^{\ast} = 0.548563444114526$.
 
 # Implementation
+#### Python
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns), which can be installed from command line with `pip install benchmarkfcns`. 
+
+{%highlight Python%}
+from benchmarkfcns import {{page.sname}}
+
+print({{page.sname}}([[0, 0],
+              [1, 1]]))
+{% endhighlight %}
+
+#### MATLAB
 An implementation of the **{{page.functionname}}** with MATLAB is provided below. 
 
 {%highlight MATLAB%}

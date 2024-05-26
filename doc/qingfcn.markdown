@@ -5,6 +5,7 @@ title: Qing Function
 categories: optimization, benchmark
 tags: n-dimensional continuous differentiable non-separable multimodal non-convex
 fname: qingfcn
+sname: qing
 functionname: Qing Function
 modal: multimodal
 dimension: n-dimensional
@@ -60,6 +61,17 @@ The function can be defined on any input domain but it is usually evaluated on $
 The global minima $f(\textbf{x}^{\ast})=0$ are located at $\mathbf{x^\ast}=(\pm\sqrt{i}, ..., \pm\sqrt{i})$.
 
 # Implementation
+#### Python
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns), which can be installed from command line with `pip install benchmarkfcns`. 
+
+{%highlight Python%}
+from benchmarkfcns import {{page.sname}}
+
+print({{page.sname}}([[0, 0, 0],
+              [1, 1, 1]]))
+{% endhighlight %}
+
+#### MATLAB
 An implementation of the **{{page.functionname}}** with `MATLAB` is provided below. 
 
 {%highlight MATLAB%}

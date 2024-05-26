@@ -5,6 +5,7 @@ title: Styblinski-Tank Function
 categories: optimization, benchmark
 tags: n-dimensional continuous multimodal non-convex
 fname: styblinskitankfcn
+sname: styblinskitank
 functionname: Styblinski-Tank Function
 modal: multimodal
 dimension: n-dimensional
@@ -42,6 +43,17 @@ The function can be defined on any input domain but it is usually evaluated on $
 The function has one global minimum at: $f(x^*)=-39.16599\textbf{n}$ at $\textbf{x}^{\ast} = (-2.903534, ..., -2.903534)$.
 
 # Implementation
+#### Python
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns), which can be installed from command line with `pip install benchmarkfcns`. 
+
+{%highlight Python%}
+from benchmarkfcns import {{page.sname}}
+
+print({{page.sname}}([[0, 0, 0],
+              [1, 1, 1]]))
+{% endhighlight %}
+
+#### MATLAB
 An implementation of the **{{page.functionname}}** with MATLAB is provided below. 
 
 {%highlight MATLAB%}

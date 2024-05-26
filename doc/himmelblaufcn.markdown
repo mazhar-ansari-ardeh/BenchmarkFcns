@@ -5,6 +5,7 @@ title: Himmelblau Function
 categories: optimization, benchmark
 tags: 2-dimensional continuous multimodal non-convex
 fname: himmelblaufcn
+sname: himmelblau
 functionname: Himmelblau Function
 excerpt: The Himmelblau function is a multimodal, 2-dimensional non-convex mathematical function widely used for testing optimization algorithms
 ---
@@ -43,6 +44,17 @@ The function has four local minima at:
 * $f(\textbf{x}^{\ast}) = 0$ at $\textbf{x}^{\ast} = (3.584458, -1.848126)$
 
 # Implementation
+#### Python
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns), which can be installed from command line with `pip install benchmarkfcns`. 
+
+{%highlight Python%}
+from benchmarkfcns import {{page.sname}}
+
+print({{page.sname}}([[0, 0],
+              [1, 1]]))
+{% endhighlight %}
+
+#### MATLAB
 An implementation of the **{{page.functionname}}** with MATLAB is provided below. 
 
 {%highlight MATLAB%}

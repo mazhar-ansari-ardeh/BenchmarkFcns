@@ -5,6 +5,7 @@ title: Ridge Function
 categories: optimization, benchmark
 tags: n-dimensional non-separable unimodal non-convex differentiable
 fname: ridgefcn
+sname: ridge
 functionname: Ridge Function
 modal: unimodal
 dimension: n-dimensional
@@ -72,6 +73,17 @@ The function can be defined on any input domain. It is evaluated on $x_i \in [-5
 The global minimum of the function depends on the hypercube it is defined on. On the hypercube $$[-\gamma, \gamma]^n$$, $f(\textbf{x}^{\ast})= -\gamma$ located at $\mathbf{x^\ast}=(-\gamma, 0, ..., 0)$.
 
 # Implementation
+#### Python
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns), which can be installed from command line with `pip install benchmarkfcns`. 
+
+{%highlight Python%}
+from benchmarkfcns import {{page.sname}}
+
+print({{page.sname}}([[0, 0, 0],
+              [1, 1, 1]]))
+{% endhighlight %}
+
+#### MATLAB
 An implementation of the **{{page.functionname}}** with `MATLAB` is provided below. 
 
 {%highlight MATLAB%}

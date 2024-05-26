@@ -5,6 +5,7 @@ title: Beale Function
 categories: optimization, benchmark
 tags: 2-dimensional continuous multimodal non-convex
 fname: bealefcn
+sname: beale
 functionname: Beale Function
 modal: multimodal
 dimension: 2-dimensional
@@ -39,6 +40,17 @@ The function can be defined on any input domain but it is usually evaluated on $
 The function has one global minimum at: $f(x^*)=0$ at $\textbf{x}^{\ast} = (3, 0.5)$.
 
 # Implementation
+#### Python
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns) and can be installed from command line with `pip install benchmarkfcns`.  
+
+{%highlight Python%}
+from benchmarkfcns import {{page.sname}}
+
+print({{page.sname}}([[0, 0],
+              [1, 1]]))
+{% endhighlight %}
+
+#### MATLAB
 An implementation of the **{{page.functionname}}** with MATLAB is provided below. 
 
 {%highlight MATLAB%}

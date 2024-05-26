@@ -5,6 +5,7 @@ title: Xin-She Yang N. 3 Function
 categories: optimization, benchmark
 tags: n-dimensional non-separable unimodal non-convex differentiable parametric
 fname: xinsheyangn3fcn
+sname: xinsheyang3
 functionname: Xin-She Yang N. 3 Function
 modal: unimodal
 dimension: n-dimensional
@@ -49,6 +50,17 @@ The function can be defined on any input domain but it is usually evaluated on $
 The global minimum $f(\textbf{x}^{\ast})=-1$ are located at $\mathbf{x^\ast}=(0, ..., 0)$ for $m=5$ and $\beta = 15$.
 
 # Implementation
+#### Python
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns), which can be installed from command line with `pip install benchmarkfcns`. 
+
+{%highlight Python%}
+from benchmarkfcns import {{page.sname}}
+
+print({{page.sname}}([[0, 0, 0],
+              [1, 1, 1]]))
+{% endhighlight %}
+
+#### MATLAB
 An implementation of the **{{page.functionname}}** with `MATLAB` is provided below. 
 
 {%highlight MATLAB%}

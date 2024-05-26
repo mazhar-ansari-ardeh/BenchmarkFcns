@@ -5,6 +5,7 @@ title: Deckkers-Aarts Function
 categories: optimization, benchmark
 tags: 2-dimensional continuous differentiable non-separable multimodal non-convex
 fname: deckkersaartsfcn
+sname: deckkersaarts
 functionname: Deckkers-Aarts Function
 modal: multimodal
 dimension: 2-dimensional
@@ -50,6 +51,17 @@ The function can be defined on any input domain but it is usually evaluated on $
 The global minima $f(\textbf{x}^{\ast})=-24771.09375$ are located at $\mathbf{x^\ast}=(0, \pm 15)$.
 
 # Implementation
+#### Python
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns), which can be installed from command line with `pip install benchmarkfcns`. 
+
+{%highlight Python%}
+from benchmarkfcns import {{page.sname}}
+
+print({{page.sname}}([[0, 0, 0],
+              [1, 1, 1]]))
+{% endhighlight %}
+
+#### MATLAB
 An implementation of the **{{page.functionname}}** with `MATLAB` is provided below. 
 
 {%highlight MATLAB%}

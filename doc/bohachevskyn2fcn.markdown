@@ -6,6 +6,7 @@ title: Bohachevsky N. 2 Function
 categories: optimization, benchmark
 tags: 2-dimensional non-separable multimodal non-convex differentiable
 fname: bohachevskyn2fcn
+sname: bohachevsky2
 functionname: Bohachevsky N. 2 Function
 modal: multimodal
 dimension: 2-dimensional
@@ -58,6 +59,17 @@ The function can be defined on any input domain but it is usually evaluated on $
 The function has one global minimum $f(\textbf{x}^{\ast}) = 0$ located at $\mathbf{x^\ast}=(0, 0)$.
 
 # Implementation
+#### Python
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns), which can be installed from command line with `pip install benchmarkfcns`. 
+
+{%highlight Python%}
+from benchmarkfcns import {{page.sname}}
+
+print({{page.sname}}([[0, 0],
+              [1, 1]]))
+{% endhighlight %}
+
+#### MATLAB
 An implementation of the **{{page.functionname}}** with `MATLAB` is provided below. 
 
 {%highlight MATLAB%}

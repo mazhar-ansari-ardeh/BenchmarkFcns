@@ -5,6 +5,7 @@ title: Brent Function
 categories: optimization, benchmark
 tags: 2-dimensional non-separable unimodal convex differentiable
 fname: brentfcn
+sname: brent
 functionname: Brent Function
 modal: unimodal
 dimension: 2-dimensional
@@ -55,6 +56,17 @@ The function can be defined on any input domain but it is usually evaluated on $
 The function has one global minimum at $f(\textbf{x}^{\ast})= e^{-200}$ located at $\mathbf{x^\ast}=(-10, -10)$.
 
 # Implementation
+#### Python
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns), which can be installed from command line with `pip install benchmarkfcns`. 
+
+{%highlight Python%}
+from benchmarkfcns import {{page.sname}}
+
+print({{page.sname}}([[0, 0],
+              [1, 1]]))
+{% endhighlight %}
+
+#### MATLAB
 An implementation of the **{{page.functionname}}** with `MATLAB` is provided below. 
 
 {%highlight MATLAB%}

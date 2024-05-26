@@ -5,6 +5,7 @@ title: Shubert Function
 categories: optimization, benchmark
 tags: n-dimensional continuous differentiable non-separable multimodal non-convex
 fname: shubertfcn
+sname: shubert
 functionname: Shubert Function
 modal: multimodal
 dimension: n-dimensional
@@ -61,6 +62,17 @@ The function can be defined on any input domain but it is usually evaluated on $
 The function has 18 global minima $f(\textbf{x}^{\ast})\approx-186.7309$.
 
 # Implementation
+#### Python
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns), which can be installed from command line with `pip install benchmarkfcns`. 
+
+{%highlight Python%}
+from benchmarkfcns import {{page.sname}}
+
+print({{page.sname}}([[0, 0, 0],
+              [1, 1, 1]]))
+{% endhighlight %}
+
+#### MATLAB
 An implementation of the **{{page.functionname}}** with `MATLAB` is provided below. 
 
 {%highlight MATLAB%}

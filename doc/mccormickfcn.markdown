@@ -5,6 +5,7 @@ title: McCormick Function
 categories: optimization, benchmark
 tags: 2-dimensional continuous differentiable multimodal non-scalable convex
 fname: mccormickfcn
+sname: mccormick
 functionname: McCormick Function
 modal: multimodal
 dimension: 2-dimensional
@@ -46,6 +47,17 @@ The function can be defined on any input domain but it is usually evaluated on $
 The function has one global minimum $f(\textbf{x}^{\ast})\approx −1.9133$ at $\textbf{x}^{\ast} = (−0.547,−1.547)$.
 
 # Implementation
+#### Python
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns), which can be installed from command line with `pip install benchmarkfcns`. 
+
+{%highlight Python%}
+from benchmarkfcns import {{page.sname}}
+
+print({{page.sname}}([[0, 0],
+              [1, 1]]))
+{% endhighlight %}
+
+#### MATLAB
 An implementation of the **{{page.functionname}}** with MATLAB is provided below. 
 
 {%highlight MATLAB%}

@@ -5,6 +5,7 @@ title: Quartic Function
 categories: optimization, benchmark
 tags: n-dimensional continuous differentiable separable multimodal random non-convex
 fname: quarticfcn
+sname: quartic
 functionname: Quartic Function
 modal: multimodal
 dimension: n-dimensional
@@ -41,6 +42,17 @@ Contour of the function is presented below:
 * The function is {{page.separable}}.
 
 # Input Domain
+#### Python
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns), which can be installed from command line with `pip install benchmarkfcns`. 
+
+{%highlight Python%}
+from benchmarkfcns import {{page.sname}}
+
+print({{page.sname}}([[0, 0, 0],
+              [1, 1, 1]]))
+{% endhighlight %}
+
+#### MATLAB
 The function can be defined on any input domain but it is usually evaluated on $x_i \in [-1.28, 1.28]$ for $i=1, ..., n$.
 
 # Global Minima

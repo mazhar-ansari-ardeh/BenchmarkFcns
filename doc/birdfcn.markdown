@@ -6,6 +6,7 @@ title: Bird Function
 categories: optimization, benchmark
 tags: 2-dimensional non-separable multimodal non-convex differentiable
 fname: birdfcn
+sname: bird
 functionname: Bird Function
 modal: multimodal
 dimension: 2-dimensional
@@ -65,6 +66,17 @@ The function can be defined on any input domain but it is usually evaluated on $
 The function has two global minima at $f(\textbf{x}^{\ast}) = -106.764537$ located at $\mathbf{x^\ast}=(4.70104, 3.15294)$ and $\mathbf{x^\ast}=(-1.58214, -3.13024)$.
 
 # Implementation
+#### Python
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns), which can be installed from command line with `pip install benchmarkfcns`. 
+
+{%highlight Python%}
+from benchmarkfcns import {{page.sname}}
+
+print({{page.sname}}([[0, 0],
+              [1, 1]]))
+{% endhighlight %}
+
+#### MATLAB
 An implementation of the **{{page.functionname}}** with `MATLAB` is provided below. 
 
 {%highlight MATLAB%}

@@ -5,6 +5,7 @@ title: Schwefel Function
 categories: optimization, benchmark
 tags: continuous multimodal non-convex non-differentiable non-separable
 fname: schwefelfcn
+sname: schwefel
 functionname: Schwefel Function
 excerpt: The Schwefel function is a multimodal, n-dimensional non-convex mathematical function widely used for testing optimization algorithms
 ---
@@ -37,6 +38,17 @@ The function can be defined on any input domain but it is usually evaluated on t
 $f(\textbf{x}^{\ast}) = 0$ at $\textbf{x}^{\ast} = (420.9687, ..., 420.9687)$
 
 # Implementation
+#### Python
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns), which can be installed from command line with `pip install benchmarkfcns`. 
+
+{%highlight Python%}
+from benchmarkfcns import {{page.sname}}
+
+print({{page.sname}}([[0, 0, 0],
+              [1, 1, 1]]))
+{% endhighlight %}
+
+#### MATLAB
 An implementation of the **{{page.functionname}}** with MATLAB is provided below. **{{page.functionname}}** can be implemented with a `for` loop that iterates over all the components of the input vector but, MATLAB and Octave have built-in facilities that makes the implementation more efficient and concise.
 
 {%highlight MATLAB%}
