@@ -32,9 +32,15 @@
     <section class="main-content">
       <h3>
 <a id="welcome-to-the-optimization-toolbox-project" class="anchor" href="#welcome-to-the-optimization-toolbox-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to the BenchmarkFcns project.</h3>
-Benchmarkfcns is a personal effort to provide a public and free repository of sources and documents for well-known benchmark optimization functions. The project is open-sourced and is hosted on <a href="https://github.com/mazhar-ansari-ardeh/optimization">GitHub</a>. 
-Please forward any bug reports or comments to mazhar.ansari.ardeh [at] gmail.com. 
-For a list of implemented functions and related documents, please visit the <a href="./fcns">Documents</a> page. 
+Benchmarkfcns is an effort to provide a high-perfomant, public and free implementation of well-known benchmark functions
+for mathematical optimization algorithms in Python. The Python library is implemented in C++ and utilizes the powerful
+SIMD vector calucluations to offer very fast and efficient evaluation of the implemented functions on large 
+batches of data.
+
+The library is packaged and available on the PyPI index. To install, simply run `pip install benchmarkfcns`. 
+After installing, using the library is straightforward and all that is needed is to import the needed functions, construct a matrix of input values and call the function.
+
+For a detailed documentation of the implemented functions, please visit the <a href="./fcns">Documents</a> page. 
 More information about the project, including acknowledgements and copyright notices, are available at the <a href="./about">About</a> page.
 
 <p>
