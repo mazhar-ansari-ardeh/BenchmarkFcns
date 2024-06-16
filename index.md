@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+---
+layout: homepage
+---
 <html lang="en-us">
   <head>
   <!-- Google tag (gtag.js) -->
