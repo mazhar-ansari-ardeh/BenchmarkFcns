@@ -39,11 +39,15 @@ for mathematical optimization algorithms in Python. The Python library is implem
 SIMD vector calucluations to offer very fast and efficient evaluation of the implemented functions on large 
 batches of data.
 
+<p>
 The library is packaged and available on the PyPI index. To install, simply run <code class="language-plaintext highlighter-rouge">pip install benchmarkfcns</code>. 
 After installing, using the library is straightforward and all that is needed is to import the needed functions, construct a matrix of input values and call the function.
+</p>
 
+<p>
 For a detailed documentation of the implemented functions, please visit the <a href="./fcns">Documents</a> page. 
 More information about the project, including acknowledgements and copyright notices, are available at the <a href="./about">About</a> page.
+</p>
 
 <p>
       </p>
