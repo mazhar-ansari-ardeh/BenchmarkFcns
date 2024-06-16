@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+---
+layout: default
+---
 <html lang="en-us">
   <head>
   <!-- Google tag (gtag.js) -->
