@@ -655,6 +655,16 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/threehumpcamelfcn
     )pbdoc");
 
+    m.def("trid", &trid, R"pbdoc(
+        Computes the value of the Trid benchmark function.
+        SCORES = trid(X) computes the value of the Trid
+        function at point X. `trid` accepts a matrix of size M-by-N and
+        returns a vetor SCORES of size M-by-1 in which each row contains the
+        function value for the corresponding row of X.
+        For more information, please visit:
+        benchmarkfcns.info/doc/tridfcn
+    )pbdoc");
+
     m.def("wolfe", &wolfe, R"pbdoc(
         Computes the value of the Wolfe function.
         SCORES = wolfe(X) computes the value of the Wolfe

@@ -134,6 +134,8 @@ namespace BenchmarkFcns {
 
     VectorXd threehumpcamel(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
+    VectorXd trid(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
     VectorXd wolfe(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd xinsheyang1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);

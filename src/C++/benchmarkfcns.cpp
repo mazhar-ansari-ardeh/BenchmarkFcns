@@ -694,6 +694,11 @@ namespace BenchmarkFcns {
         return scores;
     }
 
+    VectorXd trid(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        VectorXd scores = (x.array() - 1).square().rowwise().sum() - (x.block(0, 1, x.rows(), x.cols() - 1).array() * x.block(0, 0, x.rows(), x.cols() - 1).array()).rowwise().sum();
+        return scores;
+    }
+
     VectorXd xinsheyang1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         int m = x.rows();
