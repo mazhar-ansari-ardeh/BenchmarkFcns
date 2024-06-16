@@ -34,10 +34,12 @@ layout: homepage
     <section class="main-content">
       <h3>
 <a id="welcome-to-the-optimization-toolbox-project" class="anchor" href="#welcome-to-the-optimization-toolbox-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to the BenchmarkFcns project.</h3>
+<p>
 Benchmarkfcns is an effort to provide a high-perfomant, public and free implementation of well-known benchmark functions
 for mathematical optimization algorithms in Python. The Python library is implemented in C++ and utilizes the powerful
 SIMD vector calucluations to offer very fast and efficient evaluation of the implemented functions on large 
 batches of data.
+</p>
 
 <p>
 The library is packaged and available on the PyPI index. To install, simply run <code class="language-plaintext highlighter-rouge">pip install benchmarkfcns</code>. 
