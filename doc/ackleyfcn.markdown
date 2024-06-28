@@ -13,7 +13,7 @@ excerpt: The Ackley function is a multimodal, n-dimensional non-convex mathemati
 ---
 
 # Mathematical Definition
-
+{{page.url}}
 {%raw%}
 
 $$f(\textbf{x}) = f(x_1, ..., x_n)= -a.exp(-b\sqrt{\frac{1}{n}\sum_{i=1}^{n}x_i^2})-exp(\frac{1}{n}\sum_{i=1}^{n}cos(cx_i))+ a + exp(1)$$
