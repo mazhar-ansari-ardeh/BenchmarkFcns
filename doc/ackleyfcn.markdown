@@ -13,9 +13,6 @@ excerpt: The Ackley function is a multimodal, n-dimensional non-convex mathemati
 ---
 
 # Mathematical Definition
-"{{page.url}}"
-
-{{page.sname}}
 
 {%raw%}
 
