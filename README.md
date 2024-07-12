@@ -47,7 +47,12 @@ from benchmarkfcns.plotting import meshgrid
 
 # Using the matplotlib library for this example
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
+
+# Used to make title equation look nicer
+import matplotlib
+matplotlib.rcParams['mathtext.fontset'] = 'cm'
+matplotlib.rcParams['font.family'] = 'STIXGeneral'
 
 # We want to plot the function for x and y in range [-5, 5].
 # This corresponds to a grid of 10,000,000 points.
@@ -70,7 +75,10 @@ ax.contour(X, Y, Z, zdir='z', offset=0, cmap='coolwarm')
 ax.set_xlabel('X-axis')
 ax.set_ylabel('Y-axis')
 ax.set_zlabel('Z-axis')
+plt.suptitle(r"$f({\bf \vec{x}}) = -a\cdot exp\left[-b\,\sqrt{\dfrac{1}{n}\sum_{i=1}^{n}x_{i}^{2}}\right]-exp\left[\dfrac{1}{n}\sum_{i=1}^{n}cos(c\cdot x_{i})\right]+ a + exp(1)$")
 
+# Set view angle and display
+ax.view_init(14, 120)
 plt.show()
 ```
 
@@ -82,7 +90,7 @@ plt.show()
 As a reference, the repository also contains the implementation of the functions in MATLAB. To install and use the MATLAB implementation, it is just required to add the project folders to MATLAB's path. For example, to use the functions in the 'benchmarks/MATLAB' folder, just navigate to this folder with MATLAB's directory explorer or use the command `addpath` with path to the folder on your PC (e.g. `addpath /path/to/benchmarks`).
 
 # Local development and compilation
-The library is built with the [pybind11](https://pybind11.readthedocs.io/), [scikit-build-core](scikit-build-core) and [Eigen](https://eigen.tuxfamily.org/) libraries. To compile the library, you will need to have CMake version 3.15 or above installed and configured. The easiest way to compile and install the package locally is to clone the repository into a directory, e.g. `BenchmarkFcns`, and then run `pip install ./BenchmarkFcns`. Although optional, it is highly recommended to install the package into a virtual environment.
+The library is built with the [pybind11](https://pybind11.readthedocs.io/), [scikit-build-core](scikit-build-core) and [Eigen](https://eigen.tuxfamily.org/) libraries. To compile the library, you will need to have CMake version 3.15 or above installed and configured. The easiest way to compile and install the package locally is to clone the repository into a directory, e.g. `BenchmarkFcns`, with submodules initialized using `git submodule update --init --recursive`, and then run `pip install ./BenchmarkFcns`. Although optional, it is highly recommended to install the package into a virtual environment.
 
 # Contribution
 Any suggestions and contributions are welcomed. The best way to contribute to the library is to fork the repository, apply the contributions and create a pull request.
