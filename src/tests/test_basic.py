@@ -4,4 +4,4 @@ import benchmarkfcns as m
 
 
 def test_version():
-    assert m.__version__ == "2.2.0"
+    assert m.__version__ == "2.3.0"

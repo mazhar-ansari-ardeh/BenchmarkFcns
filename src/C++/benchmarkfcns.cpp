@@ -682,6 +682,18 @@ namespace BenchmarkFcns {
         return scores;
     }
 
+    VectorXd treccani(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        int n = x.cols();
+        if (n != 2)
+            throw std::invalid_argument("The Treccani function is only defined on a 2D space.");
+
+        auto X = x.col(0).array();
+        auto Y = x.col(1).array();
+
+        VectorXd scores = (X.pow(4) + 4 * X.pow(3) + 4 * X.pow(2) + Y.pow(2));
+        return scores;
+    }
+
     VectorXd threehumpcamel(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
