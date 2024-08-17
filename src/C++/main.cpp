@@ -663,14 +663,12 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/threehumpcamelfcn
     )pbdoc");
 
-    m.def("trecanni", &trecanni, R"pbdoc(
-        Computes the value of the Trecanni benchmark function.
-        SCORES = trecanni(X) computes the value of the Trecanni
-        function at point X. `trecanni` accepts a matrix of size M-by-2 and
+    m.def("treccani", &treccani, R"pbdoc(
+        Computes the value of the Treccani benchmark function.
+        SCORES = treccani(X) computes the value of the Treccani
+        function at point X. `treccani` accepts a matrix of size M-by-2 and
         returns a vetor SCORES of size M-by-1 in which each row contains the
         function value for the corresponding row of X.
-        For more information, please visit:
-        benchmarkfcns.info/doc/trecannifcn
     )pbdoc");
 
     m.def("trid", &trid, R"pbdoc(
