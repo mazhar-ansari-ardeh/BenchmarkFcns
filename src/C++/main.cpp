@@ -179,6 +179,14 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/brownfcn
     )pbdoc");
 
+    m.def("bukinn4", &bukinn4, R"pbdoc(
+        Computes the value of the Bukin N. 4 benchmark function.
+        SCORES = bukinn4(X) computes the value of the Bukin N. 4 function at
+        point X. `bukinn4` accepts a matrix of size M-by-2 and returns a
+        vetor SCORES of size M-by-1 in which each row contains the function value
+        for the corresponding row of X.
+    )pbdoc");
+
     m.def("bukinn6", &bukinn6, R"pbdoc(
         Computes the value of the Bukin N. 6 benchmark function.
         SCORES = bukinn6(X) computes the value of the Bukin N. 6 function at

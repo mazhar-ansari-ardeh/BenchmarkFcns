@@ -42,6 +42,8 @@ namespace BenchmarkFcns {
 
     VectorXd brown(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
+    VectorXd bukinn4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
     VectorXd bukinn6(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd crossintray(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);

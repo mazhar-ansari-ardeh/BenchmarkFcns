@@ -187,6 +187,18 @@ namespace BenchmarkFcns {
         return scores;
     }
 
+    VectorXd bukinn4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        int n = x.cols();
+        if (n != 2)
+            throw std::invalid_argument("The Bukin N. 4 functions is only defined on a 2D space.");
+
+        auto X = x.col(0);
+        auto Y = x.col(1);
+
+        VectorXd scores = 100 * Y.array().square() + 0.01 * (X.array() + 10).array().abs();
+        return scores;
+    }
+
     VectorXd bukinn6(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
