@@ -29,7 +29,7 @@ classifiers = [
 ]
 
 dependencies = [
-  "numpy >= 1.26"
+  "numpy >= 1.26, <2"
   ]
 
 
