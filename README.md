@@ -75,7 +75,7 @@ plt.show()
 ```
 
 <p align="center">
-    <img src="image-1.png" alt="drawing" width="700"/>
+    <img src="https://raw.githubusercontent.com/mazhar-ansari-ardeh/BenchmarkFcns/master/image-1.png" alt="drawing" width="700"/>
 </p>
 
 ## MATLAB
