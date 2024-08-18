@@ -187,6 +187,18 @@ namespace BenchmarkFcns {
         return scores;
     }
 
+    VectorXd bukinn2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        int n = x.cols();
+        if (n != 2)
+            throw std::invalid_argument("The Bukin N. 2 functions is only defined on a 2D space.");
+
+        auto X = x.col(0);
+        auto Y = x.col(1);
+
+        VectorXd scores = 100 * (Y.array().square() - 0.01 * X.array().square() + 1) + 0.01 * ((X.array() + 10).square());
+        return scores;
+    }
+
     VectorXd bukinn4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
@@ -209,6 +221,23 @@ namespace BenchmarkFcns {
         auto Y = x.col(1);
 
         VectorXd scores = 100 * (Y.array() - 0.01 * X2).array().abs().sqrt() + 0.01 * (X.array() + 10).array().abs();
+        return scores;
+    }
+
+    VectorXd chichinadze(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        int n = x.cols();
+        if (n != 2)
+            throw std::invalid_argument("The Chichinadze function is only defined on a 2D space.");
+
+        auto X = x.col(0).array();
+        auto Y = x.col(1).array();
+
+        VectorXd scores = X.square()
+                          - 12 * X
+                          + 8 * sin(5 * M_PI * X / 2)
+                          + 10 * cos(M_PI * X / 2)
+                          + 11
+                          - 0.2 * sqrt(5) / exp((Y - 0.5).square() / 2);
         return scores;
     }
 

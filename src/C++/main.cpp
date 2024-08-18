@@ -179,6 +179,14 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/brownfcn
     )pbdoc");
 
+    m.def("bukinn2", &bukinn2, R"pbdoc(
+        Computes the value of the Bukin N. 2 benchmark function.
+        SCORES = bukinn2(X) computes the value of the Bukin N. 2 function at
+        point X. `bukinn2` accepts a matrix of size M-by-2 and returns a
+        vetor SCORES of size M-by-1 in which each row contains the function value
+        for the corresponding row of X.
+    )pbdoc");
+
     m.def("bukinn4", &bukinn4, R"pbdoc(
         Computes the value of the Bukin N. 4 benchmark function.
         SCORES = bukinn4(X) computes the value of the Bukin N. 4 function at
@@ -195,6 +203,14 @@ PYBIND11_MODULE(_core, m) {
         for the corresponding row of X.
         For more information, please visit:
         benchmarkfcns.info/doc/bukinn6fcn
+    )pbdoc");
+
+    m.def("chichinadze", &chichinadze, R"pbdoc(
+        Computes the value of the Chichinadze benchmark function.
+        SCORES = chichinadze(X) computes the value of the Chichinadze
+        function at point X. `chichinadze` accepts a matrix of size M-by-2 and
+        returns a vetor SCORES of size M-by-1 in which each row contains the
+        function value for the corresponding row of X.
     )pbdoc");
 
     m.def("crossintray", &crossintray, R"pbdoc(
