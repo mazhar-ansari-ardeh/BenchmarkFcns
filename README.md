@@ -50,7 +50,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
 # We want to plot the function for x and y in range [-5, 5].
-# This corresponds to a grid of 10,000,000 points.
+# This corresponds to a grid of 100,000,000 points.
 x = np.linspace(-5, 5, 10000)
 y = np.linspace(-5, 5, 10000)
 

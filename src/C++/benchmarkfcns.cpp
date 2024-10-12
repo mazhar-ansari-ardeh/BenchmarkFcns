@@ -241,6 +241,12 @@ namespace BenchmarkFcns {
         return scores;
     }
 
+    VectorXd cigar(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        int n = x.cols();
+        VectorXd scores = x.col(0).array().square() + 1e6 * x.block(0, 1, x.rows(), n - 1).array().square().rowwise().sum();
+        return scores;
+    }
+
     VectorXd crossintray(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)

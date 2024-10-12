@@ -213,6 +213,14 @@ PYBIND11_MODULE(_core, m) {
         function value for the corresponding row of X.
     )pbdoc");
 
+    m.def("cigar", &cigar, R"pbdoc(
+        Computes the value of the Cigar benchmark function.
+        SCORES = cigar(X) computes the value of the Cigar function at point X.
+        `cigar` accepts a matrix of size M-by-N and returns a vetor SCORES of
+        size M-by-1 in which each row contains the function value for the
+        corresponding row of X.
+    )pbdoc");
+
     m.def("crossintray", &crossintray, R"pbdoc(
         Computes the value of the Cross-in-tray benchmark function.
         SCORES = crossintray(X) computes the value of the Cross-in-tray
