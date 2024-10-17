@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Schaffer N. 3 Function
 categories: optimization, benchmark
-tags: 2-dimensional continuous differentiable non-convex unimodal non-separable, non-convex
+tags: 2-dimensional continuous differentiable non-convex unimodal non-separable non-convex
 fname: schaffern3fcn
 sname: schaffer3
 functionname: Schaffer N. 3 Function
