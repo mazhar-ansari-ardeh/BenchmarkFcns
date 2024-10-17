@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Goldstein-Price Function
 categories: optimization, benchmark
-tags: 2-dimensional continuous differentiable non-separable multimodal non-convex
+tags: 2-dimensional continuous differentiable non-separable multimodal non-convex non-scalable
 fname: goldsteinpricefcn
 sname: goldsteinprice
 functionname: Goldstein-Price Function

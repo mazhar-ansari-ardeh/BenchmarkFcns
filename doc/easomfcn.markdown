@@ -3,7 +3,7 @@ layout: page
 resource: true
 title: Easom Function
 categories: optimization, benchmark
-tags: 2-dimensional continuous differentiable separable multimodal non-convex
+tags: 2-dimensional continuous differentiable separable multimodal non-convex non-scalable
 fname: easomfcn
 sname: easom
 functionname: Easom Function
