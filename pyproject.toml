@@ -5,7 +5,7 @@ description = "A high-performant C++ implementation of benchmark functions for m
 authors = ["Mazhar Ansari Ardeh"]
 
 [build-system]
-requires = ["scikit-build-core>=0.3.3", "pybind11"]
+requires = ["scikit-build-core>=0.10", "pybind11"]
 build-backend = "scikit_build_core.build"
 
 
@@ -30,7 +30,7 @@ classifiers = [
 
 dependencies = [
   "numpy >= 1.26, <2",
-  "matplotlib >= 3.9.1, <4.0.0",
+  "matplotlib = ^3.8",
   ]
 
 
