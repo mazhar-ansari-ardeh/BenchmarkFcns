@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "Benchmark Functions"
-version = "2.6.0"
+version = "2.7.0"
 description = "A high-performant C++ implementation of benchmark functions for mathematical optimization algorithms."
 authors = ["Mazhar Ansari Ardeh"]
 

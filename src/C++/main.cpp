@@ -205,6 +205,16 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/bukinn6fcn
     )pbdoc");
 
+    m.def("carromtable", &carromtable, R"pbdoc(
+        Computes the value of the Carromtable benchmark function.
+        SCORES = carromtable(X) computes the value of the Carromtable
+        function at point X. `carromtable` accepts a matrix of size M-by-2 and
+        returns a vetor SCORES of size M-by-1 in which each row contains the
+        function value for the corresponding row of X.
+        For more information, please visit:
+        benchmarkfcns.info/doc/carromtablefcn
+    )pbdoc");
+
     m.def("chichinadze", &chichinadze, R"pbdoc(
         Computes the value of the Chichinadze benchmark function.
         SCORES = chichinadze(X) computes the value of the Chichinadze

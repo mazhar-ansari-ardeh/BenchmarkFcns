@@ -48,6 +48,8 @@ namespace BenchmarkFcns {
 
     VectorXd bukinn6(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
+    VectorXd carromtable(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
     VectorXd chichinadze(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd cigar(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);

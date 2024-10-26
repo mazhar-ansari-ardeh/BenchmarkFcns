@@ -224,6 +224,21 @@ namespace BenchmarkFcns {
         return scores;
     }
 
+    VectorXd carromtable(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        int n = x.cols();
+        if (n != 2)
+            throw std::invalid_argument("The Carromtable function is only defined on a 2D space.");
+
+        auto X = x.col(0).array();
+        auto Y = x.col(1).array();
+
+        VectorXd ex = 1 - ((X.square() + Y.square()).sqrt() / M_PI);
+        VectorXd scores = - (1.0 / 30) * exp(2 * ex.array().abs())
+                                       * (cos(X).square())
+                                       * (cos(Y).square());
+        return scores;
+    }
+
     VectorXd chichinadze(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
