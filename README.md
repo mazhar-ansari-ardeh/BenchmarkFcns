@@ -2,7 +2,7 @@
 [![Downloads](https://static.pepy.tech/badge/benchmarkfcns)](https://pepy.tech/project/benchmarkfcns)
 
 # BenchmarkFcns
-Benchmarkfcns is an effort to provide a high-perfomant, public and free implementation of well-known benchmark functions for mathematical optimization algorithms in Python. The Python library is implemented in C++ and utilizes the powerful SIMD vector calucluations to offer very fast and efficient evaluation of the implemented functions on large batches of data.
+Benchmarkfcns is an effort to provide a high-perfomant, public and free implementation of well-known benchmark functions for mathematical optimization algorithms in Python. The Python library is implemented in C++ and utilizes powerful SIMD vector calucluations to offer very fast and efficient evaluation of the implemented functions on large batches of data.
 
 For the documentation of the implemented functions and their features, please visit [https://benchmarkfcns.info](https://benchmarkfcns.info).
 
