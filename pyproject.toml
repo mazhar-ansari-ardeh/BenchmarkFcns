@@ -42,7 +42,7 @@ test = ["pytest"]
 
 [tool.scikit-build]
 wheel.expand-macos-universal-tags = true
-minimum-version = "0.8"
+minimum-version = "0.10"
 wheel.packages = ["src/python/benchmarkfcns"]
 
 [tool.pytest.ini_options]
