@@ -1,23 +1,16 @@
-[tool.poetry]
-name = "Benchmark Functions"
-version = "2.7.0"
-description = "A high-performant C++ implementation of benchmark functions for mathematical optimization algorithms."
-authors = ["Mazhar Ansari Ardeh"]
-
 [build-system]
-requires = ["scikit-build-core>=0.10", "pybind11"]
-build-backend = "scikit_build_core.build"
+requires = ["poetry-core>=1.1.0"]
+build-backend = "poetry.core.masonry.api"
 
-
-[project]
+[tool.poetry]
 name = "benchmarkfcns"
 version = "2.7.0"
-description="A high-performant C++ implementation of benchmark functions for mathematical optimization algorithms."
+description = "A high-performant C++ implementation of benchmark functions for mathematical optimization algorithms."
 readme = "README.md"
 authors = [
-  { name = "Mazhar Ansari Ardeh", email = "mazhar.ansari.ardeh@gmail.com" },
+  { name = "Mazhar Ansari Ardeh", email = "mazhar.ansari.ardeh@gmail.com" }
 ]
-requires-python = ">=3.9"
+license = "MIT"
 classifiers = [
   "Development Status :: 4 - Beta",
   "License :: OSI Approved :: MIT License",
@@ -25,20 +18,24 @@ classifiers = [
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
-  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.12"
 ]
+homepage = "benchmarkfcns.info"
+repository = "https://github.com/mazhar-ansari-ardeh/BenchmarkFcns/"
 
-dependencies = [
-  "numpy >= 1.26, <2",
-  "matplotlib == 3.7.5",
-  ]
+[tool.poetry.dependencies]
+python = ">=3.9"
+numpy = ">=1.26,<2"
+matplotlib = "^3.7"
 
-
-[project.optional-dependencies]
+[tool.poetry.extras]
 test = ["pytest"]
-[tool.pytest]
-  filterwarnings = "ignore"
 
+[tool.poetry.dev-dependencies]
+pytest = "^6.0"
+
+[tool.pytest]
+filterwarnings = "ignore"
 
 [tool.scikit-build]
 wheel.expand-macos-universal-tags = true
@@ -55,13 +52,11 @@ filterwarnings = [
 ]
 testpaths = ["src/tests"]
 
-
 [tool.cibuildwheel]
 test-command = "pytest {project}/src/tests"
 test-extras = ["test"]
 test-skip = ["*universal2:arm64"]
 build-verbosity = 1
-
 
 [tool.ruff]
 src = ["src"]
