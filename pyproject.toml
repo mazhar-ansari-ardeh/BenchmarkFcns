@@ -1,16 +1,23 @@
-[build-system]
-requires = ["poetry-core>=1.1.0"]
-build-backend = "poetry.core.masonry.api"
-
 [tool.poetry]
-name = "benchmarkfcns"
+name = "Benchmark Functions"
 version = "2.7.0"
 description = "A high-performant C++ implementation of benchmark functions for mathematical optimization algorithms."
+authors = ["Mazhar Ansari Ardeh"]
+
+[build-system]
+requires = ["scikit-build-core>=0.10", "pybind11"]
+build-backend = "scikit_build_core.build"
+
+
+[project]
+name = "benchmarkfcns"
+version = "2.7.0"
+description="A high-performant C++ implementation of benchmark functions for mathematical optimization algorithms."
 readme = "README.md"
 authors = [
-  "Mazhar Ansari Ardeh <mazhar.ansari.ardeh@gmail.com>"
+  { name = "Mazhar Ansari Ardeh", email = "mazhar.ansari.ardeh@gmail.com" },
 ]
-license = "MIT"
+requires-python = ">=3.9"
 classifiers = [
   "Development Status :: 4 - Beta",
   "License :: OSI Approved :: MIT License",
@@ -18,24 +25,19 @@ classifiers = [
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
-  "Programming Language :: Python :: 3.12"
+  "Programming Language :: Python :: 3.12",
 ]
-homepage = "https://benchmarkfcns.info"
-repository = "https://github.com/mazhar-ansari-ardeh/BenchmarkFcns/"
 
-[tool.poetry.dependencies]
-python = ">=3.9"
-numpy = ">=1.26,<2"
-matplotlib = "^3.7"
+dependencies = [
+  "numpy >= 1.26, <2"
+  ]
 
-[tool.poetry.extras]
+
+[project.optional-dependencies]
 test = ["pytest"]
-
-[tool.poetry.dev-dependencies]
-pytest = "^6.0"
-
 [tool.pytest]
-filterwarnings = "ignore"
+  filterwarnings = "ignore"
+
 
 [tool.scikit-build]
 wheel.expand-macos-universal-tags = true
@@ -52,11 +54,13 @@ filterwarnings = [
 ]
 testpaths = ["src/tests"]
 
+
 [tool.cibuildwheel]
 test-command = "pytest {project}/src/tests"
 test-extras = ["test"]
 test-skip = ["*universal2:arm64"]
 build-verbosity = 1
+
 
 [tool.ruff]
 src = ["src"]
