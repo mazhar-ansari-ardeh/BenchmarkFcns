@@ -20,7 +20,7 @@ classifiers = [
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12"
 ]
-homepage = "benchmarkfcns.info"
+homepage = "https://benchmarkfcns.info"
 repository = "https://github.com/mazhar-ansari-ardeh/BenchmarkFcns/"
 
 [tool.poetry.dependencies]
