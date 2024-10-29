@@ -275,6 +275,19 @@ namespace BenchmarkFcns {
         return scores;
     }
 
+    VectorXd crownedcross(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        int n = x.cols();
+        if (n != 2)
+            throw std::invalid_argument("The Crowned Cross function is only defined on the 2D space.");
+
+        auto X = x.col(0).array();
+        auto Y = x.col(1).array();
+
+        VectorXd expcomponent = (100 - (sqrt(X.square() + Y.square()) / M_PI)).array().abs();
+        VectorXd scores = 0.0001 * (((exp(expcomponent.array()).array() * sin(X) * sin(Y))).array().abs() + 1).pow(0.1);
+        return scores;
+    }
+
     VectorXd deckkersaarts(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)

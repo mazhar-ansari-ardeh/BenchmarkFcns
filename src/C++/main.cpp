@@ -241,6 +241,14 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/crossintrayfcn
     )pbdoc");
 
+    m.def("crownedcross", &crownedcross, R"pbdoc(
+        Computes the value of the Crowned Cross benchmark function.
+        SCORES = crownedcross(X) computes the value of the Crowned Cross
+        function at point X. `crownedcross` accepts a matrix of size M-by-2 and
+        returns a vetor SCORES of size M-by-1 in which each row contains the
+        function value for the corresponding row of X.
+    )pbdoc");
+
     m.def("deckkersaarts", &deckkersaarts, R"pbdoc(
         Computes the value of the Deckkers-Aarts function.
         SCORES = deckkersaarts(X) computes the value of the Deckkers-Aarts
