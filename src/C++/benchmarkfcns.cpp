@@ -13,7 +13,6 @@ namespace BenchmarkFcns {
     }
 
     VectorXd ackley(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
-
         int n = x.cols();
         double a = 20;
         double b = 0.2;
@@ -259,6 +258,11 @@ namespace BenchmarkFcns {
     VectorXd cigar(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         VectorXd scores = x.col(0).array().square() + 1e6 * x.block(0, 1, x.rows(), n - 1).array().square().rowwise().sum();
+        return scores;
+    }
+
+    VectorXd cosinemixture(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        VectorXd scores = -0.1 * (x.array() * 5 * M_PI).cos().rowwise().sum() - x.array().square().rowwise().sum();
         return scores;
     }
 
