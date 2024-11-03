@@ -257,6 +257,30 @@ PYBIND11_MODULE(_core, m) {
         function value for the corresponding row of X.
     )pbdoc");
 
+    m.def("csendes", &csendes, R"pbdoc(
+        Computes the value of the Csendes benchmark function.
+        SCORES = csendes(X) computes the value of the Csendes function at point X.
+        `csendes` accepts a matrix of size M-by-N and returns a vetor SCORES of
+        size M-by-1 in which each row contains the function value for the
+        corresponding row of X.
+    )pbdoc");
+
+    m.def("cube", &cube, R"pbdoc(
+        Computes the value of the Cube benchmark function.
+        SCORES = cube(X) computes the value of the Cube function at point X.
+        `cube` accepts a matrix of size M-by-N and returns a vetor SCORES of
+        size M-by-1 in which each row contains the function value for the
+        corresponding row of X.
+    )pbdoc");
+
+    m.def("debn1", &debn1, R"pbdoc(
+        Computes the value of the Deb N. 1 benchmark function.
+        SCORES = deb1(X) computes the value of the Deb N. 1 function at point X.
+        `deb1` accepts a matrix of size M-by-N and returns a vetor SCORES of
+        size M-by-1 in which each row contains the function value for the
+        corresponding row of X.
+    )pbdoc");
+
     m.def("deckkersaarts", &deckkersaarts, R"pbdoc(
         Computes the value of the Deckkers-Aarts function.
         SCORES = deckkersaarts(X) computes the value of the Deckkers-Aarts

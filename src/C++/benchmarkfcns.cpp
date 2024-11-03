@@ -292,6 +292,29 @@ namespace BenchmarkFcns {
         return scores;
     }
 
+    VectorXd csendes(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        VectorXd scores = (x.array().pow(6) * (2 + sin(1 / x.array()))).rowwise().sum();
+        return scores;
+    }
+
+    VectorXd cube(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        int n = x.cols();
+        if (n != 2)
+            throw std::invalid_argument("The Cube function is only defined on the 2-D space.");
+
+        auto X = x.col(0).array();
+        auto Y = x.col(1).array();
+
+        VectorXd scores = 100 * (Y - X.cube()).square() + (1 - X).square();
+        return scores;
+    }
+
+    VectorXd debn1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        int n = x.cols();
+        VectorXd scores = - (x.array() * 5 * M_PI).sin().pow(6).rowwise().sum() / n;
+        return scores;
+    }
+
     VectorXd deckkersaarts(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
