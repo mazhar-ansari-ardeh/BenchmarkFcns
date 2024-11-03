@@ -62,7 +62,7 @@ namespace BenchmarkFcns {
 
     VectorXd csendes(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
-    VectorXd cube(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+    VectorXd cubefcn(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd debn1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 

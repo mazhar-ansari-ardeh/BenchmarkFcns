@@ -297,7 +297,7 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    VectorXd cube(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd cubefcn(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
             throw std::invalid_argument("The Cube function is only defined on the 2-D space.");

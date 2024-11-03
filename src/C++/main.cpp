@@ -265,7 +265,7 @@ PYBIND11_MODULE(_core, m) {
         corresponding row of X.
     )pbdoc");
 
-    m.def("cube", &cube, R"pbdoc(
+    m.def("cubefcn", &cubefcn, R"pbdoc(
         Computes the value of the Cube benchmark function.
         SCORES = cube(X) computes the value of the Cube function at point X.
         `cube` accepts a matrix of size M-by-N and returns a vetor SCORES of
