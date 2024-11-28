@@ -75,7 +75,7 @@ f(\mathbf x)=f(x_1, ..., x_n)=1-cos(2\pi\sqrt{\sum_{i=1}^{D}x_i^2})+0.1\sqrt{\su
 
 # References:
 * Momin Jamil and Xin-She Yang, A literature survey of benchmark functions for global optimization problems, Int. Journal of Mathematical Modelling 
-and Numerical Optimisation}, Vol. 4, No. 2, pp. 150--194 (2013), [arXiv:1308.4008](arXiv:1308.4008)
+and Numerical Optimisation}, Vol. 4, No. 2, pp. 150--194 (2013), [arXiv:1308.4008](https://arxiv.org/abs/1308.4008)
 * [http://profesores.elo.utfsm.cl/~tarredondo/info/soft-comp/functions/node12.html](http://profesores.elo.utfsm.cl/~tarredondo/info/soft-comp/functions/node12.html)
 * R. Salomon, “Re-evaluating Genetic Algorithm Performance Under Corodinate Rotation
 of Benchmark Functions: A Survey of Some Theoretical and Practical Aspects of

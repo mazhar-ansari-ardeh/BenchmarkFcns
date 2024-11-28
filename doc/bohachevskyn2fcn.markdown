@@ -83,6 +83,6 @@ f(x, y)=x^2 + 2y^2 -0.3cos(3\pi x)cos(4\pi y)+0.3
 
 # References:
 * Momin Jamil and Xin-She Yang, A literature survey of benchmark functions for global optimization problems, Int. Journal of Mathematical Modelling 
-and Numerical Optimisation}, Vol. 4, No. 2, pp. 150--194 (2013), [arXiv:1308.4008](arXiv:1308.4008)
+and Numerical Optimisation}, Vol. 4, No. 2, pp. 150--194 (2013), [arXiv:1308.4008](https://arxiv.org/abs/1308.4008)
 * I. O. Bohachevsky, M. E. Johnson, M. L. Stein, “General Simulated Annealing for
 Function Optimization,” Technometrics, vol. 28, no. 3, pp. 209-217, 1986.

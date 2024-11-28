@@ -86,5 +86,5 @@ f(\textbf{x})=\sum_{i=1}^{n-1}\left( e^{-0.2}\sqrt{x_i^2+x_{i+1}^2} + 3\left( co
 
 # References:
 * Momin Jamil and Xin-She Yang, A literature survey of benchmark functions for global optimization problems, Int. Journal of Mathematical Modelling 
-and Numerical Optimisation}, Vol. 4, No. 2, pp. 150--194 (2013), [arXiv:1308.4008](arXiv:1308.4008)
+and Numerical Optimisation}, Vol. 4, No. 2, pp. 150--194 (2013), [arXiv:1308.4008](https://arxiv.org/abs/1308.4008)
 

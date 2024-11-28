@@ -85,7 +85,7 @@ f(\mathbf{x})=f(x_1, ..., x_n)=\sum_{i=1}^{n}(x^2-i)^2
 
 # References:
 * Momin Jamil and Xin-She Yang, A literature survey of benchmark functions for global optimization problems, Int. Journal of Mathematical Modelling 
-and Numerical Optimisation}, Vol. 4, No. 2, pp. 150--194 (2013), [arXiv:1308.4008](arXiv:1308.4008)
+and Numerical Optimisation}, Vol. 4, No. 2, pp. 150--194 (2013), [arXiv:1308.4008](https://arxiv.org/abs/1308.4008)
 * A. Qing, “Dynamic Differential Evolution Strategy and Applications in Electromagnetic
 Inverse Scattering Problems,” IEEE Transactions on Geoscience and remote Sensing,
 vol. 44, no. 1, pp. 116-125, 2006.

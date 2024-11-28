@@ -76,6 +76,6 @@ f(\mathbf{x})=f(x_1, ..., x_n)=\sum_{i=1}^{n}x_i^{10}
 
 # References:
 * Momin Jamil and Xin-She Yang, A literature survey of benchmark functions for global optimization problems, Int. Journal of Mathematical Modelling 
-and Numerical Optimisation}, Vol. 4, No. 2, pp. 150--194 (2013), [arXiv:1308.4008](arXiv:1308.4008)
+and Numerical Optimisation}, Vol. 4, No. 2, pp. 150--194 (2013), [arXiv:1308.4008](https://arxiv.org/abs/1308.4008)
 * H. P. Schwefel, “Numerical Optimization for Computer Models,” John Wiley Sons,
 1981.

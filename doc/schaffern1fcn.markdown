@@ -77,6 +77,6 @@ f(x, y)=0.5 + \frac{sin^2(x^2+y^2)^2-0.5}{(1+0.001(x^2+y^2))^2}
 {% endhighlight %}
 
 # References:
-* Momin Jamil and Xin-She Yang, A literature survey of benchmark functions for global optimization problems, Int. Journal of Mathematical Modelling and Numerical Optimisation}, Vol. 4, No. 2, pp. 150--194 (2013), [arXiv:1308.4008](arXiv:1308.4008)
+* Momin Jamil and Xin-She Yang, A literature survey of benchmark functions for global optimization problems, Int. Journal of Mathematical Modelling and Numerical Optimisation}, Vol. 4, No. 2, pp. 150--194 (2013), [arXiv:1308.4008](https://arxiv.org/abs/1308.4008)
 * S. K. Mishra, “Some New Test Functions For Global Optimization And
 Performance of Repulsive Particle Swarm Method,” [Available Online]: [http://mpra.ub.uni-muenchen.de/2718/](http://mpra.ub.uni-muenchen.de/2718/)

@@ -75,7 +75,7 @@ f(\mathbf{x})=f(x_1, ..., x_n)=-exp(-0.5\sum_{i=1}^n{x_i^2})
 
 # References:
 * Momin Jamil and Xin-She Yang, A literature survey of benchmark functions for global optimization problems, Int. Journal of Mathematical Modelling 
-and Numerical Optimisation}, Vol. 4, No. 2, pp. 150--194 (2013), [arXiv:1308.4008](arXiv:1308.4008)
+and Numerical Optimisation}, Vol. 4, No. 2, pp. 150--194 (2013), [arXiv:1308.4008](https://arxiv.org/abs/1308.4008)
 * S. Rahnamyan, H. R. Tizhoosh, N. M. M. Salama, “Opposition-Based Differential
 Evolution (ODE) with Variable Jumping Rate,” IEEE Sympousim Foundations Computation
 Intelligence, Honolulu, HI, pp. 81-88, 2007.

@@ -75,6 +75,6 @@ f(x, y) = 100(y − x^{3})^2 + (1 − x)^2
 
 # References:
 * Momin Jamil and Xin-She Yang, A literature survey of benchmark functions for global optimization problems, Int. Journal of Mathematical Modelling 
-and Numerical Optimisation}, Vol. 4, No. 2, pp. 150--194 (2013), [arXiv:1308.4008](arXiv:1308.4008)
+and Numerical Optimisation}, Vol. 4, No. 2, pp. 150--194 (2013), [arXiv:1308.4008](https://arxiv.org/abs/1308.4008)
 * A. Lavi, T. P. Vogel (eds), “Recent Advances in Optimization Techniques,” John Wiley & Sons, 1966
 * [http://al-roomi.org/benchmarks/unconstrained/2-dimensions/125-leon-s-function](http://al-roomi.org/benchmarks/unconstrained/2-dimensions/125-leon-s-function)

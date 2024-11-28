@@ -86,7 +86,7 @@ f(\mathbf{x})=f(x_1, ...,x_n)=\prod_{i=1}^{n}{\left(\sum_{j=1}^5{ cos((j+1)x_i+j
 
 # References:
 * Momin Jamil and Xin-She Yang, A literature survey of benchmark functions for global optimization problems, Int. Journal of Mathematical Modelling 
-and Numerical Optimisation}, Vol. 4, No. 2, pp. 150--194 (2013), [arXiv:1308.4008](arXiv:1308.4008)
+and Numerical Optimisation}, Vol. 4, No. 2, pp. 150--194 (2013), [arXiv:1308.4008](https://arxiv.org/abs/1308.4008)
 * E. P. Adorio, U. P. Dilman, “MVF - Multivariate Test Function Library
 in C for Unconstrained Global Optimization Methods,” [Available Online]:
 [http://www.geocities.ws/eadorio/mvf.pdf](http://www.geocities.ws/eadorio/mvf.pdf)

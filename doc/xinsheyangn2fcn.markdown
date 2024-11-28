@@ -84,7 +84,7 @@ f(\mathbf{x})=f(x_1, ..., x_n)=(\sum_{i=1}^{n}|x_i|)exp(-\sum_{i=1}^{n}sin(x_i^2
 
 # References:
 * Momin Jamil and Xin-She Yang, A literature survey of benchmark functions for global optimization problems, Int. Journal of Mathematical Modelling 
-and Numerical Optimisation}, Vol. 4, No. 2, pp. 150--194 (2013), [arXiv:1308.4008](arXiv:1308.4008)
+and Numerical Optimisation}, Vol. 4, No. 2, pp. 150--194 (2013), [arXiv:1308.4008](https://arxiv.org/abs/1308.4008)
 * X. S. Yang, “Test Problems in Optimization,” Engineering Optimization: An Introduction
 with Metaheuristic Applications John Wliey & Sons, 2010. [Available Online]:
 [http://arxiv.org/abs/1008.0549](http://arxiv.org/abs/1008.0549)

@@ -72,7 +72,7 @@ f(\mathbf{x})=f(x_1,...,x_n)=\sum_{i=1}^{n}ix_i^4+\text{random}[0,1)
 
 # References:
 * Momin Jamil and Xin-She Yang, A literature survey of benchmark functions for global optimization problems, Int. Journal of Mathematical Modelling 
-and Numerical Optimisation}, Vol. 4, No. 2, pp. 150--194 (2013), [arXiv:1308.4008](arXiv:1308.4008)
+and Numerical Optimisation}, Vol. 4, No. 2, pp. 150--194 (2013), [arXiv:1308.4008](https://arxiv.org/abs/1308.4008)
 * [http://www.cs.unm.edu/~neal.holts/dga/benchmarkFunction/quartic.html](http://www.cs.unm.edu/~neal.holts/dga/benchmarkFunction/quartic.html)
 * R. Storn, K. Price, “Differntial Evolution - A Simple and Efficient Adaptive Scheme
 for Global Optimization over Continuous Spaces,” Technical Report no. TR-95-012,

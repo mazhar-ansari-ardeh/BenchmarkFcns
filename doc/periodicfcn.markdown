@@ -86,7 +86,7 @@ f(\mathbf{x})=f(x_1 ... x_n)=1 + \sum_{i=1}^{n}{sin^2(x_i)}-0.1e^{(\sum_{i=1}^{n
 
 # References:
 * Momin Jamil and Xin-She Yang A literature survey of benchmark functions for global optimization problems Int. Journal of Mathematical Modelling 
-and Numerical Optimisation} Vol. 4 No. 2 pp. 150--194 (2013) [arXiv:1308.4008](arXiv:1308.4008)
+and Numerical Optimisation} Vol. 4 No. 2 pp. 150--194 (2013) [arXiv:1308.4008](https://arxiv.org/abs/1308.4008)
 * M. M. Ali C. Khompatraporn Z. B. Zabinsky “A Numerical Evaluation of Several
 Stochastic Algorithms on Selected Continuous Global Optimization Test Problems,”
 Journal of Global Optimization vol. 31 pp. 635-672 2005.
