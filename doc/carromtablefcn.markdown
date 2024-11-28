@@ -46,7 +46,7 @@ For Python, the function is implemented in the [benchmarkfcns package](https://g
 from benchmarkfcns import {{page.sname}}
 
 print({{page.sname}}([[0, 0],
-              [1, 1]]))
+                      [1, 1]]))
 {% endhighlight %}
 
 #### MATLAB
