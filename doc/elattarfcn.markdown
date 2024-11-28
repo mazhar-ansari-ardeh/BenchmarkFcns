@@ -38,23 +38,12 @@ The function has one global minimum at: $f({x}^{\ast}, {y}^{\ast})=0$ at $({x}^{
 
 # Implementation
 #### Python
-For Python, the function is implemented in the [benchmarkfcns package](github.com/mazhar-ansari-ardeh/BenchmarkFcns) and can be installed from command line with `pip install benchmarkfcns`.  
+For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns) and can be installed from command line with `pip install benchmarkfcns`.  
 
 {%highlight Python%}
 from benchmarkfcns import elattar
 
 print(elattar([[3.4091868222,-2.1714330361]]))
-{% endhighlight %}
-
-#### MATLAB
-#### Python
-For Python, the function is implemented in the [benchmarkfcns package](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns), which can be installed from command line with `pip install benchmarkfcns`. 
-
-{%highlight Python%}
-from benchmarkfcns import {{page.sname}}
-
-print({{page.sname}}([[0, 0],
-              [1, 1]]))
 {% endhighlight %}
 
 #### MATLAB
