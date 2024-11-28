@@ -19,7 +19,7 @@ excerpt: The Carrom Table function is a unimodal, 2-dimensional convex mathemati
 
 {%raw%}
 
-$$ -\frac{1}{30}e^{2 \left |1 - \frac{\sqrt{x_1^2 + x_2^2}}{\pi} \right |} \cos^2(x_1) \cos^2(x_2) $$
+$$ f(x,y) = -\frac{1}{30}e^{2 \left |1 - \frac{\sqrt{x^2 + y^2}}{\pi} \right |} \cos^2(x) \cos^2(y) $$
 
 {%endraw%}
 
@@ -58,7 +58,7 @@ An implementation of the **{{page.functionname}}** with `MATLAB` is provided bel
 
 The function can be represented in Latex as follows:
 {% highlight latex%}
--\frac{1}{30}e^{2 \left |1 - \frac{\sqrt{x_1^2 + x_2^2}}{\pi} \right |} \cos^2(x_1) \cos^2(x_2)
+f(x,y) = -\frac{1}{30}e^{2 \left |1 - \frac{\sqrt{x^2 + y^2}}{\pi} \right |} \cos^2(x) \cos^2(y)
 {% endhighlight %}
 
 # References:
