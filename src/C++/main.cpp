@@ -279,6 +279,39 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/forresterfcn
     )pbdoc");
 
+    m.def("forrester_mf2", &forrester_mf2, R"pbdoc(
+        Computes the value of the Multi-fidelity Forrester_{2} benchmark 
+        function. SCORES = forrester_mf2(X) computes the value of the 
+        Forrester_{2} function at point X. `forrester_mf2` accepts a matrix of 
+        size M-by-N and returns a vetor SCORES of size M-by-1 in which each 
+        row contains the function value for the corresponding row of X.
+        For more information, please visit:
+        benchmarkfcns.info/doc/forrester_mf2fcn
+        https://arxiv.org/pdf/2204.07867
+    )pbdoc");
+
+    m.def("forrester_mf3", &forrester_mf3, R"pbdoc(
+        Computes the value of the Multi-fidelity Forrester_{3} benchmark 
+        function. SCORES = forrester_mf3(X) computes the value of the 
+        Forrester_{3} function at point X. `forrester_mf3` accepts a matrix of 
+        size M-by-N and returns a vetor SCORES of size M-by-1 in which each 
+        row contains the function value for the corresponding row of X.
+        For more information, please visit:
+        benchmarkfcns.info/doc/forrester_mf3fcn
+        https://arxiv.org/pdf/2204.07867
+    )pbdoc");
+
+    m.def("forrester_mf4", &forrester_mf4, R"pbdoc(
+        Computes the value of the Multi-fidelity Forrester_{4} benchmark 
+        function. SCORES = forrester_mf4(X) computes the value of the 
+        Forrester_{4} function at point X. `forrester_mf4` accepts a matrix of 
+        size M-by-N and returns a vetor SCORES of size M-by-1 in which each 
+        row contains the function value for the corresponding row of X.
+        For more information, please visit:
+        benchmarkfcns.info/doc/forrester_mf4fcn
+        https://arxiv.org/pdf/2204.07867
+    )pbdoc");
+
     m.def("giunta", &giunta, R"pbdoc(
         Computes the value of the Giunta function.
         SCORES = giunta(X) computes the value of the Alpine N. 1

@@ -62,6 +62,12 @@ namespace BenchmarkFcns {
 
     VectorXd forrester(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
+    VectorXd forrester_mf2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
+    VectorXd forrester_mf3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
+    VectorXd forrester_mf4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
     VectorXd giunta(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd goldsteinprice(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
