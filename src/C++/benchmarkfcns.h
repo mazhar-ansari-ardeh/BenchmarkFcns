@@ -108,6 +108,8 @@ namespace BenchmarkFcns {
 
     VectorXd rosenbrock(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
+    VectorXd rosenbrock_mf2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
     VectorXd salomon(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd schaffer1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);

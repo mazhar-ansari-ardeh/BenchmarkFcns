@@ -518,6 +518,17 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/rosenbrockfcn
     )pbdoc");
 
+    m.def("rosenbrock_mf2", &rosenbrock_mf2, R"pbdoc(
+        Computes the value of the MF Rosenbrock_{2} benchmark function.
+        SCORES = rosenbrock_mf2(X) computes the value of the MF Rosenbrock_{2} function
+        at point X. `rosenbrock_mf2` accepts a matrix of size M-by-N and returns a
+        vetor SCORES of size M-by-1 in which each row contains the function value
+        for the corresponding row of X.
+        For more information, please visit:
+        benchmarkfcns.info/doc/rosenbrock_mf2fcn
+        arxiv.org/pdf/2204.07867
+    )pbdoc");
+
     m.def("salomon", &salomon, R"pbdoc(
         Computes the value of the Salomon's benchmark function.
         SCORES = salomon(X) computes the value of the Salomon's

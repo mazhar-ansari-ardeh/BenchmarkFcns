@@ -573,6 +573,25 @@ namespace BenchmarkFcns {
         return scores;
     }
 
+    VectorXd rosenbrock_mf2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        double a = -2;
+        double b = 50;
+        double d = 0.5;
+
+        MatrixXd x_2 = x.array().square();
+        int ncols = x.cols();
+        int nrows = x.rows();
+
+        MatrixXd term1 = b * (x.block(0, 1, nrows, ncols - 1).array() - x_2.block(0, 0, nrows, ncols - 1).array()).square();
+        MatrixXd term2 = (a - x.block(0, 0, nrows, ncols - 1).array()).square();
+        MatrixXd term3 = d * x.block(0, 0, nrows, ncols-1).array();
+        // MatrixXd term3 = (d * x.block(0, 0, nrows, ncols).array()).rowwise().sum();
+
+        VectorXd scores = (term1 + term2).rowwise().sum() - term3.rowwise().sum();
+        // VectorXd scores = (term1 + term2).rowwise().sum() - term3;
+        return scores;
+    }
+
     VectorXd salomon(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         VectorXd sqrtsumx2 = x.array().square().rowwise().sum().array().sqrt();
 
