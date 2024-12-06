@@ -86,6 +86,66 @@ plt.show()
     <img src="https://raw.githubusercontent.com/mazhar-ansari-ardeh/BenchmarkFcns/master/image-1.png" alt="drawing" width="700"/>
 </p>
 
+### Plotting Multi-fidelity Functions ###
+
+Addition of multi-fidelity functions such as the `forrester` function, shown below.
+
+```py
+from benchmarkfcns import forrester, forrester_mf2, forrester_mf3, forrester_mf4
+
+# Using the matplotlib library for this example
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Used to make title equation look nicer
+import matplotlib
+matplotlib.rcParams['mathtext.fontset'] = 'cm'
+matplotlib.rcParams['font.family'] = 'STIXGeneral'
+
+# We want to plot the function for x in range [0, 1].
+x = np.linspace(0, 1, 1000)
+
+# Evaluation of points took less than 340 \mu\,s, per function.
+f1 = forrester(x)
+f2 = forrester_mf2(x)
+f3 = forrester_mf3(x)
+f4 = forrester_mf4(x)
+
+# Create the plot
+fig = plt.figure(figsize=(8,8))
+ax = fig.add_subplot(111)
+
+# Plot all 4 fidelity levels.
+ax.plot(x, f1, 'k-', label=r"$f_{1}$")
+ax.plot(x, f2, 'r--', label=r"$f_{2}$")
+ax.plot(x, f3, 'b-.', label=r"$f_{2}$")
+ax.plot(x, f4, 'g:', label=r"$f_{4}$")
+
+# Add labels, limits, and legend.
+ax.set_xlabel(r"$x$")
+ax.set_ylabel(r"$f(x)$")
+ax.set_xlim(0,1)
+ax.set_ylim(-10.5,17)
+
+plt.suptitle(
+    r"$f_{1}(x) =~~~(6x - 2)^{2} \cdot sin(12x - 4)$" 
+    + f"\n" 
+    + r"$~~f_{2}(x) = (5.5x - 2.5)^{2} \cdot sin(12x - 4)$" 
+    + f"\n" 
+    + r"$~~f_{3}(x) = 0.75 \cdot f_{1}(x) + 5(x - 0.5) - 2$"
+    + f"\n" 
+    + r"$~~f_{4}(x) = 0.5 \cdot f_{1}(x) + 10(x - 0.5) - 5$"
+    )
+
+plt.legend()
+plt.tight_layout()
+plt.show()
+```
+
+<p align="center">
+    <img src="forrester-mf.png" alt="drawing" width="700"/>
+</p>
+
 ## MATLAB
 As a reference, the repository also contains the implementation of the functions in MATLAB. To install and use the MATLAB implementation, it is just required to add the project folders to MATLAB's path. For example, to use the functions in the 'benchmarks/MATLAB' folder, just navigate to this folder with MATLAB's directory explorer or use the command `addpath` with path to the folder on your PC (e.g. `addpath /path/to/benchmarks`).
 
