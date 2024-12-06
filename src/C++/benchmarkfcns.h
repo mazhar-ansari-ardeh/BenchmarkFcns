@@ -26,6 +26,8 @@ namespace BenchmarkFcns {
 
     VectorXd alpine2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
+    VectorXd amgm(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
     VectorXd bartelsconn(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd beale(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
@@ -37,6 +39,10 @@ namespace BenchmarkFcns {
     VectorXd bohachevsky2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd booth(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
+    VectorXd braninn01(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
+    VectorXd braninn02(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd brent(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 

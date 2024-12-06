@@ -88,6 +88,14 @@ namespace BenchmarkFcns {
     }
 
 
+    VectorXd amgm(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        double ninv = 1.0 / x.cols();
+
+        VectorXd comp1 = (x.rowwise().prod().array().pow(ninv));
+        VectorXd comp2 = x.rowwise().mean();
+        return (comp1 - comp2).array().square();
+    }
+
     VectorXd bartelsconn(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
@@ -141,7 +149,7 @@ namespace BenchmarkFcns {
     }
 
     VectorXd bohachevsky2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
-    int n = x.cols();
+        int n = x.cols();
         if (n != 2)
             throw std::invalid_argument("The Bohachevsky N2 function only accepts 2D inputs");
 
@@ -162,6 +170,37 @@ namespace BenchmarkFcns {
         auto Y = x.col(1);
 
         VectorXd scores = ((X + 2 * Y).array() - 7).array().square() + ((2 * X + Y).array() - 5).array().square();
+        return scores;
+    }
+
+    VectorXd braninn01(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        int n = x.cols();
+        if (n != 2)
+            throw std::invalid_argument("The Branin N01 function is only defined on a 2D space.");
+
+        auto X = x.col(0).array();
+        auto Y = x.col(1).array();
+        constexpr double PI2 = M_PI * M_PI;
+        constexpr double C = 10 - 5 / (4 * M_PI);
+
+        VectorXd scores = (-1.275 * X.square() / (PI2) + 5 * X / M_PI + Y - 6).array().square() +
+                    (C) * cos(X) + 10;
+        return scores;
+    }
+
+    VectorXd braninn02(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        int n = x.cols();
+        if (n != 2)
+            throw std::invalid_argument("The Branin N02 function is only defined on a 2D space.");
+
+        auto X = x.col(0).array();
+        auto Y = x.col(1).array();
+        constexpr double PI2 = M_PI * M_PI;
+        constexpr double C = 10 - 5 / (4 * M_PI);
+
+        VectorXd scores = (-1.275 * X.square() / (PI2) + 5 * X / M_PI + Y - 6).array().square() +
+                          (C) * cos(X) * cos(Y) + log(X.square() +
+                          Y.square() + 1) + 10;
         return scores;
     }
 

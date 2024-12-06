@@ -99,6 +99,14 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/alpinen2fcn
     )pbdoc");
 
+    m.def("amgm", &amgm, R"pbdoc(
+        Computes the value of the AMGM benchmark function.
+        SCORES = amgm(X) computes the value of the AMGM function at point X.
+        `amgm` accepts a matrix of size M-by-N and returns a vetor SCORES of
+        size M-by-1 in which each row contains the function value for the
+        corresponding row of X.
+    )pbdoc");
+
     m.def("bartelsconn", &bartelsconn, R"pbdoc(
         Computes the value of the Bartels Conn benchmark function.
         SCORES = bartelsconn(X) computes the value of the Bartels Conn
@@ -157,6 +165,26 @@ PYBIND11_MODULE(_core, m) {
         for the corresponding row of X.
         For more information, please visit:
         benchmarkfcns.info/doc/boothfcn
+    )pbdoc");
+
+    m.def("braninn01", &braninn01, R"pbdoc(
+        Computes the value of the Branin N. 1 benchmark function.
+        SCORES = braninn01(X) computes the value of the Branin N. 1
+        function at point X. `braninn01` accepts a matrix of size M-by-2 and
+        returns a vetor SCORES of size M-by-1 in which each row contains the
+        function value for the corresponding row of X.
+        For more information, please visit:
+        benchmarkfcns.info/doc/braninn1fcn
+    )pbdoc");
+
+    m.def("braninn02", &braninn02, R"pbdoc(
+        Computes the value of the Branin N. 2 benchmark function.
+        SCORES = braninn02(X) computes the value of the Branin N. 2
+        function at point X. `braninn02` accepts a matrix of size M-by-2 and
+        returns a vetor SCORES of size M-by-1 in which each row contains the
+        function value for the corresponding row of X.
+        For more information, please visit:
+        benchmarkfcns.info/doc/braninn2fcn
     )pbdoc");
 
     m.def("brent", &brent, R"pbdoc(
