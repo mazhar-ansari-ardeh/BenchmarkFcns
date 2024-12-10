@@ -14,9 +14,9 @@ namespace BenchmarkFcns {
 
     VectorXd ackley(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
-        double a = 20;
-        double b = 0.2;
-        double c = 2 * M_PI;
+        const double a = 20;
+        const double b = 0.2;
+        constexpr double c = 2 * M_PI;
         double ninverse = 1.0 / n;
 
         auto sum1 = x.array().square().rowwise().sum();
@@ -180,10 +180,11 @@ namespace BenchmarkFcns {
 
         auto X = x.col(0).array();
         auto Y = x.col(1).array();
-        constexpr double PI2 = M_PI * M_PI;
+        constexpr double A = -1.275 / (M_PI * M_PI);
         constexpr double C = 10 - 5 / (4 * M_PI);
+        constexpr double FIVE_OVER_PI = 5 / M_PI;
 
-        VectorXd scores = (-1.275 * X.square() / (PI2) + 5 * X / M_PI + Y - 6).array().square() +
+        VectorXd scores = (A * X.square() + FIVE_OVER_PI * X + Y - 6).array().square() +
                     (C) * cos(X) + 10;
         return scores;
     }
@@ -195,10 +196,11 @@ namespace BenchmarkFcns {
 
         auto X = x.col(0).array();
         auto Y = x.col(1).array();
-        constexpr double PI2 = M_PI * M_PI;
+        constexpr double A = -1.275 / (M_PI * M_PI);
         constexpr double C = 10 - 5 / (4 * M_PI);
+        constexpr double FIVE_OVER_PI = 5 / M_PI;
 
-        VectorXd scores = (-1.275 * X.square() / (PI2) + 5 * X / M_PI + Y - 6).array().square() +
+        VectorXd scores = (A * X.square() + FIVE_OVER_PI * X + Y - 6).array().square() +
                           (C) * cos(X) * cos(Y) + log(X.square() +
                           Y.square() + 1) + 10;
         return scores;
@@ -301,7 +303,8 @@ namespace BenchmarkFcns {
     }
 
     VectorXd cosinemixture(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
-        VectorXd scores = -0.1 * (x.array() * 5 * M_PI).cos().rowwise().sum() - x.array().square().rowwise().sum();
+        constexpr double FIVE_PI = 5 * M_PI;
+        VectorXd scores = -0.1 * (x.array() * FIVE_PI).cos().rowwise().sum() - x.array().square().rowwise().sum();
         return scores;
     }
 
@@ -482,8 +485,9 @@ namespace BenchmarkFcns {
             throw std::invalid_argument("The Gramacy & Lee function is only defined on a 1D space.");
 
         auto X = x.col(0).array();
+        constexpr double TEN_PI = 10 * M_PI;
 
-        VectorXd scores = (sin(10 * M_PI * X) / (2 * X) ) + ((X - 1).pow(4));
+        VectorXd scores = (sin(TEN_PI * X) / (2 * X) ) + ((X - 1).pow(4));
 
         return scores;
     }
@@ -609,7 +613,7 @@ namespace BenchmarkFcns {
 
         VectorXd term = (1 + ((X + Y + 1).square() * (19 - 14 * X + 3 * X.square() - 14 * Y + 6 * X * Y + 3 * Y.square()))).array() *
                         (30 + ((2 * X - 3 * Y).square() * (18 - 32 * X + 12 * X.square() + 48 * Y - 36 * X * Y + 27 * Y.square())).array());
-        double coef = 1 / 2.427;
+        constexpr double coef = 1 / 2.427;
         VectorXd scores = coef * (log10(term.array()) - 8.693);
         return scores;
     }
@@ -646,8 +650,9 @@ namespace BenchmarkFcns {
 
     VectorXd rastrigin(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
-        double A = 10;
-        VectorXd scores = (A * n) + (x.array().square().rowwise().sum() - A * (x.array() * (2 * M_PI)).cos().rowwise().sum());
+        const double A = 10;
+        constexpr double TWO_PI = 2 * M_PI;
+        VectorXd scores = (A * n) + (x.array().square().rowwise().sum() - A * (x.array() * (TWO_PI)).cos().rowwise().sum());
         return scores;
     }
 
@@ -661,8 +666,8 @@ namespace BenchmarkFcns {
     }
 
     VectorXd rosenbrock(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
-        double a = 1;
-        double b = 100;
+        const double a = 1;
+        const double b = 100;
 
         MatrixXd x_2 = x.array().square();
         int ncols = x.cols();
