@@ -30,7 +30,7 @@ namespace BenchmarkFcns {
     VectorXd ackley2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
-            throw std::invalid_argument("Ackley2 function only accepts 2D input");
+            throw std::invalid_argument("Ackley2 function only accepts 2D input.");
 
         auto X = x.col(0);
         auto Y = x.col(1);
@@ -42,7 +42,7 @@ namespace BenchmarkFcns {
     VectorXd ackley3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
-            throw std::invalid_argument("The Ackleyn3fcn function only accepts 2D inputs");
+            throw std::invalid_argument("The Ackleyn3 function only accepts 2D inputs.");
 
         auto X = x.col(0);
         auto Y = x.col(1);
@@ -67,7 +67,7 @@ namespace BenchmarkFcns {
     VectorXd adjiman(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
-            throw std::invalid_argument("The Adjiman function only accepts 2D inputs");
+            throw std::invalid_argument("The Adjiman function only accepts 2D inputs.");
 
         auto X = x.col(0);
         auto Y = x.col(1);
@@ -99,7 +99,7 @@ namespace BenchmarkFcns {
     VectorXd bartelsconn(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
-            throw std::invalid_argument("The Bartels Conn function only accepts 2D inputs");
+            throw std::invalid_argument("The Bartels Conn function only accepts 2D inputs.");
 
         auto X = x.col(0);
         auto Y = x.col(1);
@@ -111,7 +111,7 @@ namespace BenchmarkFcns {
     VectorXd beale(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
-            throw std::invalid_argument("The Beale function only accepts 2D inputs");
+            throw std::invalid_argument("The Beale function only accepts 2D inputs.");
 
         auto X = x.col(0);
         auto Y = x.col(1);
@@ -125,7 +125,7 @@ namespace BenchmarkFcns {
     VectorXd bird(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
-            throw std::invalid_argument("The Bird function only accepts 2D inputs");
+            throw std::invalid_argument("The Bird function only accepts 2D inputs.");
 
         auto X = x.col(0);
         auto Y = x.col(1);
@@ -139,7 +139,7 @@ namespace BenchmarkFcns {
     VectorXd bohachevsky1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
-            throw std::invalid_argument("The Bohachevsky N1 function only accepts 2D inputs");
+            throw std::invalid_argument("The Bohachevsky N1 function only accepts 2D inputs.");
 
         auto X = x.col(0);
         auto Y = x.col(1);
