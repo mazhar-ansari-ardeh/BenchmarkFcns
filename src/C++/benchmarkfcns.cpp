@@ -14,9 +14,9 @@ namespace BenchmarkFcns {
 
     VectorXd ackley(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
-        double a = 20;
-        double b = 0.2;
-        double c = 2 * M_PI;
+        const double a = 20;
+        const double b = 0.2;
+        constexpr double c = 2 * M_PI;
         double ninverse = 1.0 / n;
 
         auto sum1 = x.array().square().rowwise().sum();
