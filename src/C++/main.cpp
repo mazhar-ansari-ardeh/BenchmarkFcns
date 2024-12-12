@@ -5,12 +5,37 @@
 # define MACRO_STRINGIFY(x) STRINGIFY(x)
 
 #include "benchmarkfcns.h"
+#include "multifidelity.h"
 
 using namespace BenchmarkFcns;
 
 namespace py = pybind11;
 
 PYBIND11_MODULE(_core, m) {
+    auto mfm = m.def_submodule("multifidelity", "Multi-fidelity functions");
+
+    mfm.def("forrester", MultiFidelity::forrester, R"pbdoc(
+        Computes the value of the Forrester function at different fidelity levels.
+        SCORES = multifidelity.forrester(X) computes the value of the Forrester function
+        at point X. `multifidelity.forrester` accepts a matrix of size M-by-1 and returns
+        a vetor SCORES of size M-by-4 in which each column contains the function value
+        for each row of X and each column contains the function value for the
+        corresponding fidelity level.
+        For more information, please visit:
+        arxiv.org/pdf/2204.07867
+    )pbdoc");
+
+    mfm.def("rosenbrock", MultiFidelity::rosenbrock, R"pbdoc(
+        Computes the value of the multi-fidelity Rosenbrock benchmark function.
+        SCORES = rosenbrock(X) computes the value of the Rosenbrock function
+        at point X. `multifidelity.rosenbrock` accepts a matrix of size M-by-N and returns
+        a matrix SCORES of size M-by-2 in which each row contains the function value
+        for the corresponding row of X and each column contains the function value
+        for the corresponding fidelity level.
+        For more information, please visit:
+        arxiv.org/pdf/2204.07867
+    )pbdoc");
+
     m.doc() = R"pbdoc(
         Pybind11 example plugin
         -----------------------
@@ -389,39 +414,6 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/forresterfcn
     )pbdoc");
 
-    m.def("forrester_mf2", &forrester_mf2, R"pbdoc(
-        Computes the value of the Multi-fidelity Forrester_{2} benchmark 
-        function. SCORES = forrester_mf2(X) computes the value of the 
-        Forrester_{2} function at point X. `forrester_mf2` accepts a matrix of 
-        size M-by-N and returns a vetor SCORES of size M-by-1 in which each 
-        row contains the function value for the corresponding row of X.
-        For more information, please visit:
-        benchmarkfcns.info/doc/forrester_mf2fcn
-        https://arxiv.org/pdf/2204.07867
-    )pbdoc");
-
-    m.def("forrester_mf3", &forrester_mf3, R"pbdoc(
-        Computes the value of the Multi-fidelity Forrester_{3} benchmark 
-        function. SCORES = forrester_mf3(X) computes the value of the 
-        Forrester_{3} function at point X. `forrester_mf3` accepts a matrix of 
-        size M-by-N and returns a vetor SCORES of size M-by-1 in which each 
-        row contains the function value for the corresponding row of X.
-        For more information, please visit:
-        benchmarkfcns.info/doc/forrester_mf3fcn
-        https://arxiv.org/pdf/2204.07867
-    )pbdoc");
-
-    m.def("forrester_mf4", &forrester_mf4, R"pbdoc(
-        Computes the value of the Multi-fidelity Forrester_{4} benchmark 
-        function. SCORES = forrester_mf4(X) computes the value of the 
-        Forrester_{4} function at point X. `forrester_mf4` accepts a matrix of 
-        size M-by-N and returns a vetor SCORES of size M-by-1 in which each 
-        row contains the function value for the corresponding row of X.
-        For more information, please visit:
-        benchmarkfcns.info/doc/forrester_mf4fcn
-        https://arxiv.org/pdf/2204.07867
-    )pbdoc");
-
     m.def("giunta", &giunta, R"pbdoc(
         Computes the value of the Giunta function.
         SCORES = giunta(X) computes the value of the Alpine N. 1
@@ -626,17 +618,6 @@ PYBIND11_MODULE(_core, m) {
         for the corresponding row of X.
         For more information, please visit:
         benchmarkfcns.info/doc/rosenbrockfcn
-    )pbdoc");
-
-    m.def("rosenbrock_mf2", &rosenbrock_mf2, R"pbdoc(
-        Computes the value of the MF Rosenbrock_{2} benchmark function.
-        SCORES = rosenbrock_mf2(X) computes the value of the MF Rosenbrock_{2} function
-        at point X. `rosenbrock_mf2` accepts a matrix of size M-by-N and returns a
-        vetor SCORES of size M-by-1 in which each row contains the function value
-        for the corresponding row of X.
-        For more information, please visit:
-        benchmarkfcns.info/doc/rosenbrock_mf2fcn
-        arxiv.org/pdf/2204.07867
     )pbdoc");
 
     m.def("salomon", &salomon, R"pbdoc(

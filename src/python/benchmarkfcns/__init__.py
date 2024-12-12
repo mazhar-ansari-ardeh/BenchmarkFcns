@@ -56,6 +56,7 @@ from ._core import (
     levin13,
     matyas,
     mccormick,
+    multifidelity,
     periodic,
     picheny,
     powellsum,
@@ -100,6 +101,7 @@ from ._core import (
 __all__ = [
     "__doc__",
     "__version__",
+    "multifidelity",
     "ackley",
     "ackley2",
     "ackley3",

@@ -10,7 +10,7 @@
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at
 % Google's e-mail service or feel free to kindly modify the repository.
 function scores = forresterfcn(x)
-     n = size(x, 1);
+     n = size(x, 2);
      assert(n == 1, 'The Forrester function is defined only on the 1-D space.')
 
      scores = (6 * x - 2).^2 .* sin(12 * x - 4);
