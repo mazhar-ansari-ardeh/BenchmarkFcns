@@ -459,9 +459,11 @@ namespace BenchmarkFcns {
     }
 
     VectorXd giunta(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
-        VectorXd scores = 0.6 + ((sin(1 - (16.0 / 15.0) * x.array()).square())
-                              - (1.0 / 50.0) * sin(4 - (64.0 / 15.0) * x.array())
-                              - sin(1 - (16.0 / 15.0) * x.array())).rowwise().sum();
+        constexpr double A = 16.0 / 15.0;
+        constexpr double B = 64.0 / 15.0;
+        VectorXd scores = 0.6 + ((sin(1 - A * x.array()).square())
+                              - (0.02) * sin(4 - B * x.array())
+                              - sin(1 - A * x.array())).rowwise().sum();
         return scores;
     }
 
@@ -895,8 +897,9 @@ namespace BenchmarkFcns {
         auto X = x.col(0).array();
         auto Y = x.col(1).array();
         auto Z = x.col(2).array();
+        constexpr double A = 4.0 / 3.0;
 
-        return (4.0/3.0) * (((X.square() + Y.square() - X * Y).pow(0.75))) + Z;
+        return (A) * (((X.square() + Y.square() - X * Y).pow(0.75))) + Z;
     }
 
     VectorXd zakharov(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {

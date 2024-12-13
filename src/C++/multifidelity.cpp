@@ -8,12 +8,13 @@ namespace BenchmarkFcns::MultiFidelity {
             throw std::invalid_argument("The multi-fidelity Forrester function is only defined on a 1D space.");
 
         auto X = x.col(0).array();
+        auto f1 = BenchmarkFcns::forrester(x);
         auto f2 = [&X]() -> VectorXd {return (5.5 * X - 2.5).square() * sin(12 * X - 4);};
-        auto f3 = [&X]() -> VectorXd {return (0.75 * ((6 * X - 2).square() * sin(12 * X - 4))) + (5 * (X - 0.5)) - 2;};
-        auto f4 = [&X]() -> VectorXd {return (0.5 * ((6 * X - 2).square() * sin(12 * X - 4))) + (10 * (X - 0.5)) - 5;};
+        auto f3 = [&X, &f1]() -> VectorXd {return (0.75 * f1.array()) + (5 * (X - 0.5)) - 2;};
+        auto f4 = [&X, &f1]() -> VectorXd {return (0.5 * f1.array()) + (10 * (X - 0.5)) - 5;};
 
         MatrixXd scores(x.rows(), 4);
-        scores.col(0) = BenchmarkFcns::forrester(x);
+        scores.col(0) = f1;
         scores.col(1) = f2();
         scores.col(2) = f3();
         scores.col(3) = f4();
