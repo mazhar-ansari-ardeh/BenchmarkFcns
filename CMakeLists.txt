@@ -9,6 +9,9 @@ project(
   VERSION ${SKBUILD_PROJECT_VERSION}
   LANGUAGES CXX)
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 include_directories(./src/C++/eigen-3.4.0)
 
 # Find the module development requirements (requires FindPython from 3.17 or
