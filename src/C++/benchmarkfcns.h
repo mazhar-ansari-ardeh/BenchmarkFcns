@@ -14,17 +14,17 @@ namespace BenchmarkFcns {
 
     VectorXd ackley(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
-    VectorXd ackley2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+    VectorXd ackleyn2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
-    VectorXd ackley3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+    VectorXd ackleyn3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
-    VectorXd ackley4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+    VectorXd ackleyn4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd adjiman(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
-    VectorXd alpine1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+    VectorXd alpinen1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
-    VectorXd alpine2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+    VectorXd alpinen2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd amgm(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
@@ -34,15 +34,15 @@ namespace BenchmarkFcns {
 
     VectorXd bird(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
-    VectorXd bohachevsky1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+    VectorXd bohachevskyn1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
-    VectorXd bohachevsky2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+    VectorXd bohachevskyn2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd booth(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
-    VectorXd braninn01(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+    VectorXd braninn1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
-    VectorXd braninn02(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+    VectorXd braninn2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd brent(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
@@ -130,13 +130,13 @@ namespace BenchmarkFcns {
 
     VectorXd salomon(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
-    VectorXd schaffer1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+    VectorXd schaffern1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
-    VectorXd schaffer2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+    VectorXd schaffern2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
-    VectorXd schaffer3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+    VectorXd schaffern3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
-    VectorXd schaffer4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+    VectorXd schaffern4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd schwefel(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
@@ -150,9 +150,9 @@ namespace BenchmarkFcns {
 
     VectorXd shubert(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
-    VectorXd shubert3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+    VectorXd shubertn3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
-    VectorXd shubert4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+    VectorXd shubertn4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd styblinskitank(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
@@ -166,13 +166,13 @@ namespace BenchmarkFcns {
 
     VectorXd wolfe(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
-    VectorXd xinsheyang1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+    VectorXd xinsheyangn1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
-    VectorXd xinsheyang2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+    VectorXd xinsheyangn2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
-    VectorXd xinsheyang3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, double beta = 15, double m = 5);
+    VectorXd xinsheyangn3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, double beta = 15, double m = 5);
 
-    VectorXd xinsheyang4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+    VectorXd xinsheyangn4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd zakharov(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 

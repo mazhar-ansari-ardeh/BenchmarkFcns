@@ -27,7 +27,7 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    VectorXd ackley2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd ackleyn2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
             throw std::invalid_argument("Ackley2 function only accepts 2D input.");
@@ -39,7 +39,7 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    VectorXd ackley3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd ackleyn3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
             throw std::invalid_argument("The Ackleyn3 function only accepts 2D inputs.");
@@ -52,7 +52,7 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    VectorXd ackley4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd ackleyn4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int m = x.rows();
         int n = x.cols();
 
@@ -77,12 +77,12 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    VectorXd alpine1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd alpinen1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         VectorXd scores = (x.array() * sin(x.array()) + 0.1 * x.array()).rowwise().sum().abs();
         return scores;
     }
 
-    VectorXd alpine2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd alpinen2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         VectorXd scores = (x.array().sqrt() * sin(x.array())).rowwise().prod();
         return scores;
     }
@@ -136,7 +136,7 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    VectorXd bohachevsky1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd bohachevskyn1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
             throw std::invalid_argument("The Bohachevsky N1 function only accepts 2D inputs.");
@@ -148,7 +148,7 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    VectorXd bohachevsky2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd bohachevskyn2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
             throw std::invalid_argument("The Bohachevsky N2 function only accepts 2D inputs");
@@ -173,7 +173,7 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    VectorXd braninn01(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd braninn1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
             throw std::invalid_argument("The Branin N. 1 function is only defined on a 2D space.");
@@ -189,7 +189,7 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    VectorXd braninn02(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd braninn2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
             throw std::invalid_argument("The Branin N. 2 function is only defined on a 2D space.");
@@ -688,7 +688,7 @@ namespace BenchmarkFcns {
         return 1 - (2 * M_PI * sqrtsumx2.array()).cos() + 0.1 * sqrtsumx2.array();
     }
 
-    VectorXd schaffer1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd schaffern1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
             throw std::invalid_argument("The Schaffer N. 1 function is only defined on a 2D space.");
@@ -702,7 +702,7 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    VectorXd schaffer2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd schaffern2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
             throw std::invalid_argument("The Schaffer N. 2 function is only defined on a 2D space.");
@@ -716,7 +716,7 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    VectorXd schaffer3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd schaffern3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
             throw std::invalid_argument("The Schaffer N. 3 function is only defined on a 2D space.");
@@ -730,7 +730,7 @@ namespace BenchmarkFcns {
         return 0.5 + numeratorcomp.array() / denominatorcomp.array();
     }
 
-    VectorXd schaffer4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd schaffern4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)
             throw std::invalid_argument("The Schaffer N. 4 function is only defined on a 2D space.");
@@ -782,7 +782,7 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    VectorXd shubert3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd shubertn3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         VectorXd scores = VectorXd::Zero(x.rows());
         for (int i = 0; i < n; i++) {
@@ -796,7 +796,7 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    VectorXd shubert4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd shubertn4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         VectorXd scores = VectorXd::Zero(x.rows());
         for (int i = 0; i < n; i++) {
@@ -859,7 +859,7 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    VectorXd xinsheyang1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd xinsheyangn1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         int m = x.rows();
         auto absx = x.array().abs();
@@ -869,12 +869,12 @@ namespace BenchmarkFcns {
         return (rand_values.array() * absx.array().pow(exponents.transpose().array().replicate(m, 1))).rowwise().sum();
     }
 
-    VectorXd xinsheyang2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd xinsheyangn2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         auto absx = x.array().abs();
         return absx.rowwise().sum() * (-sin(x.array().square())).rowwise().sum().exp();
     }
 
-    VectorXd xinsheyang3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, double beta, double m) {
+    VectorXd xinsheyangn3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, double beta, double m) {
         auto x_div_beta = x.array() / beta;
         VectorXd sum_x_div_beta_2m = (-x_div_beta.array().pow(2 * m)).rowwise().sum().exp();
         VectorXd sum_x_2 = (-x.array().square()).rowwise().sum().exp();
@@ -882,7 +882,7 @@ namespace BenchmarkFcns {
         return sum_x_div_beta_2m.array() - (2 * sum_x_2.array() * prod_cos_x_2.array());
     }
 
-    VectorXd xinsheyang4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd xinsheyangn4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         VectorXd sum_sin_x_2 = (x.array().sin().square()).rowwise().sum();
         VectorXd exp_sum_x_2 = (-x.array().square()).rowwise().sum().exp();
         VectorXd sum_sin_sqrt_abs_x_2 = (-sin(x.array().abs().sqrt()).square()).rowwise().sum().exp();
