@@ -8,3 +8,4 @@ octave-workspace
 CMakeCache.txt
 CMakeFiles/
 fig_readme.py
+*.pdf

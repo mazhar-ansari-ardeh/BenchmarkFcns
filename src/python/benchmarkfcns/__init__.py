@@ -87,6 +87,8 @@ from ._core import (
     xinsheyangn3,
     xinsheyangn4,
     zakharov,
+    zettel,
+    zirilli,
 )
 
 # price1, price2, price3, price4
@@ -181,4 +183,6 @@ __all__ = [
     "xinsheyangn3",
     "xinsheyangn4",
     "zakharov",
+    "zettel",
+    "zirilli",
 ]

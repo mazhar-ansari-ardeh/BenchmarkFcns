@@ -64,7 +64,7 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/ackleyfcn
     )pbdoc");
 
-    m.def("ackley2", &ackleyn2, R"pbdoc(
+    m.def("ackleyn2", &ackleyn2, R"pbdoc(
         Computes the value of the Ackley N. 2 function.
         SCORES = ackley2(X) computes the value of the Ackley N. 2
         function at point X. `ackley2` accepts a matrix of size M-by-2 and
@@ -74,7 +74,7 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/ackleyn2fcn
     )pbdoc");
 
-    m.def("ackley3", &ackleyn3, R"pbdoc(
+    m.def("ackleyn3", &ackleyn3, R"pbdoc(
         Computes the value of the Ackley N. 3 function.
         SCORES = ackley3(X) computes the value of the Ackley N. 3
         function at point X. `ackley3` accepts a matrix of size M-by-2 and
@@ -84,7 +84,7 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/ackleyn3fcn
     )pbdoc");
 
-    m.def("ackley4", &ackleyn4, R"pbdoc(
+    m.def("ackleyn4", &ackleyn4, R"pbdoc(
         Computes the value of Ackley N. 4 benchmark function.
         SCORES = ackley4(X) computes the value of the Ackey function at point
         X. `ackley4` accepts a matrix of size M-by-N and returns a vetor SCORES
@@ -104,7 +104,7 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/adjimanfcn
     )pbdoc");
 
-    m.def("alpine1", &alpinen1, R"pbdoc(
+    m.def("alpinen1", &alpinen1, R"pbdoc(
         Computes the value of the Alpine N. 1 function.
         SCORES = alpine1(X) computes the value of the Alpine N. 1
         function at point X. `alpine1` accepts a matrix of size M-by-N and
@@ -114,7 +114,7 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/alpinen1fcn
     )pbdoc");
 
-    m.def("alpine2", &alpinen2, R"pbdoc(
+    m.def("alpinen2", &alpinen2, R"pbdoc(
         Computes the value of the Alpine N. 2 function.
         SCORES = alpine2(X) computes the value of the Alpine N. 2
         function at point X. `alpine2` accepts a matrix of size M-by-N and
@@ -162,7 +162,7 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/birdfcn
     )pbdoc");
 
-    m.def("bohachevsky1", &bohachevskyn1, R"pbdoc(
+    m.def("bohachevskyn1", &bohachevskyn1, R"pbdoc(
         Computes the value of Bohachevsky N. 1 benchmark function.
         SCORES = bohachevsky1(X) computes the value of the Bohachevsky N. 1
         function at point X. `bohachevsky1` accepts a matrix of size M-by-N and
@@ -172,7 +172,7 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/bohachevskyn1fcn
     )pbdoc");
 
-    m.def("bohachevsky2", &bohachevskyn2, R"pbdoc(
+    m.def("bohachevskyn2", &bohachevskyn2, R"pbdoc(
         Computes the value of Bohachevsky N. 2 benchmark function.
         SCORES = bohachevsky2(X) computes the value of the Bohachevsky N. 2
         function at point X. `bohachevsky2` accepts a matrix of size M-by-N and
@@ -192,7 +192,7 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/boothfcn
     )pbdoc");
 
-    m.def("braninn01", &braninn1, R"pbdoc(
+    m.def("braninn1", &braninn1, R"pbdoc(
         Computes the value of the Branin N. 1 benchmark function.
         SCORES = braninn01(X) computes the value of the Branin N. 1
         function at point X. `braninn01` accepts a matrix of size M-by-2 and
@@ -202,7 +202,7 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/braninn1fcn
     )pbdoc");
 
-    m.def("braninn02", &braninn2, R"pbdoc(
+    m.def("braninn2", &braninn2, R"pbdoc(
         Computes the value of the Branin N. 2 benchmark function.
         SCORES = braninn02(X) computes the value of the Branin N. 2
         function at point X. `braninn02` accepts a matrix of size M-by-2 and
@@ -630,7 +630,7 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/salomonfcn
     )pbdoc");
 
-    m.def("schaffer1", &schaffern1, R"pbdoc(
+    m.def("schaffern1", &schaffern1, R"pbdoc(
         Computes the value of the Schaffer N. 1 function.
         SCORES = schaffer1(X) computes the value of the Schaffer N. 1
         function at point X. `schaffern1` accepts a matrix of size M-by-2 and
@@ -640,7 +640,7 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/schaffern1fcn
     )pbdoc");
 
-    m.def("schaffer2", &schaffern2, R"pbdoc(
+    m.def("schaffern2", &schaffern2, R"pbdoc(
         Computes the value of the Schaffer N. 2 benchmark function.
         SCORES = schaffer2(X) computes the value of the Schaffer N. 2 function
         at point X. `schaffer2` accepts a matrix of size M-by-2 and returns a
@@ -650,7 +650,7 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/schaffern2fcn
     )pbdoc");
 
-    m.def("schaffer3", &schaffern3, R"pbdoc(
+    m.def("schaffern3", &schaffern3, R"pbdoc(
         Computes the value of the Schaffer N. 3 function.
         SCORES = schaffer3(X) computes the value of the Schaffer N. 3
         function at point X. `schaffer3` accepts a matrix of size M-by-2 and
@@ -660,7 +660,7 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/schaffern3fcn
     )pbdoc");
 
-    m.def("schaffer4", &schaffern4, R"pbdoc(
+    m.def("schaffern4", &schaffern4, R"pbdoc(
         Computes the value of the Schaffer N. 4 function.
         SCORES = schaffer4(X) computes the value of the Schaffer N. 4
         function at point X. `schaffer4` accepts a matrix of size M-by-2 and
@@ -730,7 +730,7 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/shubertfcn
     )pbdoc");
 
-    m.def("shubert3", &shubertn3, R"pbdoc(
+    m.def("shubertn3", &shubertn3, R"pbdoc(
         Computes the value of the Shubert 3 function.
         SCORES = shubert3(X) computes the value of the Shubert 3
         function at point X. `shubert3` accepts a matrix of size M-by-N and
@@ -740,7 +740,7 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/shubert3fcn
     )pbdoc");
 
-    m.def("shubert4", &shubertn4, R"pbdoc(
+    m.def("shubertn4", &shubertn4, R"pbdoc(
         Computes the value of the Shubert 4 function.
         SCORES = shubert4(X) computes the value of the Shubert 4
         function at point X. `shubert4` accepts a matrix of size M-by-N and
@@ -818,7 +818,7 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/wolfefcn
     )pbdoc");
 
-    m.def("xinsheyang1", &xinsheyangn1, R"pbdoc(
+    m.def("xinsheyangn1", &xinsheyangn1, R"pbdoc(
         Computes the value of the Xin-She Yang function.
         SCORES = xinsheyang1(X) computes the value of the Xin-She Yang
         function at point X. `xinsheyang1` accepts a matrix of size M-by-N and
@@ -828,7 +828,7 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/xinsheyangn1fcn
     )pbdoc");
 
-    m.def("xinsheyang2", &xinsheyangn2, R"pbdoc(
+    m.def("xinsheyangn2", &xinsheyangn2, R"pbdoc(
         Computes the value of the Xin-She Yang N. 2 function.
         SCORES = xinsheyang2(X) computes the value of the Xin-She Yang N. 2
         function at point X. `xinsheyang2` accepts a matrix of size M-by-N and
@@ -838,7 +838,7 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/xinsheyangn2fcn
     )pbdoc");
 
-    m.def("xinsheyang3", &xinsheyangn3, py::arg("x"), py::arg("beta") = 15, py::arg("m") = 5, R"pbdoc(
+    m.def("xinsheyangn3", &xinsheyangn3, py::arg("x"), py::arg("beta") = 15, py::arg("m") = 5, R"pbdoc(
         Computes the value of the Xin-She Yang N. 3 function.
         The Xin-She Yang N. 3 function is a parametric function and it is
         behaviour can be controlled with two additional parameters 'beta' and
@@ -858,7 +858,7 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/xinsheyangn3fcn
     )pbdoc");
 
-    m.def("xinsheyang4", &xinsheyangn4, R"pbdoc(
+    m.def("xinsheyangn4", &xinsheyangn4, R"pbdoc(
         Computes the value of the Xin-She Yang N. 4 function.
         SCORES = xinsheyang4(X) computes the value of the Xin-She Yang N. 4
         function at point X. `xinsheyang4` accepts a matrix of size M-by-N and
@@ -876,6 +876,22 @@ PYBIND11_MODULE(_core, m) {
         each row of X.
         For more information, please visit:
         benchmarkfcns.info/doc/zakharovfcn
+    )pbdoc");
+
+    m.def("zettel", &zettel, R"pbdoc(
+        Computes the value of the Zettel function.
+        SCORES = zettel(X) computes the value of the Zettel function at point X.
+        `zettel` accepts a matrix of size M-by-2 and returns a vetor SCORES of
+        size M-by-1 in which each row contains the function value for the
+        corresponding row of X.
+    )pbdoc");
+
+    m.def("zirilli", &zirilli, R"pbdoc(
+        Computes the value of the Zirilli function.
+        SCORES = zirilli(X) computes the value of the Zirilli function at point X.
+        `zirilli` accepts a matrix of size M-by-2 and returns a vetor SCORES of
+        size M-by-1 in which each row contains the function value for the
+        corresponding row of X.
     )pbdoc");
 
 

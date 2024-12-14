@@ -913,4 +913,28 @@ namespace BenchmarkFcns {
         return comp1.array() + sum_comp2.array().square() + sum_comp2.array().pow(4);
     }
 
+    VectorXd zettel(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        int n = x.cols();
+        if (n != 2)
+            throw std::invalid_argument("The Zettel function is only defined on the 2D space.");
+
+        auto X = x.col(0).array();
+        auto Y = x.col(1).array();
+
+        VectorXd scores = 0.25 * X - (X.square() - 2 * X + Y.square()).square();
+        return scores;
+    }
+
+    VectorXd zirilli(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        int n = x.cols();
+        if (n != 2)
+            throw std::invalid_argument("The Zirilli function is only defined on the 2D space.");
+
+        auto X = x.col(0).array();
+        auto Y = x.col(1).array();
+
+        VectorXd scores = 0.25 * X.pow(4) - 0.5 * X.square() + 0.1 * X + 0.5 * Y.square();
+        return scores;
+    }
+
 } // namespace BenchmarkFunctions

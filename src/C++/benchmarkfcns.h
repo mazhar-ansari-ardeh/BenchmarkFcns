@@ -176,6 +176,9 @@ namespace BenchmarkFcns {
 
     VectorXd zakharov(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
+    VectorXd zettel(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
+    VectorXd zirilli(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 } // namespace BenchmarkFunctions
 
 #endif // BENCHMARKFCNS_H
