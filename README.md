@@ -140,7 +140,7 @@ plt.show()
 ```
 
 <p align="center">
-    <img src="forrester-mf.png" alt="drawing" width="700"/>
+    <img src="https://raw.githubusercontent.com/mazhar-ansari-ardeh/BenchmarkFcns/master/forrester-mf.png" alt="drawing" width="700"/>
 </p>
 
 ## MATLAB
