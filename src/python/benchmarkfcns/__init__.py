@@ -87,6 +87,7 @@ from ._core import (
     xinsheyangn3,
     xinsheyangn4,
     zakharov,
+    zerosum,
     zettel,
     zirilli,
 )
@@ -183,6 +184,7 @@ __all__ = [
     "xinsheyangn3",
     "xinsheyangn4",
     "zakharov",
+    "zerosum",
     "zettel",
     "zirilli",
 ]
