@@ -1,6 +1,6 @@
 % Computes the value of the Zirilli function.
 % SCORES = ZIRILLIFCN(X) computes the value of the Zirilli
-% function at point X. ZIRILLIFCN accepts a matrix of size M-by-3 and
+% function at point X. ZIRILLIFCN accepts a matrix of size M-by-2 and
 % returns a vetor SCORES of size M-by-1 in which each row contains the
 % function value for the corresponding row of X.
 %

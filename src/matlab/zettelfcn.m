@@ -1,6 +1,6 @@
 % Computes the value of the Zettel function.
 % SCORES = ZETTELFCN(X) computes the value of the Zettel
-% function at point X. ZETTELFCN accepts a matrix of size M-by-3 and
+% function at point X. ZETTELFCN accepts a matrix of size M-by-t and
 % returns a vetor SCORES of size M-by-1 in which each row contains the
 % function value for the corresponding row of X.
 %
