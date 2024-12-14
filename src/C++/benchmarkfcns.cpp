@@ -913,6 +913,13 @@ namespace BenchmarkFcns {
         return comp1.array() + sum_comp2.array().square() + sum_comp2.array().pow(4);
     }
 
+    VectorXd zerosum(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        VectorXd s = x.rowwise().sum();
+        VectorXd scores = 1.0 + sqrt(10000 * s.array().abs());
+        scores = scores.unaryExpr([](double x) { return x == 1.0 ? 0.0 : x; });
+        return scores;
+    }
+
     VectorXd zettel(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)

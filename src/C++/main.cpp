@@ -878,6 +878,14 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/zakharovfcn
     )pbdoc");
 
+    m.def("zerosum", &zerosum, R"pbdoc(
+        Computes the value of the Zero Sum benchmark function.
+        SCORES = zerosum(X) computes the value of the Zero Sum function at
+        point X. `zerosum` accepts a matrix of size M-by-N and returns a vetor
+        SCORES of size M-by-1 in which each row contains the function value for
+        the corresponding row of X.
+    )pbdoc");
+
     m.def("zettel", &zettel, R"pbdoc(
         Computes the value of the Zettel function.
         SCORES = zettel(X) computes the value of the Zettel function at point X.
