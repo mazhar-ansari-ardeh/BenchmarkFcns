@@ -868,6 +868,14 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/xinsheyangn4fcn
     )pbdoc");
 
+    m.def("yaoliun4", &yaoliun4, R"pbdoc(
+        Computes the value of the Yao-Liu N. 4 function.
+        SCORES = yaoliun4(X) computes the value of the Yao-Liu N. 4
+        function at point X. `yaoliun4` accepts a matrix of size M-by-N and
+        returns a vetor SCORES of size M-by-1 in which each row contains the
+        function value for the corresponding row of X.
+    )pbdoc");
+
     m.def("zakharov", &zakharov, R"pbdoc(
         Computes the value of Zakharov benchmark function.
         SCORES = zakharov(X) computes the value of the Zakharov function at

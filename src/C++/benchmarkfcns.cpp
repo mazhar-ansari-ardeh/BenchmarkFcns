@@ -902,6 +902,10 @@ namespace BenchmarkFcns {
         return (A) * (((X.square() + Y.square() - X * Y).pow(0.75))) + Z;
     }
 
+    VectorXd yaoliun4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        return x.array().abs().rowwise().maxCoeff();
+    }
+
     VectorXd zakharov(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int m = x.rows();
         int n = x.cols();
