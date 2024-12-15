@@ -180,6 +180,8 @@ namespace BenchmarkFcns {
 
     VectorXd zettel(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
+    VectorXd zimmerman(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
     VectorXd zirilli(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 } // namespace BenchmarkFunctions
 

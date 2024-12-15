@@ -932,6 +932,29 @@ namespace BenchmarkFcns {
         return scores;
     }
 
+    VectorXd zimmerman(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        int n = x.cols();
+        if (n != 2)
+            throw std::invalid_argument("The Zimmerman function is only defined on the 2D space.");
+
+        auto X = x.col(0).array();
+        auto Y = x.col(1).array();
+
+        VectorXd zh1 = 9 - X - Y;
+        VectorXd zh2 = (X - 3).square() + (Y - 2).square() - 16;
+        VectorXd zh3 = X * Y - 14;
+        auto zp = [](const VectorXd& x) { return 100 * (1 + x.array()); };
+
+        MatrixXd signs(x.rows(), 5);
+        signs.col(0) = zh1;
+        signs.col(1) = zp(zh2).array() * zh2.array().sign();
+        signs.col(2) = zp(zh3).array() * zh3.array().sign();
+        signs.col(3) = zp(-X).array() * (X).array().sign();
+        signs.col(4) = zp(-Y).array() * (Y).array().sign();
+        VectorXd scores = signs.rowwise().maxCoeff();
+        return scores;
+    }
+
     VectorXd zirilli(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 2)

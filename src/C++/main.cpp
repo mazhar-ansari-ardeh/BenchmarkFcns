@@ -894,6 +894,14 @@ PYBIND11_MODULE(_core, m) {
         corresponding row of X.
     )pbdoc");
 
+    m.def("zimmerman", &zimmerman, R"pbdoc(
+        Computes the value of the Zimmerman benchmark function.
+        SCORES = zimmerman(X) computes the value of the Zimmerman function at
+        point X. `zimmerman` accepts a matrix of size M-by-2 and returns a vetor
+        SCORES of size M-by-1 in which each row contains the function value for
+        the corresponding row of X.
+    )pbdoc");
+
     m.def("zirilli", &zirilli, R"pbdoc(
         Computes the value of the Zirilli function.
         SCORES = zirilli(X) computes the value of the Zirilli function at point X.
