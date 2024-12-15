@@ -906,6 +906,11 @@ namespace BenchmarkFcns {
         return x.array().abs().rowwise().maxCoeff();
     }
 
+    VectorXd yaoliun9(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        constexpr double TWO_PI = 2 * M_PI;
+        return (x.array().square() - 10 * (TWO_PI * x.array()).cos() + 10).rowwise().sum();
+    }
+
     VectorXd zakharov(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int m = x.rows();
         int n = x.cols();

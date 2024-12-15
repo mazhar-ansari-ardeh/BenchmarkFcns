@@ -876,6 +876,14 @@ PYBIND11_MODULE(_core, m) {
         function value for the corresponding row of X.
     )pbdoc");
 
+    m.def("yaoliun9", &yaoliun9, R"pbdoc(
+        Computes the value of the Yao-Liu N. 9 function.
+        SCORES = yaoliun9(X) computes the value of the Yao-Liu N. 9
+        function at point X. `yaoliun9` accepts a matrix of size M-by-N and
+        returns a vetor SCORES of size M-by-1 in which each row contains the
+        function value for the corresponding row of X.
+    )pbdoc");
+
     m.def("zakharov", &zakharov, R"pbdoc(
         Computes the value of Zakharov benchmark function.
         SCORES = zakharov(X) computes the value of the Zakharov function at
