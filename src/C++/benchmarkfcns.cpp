@@ -860,7 +860,6 @@ namespace BenchmarkFcns {
     }
 
     VectorXd vincent(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
-        // scores = -sum(sin(10 * log(x)), 2);
         VectorXd scores = -(10 * x.array().log()).array().sin().rowwise().sum();
         return scores;
     }
