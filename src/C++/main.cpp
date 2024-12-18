@@ -808,6 +808,14 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/tridfcn
     )pbdoc");
 
+    m.def("vincent", &vincent, R"pbdoc(
+        Computes the value of the Vincent benchmark function.
+        SCORES = vincent(X) computes the value of the Vincent
+        function at point X. `vincent` accepts a matrix of size M-by-N and
+        returns a vetor SCORES of size M-by-1 in which each row contains the
+        function value for the corresponding row of X.
+    )pbdoc");
+
     m.def("wolfe", &wolfe, R"pbdoc(
         Computes the value of the Wolfe function.
         SCORES = wolfe(X) computes the value of the Wolfe
