@@ -1,6 +1,6 @@
 % Computes the value of the Yao Liu N. 09 function.
 % SCORES = YAOLIUN9FCN(X) computes the value of the Yao Liu N. 09
-% function at point X. YAOLIUN4FCN accepts a matrix of size M-by-N and
+% function at point X. YAOLIUN9FCN accepts a matrix of size M-by-N and
 % returns a vetor SCORES of size M-by-1 in which each row contains the
 % function value for the corresponding row of X.
 %
