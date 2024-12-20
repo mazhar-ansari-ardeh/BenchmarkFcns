@@ -816,6 +816,23 @@ PYBIND11_MODULE(_core, m) {
         function value for the corresponding row of X.
     )pbdoc");
 
+    m.def("watson", &watson, R"pbdoc(
+        Computes the value of the Watson benchmark function.
+        SCORES = watson(X) computes the value of the Watson
+        function at point X. `watson` accepts a matrix of size M-by-N and
+        returns a vetor SCORES of size M-by-1 in which each row contains the
+        function value for the corresponding row of X.
+    )pbdoc");
+
+    m.def("wavy", &wavy, py::arg("x"), py::arg("k") = 10, R"pbdoc(
+        Computes the value of the Wavy benchmark function.
+        SCORES = wavy(X) computes the value of the Wavy
+        function at point X and it is behaviour can be controlled with
+        one additional parameters 'k'. `wavy` accepts a matrix of size M-by-2 and
+        returns a vetor SCORES of size M-by-1 in which each row contains the
+        function value for the corresponding row of X.
+    )pbdoc");
+
     m.def("wolfe", &wolfe, R"pbdoc(
         Computes the value of the Wolfe function.
         SCORES = wolfe(X) computes the value of the Wolfe

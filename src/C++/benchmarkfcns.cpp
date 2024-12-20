@@ -13,11 +13,11 @@ namespace BenchmarkFcns {
     }
 
     VectorXd ackley(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
-        int n = x.cols();
-        const double a = 20;
-        const double b = 0.2;
+        const int n = x.cols();
+        constexpr double a = 20;
+        constexpr double b = 0.2;
         constexpr double c = 2 * M_PI;
-        double ninverse = 1.0 / n;
+        const double ninverse = 1.0 / n;
 
         auto sum1 = x.array().square().rowwise().sum();
         auto sum2 = (c * x).array().cos().rowwise().sum();
@@ -892,6 +892,45 @@ namespace BenchmarkFcns {
         VectorXd exp_sum_x_2 = (-x.array().square()).rowwise().sum().exp();
         VectorXd sum_sin_sqrt_abs_x_2 = (-sin(x.array().abs().sqrt()).square()).rowwise().sum().exp();
         return (sum_sin_x_2.array() - exp_sum_x_2.array()) * sum_sin_sqrt_abs_x_2.array();
+    }
+
+    VectorXd watson(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        int n = x.cols();
+        if (n != 6)
+            throw std::invalid_argument("The Watson function is only defined on a 6D space.");
+        static const VectorXd i = VectorXd::LinSpaced(30, 0, 29);
+        static const VectorXd a = i / 29.0;
+        static const RowVectorXd j = RowVectorXd::LinSpaced(5, 0, 4);
+        static const MatrixXd aToTheJ = a.replicate(1, j.cols()).array().pow(j.replicate(a.rows(), 1).array()); // (a .^ j)
+        static const auto jaj = (j.array()+1).replicate(aToTheJ.rows(), 1).array() * aToTheJ.array(); // (j-1)(a .^ j)
+        static const RowVectorXd k = RowVectorXd::LinSpaced(6, 0, 5);
+        static const MatrixXd aToTheK = a.replicate(1, k.cols()).array().pow(k.replicate(a.rows(), 1).array()); // (a .^ k)
+
+        VectorXd scores(x.rows());
+        unsigned int counter = 0;
+        // TODO: Implement a more efficient way to compute the Watson function.
+        // For the moment, Eigen's support for tensor operations is limited.
+        // This is a very inefficient way to compute the function.
+        for (auto xi : x.rowwise())
+        {
+            auto t1 = (jaj * xi.tail(x.size() - 1).transpose().replicate(aToTheJ.rows(), 1).array()).rowwise().sum();
+
+            auto xrep = xi.transpose().replicate(aToTheK.rows(), 1);
+            auto t2 = (aToTheK.array() * xrep.array()).rowwise().sum();
+
+            auto score = (t1.array() - t2.array().square() - 1).array().square().sum() + std::pow(xi(0), 2);
+            scores[counter++] = score;
+        }
+        return scores;
+    }
+
+    VectorXd wavy(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, double k) {
+        auto x2 = x.array().square() / 2;
+        auto n = x.cols();
+        auto cos_kx = (cos(k * x.array()));
+        auto exp_x2 = exp(-x2.array());
+        auto scores = 1 - (1.0 / n) * (cos_kx.array() * exp_x2.array()).rowwise().sum();
+        return scores;
     }
 
     VectorXd wolfe(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
