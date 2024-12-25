@@ -926,15 +926,27 @@ namespace BenchmarkFcns {
 
     VectorXd wavy(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, double k) {
         auto x2 = x.array().square() / 2;
-        auto n = x.cols();
+        const auto n = x.cols();
         auto cos_kx = (cos(k * x.array()));
         auto exp_x2 = exp(-x2.array());
         auto scores = 1 - (1.0 / n) * (cos_kx.array() * exp_x2.array()).rowwise().sum();
         return scores;
     }
 
+    VectorXd wayburnseadern2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        if (n != 2)
+            throw std::invalid_argument("The Wayburn-Seader N. 02 function is only defined on a 2D space.");
+
+        auto X = x.col(0).array();
+        auto Y = x.col(1).array();
+
+        VectorXd scores = ((1.613 - 4 * (X - 0.3125).square() - 4 * (Y - 1.625).square()).square() + (Y - 1).square());
+        return scores;
+    }
+
     VectorXd wolfe(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
-        int n = x.cols();
+        const int n = x.cols();
         if (n != 3)
             throw std::invalid_argument("The Wolfe function is only defined on a 3D space.");
 

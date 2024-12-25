@@ -833,6 +833,14 @@ PYBIND11_MODULE(_core, m) {
         function value for the corresponding row of X.
     )pbdoc");
 
+    m.def("wayburnseadern2", &wayburnseadern2, R"pbdoc(
+        Computes the value of the Wayburn-Seader N. 2 benchmark function.
+        SCORES = wayburnseadern2(X) computes the value of the Wayburn-Seader N. 2
+        function at point X. `wayburnseadern2` accepts a matrix of size M-by-2 and
+        returns a vetor SCORES of size M-by-1 in which each row contains the
+        function value for the corresponding row of X.
+    )pbdoc");
+
     m.def("wolfe", &wolfe, R"pbdoc(
         Computes the value of the Wolfe function.
         SCORES = wolfe(X) computes the value of the Wolfe
