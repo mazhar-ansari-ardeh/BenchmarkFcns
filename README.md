@@ -1,5 +1,7 @@
 ![example workflow](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns/actions/workflows/build.yaml/badge.svg)
 [![Downloads](https://static.pepy.tech/badge/benchmarkfcns)](https://pepy.tech/project/benchmarkfcns)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14556622.svg)](https://doi.org/10.5281/zenodo.14556622)
+
 
 # BenchmarkFcns
 Benchmarkfcns is an effort to provide a high-perfomant, public and free implementation of well-known benchmark functions for mathematical optimization algorithms in Python. The Python library is implemented in C++ and utilizes powerful SIMD vector calucluations to offer very fast and efficient evaluation of the implemented functions on large batches of data.
@@ -153,4 +155,17 @@ The library is built with the [pybind11](https://pybind11.readthedocs.io/), [sci
 Any suggestions and contributions are welcomed. The best way to contribute to the library is to fork the repository, apply the contributions and create a pull request.
 
 # Support
-Any bug reports, code contributions, suggestions, feedback and insights are greatly appreciated. If you are using this library in a research publication, please kindly consider citing the repository as "Ardeh, M. A. [2024] BenchmarkFcns [Source Code]. GitHub. https://github.com/mazhar-ansari-ardeh/BenchmarkFcns".
+Any bug reports, code contributions, suggestions, feedback and insights are greatly appreciated. If you are using this library in a research publication, please kindly consider citing the repository. 
+
+Please cite this software using the following:
+
+*   **For general references:**
+    ```
+    Mazhar Ansari Ardeh and cmutnik. (2024). Benchmarkfcns. Zenodo. https://doi.org/10.5281/zenodo.14556621
+    ```
+
+*   **For specific versions:**
+    ```
+    Mazhar Ansari Ardeh and cmutnik. (2024). Benchmarkfcns (3.0.0). Zenodo. https://doi.org/10.5281/zenodo.14556622
+    ```
+
