@@ -159,13 +159,13 @@ Any bug reports, code contributions, suggestions, feedback and insights are grea
 
 Please cite this software using the following:
 
-*   **For general references:**
+*   **For the general reference of the repository:**
     ```
     Mazhar Ansari Ardeh and cmutnik. (2024). Benchmarkfcns. Zenodo. https://doi.org/10.5281/zenodo.14556621
     ```
 
 *   **For the latest version of the repository (v3.0.0):**
     ```
-    Mazhar Ansari Ardeh and cmutnik. (2024). Benchmarkfcns (3.0.0). Zenodo. https://doi.org/10.5281/zenodo.14556622
+    Mazhar Ansari Ardeh and cmutnik. (2024). Benchmarkfcns (bersion v3.0.0). Zenodo. https://doi.org/10.5281/zenodo.14556622
     ```
 
