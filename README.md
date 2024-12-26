@@ -164,7 +164,7 @@ Please cite this software using the following:
     Mazhar Ansari Ardeh and cmutnik. (2024). Benchmarkfcns. Zenodo. https://doi.org/10.5281/zenodo.14556621
     ```
 
-*   **For specific versions:**
+*   **For the latest version of the repository (v3.0.0):**
     ```
     Mazhar Ansari Ardeh and cmutnik. (2024). Benchmarkfcns (3.0.0). Zenodo. https://doi.org/10.5281/zenodo.14556622
     ```
