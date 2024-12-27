@@ -155,9 +155,7 @@ The library is built with the [pybind11](https://pybind11.readthedocs.io/), [sci
 Any suggestions and contributions are welcomed. The best way to contribute to the library is to fork the repository, apply the contributions and create a pull request.
 
 # Support
-Any bug reports, code contributions, suggestions, feedback and insights are greatly appreciated. If you are using this library in a research publication, please kindly consider citing the repository. 
-
-Please cite this software using the following:
+Any bug reports, code contributions, suggestions, feedback and insights are greatly appreciated. If you are using this library in a research publication, please kindly consider citing the repository using the following:
 
 *   **For the general reference of the repository:**
     ```
