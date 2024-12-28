@@ -85,7 +85,7 @@ plt.show()
 ```
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/mazhar-ansari-ardeh/BenchmarkFcns/master/image-1.png" alt="drawing" width="700"/>
+    <img src="https://raw.githubusercontent.com/mazhar-ansari-ardeh/BenchmarkFcns/master/ackley.png" alt="drawing" width="700"/>
 </p>
 
 ### Plotting Multi-fidelity Functions ###
@@ -166,4 +166,3 @@ Any bug reports, code contributions, suggestions, feedback and insights are grea
     ```
     Mazhar Ansari Ardeh and cmutnik. (2024). Benchmarkfcns (bersion v3.0.0). Zenodo. https://doi.org/10.5281/zenodo.14556622
     ```
-
