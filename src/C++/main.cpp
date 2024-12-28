@@ -14,6 +14,19 @@ namespace py = pybind11;
 PYBIND11_MODULE(_core, m) {
     auto mfm = m.def_submodule("multifidelity", "Multi-fidelity functions");
 
+    mfm.def("booth", MultiFidelity::booth, R"pbdoc(
+        Computes the value of the Booth function at different fidelity levels.
+        SCORES = multifidelity.booth(X) computes the value of the Booth function
+        at point X. `multifidelity.booth` accepts a matrix of size M-by-2 and returns
+        a vetor SCORES of size M-by-2 in which each column contains the function value
+        for each row of X and each column contains the function value for the
+        corresponding fidelity level.
+        For more information, please refer to:
+        Dong, H., Song, B., Wang, P. et al. Multi-fidelity information
+        fusion based on prediction of kriging. Struct Multidisc Optim
+        51, 1267-1280 (2015) doi:10.1007/s00158-014-1213-9
+    )pbdoc");
+
     mfm.def("forrester", MultiFidelity::forrester, R"pbdoc(
         Computes the value of the Forrester function at different fidelity levels.
         SCORES = multifidelity.forrester(X) computes the value of the Forrester function

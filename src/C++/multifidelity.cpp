@@ -2,6 +2,25 @@
 #include "benchmarkfcns.h"
 
 namespace BenchmarkFcns::MultiFidelity {
+
+    MatrixXd booth(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        if (n != 2)
+            throw std::invalid_argument("The multi-fidelity Booth function is only defined on a 2D space.");
+        const auto X = x.col(0);
+        const auto Y = x.col(1);
+
+        MatrixXd NX(x.rows(), 2);
+        NX.col(0) = 0.4 * X;
+        NX.col(1) = Y;
+
+        MatrixXd scores(x.rows(), 2);
+        scores.col(0) = BenchmarkFcns::booth(x);
+        scores.col(1) = BenchmarkFcns::booth(NX).array() + 1.7 * X.array() * Y.array() - X.array() + 2 * Y.array();
+
+        return scores;
+    }
+
     MatrixXd forrester(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         int n = x.cols();
         if (n != 1)
