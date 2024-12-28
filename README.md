@@ -85,7 +85,7 @@ plt.show()
 ```
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/mazhar-ansari-ardeh/BenchmarkFcns/master/ackley.png" alt="drawing" width="700"/>
+    <img src="https://raw.githubusercontent.com/mazhar-ansari-ardeh/BenchmarkFcns/master/assets/ackley.png" alt="drawing" width="700"/>
 </p>
 
 ### Plotting Multi-fidelity Functions ###
@@ -142,7 +142,7 @@ plt.show()
 ```
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/mazhar-ansari-ardeh/BenchmarkFcns/master/forrester-mf.png" alt="drawing" width="700"/>
+    <img src="https://raw.githubusercontent.com/mazhar-ansari-ardeh/BenchmarkFcns/master/assets/forrester-mf.png" alt="drawing" width="700"/>
 </p>
 
 ## MATLAB
