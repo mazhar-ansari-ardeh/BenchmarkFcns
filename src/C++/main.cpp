@@ -50,7 +50,7 @@ PYBIND11_MODULE(_core, m) {
     )pbdoc");
 
     m.doc() = R"pbdoc(
-        Pybind11 example plugin
+        BenchmarkFcns - A collection of benchmark test functions for optimization problems.
         -----------------------
 
         .. currentmodule:: BenchmarkFcns
@@ -490,13 +490,21 @@ PYBIND11_MODULE(_core, m) {
     )pbdoc");
 
     m.def("holdertable", &holdertable, R"pbdoc(
-        Computes the value of the H�lder table benchmark function.
-        SCORES = holdertable(X) computes the value of the H�lder table
+        Computes the value of the Holder table benchmark function.
+        SCORES = holdertable(X) computes the value of the Holder table
         function at point X. `holdertable` accepts a matrix of size M-by-2 and
         returns a vetor SCORES of size M-by-1 in which each row contains the
         function value for the corresponding row of X.
         For more information, please visit:
         benchmarkfcns.info/doc/holdertablefcn
+    )pbdoc");
+
+    m.def("hosaki", &hosaki, R"pbdoc(
+        Computes the value of the Hosaki benchmark function.
+        SCORES = hosaki(X) computes the value of the Hosaki function at
+        point X. `hosaki` accepts a matrix of size M-by-2 and returns a
+        vetor SCORES of size M-by-1 in which each row contains the function value
+        for the corresponding row of X.
     )pbdoc");
 
     m.def("keane", &keane, R"pbdoc(

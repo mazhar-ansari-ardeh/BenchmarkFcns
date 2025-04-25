@@ -511,6 +511,18 @@ namespace BenchmarkFcns {
         return scores;
     }
 
+    VectorXd himmelblau(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        if (n != 2)
+            throw std::invalid_argument("The Himmelblau's function is only defined on a 2D space.");
+
+        const auto X = x.col(0).array();
+        const auto Y = x.col(1).array();
+
+        VectorXd scores = (X.square() + Y - 11).square() + (X + Y.square() - 7).square();
+        return scores;
+    }
+
     VectorXd holdertable(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
         if (n != 2)
@@ -524,16 +536,24 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    VectorXd himmelblau(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
-        const int n = x.cols();
-        if (n != 2)
-            throw std::invalid_argument("The Himmelblau's function is only defined on a 2D space.");
 
-        const auto X = x.col(0).array();
-        const auto Y = x.col(1).array();
+    VectorXd hosaki(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        if (x.cols() != 2)
+            throw std::invalid_argument("Hosaki function input must have 2 columns.");
 
-        VectorXd scores = (X.square() + Y - 11).square() + (X + Y.square() - 7).square();
-        return scores;
+        constexpr double A = 7.0 / 3.0;
+
+        auto X = x.col(0).array();
+        auto Y = x.col(1).array();
+
+        auto term1 = 1.0 - 8.0 * X + 7.0 * X.pow(2)
+                             - (A) * X.pow(3) + 0.25 * X.pow(4);
+        auto term2 = Y.pow(2);
+        auto term3 = (-X).exp();
+
+        auto scores_array = term1 * term2 * term3;
+
+        return scores_array.matrix();
     }
 
     VectorXd keane(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
