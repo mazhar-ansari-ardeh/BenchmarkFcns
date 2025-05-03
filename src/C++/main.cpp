@@ -607,6 +607,14 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/quarticfcn
     )pbdoc");
 
+    m.def("rana", &rana, R"pbdoc(
+        Computes the value of the Rana benchmark function.
+        SCORES = rana(X) computes the value of the Rana function at point X.
+        `rana` accepts a matrix of size M-by-N and returns a vetor SCORES of
+        size M-by-1 in which each row contains the function value for the
+        corresponding row of X.
+    )pbdoc");
+
     m.def("rastrigin", &rastrigin, R"pbdoc(
         Computes the value of Rastrigin benchmark function.
         SCORES = rastrigin(X) computes the value of the Rastrigin function at

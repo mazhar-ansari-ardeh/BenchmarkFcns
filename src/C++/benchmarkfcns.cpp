@@ -670,6 +670,17 @@ namespace BenchmarkFcns {
         return scores;
     }
 
+    VectorXd rana(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const auto x1 = x.col(0).array();
+        VectorXd scores = (
+                x.array() * sin(sqrt(abs(x1 - x.array() + 1))).array()
+                    * cos(sqrt(abs(x1 + x.array() + 1))).array() +
+                (x1 + 1).array() * sin(sqrt(abs(x1 + x.array() + 1))).array()
+                    * cos(sqrt(abs(x1 - x.array() + 1))).array()
+            ).rowwise().sum();
+        return scores;
+    }
+
     VectorXd rastrigin(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
         const double A = 10;
