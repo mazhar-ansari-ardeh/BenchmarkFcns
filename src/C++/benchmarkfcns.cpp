@@ -671,12 +671,14 @@ namespace BenchmarkFcns {
     }
 
     VectorXd rana(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
-        const auto x1 = x.col(0).array();
+        Eigen::VectorXd x1 = x.col(0);
+        Eigen::MatrixXd x1_rep = x1.replicate(1, x.cols());
+        // const auto x1 = x.col(0).replicate(1, x.cols()).array();
         VectorXd scores = (
-                x.array() * sin(sqrt(abs(x1 - x.array() + 1))).array()
-                    * cos(sqrt(abs(x1 + x.array() + 1))).array() +
-                (x1 + 1).array() * sin(sqrt(abs(x1 + x.array() + 1))).array()
-                    * cos(sqrt(abs(x1 - x.array() + 1))).array()
+                x.array() * sin(sqrt(abs(x1_rep.array() - x.array() + 1))).array()
+                    * cos(sqrt(abs(x1_rep.array() + x.array() + 1))).array() +
+                (x1_rep.array() + 1).array() * sin(sqrt(abs(x1_rep.array() + x.array() + 1))).array()
+                    * cos(sqrt(abs(x1_rep.array() - x.array() + 1))).array()
             ).rowwise().sum();
         return scores;
     }
