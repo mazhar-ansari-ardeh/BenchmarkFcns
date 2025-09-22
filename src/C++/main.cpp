@@ -785,6 +785,17 @@ PYBIND11_MODULE(_core, m) {
         point X. `sphere` accepts a matrix of size M-by-N and returns a vetor
         SCORES of size M-by-1 in which each row contains the function value for
         each row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: 0
+        - Number of dimensions: n
+        - Domain: [-5.12, 5.12]^n
+        - Number of local minima: 0
+        - Number of global minima: 1
+        - Convexity: convex
+        - Separability: separable
+        - Modality: unimodal
+        - Symmetry: symmetric
         For more information, please visit:
         benchmarkfcns.info/doc/spherefcn
     )pbdoc");
@@ -868,6 +879,42 @@ PYBIND11_MODULE(_core, m) {
         function at point X. `wayburnseadern2` accepts a matrix of size M-by-2 and
         returns a vetor SCORES of size M-by-1 in which each row contains the
         function value for the corresponding row of X.
+    )pbdoc");
+
+    m.def("weierstrass", &weierstrass, py::arg("x"), py::arg("a") = 0.5, py::arg("b") = 3.0, py::arg("kmax") = 20, R"pbdoc(
+        Computes the value of the Weierstrass benchmark function.
+        Properties:
+            Global minimum: 0
+            Location of global minimum: 0
+            Number of dimensions: n
+            Domain: [-0.5, 0.5]^n
+            Number of global minima: 1
+            Convexity: non-convex
+            Separability: separable
+            Modality: multi-modal
+            Symmetry: The function is symmetric with respect to its input dimensions. The
+            outer summation treats each dimension of x independently and identically, so
+            permuting the elements of the input vector x (e.g., swapping x1 and x2) will
+            not change the output of the function.
+
+        Inputs:
+            x: A matrix where each row is a vector of dimension n.
+            a: A scalar parameter that controls the amplitude of the cosine waves. For the
+                function to be nowhere differentiable, this parameter must satisfy the
+                condition 0<a<1.
+            b: A scalar parameter that controls the frequency of the cosine waves. For the
+                function to be nowhere differentiable, this parameter must be a positive
+                odd integer. The original condition for non-differentiability is that
+                ab>1.
+            kmax: An integer that defines the number of terms in the summation. In the
+                original, theoretical Weierstrass function, this summation goes to
+                infinity. In practical, computable versions like this one, it is truncated
+                at a finite value, kmax. A larger kmax makes the function more "crinkly"
+                and complex.
+        Outputs:
+            scores: A column vector where each element is the function value at the
+                corresponding row of x.
+
     )pbdoc");
 
     m.def("wolfe", &wolfe, R"pbdoc(

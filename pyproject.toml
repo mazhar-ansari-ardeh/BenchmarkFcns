@@ -1,8 +1,13 @@
 [tool.poetry]
 name = "Benchmark Functions"
-version = "3.3.0"
+version = "3.4.0"
 description = "A high-performant C++ implementation of benchmark functions for mathematical optimization algorithms."
 authors = ["Mazhar Ansari Ardeh"]
+
+
+[tool.poetry.group.dev.dependencies]
+matplotlib = "^3.10.1"
+ipython = "^9.2.0"
 
 [build-system]
 requires = ["scikit-build-core>=0.10", "pybind11"]
@@ -11,18 +16,19 @@ build-backend = "scikit_build_core.build"
 
 [project]
 name = "benchmarkfcns"
-version = "3.3.0"
+version = "3.4.0"
 description="A high-performant C++ implementation of benchmark functions for mathematical optimization algorithms."
 readme = "README.md"
 authors = [
   { name = "Mazhar Ansari Ardeh", email = "mazhar.ansari.ardeh@gmail.com" },
 ]
-requires-python = ">=3.9"
+
+requires-python = ">=3.10"
+
 classifiers = [
   "Development Status :: 4 - Beta",
   "License :: OSI Approved :: MIT License",
   "Programming Language :: Python :: 3 :: Only",
-  "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
@@ -38,6 +44,8 @@ test = ["pytest"]
 [tool.pytest]
   filterwarnings = "ignore"
 
+[tool.poetry.dependencies]
+python = "^3.11"
 
 [tool.scikit-build]
 wheel.expand-macos-universal-tags = true

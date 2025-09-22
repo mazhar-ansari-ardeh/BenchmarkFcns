@@ -977,6 +977,29 @@ namespace BenchmarkFcns {
         return scores;
     }
 
+    VectorXd weierstrass(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& X, double a, double b, int kmax) {
+        const long num_rows = X.rows();
+        const long n = X.cols();
+
+        VectorXd k_vec = VectorXd::LinSpaced(kmax + 1, 0, kmax);
+        const auto a_vec = ArrayXd::Constant(kmax + 1, a);
+        const auto b_vec = ArrayXd::Constant(kmax + 1, b);
+        const ArrayXd a_k = a_vec.array().pow(k_vec.array());
+        const ArrayXd b_k = b_vec.array().pow(k_vec.array());
+        constexpr double TWO_PI = 2 * M_PI;
+
+        MatrixXd term1_sum_k = MatrixXd::Zero(num_rows, n);
+        for (int k = 0; k <= kmax; ++k) {
+            term1_sum_k += a_k(k) * (TWO_PI * b_k(k) * (X.array() + 0.5)).cos().matrix();
+        }
+
+        VectorXd sum_over_n = term1_sum_k.rowwise().sum();
+
+        const double second_sum_term = n * (a_k * (M_PI * b_k).cos()).sum();
+
+        return sum_over_n.array() - second_sum_term;
+    }
+
     VectorXd wolfe(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
         if (n != 3)

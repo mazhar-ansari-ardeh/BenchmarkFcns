@@ -176,6 +176,8 @@ namespace BenchmarkFcns {
 
     VectorXd wayburnseadern2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
+    VectorXd weierstrass(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, double a=0.5, double b = 3, int kmax = 20);
+
     VectorXd wolfe(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd xinsheyangn1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
