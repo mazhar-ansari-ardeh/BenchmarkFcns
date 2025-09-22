@@ -12,6 +12,7 @@ on:
 
 env:
   FORCE_COLOR: 3
+  CIBW_SKIP: "pp*"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
