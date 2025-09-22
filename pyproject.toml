@@ -10,8 +10,9 @@ matplotlib = "^3.10.1"
 ipython = "^9.2.0"
 
 [build-system]
-requires = ["scikit-build-core>=0.10", "pybind11"]
+requires = ["scikit-build-core>=0.10", "pybind11<=2.10.4"]
 build-backend = "scikit_build_core.build"
+
 
 
 [project]
