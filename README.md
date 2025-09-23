@@ -162,8 +162,8 @@ Any bug reports, code contributions, suggestions, feedback and insights are grea
     Mazhar Ansari Ardeh and cmutnik. (2025). Benchmarkfcns. Zenodo. https://doi.org/10.5281/zenodo.14556621
     ```
 
-*   **For the latest version of the repository (v3.3.0):**
+*   **For the latest version of the repository (v3.4.0):**
     ```
-    Mazhar Ansari Ardeh and cmutnik. (2025). Benchmarkfcns (bersion v3.3.0). Zenodo. https://doi.org/10.5281/zenodo.15333019
+    Mazhar Ansari Ardeh and cmutnik. (2025). Benchmarkfcns (version v3.4.0). Zenodo. https://doi.org/10.5281/zenodo.17181618
 
     ```
