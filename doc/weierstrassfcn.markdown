@@ -29,8 +29,6 @@ where $a \in (0,1)$, $b$ is a positive odd integer, and $k_{max}$ is a positive 
 # Plots
 ![{{page.functionname}}]({{site.baseurl}}/doc/plots/{{page.fname}}.png){:class="fcnplot"}
 
-![{{page.functionname}}]({{site.baseurl}}/doc/plots/{{page.fname}}_2.png){:class="fcnplot"}
-
 # Description and Features
 * The function is continuous but nowhere differentiable.
 * The function is not [convex](https://en.wikipedia.org/wiki/Convex_function).
