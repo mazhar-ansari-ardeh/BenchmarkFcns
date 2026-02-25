@@ -44,7 +44,14 @@ dependencies = [
 [project.optional-dependencies]
 test = ["pytest"]
 [tool.pytest]
-  filterwarnings = "ignore"
+  minversion = "6.0"
+  addopts = ["-ra", "--showlocals", "--strict-markers", "--strict-config"]
+  xfail_strict = true
+  log_cli_level = "INFO"
+  filterwarnings = [
+    "error",
+  ]
+  testpaths = ["src/tests"]
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -53,16 +60,6 @@ python = "^3.11"
 wheel.expand-macos-universal-tags = true
 minimum-version = "0.10"
 wheel.packages = ["src/python/benchmarkfcns"]
-
-[tool.pytest.ini_options]
-minversion = "6.0"
-addopts = ["-ra", "--showlocals", "--strict-markers", "--strict-config"]
-xfail_strict = true
-log_cli_level = "INFO"
-filterwarnings = [
-  "error",
-]
-testpaths = ["src/tests"]
 
 
 [tool.cibuildwheel]
