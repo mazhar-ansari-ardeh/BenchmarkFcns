@@ -71,4 +71,6 @@ f(x) = \sum_{i=1}^{10} \left( e^{-t_i x_1} - 5 e^{-t_i x_2} - \left(e^{-t_i} - 5
 {% endhighlight %}
 
 # References:
-* 
+* Biggs, M. C. (1971). "Notes on the Numerical Optimisation Centre's nonlinear least-squares algorithm". Technical Report No. 17, Numerical Optimisation Centre, Hatfield Polytechnic, Hatfield, UK
+* Jamil, M., & Yang, X. S. (2013). "A literature survey of benchmark functions for global optimization problems". International Journal of Mathematical Modelling and Numerical Optimisation, 4(2), 150–194.
+* Bartholomew-Biggs, M. (2008). Nonlinear Optimization with Engineering Applications. Springer Science & Business Media
