@@ -73,6 +73,17 @@ PYBIND11_MODULE(_core, m) {
         X. `ackley` accepts a matrix of size M-by-N and returns a vetor SCORES
         of size M-by-1 in which each row contains the function value for each row
         of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (0, 0, ..., 0)
+        - Number of dimensions: N
+        - Recommended domain: [-35, 35]^N
+        - Number of local minima: many
+        - Number of global minima: 1
+        - Convexity: non-convex
+        - Separability: non-separable
+        - Modality: multimodal
+        - Symmetry: radial symmetry
         For more information, please visit:
         benchmarkfcns.info/doc/ackleyfcn
     )pbdoc");
@@ -83,6 +94,17 @@ PYBIND11_MODULE(_core, m) {
         function at point X. `ackley2` accepts a matrix of size M-by-2 and
         returns a vetor SCORES of size M-by-1 in which each row contains the
         function value for the corresponding row of X.
+        Properties:
+        - Global minimum: -200
+        - Location of global minimum: (0, 0, ..., 0)
+        - Number of dimensions: 2
+        - Recommended domain: [-32, 32]^2
+        - Number of local minima: many
+        - Number of global minima: 1
+        - Convexity: non-convex
+        - Separability: non-separable
+        - Modality: unimodal
+        - Symmetry: radial symmetry
         For more information, please visit:
         benchmarkfcns.info/doc/ackleyn2fcn
     )pbdoc");
