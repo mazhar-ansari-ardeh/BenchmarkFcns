@@ -165,6 +165,25 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/bealefcn
     )pbdoc");
 
+    m.def("biggsexp02", &biggsexp02, R"pbdoc(
+        Computes the value of the Biggs EXP N. 02 benchmark function.
+        SCORES = biggsexp02(X) computes the value of the Biggs EXP N. 02
+        function at point X. `biggsexp02` accepts a matrix of size M-by-2 and
+        returns a vetor SCORES of size M-by-1 in which each row contains the
+        function value for the corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (1, 10)
+        - Number of dimensions: 2
+        - Recommended domain: [0, 20]^2
+        - Number of local minima: 0
+        - Number of global minima: 1
+        - Convexity: non-convex
+        - Separability: non-separable
+        - Modality: unimodal
+        - Symmetry: non-symmetric
+    )pbdoc");
+
     m.def("bird", &bird, R"pbdoc(
         Computes the value of the Bird function.
         SCORES = bird(X) computes the value of the Bird

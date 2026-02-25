@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "Benchmark Functions"
-version = "3.4.0"
+version = "3.5.0"
 description = "A high-performant C++ implementation of benchmark functions for mathematical optimization algorithms."
 authors = ["Mazhar Ansari Ardeh"]
 
@@ -8,6 +8,7 @@ authors = ["Mazhar Ansari Ardeh"]
 [tool.poetry.group.dev.dependencies]
 matplotlib = "^3.10.1"
 ipython = "^9.2.0"
+deap = "^1.4.3"
 
 [build-system]
 requires = ["scikit-build-core>=0.10", "pybind11<=2.10.4"]
@@ -17,7 +18,7 @@ build-backend = "scikit_build_core.build"
 
 [project]
 name = "benchmarkfcns"
-version = "3.4.0"
+version = "3.5.0"
 description="A high-performant C++ implementation of benchmark functions for mathematical optimization algorithms."
 readme = "README.md"
 authors = [
