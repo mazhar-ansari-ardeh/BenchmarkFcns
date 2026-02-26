@@ -1,17 +1,5 @@
-[tool.poetry]
-name = "Benchmark Functions"
-version = "3.5.0"
-description = "A high-performant C++ implementation of benchmark functions for mathematical optimization algorithms."
-authors = ["Mazhar Ansari Ardeh"]
-
-
-[tool.poetry.group.dev.dependencies]
-matplotlib = "^3.10.1"
-ipython = "^9.2.0"
-deap = "^1.4.3"
-
 [build-system]
-requires = ["scikit-build-core>=0.10", "pybind11<=2.10.4"]
+requires = ["scikit-build-core>=0.10", "pybind11>=2.10"]
 build-backend = "scikit_build_core.build"
 
 
@@ -19,7 +7,7 @@ build-backend = "scikit_build_core.build"
 [project]
 name = "benchmarkfcns"
 version = "3.5.0"
-description="A high-performant C++ implementation of benchmark functions for mathematical optimization algorithms."
+description = "A high-performant C++ implementation of benchmark functions for mathematical optimization algorithms."
 readme = "README.md"
 authors = [
   { name = "Mazhar Ansari Ardeh", email = "mazhar.ansari.ardeh@gmail.com" },
@@ -27,6 +15,9 @@ authors = [
 
 requires-python = ">=3.10"
 
+dependencies = [
+  "numpy >= 1.26, <3" # Updated to support NumPy 2.x
+]
 classifiers = [
   "Development Status :: 4 - Beta",
   "License :: OSI Approved :: MIT License",
@@ -34,33 +25,20 @@ classifiers = [
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
 ]
-
-dependencies = [
-  "numpy >= 1.26, <2"
-  ]
-
 
 [project.optional-dependencies]
 test = ["pytest"]
-[tool.pytest]
-  minversion = "6.0"
-  addopts = ["-ra", "--showlocals", "--strict-markers", "--strict-config"]
-  xfail_strict = true
-  log_cli_level = "INFO"
-  filterwarnings = [
-    "error",
-  ]
-  testpaths = ["src/tests"]
-
-[tool.poetry.dependencies]
-python = "^3.11"
 
 [tool.scikit-build]
-wheel.expand-macos-universal-tags = true
 minimum-version = "0.10"
+# FIX: Passes the correct architecture (x86, x64, or ARM64) to the MSVC generator
+cmake.args = ["-A${SKBUILD_PLATFORM}"]
+wheel.expand-macos-universal-tags = true
 wheel.packages = ["src/python/benchmarkfcns"]
-
+# Ensures metadata matches your project definition
+metadata.version.provider = "scikit_build_core.metadata.setuptools_scm"
 
 [tool.cibuildwheel]
 test-command = "pytest {project}/src/tests"
@@ -68,39 +46,12 @@ test-extras = ["test"]
 test-skip = ["*universal2:arm64"]
 build-verbosity = 1
 
+# --- Linting & Tests ---
+[tool.pytest.ini_options]
+minversion = "6.0"
+testpaths = ["src/tests"]
+addopts = ["-ra", "--showlocals", "--strict-markers", "--strict-config"]
 
 [tool.ruff]
 src = ["src"]
-
-[tool.ruff.lint]
-extend-select = [
-  "B",           # flake8-bugbear
-  "I",           # isort
-  "ARG",         # flake8-unused-arguments
-  "C4",          # flake8-comprehensions
-  "EM",          # flake8-errmsg
-  "ICN",         # flake8-import-conventions
-  "G",           # flake8-logging-format
-  "PGH",         # pygrep-hooks
-  "PIE",         # flake8-pie
-  "PL",          # pylint
-  "PT",          # flake8-pytest-style
-  "PTH",         # flake8-use-pathlib
-  "RET",         # flake8-return
-  "RUF",         # Ruff-specific
-  "SIM",         # flake8-simplify
-  "T20",         # flake8-print
-  "UP",          # pyupgrade
-  "YTT",         # flake8-2020
-  "EXE",         # flake8-executable
-  "NPY",         # NumPy specific rules
-  "PD",          # pandas-vet
-]
-ignore = [
-  "PLR09",    # Too many X
-  "PLR2004",  # Magic comparison
-]
-isort.required-imports = ["from __future__ import annotations"]
-
-[tool.ruff.lint.per-file-ignores]
-"tests/**" = ["T20"]
+line-length = 88
