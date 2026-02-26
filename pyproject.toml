@@ -33,12 +33,13 @@ test = ["pytest"]
 
 [tool.scikit-build]
 minimum-version = "0.10"
-# FIX: Passes the correct architecture (x86, x64, or ARM64) to the MSVC generator
-cmake.args = ["-A${SKBUILD_PLATFORM}"]
 wheel.expand-macos-universal-tags = true
 wheel.packages = ["src/python/benchmarkfcns"]
 # Ensures metadata matches your project definition
-metadata.version.provider = "scikit_build_core.metadata.setuptools_scm"
+
+[[tool.scikit-build.overrides]]
+if.platform-system = "windows"
+cmake.args = ["-A${SKBUILD_PLATFORM}"]
 
 [tool.cibuildwheel]
 test-command = "pytest {project}/src/tests"
