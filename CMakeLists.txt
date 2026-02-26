@@ -15,7 +15,7 @@ pybind11_add_module(_core src/C++/main.cpp src/C++/benchmarkfcns.cpp
                     src/C++/multifidelity.cpp)
 
 target_include_directories(_core PRIVATE ./src/C++/eigen-3.4.0)
-target_link_libraries(_core PRIVATE Python::Module)
+target_link_libraries(_core PRIVATE pybind11::Module)
 target_compile_definitions(_core PRIVATE VERSION_INFO=${PROJECT_VERSION})
 
 install(TARGETS _core DESTINATION benchmarkfcns)

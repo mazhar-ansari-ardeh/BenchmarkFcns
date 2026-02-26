@@ -35,15 +35,6 @@ test = ["pytest"]
 minimum-version = "0.10"
 wheel.expand-macos-universal-tags = true
 wheel.packages = ["src/python/benchmarkfcns"]
-# Ensures metadata matches your project definition
-
-[[tool.scikit-build.overrides]]
-if.platform-system = "windows"
-# This forces the generator to match the target architecture exactly
-cmake.args = [
-    "-A${SKBUILD_PLATFORM}",
-    "-DCMAKE_GENERATOR_PLATFORM=${SKBUILD_PLATFORM}"
-]
 
 [tool.cibuildwheel]
 test-command = "pytest {project}/src/tests"
