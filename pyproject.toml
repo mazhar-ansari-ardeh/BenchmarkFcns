@@ -36,6 +36,11 @@ minimum-version = "0.10"
 wheel.expand-macos-universal-tags = true
 wheel.packages = ["src/python/benchmarkfcns"]
 
+[[tool.scikit-build.overrides]]
+if.platform-system = "windows"
+# This ensures scikit-build-core passes the correct library path to CMake
+cmake.define.Python_LIBRARY = "${SKBUILD_PYTHON_LIBDIR}"
+
 [tool.cibuildwheel]
 test-command = "pytest {project}/src/tests"
 test-extras = ["test"]
