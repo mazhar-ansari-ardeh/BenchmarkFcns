@@ -19,12 +19,12 @@ include_directories(./src/C++/eigen-3.4.0)
 find_package(Python REQUIRED COMPONENTS Interpreter Development.Module)
 find_package(pybind11 CONFIG REQUIRED)
 find_package(Python3 REQUIRED COMPONENTS Development)
-target_link_libraries(_core PRIVATE Python3::Python)
 
 # Add a library using FindPython's tooling (pybind11 also provides a helper like
 # this)
 python_add_library(_core MODULE src/C++/main.cpp src/C++/benchmarkfcns.cpp
                    src/C++/multifidelity.cpp WITH_SOABI)
+target_link_libraries(_core PRIVATE Python3::Python)
 target_link_libraries(_core PRIVATE pybind11::headers)
 
 # This is passing in the version as a define just as an example
