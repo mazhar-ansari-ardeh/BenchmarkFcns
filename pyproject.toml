@@ -46,6 +46,9 @@ if.platform-system = "windows"
 # This ensures scikit-build-core passes the correct library path to CMake
 cmake.define.Python_LIBRARY = "${SKBUILD_PYTHON_LIBDIR}"
 
+[tool.cibuildwheel]
+build-verbosity = 1
+
 [tool.ruff]
 src = ["src"]
 line-length = 88
