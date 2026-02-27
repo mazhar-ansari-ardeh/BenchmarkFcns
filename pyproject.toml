@@ -1,3 +1,15 @@
+[tool.poetry]
+name = "Benchmark Functions"
+version = "3.5.0"
+description = "A high-performant C++ implementation of benchmark functions for mathematical optimization algorithms."
+authors = ["Mazhar Ansari Ardeh"]
+
+
+[tool.poetry.group.dev.dependencies]
+matplotlib = "^3.10.1"
+ipython = "^9.2.0"
+deap = "^1.4.3"
+
 [build-system]
 requires = ["scikit-build-core>=0.10", "pybind11>=2.12.0"]
 build-backend = "scikit_build_core.build"
@@ -15,9 +27,6 @@ authors = [
 
 requires-python = ">=3.11"
 
-dependencies = [
-  "numpy >= 1.26, <3" # Updated to support NumPy 2.x
-]
 classifiers = [
   "Development Status :: 4 - Beta",
   "License :: OSI Approved :: MIT License",
@@ -26,9 +35,6 @@ classifiers = [
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
 ]
-
-[project.optional-dependencies]
-test = ["pytest"]
 
 [tool.scikit-build]
 minimum-version = "0.10"
@@ -39,18 +45,6 @@ wheel.packages = ["src/python/benchmarkfcns"]
 if.platform-system = "windows"
 # This ensures scikit-build-core passes the correct library path to CMake
 cmake.define.Python_LIBRARY = "${SKBUILD_PYTHON_LIBDIR}"
-
-[tool.cibuildwheel]
-test-command = "pytest {project}/src/tests"
-test-extras = ["test"]
-test-skip = ["*universal2:arm64"]
-build-verbosity = 1
-
-# --- Linting & Tests ---
-[tool.pytest.ini_options]
-minversion = "6.0"
-testpaths = ["src/tests"]
-addopts = ["-ra", "--showlocals", "--strict-markers", "--strict-config"]
 
 [tool.ruff]
 src = ["src"]
