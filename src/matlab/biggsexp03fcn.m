@@ -7,7 +7,7 @@
 % Author: Mazhar Ansari Ardeh
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at
 % Google's e-mail service or feel free to kindly modify the repository.
-function scores = biggs_exp03fcn(x)
+function scores = biggsexp03fcn(x)
     n = size(x, 2);
     assert(n == 3, 'Biggs EXP03 function is only defined on a 3D space.')
     i = (1:10)';
