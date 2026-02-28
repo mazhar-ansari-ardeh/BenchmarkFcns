@@ -145,6 +145,30 @@ namespace BenchmarkFcns {
         return scores;
     }
 
+    VectorXd biggsexp03(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        if (n != 3)
+            throw std::invalid_argument("The BiggsExp03 function only accepts 3D inputs.");
+
+        const int numTerms = 10;
+        const VectorXd i = VectorXd::LinSpaced(numTerms, 1, numTerms); // Column vector (10x1)
+        const VectorXd ti = 0.1 * i; // Column vector (10x1)
+        const VectorXd yi = (-ti).array().exp() - 5 * (-10 * ti).array().exp(); // Column vector (10x1)
+
+        const RowVectorXd x1 = x.col(0).transpose();
+        const RowVectorXd x2 = x.col(1).transpose();
+        const RowVectorXd x3 = x.col(2).transpose(); // The third parameter
+
+        const MatrixXd term1 = x3.replicate(numTerms, 1).array() * (-ti * x1).array().exp();
+        const MatrixXd term2 = 5 * (-ti * x2).array().exp();
+
+        const MatrixXd residuals_sq = (term1 - term2 - yi.replicate(1, x.rows())).array().square();
+
+        VectorXd scores = residuals_sq.colwise().sum();
+
+        return scores;
+    }
+
     VectorXd bird(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
         if (n != 2)

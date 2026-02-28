@@ -206,6 +206,27 @@ PYBIND11_MODULE(_core, m) {
         - Symmetry: non-symmetric
     )pbdoc");
 
+    m.def("biggsexp03", &biggsexp03, R"pbdoc(
+        Computes the value of the Biggs EXP N. 03 benchmark function.
+        SCORES = biggsexp03(X) computes the value of the Biggs EXP N. 03
+        function at point X. `biggsexp03` accepts a matrix of size M-by-3 and
+        returns a vetor SCORES of size M-by-1 in which each row contains the
+        function value for the corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (1, 10, 1)
+        - Number of dimensions: 3
+        - Recommended domain: [0, 20]^3
+        - Number of local minima: 0
+        - Number of global minima: 1
+        - Convexity: non-convex
+        - Separability: non-separable
+        - Modality: unimodal in the standard domain, but can be multimodal in larger
+        domains
+        - Symmetry: non-symmetric
+        - Differentiable: yes
+    )pbdoc");
+
     m.def("bird", &bird, R"pbdoc(
         Computes the value of the Bird function.
         SCORES = bird(X) computes the value of the Bird
