@@ -12,6 +12,7 @@ on:
 
 env:
   FORCE_COLOR: 3
+  # CMAKE_FIND_DEBUG_MODE: "ON"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
