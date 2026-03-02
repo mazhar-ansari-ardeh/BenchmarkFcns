@@ -227,6 +227,72 @@ PYBIND11_MODULE(_core, m) {
         - Differentiable: yes
     )pbdoc");
 
+    m.def("biggsexp04", &biggsexp04, R"pbdoc(
+        Computes the value of the Biggs EXP N. 04 benchmark function.
+        SCORES = biggsexp04(X) computes the value of the Biggs EXP N. 04
+        function at point X. `biggsexp04` accepts a matrix of size M-by-4 and
+        returns a vetor SCORES of size M-by-1 in which each row contains the
+        function value for the corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (1, 10, 1, 5)
+        - Number of dimensions: 4
+        - Recommended domain: [0, 20]^4
+        - Number of local minima: 0
+        - Number of global minima: 1
+        - Convexity: non-convex
+        - Separability: non-separable
+        - Modality: unimodal
+        - Symmetry: non-symmetric
+        - Differentiable: yes
+        For more information, please visit:
+        benchmarkfcns.info/doc/biggsexp04fcn
+    )pbdoc");
+
+    m.def("biggsexp05", &biggsexp05, R"pbdoc(
+        Computes the value of the Biggs EXP N. 05 benchmark function.
+        SCORES = biggsexp05(X) computes the value of the Biggs EXP N. 05
+        function at point X. `biggsexp05` accepts a matrix of size M-by-5 and
+        returns a vetor SCORES of size M-by-1 in which each row contains the
+        function value for the corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (1, 10, 1, 5, 4)
+        - Number of dimensions: 5
+        - Recommended domain: [0, 20]^5
+        - Number of local minima: 0
+        - Number of global minima: 1
+        - Convexity: non-convex
+        - Separability: non-separable
+        - Modality: unimodal
+        - Symmetry: non-symmetric
+        - Differentiable: yes
+        For more information, please visit:
+        benchmarkfcns.info/doc/biggsexp05fcn
+    )pbdoc");
+
+    m.def("biggsexp06", &biggsexp06, R"pbdoc(
+        Computes the value of the Biggs EXP N. 06 benchmark function.
+        SCORES = biggsexp06(X) computes the value of the Biggs EXP N. 06
+        function at point X. `biggsexp06` accepts a matrix of size M-by-6 and
+        returns a vetor SCORES of size M-by-1 in which each row contains the
+        function value for the corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (1, 10, 1, 5, 4, 3)
+        - Number of dimensions: 6
+        - Recommended domain: [0, 20]^6
+        - Number of local minima: 0
+        - Number of global minima: 1
+        - Convexity: non-convex
+        - Separability: non-separable
+        - Modality: unimodal
+        - Symmetry: non-symmetric
+        - Differentiable: yes
+        For more information, please visit:
+        benchmarkfcns.info/doc/biggsexp06fcn
+    )pbdoc");
+
     m.def("bird", &bird, R"pbdoc(
         Computes the value of the Bird function.
         SCORES = bird(X) computes the value of the Bird

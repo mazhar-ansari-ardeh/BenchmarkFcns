@@ -1,8 +1,9 @@
 [tool.poetry]
 name = "Benchmark Functions"
-version = "3.5.0"
+version = "3.6.0"
 description = "A high-performant C++ implementation of benchmark functions for mathematical optimization algorithms."
 authors = ["Mazhar Ansari Ardeh"]
+dependencies.python = "^3.11"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -18,7 +19,7 @@ build-backend = "scikit_build_core.build"
 
 [project]
 name = "benchmarkfcns"
-version = "3.5.0"
+version = "3.6.0"
 description = "A high-performant C++ implementation of benchmark functions for mathematical optimization algorithms."
 readme = "README.md"
 authors = [
@@ -47,6 +48,7 @@ if.platform-system = "windows"
 cmake.define.Python_LIBRARY = "${SKBUILD_PYTHON_LIBDIR}"
 
 [tool.cibuildwheel]
+
 build-verbosity = 1
 
 [tool.ruff]

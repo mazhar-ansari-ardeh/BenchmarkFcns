@@ -169,6 +169,86 @@ namespace BenchmarkFcns {
         return scores;
     }
 
+    VectorXd BiggsExp04(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        if (n != 4)
+            throw std::invalid_argument("The BiggsExp04 function only accepts 4D inputs.");
+
+        const int numTerms = 10;
+        const VectorXd i = VectorXd::LinSpaced(numTerms, 1, numTerms); // Column vector (10x1)
+        const VectorXd ti = 0.1 * i; // Column vector (10x1)
+        const VectorXd yi = (-ti).array().exp() - 5 * (-10 * ti).array().exp(); // Column vector (10x1)
+
+        const RowVectorXd x1 = x.col(0).transpose();
+        const RowVectorXd x2 = x.col(1).transpose();
+        const RowVectorXd x3 = x.col(2).transpose();
+        const RowVectorXd x4 = x.col(3).transpose(); // The fourth parameter
+
+        const MatrixXd term1 = x3.replicate(numTerms, 1).array() * (-ti * x1).array().exp();
+        const MatrixXd term2 = x4.replicate(numTerms, 1).array() * (-ti * x2).array().exp();
+
+        const MatrixXd residuals_sq = (term1 - term2 - yi.replicate(1, x.rows())).array().square();
+
+        VectorXd scores = residuals_sq.colwise().sum();
+
+        return scores;
+    }
+
+    VectorXd biggsexp05(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        if (n != 5)
+            throw std::invalid_argument("The BiggsExp05 function only accepts 5D inputs.");
+
+        const int numTerms = 10;
+        const VectorXd i = VectorXd::LinSpaced(numTerms, 1, numTerms); // Column vector (10x1)
+        const VectorXd ti = 0.1 * i; // Column vector (10x1)
+        const VectorXd yi = (-ti).array().exp() - 5 * (-10 * ti).array().exp(); // Column vector (10x1)
+
+        const RowVectorXd x1 = x.col(0).transpose();
+        const RowVectorXd x2 = x.col(1).transpose();
+        const RowVectorXd x3 = x.col(2).transpose();
+        const RowVectorXd x4 = x.col(3).transpose();
+        const RowVectorXd x5 = x.col(4).transpose();
+
+        const MatrixXd term1 = x3.replicate(numTerms, 1).array() * (-ti * x1).array().exp();
+        const MatrixXd term2 = x4.replicate(numTerms, 1).array() * (-ti * x2).array().exp();
+        const MatrixXd term3 = 3 * (-ti * x5).array().exp();
+
+        const MatrixXd residuals_sq = (term1 - term2 + term3 - yi.replicate(1, x.rows())).array().square();
+
+        VectorXd scores = residuals_sq.colwise().sum();
+
+        return scores;
+    }
+
+    VectorXd biggsexp06(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        if (n != 6)
+            throw std::invalid_argument("The BiggsExp06 function only accepts 6D inputs.");
+
+        const int numTerms = 10;
+        const VectorXd i = VectorXd::LinSpaced(numTerms, 1, numTerms); // Column vector (10x1)
+        const VectorXd ti = 0.1 * i; // Column vector (10x1)
+        const VectorXd yi = exp(-ti) - 5 * exp(-10 * ti) + 3 * exp(-4 * ti); // Column vector (10x1)
+
+        const RowVectorXd x1 = x.col(0).transpose();
+        const RowVectorXd x2 = x.col(1).transpose();
+        const RowVectorXd x3 = x.col(2).transpose();
+        const RowVectorXd x4 = x.col(3).transpose();
+        const RowVectorXd x5 = x.col(4).transpose();
+        const RowVectorXd x6 = x.col(5).transpose();
+
+        const MatrixXd term1 = x3.replicate(numTerms, 1).array() * (-ti * x1).array().exp();
+        const MatrixXd term2 = x4.replicate(numTerms, 1).array() * (-ti * x2).array().exp();
+        const MatrixXd term3 = x6.replicate(numTerms, 1).array() * (-ti * x5).array().exp();
+
+        const MatrixXd residuals_sq = (term1 - term2 + term3 - yi.replicate(1, x.rows())).array().square();
+
+        VectorXd scores = residuals_sq.colwise().sum();
+
+        return scores;
+    }
+
     VectorXd bird(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
         if (n != 2)

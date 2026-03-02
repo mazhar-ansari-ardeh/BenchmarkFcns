@@ -36,6 +36,12 @@ namespace BenchmarkFcns {
 
     VectorXd biggsexp03(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
+    VectorXd biggsexp04(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
+    VectorXd biggsexp05(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
+    VectorXd biggsexp06(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
     VectorXd bird(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd bohachevskyn1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
