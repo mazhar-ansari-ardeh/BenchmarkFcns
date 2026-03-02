@@ -169,7 +169,7 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    VectorXd BiggsExp04(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd biggsexp04(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
         if (n != 4)
             throw std::invalid_argument("The BiggsExp04 function only accepts 4D inputs.");
