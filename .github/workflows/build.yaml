@@ -60,6 +60,26 @@ jobs:
           C:\Users\runneradmin\AppData\Local\pypa\cibuildwheel\Cache\
         key: cibw-virtualenv-20.30.0-${{ runner.os }}
 
+    - name: Pre-seed virtualenv.pyz
+      shell: bash
+      run: |
+        if [ "$RUNNER_OS" == "Windows" ]; then
+          CACHE_DIR="C:/Users/runneradmin/AppData/Local/pypa/cibuildwheel/Cache"
+        elif [ "$RUNNER_OS" == "macOS" ]; then
+          CACHE_DIR="$HOME/Library/Caches/cibuildwheel"
+        else
+          CACHE_DIR="$HOME/.cache/cibuildwheel"
+        fi
+
+        mkdir -p "$CACHE_DIR"
+
+        echo "Downloading virtualenv.pyz to $CACHE_DIR..."
+        curl -L "https://github.com/pypa/get-virtualenv/blob/20.30.0/public/virtualenv.pyz?raw=true" \
+              -o "$CACHE_DIR/virtualenv-20.30.0.pyz" \
+              --retry 5 \
+              --retry-delay 5 \
+              --retry-all-errors
+
     - uses: pypa/cibuildwheel@v2.23.3
       env:
         CIBW_ARCHS_MACOS: universal2
