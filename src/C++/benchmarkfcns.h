@@ -98,6 +98,14 @@ namespace BenchmarkFcns {
 
     VectorXd forrester(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
+    VectorXd friedman1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, bool rnd = false);
+
+    VectorXd friedman2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, double sigma = 0);
+
+    VectorXd friedman3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, double sigma = 0);
+
+    VectorXd gear(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
     VectorXd giunta(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd goldsteinprice(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);

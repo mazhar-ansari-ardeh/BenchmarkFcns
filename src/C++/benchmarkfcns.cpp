@@ -572,6 +572,101 @@ namespace BenchmarkFcns {
         return scores;
     }
 
+    VectorXd friedman1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, bool rnd) {
+        const int n = x.cols();
+        if (n != 10)
+            throw std::invalid_argument("The Friedman No. 1 function is only defined on a 10D space.");
+
+        const int m = x.rows();
+        VectorXd epsilon = VectorXd::Zero(m);
+        if (rnd) {
+            epsilon = VectorXd::Random(x.rows());
+        }
+
+        const auto x1 = x.col(0).array();
+        const auto x2 = x.col(1).array();
+        const auto x3 = x.col(2).array();
+        const auto x4 = x.col(3).array();
+        const auto x5 = x.col(4).array();
+
+        const VectorXd term1 = 10 * (M_PI * x1 * x2).sin();
+        const VectorXd term2 = 20 * (x3 - 0.5).square();
+        const VectorXd term3 = 10 * x4;
+        const VectorXd term4 = 5 * x5;
+
+        const VectorXd scores = term1 + term2 + term3 + term4 + epsilon;
+
+        return scores;
+    }
+
+    VectorXd friedman2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, double sigma) {
+        const int n = x.cols();
+        if (n != 4)
+            throw std::invalid_argument("The Friedman No. 2 function is only defined on a 4D space.");
+
+        const int m = x.rows();
+        VectorXd epsilon = VectorXd::Zero(m);
+        if (sigma > 0) {
+            epsilon = sigma * VectorXd::Random(m);
+        }
+
+        const auto x1 = x.col(0).array();
+        const auto x2 = x.col(1).array();
+        const auto x3 = x.col(2).array();
+        const auto x4 = x.col(3).array();
+
+        const VectorXd term_inner = (x2 * x3).array() - (1.0 / (x2 * x4)).array();
+        const VectorXd groundTruth = (x1.square() + term_inner.array().square()).sqrt();
+
+        VectorXd scores = groundTruth + epsilon;
+
+        return scores;
+    }
+
+    /*
+    Implement the Friedman No. 3 function, which is defined as:
+    function scores = friedmann3fcn(x, sigma)
+    n = size(x, 2);
+    assert(n == 4, 'The Friedman No. 3 function is only defined on a 4D space.')
+    x1 = x(:, 1);
+    x2 = x(:, 2);
+    x3 = x(:, 3);
+    x4 = x(:, 4);
+
+    numerator = (x2 .* x3) - (1 ./ (x2 .* x4));
+    groundTruth = atan(numerator ./ x1);
+
+    if nargin > 1 && sigma > 0
+        scores = groundTruth + sigma .* randn(size(groundTruth));
+    else
+        scores = groundTruth;
+    end
+end
+    */
+    VectorXd friedman3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, double sigma) {
+        const int n = x.cols();
+        if (n != 4)
+            throw std::invalid_argument("The Friedman No. 3 function is only defined on a 4D space.");
+
+        const int m = x.rows();
+        VectorXd epsilon = VectorXd::Zero(m);
+        if (sigma > 0) {
+            epsilon = sigma * VectorXd::Random(m);
+        }
+
+        const auto x1 = x.col(0).array();
+        const auto x2 = x.col(1).array();
+        const auto x3 = x.col(2).array();
+        const auto x4 = x.col(3).array();
+
+        const VectorXd numerator = (x2 * x3) - (1.0 / (x2 * x4)).array();
+        const VectorXd groundTruth = (numerator.array() / x1).array().atan();
+
+        VectorXd scores = groundTruth + epsilon;
+
+        return scores;
+    }
+
     VectorXd forrester(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x)
     {
         const int n = x.cols();
@@ -584,6 +679,25 @@ namespace BenchmarkFcns {
 
         return scores;
     }
+
+    VectorXd gear(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        if (n != 4)
+            throw std::invalid_argument("The Gear function is only defined on a 4D space.");
+
+        const auto x1 = x.col(0).array().floor();
+        const auto x2 = x.col(1).array().floor();
+        const auto x3 = x.col(2).array().floor();
+        const auto x4 = x.col(3).array().floor();
+
+        constexpr double target_ratio = 1.0 / 6.931;
+
+        const auto actual_ratio = (x1 * x2) / (x3 * x4);
+        VectorXd scores = (target_ratio - actual_ratio).square();
+
+        return scores;
+    }
+
 
     VectorXd giunta(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         constexpr double A = 16.0 / 15.0;
