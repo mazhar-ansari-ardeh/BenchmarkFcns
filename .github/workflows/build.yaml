@@ -57,7 +57,7 @@ jobs:
         path: |
           ~/.cache/cibuildwheel
           ~/Library/Caches/cibuildwheel
-          C:\Users\runneradmin\AppData\Local\cibuildwheel\Cache
+          C:\Users\runneradmin\AppData\Local\pypa\cibuildwheel\Cache
         key: cibw-virtualenv-20.30.0-${{ runner.os }}
 
     - uses: pypa/cibuildwheel@v2.23.3
