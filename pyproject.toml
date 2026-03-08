@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "Benchmark Functions"
-version = "3.6.0"
-description = "A high-performant C++ implementation of benchmark functions for mathematical optimization algorithms."
+version = "3.7.0"
+description = "A Python package providing a high-performant C++ implementation of benchmark functions for mathematical optimization algorithms."
 authors = ["Mazhar Ansari Ardeh"]
 dependencies.python = "^3.11"
 
@@ -19,8 +19,8 @@ build-backend = "scikit_build_core.build"
 
 [project]
 name = "benchmarkfcns"
-version = "3.6.0"
-description = "A high-performant C++ implementation of benchmark functions for mathematical optimization algorithms."
+version = "3.7.0"
+description = "A Python package providing a high-performant C++ implementation of benchmark functions for mathematical optimization algorithms."
 readme = "README.md"
 authors = [
   { name = "Mazhar Ansari Ardeh", email = "mazhar.ansari.ardeh@gmail.com" },
