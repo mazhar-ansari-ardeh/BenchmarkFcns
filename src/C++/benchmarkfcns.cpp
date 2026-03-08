@@ -752,6 +752,88 @@ end
         return scores;
     }
 
+    VectorXd hartmann3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        if (n != 3)
+            throw std::invalid_argument("The Hartmann 3D function is only defined on a 3D space.");
+
+        static constexpr double alpha_content[4] = {1.0, 1.2, 3.0, 3.2};
+        VectorXd alpha = Map<const VectorXd>(alpha_content, 4);
+
+        static constexpr double a[4][3] = {
+            {3.0, 10, 30},
+            {0.1, 10, 35},
+            {3.0, 10, 30},
+            {0.1, 10, 35}
+        };
+        static const Matrix<double, 4, 3, RowMajor> A =
+            Map<const Matrix<double, 4, 3, RowMajor>>(&a[0][0]);
+
+        static constexpr double p[4][3] = {
+            {0.3689, 0.1170, 0.2673},
+            {0.4699, 0.4387, 0.7470},
+            {0.1091, 0.8732, 0.5547},
+            {0.0381, 0.5743, 0.8828}
+        };
+        static const Matrix<double, 4, 3, RowMajor> P =
+            Map<const Matrix<double, 4, 3, RowMajor>>(&p[0][0]);
+
+        VectorXd scores = VectorXd::Zero(x.rows());
+
+        // TODO: It is possible to optimize this loop with openmp
+        for (int i = 0; i < 4; ++i) {
+            ArrayXd exponent =
+                A(i, 0) * (x.col(0).array() - P(i, 0)).square() +
+                A(i, 1) * (x.col(1).array() - P(i, 1)).square() +
+                A(i, 2) * (x.col(2).array() - P(i, 2)).square();
+
+                scores.array() -= alpha(i) * (-exponent).exp();
+        }
+
+        return scores;
+    }
+
+    VectorXd hartmann6(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        int m = x.rows();
+        int n = x.cols();
+
+        // Verification
+        if (n != 6)
+            throw std::invalid_argument("The Hartmann 6D function is only defined on a 6D space.");
+
+        static constexpr double alpha_content[4] = {1.0, 1.2, 3.0, 3.2};
+        VectorXd alpha = Map<const VectorXd>(alpha_content, 4);
+
+        static constexpr double a[4][6] = {
+            {10, 3, 17, 3.5, 1.7, 8},
+            {0.05, 10, 17, 0.1, 8, 14},
+            {3, 3.5, 1.7, 10, 17, 8},
+            {17, 8, 0.05, 10, 0.1, 14}
+        };
+        Matrix<double, 4, 6> A = Map<const Matrix<double, 4, 6, RowMajor>>(&a[0][0]);
+
+        static constexpr double p[4][6] = {
+            {0.1312, 0.1696, 0.5569, 0.0124, 0.8283, 0.5886},
+            {0.2329, 0.4135, 0.8307, 0.3736, 0.1004, 0.9991},
+            {0.2348, 0.1451, 0.3522, 0.2883, 0.3047, 0.6650},
+            {0.4047, 0.8828, 0.8732, 0.5743, 0.1091, 0.0381}
+        };
+        Matrix<double, 4, 6> P = Map<const Matrix<double, 4, 6, RowMajor>>(&p[0][0]);
+
+        VectorXd scores = VectorXd::Zero(m);
+
+        for (int i = 0; i < 4; ++i) {
+            MatrixXd diff = x.rowwise() - P.row(i);
+            MatrixXd diff_sq = diff.array().square();
+
+            VectorXd exponent = diff_sq * A.row(i).transpose();
+
+            scores.array() -= alpha(i) * (-exponent.array()).exp();
+        }
+
+        return scores;
+    }
+
     VectorXd himmelblau(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
         if (n != 2)

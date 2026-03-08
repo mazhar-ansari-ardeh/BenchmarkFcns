@@ -751,6 +751,50 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/happycatfcn
     )pbdoc");
 
+    m.def("hartmann3", &hartmann3, R"pbdoc(
+        Computes the value of the Hartmann N. 3 benchmark function.
+        SCORES = hartmann3(X) computes the value of the Hartmann N. 3
+        function at point X. `hartmann3` accepts a matrix of size M-by-3 and
+        returns a vetor SCORES of size M-by-1 in which each row contains the
+        function value for the corresponding row of X.
+        Properties:
+        - Global minimum: \approx -3.86278
+        - Location of global minimum: \approx (0.114614, 0.555649, 0.852547)
+        - Number of dimensions: 3
+        - Recommended domain: [0, 1]^3
+        - Number of local minima: 4
+        - Number of global minima: 1
+        - Convexity: Non-convex
+        - Separability: Non-separable
+        - Modality: Multimodal
+        - Symmetry: Non-symmetric
+        - Differentiable: Yes
+        For more information, please visit:
+        benchmarkfcns.info/doc/hartmann3fcn
+    )pbdoc");
+
+    m.def("hartmann6", &hartmann6, R"pbdoc(
+        Computes the value of the Hartmann N. 6 benchmark function.
+        SCORES = hartmann6(X) computes the value of the Hartmann N. 6
+        function at point X. `hartmann6` accepts a matrix of size M-by-6 and
+        returns a vetor SCORES of size M-by-1 in which each row contains the
+        function value for the corresponding row of X.
+        Properties:
+        - Global minimum: \approx -3.32237
+        - Location of global minimum: \approx (0.20169, 0.150011, 0.476874, 0.275332, 0.311652, 0.6573)
+        - Number of dimensions: 6
+        - Recommended domain: [0, 1]^6
+        - Number of local minima: 6
+        - Number of global minima: 1
+        - Convexity: Non-convex
+        - Separability: Non-separable
+        - Modality: Multimodal
+        - Symmetry: Non-symmetric
+        - Differentiable: Yes
+        For more information, please visit:
+        benchmarkfcns.info/doc/hartmann6fcn
+    )pbdoc");
+
     m.def("himmelblau", &himmelblau, R"pbdoc(
         Computes the value of the Himmelblau's benchmark function.
         SCORES = himmelblau(X) computes the value of the Himmelblau's

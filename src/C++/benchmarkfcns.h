@@ -116,6 +116,10 @@ namespace BenchmarkFcns {
 
     VectorXd happycat(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, double alpha = 0.5);
 
+    VectorXd hartmann3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
+    VectorXd hartmann6(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
     VectorXd himmelblau(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd holdertable(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
