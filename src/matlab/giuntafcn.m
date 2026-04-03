@@ -1,5 +1,5 @@
 % Computes the value of the Giunta function.
-% SCORES = GIUNTAFCN(X) computes the value of the Alpine N. 1
+% SCORES = GIUNTAFCN(X) computes the value of the Giunta
 % function at point X. GIUNTAFCN accepts a matrix of size M-by-N and
 % returns a vetor SCORES of size M-by-1 in which each row contains the
 % function value for the corresponding row of X.

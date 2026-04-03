@@ -48,6 +48,8 @@ namespace BenchmarkFcns {
 
     VectorXd bohachevskyn2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
+    VectorXd bohachevskyn3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
     VectorXd booth(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd braninn1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
@@ -72,6 +74,8 @@ namespace BenchmarkFcns {
 
     VectorXd cosinemixture(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
+    VectorXd corana(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
     VectorXd crossintray(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd crownedcross(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
@@ -85,6 +89,8 @@ namespace BenchmarkFcns {
     VectorXd deckkersaarts(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd dropwave(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
+    VectorXd dixonprice(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd easom(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
@@ -120,6 +126,8 @@ namespace BenchmarkFcns {
 
     VectorXd hartmann6(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
+    VectorXd ishigami(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, double a = 7.0, double b = 0.1);
+
     VectorXd himmelblau(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd holdertable(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
@@ -128,7 +136,13 @@ namespace BenchmarkFcns {
 
     VectorXd keane(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
+    VectorXd katsuura(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
+    VectorXd langermann(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
     VectorXd leon(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
+    VectorXd levy(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd levin13(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
@@ -136,11 +150,17 @@ namespace BenchmarkFcns {
 
     VectorXd mccormick(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
+    VectorXd michalewicz(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, double m = 10);
+
     VectorXd periodic(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
+    VectorXd perm(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, double beta = 0.5);
 
     VectorXd picheny(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd powellsum(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
+    VectorXd powellsingular(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd qing(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
@@ -155,6 +175,8 @@ namespace BenchmarkFcns {
     VectorXd rosenbrock(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd salomon(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
+    VectorXd schafferf6(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd schaffern1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 

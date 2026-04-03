@@ -1,0 +1,2 @@
+f(\mathbf{x}) = \sum_{i=1}^{n} \begin{cases} 0.15 \cdot (z_i - 0.05 \cdot \text{sgn}(z_i))^2 \cdot d_i & \text{if } |x_i - z_i| < 0.05 \\ d_i \cdot x_i^2 & \text{otherwise} \end{cases} \\
+\text{where } z_i = 0.2 \cdot \lfloor |x_i / 0.2| + 0.49 \rfloor \cdot \text{sgn}(x_i)

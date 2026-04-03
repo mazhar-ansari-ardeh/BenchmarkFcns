@@ -435,6 +435,33 @@ namespace BenchmarkFcns {
         return scores;
     }
 
+    VectorXd corana(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        const int m = x.rows();
+
+        constexpr double d_content[4] = {1.0, 1000.0, 10.0, 100.0};
+        VectorXd d_base = Map<const VectorXd>(d_content, 4);
+
+        VectorXd d(n);
+        for (int i = 0; i < n; ++i) {
+            d(i) = d_base(i % 4);
+        }
+        const auto D = d.transpose().replicate(m, 1).array();
+
+        const auto x_abs = x.array().abs();
+        const auto z_i = 0.2 * (x_abs / 0.2 + 0.49).floor() * x.array().sign();
+
+        const auto diff_abs = (x.array() - z_i.array()).abs();
+        const auto mask = (diff_abs < 0.05);
+
+        const auto val1 = 0.15 * (z_i.array() - 0.05 * z_i.array().sign()).square() * D;
+
+        const auto val2 = D * x.array().square();
+
+        const MatrixXd result = mask.select(val1, val2);
+        return result.rowwise().sum();
+    }
+
     VectorXd crossintray(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
         if (n != 2)
@@ -507,6 +534,24 @@ namespace BenchmarkFcns {
         const VectorXd numeratorcomp = 1 + cos(12 * (X_squared + Y_squared).sqrt());
         const VectorXd denumeratorcom = (0.5 * (X_squared + Y_squared)) + 2;
         VectorXd scores = -numeratorcomp.array() / denumeratorcom.array();
+
+        return scores;
+    }
+
+    VectorXd dixonprice(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        const int m = x.rows();
+        const auto x1 = x.col(0).array();
+
+        VectorXd scores = (x1 - 1.0).square();
+
+        if (n > 1) {
+            const auto xi = x.block(0, 1, m, n - 1).array();
+            const auto xi_prev = x.block(0, 0, m, n - 1).array();
+            const auto i_vec = RowVectorXd::LinSpaced(n - 1, 2, n).replicate(m, 1).array();
+
+            scores += (i_vec * (2.0 * xi.square() - xi_prev).square()).rowwise().sum().matrix();
+        }
 
         return scores;
     }
@@ -834,6 +879,19 @@ end
         return scores;
     }
 
+    VectorXd ishigami(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, double a, double b) {
+        const int n = x.cols();
+        if (n != 3)
+            throw std::invalid_argument("The Ishigami function is only defined on a 3D space.");
+
+        const auto x1 = x.col(0).array();
+        const auto x2 = x.col(1).array();
+        const auto x3 = x.col(2).array();
+
+        VectorXd scores = x1.sin() + a * x2.sin().square() + b * x3.pow(4) * x1.sin();
+        return scores;
+    }
+
     VectorXd himmelblau(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
         if (n != 2)
@@ -893,6 +951,51 @@ end
         return scores;
     }
 
+    VectorXd katsuura(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        const int m = x.rows();
+        const double n_inv_sq = 10.0 / (n * n);
+        const double exp_val = 10.0 / std::pow(n, 1.2);
+
+        MatrixXd inner_sum = MatrixXd::Zero(m, n);
+
+        for (int j = 1; j <= 32; ++j) {
+            const double two_pow_j = std::pow(2.0, j);
+            const MatrixXd val = two_pow_j * x.array();
+            inner_sum.array() += (val.array() - val.array().round()).abs() / two_pow_j;
+        }
+
+        const RowVectorXd i_vec = RowVectorXd::LinSpaced(n, 1, n);
+        const MatrixXd prod_terms = 1.0 + (inner_sum.array().rowwise() * i_vec.array());
+
+        VectorXd scores = n_inv_sq * (prod_terms.array().pow(exp_val).rowwise().prod() - 1.0);
+        return scores;
+    }
+
+    VectorXd langermann(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        const int m = x.rows();
+        if (n != 2)
+            throw std::invalid_argument("The Langermann function is only defined on a 2D space.");
+
+        static constexpr double a[5][2] = {
+            {3, 5}, {5, 2}, {2, 1}, {1, 7}, {7, 9}
+        };
+        static constexpr double c[5] = {1, 2, 5, 2, 3};
+        static constexpr double ONE_OVER_PI = -1.0 / M_PI;
+
+        VectorXd scores = VectorXd::Zero(m);
+
+        for (int i = 0; i < 5; ++i) {
+            const RowVectorXd ai = Map<const RowVectorXd>(a[i], 2);
+            const VectorXd sum_sq = (x.rowwise() - ai).array().square().rowwise().sum();
+
+            scores.array() -= c[i] * ((ONE_OVER_PI * sum_sq.array()).exp() * (M_PI * sum_sq.array()).cos());
+        }
+
+        return scores;
+    }
+
     VectorXd leon(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
         if (n != 2)
@@ -901,6 +1004,28 @@ end
         const auto X = x.col(0).array();
         const auto Y = x.col(1).array();
         VectorXd scores = 100 * ((Y - X.cube()).square()) + ((1 - X).square());
+        return scores;
+    }
+
+    VectorXd levy(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        const int m = x.rows();
+        const MatrixXd w = 1.0 + (x.array() - 1.0) / 4.0;
+
+        const auto w_first = w.col(0).array();
+        const auto w_last = w.col(n - 1).array();
+
+        const VectorXd term1 = (M_PI * w_first).sin().square();
+        const VectorXd term3 = (w_last - 1.0).square() * (1.0 + (2.0 * M_PI * w_last).sin().square());
+
+        VectorXd scores = term1 + term3;
+
+        if (n > 1) {
+            const auto w_sub = w.block(0, 0, m, n - 1).array();
+            const VectorXd term2 = ((w_sub - 1.0).square() * (1.0 + 10.0 * (M_PI * w_sub + 1.0).sin().square())).rowwise().sum();
+            scores += term2;
+        }
+
         return scores;
     }
 
@@ -941,10 +1066,38 @@ end
         return scores;
     }
 
+    VectorXd michalewicz(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, double m) {
+        const int n = x.cols();
+        const int rows = x.rows();
+        const MatrixXd I = RowVectorXd::LinSpaced(n, 1, n).replicate(rows, 1);
+
+        const MatrixXd term2 = (I.array() * x.array().square() / M_PI).sin().pow(2 * m);
+        const MatrixXd scores = x.array().sin() * term2.array();
+
+        return -scores.rowwise().sum();
+    }
+
     VectorXd periodic(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const VectorXd sin2x = (x.array().sin()).square().rowwise().sum();
         const VectorXd sumx2 = x.array().square().rowwise().sum();
         VectorXd scores = 1 + sin2x.array() - 0.1 * exp(-sumx2.array());
+        return scores;
+    }
+
+    VectorXd perm(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, double beta) {
+        const int n = x.cols();
+        const int m = x.rows();
+        VectorXd scores = VectorXd::Zero(m);
+
+        const MatrixXd j_vals = RowVectorXd::LinSpaced(n, 1, n).replicate(m, 1);
+        const MatrixXd xj_over_j = x.array() / j_vals.array();
+
+        for (int i = 1; i <= n; ++i) {
+            const MatrixXd j_pow_i = j_vals.array().pow(i);
+            const MatrixXd inner_term = (j_pow_i.array() + beta) * (xj_over_j.array().pow(i) - 1.0);
+            scores += inner_term.rowwise().sum().array().square().matrix();
+        }
+
         return scores;
     }
 
@@ -969,6 +1122,23 @@ end
         const VectorXd powers = RowVectorXd::LinSpaced(n, 2, n + 1);
         // Warning: the replicate method may lead to a large memory overhead for large matrices.
         auto scores = absx.array().pow(powers.transpose().array().replicate(x.rows(), 1)).rowwise().sum();
+        return scores;
+    }
+
+    VectorXd powellsingular(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        if (n != 4)
+            throw std::invalid_argument("The Powell Singular function is only defined on a 4D space.");
+
+        const auto x1 = x.col(0).array();
+        const auto x2 = x.col(1).array();
+        const auto x3 = x.col(2).array();
+        const auto x4 = x.col(3).array();
+
+        VectorXd scores = (x1 + 10.0 * x2).square() +
+                          5.0 * (x3 - x4).square() +
+                          (x2 - 2.0 * x3).pow(4) +
+                          10.0 * (x1 - x4).pow(4);
         return scores;
     }
 
@@ -1042,6 +1212,21 @@ end
         const VectorXd sqrtsumx2 = x.array().square().rowwise().sum().array().sqrt();
 
         return 1 - (2 * M_PI * sqrtsumx2.array()).cos() + 0.1 * sqrtsumx2.array();
+    }
+
+    VectorXd schafferf6(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        if (n != 2)
+            throw std::invalid_argument("The Schaffer F6 function is only defined on a 2D space.");
+
+        const auto X2 = x.col(0).array().square();
+        const auto Y2 = x.col(1).array().square();
+        const auto x2y2 = X2 + Y2;
+
+        const VectorXd numerator = (x2y2.sqrt().sin().square()) - 0.5;
+        const VectorXd denominator = (1.0 + 0.001 * x2y2).square();
+        VectorXd scores = 0.5 + numerator.array() / denominator.array();
+        return scores;
     }
 
     VectorXd schaffern1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
@@ -1124,45 +1309,38 @@ end
 
     VectorXd shubert(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
-        VectorXd scores = VectorXd::Ones(x.rows());
-        for (int i = 0; i < n; i++) {
-            VectorXd inner_sum = VectorXd::Zero(x.rows());
-            for (int j = 1; j <= 5; j++) {
-                auto y = j * cos(((j + 1) * x.col(i).array()) + j);
-                inner_sum = inner_sum.array() + y;
-            }
-            scores = inner_sum.array() * scores.array();
+        const int m = x.rows();
+        MatrixXd col_sums = MatrixXd::Zero(m, n);
+
+        for (int j = 1; j <= 5; j++) {
+            col_sums.array() += j * ( ( (j + 1.0) * x.array() + j ).cos() );
         }
 
-        return scores;
+        return col_sums.rowwise().prod();
     }
 
     VectorXd shubertn3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
-        VectorXd scores = VectorXd::Zero(x.rows());
-        for (int i = 0; i < n; i++) {
-            VectorXd inner_sum = VectorXd::Zero(x.rows());
-            for (int j = 1; j <= 5; j++) {
-                auto y = j * sin(((j + 1) * x.col(i).array()) + j);
-                inner_sum = inner_sum.array() + y;
-            }
-            scores = inner_sum.array() + scores.array();
+        const int m = x.rows();
+        MatrixXd col_sums = MatrixXd::Zero(m, n);
+
+        for (int j = 1; j <= 5; j++) {
+            col_sums.array() += j * ( ( (j + 1.0) * x.array() + j ).sin() );
         }
-        return scores;
+
+        return col_sums.rowwise().sum();
     }
 
     VectorXd shubertn4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
-        VectorXd scores = VectorXd::Zero(x.rows());
-        for (int i = 0; i < n; i++) {
-            VectorXd inner_sum = VectorXd::Zero(x.rows());
-            for (int j = 1; j <= 5; j++) {
-                auto y = cos(((j + 1) * x.col(i).array()) + j);
-                inner_sum = inner_sum.array() + y;
-            }
-            scores = inner_sum.array() + scores.array();
+        const int m = x.rows();
+        MatrixXd col_sums = MatrixXd::Zero(m, n);
+
+        for (int j = 1; j <= 5; j++) {
+            col_sums.array() += ( ( (j + 1.0) * x.array() + j ).cos() );
         }
-        return scores;
+
+        return col_sums.rowwise().sum();
     }
 
 
