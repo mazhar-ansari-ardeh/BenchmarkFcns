@@ -119,7 +119,7 @@ PYBIND11_MODULE(_core, m) {
         - Global minimum: Approximately -219.1418
         - Location of global minimum: Approximately (0.68258, -0.36075)
         - Number of dimensions: 2
-        - Recommended domain: x_1, x_2 \in [-32, 32]
+        - Recommended domain: x_1, x_2 ∈ [-32, 32]
         - Number of local minima: Numerous (the combination of exponential and
             trigonometric terms creates a very "bumpy" surface)
         - Number of global minima: 1
@@ -142,7 +142,7 @@ PYBIND11_MODULE(_core, m) {
         - Global minimum: -4.590101 (approximately)
         - Location of global minimum: (1.47925, -1.47925)
         - Number of dimensions: 2
-        - Recommended domain: x_1, x_2 \in [-35, 35]
+        - Recommended domain: x_1, x_2 ∈ [-35, 35]
         - Number of local minima: Numerous (Highly oscillatory)
         - Number of global minima: 2 (typically symmetric across the origin)
         - Convexity: Non-convex
@@ -164,7 +164,7 @@ PYBIND11_MODULE(_core, m) {
         - Global minimum: -2.02181 (approximately)
         - Location of global minimum: (2, 0.10578)
         - Number of dimensions: 2
-        - Recommended domain: x_1 \in [-1, 2], x_2 \in [-1, 1]
+        - Recommended domain: x_1 ∈ [-1, 2], x_2 ∈ [-1, 1]
         - Number of local minima: 0 (within the standard recommended domain, it is
             technically unimodal, though it has very flat regions)
         - Number of global minima: 1
@@ -212,7 +212,7 @@ PYBIND11_MODULE(_core, m) {
         - Global Maximum Value: approx 2.808^n
         - Location of Global Maximum: approx (7.917, 7.917, \dots, 7.917)
         - Number of dimensions: n (Scalable)
-        - Recommended domain: x_i \in [0, 10] (The function is usually restricted to
+        - Recommended domain: x_i ∈ [0, 10] (The function is usually restricted to
             positive values due to the square root).
         - Number of local minima/maxima: Numerous (The sine waves create a grid of peaks).
         - Number of global minima/maxima: 1 (within the [0, 10] range).
@@ -410,7 +410,7 @@ PYBIND11_MODULE(_core, m) {
         - Global minimum: -106.7645
         - Location of global minimum: approximately (4.70104, 3.15204),(-1.58214, -3.13024)
         - Number of dimensions: 2
-        - Recommended domain: [-2*pi, 2*pi]^2
+        - Recommended domain: [-2π, 2π]^2
         - Number of local minima: several local minima, but only two global minima
         - Number of global minima: 2
         - Convexity: non-convex
@@ -495,7 +495,7 @@ PYBIND11_MODULE(_core, m) {
         function value for the corresponding row of X.
         Properties:
         - Global minimum: 0.397887
-        - Location of global minimum: (-pi, 12.275), (pi, 2.275), (9.42478, 2.475)
+        - Location of global minimum: (-π, 12.275), (π, 2.275), (9.42478, 2.475)
         - Number of dimensions: 2
         - Recommended domain: [-5, 15] for x1, [0, 15] for x2
         - Number of local minima: no local minima other than the three global ones
@@ -616,6 +616,18 @@ PYBIND11_MODULE(_core, m) {
         function at point X. `chichinadze` accepts a matrix of size M-by-2 and
         returns a vetor SCORES of size M-by-1 in which each row contains the
         function value for the corresponding row of X.
+        Properties:
+        - Global minimum: -43.3159 (approximately)
+        - Location of global minimum: (5.90133, 0.5)
+        - Number of dimensions: 2
+        - Recommended domain: [-30, 30]^2
+        - Number of local minima: many
+        - Number of global minima: 1
+        - Convexity: non-convex
+        - Separability: separable
+        - Modality: multimodal
+        - Symmetry: non-symmetric
+        - Differentiable: Yes
     )pbdoc");
 
     m.def("cigar", &cigar, R"pbdoc(
@@ -624,6 +636,17 @@ PYBIND11_MODULE(_core, m) {
         `cigar` accepts a matrix of size M-by-N and returns a vetor SCORES of
         size M-by-1 in which each row contains the function value for the
         corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (0, 0, ..., 0)
+        - Number of dimensions: n
+        - Recommended domain: [-100, 100]^n
+        - Number of local minima: 0 (unimodal)
+        - Number of global minima: 1
+        - Convexity: convex
+        - Separability: separable
+        - Modality: unimodal
+        - Differentiable: Yes
     )pbdoc");
 
     m.def("cosinemixture", &cosinemixture, R"pbdoc(
@@ -632,6 +655,18 @@ PYBIND11_MODULE(_core, m) {
         function at point X. `cosinemixture` accepts a matrix of size M-by-N and
         returns a vetor SCORES of size M-by-1 in which each row contains the
         function value for the corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (0, 0, ..., 0)
+        - Number of dimensions: n
+        - Recommended domain: [-1, 1]^n
+        - Number of local minima: many
+        - Number of global minima: 1
+        - Convexity: non-convex
+        - Separability: separable
+        - Modality: multimodal
+        - Symmetry: symmetric
+        - Differentiable: Yes
     )pbdoc");
 
     m.def("corana", &corana, R"pbdoc(
@@ -659,6 +694,18 @@ PYBIND11_MODULE(_core, m) {
         function at point X. `crossintray` accepts a matrix of size M-by-2
         and returns a vetor SCORES of size M-by-1 in which each row contains the
         function value for the corresponding row of X.
+        Properties:
+        - Global minimum: -2.062611870822
+        - Location of global minimum: There are 4 global minima: $(\pm 1.34941, \pm 1.34941)$
+        - Number of dimensions: 2
+        - Recommended domain:[-10, 10]^2
+        - Number of local minima: Numerous (A grid of smaller basins surrounds the main trays)
+        - Number of global minima: 4
+        - Convexity: Non-convex
+        - Separability: Non-separable
+        - Modality: Multimodal
+        - Symmetry: Symmetric (Highly symmetric across both axes and the origin)
+        - Differentiable: No
         For more information, please visit:
         benchmarkfcns.info/doc/crossintrayfcn
     )pbdoc");
@@ -847,7 +894,7 @@ PYBIND11_MODULE(_core, m) {
         - Global minimum: 0
         - Location of global minimum: (x_1, x_2, x_3, x_4) such that x_1 = 0 and (x_2 x_3) = 1/(x_2 * x_4)
         - Number of dimensions: 4
-        - Recommended domain: x_1 \in [0, 100], x_2 \in [40 * Pi, 560 * Pi], x_3 \in [0, 1], x_4 \in [1, 11]
+        - Recommended domain: x_1 ∈ [0, 100], x_2 ∈ [40π, 560π], x_3 ∈ [0, 1], x_4 ∈ [1, 11]
         - Number of local minima: None (it is technically a "valley" function)
         - Number of global minima: Infinite points
         - Convexity: Non-convex
@@ -870,10 +917,12 @@ PYBIND11_MODULE(_core, m) {
         Computes the value of the Friedman N. 3 benchmark function.
 
         Properties:
-        - Global minimum: -Pi/2
-        - Location of global minimum: (x_1, x_2, x_3, x_4) such that x_1 is very small and (x_2 * x_3) = 1/(x_2 * x_4)
+        - Global minimum: -π/2
+        - Location of global minimum: (x_1, x_2, x_3, x_4) such that x_1 is very small
+            and (x_2 * x_3) = 1/(x_2 * x_4)
         - Number of dimensions: 4
-        - Recommended domain: x_1 \in [0, 100], x_2 \in [40 * Pi, 560 * Pi], x_3 \in [0, 1], x_4 \in [1, 11]
+        - Recommended domain: x_1 ∈ [0, 100], x_2 ∈ [40π, 560π], x_3 ∈ [0, 1],
+            x_4 ∈ [1, 11]
         - Number of local minima: None (it is technically a "valley" function)
         - Number of global minima: Infinite points
         - Convexity: Non-convex
@@ -964,6 +1013,18 @@ PYBIND11_MODULE(_core, m) {
         function at point X. `gramacylee` accepts a matrix of size M-by-2 and
         returns a vetor SCORES of size M-by-1 in which each row contains the
         function value for the corresponding row of X.
+        Properties:
+        - Global minimum: -0.869 (approximately)
+        - Location of global minimum: x ≈ 0.5485
+        - Number of dimensions: 1 (x)
+        - Recommended domain: x ∈ [0.5, 2.5]
+        - Number of local minima: Numerous (Highly oscillatory)
+        - Number of global minima: 1
+        - Convexity: Non-convex
+        - Separability: N/A (1D function)
+        - Modality: Highly Multimodal
+        - Symmetry: Non-symmetric
+        - Differentiable: Yes
         For more information, please visit:
         benchmarkfcns.info/doc/gramacyleefcn
     )pbdoc");
@@ -974,6 +1035,18 @@ PYBIND11_MODULE(_core, m) {
         function at point X. `griewank` accepts a matrix of size M-by-N
         and returns a vetor SCORES of size M-by-1 in which each row contains the
         function value for the corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (0, 0, ..., 0)
+        - Number of dimensions: n (Scalable)
+        - Recommended domain: x_i ∈ [-600, 600]
+        - Number of local minima: Thousands (The number increases with the search area)
+        - Number of global minima: 1
+        - Convexity: Non-convex
+        - Separability: Non-separable
+        - Modality: Highly Multimodal
+        - Symmetry: Symmetric
+        - Differentiable: Yes
         For more information, please visit:
         benchmarkfcns.info/doc/griewankfcn
     )pbdoc");
@@ -986,6 +1059,19 @@ PYBIND11_MODULE(_core, m) {
         the corresponding row of X.
         SCORES = happycat(X, ALPHA) specifies power of the sphere component of
         the function.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (-1, -1, ..., -1)
+        - Number of dimensions: n
+        - Recommended domain: x_i ∈ [-2, 2]
+        - Number of local minima: Numerous
+        - Number of global minima: 1
+        - Convexity: Non-convex
+        - Separability: Non-separable (The variables are coupled via the Euclidean norm
+            and the sum)
+        - Modality: Multimodal
+        - Symmetry: Non-symmetric (The minimum is at -1, not 0)
+        - Differentiable: Yes
         For more information, please visit:
         benchmarkfcns.info/doc/happycatfcn
     )pbdoc");
@@ -1044,7 +1130,7 @@ PYBIND11_MODULE(_core, m) {
         Properties:
         - Global minimum: depends on a and b
         - Number of dimensions: 3
-        - Recommended domain: [-Pi, Pi]^3
+        - Recommended domain: [-π, π]^3
         - Number of local minima: many
         - Number of global minima: 1
         - Convexity: non-convex
@@ -1058,6 +1144,19 @@ PYBIND11_MODULE(_core, m) {
         function at point X. `himmelblau` accepts a matrix of size M-by-2
         and returns a vetor SCORES of size M-by-1 in which each row contains the
         function value for the corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minima: There are 4 global minima: (3.0, 2.0),
+            (-2.805118, 3.131312), (-3.779310, -3.283186), (3.584428, -1.848126)
+        - Number of dimensions: 2
+        - Recommended domain: x, y ∈ [-5, 5]
+        - Number of local minima: 0 (Every "valley" leads to a global minimum)
+        - Number of global minima: 4
+        - Convexity: Non-convex
+        - Separability: Non-separable
+        - Modality: Multimodal (Quadrimodal)
+        - Symmetry: Non-symmetric (The locations are not mirror images)
+        - Differentiable: Yes
         For more information, please visit:
         benchmarkfcns.info/doc/himmelblaufcn
     )pbdoc");
@@ -1068,6 +1167,19 @@ PYBIND11_MODULE(_core, m) {
         function at point X. `holdertable` accepts a matrix of size M-by-2 and
         returns a vetor SCORES of size M-by-1 in which each row contains the
         function value for the corresponding row of X.
+        Properties:
+        - Global minimum: -19.2085
+        - Location of global minimum: There are 4 global minima: (±8.05502, ±9.66459)
+        - Number of dimensions: 2
+        - Recommended domain: x ∈ [-10, 10], y ∈ [-10, 10]
+        - Number of local minima: Numerous (Many smaller ripples leading to the "legs" of
+            the table)
+        - Number of global minima: 4
+        - Convexity: Non-convex
+        - Separability: Non-separable
+        - Modality: Highly Multimodal
+        - Symmetry: Symmetric (Across both axes and the origin)
+        - Differentiable: No
         For more information, please visit:
         benchmarkfcns.info/doc/holdertablefcn
     )pbdoc");
@@ -1078,6 +1190,18 @@ PYBIND11_MODULE(_core, m) {
         point X. `hosaki` accepts a matrix of size M-by-2 and returns a
         vetor SCORES of size M-by-1 in which each row contains the function value
         for the corresponding row of X.
+        Properties:
+        - Global minimum: -2.3458 (approximately)
+        - Location of global minimum: (0.803, 9.126)
+        - Number of dimensions: 2
+        - Recommended domain: x ∈ [0, 5], y ∈ [0, 10]
+        - Number of local minima: 2 (The global minimum and one local minimum)
+        - Number of global minima: 1
+        - Convexity: Non-convex
+        - Separability: Non-separable (The exponential term couples x and y)
+        - Modality: Bimodal
+        - Symmetry: Non-symmetric
+        - Differentiable: Yes
     )pbdoc");
 
     m.def("keane", &keane, R"pbdoc(
@@ -1086,6 +1210,17 @@ PYBIND11_MODULE(_core, m) {
         `keane` accepts a matrix of size M-by-2 and returns a vetor SCORES of
         size M-by-1 in which each row contains the function value for the
         corresponding row of X.
+        Properties:
+        - Global minimum: -0.6736675 (for n=2)
+        - Location of global minimum: (1.393249, 0) or (0, 1.393249)
+        - Number of dimensions: n
+        - Recommended domain: [0, 10]^n
+        - Number of local minima: Numerous (Highly rugged/bumpy)
+        - Number of global minima: 2 (in the 2D version)
+        - Convexity: Non-convex
+        - Separability: Non-separable
+        - Modality: Highly Multimodal
+        - Differentiable: Yes
         For more information, please visit:
         benchmarkfcns.info/doc/keanefcn
     )pbdoc");
@@ -1173,6 +1308,18 @@ PYBIND11_MODULE(_core, m) {
         point X. `levin13` accepts a matrix of size M-by-2 and returns a
         vetor SCORES of size M-by-1 in which each row contains the function value
         for the corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (1, 1)
+        - Number of dimensions: 2
+        - Recommended domain: [-10, 10]^2
+        - Number of local minima: Approximately 100 (depending on the search range)
+        - Number of global minima: 1
+        - Convexity: Non-convex
+        - Separability: Non-separable
+        - Modality: Highly Multimodal
+        - Symmetry: Non-symmetric (though it appears somewhat periodic)
+        - Differentiable: Yes
         For more information, please visit:
         benchmarkfcns.info/doc/levin13fcn
     )pbdoc");
@@ -1183,6 +1330,18 @@ PYBIND11_MODULE(_core, m) {
         point X. `matyas` accepts a matrix of size M-by-2 and returns a
         vetor SCORES of size M-by-1 in which each row contains the function value
         for the corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (0, 0)
+        - Number of dimensions: 2
+        - Recommended domain: [-10, 10]^2
+        - Number of local minima: 0
+        - Number of global minima: 1
+        - Convexity: Convex
+        - Separability: Non-separable (The xy term couples the variables)
+        - Modality: Unimodal
+        - Symmetry: Symmetric (with respect to x and y)
+        - Differentiable: Yes
         For more information, please visit:
         benchmarkfcns.info/doc/matyasfcn
     )pbdoc");
@@ -1193,6 +1352,18 @@ PYBIND11_MODULE(_core, m) {
         at point X. `mccormick` accepts a matrix of size M-by-2 and returns a
         vetor SCORES of size M-by-1 in which each row contains the function value
         for the corresponding row of X.
+        Properties:
+        - Global minimum: -1.9133 (approximately)
+        - Location of global minimum: (-0.54719, -1.54719)
+        - Number of dimensions: 2
+        - Recommended domain: x ∈ [-1.5, 4], y ∈ [-3, 4]
+        - Number of local minima: 1
+        - Number of global minima: 1
+        - Convexity: Non-convex
+        - Separability: Non-separable
+        - Modality: Multimodal (Mildly)
+        - Symmetry: Non-symmetric
+        - Differentiable: Yes
         For more information, please visit:
         benchmarkfcns.info/doc/mccormickfcn
     )pbdoc");
@@ -1209,7 +1380,7 @@ PYBIND11_MODULE(_core, m) {
         - Global minimum: -1.8013 (for n=2), -4.687658 (for n=5), -9.66015 (for n=10)
         - Location of global minimum: depends on n
         - Number of dimensions: n
-        - Recommended domain: [0, Pi]^n
+        - Recommended domain: [0, π]^n
         - Number of local minima: n!
         - Number of global minima: 1
         - Convexity: non-convex
@@ -1252,6 +1423,16 @@ PYBIND11_MODULE(_core, m) {
         point X. `picheny` accepts a matrix of size M-by-2 and returns a
         vetor SCORES of size M-by-1 in which each row contains the function value
         for the corresponding row of X.
+        Properties:
+        - Global minimum: -1.0 (approximately)
+        - Location of global minimum: x ≈ 0.757
+        - Number of dimensions: 1
+        - Recommended domain: x ∈ [0, 1]
+        - Number of local minima: Numerous (Highly oscillatory in specific regions)
+        - Number of global minima: 1
+        - Convexity: Non-convex
+        - Modality: Highly Multimodal
+        - Differentiable: Yes
         For more information, please visit:
         benchmarkfcns.info/doc/pichenyfcn
     )pbdoc");
@@ -1262,6 +1443,18 @@ PYBIND11_MODULE(_core, m) {
         point X. `powellsum` accepts a matrix of size M-by-N and returns a vetor
         SCORES of size M-by-1 in which each row contains the
         function value for the corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (0, 0, ..., 0)
+        - Number of dimensions: n (Scalable)
+        - Recommended domain: x_i ∈ [-1, 1]
+        - Number of local minima: 0
+        - Number of global minima: 1
+        - Convexity: Convex
+        - Separability: Separable
+        - Modality: Unimodal
+        - Symmetry: Symmetric (relative to the origin)
+        - Differentiable: Yes
         For more information, please visit:
         benchmarkfcns.info/doc/powellsumfcn
     )pbdoc");
@@ -1466,6 +1659,16 @@ PYBIND11_MODULE(_core, m) {
         function at point X. `schwefel221` accepts a matrix of size M-by-N and
         returns a vetor SCORES of size M-by-1 in which each row contains the
         function value for the corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (0, 0, ..., 0)
+        - Number of dimensions: n
+        - Recommended domain: x_i ∈ [-100, 100]
+        - Number of local minima: 0 (It is unimodal)
+        - Convexity: Convex
+        - Separability: Non-separable
+        - Modality: Unimodal
+        - Differentiable: No
         For more information, please visit:
         benchmarkfcns.info/doc/schwefel221fcn
     )pbdoc");
@@ -1585,6 +1788,19 @@ PYBIND11_MODULE(_core, m) {
         function at point X. `trid` accepts a matrix of size M-by-N and
         returns a vetor SCORES of size M-by-1 in which each row contains the
         function value for the corresponding row of X.
+        Properties:
+        - Global minimum:
+            - For d=6: -50
+            - For d=10: -210
+            - General formula: -d(d+4)(d-1)/6
+        - Location of global minimum: x_i = i(d + 1 - i)
+        - Number of dimensions: d
+        - Recommended domain: x_i ∈ [-d^2, d^2]
+        - Number of local minima: 0 (Unimodal)
+        - Convexity: Convex
+        - Separability: Non-separable
+        - Symmetry: Non-symmetric
+        - Differentiable: Yes
         For more information, please visit:
         benchmarkfcns.info/doc/tridfcn
     )pbdoc");
@@ -1620,9 +1836,23 @@ PYBIND11_MODULE(_core, m) {
         function at point X. `wayburnseadern2` accepts a matrix of size M-by-2 and
         returns a vetor SCORES of size M-by-1 in which each row contains the
         function value for the corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minima: There are 2 global minima:(0.200139, 1), (0.424861, 1)
+        - Number of dimensions: 2 (x_1, x_2)
+        - Recommended domain: x_1, x_2 ∈ [-500, 500] (though often visualized in [-5, 5]^2)
+        - Number of local minima: 0 (It is generally considered unimodal/bimodal
+            depending on the range, but the global minima are the only real sinks)
+        - Number of global minima: 2
+        - Convexity: Non-convex
+        - Separability: Non-separable
+        - Modality: Bimodal
+        - Symmetry: Symmetric
+        - Differentiable: Yes
     )pbdoc");
 
-    m.def("weierstrass", &weierstrass, py::arg("x"), py::arg("a") = 0.5, py::arg("b") = 3.0, py::arg("kmax") = 20, R"pbdoc(
+    m.def("weierstrass", &weierstrass, py::arg("x"), py::arg("a") = 0.5,
+        py::arg("b") = 3.0, py::arg("kmax") = 20, R"pbdoc(
         Computes the value of the Weierstrass benchmark function.
         Properties:
             - Global minimum: 0
@@ -1664,6 +1894,18 @@ PYBIND11_MODULE(_core, m) {
         function at point X. `wolfe` accepts a matrix of size M-by-3 and
         returns a vetor SCORES of size M-by-1 in which each row contains the
         function value for the corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (0, 0, ..., 0)
+        - Number of dimensions: 3 (usually, though 2D versions exist)
+        - Recommended domain: x_i ∈ [0, 2]
+        - Number of local minima: 0 (It is unimodal in a sense, but has "pathological"
+        ridges).
+        - Number of global minima: 1
+        - Convexity: Non-convex
+        - Separability: Non-separable
+        - Modality: Unimodal
+        - Differentiable: No
         For more information, please visit:
         benchmarkfcns.info/doc/wolfefcn
     )pbdoc");
@@ -1674,6 +1916,18 @@ PYBIND11_MODULE(_core, m) {
         function at point X. `xinsheyang1` accepts a matrix of size M-by-N and
         returns a vetor SCORES of size M-by-1 in which each row contains the
         function value for the corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (0, 0, ..., 0)
+        - Number of dimensions: n (Scalable)
+        - Recommended domain: x_i ∈ [-5, 5]
+        - Number of local minima: 0
+        - Number of global minima: 1
+        - Convexity: convex
+        - Separability: separable
+        - Modality: Unimodal
+        - Symmetry: Symmetric
+        - Differentiable: No
         For more information, please visit:
         benchmarkfcns.info/doc/xinsheyangn1fcn
     )pbdoc");
@@ -1684,6 +1938,18 @@ PYBIND11_MODULE(_core, m) {
         function at point X. `xinsheyang2` accepts a matrix of size M-by-N and
         returns a vetor SCORES of size M-by-1 in which each row contains the
         function value for the corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (0, 0, ..., 0)
+        - Number of dimensions: n (Scalable)
+        - Recommended domain: x_i ∈ [-2π, 2π]
+        - Number of local minima: Numerous (Highly oscillatory)
+        - Number of global minima: 1
+        - Convexity: Non-convex
+        - Separability: Non-separable
+        - Modality: Highly Multimodal
+        - Symmetry: Symmetric
+        - Differentiable: No
         For more information, please visit:
         benchmarkfcns.info/doc/xinsheyangn2fcn
     )pbdoc");
@@ -1704,6 +1970,18 @@ PYBIND11_MODULE(_core, m) {
         of 'm=5' will be used for the parameter.
         SCORES = xinsheyang3(X, beta=BETA, m=M) computes the function with the given
         value of M for its 'm' parameter.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (0, 0, ..., 0)
+        - Number of dimensions: n (Scalable)
+        - Recommended domain: x_i ∈ [-2π, 2π]
+        - Number of local minima: Numerous (Highly periodic)
+        - Number of global minima: 1
+        - Convexity: Non-convex
+        - Separability: Separable (The terms for each x_i are summed)
+        - Modality: Highly Multimodal
+        - Symmetry: Symmetric
+        - Differentiable: Yes
         For more information, please visit:
         benchmarkfcns.info/doc/xinsheyangn3fcn
     )pbdoc");
@@ -1714,24 +1992,20 @@ PYBIND11_MODULE(_core, m) {
         function at point X. `xinsheyang4` accepts a matrix of size M-by-N and
         returns a vetor SCORES of size M-by-1 in which each row contains the
         function value for the corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (0, 0, ..., 0)
+        - Number of dimensions: n (Scalable)
+        - Recommended domain: x_i ∈ [-10, 10]
+        - Number of local minima: Numerous (Highly oscillatory)
+        - Number of global minima: 1
+        - Convexity: Non-convex
+        - Separability: Non-separable
+        - Modality: Highly Multimodal
+        - Symmetry: Symmetric
+        - Differentiable: No
         For more information, please visit:
         benchmarkfcns.info/doc/xinsheyangn4fcn
-    )pbdoc");
-
-    m.def("yaoliun4", &yaoliun4, R"pbdoc(
-        Computes the value of the Yao-Liu N. 4 function.
-        SCORES = yaoliun4(X) computes the value of the Yao-Liu N. 4
-        function at point X. `yaoliun4` accepts a matrix of size M-by-N and
-        returns a vetor SCORES of size M-by-1 in which each row contains the
-        function value for the corresponding row of X.
-    )pbdoc");
-
-    m.def("yaoliun9", &yaoliun9, R"pbdoc(
-        Computes the value of the Yao-Liu N. 9 function.
-        SCORES = yaoliun9(X) computes the value of the Yao-Liu N. 9
-        function at point X. `yaoliun9` accepts a matrix of size M-by-N and
-        returns a vetor SCORES of size M-by-1 in which each row contains the
-        function value for the corresponding row of X.
     )pbdoc");
 
     m.def("zakharov", &zakharov, R"pbdoc(
