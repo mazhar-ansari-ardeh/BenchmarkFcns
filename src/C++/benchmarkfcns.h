@@ -232,10 +232,6 @@ namespace BenchmarkFcns {
 
     VectorXd xinsheyangn4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
-    VectorXd yaoliun4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
-
-    VectorXd yaoliun9(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
-
     VectorXd zakharov(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd zerosum(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
