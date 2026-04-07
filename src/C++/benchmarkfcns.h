@@ -208,6 +208,8 @@ namespace BenchmarkFcns {
 
     VectorXd threehumpcamel(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
+    VectorXd sixhumpcamel(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
     VectorXd treccani(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd trid(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
@@ -241,6 +243,14 @@ namespace BenchmarkFcns {
     VectorXd zimmerman(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd zirilli(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
+    VectorXd shekel5(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
+    VectorXd shekel7(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
+    VectorXd shekel10(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
+    VectorXd foxholes(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 } // namespace BenchmarkFunctions
 
 #endif // BENCHMARKFCNS_H

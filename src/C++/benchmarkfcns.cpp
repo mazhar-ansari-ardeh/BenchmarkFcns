@@ -1375,6 +1375,18 @@ end
         return scores;
     }
 
+    VectorXd sixhumpcamel(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        if (n != 2)
+            throw std::invalid_argument("The Six-hump camel function is only defined on a 2D space.");
+
+        const auto X = x.col(0).array();
+        const auto Y = x.col(1).array();
+
+        VectorXd scores = (4 - 2.1 * X.square() + (X.pow(4)) / 3) * X.square() + X * Y + (-4 + 4 * Y.square()) * Y.square();
+        return scores;
+    }
+
     VectorXd treccani(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
         if (n != 2)
@@ -1576,6 +1588,61 @@ end
         const auto Y = x.col(1).array();
 
         VectorXd scores = 0.25 * X.pow(4) - 0.5 * X.square() + 0.1 * X + 0.5 * Y.square();
+        return scores;
+    }
+
+    VectorXd shekel_base(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, int m) {
+        const int n = x.cols();
+        if (n != 4) throw std::invalid_argument("The Shekel function is only defined on a 4D space.");
+
+        static constexpr double C_data[40] = {
+            4.0, 4.0, 4.0, 4.0,  1.0, 1.0, 1.0, 1.0,  8.0, 8.0, 8.0, 8.0,
+            6.0, 6.0, 6.0, 6.0,  3.0, 7.0, 3.0, 7.0,  2.0, 9.0, 2.0, 9.0,
+            5.0, 5.0, 3.0, 3.0,  8.0, 1.0, 8.0, 1.0,  6.0, 2.0, 6.0, 2.0,
+            7.0, 3.6, 7.0, 3.6
+        };
+        static constexpr double beta_data[10] = {
+            0.1, 0.2, 0.2, 0.4, 0.4, 0.6, 0.3, 0.7, 0.5, 0.5
+        };
+
+        const Map<const Matrix<double, 10, 4, RowMajor>> C(C_data);
+        const Map<const Matrix<double, 10, 1>> beta(beta_data);
+
+        VectorXd scores = VectorXd::Zero(x.rows());
+        for (int i = 0; i < m; ++i) {
+            const VectorXd diff_sq_sum = (x.rowwise() - C.row(i)).array().square().rowwise().sum();
+            scores.array() -= 1.0 / (diff_sq_sum.array() + beta(i));
+        }
+        return scores;
+    }
+
+    VectorXd shekel5(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) { return shekel_base(x, 5); }
+
+    VectorXd shekel7(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) { return shekel_base(x, 7); }
+
+    VectorXd shekel10(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) { return shekel_base(x, 10); }
+
+    VectorXd foxholes(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        if (n != 2) throw std::invalid_argument("The Foxholes function is only defined on a 2D space.");
+
+        static constexpr double a_data[50] = {
+            -32.0, -32.0, -16.0, -32.0,  0.0, -32.0,  16.0, -32.0,  32.0, -32.0,
+            -32.0, -16.0, -16.0, -16.0,  0.0, -16.0,  16.0, -16.0,  32.0, -16.0,
+            -32.0,   0.0, -16.0,   0.0,  0.0,   0.0,  16.0,   0.0,  32.0,   0.0,
+            -32.0,  16.0, -16.0,  16.0,  0.0,  16.0,  16.0,  16.0,  32.0,  16.0,
+            -32.0,  32.0, -16.0,  32.0,  0.0,  32.0,  16.0,  32.0,  32.0,  32.0
+        };
+
+        const Map<const Matrix<double, 25, 2, RowMajor>> a(a_data);
+
+        VectorXd scores = VectorXd::Zero(x.rows());
+        for(int i = 0; i < 25; ++i) {
+            const VectorXd diff1_6 = (x.col(0).array() - a(i, 0)).pow(6);
+            const VectorXd diff2_6 = (x.col(1).array() - a(i, 1)).pow(6);
+            scores.array() += 1.0 / ((i + 1.0) + diff1_6.array() + diff2_6.array());
+        }
+        scores.array() = 1.0 / (0.002 + scores.array());
         return scores;
     }
 

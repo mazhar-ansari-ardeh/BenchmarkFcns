@@ -73,6 +73,7 @@ from ._core import (
     mccormick,
     michalewicz,
     multifidelity,
+    multiobjective,
     periodic,
     perm,
     picheny,
@@ -102,6 +103,7 @@ from ._core import (
     styblinskitank,
     sumsquares,
     threehumpcamel,
+    sixhumpcamel,
     treccani,
     trid,
     vincent,
@@ -119,6 +121,10 @@ from ._core import (
     zettel,
     zimmerman,
     zirilli,
+    shekel5,
+    shekel7,
+    shekel10,
+    foxholes,
 )
 
 # price1, price2, price3, price4
@@ -128,6 +134,7 @@ __all__ = [
     "__doc__",
     "__version__",
     "multifidelity",
+    "multiobjective",
     "ackley",
     "ackleyn2",
     "ackleyn3",
@@ -226,6 +233,7 @@ __all__ = [
     "styblinskitank",
     "sumsquares",
     "threehumpcamel",
+    "sixhumpcamel",
     "treccani",
     "trid",
     "vincent",
@@ -243,4 +251,8 @@ __all__ = [
     "zettel",
     "zimmerman",
     "zirilli",
+    "shekel5",
+    "shekel7",
+    "shekel10",
+    "foxholes",
 ]
