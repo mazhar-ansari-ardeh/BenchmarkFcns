@@ -21,6 +21,7 @@ from ._core import (
     bird,
     bohachevskyn1,
     bohachevskyn2,
+    bohachevskyn3,
     booth,
     braninn1,
     braninn2,
@@ -132,6 +133,8 @@ from ._core import (
     foxholes,
 )
 
+from .composition import Composition, cec2005_f15
+
 # price1, price2, price3, price4
 # csendes, csendes2, csendes3, csendes4
 
@@ -158,6 +161,7 @@ __all__ = [
     "bird",
     "bohachevskyn1",
     "bohachevskyn2",
+    "bohachevskyn3",
     "booth",
     "braninn1",
     "braninn2",
@@ -169,6 +173,8 @@ __all__ = [
     "carromtable",
     "chichinadze",
     "cigar",
+    "cec2005_f15",
+    "Composition",
     "cosinemixture",
     "corana",
     "crossintray",

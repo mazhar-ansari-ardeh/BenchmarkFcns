@@ -7,6 +7,7 @@
 #include "benchmarkfcns.h"
 #include "multifidelity.h"
 #include "multiobjective.h"
+#include "composition.h"
 
 using namespace BenchmarkFcns;
 
@@ -783,6 +784,28 @@ PYBIND11_MODULE(_core, m) {
         - Differentiable: Yes
         For more information, please visit:
         benchmarkfcns.info/doc/bohachevskyn2fcn
+    )pbdoc");
+
+    m.def("bohachevskyn3", &bohachevskyn3, R"pbdoc(
+        Computes the value of Bohachevsky N. 3 benchmark function.
+        SCORES = bohachevsky3(X) computes the value of the Bohachevsky N. 3
+        function at point X. `bohachevsky3` accepts a matrix of size M-by-N and
+        returns a vector SCORES of size M-by-1 in which each row contains the
+        function value for each row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (0, 0)
+        - Number of dimensions: 2
+        - Recommended domain: [-100, 100]^2
+        - Number of local minima: many
+        - Number of global minima: 1
+        - Convexity: non-convex
+        - Separability: non-separable
+        - Modality: multimodal
+        - Symmetry: non-symmetric
+        - Differentiable: Yes
+        For more information, please visit:
+        benchmarkfcns.info/doc/bohachevskyn3fcn
     )pbdoc");
 
     m.def("booth", &booth, R"pbdoc(
@@ -3014,6 +3037,18 @@ PYBIND11_MODULE(_core, m) {
         - Recommended domain: [-65.536, 65.536]^2
     )pbdoc");
 
+    m.def("get_function_ptr", &get_function_ptr, py::arg("name"), "Retrieves a benchmark function pointer by name.");
+
+    py::class_<Composition>(m, "Composition")
+        .def(py::init<>())
+        .def("add_component", &Composition::add_component,
+             py::arg("fcn"), py::arg("shift"), py::arg("rotation"),
+             py::arg("sigma"), py::arg("lambda"), py::arg("bias"), py::arg("f_max"),
+             "Adds a base function component to the composition.")
+        .def("evaluate", &Composition::evaluate, py::arg("x"),
+             "Evaluates the composed function for a batch of points.")
+        .def("set_constant_C", &Composition::set_constant_C, py::arg("C"),
+             "Sets the C constant for height normalization (default 2000.0).");
 
 #ifdef VERSION_INFO
     m.attr("__version__") = MACRO_STRINGIFY(VERSION_INFO);

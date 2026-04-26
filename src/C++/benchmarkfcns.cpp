@@ -286,6 +286,18 @@ namespace BenchmarkFcns {
         VectorXd scores = (X.array().square() + 2 * Y.array().square() - 0.3 * cos(3 * M_PI * X.array()) * cos(4 * M_PI * Y.array()) + 0.3);
         return scores;
     }
+
+    VectorXd bohachevskyn3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        if (n != 2)
+            throw std::invalid_argument("The Bohachevsky N3 function only accepts 2D inputs");
+
+        const auto X = x.col(0);
+        const auto Y = x.col(1);
+
+        VectorXd scores = (X.array().square() + 2 * Y.array().square() - 0.3 * cos(3 * M_PI * X.array() + 4 * M_PI * Y.array()) + 0.3);
+        return scores;
+    }
     // TODO: Implement the bohachevsky3 function.
 
     VectorXd booth(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
