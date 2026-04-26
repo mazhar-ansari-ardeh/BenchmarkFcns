@@ -86,6 +86,8 @@ namespace BenchmarkFcns {
 
     VectorXd debn1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
+    VectorXd dejongn5(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
     VectorXd deckkersaarts(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd dropwave(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
@@ -100,7 +102,11 @@ namespace BenchmarkFcns {
 
     VectorXd elattar(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
+    VectorXd elliptic(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
     VectorXd exponential(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
+    VectorXd f8f2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd forrester(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
@@ -145,6 +151,8 @@ namespace BenchmarkFcns {
     VectorXd levy(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd levin13(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
+    VectorXd lunacekbirastrigin(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd matyas(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
@@ -195,6 +203,8 @@ namespace BenchmarkFcns {
     VectorXd schwefel222(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd schwefel223(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
+
+    VectorXd schwefel12(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 
     VectorXd shubert(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x);
 

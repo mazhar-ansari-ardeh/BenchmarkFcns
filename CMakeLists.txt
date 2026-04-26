@@ -19,6 +19,9 @@ target_link_libraries(_core PRIVATE Python3::Module)
 target_include_directories(_core PRIVATE ./src/C++/eigen-3.4.0)
 target_link_libraries(_core PRIVATE pybind11::module)
 target_compile_definitions(_core PRIVATE VERSION_INFO=${PROJECT_VERSION})
+if(WIN32)
+  target_compile_definitions(_core PRIVATE _USE_MATH_DEFINES)
+endif()
 
 # message(STATUS "Python version: ${Python3_VERSION}") message(STATUS "Python
 # library: ${Python3_LIBRARY}") message(STATUS "Python include dir:

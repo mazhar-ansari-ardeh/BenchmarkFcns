@@ -507,7 +507,32 @@ namespace BenchmarkFcns {
 
     VectorXd debn1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
-        VectorXd scores = - (x.array() * 5 * M_PI).sin().pow(6).rowwise().sum() / n;
+        VectorXd scores = - (x.array().sin().pow(6).rowwise().sum());
+        return scores;
+    }
+
+    VectorXd dejongn5(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        if (n != 2)
+            throw std::invalid_argument("De Jong's N. 5 function is only defined on a 2D space.");
+
+        const int m = x.rows();
+
+        // Define the 25 foxhole coordinates
+        static constexpr double a_content[2][25] = {
+            {-32, -16, 0, 16, 32, -32, -16, 0, 16, 32, -32, -16, 0, 16, 32, -32, -16, 0, 16, 32, -32, -16, 0, 16, 32},
+            {-32, -32, -32, -32, -32, -16, -16, -16, -16, -16, 0, 0, 0, 0, 0, 16, 16, 16, 16, 16, 32, 32, 32, 32, 32}
+        };
+        const Matrix<double, 2, 25> A = Map<const Matrix<double, 2, 25, RowMajor>>(&a_content[0][0]);
+
+        VectorXd inner_sum = VectorXd::Zero(m);
+        for (int i = 0; i < 25; ++i) {
+            const auto diff1 = (x.col(0).array() - A(0, i)).pow(6);
+            const auto diff2 = (x.col(1).array() - A(1, i)).pow(6);
+            inner_sum.array() += 1.0 / (static_cast<double>(i + 1) + diff1 + diff2);
+        }
+
+        VectorXd scores = (0.002 + inner_sum.array()).pow(-1.0);
         return scores;
     }
 
@@ -611,9 +636,40 @@ namespace BenchmarkFcns {
         return scores;
     }
 
+    VectorXd elliptic(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        const int m = x.rows();
+
+        VectorXd powers(n);
+        for(int i=0; i<n; ++i) {
+            powers(i) = std::pow(10.0, 6.0 * i / (n - 1.0));
+        }
+
+        const auto Coeffs = powers.transpose().replicate(m, 1).array();
+        return (Coeffs * x.array().square()).rowwise().sum();
+    }
+
     VectorXd exponential(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         VectorXd scores = -exp(-0.5 * x.array().square().rowwise().sum());
 
+        return scores;
+    }
+
+    VectorXd f8f2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        const int m = x.rows();
+
+        VectorXd scores = VectorXd::Zero(m);
+        for (int i = 0; i < n; ++i) {
+            int next = (i + 1) % n;
+            const auto xi = x.col(i).array();
+            const auto xnext = x.col(next).array();
+
+            const VectorXd rosen = 100.0 * (xi.square() - xnext).square() + (xi - 1.0).square();
+
+            // Griewank on the rosen result
+            scores += ((rosen.array().square() / 4000.0) - (rosen.array().cos()) + 1.0).matrix();
+        }
         return scores;
     }
 
@@ -644,6 +700,19 @@ namespace BenchmarkFcns {
         return scores;
     }
 
+    VectorXd forrester(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x)
+    {
+        const int n = x.cols();
+        if (n != 1)
+            throw std::invalid_argument("The Forrester function is only defined on a 1D space.");
+
+        const auto X = x.col(0).array();
+
+        VectorXd scores = (6 * X - 2).square() * sin(12 * X - 4);
+
+        return scores;
+    }
+
     VectorXd friedman2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, double sigma) {
         const int n = x.cols();
         if (n != 4)
@@ -668,26 +737,6 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    /*
-    Implement the Friedman No. 3 function, which is defined as:
-    function scores = friedmann3fcn(x, sigma)
-    n = size(x, 2);
-    assert(n == 4, 'The Friedman No. 3 function is only defined on a 4D space.')
-    x1 = x(:, 1);
-    x2 = x(:, 2);
-    x3 = x(:, 3);
-    x4 = x(:, 4);
-
-    numerator = (x2 .* x3) - (1 ./ (x2 .* x4));
-    groundTruth = atan(numerator ./ x1);
-
-    if nargin > 1 && sigma > 0
-        scores = groundTruth + sigma .* randn(size(groundTruth));
-    else
-        scores = groundTruth;
-    end
-end
-    */
     VectorXd friedman3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, double sigma) {
         const int n = x.cols();
         if (n != 4)
@@ -708,19 +757,6 @@ end
         const VectorXd groundTruth = (numerator.array() / x1).array().atan();
 
         VectorXd scores = groundTruth + epsilon;
-
-        return scores;
-    }
-
-    VectorXd forrester(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x)
-    {
-        const int n = x.cols();
-        if (n != 1)
-            throw std::invalid_argument("The Forrester function is only defined on a 1D space.");
-
-        const auto X = x.col(0).array();
-
-        VectorXd scores = (6 * X - 2).square() * sin(12 * X - 4);
 
         return scores;
     }
@@ -1042,6 +1078,30 @@ end
         return scores;
     }
 
+    VectorXd lunacekbirastrigin(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+
+        // Standard BBOB f24 parameters
+        const double mu0 = 2.5;
+        const double s = 1.0 - (1.0 / (2.0 * std::sqrt(n + 20.0) - 8.2));
+        const double mu1 = -std::sqrt((mu0 * mu0 - 1.0) / s);
+        const double d = 1.0;
+
+        const auto x_array = x.array();
+
+        // Quadratic terms for both basins
+        const VectorXd sum_mu0 = (x_array - mu0).square().rowwise().sum();
+        const VectorXd sum_mu1 = (x_array - mu1).square().rowwise().sum();
+
+        // Deceptive basin logic: min(sum(x-mu0)^2, d*n + s*sum(x-mu1)^2)
+        const VectorXd deceptive_term = sum_mu0.cwiseMin(((s * sum_mu1).array() + (d * n)).matrix());
+
+        // Rastrigin-like oscillation component
+        const VectorXd rastrigin_term = 10.0 * (n - (2.0 * M_PI * (x_array - mu0)).cos().rowwise().sum());
+
+        return deceptive_term + rastrigin_term;
+    }
+
     VectorXd matyas(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
         if (n != 2)
@@ -1305,6 +1365,20 @@ end
 
     VectorXd schwefel223(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         return x.array().pow(10).rowwise().sum();
+    }
+
+    VectorXd schwefel12(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        const int m = x.rows();
+
+        // Cumulative sums for each row
+        MatrixXd cumsums = MatrixXd::Zero(m, n);
+        cumsums.col(0) = x.col(0);
+        for (int i = 1; i < n; ++i) {
+            cumsums.col(i) = cumsums.col(i - 1) + x.col(i);
+        }
+
+        return cumsums.array().square().rowwise().sum();
     }
 
     VectorXd shubert(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
