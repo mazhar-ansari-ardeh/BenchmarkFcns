@@ -122,6 +122,16 @@ namespace BenchmarkFcns {
         return scores;
     }
 
+    VectorXd bentcigar(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        const int m = x.rows();
+        VectorXd scores = x.col(0).array().square();
+        if (n > 1) {
+            scores += 1e6 * x.block(0, 1, m, n - 1).array().square().rowwise().sum().matrix();
+        }
+        return scores;
+    }
+
     VectorXd biggsexp02(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
         if (n != 2)
@@ -590,6 +600,17 @@ namespace BenchmarkFcns {
             scores += (i_vec * (2.0 * xi.square() - xi_prev).square()).rowwise().sum().matrix();
         }
 
+        return scores;
+    }
+
+    VectorXd discus(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        const int m = x.rows();
+
+        VectorXd scores = 1e6 * x.col(0).array().square();
+        if (n > 1) {
+            scores += x.block(0, 1, m, n - 1).array().square().rowwise().sum().matrix();
+        }
         return scores;
     }
 
@@ -1301,6 +1322,18 @@ namespace BenchmarkFcns {
         return scores;
     }
 
+    VectorXd schafferf7(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        const int m = x.rows();
+        VectorXd scores = VectorXd::Zero(m);
+
+        for (int i = 0; i < n - 1; ++i) {
+            const auto si = (x.col(i).array().square() + x.col(i+1).array().square()).sqrt();
+            scores.array() += si.sqrt() * ((50.0 * si.pow(0.2)).sin().square() + 1.0);
+        }
+        return scores;
+    }
+
     VectorXd schaffern1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
         if (n != 2)
@@ -1438,6 +1471,10 @@ namespace BenchmarkFcns {
         VectorXd scores = (term1 - term2 + term3).rowwise().sum();
         scores *= 0.5;
         return scores;
+    }
+
+    VectorXd step(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        return (x.array() + 0.5).floor().square().rowwise().sum();
     }
 
     VectorXd sumsquares(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {

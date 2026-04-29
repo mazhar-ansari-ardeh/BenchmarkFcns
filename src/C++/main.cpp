@@ -615,6 +615,21 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/bealefcn
     )pbdoc");
 
+    m.def("bentcigar", &bentcigar, R"pbdoc(
+        Computes the value of the Bent Cigar benchmark function.
+        SCORES = bentcigar(X) computes the value of the Bent Cigar function at point X.
+        `bentcigar` accepts a matrix of size M-by-N and returns a vetor SCORES of
+        size M-by-1 in which each row contains the function value for the
+        corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (0, 0, ..., 0)
+        - Number of dimensions: n
+        - Recommended domain: [-100, 100]^n
+        - Modality: unimodal
+        - Characteristic: Extreme ill-conditioning (10^6 scaling for all dimensions except the first).
+    )pbdoc");
+
     m.def("biggsexp02", &biggsexp02, R"pbdoc(
         Computes the value of the Biggs EXP N. 02 benchmark function.
         SCORES = biggsexp02(X) computes the value of the Biggs EXP N. 02
@@ -1250,6 +1265,21 @@ PYBIND11_MODULE(_core, m) {
         - Convexity: non-convex
         - Separability: non-separable
         - Modality: unimodal
+    )pbdoc");
+
+    m.def("discus", &discus, R"pbdoc(
+        Computes the value of the Discus benchmark function.
+        SCORES = discus(X) computes the value of the Discus function at point X.
+        `discus` accepts a matrix of size M-by-N and returns a vetor SCORES of
+        size M-by-1 in which each row contains the function value for the
+        corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (0, 0, ..., 0)
+        - Number of dimensions: n
+        - Recommended domain: [-100, 100]^n
+        - Modality: unimodal
+        - Characteristic: High conditioning (one sensitive direction).
     )pbdoc");
 
     m.def("easom", &easom, R"pbdoc(
@@ -2224,6 +2254,20 @@ PYBIND11_MODULE(_core, m) {
         - Modality: multimodal
     )pbdoc");
 
+    m.def("schafferf7", &schafferf7, R"pbdoc(
+        Computes the value of the Schaffer F7 benchmark function.
+        SCORES = schafferf7(X) computes the value of the Schaffer F7 function at point X.
+        `schafferf7` accepts a matrix of size M-by-N and returns a vector SCORES of
+        size M-by-1 in which each row contains the function value for the
+        corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (0, 0, ..., 0)
+        - Number of dimensions: n
+        - Recommended domain: [-100, 100]^n
+        - Modality: multimodal
+    )pbdoc");
+
     m.def("schaffern1", &schaffern1, R"pbdoc(
         Computes the value of the Schaffer N. 1 function.
         SCORES = schaffer1(X) computes the value of the Schaffer N. 1
@@ -2529,6 +2573,21 @@ PYBIND11_MODULE(_core, m) {
         - Differentiable: Yes
         For more information, please visit:
         benchmarkfcns.info/doc/styblinskitankfcn
+    )pbdoc");
+
+    m.def("step", &step, R"pbdoc(
+        Computes the value of the Step benchmark function (De Jong N. 3).
+        SCORES = step(X) computes the value of the Step function at point X.
+        `step` accepts a matrix of size M-by-N and returns a vector SCORES of
+        size M-by-1 in which each row contains the function value for the
+        corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: depends on domain (typically [0, 1]^n)
+        - Number of dimensions: n
+        - Recommended domain: [-5.12, 5.12]^n
+        - Modality: unimodal (with plateaus)
+        - Characteristic: zero gradient almost everywhere.
     )pbdoc");
 
     m.def("sumsquares", &sumsquares, R"pbdoc(

@@ -75,6 +75,7 @@ namespace BenchmarkFcns {
             m["amgm"] = &amgm;
             m["bartelsconn"] = &bartelsconn;
             m["beale"] = &beale;
+            m["bentcigar"] = &bentcigar;
             m["bird"] = &bird;
             m["bohachevskyn1"] = &bohachevskyn1;
             m["bohachevskyn2"] = &bohachevskyn2;
@@ -100,6 +101,7 @@ namespace BenchmarkFcns {
             m["dejongn5"] = &dejongn5;
             m["deckkersaarts"] = &deckkersaarts;
             m["dixonprice"] = &dixonprice;
+            m["discus"] = &discus;
             m["dropwave"] = &dropwave;
             m["easom"] = &easom;
             m["eggcrate"] = &eggcrate;
@@ -146,6 +148,7 @@ namespace BenchmarkFcns {
             m["rosenbrock"] = &rosenbrock;
             m["salomon"] = &salomon;
             m["schafferf6"] = &schafferf6;
+            m["schafferf7"] = &schafferf7;
             m["schaffern1"] = &schaffern1;
             m["schaffern2"] = &schaffern2;
             m["schaffern3"] = &schaffern3;
@@ -161,6 +164,7 @@ namespace BenchmarkFcns {
             m["shubertn4"] = &shubertn4;
             m["sphere"] = &sphere;
             m["styblinskitank"] = &styblinskitank;
+            m["step"] = &step;
             m["sumsquares"] = &sumsquares;
             m["threehumpcamel"] = &threehumpcamel;
             m["sixhumpcamel"] = &sixhumpcamel;
