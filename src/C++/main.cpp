@@ -3042,13 +3042,13 @@ PYBIND11_MODULE(_core, m) {
     py::class_<Composition>(m, "Composition")
         .def(py::init<>())
         .def("add_component", &Composition::add_component,
-             py::arg("fcn"), py::arg("shift"), py::arg("rotation"),
-             py::arg("sigma"), py::arg("lambda"), py::arg("bias"), py::arg("f_max"),
-             "Adds a base function component to the composition.")
+            py::arg("fcn"), py::arg("shift"), py::arg("rotation"),
+            py::arg("sigma"), py::arg("lambda"), py::arg("bias"), py::arg("f_max"),
+            "Adds a base function component to the composition.")
         .def("evaluate", &Composition::evaluate, py::arg("x"),
-             "Evaluates the composed function for a batch of points.")
+            "Evaluates the composed function for a batch of points.")
         .def("set_constant_C", &Composition::set_constant_C, py::arg("C"),
-             "Sets the C constant for height normalization (default 2000.0).");
+            "Sets the C constant for height normalization (default 2000.0).");
 
 #ifdef VERSION_INFO
     m.attr("__version__") = MACRO_STRINGIFY(VERSION_INFO);

@@ -33,7 +33,7 @@ class Composition(_CoreComposition):
             function: Name of the built-in function (e.g. 'ackley') or a pointer.
             shift: 1D array of size N for shifting the optimum.
             rotation: 2D array of size N-by-N for coordinate rotation.
-                      Defaults to Identity matrix.
+                    Defaults to Identity matrix.
             sigma: Convergence range / basin of attraction size.
             lambda_val: Scaling parameter for the landscape.
             bias: Internal bias for this component.

@@ -8,12 +8,12 @@ namespace BenchmarkFcns {
     Composition::Composition() {}
 
     void Composition::add_component(BenchmarkFcn fcn,
-                                  const VectorXd& shift,
-                                  const MatrixXd& rotation,
-                                  double sigma,
-                                  double lambda,
-                                  double bias,
-                                  double f_max) {
+                                    const VectorXd& shift,
+                                    const MatrixXd& rotation,
+                                    double sigma,
+                                    double lambda,
+                                    double bias,
+                                    double f_max) {
         components.push_back({fcn, shift, rotation, sigma, lambda, bias, f_max});
     }
 

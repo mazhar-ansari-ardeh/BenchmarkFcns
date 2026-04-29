@@ -28,12 +28,12 @@ namespace BenchmarkFcns {
          * @param f_max Estimated maximum value of the function (for height normalization)
          */
         void add_component(BenchmarkFcn fcn,
-                          const VectorXd& shift,
-                          const MatrixXd& rotation,
-                          double sigma,
-                          double lambda,
-                          double bias,
-                          double f_max);
+                            const VectorXd& shift,
+                            const MatrixXd& rotation,
+                            double sigma,
+                            double lambda,
+                            double bias,
+                            double f_max);
 
         /**
          * Evaluates the composed function for a batch of points.

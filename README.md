@@ -145,6 +145,51 @@ plt.show()
     <img src="https://raw.githubusercontent.com/mazhar-ansari-ardeh/BenchmarkFcns/master/assets/forrester-mf.png" alt="drawing" width="700"/>
 </p>
 
+### Advanced Composition Engine ###
+
+BenchmarkFcns includes a powerful **Composition Engine** that allows you to create complex, hybrid benchmark landscapes (similar to those found in the CEC competition suites) by blending multiple base functions.
+
+The engine supports:
+- **Shifting:** Move the local optimum of any component to a specific point.
+- **Rotation:** Apply coordinate rotation matrices to create non-separable challenges.
+- **Scaling:** Stretch or shrink individual component landscapes.
+- **Exponential Blending:** Automatically blends functions based on their distance from their centers using CEC-standard weighting.
+
+#### Example: Custom Composition
+```python
+import benchmarkfcns as bf
+import numpy as np
+
+# Create a new composition
+comp = bf.Composition()
+
+# Add a rotated and shifted Ackley component
+n = 10
+shift = np.random.uniform(-5, 5, n)
+rotation = np.eye(n) # You can provide any orthogonal matrix here
+comp.add("ackley", shift=shift, rotation=rotation, sigma=1.0, bias=0.0)
+
+# Add a shifted Rastrigin component with a bias
+shift2 = np.random.uniform(-5, 5, n)
+comp.add("rastrigin", shift=shift2, sigma=1.0, bias=100.0)
+
+# Evaluate a batch of points
+X = np.random.uniform(-5, 5, (100, n))
+scores = comp(X)
+```
+
+#### Example: CEC 2005 Presets
+The library provides pre-configured factories for standard competition functions.
+```python
+import benchmarkfcns as bf
+
+# Create the standard CEC 2005 F15 Hybrid Composition Function
+f15 = bf.cec2005_f15(dimensions=10)
+
+X = np.random.uniform(-5, 5, (50, 10))
+results = f15(X)
+```
+
 ## MATLAB
 As a reference, the repository also contains the implementation of the functions in MATLAB. To install and use the MATLAB implementation, it is just required to add the project folders to MATLAB's path. For example, to use the functions in the 'benchmarks/MATLAB' folder, just navigate to this folder with MATLAB's directory explorer or use the command `addpath` with path to the folder on your PC (e.g. `addpath /path/to/benchmarks`).
 
