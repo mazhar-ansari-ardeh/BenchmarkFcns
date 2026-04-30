@@ -174,6 +174,7 @@ namespace BenchmarkFcns {
             m["watson"] = &watson;
             m["wavy"] = [](const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) { return wavy(x, 10.0); };
             m["wayburnseadern2"] = &wayburnseadern2;
+            m["whitley"] = &whitley;
             m["weierstrass"] = [](const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) { return weierstrass(x, 0.5, 3.0, 20); };
             m["wolfe"] = &wolfe;
             m["xinsheyangn1"] = &xinsheyangn1;

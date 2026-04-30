@@ -2777,11 +2777,26 @@ PYBIND11_MODULE(_core, m) {
         - Modality: Bimodal
         - Symmetry: Symmetric
         - Differentiable: Yes
+    - Differentiable: Yes
     )pbdoc");
 
-    m.def("weierstrass", &weierstrass, py::arg("x"), py::arg("a") = 0.5,
-        py::arg("b") = 3.0, py::arg("kmax") = 20, R"pbdoc(
-        Computes the value of the Weierstrass benchmark function.
+    m.def("whitley", &whitley, R"pbdoc(
+    Computes the value of the Whitley benchmark function.
+    SCORES = whitley(X) computes the value of the Whitley function at point X.
+    `whitley` accepts a matrix of size M-by-N and returns a vector SCORES of
+    size M-by-1 in which each row contains the function value for the
+    corresponding row of X.
+    Properties:
+    - Global minimum: 0
+    - Location of global minimum: (1, 1, ..., 1)
+    - Number of dimensions: n
+    - Recommended domain: [-10.24, 10.24]^n
+    - Modality: multimodal
+    - Separability: non-separable
+    )pbdoc");
+
+    m.def("weierstrass", &weierstrass, py::arg("X"), py::arg("a") = 0.5, py::arg("b") = 3.0, py::arg("kmax") = 20, R"pbdoc(
+    Computes the value of the Weierstrass benchmark function.
         Properties:
             - Global minimum: 0
             - Location of global minimum: 0

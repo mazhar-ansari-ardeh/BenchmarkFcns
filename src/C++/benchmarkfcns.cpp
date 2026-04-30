@@ -1613,6 +1613,26 @@ namespace BenchmarkFcns {
         return scores;
     }
 
+    VectorXd whitley(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        const int m = x.rows();
+        VectorXd scores = VectorXd::Zero(m);
+
+        for (int i = 0; i < n; ++i) {
+            const auto xi = x.col(i).array();
+            for (int j = 0; j < n; ++j) {
+                const auto xj = x.col(j).array();
+
+                // temp = 100 * (xi^2 - xj)^2 + (1 - xj)^2
+                const VectorXd temp = 100.0 * (xi.square() - xj).square() + (1.0 - xj).square();
+
+                // term = (temp^2 / 4000) - cos(temp) + 1
+                scores += ((temp.array().square() / 4000.0) - temp.array().cos() + 1.0).matrix();
+            }
+        }
+        return scores;
+    }
+
     VectorXd weierstrass(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& X, double a, double b, int kmax) {
         const long num_rows = X.rows();
         const long n = X.cols();
