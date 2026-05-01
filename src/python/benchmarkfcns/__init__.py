@@ -143,6 +143,7 @@ from ._core import (
 )
 
 from .composition import Composition, cec2005_f15
+from . import cec2005
 
 # price1, price2, price3, price4
 # csendes, csendes2, csendes3, csendes4
@@ -181,6 +182,7 @@ __all__ = [
     "bukinn4",
     "bukinn6",
     "carromtable",
+    "cec2005",
     "cec2005_f15",
     "chichinadze",
     "cigar",
