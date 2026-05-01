@@ -73,6 +73,7 @@ namespace BenchmarkFcns {
             m["alpinen1"] = &alpinen1;
             m["alpinen2"] = &alpinen2;
             m["amgm"] = &amgm;
+            m["attractivesector"] = &attractivesector;
             m["bartelsconn"] = &bartelsconn;
             m["beale"] = &beale;
             m["bentcigar"] = &bentcigar;
@@ -115,6 +116,7 @@ namespace BenchmarkFcns {
             m["friedman1"] = [](const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) { return friedman1(x, false); };
             m["friedman2"] = [](const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) { return friedman2(x, 0.0); };
             m["friedman3"] = [](const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) { return friedman3(x, 0.0); };
+            m["gallagher101"] = &gallagher101;
             m["gear"] = &gear;
             m["giunta"] = &giunta;
             m["goldsteinprice"] = &goldsteinprice;
@@ -137,6 +139,7 @@ namespace BenchmarkFcns {
             m["matyas"] = &matyas;
             m["mccormick"] = &mccormick;
             m["michalewicz"] = [](const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) { return michalewicz(x, 10.0); };
+            m["mishrabird"] = &mishrabird;
             m["periodic"] = &periodic;
             m["perm"] = [](const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) { return perm(x, 0.5); };
             m["picheny"] = &picheny;
@@ -170,6 +173,7 @@ namespace BenchmarkFcns {
             m["sixhumpcamel"] = &sixhumpcamel;
             m["sphere"] = &sphere;
             m["step"] = &step;
+            m["stretchedvsine"] = &stretchedvsine;
             m["styblinskitank"] = &styblinskitank;
             m["sumsquares"] = &sumsquares;
             m["threehumpcamel"] = &threehumpcamel;

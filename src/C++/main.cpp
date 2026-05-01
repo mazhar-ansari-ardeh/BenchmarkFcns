@@ -569,6 +569,21 @@ PYBIND11_MODULE(_core, m) {
         - Differentiable: Yes
     )pbdoc");
 
+    m.def("attractivesector", &attractivesector, R"pbdoc(
+        Computes the value of the Attractive Sector benchmark function.
+        SCORES = attractivesector(X) computes the value of the Attractive Sector function at point X.
+        `attractivesector` accepts a matrix of size M-by-N and returns a vector SCORES of
+        size M-by-1 in which each row contains the function value for the
+        corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (0, 0, ..., 0)
+        - Number of dimensions: n
+        - Recommended domain: [-5, 5]^n
+        - Modality: unimodal
+        - Characteristic: non-symmetric
+    )pbdoc");
+
     m.def("bartelsconn", &bartelsconn, R"pbdoc(
         Computes the value of the Bartels Conn benchmark function.
         SCORES = bartelsconn(X) computes the value of the Bartels Conn
@@ -1532,6 +1547,20 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/friedman3fcn
     )pbdoc");
 
+    m.def("gallagher101", &gallagher101, R"pbdoc(
+        Computes the value of the Gallagher's Gaussian 101-me Peaks benchmark function.
+        SCORES = gallagher101(X) computes the value of the Gallagher's 101-me Peaks
+        function at point X. `gallagher101` accepts a matrix of size M-by-N and
+        returns a vetor SCORES of size M-by-1 in which each row contains the
+        function value for the corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: randomized (seeded)
+        - Number of dimensions: n
+        - Recommended domain: [-5, 5]^n
+        - Modality: highly multimodal (101 Gaussian peaks)
+    )pbdoc");
+
     m.def("gear", &gear, R"pbdoc(
         Computes the value of the Gear benchmark function.
         SCORES = gear(X) computes the value of the Gear function at point X.
@@ -1992,6 +2021,26 @@ PYBIND11_MODULE(_core, m) {
         - Convexity: non-convex
         - Separability: separable
         - Modality: multimodal
+    )pbdoc");
+
+    m.def("mishrabird", &mishrabird, py::arg("x"), R"pbdoc(
+        Computes the value of the Mishra's Bird benchmark function.
+        SCORES = mishrabird(X) computes the value of the Mishra's Bird function
+        at point X. `mishrabird` accepts a matrix of size M-by-2 and returns a
+        vector SCORES of size M-by-1 in which each row contains the function value
+        for the corresponding row of X.
+        Properties:
+        - Domain: [-10, 10]^2
+        - Global minimum: -1.0666
+        - Location of global minimum: (-3.13, -1.58)
+        - Number of global minima: 1
+        - Convexity: Non-convex
+        - Separability: Non-separable
+        - Modality: Multimodal
+        - Symmetry: Non-symmetric
+        - Differentiable: Yes
+        For more information, please visit:
+        benchmarkfcns.info/doc/mishrabirdfcn
     )pbdoc");
 
     m.def("periodic", &periodic, R"pbdoc(
@@ -2642,6 +2691,28 @@ PYBIND11_MODULE(_core, m) {
         - Recommended domain: [-5.12, 5.12]^n
         - Modality: unimodal (with plateaus)
         - Characteristic: zero gradient almost everywhere.
+    )pbdoc");
+
+    m.def("stretchedvsine", &stretchedvsine, R"pbdoc(
+        Computes the value of the Stretched V Sine benchmark function.
+        SCORES = stretchedvsine(X) computes the value of the Stretched V Sine
+        function at point X. `stretchedvsine` accepts a matrix of size M-by-N
+        and returns a vector SCORES of size M-by-1 in which each row contains the
+        function value for the corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (0, 0, ..., 0)
+        - Number of dimensions: n
+        - Recommended domain: [-10, 10]^n
+        - Number of local minima: many
+        - Number of global minima: 1
+        - Convexity: non-convex
+        - Separability: non-separable
+        - Modality: multimodal
+        - Symmetry: symmetric
+        - Differentiable: Yes
+        For more information, please visit:
+        benchmarkfcns.info/doc/stretchedvsinefcn
     )pbdoc");
 
     m.def("styblinskitank", &styblinskitank, R"pbdoc(
