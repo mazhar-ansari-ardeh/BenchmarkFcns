@@ -1,5 +1,7 @@
 #include <pybind11/pybind11.h>
 #include <pybind11/eigen.h>
+#include <pybind11/functional.h>
+#include <pybind11/stl.h>
 
 # define STRINGIFY(x) #x
 # define MACRO_STRINGIFY(x) STRINGIFY(x)
@@ -16,85 +18,15 @@ namespace py = pybind11;
 PYBIND11_MODULE(_core, m) {
     py::module_ mom = m.def_submodule("multiobjective", "Multi-objective functions");
 
-    mom.def("zdt1", MultiObjective::zdt1, R"pbdoc(
-        Computes the value of the ZDT1 multi-objective benchmark function.
-        SCORES = multiobjective.zdt1(X) computes the value of the ZDT1 function
-        at point X. `multiobjective.zdt1` accepts a matrix of size M-by-N and returns
-        a matrix SCORES of size M-by-2 in which each row contains the function value
-        for the corresponding row of X and each column corresponds to an objective.
-        Properties:
-        - Global Pareto front: f_2 = 1 - \sqrt{f_1}
-        - Location of global Pareto front: x_1 ∈ [0, 1], x_i = 0 for i = 2, ..., n
-        - Number of dimensions: n (usually 30)
-        - Recommended domain: [0, 1]^n
-        - Number of local fronts: 0
-        - Number of global fronts: 1
-        - Convexity: convex (Pareto front)
-        - Modality: unimodal
-        - Separability: non-separable
-        - Differentiable: Yes
-        For more information, please visit:
-        benchmarkfcns.info/doc/zdt1fcn
-    )pbdoc");
-
-    mom.def("zdt2", MultiObjective::zdt2, R"pbdoc(
-        Computes the value of the ZDT2 multi-objective benchmark function.
-        SCORES = multiobjective.zdt2(X) computes the value of the ZDT2 function
-        at point X. `multiobjective.zdt2` accepts a matrix of size M-by-N and returns
+    mom.def("bnh", &MultiObjective::bnh, py::arg("x"), py::arg("return_constraints") = false, R"pbdoc(
+        Computes the value of the BNH (Binh and Korn) multi-objective benchmark function.
+        SCORES = multiobjective.bnh(X) computes the value of the BNH function
+        at point X. `multiobjective.bnh` accepts a matrix of size M-by-2 and returns
         a matrix SCORES of size M-by-2.
+        If return_constraints is True, returns an M-by-4 matrix where the last two columns
+        contain the constraint violations (values > 0 are violations).
         Properties:
-        - Global Pareto front: f_2 = 1 - f_1^2
-        - Location of global Pareto front: x_1 ∈ [0, 1], x_i = 0 for i = 2, ..., n
-        - Number of dimensions: n (usually 30)
-        - Recommended domain: [0, 1]^n
-        - Convexity: non-convex (Pareto front)
-        - Modality: unimodal
-        For more information, please visit:
-        benchmarkfcns.info/doc/zdt2fcn
-    )pbdoc");
-
-    mom.def("zdt3", MultiObjective::zdt3, R"pbdoc(
-        Computes the value of the ZDT3 multi-objective benchmark function.
-        SCORES = multiobjective.zdt3(X) computes the value of the ZDT3 function
-        at point X. `multiobjective.zdt3` accepts a matrix of size M-by-N and returns
-        a matrix SCORES of size M-by-2.
-        Properties:
-        - Global Pareto front: f_2 = 1 - \sqrt{f_1} - f_1 \sin(10π f_1)
-        - Location of global Pareto front: x_1 ∈ [0, 1], x_i = 0 for i = 2, ..., n
-        - Number of dimensions: n (usually 30)
-        - Recommended domain: [0, 1]^n
-        - Convexity: disconnected (Pareto front)
-        - Modality: multimodal
-        For more information, please visit:
-        benchmarkfcns.info/doc/zdt3fcn
-    )pbdoc");
-
-    mom.def("zdt4", MultiObjective::zdt4, R"pbdoc(
-        Computes the value of the ZDT4 multi-objective benchmark function.
-        SCORES = multiobjective.zdt4(X) computes the value of the ZDT4 function
-        at point X. `multiobjective.zdt4` accepts a matrix of size M-by-N and returns
-        a matrix SCORES of size M-by-2.
-        Properties:
-        - Global Pareto front: f_2 = 1 - \sqrt{f_1}
-        - Number of dimensions: n (usually 10)
-        - Recommended domain: x_1 ∈ [0, 1], x_i ∈ [-5, 5] for i > 1
-        - Modality: Highly Multimodal (has 21^{n-1} local Pareto fronts)
-        For more information, please visit:
-        benchmarkfcns.info/doc/zdt4fcn
-    )pbdoc");
-
-    mom.def("zdt6", MultiObjective::zdt6, R"pbdoc(
-        Computes the value of the ZDT6 multi-objective benchmark function.
-        SCORES = multiobjective.zdt6(X) computes the value of the ZDT6 function
-        at point X. `multiobjective.zdt6` accepts a matrix of size M-by-N and returns
-        a matrix SCORES of size M-by-2.
-        Properties:
-        - Global Pareto front: f_2 = 1 - f_1^2
-        - Number of dimensions: n (usually 10)
-        - Recommended domain: [0, 1]^n
-        - Mapping: Tests Non-uniform mapping/density to the Pareto front
-        For more information, please visit:
-        benchmarkfcns.info/doc/zdt6fcn
+        - Recommended domain: x1 in [0, 5], x2 in [0, 3]
     )pbdoc");
 
     mom.def("dtlz1", MultiObjective::dtlz1, py::arg("x"), py::arg("num_objectives") = 3, R"pbdoc(
@@ -222,6 +154,43 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/kursafcn
     )pbdoc");
 
+    mom.def("osyczkakundu", &MultiObjective::osyczkakundu, py::arg("x"), py::arg("return_constraints") = false, R"pbdoc(
+        Computes the value of the Osyczka and Kundu multi-objective benchmark function.
+        SCORES = multiobjective.osyczkakundu(X) computes the value of the Osyczka and Kundu function
+        at point X. `multiobjective.osyczkakundu` accepts a matrix of size M-by-6 and returns
+        a matrix SCORES of size M-by-2.
+        If return_constraints is True, returns an M-by-8 matrix where the last six columns
+        contain the constraint violations (values > 0 are violations).
+        Properties:
+        - Number of dimensions: 6
+        - Recommended domain: x1, x2, x6 in [0, 10]; x3, x5 in [1, 5]; x4 in [0, 6]
+        - Constraints: 6 complex non-linear constraints
+    )pbdoc");
+
+    mom.def("poloni", &MultiObjective::poloni, R"pbdoc(
+        Computes the value of the Poloni multi-objective benchmark function.
+        SCORES = multiobjective.poloni(X) computes the value of the Poloni function
+        at point X. `multiobjective.poloni` accepts a matrix of size M-by-2 and returns
+        a matrix SCORES of size M-by-2.
+        Properties:
+        - Recommended domain: [-pi, pi]^2
+        - Pareto front: Non-convex and disconnected
+    )pbdoc");
+
+    mom.def("tanaka", &MultiObjective::tanaka, py::arg("x"), py::arg("return_constraints") = false, R"pbdoc(
+        Computes the value of the Tanaka multi-objective benchmark function.
+        SCORES = multiobjective.tanaka(X) computes the value of the Tanaka function
+        at point X. `multiobjective.tanaka` accepts a matrix of size M-by-2 and returns
+        a matrix SCORES of size M-by-2.
+        If return_constraints is True, returns an M-by-4 matrix where the last two columns
+        contain the constraint violations (values > 0 are violations).
+        Properties:
+        - Number of dimensions: 2
+        - Recommended domain: [0, Pi]^2
+        - Constraints: 2 nonlinear constraints (one "ripple" constraint)
+        - Pareto front: Disconnected
+    )pbdoc");
+
     mom.def("viennet1", MultiObjective::viennet1, R"pbdoc(
         Computes the value of the Viennet 1 multi-objective benchmark function.
         SCORES = multiobjective.viennet1(X) computes the value of the Viennet 1 function
@@ -252,52 +221,85 @@ PYBIND11_MODULE(_core, m) {
         - Pareto front: Convoluted
     )pbdoc");
 
-    mom.def("bnh", &MultiObjective::bnh, py::arg("x"), py::arg("return_constraints") = false, R"pbdoc(
-        Computes the value of the BNH (Binh and Korn) multi-objective benchmark function.
-        SCORES = multiobjective.bnh(X) computes the value of the BNH function
-        at point X. `multiobjective.bnh` accepts a matrix of size M-by-2 and returns
-        a matrix SCORES of size M-by-2.
-        If return_constraints is True, returns an M-by-4 matrix where the last two columns
-        contain the constraint violations (values > 0 are violations).
+    mom.def("zdt1", MultiObjective::zdt1, R"pbdoc(
+        Computes the value of the ZDT1 multi-objective benchmark function.
+        SCORES = multiobjective.zdt1(X) computes the value of the ZDT1 function
+        at point X. `multiobjective.zdt1` accepts a matrix of size M-by-N and returns
+        a matrix SCORES of size M-by-2 in which each row contains the function value
+        for the corresponding row of X and each column corresponds to an objective.
         Properties:
-        - Recommended domain: x1 in [0, 5], x2 in [0, 3]
+        - Global Pareto front: f_2 = 1 - \sqrt{f_1}
+        - Location of global Pareto front: x_1 ∈ [0, 1], x_i = 0 for i = 2, ..., n
+        - Number of dimensions: n (usually 30)
+        - Recommended domain: [0, 1]^n
+        - Number of local fronts: 0
+        - Number of global fronts: 1
+        - Convexity: convex (Pareto front)
+        - Modality: unimodal
+        - Separability: non-separable
+        - Differentiable: Yes
+        For more information, please visit:
+        benchmarkfcns.info/doc/zdt1fcn
     )pbdoc");
 
-    mom.def("osyczkakundu", &MultiObjective::osyczkakundu, py::arg("x"), py::arg("return_constraints") = false, R"pbdoc(
-        Computes the value of the Osyczka and Kundu multi-objective benchmark function.
-        SCORES = multiobjective.osyczkakundu(X) computes the value of the Osyczka and Kundu function
-        at point X. `multiobjective.osyczkakundu` accepts a matrix of size M-by-6 and returns
+    mom.def("zdt2", MultiObjective::zdt2, R"pbdoc(
+        Computes the value of the ZDT2 multi-objective benchmark function.
+        SCORES = multiobjective.zdt2(X) computes the value of the ZDT2 function
+        at point X. `multiobjective.zdt2` accepts a matrix of size M-by-N and returns
         a matrix SCORES of size M-by-2.
-        If return_constraints is True, returns an M-by-8 matrix where the last six columns
-        contain the constraint violations (values > 0 are violations).
         Properties:
-        - Number of dimensions: 6
-        - Recommended domain: x1, x2, x6 in [0, 10]; x3, x5 in [1, 5]; x4 in [0, 6]
-        - Constraints: 6 complex non-linear constraints
+        - Global Pareto front: f_2 = 1 - f_1^2
+        - Location of global Pareto front: x_1 ∈ [0, 1], x_i = 0 for i = 2, ..., n
+        - Number of dimensions: n (usually 30)
+        - Recommended domain: [0, 1]^n
+        - Convexity: non-convex (Pareto front)
+        - Modality: unimodal
+        For more information, please visit:
+        benchmarkfcns.info/doc/zdt2fcn
     )pbdoc");
 
-    mom.def("tanaka", &MultiObjective::tanaka, py::arg("x"), py::arg("return_constraints") = false, R"pbdoc(
-        Computes the value of the Tanaka multi-objective benchmark function.
-        SCORES = multiobjective.tanaka(X) computes the value of the Tanaka function
-        at point X. `multiobjective.tanaka` accepts a matrix of size M-by-2 and returns
+    mom.def("zdt3", MultiObjective::zdt3, R"pbdoc(
+        Computes the value of the ZDT3 multi-objective benchmark function.
+        SCORES = multiobjective.zdt3(X) computes the value of the ZDT3 function
+        at point X. `multiobjective.zdt3` accepts a matrix of size M-by-N and returns
         a matrix SCORES of size M-by-2.
-        If return_constraints is True, returns an M-by-4 matrix where the last two columns
-        contain the constraint violations (values > 0 are violations).
         Properties:
-        - Number of dimensions: 2
-        - Recommended domain: [0, Pi]^2
-        - Constraints: 2 nonlinear constraints (one "ripple" constraint)
-        - Pareto front: Disconnected
+        - Global Pareto front: f_2 = 1 - \sqrt{f_1} - f_1 \sin(10π f_1)
+        - Location of global Pareto front: x_1 ∈ [0, 1], x_i = 0 for i = 2, ..., n
+        - Number of dimensions: n (usually 30)
+        - Recommended domain: [0, 1]^n
+        - Convexity: disconnected (Pareto front)
+        - Modality: multimodal
+        For more information, please visit:
+        benchmarkfcns.info/doc/zdt3fcn
     )pbdoc");
 
-    mom.def("poloni", &MultiObjective::poloni, R"pbdoc(
-        Computes the value of the Poloni multi-objective benchmark function.
-        SCORES = multiobjective.poloni(X) computes the value of the Poloni function
-        at point X. `multiobjective.poloni` accepts a matrix of size M-by-2 and returns
+    mom.def("zdt4", MultiObjective::zdt4, R"pbdoc(
+        Computes the value of the ZDT4 multi-objective benchmark function.
+        SCORES = multiobjective.zdt4(X) computes the value of the ZDT4 function
+        at point X. `multiobjective.zdt4` accepts a matrix of size M-by-N and returns
         a matrix SCORES of size M-by-2.
         Properties:
-        - Recommended domain: [-pi, pi]^2
-        - Pareto front: Non-convex and disconnected
+        - Global Pareto front: f_2 = 1 - \sqrt{f_1}
+        - Number of dimensions: n (usually 10)
+        - Recommended domain: x_1 ∈ [0, 1], x_i ∈ [-5, 5] for i > 1
+        - Modality: Highly Multimodal (has 21^{n-1} local Pareto fronts)
+        For more information, please visit:
+        benchmarkfcns.info/doc/zdt4fcn
+    )pbdoc");
+
+    mom.def("zdt6", MultiObjective::zdt6, R"pbdoc(
+        Computes the value of the ZDT6 multi-objective benchmark function.
+        SCORES = multiobjective.zdt6(X) computes the value of the ZDT6 function
+        at point X. `multiobjective.zdt6` accepts a matrix of size M-by-N and returns
+        a matrix SCORES of size M-by-2.
+        Properties:
+        - Global Pareto front: f_2 = 1 - f_1^2
+        - Number of dimensions: n (usually 10)
+        - Recommended domain: [0, 1]^n
+        - Mapping: Tests Non-uniform mapping/density to the Pareto front
+        For more information, please visit:
+        benchmarkfcns.info/doc/zdt6fcn
     )pbdoc");
 
     auto mfm = m.def_submodule("multifidelity", "Multi-fidelity functions");
@@ -1052,6 +1054,25 @@ PYBIND11_MODULE(_core, m) {
         - Differentiable: Yes
     )pbdoc");
 
+    m.def("corana", &corana, R"pbdoc(
+        Computes the value of the Corana benchmark function.
+        SCORES = corana(X) computes the value of the Corana function at point X.
+        `corana` accepts a matrix of size M-by-N and returns a vector SCORES of
+        size M-by-1 in which each row contains the function value for the
+        corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (0, 0, ..., 0)
+        - Number of dimensions: n
+        - Recommended domain: [-500, 500]^n
+        - Number of local minima: massive
+        - Number of global minima: 1
+        - Convexity: non-convex
+        - Separability: separable
+        - Modality: multimodal
+        - Differentiability: non-differentiable (staircase landscape)
+    )pbdoc");
+
     m.def("cosinemixture", &cosinemixture, R"pbdoc(
         Computes the value of the Cosine Mixture benchmark function.
         SCORES = cosinemixture(X) computes the value of the Cosine Mixture
@@ -1070,25 +1091,6 @@ PYBIND11_MODULE(_core, m) {
         - Modality: multimodal
         - Symmetry: symmetric
         - Differentiable: Yes
-    )pbdoc");
-
-    m.def("corana", &corana, R"pbdoc(
-        Computes the value of the Corana benchmark function.
-        SCORES = corana(X) computes the value of the Corana function at point X.
-        `corana` accepts a matrix of size M-by-N and returns a vector SCORES of
-        size M-by-1 in which each row contains the function value for the
-        corresponding row of X.
-        Properties:
-        - Global minimum: 0
-        - Location of global minimum: (0, 0, ..., 0)
-        - Number of dimensions: n
-        - Recommended domain: [-500, 500]^n
-        - Number of local minima: massive
-        - Number of global minima: 1
-        - Convexity: non-convex
-        - Separability: separable
-        - Modality: multimodal
-        - Differentiability: non-differentiable (staircase landscape)
     )pbdoc");
 
     m.def("crossintray", &crossintray, R"pbdoc(
@@ -1192,20 +1194,6 @@ PYBIND11_MODULE(_core, m) {
         - Differentiable: Yes
     )pbdoc");
 
-    m.def("dejongn5", &dejongn5, R"pbdoc(
-        Computes the value of the De Jong N. 5 benchmark function (Shekel's Foxholes).
-        SCORES = dejongn5(X) computes the value of the De Jong N. 5 function at point X.
-        `dejongn5` accepts a matrix of size M-by-2 and returns a vetor SCORES of
-        size M-by-1 in which each row contains the function value for the
-        corresponding row of X.
-        Properties:
-        - Global minimum: \approx 0.998004
-        - Location of global minimum: (-32, -32)
-        - Number of dimensions: 2
-        - Recommended domain: [-65.536, 65.536]^2
-        - Modality: multimodal (25 local minima/foxholes)
-    )pbdoc");
-
     m.def("deckkersaarts", &deckkersaarts, R"pbdoc(
         Computes the value of the Deckkers-Aarts function.
         SCORES = deckkersaarts(X) computes the value of the Deckkers-Aarts
@@ -1225,6 +1213,53 @@ PYBIND11_MODULE(_core, m) {
         - Differentiable: Yes
         For more information, please visit:
         benchmarkfcns.info/doc/deckkersaartsfcn
+    )pbdoc");
+
+    m.def("dejongn5", &dejongn5, R"pbdoc(
+        Computes the value of the De Jong N. 5 benchmark function (Shekel's Foxholes).
+        SCORES = dejongn5(X) computes the value of the De Jong N. 5 function at point X.
+        `dejongn5` accepts a matrix of size M-by-2 and returns a vetor SCORES of
+        size M-by-1 in which each row contains the function value for the
+        corresponding row of X.
+        Properties:
+        - Global minimum: \approx 0.998004
+        - Location of global minimum: (-32, -32)
+        - Number of dimensions: 2
+        - Recommended domain: [-65.536, 65.536]^2
+        - Modality: multimodal (25 local minima/foxholes)
+    )pbdoc");
+
+    m.def("discus", &discus, R"pbdoc(
+        Computes the value of the Discus benchmark function.
+        SCORES = discus(X) computes the value of the Discus function at point X.
+        `discus` accepts a matrix of size M-by-N and returns a vetor SCORES of
+        size M-by-1 in which each row contains the function value for the
+        corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (0, 0, ..., 0)
+        - Number of dimensions: n
+        - Recommended domain: [-100, 100]^n
+        - Modality: unimodal
+        - Characteristic: High conditioning (one sensitive direction).
+    )pbdoc");
+
+    m.def("dixonprice", &dixonprice, R"pbdoc(
+        Computes the value of the Dixon-Price benchmark function.
+        SCORES = dixonprice(X) computes the value of the Dixon-Price function at
+        point X. `dixonprice` accepts a matrix of size M-by-N and returns a
+        vector SCORES of size M-by-1 in which each row contains the function value
+        for the corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: x_i = 2^( - (2^i - 2) / 2^i )
+        - Number of dimensions: n
+        - Recommended domain: [-10, 10]^n
+        - Number of local minima: 0 (unimodal)
+        - Number of global minima: 1
+        - Convexity: non-convex
+        - Separability: non-separable
+        - Modality: unimodal
     )pbdoc");
 
     m.def("dropwave", &dropwave, R"pbdoc(
@@ -1247,39 +1282,6 @@ PYBIND11_MODULE(_core, m) {
         - Differentiable: Yes
         For more information, please visit:
         benchmarkfcns.info/doc/dropwavefcn
-    )pbdoc");
-
-    m.def("dixonprice", &dixonprice, R"pbdoc(
-        Computes the value of the Dixon-Price benchmark function.
-        SCORES = dixonprice(X) computes the value of the Dixon-Price function at
-        point X. `dixonprice` accepts a matrix of size M-by-N and returns a
-        vector SCORES of size M-by-1 in which each row contains the function value
-        for the corresponding row of X.
-        Properties:
-        - Global minimum: 0
-        - Location of global minimum: x_i = 2^( - (2^i - 2) / 2^i )
-        - Number of dimensions: n
-        - Recommended domain: [-10, 10]^n
-        - Number of local minima: 0 (unimodal)
-        - Number of global minima: 1
-        - Convexity: non-convex
-        - Separability: non-separable
-        - Modality: unimodal
-    )pbdoc");
-
-    m.def("discus", &discus, R"pbdoc(
-        Computes the value of the Discus benchmark function.
-        SCORES = discus(X) computes the value of the Discus function at point X.
-        `discus` accepts a matrix of size M-by-N and returns a vetor SCORES of
-        size M-by-1 in which each row contains the function value for the
-        corresponding row of X.
-        Properties:
-        - Global minimum: 0
-        - Location of global minimum: (0, 0, ..., 0)
-        - Number of dimensions: n
-        - Recommended domain: [-100, 100]^n
-        - Modality: unimodal
-        - Characteristic: High conditioning (one sensitive direction).
     )pbdoc");
 
     m.def("easom", &easom, R"pbdoc(
@@ -1436,6 +1438,19 @@ PYBIND11_MODULE(_core, m) {
         - Differentiability: Infinitely differentiable (it is smooth everywhere)
         For more information, please visit:
         benchmarkfcns.info/doc/forresterfcn
+    )pbdoc");
+
+    m.def("foxholes", &foxholes, R"pbdoc(
+        Computes the value of the Foxholes benchmark function.
+        SCORES = foxholes(X) computes the value of the Foxholes function at
+        point X. `foxholes` accepts a matrix of size M-by-2 and returns a vector
+        SCORES of size M-by-1 in which each row contains the function value for
+        each row of X.
+        Properties:
+        - Global minimum: \approx 0.998
+        - Location of global minimum: (-32, -32)
+        - Number of dimensions: 2
+        - Recommended domain: [-65.536, 65.536]^2
     )pbdoc");
 
     m.def("friedman1", &friedman1, py::arg("x"), py::arg("rnd") = false, R"pbdoc(
@@ -1696,24 +1711,6 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/hartmann6fcn
     )pbdoc");
 
-    m.def("ishigami", &ishigami, py::arg("x"), py::arg("a") = 7.0, py::arg("b") = 0.1, R"pbdoc(
-        Computes the value of the Ishigami benchmark function.
-        SCORES = ishigami(X) computes the value of the Ishigami function at point X.
-        `ishigami` accepts a matrix of size M-by-3 and returns a vector SCORES of
-        size M-by-1 in which each row contains the function value for the
-        corresponding row of X.
-        SCORES = ishigami(X, a=A, b=B) specifies the 'a' and 'b' parameters.
-        Properties:
-        - Global minimum: depends on a and b
-        - Number of dimensions: 3
-        - Recommended domain: [-π, π]^3
-        - Number of local minima: many
-        - Number of global minima: 1
-        - Convexity: non-convex
-        - Separability: non-separable (strong interaction between x1 and x3)
-        - Modality: multimodal
-    )pbdoc");
-
     m.def("himmelblau", &himmelblau, R"pbdoc(
         Computes the value of the Himmelblau's benchmark function.
         SCORES = himmelblau(X) computes the value of the Himmelblau's
@@ -1780,25 +1777,22 @@ PYBIND11_MODULE(_core, m) {
         - Differentiable: Yes
     )pbdoc");
 
-    m.def("keane", &keane, R"pbdoc(
-        Computes the value of the Keane function.
-        SCORES = keane(X) computes the value of the Keane function at point X.
-        `keane` accepts a matrix of size M-by-2 and returns a vector SCORES of
+    m.def("ishigami", &ishigami, py::arg("x"), py::arg("a") = 7.0, py::arg("b") = 0.1, R"pbdoc(
+        Computes the value of the Ishigami benchmark function.
+        SCORES = ishigami(X) computes the value of the Ishigami function at point X.
+        `ishigami` accepts a matrix of size M-by-3 and returns a vector SCORES of
         size M-by-1 in which each row contains the function value for the
         corresponding row of X.
+        SCORES = ishigami(X, a=A, b=B) specifies the 'a' and 'b' parameters.
         Properties:
-        - Global minimum: -0.6736675 (for n=2)
-        - Location of global minimum: (1.393249, 0) or (0, 1.393249)
-        - Number of dimensions: n
-        - Recommended domain: [0, 10]^n
-        - Number of local minima: Numerous (Highly rugged/bumpy)
-        - Number of global minima: 2 (in the 2D version)
-        - Convexity: Non-convex
-        - Separability: Non-separable
-        - Modality: Highly Multimodal
-        - Differentiable: Yes
-        For more information, please visit:
-        benchmarkfcns.info/doc/keanefcn
+        - Global minimum: depends on a and b
+        - Number of dimensions: 3
+        - Recommended domain: [-π, π]^3
+        - Number of local minima: many
+        - Number of global minima: 1
+        - Convexity: non-convex
+        - Separability: non-separable (strong interaction between x1 and x3)
+        - Modality: multimodal
     )pbdoc");
 
     m.def("katsuura", &katsuura, R"pbdoc(
@@ -1818,6 +1812,27 @@ PYBIND11_MODULE(_core, m) {
         - Separability: non-separable
         - Modality: multimodal
         - Differentiability: non-differentiable (fractal-like)
+    )pbdoc");
+
+    m.def("keane", &keane, R"pbdoc(
+        Computes the value of the Keane function.
+        SCORES = keane(X) computes the value of the Keane function at point X.
+        `keane` accepts a matrix of size M-by-2 and returns a vector SCORES of
+        size M-by-1 in which each row contains the function value for the
+        corresponding row of X.
+        Properties:
+        - Global minimum: -0.6736675 (for n=2)
+        - Location of global minimum: (1.393249, 0) or (0, 1.393249)
+        - Number of dimensions: n
+        - Recommended domain: [0, 10]^n
+        - Number of local minima: Numerous (Highly rugged/bumpy)
+        - Number of global minima: 2 (in the 2D version)
+        - Convexity: Non-convex
+        - Separability: Non-separable
+        - Modality: Highly Multimodal
+        - Differentiable: Yes
+        For more information, please visit:
+        benchmarkfcns.info/doc/keanefcn
     )pbdoc");
 
     m.def("langermann", &langermann, R"pbdoc(
@@ -1860,27 +1875,9 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/leonfcn
     )pbdoc");
 
-    m.def("levy", &levy, R"pbdoc(
-        Computes the value of the Levy benchmark function.
-        SCORES = levy(X) computes the value of the Levy function at point X.
-        `levy` accepts a matrix of size M-by-N and returns a vector SCORES of
-        size M-by-1 in which each row contains the function value for the
-        corresponding row of X.
-        Properties:
-        - Global minimum: 0
-        - Location of global minimum: (1, 1, ..., 1)
-        - Number of dimensions: n
-        - Recommended domain: [-10, 10]^n
-        - Number of local minima: many
-        - Number of global minima: 1
-        - Convexity: non-convex
-        - Separability: non-separable
-        - Modality: multimodal
-    )pbdoc");
-
     m.def("levin13", &levin13, R"pbdoc(
         Computes the value of the Levi N. 13 benchmark function.
-        SCORES = levin13(X) computes the value of the L�vi N. 13 function at
+        SCORES = levin13(X) computes the value of the Levi N. 13 function at
         point X. `levin13` accepts a matrix of size M-by-2 and returns a
         vector SCORES of size M-by-1 in which each row contains the function value
         for the corresponding row of X.
@@ -1898,6 +1895,24 @@ PYBIND11_MODULE(_core, m) {
         - Differentiable: Yes
         For more information, please visit:
         benchmarkfcns.info/doc/levin13fcn
+    )pbdoc");
+
+    m.def("levy", &levy, R"pbdoc(
+        Computes the value of the Levy benchmark function.
+        SCORES = levy(X) computes the value of the Levy function at point X.
+        `levy` accepts a matrix of size M-by-N and returns a vector SCORES of
+        size M-by-1 in which each row contains the function value for the
+        corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (1, 1, ..., 1)
+        - Number of dimensions: n
+        - Recommended domain: [-10, 10]^n
+        - Number of local minima: many
+        - Number of global minima: 1
+        - Convexity: non-convex
+        - Separability: non-separable
+        - Modality: multimodal
     )pbdoc");
 
     m.def("lunacekbirastrigin", &lunacekbirastrigin, R"pbdoc(
@@ -2040,6 +2055,24 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/pichenyfcn
     )pbdoc");
 
+    m.def("powellsingular", &powellsingular, R"pbdoc(
+        Computes the value of the Powell Singular benchmark function.
+        SCORES = powellsingular(X) computes the value of the Powell Singular function at
+        point X. `powellsingular` accepts a matrix of size M-by-4 and returns a vector
+        SCORES of size M-by-1 in which each row contains the
+        function value for the corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (0, 0, 0, 0)
+        - Number of dimensions: 4
+        - Recommended domain: [-4, 5]^4
+        - Number of local minima: 0
+        - Number of global minima: 1
+        - Convexity: non-convex
+        - Separability: non-separable
+        - Modality: unimodal
+    )pbdoc");
+
     m.def("powellsum", &powellsum, R"pbdoc(
         Computes the value of the Powell Sum benchmark function.
         SCORES = powellsum(X) computes the value of the Powell Sum function at
@@ -2060,24 +2093,6 @@ PYBIND11_MODULE(_core, m) {
         - Differentiable: Yes
         For more information, please visit:
         benchmarkfcns.info/doc/powellsumfcn
-    )pbdoc");
-
-    m.def("powellsingular", &powellsingular, R"pbdoc(
-        Computes the value of the Powell Singular benchmark function.
-        SCORES = powellsingular(X) computes the value of the Powell Singular function at
-        point X. `powellsingular` accepts a matrix of size M-by-4 and returns a vector
-        SCORES of size M-by-1 in which each row contains the
-        function value for the corresponding row of X.
-        Properties:
-        - Global minimum: 0
-        - Location of global minimum: (0, 0, 0, 0)
-        - Number of dimensions: 4
-        - Recommended domain: [-4, 5]^4
-        - Number of local minima: 0
-        - Number of global minima: 1
-        - Convexity: non-convex
-        - Separability: non-separable
-        - Modality: unimodal
     )pbdoc");
 
     m.def("qing", &qing, R"pbdoc(
@@ -2369,6 +2384,21 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/schwefelfcn
     )pbdoc");
 
+    m.def("schwefel12", &schwefel12, R"pbdoc(
+        Computes the value of the Schwefel 1.2 (Double Sum) benchmark function.
+        SCORES = schwefel12(X) computes the value of the Schwefel 1.2 function at point X.
+        `schwefel12` accepts a matrix of size M-by-N and returns a vetor SCORES of
+        size M-by-1 in which each row contains the function value for the
+        corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (0, 0, ..., 0)
+        - Number of dimensions: n
+        - Recommended domain: [-100, 100]^n
+        - Modality: unimodal
+        - Characteristic: Also known as the Rotated Hyper-Ellipsoid function.
+    )pbdoc");
+
     m.def("schwefel220", &schwefel220, R"pbdoc(
         Computes the value of the Schwefel 2.20 function.
         SCORES = schwefel220(X) computes the value of the Schwefel 2.20
@@ -2455,19 +2485,43 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/schwefel223fcn
     )pbdoc");
 
-    m.def("schwefel12", &schwefel12, R"pbdoc(
-        Computes the value of the Schwefel 1.2 (Double Sum) benchmark function.
-        SCORES = schwefel12(X) computes the value of the Schwefel 1.2 function at point X.
-        `schwefel12` accepts a matrix of size M-by-N and returns a vetor SCORES of
-        size M-by-1 in which each row contains the function value for the
-        corresponding row of X.
+    m.def("shekel10", &shekel10, R"pbdoc(
+        Computes the value of the Shekel-10 benchmark function.
+        SCORES = shekel10(X) computes the value of the Shekel-10 function at
+        point X. `shekel10` accepts a matrix of size M-by-4 and returns a vector
+        SCORES of size M-by-1 in which each row contains the function value for
+        each row of X.
         Properties:
-        - Global minimum: 0
-        - Location of global minimum: (0, 0, ..., 0)
-        - Number of dimensions: n
-        - Recommended domain: [-100, 100]^n
-        - Modality: unimodal
-        - Characteristic: Also known as the Rotated Hyper-Ellipsoid function.
+        - Global minimum: \approx -10.5364
+        - Location of global minimum: (4, 4, 4, 4)
+        - Number of dimensions: 4
+        - Recommended domain: [0, 10]^4
+    )pbdoc");
+
+    m.def("shekel5", &shekel5, R"pbdoc(
+        Computes the value of the Shekel-5 benchmark function.
+        SCORES = shekel5(X) computes the value of the Shekel-5 function at
+        point X. `shekel5` accepts a matrix of size M-by-4 and returns a vector
+        SCORES of size M-by-1 in which each row contains the function value for
+        each row of X.
+        Properties:
+        - Global minimum: \approx -10.1532
+        - Location of global minimum: (4, 4, 4, 4)
+        - Number of dimensions: 4
+        - Recommended domain: [0, 10]^4
+    )pbdoc");
+
+    m.def("shekel7", &shekel7, R"pbdoc(
+        Computes the value of the Shekel-7 benchmark function.
+        SCORES = shekel7(X) computes the value of the Shekel-7 function at
+        point X. `shekel7` accepts a matrix of size M-by-4 and returns a vector
+        SCORES of size M-by-1 in which each row contains the function value for
+        each row of X.
+        Properties:
+        - Global minimum: \approx -10.4029
+        - Location of global minimum: (4, 4, 4, 4)
+        - Number of dimensions: 4
+        - Recommended domain: [0, 10]^4
     )pbdoc");
 
     m.def("shubert", &shubert, R"pbdoc(
@@ -2532,6 +2586,28 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/shubert4fcn
     )pbdoc");
 
+    m.def("sixhumpcamel", &sixhumpcamel, R"pbdoc(
+        Computes the value of the Six-hump camel benchmark function.
+        SCORES = sixhumpcamel(X) computes the value of the Six-hump camel
+        function at point X. `sixhumpcamel` accepts a matrix of size M-by-2
+        and returns a vector SCORES of size M-by-1 in which each row contains the
+        function value for the corresponding row of X.
+        Properties:
+        - Global minimum: -1.0316
+        - Location of global minimum: (0.0898, -0.7126), (-0.0898, 0.7126)
+        - Number of dimensions: 2
+        - Recommended domain: x_1 \in [-3, 3], x_2 \in [-2, 2]
+        - Number of local minima: 4 (excluding the 2 global minima)
+        - Number of global minima: 2
+        - Convexity: non-convex
+        - Separability: non-separable
+        - Modality: multimodal
+        - Symmetry: symmetric (about the origin)
+        - Differentiable: Yes
+        For more information, please visit:
+        benchmarkfcns.info/doc/sixhumpcamelfcn
+    )pbdoc");
+
     m.def("sphere", &sphere, R"pbdoc(
         Computes the value of Sphere benchmark function.
         SCORES = sphere(X) computes the value of the Sphere function at
@@ -2551,6 +2627,21 @@ PYBIND11_MODULE(_core, m) {
         - Symmetry: symmetric
         For more information, please visit:
         benchmarkfcns.info/doc/spherefcn
+    )pbdoc");
+
+    m.def("step", &step, R"pbdoc(
+        Computes the value of the Step benchmark function (De Jong N. 3).
+        SCORES = step(X) computes the value of the Step function at point X.
+        `step` accepts a matrix of size M-by-N and returns a vector SCORES of
+        size M-by-1 in which each row contains the function value for the
+        corresponding row of X.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: depends on domain (typically [0, 1]^n)
+        - Number of dimensions: n
+        - Recommended domain: [-5.12, 5.12]^n
+        - Modality: unimodal (with plateaus)
+        - Characteristic: zero gradient almost everywhere.
     )pbdoc");
 
     m.def("styblinskitank", &styblinskitank, R"pbdoc(
@@ -2573,21 +2664,6 @@ PYBIND11_MODULE(_core, m) {
         - Differentiable: Yes
         For more information, please visit:
         benchmarkfcns.info/doc/styblinskitankfcn
-    )pbdoc");
-
-    m.def("step", &step, R"pbdoc(
-        Computes the value of the Step benchmark function (De Jong N. 3).
-        SCORES = step(X) computes the value of the Step function at point X.
-        `step` accepts a matrix of size M-by-N and returns a vector SCORES of
-        size M-by-1 in which each row contains the function value for the
-        corresponding row of X.
-        Properties:
-        - Global minimum: 0
-        - Location of global minimum: depends on domain (typically [0, 1]^n)
-        - Number of dimensions: n
-        - Recommended domain: [-5.12, 5.12]^n
-        - Modality: unimodal (with plateaus)
-        - Characteristic: zero gradient almost everywhere.
     )pbdoc");
 
     m.def("sumsquares", &sumsquares, R"pbdoc(
@@ -2632,28 +2708,6 @@ PYBIND11_MODULE(_core, m) {
         - Differentiable: Yes
         For more information, please visit:
         benchmarkfcns.info/doc/threehumpcamelfcn
-    )pbdoc");
-
-    m.def("sixhumpcamel", &sixhumpcamel, R"pbdoc(
-        Computes the value of the Six-hump camel benchmark function.
-        SCORES = sixhumpcamel(X) computes the value of the Six-hump camel
-        function at point X. `sixhumpcamel` accepts a matrix of size M-by-2
-        and returns a vector SCORES of size M-by-1 in which each row contains the
-        function value for the corresponding row of X.
-        Properties:
-        - Global minimum: -1.0316
-        - Location of global minimum: (0.0898, -0.7126), (-0.0898, 0.7126)
-        - Number of dimensions: 2
-        - Recommended domain: x_1 \in [-3, 3], x_2 \in [-2, 2]
-        - Number of local minima: 4 (excluding the 2 global minima)
-        - Number of global minima: 2
-        - Convexity: non-convex
-        - Separability: non-separable
-        - Modality: multimodal
-        - Symmetry: symmetric (about the origin)
-        - Differentiable: Yes
-        For more information, please visit:
-        benchmarkfcns.info/doc/sixhumpcamelfcn
     )pbdoc");
 
     m.def("treccani", &treccani, R"pbdoc(
@@ -2780,21 +2834,6 @@ PYBIND11_MODULE(_core, m) {
     - Differentiable: Yes
     )pbdoc");
 
-    m.def("whitley", &whitley, R"pbdoc(
-    Computes the value of the Whitley benchmark function.
-    SCORES = whitley(X) computes the value of the Whitley function at point X.
-    `whitley` accepts a matrix of size M-by-N and returns a vector SCORES of
-    size M-by-1 in which each row contains the function value for the
-    corresponding row of X.
-    Properties:
-    - Global minimum: 0
-    - Location of global minimum: (1, 1, ..., 1)
-    - Number of dimensions: n
-    - Recommended domain: [-10.24, 10.24]^n
-    - Modality: multimodal
-    - Separability: non-separable
-    )pbdoc");
-
     m.def("weierstrass", &weierstrass, py::arg("X"), py::arg("a") = 0.5, py::arg("b") = 3.0, py::arg("kmax") = 20, R"pbdoc(
     Computes the value of the Weierstrass benchmark function.
         Properties:
@@ -2829,6 +2868,21 @@ PYBIND11_MODULE(_core, m) {
             scores: A column vector where each element is the function value at the
                 corresponding row of x.
 
+    )pbdoc");
+
+    m.def("whitley", &whitley, R"pbdoc(
+    Computes the value of the Whitley benchmark function.
+    SCORES = whitley(X) computes the value of the Whitley function at point X.
+    `whitley` accepts a matrix of size M-by-N and returns a vector SCORES of
+    size M-by-1 in which each row contains the function value for the
+    corresponding row of X.
+    Properties:
+    - Global minimum: 0
+    - Location of global minimum: (1, 1, ..., 1)
+    - Number of dimensions: n
+    - Recommended domain: [-10.24, 10.24]^n
+    - Modality: multimodal
+    - Separability: non-separable
     )pbdoc");
 
     m.def("wolfe", &wolfe, R"pbdoc(
@@ -3056,59 +3110,6 @@ PYBIND11_MODULE(_core, m) {
         - Modality: multimodal
         - Symmetry: non-symmetric
         - Differentiable: Yes
-    )pbdoc");
-
-
-    m.def("shekel5", &shekel5, R"pbdoc(
-        Computes the value of the Shekel-5 benchmark function.
-        SCORES = shekel5(X) computes the value of the Shekel-5 function at
-        point X. `shekel5` accepts a matrix of size M-by-4 and returns a vector
-        SCORES of size M-by-1 in which each row contains the function value for
-        each row of X.
-        Properties:
-        - Global minimum: \approx -10.1532
-        - Location of global minimum: (4, 4, 4, 4)
-        - Number of dimensions: 4
-        - Recommended domain: [0, 10]^4
-    )pbdoc");
-
-    m.def("shekel7", &shekel7, R"pbdoc(
-        Computes the value of the Shekel-7 benchmark function.
-        SCORES = shekel7(X) computes the value of the Shekel-7 function at
-        point X. `shekel7` accepts a matrix of size M-by-4 and returns a vector
-        SCORES of size M-by-1 in which each row contains the function value for
-        each row of X.
-        Properties:
-        - Global minimum: \approx -10.4029
-        - Location of global minimum: (4, 4, 4, 4)
-        - Number of dimensions: 4
-        - Recommended domain: [0, 10]^4
-    )pbdoc");
-
-    m.def("shekel10", &shekel10, R"pbdoc(
-        Computes the value of the Shekel-10 benchmark function.
-        SCORES = shekel10(X) computes the value of the Shekel-10 function at
-        point X. `shekel10` accepts a matrix of size M-by-4 and returns a vector
-        SCORES of size M-by-1 in which each row contains the function value for
-        each row of X.
-        Properties:
-        - Global minimum: \approx -10.5364
-        - Location of global minimum: (4, 4, 4, 4)
-        - Number of dimensions: 4
-        - Recommended domain: [0, 10]^4
-    )pbdoc");
-
-    m.def("foxholes", &foxholes, R"pbdoc(
-        Computes the value of the Foxholes benchmark function.
-        SCORES = foxholes(X) computes the value of the Foxholes function at
-        point X. `foxholes` accepts a matrix of size M-by-2 and returns a vector
-        SCORES of size M-by-1 in which each row contains the function value for
-        each row of X.
-        Properties:
-        - Global minimum: \approx 0.998
-        - Location of global minimum: (-32, -32)
-        - Number of dimensions: 2
-        - Recommended domain: [-65.536, 65.536]^2
     )pbdoc");
 
     m.def("get_function_ptr", &get_function_ptr, py::arg("name"), "Retrieves a benchmark function pointer by name.");

@@ -4,14 +4,6 @@ namespace BenchmarkFcns {
 
     using namespace Eigen;
 
-    VectorXd sphere(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& inputMatrix) {
-        MatrixXd squaredValues = inputMatrix.array().square();
-
-        VectorXd scores = squaredValues.rowwise().sum();
-
-        return scores;
-    }
-
     VectorXd ackley(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
         constexpr double a = 20;
@@ -86,7 +78,6 @@ namespace BenchmarkFcns {
         VectorXd scores = (x.array().sqrt() * sin(x.array())).rowwise().prod();
         return scores;
     }
-
 
     VectorXd amgm(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const double ninv = 1.0 / x.cols();
@@ -451,12 +442,6 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    VectorXd cosinemixture(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
-        constexpr double FIVE_PI = 5 * M_PI;
-        VectorXd scores = -0.1 * (x.array() * FIVE_PI).cos().rowwise().sum() - x.array().square().rowwise().sum();
-        return scores;
-    }
-
     VectorXd corana(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
         const int m = x.rows();
@@ -482,6 +467,12 @@ namespace BenchmarkFcns {
 
         const MatrixXd result = mask.select(val1, val2);
         return result.rowwise().sum();
+    }
+
+    VectorXd cosinemixture(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        constexpr double FIVE_PI = 5 * M_PI;
+        VectorXd scores = -0.1 * (x.array() * FIVE_PI).cos().rowwise().sum() - x.array().square().rowwise().sum();
+        return scores;
     }
 
     VectorXd crossintray(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
@@ -533,6 +524,18 @@ namespace BenchmarkFcns {
         return scores;
     }
 
+    VectorXd deckkersaarts(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        if (n != 2)
+            throw std::invalid_argument("The Deckkers-Aarts function is only defined on a 2D space.");
+
+        const auto X = x.col(0).array();
+        const auto Y = x.col(1).array();
+
+        VectorXd scores = (100000 * X.square()) + Y.square() - (X.square() + Y.square()).array().square() + pow(10, -5) * (X.square() + Y.square()).array().pow(4);
+        return scores;
+    }
+
     VectorXd dejongn5(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
         if (n != 2)
@@ -558,30 +561,14 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    VectorXd deckkersaarts(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd discus(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
-        if (n != 2)
-            throw std::invalid_argument("The Deckkers-Aarts function is only defined on a 2D space.");
+        const int m = x.rows();
 
-        const auto X = x.col(0).array();
-        const auto Y = x.col(1).array();
-
-        VectorXd scores = (100000 * X.square()) + Y.square() - (X.square() + Y.square()).array().square() + pow(10, -5) * (X.square() + Y.square()).array().pow(4);
-        return scores;
-    }
-
-    VectorXd dropwave(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
-        const int n = x.cols();
-        if (n != 2)
-            throw std::invalid_argument("The Drop Wave function is only defined on a 2D space.");
-
-        const auto X_squared = x.col(0).array().square();
-        const auto Y_squared = x.col(1).array().square();
-
-        const VectorXd numeratorcomp = 1 + cos(12 * (X_squared + Y_squared).sqrt());
-        const VectorXd denumeratorcom = (0.5 * (X_squared + Y_squared)) + 2;
-        VectorXd scores = -numeratorcomp.array() / denumeratorcom.array();
-
+        VectorXd scores = 1e6 * x.col(0).array().square();
+        if (n > 1) {
+            scores += x.block(0, 1, m, n - 1).array().square().rowwise().sum().matrix();
+        }
         return scores;
     }
 
@@ -603,14 +590,18 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    VectorXd discus(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd dropwave(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
-        const int m = x.rows();
+        if (n != 2)
+            throw std::invalid_argument("The Drop Wave function is only defined on a 2D space.");
 
-        VectorXd scores = 1e6 * x.col(0).array().square();
-        if (n > 1) {
-            scores += x.block(0, 1, m, n - 1).array().square().rowwise().sum().matrix();
-        }
+        const auto X_squared = x.col(0).array().square();
+        const auto Y_squared = x.col(1).array().square();
+
+        const VectorXd numeratorcomp = 1 + cos(12 * (X_squared + Y_squared).sqrt());
+        const VectorXd denumeratorcom = (0.5 * (X_squared + Y_squared)) + 2;
+        VectorXd scores = -numeratorcomp.array() / denumeratorcom.array();
+
         return scores;
     }
 
@@ -627,6 +618,19 @@ namespace BenchmarkFcns {
         return scores;
     }
 
+    VectorXd eggcrate(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        if (n != 2)
+            throw std::invalid_argument("The Egg Crate function is only defined on a 2D space.");
+
+        const auto X = x.col(0).array();
+        const auto Y = x.col(1).array();
+
+        VectorXd scores = X.square() + Y.square() + (25 * (sin(X).square() + sin(Y).square()));
+
+        return scores;
+    }
+
     VectorXd eggholder(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
         if (n != 2)
@@ -639,19 +643,6 @@ namespace BenchmarkFcns {
         const VectorXd sin2component = X * sin(sqrt(X - Y + 47));
 
         VectorXd scores =  sin1component - sin2component;
-
-        return scores;
-    }
-
-    VectorXd eggcrate(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
-        const int n = x.cols();
-        if (n != 2)
-            throw std::invalid_argument("The Egg Crate function is only defined on a 2D space.");
-
-        const auto X = x.col(0).array();
-        const auto Y = x.col(1).array();
-
-        VectorXd scores = X.square() + Y.square() + (25 * (sin(X).square() + sin(Y).square()));
 
         return scores;
     }
@@ -706,6 +697,43 @@ namespace BenchmarkFcns {
         return scores;
     }
 
+    VectorXd forrester(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x)
+    {
+        const int n = x.cols();
+        if (n != 1)
+            throw std::invalid_argument("The Forrester function is only defined on a 1D space.");
+
+        const auto X = x.col(0).array();
+
+        VectorXd scores = (6 * X - 2).square() * sin(12 * X - 4);
+
+        return scores;
+    }
+
+    VectorXd foxholes(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        if (n != 2) throw std::invalid_argument("The Foxholes function is only defined on a 2D space.");
+
+        static constexpr double a_data[50] = {
+            -32.0, -32.0, -16.0, -32.0,  0.0, -32.0,  16.0, -32.0,  32.0, -32.0,
+            -32.0, -16.0, -16.0, -16.0,  0.0, -16.0,  16.0, -16.0,  32.0, -16.0,
+            -32.0,   0.0, -16.0,   0.0,  0.0,   0.0,  16.0,   0.0,  32.0,   0.0,
+            -32.0,  16.0, -16.0,  16.0,  0.0,  16.0,  16.0,  16.0,  32.0,  16.0,
+            -32.0,  32.0, -16.0,  32.0,  0.0,  32.0,  16.0,  32.0,  32.0,  32.0
+        };
+
+        const Map<const Matrix<double, 25, 2, RowMajor>> a(a_data);
+
+        VectorXd scores = VectorXd::Zero(x.rows());
+        for(int i = 0; i < 25; ++i) {
+            const VectorXd diff1_6 = (x.col(0).array() - a(i, 0)).pow(6);
+            const VectorXd diff2_6 = (x.col(1).array() - a(i, 1)).pow(6);
+            scores.array() += 1.0 / ((i + 1.0) + diff1_6.array() + diff2_6.array());
+        }
+        scores.array() = 1.0 / (0.002 + scores.array());
+        return scores;
+    }
+
     VectorXd friedman1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, bool rnd) {
         const int n = x.cols();
         if (n != 10)
@@ -729,19 +757,6 @@ namespace BenchmarkFcns {
         const VectorXd term4 = 5 * x5;
 
         const VectorXd scores = term1 + term2 + term3 + term4 + epsilon;
-
-        return scores;
-    }
-
-    VectorXd forrester(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x)
-    {
-        const int n = x.cols();
-        if (n != 1)
-            throw std::invalid_argument("The Forrester function is only defined on a 1D space.");
-
-        const auto X = x.col(0).array();
-
-        VectorXd scores = (6 * X - 2).square() * sin(12 * X - 4);
 
         return scores;
     }
@@ -811,7 +826,6 @@ namespace BenchmarkFcns {
 
         return scores;
     }
-
 
     VectorXd giunta(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         constexpr double A = 16.0 / 15.0;
@@ -948,19 +962,6 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    VectorXd ishigami(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, double a, double b) {
-        const int n = x.cols();
-        if (n != 3)
-            throw std::invalid_argument("The Ishigami function is only defined on a 3D space.");
-
-        const auto x1 = x.col(0).array();
-        const auto x2 = x.col(1).array();
-        const auto x3 = x.col(2).array();
-
-        VectorXd scores = x1.sin() + a * x2.sin().square() + b * x3.pow(4) * x1.sin();
-        return scores;
-    }
-
     VectorXd himmelblau(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
         if (n != 2)
@@ -986,7 +987,6 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-
     VectorXd hosaki(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         if (x.cols() != 2)
             throw std::invalid_argument("Hosaki function input must have 2 columns.");
@@ -1006,17 +1006,16 @@ namespace BenchmarkFcns {
         return scores_array.matrix();
     }
 
-    VectorXd keane(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd ishigami(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, double a, double b) {
         const int n = x.cols();
-        if (n != 2)
-            throw std::invalid_argument("The Keane's function is only defined on a 2D space.");
+        if (n != 3)
+            throw std::invalid_argument("The Ishigami function is only defined on a 3D space.");
 
-        const auto X = x.col(0).array();
-        const auto Y = x.col(1).array();
-        const VectorXd numeratorcomp = (sin(X - Y).square()) * (sin(X + Y).square());
-        const VectorXd denominatorcomp = (X.square() + Y.square()).sqrt();
-        VectorXd scores = - numeratorcomp.array() / denominatorcomp.array();
+        const auto x1 = x.col(0).array();
+        const auto x2 = x.col(1).array();
+        const auto x3 = x.col(2).array();
 
+        VectorXd scores = x1.sin() + a * x2.sin().square() + b * x3.pow(4) * x1.sin();
         return scores;
     }
 
@@ -1038,6 +1037,20 @@ namespace BenchmarkFcns {
         const MatrixXd prod_terms = 1.0 + (inner_sum.array().rowwise() * i_vec.array());
 
         VectorXd scores = n_inv_sq * (prod_terms.array().pow(exp_val).rowwise().prod() - 1.0);
+        return scores;
+    }
+
+    VectorXd keane(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        if (n != 2)
+            throw std::invalid_argument("The Keane's function is only defined on a 2D space.");
+
+        const auto X = x.col(0).array();
+        const auto Y = x.col(1).array();
+        const VectorXd numeratorcomp = (sin(X - Y).square()) * (sin(X + Y).square());
+        const VectorXd denominatorcomp = (X.square() + Y.square()).sqrt();
+        VectorXd scores = - numeratorcomp.array() / denominatorcomp.array();
+
         return scores;
     }
 
@@ -1076,6 +1089,19 @@ namespace BenchmarkFcns {
         return scores;
     }
 
+    VectorXd levin13(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        if (n != 2)
+            throw std::invalid_argument("The Levi's function is only defined on a 2D space.");
+
+        const auto X = x.col(0).array();
+        const auto Y = x.col(1).array();
+        VectorXd scores = (sin(3 * M_PI * X).square()) +
+                        ((X - 1).square()) * (1 + sin(3 * M_PI * Y).square()) +
+                        ((Y - 1).square()) * (1 + sin(2 * M_PI * Y).square());
+        return scores;
+    }
+
     VectorXd levy(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
         const int m = x.rows();
@@ -1095,19 +1121,6 @@ namespace BenchmarkFcns {
             scores += term2;
         }
 
-        return scores;
-    }
-
-    VectorXd levin13(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
-        const int n = x.cols();
-        if (n != 2)
-            throw std::invalid_argument("The Levi's function is only defined on a 2D space.");
-
-        const auto X = x.col(0).array();
-        const auto Y = x.col(1).array();
-        VectorXd scores = (sin(3 * M_PI * X).square()) +
-                        ((X - 1).square()) * (1 + sin(3 * M_PI * Y).square()) +
-                        ((Y - 1).square()) * (1 + sin(2 * M_PI * Y).square());
         return scores;
     }
 
@@ -1209,15 +1222,6 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    VectorXd powellsum(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
-        const int n = x.cols();
-        const MatrixXd absx = x.array().abs(); // WARNING: absx is not used. This is a bug.
-        const VectorXd powers = RowVectorXd::LinSpaced(n, 2, n + 1);
-        // Warning: the replicate method may lead to a large memory overhead for large matrices.
-        auto scores = absx.array().pow(powers.transpose().array().replicate(x.rows(), 1)).rowwise().sum();
-        return scores;
-    }
-
     VectorXd powellsingular(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
         if (n != 4)
@@ -1232,6 +1236,15 @@ namespace BenchmarkFcns {
                           5.0 * (x3 - x4).square() +
                           (x2 - 2.0 * x3).pow(4) +
                           10.0 * (x1 - x4).pow(4);
+        return scores;
+    }
+
+    VectorXd powellsum(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        const MatrixXd absx = x.array().abs(); // WARNING: absx is not used. This is a bug.
+        const VectorXd powers = RowVectorXd::LinSpaced(n, 2, n + 1);
+        // Warning: the replicate method may lead to a large memory overhead for large matrices.
+        auto scores = absx.array().pow(powers.transpose().array().replicate(x.rows(), 1)).rowwise().sum();
         return scores;
     }
 
@@ -1395,6 +1408,20 @@ namespace BenchmarkFcns {
         return 418.9829 * n - (x.array() * (x.array().abs().sqrt()).sin()).rowwise().sum();
     }
 
+    VectorXd schwefel12(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        const int m = x.rows();
+
+        // Cumulative sums for each row
+        MatrixXd cumsums = MatrixXd::Zero(m, n);
+        cumsums.col(0) = x.col(0);
+        for (int i = 1; i < n; ++i) {
+            cumsums.col(i) = cumsums.col(i - 1) + x.col(i);
+        }
+
+        return cumsums.array().square().rowwise().sum();
+    }
+
     VectorXd schwefel220(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         return x.array().abs().rowwise().sum();
     }
@@ -1412,19 +1439,36 @@ namespace BenchmarkFcns {
         return x.array().pow(10).rowwise().sum();
     }
 
-    VectorXd schwefel12(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    VectorXd shekel_base(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, int m) {
         const int n = x.cols();
-        const int m = x.rows();
+        if (n != 4) throw std::invalid_argument("The Shekel function is only defined on a 4D space.");
 
-        // Cumulative sums for each row
-        MatrixXd cumsums = MatrixXd::Zero(m, n);
-        cumsums.col(0) = x.col(0);
-        for (int i = 1; i < n; ++i) {
-            cumsums.col(i) = cumsums.col(i - 1) + x.col(i);
+        static constexpr double C_data[40] = {
+            4.0, 4.0, 4.0, 4.0,  1.0, 1.0, 1.0, 1.0,  8.0, 8.0, 8.0, 8.0,
+            6.0, 6.0, 6.0, 6.0,  3.0, 7.0, 3.0, 7.0,  2.0, 9.0, 2.0, 9.0,
+            5.0, 5.0, 3.0, 3.0,  8.0, 1.0, 8.0, 1.0,  6.0, 2.0, 6.0, 2.0,
+            7.0, 3.6, 7.0, 3.6
+        };
+        static constexpr double beta_data[10] = {
+            0.1, 0.2, 0.2, 0.4, 0.4, 0.6, 0.3, 0.7, 0.5, 0.5
+        };
+
+        const Map<const Matrix<double, 10, 4, RowMajor>> C(C_data);
+        const Map<const Matrix<double, 10, 1>> beta(beta_data);
+
+        VectorXd scores = VectorXd::Zero(x.rows());
+        for (int i = 0; i < m; ++i) {
+            const VectorXd diff_sq_sum = (x.rowwise() - C.row(i)).array().square().rowwise().sum();
+            scores.array() -= 1.0 / (diff_sq_sum.array() + beta(i));
         }
-
-        return cumsums.array().square().rowwise().sum();
+        return scores;
     }
+
+    VectorXd shekel10(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) { return shekel_base(x, 10); }
+
+    VectorXd shekel5(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) { return shekel_base(x, 5); }
+
+    VectorXd shekel7(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) { return shekel_base(x, 7); }
 
     VectorXd shubert(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
@@ -1462,6 +1506,29 @@ namespace BenchmarkFcns {
         return col_sums.rowwise().sum();
     }
 
+    VectorXd sixhumpcamel(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        if (n != 2)
+            throw std::invalid_argument("The Six-hump camel function is only defined on a 2D space.");
+
+        const auto X = x.col(0).array();
+        const auto Y = x.col(1).array();
+
+        VectorXd scores = (4 - 2.1 * X.square() + (X.pow(4)) / 3) * X.square() + X * Y + (-4 + 4 * Y.square()) * Y.square();
+        return scores;
+    }
+
+    VectorXd sphere(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& inputMatrix) {
+        MatrixXd squaredValues = inputMatrix.array().square();
+
+        VectorXd scores = squaredValues.rowwise().sum();
+
+        return scores;
+    }
+
+    VectorXd step(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        return (x.array() + 0.5).floor().square().rowwise().sum();
+    }
 
     VectorXd styblinskitank(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const auto x_array = x.array();
@@ -1471,10 +1538,6 @@ namespace BenchmarkFcns {
         VectorXd scores = (term1 - term2 + term3).rowwise().sum();
         scores *= 0.5;
         return scores;
-    }
-
-    VectorXd step(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
-        return (x.array() + 0.5).floor().square().rowwise().sum();
     }
 
     VectorXd sumsquares(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
@@ -1498,18 +1561,6 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    VectorXd sixhumpcamel(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
-        const int n = x.cols();
-        if (n != 2)
-            throw std::invalid_argument("The Six-hump camel function is only defined on a 2D space.");
-
-        const auto X = x.col(0).array();
-        const auto Y = x.col(1).array();
-
-        VectorXd scores = (4 - 2.1 * X.square() + (X.pow(4)) / 3) * X.square() + X * Y + (-4 + 4 * Y.square()) * Y.square();
-        return scores;
-    }
-
     VectorXd treccani(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
         if (n != 2)
@@ -1530,36 +1581,6 @@ namespace BenchmarkFcns {
     VectorXd vincent(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         VectorXd scores = -(10 * x.array().log()).array().sin().rowwise().sum();
         return scores;
-    }
-
-    VectorXd xinsheyangn1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
-        const int n = x.cols();
-        const int m = x.rows();
-        const auto absx = x.array().abs();
-        const VectorXd exponents = RowVectorXd::LinSpaced(n, 1, n);
-        // TODO: All functions that use rand should be rewritten to matrix form.
-        const MatrixXd rand_values = (MatrixXd::Random(m, n).array() + 1) / 2.0;
-        return (rand_values.array() * absx.array().pow(exponents.transpose().array().replicate(m, 1))).rowwise().sum();
-    }
-
-    VectorXd xinsheyangn2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
-        const auto absx = x.array().abs();
-        return absx.rowwise().sum() * (-sin(x.array().square())).rowwise().sum().exp();
-    }
-
-    VectorXd xinsheyangn3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, double beta, double m) {
-        const auto x_div_beta = x.array() / beta;
-        const VectorXd sum_x_div_beta_2m = (-x_div_beta.array().pow(2 * m)).rowwise().sum().exp();
-        const VectorXd sum_x_2 = (-x.array().square()).rowwise().sum().exp();
-        const VectorXd prod_cos_x_2 = (x.array().cos().square()).rowwise().prod();
-        return sum_x_div_beta_2m.array() - (2 * sum_x_2.array() * prod_cos_x_2.array());
-    }
-
-    VectorXd xinsheyangn4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
-        const VectorXd sum_sin_x_2 = (x.array().sin().square()).rowwise().sum();
-        const VectorXd exp_sum_x_2 = (-x.array().square()).rowwise().sum().exp();
-        const VectorXd sum_sin_sqrt_abs_x_2 = (-sin(x.array().abs().sqrt()).square()).rowwise().sum().exp();
-        return (sum_sin_x_2.array() - exp_sum_x_2.array()) * sum_sin_sqrt_abs_x_2.array();
     }
 
     VectorXd watson(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
@@ -1613,26 +1634,6 @@ namespace BenchmarkFcns {
         return scores;
     }
 
-    VectorXd whitley(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
-        const int n = x.cols();
-        const int m = x.rows();
-        VectorXd scores = VectorXd::Zero(m);
-
-        for (int i = 0; i < n; ++i) {
-            const auto xi = x.col(i).array();
-            for (int j = 0; j < n; ++j) {
-                const auto xj = x.col(j).array();
-
-                // temp = 100 * (xi^2 - xj)^2 + (1 - xj)^2
-                const VectorXd temp = 100.0 * (xi.square() - xj).square() + (1.0 - xj).square();
-
-                // term = (temp^2 / 4000) - cos(temp) + 1
-                scores += ((temp.array().square() / 4000.0) - temp.array().cos() + 1.0).matrix();
-            }
-        }
-        return scores;
-    }
-
     VectorXd weierstrass(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& X, double a, double b, int kmax) {
         const long num_rows = X.rows();
         const long n = X.cols();
@@ -1656,6 +1657,26 @@ namespace BenchmarkFcns {
         return sum_over_n.array() - second_sum_term;
     }
 
+    VectorXd whitley(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        const int m = x.rows();
+        VectorXd scores = VectorXd::Zero(m);
+
+        for (int i = 0; i < n; ++i) {
+            const auto xi = x.col(i).array();
+            for (int j = 0; j < n; ++j) {
+                const auto xj = x.col(j).array();
+
+                // temp = 100 * (xi^2 - xj)^2 + (1 - xj)^2
+                const VectorXd temp = 100.0 * (xi.square() - xj).square() + (1.0 - xj).square();
+
+                // term = (temp^2 / 4000) - cos(temp) + 1
+                scores += ((temp.array().square() / 4000.0) - temp.array().cos() + 1.0).matrix();
+            }
+        }
+        return scores;
+    }
+
     VectorXd wolfe(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
         if (n != 3)
@@ -1667,6 +1688,36 @@ namespace BenchmarkFcns {
         constexpr double A = 4.0 / 3.0;
 
         return (A) * (((X.square() + Y.square() - X * Y).pow(0.75))) + Z;
+    }
+
+    VectorXd xinsheyangn1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        const int m = x.rows();
+        const auto absx = x.array().abs();
+        const VectorXd exponents = RowVectorXd::LinSpaced(n, 1, n);
+        // TODO: All functions that use rand should be rewritten to matrix form.
+        const MatrixXd rand_values = (MatrixXd::Random(m, n).array() + 1) / 2.0;
+        return (rand_values.array() * absx.array().pow(exponents.transpose().array().replicate(m, 1))).rowwise().sum();
+    }
+
+    VectorXd xinsheyangn2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const auto absx = x.array().abs();
+        return absx.rowwise().sum() * (-sin(x.array().square())).rowwise().sum().exp();
+    }
+
+    VectorXd xinsheyangn3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, double beta, double m) {
+        const auto x_div_beta = x.array() / beta;
+        const VectorXd sum_x_div_beta_2m = (-x_div_beta.array().pow(2 * m)).rowwise().sum().exp();
+        const VectorXd sum_x_2 = (-x.array().square()).rowwise().sum().exp();
+        const VectorXd prod_cos_x_2 = (x.array().cos().square()).rowwise().prod();
+        return sum_x_div_beta_2m.array() - (2 * sum_x_2.array() * prod_cos_x_2.array());
+    }
+
+    VectorXd xinsheyangn4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const VectorXd sum_sin_x_2 = (x.array().sin().square()).rowwise().sum();
+        const VectorXd exp_sum_x_2 = (-x.array().square()).rowwise().sum().exp();
+        const VectorXd sum_sin_sqrt_abs_x_2 = (-sin(x.array().abs().sqrt()).square()).rowwise().sum().exp();
+        return (sum_sin_x_2.array() - exp_sum_x_2.array()) * sum_sin_sqrt_abs_x_2.array();
     }
 
     VectorXd zakharov(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
@@ -1731,61 +1782,6 @@ namespace BenchmarkFcns {
         const auto Y = x.col(1).array();
 
         VectorXd scores = 0.25 * X.pow(4) - 0.5 * X.square() + 0.1 * X + 0.5 * Y.square();
-        return scores;
-    }
-
-    VectorXd shekel_base(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, int m) {
-        const int n = x.cols();
-        if (n != 4) throw std::invalid_argument("The Shekel function is only defined on a 4D space.");
-
-        static constexpr double C_data[40] = {
-            4.0, 4.0, 4.0, 4.0,  1.0, 1.0, 1.0, 1.0,  8.0, 8.0, 8.0, 8.0,
-            6.0, 6.0, 6.0, 6.0,  3.0, 7.0, 3.0, 7.0,  2.0, 9.0, 2.0, 9.0,
-            5.0, 5.0, 3.0, 3.0,  8.0, 1.0, 8.0, 1.0,  6.0, 2.0, 6.0, 2.0,
-            7.0, 3.6, 7.0, 3.6
-        };
-        static constexpr double beta_data[10] = {
-            0.1, 0.2, 0.2, 0.4, 0.4, 0.6, 0.3, 0.7, 0.5, 0.5
-        };
-
-        const Map<const Matrix<double, 10, 4, RowMajor>> C(C_data);
-        const Map<const Matrix<double, 10, 1>> beta(beta_data);
-
-        VectorXd scores = VectorXd::Zero(x.rows());
-        for (int i = 0; i < m; ++i) {
-            const VectorXd diff_sq_sum = (x.rowwise() - C.row(i)).array().square().rowwise().sum();
-            scores.array() -= 1.0 / (diff_sq_sum.array() + beta(i));
-        }
-        return scores;
-    }
-
-    VectorXd shekel5(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) { return shekel_base(x, 5); }
-
-    VectorXd shekel7(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) { return shekel_base(x, 7); }
-
-    VectorXd shekel10(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) { return shekel_base(x, 10); }
-
-    VectorXd foxholes(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
-        const int n = x.cols();
-        if (n != 2) throw std::invalid_argument("The Foxholes function is only defined on a 2D space.");
-
-        static constexpr double a_data[50] = {
-            -32.0, -32.0, -16.0, -32.0,  0.0, -32.0,  16.0, -32.0,  32.0, -32.0,
-            -32.0, -16.0, -16.0, -16.0,  0.0, -16.0,  16.0, -16.0,  32.0, -16.0,
-            -32.0,   0.0, -16.0,   0.0,  0.0,   0.0,  16.0,   0.0,  32.0,   0.0,
-            -32.0,  16.0, -16.0,  16.0,  0.0,  16.0,  16.0,  16.0,  32.0,  16.0,
-            -32.0,  32.0, -16.0,  32.0,  0.0,  32.0,  16.0,  32.0,  32.0,  32.0
-        };
-
-        const Map<const Matrix<double, 25, 2, RowMajor>> a(a_data);
-
-        VectorXd scores = VectorXd::Zero(x.rows());
-        for(int i = 0; i < 25; ++i) {
-            const VectorXd diff1_6 = (x.col(0).array() - a(i, 0)).pow(6);
-            const VectorXd diff2_6 = (x.col(1).array() - a(i, 1)).pow(6);
-            scores.array() += 1.0 / ((i + 1.0) + diff1_6.array() + diff2_6.array());
-        }
-        scores.array() = 1.0 / (0.002 + scores.array());
         return scores;
     }
 

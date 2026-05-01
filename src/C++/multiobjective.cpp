@@ -4,86 +4,21 @@
 #include <stdexcept>
 
 namespace BenchmarkFcns::MultiObjective {
-    MatrixXd zdt1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+    MatrixXd bnh(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, bool return_constraints) {
         const int n = x.cols();
-        if (n < 2)
-            throw std::invalid_argument("The ZDT1 function requires at least a 2D space.");
-
+        if (n != 2) throw std::invalid_argument("The BNH function requires exactly a 2D space.");
         const int m = x.rows();
-        MatrixXd scores(m, 2);
+        int cols = return_constraints ? 4 : 2;
+        MatrixXd scores(m, cols);
+        const auto x1 = x.col(0).array();
+        const auto x2 = x.col(1).array();
+        scores.col(0) = 4.0 * x1.square() + 4.0 * x2.square();
+        scores.col(1) = (x1 - 5.0).square() + (x2 - 5.0).square();
 
-        scores.col(0) = x.col(0);
-        const VectorXd g = 1.0 + ((9.0 / (n - 1.0)) * x.rightCols(n - 1).rowwise().sum()).array();
-        const VectorXd h = 1.0 - (scores.col(0).array() / g.array()).sqrt();
-        scores.col(1) = g.array() * h.array();
-
-        return scores;
-    }
-
-    MatrixXd zdt2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
-        const int n = x.cols();
-        if (n < 2)
-            throw std::invalid_argument("The ZDT2 function requires at least a 2D space.");
-
-        const int m = x.rows();
-        MatrixXd scores(m, 2);
-
-        scores.col(0) = x.col(0);
-        const VectorXd g = 1.0 + ((9.0 / (n - 1.0)) * x.rightCols(n - 1).rowwise().sum()).array();
-        const VectorXd h = 1.0 - (scores.col(0).array() / g.array()).square();
-        scores.col(1) = g.array() * h.array();
-
-        return scores;
-    }
-
-    MatrixXd zdt3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
-        const int n = x.cols();
-        if (n < 2)
-            throw std::invalid_argument("The ZDT3 function requires at least a 2D space.");
-
-        const int m = x.rows();
-        MatrixXd scores(m, 2);
-
-        scores.col(0) = x.col(0);
-        const VectorXd g = 1.0 + ((9.0 / (n - 1.0)) * x.rightCols(n - 1).rowwise().sum()).array();
-        const VectorXd f1_g = scores.col(0).array() / g.array();
-        const VectorXd h = 1.0 - f1_g.array().sqrt() - f1_g.array() * (10.0 * M_PI * scores.col(0).array()).sin();
-        scores.col(1) = g.array() * h.array();
-
-        return scores;
-    }
-
-    MatrixXd zdt4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
-        const int n = x.cols();
-        if (n < 2)
-            throw std::invalid_argument("The ZDT4 function requires at least a 2D space.");
-
-        const int m = x.rows();
-        MatrixXd scores(m, 2);
-
-        scores.col(0) = x.col(0);
-        const MatrixXd x_rest = x.rightCols(n - 1);
-        const VectorXd g = 1.0 + 10.0 * (n - 1.0) + (x_rest.array().square() - 10.0 * (4.0 * M_PI * x_rest.array()).cos()).rowwise().sum().array();
-        const VectorXd h = 1.0 - (scores.col(0).array() / g.array()).sqrt();
-        scores.col(1) = g.array() * h.array();
-
-        return scores;
-    }
-
-    MatrixXd zdt6(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
-        const int n = x.cols();
-        if (n < 2)
-            throw std::invalid_argument("The ZDT6 function requires at least a 2D space.");
-
-        const int m = x.rows();
-        MatrixXd scores(m, 2);
-
-        const VectorXd x1 = x.col(0);
-        scores.col(0) = 1.0 - ((-4.0 * x1.array()).exp() * (6.0 * M_PI * x1.array()).sin().pow(6.0));
-        const VectorXd g = 1.0 + 9.0 * (x.rightCols(n - 1).rowwise().sum().array() / (n - 1.0)).pow(0.25);
-        const VectorXd h = 1.0 - (scores.col(0).array() / g.array()).square();
-        scores.col(1) = g.array() * h.array();
-
+        if (return_constraints) {
+            scores.col(2) = (x1 - 5.0).square() + x2.square() - 25.0;
+            scores.col(3) = 7.7 - (x1 - 8.0).square() - (x2 + 3.0).square();
+        }
         return scores;
     }
 
@@ -323,6 +258,83 @@ namespace BenchmarkFcns::MultiObjective {
         return scores;
     }
 
+    MatrixXd osyczkakundu(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, bool return_constraints) {
+        const int n = x.cols();
+        if (n != 6) throw std::invalid_argument("The Osyczka and Kundu function requires exactly a 6D space.");
+        const int m = x.rows();
+        int cols = return_constraints ? 8 : 2;
+        MatrixXd scores(m, cols);
+
+        const auto x1 = x.col(0).array();
+        const auto x2 = x.col(1).array();
+        const auto x3 = x.col(2).array();
+        const auto x4 = x.col(3).array();
+        const auto x5 = x.col(4).array();
+        const auto x6 = x.col(5).array();
+
+        scores.col(0) = -(25.0 * (x1 - 2.0).square() + (x2 - 2.0).square() + (x3 - 1.0).square() + (x4 - 4.0).square() + (x5 - 1.0).square());
+        scores.col(1) = x1.square() + x2.square() + x3.square() + x4.square() + x5.square() + x6.square();
+
+        if (return_constraints) {
+            scores.col(2) = 2.0 - x1 - x2;
+            scores.col(3) = x1 + x2 - 6.0;
+            scores.col(4) = x2 - x1 - 2.0;
+            scores.col(5) = x1 - 3.0 * x2 - 2.0;
+            scores.col(6) = (x3 - 3.0).square() + x4 - 4.0;
+            scores.col(7) = 4.0 - (x5 - 3.0).square() - x6;
+        }
+
+        return scores;
+    }
+
+    MatrixXd poloni(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        if (n != 2) throw std::invalid_argument("The Poloni function requires exactly a 2D space.");
+        const int m = x.rows();
+        MatrixXd scores(m, 2);
+        const auto x1 = x.col(0).array();
+        const auto x2 = x.col(1).array();
+        const double A1 = 0.5 * std::sin(1.0) - 2.0 * std::cos(1.0) + std::sin(2.0) - 1.5 * std::cos(2.0);
+        const double A2 = 1.5 * std::sin(1.0) - std::cos(1.0) + 2.0 * std::sin(2.0) - 0.5 * std::cos(2.0);
+        const auto B1 = 0.5 * x1.sin() - 2.0 * x1.cos() + x2.sin() - 1.5 * x2.cos();
+        const auto B2 = 1.5 * x1.sin() - x1.cos() + 2.0 * x2.sin() - 0.5 * x2.cos();
+        scores.col(0) = 1.0 + (A1 - B1).square() + (A2 - B2).square();
+        scores.col(1) = (x1 + 3.0).square() + (x2 + 1.0).square();
+        return scores;
+    }
+
+    MatrixXd tanaka(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, bool return_constraints) {
+        const int n = x.cols();
+        if (n != 2) throw std::invalid_argument("The Tanaka function requires exactly a 2D space.");
+        const int m = x.rows();
+        int cols = return_constraints ? 4 : 2;
+        MatrixXd scores(m, cols);
+
+        const auto x1 = x.col(0).array();
+        const auto x2 = x.col(1).array();
+
+        scores.col(0) = x.col(0);
+        scores.col(1) = x.col(1);
+
+        if (return_constraints) {
+            // C1: x1^2 + x2^2 - 1 - 0.1*cos(16*atan2(x1, x2)) >= 0
+            // In <= 0 form: 1 + 0.1*cos(16*atan2(x1, x2)) - x1^2 - x2^2 <= 0
+
+            // Vectorized atan2 using binaryExpr for Eigen 3.4 compatibility
+            VectorXd theta = x.col(0).binaryExpr(x.col(1), [](double a, double b) {
+                return std::atan2(a, b);
+            });
+
+            scores.col(2) = 1.0 + 0.1 * (16.0 * theta.array()).cos() - x1.square() - x2.square();
+
+            // C2: (x1 - 0.5)^2 + (x2 - 0.5)^2 <= 0.5
+            // In <= 0 form: (x1 - 0.5)^2 + (x2 - 0.5)^2 - 0.5 <= 0
+            scores.col(3) = (x1 - 0.5).square() + (x2 - 0.5).square() - 0.5;
+        }
+
+        return scores;
+    }
+
     MatrixXd viennet1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
         if (n != 2) throw std::invalid_argument("The Viennet 1 function requires exactly a 2D space.");
@@ -363,98 +375,86 @@ namespace BenchmarkFcns::MultiObjective {
         return scores;
     }
 
-    MatrixXd bnh(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, bool return_constraints) {
+    MatrixXd zdt1(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
         const int n = x.cols();
-        if (n != 2) throw std::invalid_argument("The BNH function requires exactly a 2D space.");
-        const int m = x.rows();
-        int cols = return_constraints ? 4 : 2;
-        MatrixXd scores(m, cols);
-        const auto x1 = x.col(0).array();
-        const auto x2 = x.col(1).array();
-        scores.col(0) = 4.0 * x1.square() + 4.0 * x2.square();
-        scores.col(1) = (x1 - 5.0).square() + (x2 - 5.0).square();
+        if (n < 2)
+            throw std::invalid_argument("The ZDT1 function requires at least a 2D space.");
 
-        if (return_constraints) {
-            scores.col(2) = (x1 - 5.0).square() + x2.square() - 25.0;
-            scores.col(3) = 7.7 - (x1 - 8.0).square() - (x2 + 3.0).square();
-        }
-        return scores;
-    }
-
-    MatrixXd osyczkakundu(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, bool return_constraints) {
-        const int n = x.cols();
-        if (n != 6) throw std::invalid_argument("The Osyczka and Kundu function requires exactly a 6D space.");
-        const int m = x.rows();
-        int cols = return_constraints ? 8 : 2;
-        MatrixXd scores(m, cols);
-
-        const auto x1 = x.col(0).array();
-        const auto x2 = x.col(1).array();
-        const auto x3 = x.col(2).array();
-        const auto x4 = x.col(3).array();
-        const auto x5 = x.col(4).array();
-        const auto x6 = x.col(5).array();
-
-        scores.col(0) = -(25.0 * (x1 - 2.0).square() + (x2 - 2.0).square() + (x3 - 1.0).square() + (x4 - 4.0).square() + (x5 - 1.0).square());
-        scores.col(1) = x1.square() + x2.square() + x3.square() + x4.square() + x5.square() + x6.square();
-
-        if (return_constraints) {
-            scores.col(2) = 2.0 - x1 - x2;
-            scores.col(3) = x1 + x2 - 6.0;
-            scores.col(4) = x2 - x1 - 2.0;
-            scores.col(5) = x1 - 3.0 * x2 - 2.0;
-            scores.col(6) = (x3 - 3.0).square() + x4 - 4.0;
-            scores.col(7) = 4.0 - (x5 - 3.0).square() - x6;
-        }
-
-        return scores;
-    }
-
-    MatrixXd tanaka(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x, bool return_constraints) {
-        const int n = x.cols();
-        if (n != 2) throw std::invalid_argument("The Tanaka function requires exactly a 2D space.");
-        const int m = x.rows();
-        int cols = return_constraints ? 4 : 2;
-        MatrixXd scores(m, cols);
-
-        const auto x1 = x.col(0).array();
-        const auto x2 = x.col(1).array();
-
-        scores.col(0) = x.col(0);
-        scores.col(1) = x.col(1);
-
-        if (return_constraints) {
-            // C1: x1^2 + x2^2 - 1 - 0.1*cos(16*atan2(x1, x2)) >= 0
-            // In <= 0 form: 1 + 0.1*cos(16*atan2(x1, x2)) - x1^2 - x2^2 <= 0
-
-            // Vectorized atan2 using binaryExpr for Eigen 3.4 compatibility
-            VectorXd theta = x.col(0).binaryExpr(x.col(1), [](double a, double b) {
-                return std::atan2(a, b);
-            });
-
-            scores.col(2) = 1.0 + 0.1 * (16.0 * theta.array()).cos() - x1.square() - x2.square();
-
-            // C2: (x1 - 0.5)^2 + (x2 - 0.5)^2 <= 0.5
-            // In <= 0 form: (x1 - 0.5)^2 + (x2 - 0.5)^2 - 0.5 <= 0
-            scores.col(3) = (x1 - 0.5).square() + (x2 - 0.5).square() - 0.5;
-        }
-
-        return scores;
-    }
-
-    MatrixXd poloni(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
-        const int n = x.cols();
-        if (n != 2) throw std::invalid_argument("The Poloni function requires exactly a 2D space.");
         const int m = x.rows();
         MatrixXd scores(m, 2);
-        const auto x1 = x.col(0).array();
-        const auto x2 = x.col(1).array();
-        const double A1 = 0.5 * std::sin(1.0) - 2.0 * std::cos(1.0) + std::sin(2.0) - 1.5 * std::cos(2.0);
-        const double A2 = 1.5 * std::sin(1.0) - std::cos(1.0) + 2.0 * std::sin(2.0) - 0.5 * std::cos(2.0);
-        const auto B1 = 0.5 * x1.sin() - 2.0 * x1.cos() + x2.sin() - 1.5 * x2.cos();
-        const auto B2 = 1.5 * x1.sin() - x1.cos() + 2.0 * x2.sin() - 0.5 * x2.cos();
-        scores.col(0) = 1.0 + (A1 - B1).square() + (A2 - B2).square();
-        scores.col(1) = (x1 + 3.0).square() + (x2 + 1.0).square();
+
+        scores.col(0) = x.col(0);
+        const VectorXd g = 1.0 + ((9.0 / (n - 1.0)) * x.rightCols(n - 1).rowwise().sum()).array();
+        const VectorXd h = 1.0 - (scores.col(0).array() / g.array()).sqrt();
+        scores.col(1) = g.array() * h.array();
+
         return scores;
     }
+
+    MatrixXd zdt2(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        if (n < 2)
+            throw std::invalid_argument("The ZDT2 function requires at least a 2D space.");
+
+        const int m = x.rows();
+        MatrixXd scores(m, 2);
+
+        scores.col(0) = x.col(0);
+        const VectorXd g = 1.0 + ((9.0 / (n - 1.0)) * x.rightCols(n - 1).rowwise().sum()).array();
+        const VectorXd h = 1.0 - (scores.col(0).array() / g.array()).square();
+        scores.col(1) = g.array() * h.array();
+
+        return scores;
     }
+
+    MatrixXd zdt3(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        if (n < 2)
+            throw std::invalid_argument("The ZDT3 function requires at least a 2D space.");
+
+        const int m = x.rows();
+        MatrixXd scores(m, 2);
+
+        scores.col(0) = x.col(0);
+        const VectorXd g = 1.0 + ((9.0 / (n - 1.0)) * x.rightCols(n - 1).rowwise().sum()).array();
+        const VectorXd f1_g = scores.col(0).array() / g.array();
+        const VectorXd h = 1.0 - f1_g.array().sqrt() - f1_g.array() * (10.0 * M_PI * scores.col(0).array()).sin();
+        scores.col(1) = g.array() * h.array();
+
+        return scores;
+    }
+
+    MatrixXd zdt4(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        if (n < 2)
+            throw std::invalid_argument("The ZDT4 function requires at least a 2D space.");
+
+        const int m = x.rows();
+        MatrixXd scores(m, 2);
+
+        scores.col(0) = x.col(0);
+        const MatrixXd x_rest = x.rightCols(n - 1);
+        const VectorXd g = 1.0 + 10.0 * (n - 1.0) + (x_rest.array().square() - 10.0 * (4.0 * M_PI * x_rest.array()).cos()).rowwise().sum().array();
+        const VectorXd h = 1.0 - (scores.col(0).array() / g.array()).sqrt();
+        scores.col(1) = g.array() * h.array();
+
+        return scores;
+    }
+
+    MatrixXd zdt6(const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) {
+        const int n = x.cols();
+        if (n < 2)
+            throw std::invalid_argument("The ZDT6 function requires at least a 2D space.");
+
+        const int m = x.rows();
+        MatrixXd scores(m, 2);
+
+        const VectorXd x1 = x.col(0);
+        scores.col(0) = 1.0 - ((-4.0 * x1.array()).exp() * (6.0 * M_PI * x1.array()).sin().pow(6.0));
+        const VectorXd g = 1.0 + 9.0 * (x.rightCols(n - 1).rowwise().sum().array() / (n - 1.0)).pow(0.25);
+        const VectorXd h = 1.0 - (scores.col(0).array() / g.array()).square();
+        scores.col(1) = g.array() * h.array();
+
+        return scores;
+    }
+}
