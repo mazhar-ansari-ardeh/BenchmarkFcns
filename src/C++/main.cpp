@@ -1,15 +1,15 @@
-#include <pybind11/pybind11.h>
 #include <pybind11/eigen.h>
 #include <pybind11/functional.h>
+#include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
 
-# define STRINGIFY(x) #x
-# define MACRO_STRINGIFY(x) STRINGIFY(x)
+#define STRINGIFY(x) #x
+#define MACRO_STRINGIFY(x) STRINGIFY(x)
 
 #include "benchmarkfcns.h"
+#include "composition.h"
 #include "multifidelity.h"
 #include "multiobjective.h"
-#include "composition.h"
 
 using namespace BenchmarkFcns;
 
@@ -18,7 +18,8 @@ namespace py = pybind11;
 PYBIND11_MODULE(_core, m) {
     py::module_ mom = m.def_submodule("multiobjective", "Multi-objective functions");
 
-    mom.def("bnh", &MultiObjective::bnh, py::arg("x"), py::arg("return_constraints") = false, R"pbdoc(
+    mom.def("bnh", &MultiObjective::bnh, py::arg("x"), py::arg("return_constraints") = false,
+            R"pbdoc(
         Computes the value of the BNH (Binh and Korn) multi-objective benchmark function.
         SCORES = multiobjective.bnh(X) computes the value of the BNH function
         at point X. `multiobjective.bnh` accepts a matrix of size M-by-2 and returns
@@ -73,7 +74,8 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/dtlz3fcn
     )pbdoc");
 
-    mom.def("dtlz4", MultiObjective::dtlz4, py::arg("x"), py::arg("num_objectives") = 3, py::arg("alpha") = 100.0, R"pbdoc(
+    mom.def("dtlz4", MultiObjective::dtlz4, py::arg("x"), py::arg("num_objectives") = 3,
+            py::arg("alpha") = 100.0, R"pbdoc(
         Computes the value of the DTLZ4 multi-objective benchmark function.
         SCORES = multiobjective.dtlz4(X, num_objectives, alpha) computes the value of the DTLZ4 function
         at point X. `multiobjective.dtlz4` accepts a matrix of size M-by-N and returns
@@ -154,7 +156,8 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/kursafcn
     )pbdoc");
 
-    mom.def("osyczkakundu", &MultiObjective::osyczkakundu, py::arg("x"), py::arg("return_constraints") = false, R"pbdoc(
+    mom.def("osyczkakundu", &MultiObjective::osyczkakundu, py::arg("x"),
+            py::arg("return_constraints") = false, R"pbdoc(
         Computes the value of the Osyczka and Kundu multi-objective benchmark function.
         SCORES = multiobjective.osyczkakundu(X) computes the value of the Osyczka and Kundu function
         at point X. `multiobjective.osyczkakundu` accepts a matrix of size M-by-6 and returns
@@ -177,7 +180,8 @@ PYBIND11_MODULE(_core, m) {
         - Pareto front: Non-convex and disconnected
     )pbdoc");
 
-    mom.def("tanaka", &MultiObjective::tanaka, py::arg("x"), py::arg("return_constraints") = false, R"pbdoc(
+    mom.def("tanaka", &MultiObjective::tanaka, py::arg("x"), py::arg("return_constraints") = false,
+            R"pbdoc(
         Computes the value of the Tanaka multi-objective benchmark function.
         SCORES = multiobjective.tanaka(X) computes the value of the Tanaka function
         at point X. `multiobjective.tanaka` accepts a matrix of size M-by-2 and returns
@@ -584,6 +588,19 @@ PYBIND11_MODULE(_core, m) {
         - Characteristic: non-symmetric
     )pbdoc");
 
+    m.def("baluja", &baluja, R"pbdoc(
+        Computes the value of the Baluja (Schwefel 1.2) benchmark function.
+        SCORES = baluja(X) computes the value of the Baluja function at
+        point X. `baluja` accepts a matrix of size M-by-N and returns a
+        vector SCORES of size M-by-1.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (0, 0, ..., 0)
+        - Number of dimensions: N
+        - Recommended domain: [-100, 100]^N
+        - Modality: unimodal
+    )pbdoc");
+
     m.def("bartelsconn", &bartelsconn, R"pbdoc(
         Computes the value of the Bartels Conn benchmark function.
         SCORES = bartelsconn(X) computes the value of the Bartels Conn
@@ -862,6 +879,19 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/boothfcn
     )pbdoc");
 
+    m.def("boxbetts", &boxbetts, R"pbdoc(
+        Computes the value of the Box-Betts Quadratic Sum benchmark function.
+        SCORES = boxbetts(X) computes the value of the Box-Betts function at
+        point X. `boxbetts` accepts a matrix of size M-by-3 and returns a
+        vector SCORES of size M-by-1.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (1, 10, 1)
+        - Number of dimensions: 3
+        - Recommended domain: [0.9, 1.2] x [9, 11.2] x [0.9, 1.2]
+        - Modality: multimodal
+    )pbdoc");
+
     m.def("braninn1", &braninn1, R"pbdoc(
         Computes the value of the Branin N. 1 benchmark function.
         SCORES = braninn01(X) computes the value of the Branin N. 1
@@ -1069,6 +1099,19 @@ PYBIND11_MODULE(_core, m) {
         - Differentiable: Yes
     )pbdoc");
 
+    m.def("colville", &colville, R"pbdoc(
+        Computes the value of the Colville benchmark function.
+        SCORES = colville(X) computes the value of the Colville function at
+        point X. `colville` accepts a matrix of size M-by-4 and returns a
+        vector SCORES of size M-by-1.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (1, 1, 1, 1)
+        - Number of dimensions: 4
+        - Recommended domain: [-10, 10]^4
+        - Modality: unimodal
+    )pbdoc");
+
     m.def("corana", &corana, R"pbdoc(
         Computes the value of the Corana benchmark function.
         SCORES = corana(X) computes the value of the Corana function at point X.
@@ -1187,6 +1230,19 @@ PYBIND11_MODULE(_core, m) {
         - Separability: non-separable
         - Modality: unimodal
         - Differentiable: Yes
+    )pbdoc");
+
+    m.def("damavandi", &damavandi, R"pbdoc(
+        Computes the value of the Damavandi benchmark function.
+        SCORES = damavandi(X) computes the value of the Damavandi function at
+        point X. `damavandi` accepts a matrix of size M-by-2 and returns a
+        vector SCORES of size M-by-1.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (2, 2)
+        - Number of dimensions: 2
+        - Recommended domain: [0, 14]^2
+        - Modality: multimodal
     )pbdoc");
 
     m.def("debn1", &debn1, R"pbdoc(
@@ -1519,7 +1575,7 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/friedman2fcn
     )pbdoc");
 
-     m.def("friedman3", &friedman3, py::arg("x"), py::arg("sigma") = 0, R"pbdoc(
+    m.def("friedman3", &friedman3, py::arg("x"), py::arg("sigma") = 0, R"pbdoc(
         Computes the value of the Friedman N. 3 benchmark function.
 
         Properties:
@@ -1669,6 +1725,19 @@ PYBIND11_MODULE(_core, m) {
         - Differentiable: Yes
         For more information, please visit:
         benchmarkfcns.info/doc/griewankfcn
+    )pbdoc");
+
+    m.def("hansen", &hansen, R"pbdoc(
+        Computes the value of the Hansen benchmark function.
+        SCORES = hansen(X) computes the value of the Hansen function at
+        point X. `hansen` accepts a matrix of size M-by-2 and returns a
+        vector SCORES of size M-by-1.
+        Properties:
+        - Global minimum: -176.541793
+        - Location of global minimum: 9 global minima in [-10, 10]^2
+        - Number of dimensions: 2
+        - Recommended domain: [-10, 10]^2
+        - Modality: multimodal
     )pbdoc");
 
     m.def("happycat", &happycat, py::arg("x"), py::arg("alpha") = 0.5, R"pbdoc(
@@ -2913,7 +2982,8 @@ PYBIND11_MODULE(_core, m) {
     - Differentiable: Yes
     )pbdoc");
 
-    m.def("weierstrass", &weierstrass, py::arg("X"), py::arg("a") = 0.5, py::arg("b") = 3.0, py::arg("kmax") = 20, R"pbdoc(
+    m.def("weierstrass", &weierstrass, py::arg("X"), py::arg("a") = 0.5, py::arg("b") = 3.0,
+          py::arg("kmax") = 20, R"pbdoc(
     Computes the value of the Weierstrass benchmark function.
         Properties:
             - Global minimum: 0
@@ -3030,7 +3100,8 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/xinsheyangn2fcn
     )pbdoc");
 
-    m.def("xinsheyangn3", &xinsheyangn3, py::arg("x"), py::arg("beta") = 15, py::arg("m") = 5, R"pbdoc(
+    m.def("xinsheyangn3", &xinsheyangn3, py::arg("x"), py::arg("beta") = 15, py::arg("m") = 5,
+          R"pbdoc(
         Computes the value of the Xin-She Yang N. 3 function.
         The Xin-She Yang N. 3 function is a parametric function and it is
         behaviour can be controlled with two additional parameters 'beta' and
@@ -3191,18 +3262,18 @@ PYBIND11_MODULE(_core, m) {
         - Differentiable: Yes
     )pbdoc");
 
-    m.def("get_function_ptr", &get_function_ptr, py::arg("name"), "Retrieves a benchmark function pointer by name.");
+    m.def("get_function_ptr", &get_function_ptr, py::arg("name"),
+          "Retrieves a benchmark function pointer by name.");
 
     py::class_<Composition>(m, "Composition")
         .def(py::init<>())
-        .def("add_component", &Composition::add_component,
-            py::arg("fcn"), py::arg("shift"), py::arg("rotation"),
-            py::arg("sigma"), py::arg("lambda"), py::arg("bias"), py::arg("f_max"),
-            "Adds a base function component to the composition.")
+        .def("add_component", &Composition::add_component, py::arg("fcn"), py::arg("shift"),
+             py::arg("rotation"), py::arg("sigma"), py::arg("lambda"), py::arg("bias"),
+             py::arg("f_max"), "Adds a base function component to the composition.")
         .def("evaluate", &Composition::evaluate, py::arg("x"),
-            "Evaluates the composed function for a batch of points.")
+             "Evaluates the composed function for a batch of points.")
         .def("set_constant_C", &Composition::set_constant_C, py::arg("C"),
-            "Sets the C constant for height normalization (default 2000.0).");
+             "Sets the C constant for height normalization (default 2000.0).");
 
 #ifdef VERSION_INFO
     m.attr("__version__") = MACRO_STRINGIFY(VERSION_INFO);
