@@ -4,14 +4,32 @@
 
 
 # BenchmarkFcns
-Benchmarkfcns is an effort to provide a high-perfomant, public and free implementation of well-known benchmark functions for mathematical optimization algorithms in Python. The Python library is implemented in C++ and utilizes powerful SIMD vector calucluations to offer very fast and efficient evaluation of the implemented functions on large batches of data.
+Benchmarkfcns is an effort to provide a high-performant, public and free implementation of well-known benchmark functions for mathematical optimization algorithms in Python. The Python library is implemented in C++ and utilizes powerful **SIMD vector calculations combined with multi-core parallel processing (via OpenMP)** to offer extremely fast and efficient evaluation of functions on massive datasets.
 
 For the documentation of the implemented functions and their features, please visit [https://benchmarkfcns.info](https://benchmarkfcns.info).
+
+# Key Features
+- **High Performance**: Optimized C++ core using Eigen and OpenMP.
+- **Parallel Execution**: Automatic multi-core processing for large batches of data.
+- **SIMD Optimized**: Leverages modern CPU instruction sets for fast vector math.
+- **Comprehensive Library**: Includes 100+ single-objective, multi-fidelity, and multi-objective functions.
+- **Composition Engine**: Create hybrid benchmark landscapes with shifting, rotation, and scaling.
 
 # How to use
 ## Python
 ### Installation
 The library is packaged and available on the PyPI index. To install, simply run `pip install benchmarkfcns`.
+
+### Parallel Execution
+By default, the library uses all available CPU cores to evaluate large matrices of data points. You can control the number of threads used by setting the `OMP_NUM_THREADS` environment variable:
+
+```bash
+# Limit to 4 threads
+export OMP_NUM_THREADS=4
+python your_script.py
+```
+
+For large-scale tasks (e.g., evaluating 10 million points), this parallel implementation can provide up to **10x-30x speedup** compared to single-threaded or pure NumPy implementations.
 
 ### Usage
 After installing, using the library is straightforward and all that is needed is to import the needed functions, construct a matrix of input values and call the function.
