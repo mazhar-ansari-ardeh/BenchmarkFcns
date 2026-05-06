@@ -21,5 +21,5 @@ BraceWrapping:
   IndentBraces: false
 ColumnLimit: 100
 IndentWidth: 4
-Standard: C++17
+Standard: c++17
 UseTab: Never
