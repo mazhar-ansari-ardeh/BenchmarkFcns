@@ -6,16 +6,16 @@ This list contains 200 high-value benchmark functions categorized by their type 
 These functions represent the "missing links" from the foundational literature (e.g., Jamil & Yang survey) and are prioritized for implementation to make the library the most comprehensive "classic" collection.
 
 1. Aluffi-Pentini
-2. Baluja
-3. Box-Betts Quadratic Sum
-4. Colville
-5. Cross-Leg-in-Tray
-6. Damavandi
-7. Dolan
-8. Engvall
-9. Fletcher-Powell
-10. Freudenstein-Roth
-11. Hansen
+2. Baluja [DONE]
+3. Box-Betts Quadratic Sum [DONE]
+4. Colville [DONE]
+5. Cross-Leg-in-Tray [DONE]
+6. Damavandi [DONE]
+7. Dolan [DONE]
+8. Engvall [DONE]
+9. Fletcher-Powell [DONE]
+10. Freudenstein-Roth [DONE]
+11. Hansen [DONE]
 12. Helical Valley
 13. Jennrich-Sampson
 14. Judge
