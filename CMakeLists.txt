@@ -13,10 +13,20 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Python3 REQUIRED COMPONENTS Interpreter Development.Module)
 find_package(pybind11 CONFIG REQUIRED)
 
+if(APPLE)
+  # macOS Apple Clang doesn't support OpenMP directly, so we use Homebrew's
+  # libomp
+  if(NOT DEFINED OpenMP_ROOT)
+    set(OpenMP_ROOT "/opt/homebrew/opt/libomp")
+  endif()
+endif()
+
+find_package(OpenMP REQUIRED)
+
 pybind11_add_module(
   _core src/C++/main.cpp src/C++/benchmarkfcns.cpp src/C++/multifidelity.cpp
   src/C++/multiobjective.cpp src/C++/composition.cpp)
-target_link_libraries(_core PRIVATE Python3::Module)
+target_link_libraries(_core PRIVATE Python3::Module OpenMP::OpenMP_CXX)
 target_include_directories(_core PRIVATE ./src/C++/eigen-3.4.0)
 target_link_libraries(_core PRIVATE pybind11::module)
 target_compile_definitions(_core PRIVATE VERSION_INFO=${PROJECT_VERSION})

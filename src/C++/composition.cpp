@@ -149,6 +149,7 @@ namespace BenchmarkFcns {
             m["quartic"] = &quartic;
             m["rana"] = &rana;
             m["rastrigin"] = &rastrigin;
+            m["rastrigin_parallel"] = &rastrigin_parallel;
             m["ridge"] = [](const Ref<const Matrix<double,Dynamic,Dynamic,RowMajor>>& x) { return ridge(x, 1.0, 0.5); };
             m["rosenbrock"] = &rosenbrock;
             m["salomon"] = &salomon;

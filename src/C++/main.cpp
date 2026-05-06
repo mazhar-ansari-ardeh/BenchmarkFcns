@@ -2228,6 +2228,14 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/rastriginfcn
     )pbdoc");
 
+    m.def("rastrigin_parallel", &rastrigin_parallel, R"pbdoc(
+        Computes the value of Rastrigin benchmark function using multi-core parallelism.
+        SCORES = rastrigin_parallel(X) computes the value of the Rastrigin function at
+        point X. `rastrigin_parallel` accepts a matrix of size M-by-N and returns a vector
+        SCORES of size M-by-1 in which each row contains the function value for the
+        corresponding row of X.
+    )pbdoc");
+
     m.def("ridge", &ridge, py::arg("x"), py::arg("d") = 1, py::arg("alpha") = 0.5, R"pbdoc(
         Computes the value of the Ridge benchmark function.
         SCORES = ridge(X) computes the value of the Ridge function at point X.
