@@ -86,6 +86,8 @@ VectorXd cosinemixture(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor
 
 VectorXd crossintray(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
 
+VectorXd crosslegintray(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
+
 VectorXd crownedcross(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
 
 VectorXd csendes(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
@@ -104,6 +106,8 @@ VectorXd discus(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
 
 VectorXd dixonprice(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
 
+VectorXd dolan(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
+
 VectorXd dropwave(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
 
 VectorXd easom(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
@@ -116,13 +120,19 @@ VectorXd elattar(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x)
 
 VectorXd elliptic(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
 
+VectorXd engvall(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
+
 VectorXd exponential(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
 
 VectorXd f8f2(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
 
+VectorXd fletcherpowell(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
+
 VectorXd forrester(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
 
 VectorXd foxholes(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
+
+VectorXd freudensteinroth(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
 
 VectorXd friedman1(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x,
                    bool rnd = false);

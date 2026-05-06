@@ -1,6 +1,8 @@
 #include "benchmarkfcns.h"
 #include "utils.h"
+#include <map>
 #include <random>
+#include <utility>
 
 namespace BenchmarkFcns {
 
@@ -494,6 +496,17 @@ VectorXd crossintray(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>>
     });
 }
 
+VectorXd crosslegintray(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("The Cross-Leg-in-Tray function only accepts 2D inputs.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto X = a.col(0);
+        const auto Y = a.col(1);
+        const VectorXd expcomponent = (100 - ((X.square() + Y.square()).sqrt() / M_PI)).abs();
+        return VectorXd(-((X.sin() * Y.sin() * expcomponent.array().exp()).abs() + 1).pow(-0.1));
+    });
+}
+
 VectorXd crownedcross(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     if (x.cols() != 2)
         throw std::invalid_argument("The Crowned Cross function only accepts 2D inputs");
@@ -600,6 +613,20 @@ VectorXd dixonprice(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> 
     });
 }
 
+VectorXd dolan(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 5)
+        throw std::invalid_argument("The Dolan function only accepts 5D inputs.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto X1 = a.col(0);
+        const auto X2 = a.col(1);
+        const auto X3 = a.col(2);
+        const auto X4 = a.col(3);
+        const auto X5 = a.col(4);
+        return VectorXd((X1 + 1.7 * X2) * X1.sin() - 1.5 * X3 - 0.1 * X4 * (X4 + X5 - X1).cos() +
+                        0.2 * X2.pow(5) - X2 - 1.0);
+    });
+}
+
 VectorXd dropwave(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     if (x.cols() != 2)
         throw std::invalid_argument("The Drop Wave function only accepts 2D inputs");
@@ -665,6 +692,16 @@ VectorXd elliptic(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x
     });
 }
 
+VectorXd engvall(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("The Engvall function only accepts 2D inputs.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto X1 = a.col(0);
+        const auto X2 = a.col(1);
+        return VectorXd(X1.pow(4) + X2.pow(4) + 2 * X1.square() * X2.square() - 4 * X1 + 3.0);
+    });
+}
+
 VectorXd exponential(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     return apply_parallel(x, [](const auto &a) {
         return VectorXd(-(-0.5 * a.square().rowwise().sum().array()).exp());
@@ -681,6 +718,56 @@ VectorXd f8f2(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
             const auto xnext = a.col(next);
             const VectorXd rosen = 100.0 * (xi.square() - xnext).square() + (xi - 1.0).square();
             scores += ((rosen.array().square() / 4000.0) - (rosen.array().cos()) + 1.0).matrix();
+        }
+        return scores;
+    });
+}
+
+VectorXd fletcherpowell(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    const int n = x.cols();
+    static std::map<int, std::pair<MatrixXd, MatrixXd>> coef_map;
+    static std::map<int, VectorXd> alpha_map;
+
+    if (coef_map.find(n) == coef_map.end()) {
+        std::mt19937 gen(42 + n);
+        std::uniform_int_distribution<> dis_int(-100, 100);
+        std::uniform_real_distribution<> dis_real(-M_PI, M_PI);
+
+        MatrixXd a_mat(n, n);
+        MatrixXd b_mat(n, n);
+        VectorXd alpha_vec(n);
+        for (int i = 0; i < n; ++i) {
+            alpha_vec(i) = dis_real(gen);
+            for (int j = 0; j < n; ++j) {
+                a_mat(i, j) = dis_int(gen);
+                b_mat(i, j) = dis_int(gen);
+            }
+        }
+        coef_map[n] = {a_mat, b_mat};
+        alpha_map[n] = alpha_vec;
+    }
+
+    const auto &A_coef = coef_map[n].first;
+    const auto &B_coef = coef_map[n].second;
+    const auto &alpha = alpha_map[n];
+
+    VectorXd Ai = VectorXd::Zero(n);
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            Ai(i) += A_coef(i, j) * std::sin(alpha(j)) + B_coef(i, j) * std::cos(alpha(j));
+        }
+    }
+
+    return apply_parallel(x, [n, Ai, A_coef, B_coef](const auto &a) {
+        const int m = a.rows();
+        VectorXd scores = VectorXd::Zero(m);
+        for (int i = 0; i < n; ++i) {
+            VectorXd Bi = VectorXd::Zero(m);
+            for (int j = 0; j < n; ++j) {
+                Bi +=
+                    A_coef(i, j) * a.col(j).sin().matrix() + B_coef(i, j) * a.col(j).cos().matrix();
+            }
+            scores += (Ai(i) - Bi.array()).square().matrix();
         }
         return scores;
     });
@@ -714,6 +801,18 @@ VectorXd foxholes(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x
             scores.array() += 1.0 / ((i + 1.0) + diff1_6 + diff2_6);
         }
         return VectorXd(1.0 / (0.002 + scores.array()));
+    });
+}
+
+VectorXd freudensteinroth(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("The Freudenstein-Roth function only accepts 2D inputs.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto X1 = a.col(0);
+        const auto X2 = a.col(1);
+        const auto term1 = X1 - 13.0 + ((5.0 - X2) * X2 - 2.0) * X2;
+        const auto term2 = X1 - 29.0 + ((X2 + 1.0) * X2 - 14.0) * X2;
+        return VectorXd(term1.square() + term2.square());
     });
 }
 

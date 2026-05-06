@@ -1173,6 +1173,19 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/crossintrayfcn
     )pbdoc");
 
+    m.def("crosslegintray", &crosslegintray, R"pbdoc(
+        Computes the value of the Cross-Leg-in-Tray (Cross-Leg-Table) benchmark function.
+        SCORES = crosslegintray(X) computes the value of the function at
+        point X. `crosslegintray` accepts a matrix of size M-by-2 and returns a
+        vector SCORES of size M-by-1.
+        Properties:
+        - Global minimum: -1
+        - Location of global minimum: along x=0 or y=0 axes
+        - Number of dimensions: 2
+        - Recommended domain: [-10, 10]^2
+        - Modality: multimodal
+    )pbdoc");
+
     m.def("crownedcross", &crownedcross, R"pbdoc(
         Computes the value of the Crowned Cross benchmark function.
         SCORES = crownedcross(X) computes the value of the Crowned Cross
@@ -1333,6 +1346,18 @@ PYBIND11_MODULE(_core, m) {
         - Modality: unimodal
     )pbdoc");
 
+    m.def("dolan", &dolan, R"pbdoc(
+        Computes the value of the Dolan benchmark function.
+        SCORES = dolan(X) computes the value of the Dolan function at
+        point X. `dolan` accepts a matrix of size M-by-5 and returns a
+        vector SCORES of size M-by-1.
+        Properties:
+        - Global minimum: 0 (approx)
+        - Number of dimensions: 5
+        - Recommended domain: [-100, 100]^5
+        - Modality: multimodal
+    )pbdoc");
+
     m.def("dropwave", &dropwave, R"pbdoc(
         Computes the value of the Drop-Wave benchmark function.
         SCORES = dropwave(X) computes the value of the Drop-Wave function at
@@ -1455,6 +1480,19 @@ PYBIND11_MODULE(_core, m) {
         - Characteristic: High conditioning (10^6).
     )pbdoc");
 
+    m.def("engvall", &engvall, R"pbdoc(
+        Computes the value of the Engvall benchmark function.
+        SCORES = engvall(X) computes the value of the Engvall function at
+        point X. `engvall` accepts a matrix of size M-by-2 and returns a
+        vector SCORES of size M-by-1.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (1, 0)
+        - Number of dimensions: 2
+        - Recommended domain: [-10, 10]^2
+        - Modality: unimodal
+    )pbdoc");
+
     m.def("exponential", &exponential, R"pbdoc(
         Computes the value of the Exponential function.
         SCORES = exponential(X) computes the value of the Exponential
@@ -1492,6 +1530,19 @@ PYBIND11_MODULE(_core, m) {
         - Characteristic: Highly non-separable.
     )pbdoc");
 
+    m.def("fletcherpowell", &fletcherpowell, R"pbdoc(
+        Computes the value of the Fletcher-Powell benchmark function.
+        SCORES = fletcherpowell(X) computes the value of the function at
+        point X. `fletcherpowell` accepts a matrix of size M-by-N and returns a
+        vector SCORES of size M-by-1.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (alpha_1, ..., alpha_n)
+        - Number of dimensions: n
+        - Recommended domain: [-pi, pi]^n
+        - Modality: highly multimodal
+    )pbdoc");
+
     m.def("forrester", &forrester, R"pbdoc(
         Computes the value of the Forrester benchmark function.
         SCORES = forrester(X) computes the value of the Forrester function at
@@ -1522,6 +1573,19 @@ PYBIND11_MODULE(_core, m) {
         - Location of global minimum: (-32, -32)
         - Number of dimensions: 2
         - Recommended domain: [-65.536, 65.536]^2
+    )pbdoc");
+
+    m.def("freudensteinroth", &freudensteinroth, R"pbdoc(
+        Computes the value of the Freudenstein-Roth benchmark function.
+        SCORES = freudensteinroth(X) computes the value of the function at
+        point X. `freudensteinroth` accepts a matrix of size M-by-2 and returns a
+        vector SCORES of size M-by-1.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (5, 4)
+        - Number of dimensions: 2
+        - Recommended domain: [-10, 10]^2
+        - Modality: multimodal
     )pbdoc");
 
     m.def("friedman1", &friedman1, py::arg("x"), py::arg("rnd") = false, R"pbdoc(

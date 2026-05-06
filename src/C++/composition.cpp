@@ -97,6 +97,7 @@ BenchmarkFcn get_function_ptr(const std::string &name) {
         m["corana"] = &corana;
         m["cosinemixture"] = &cosinemixture;
         m["crossintray"] = &crossintray;
+        m["crosslegintray"] = &crosslegintray;
         m["crownedcross"] = &crownedcross;
         m["csendes"] = &csendes;
         m["cubefcn"] = &cubefcn;
@@ -106,19 +107,24 @@ BenchmarkFcn get_function_ptr(const std::string &name) {
         m["dejongn5"] = &dejongn5;
         m["discus"] = &discus;
         m["dixonprice"] = &dixonprice;
+        m["dolan"] = &dolan;
         m["dropwave"] = &dropwave;
         m["easom"] = &easom;
         m["eggcrate"] = &eggcrate;
         m["eggholder"] = &eggholder;
         m["elattar"] = &elattar;
         m["elliptic"] = &elliptic;
+        m["engvall"] = &engvall;
         m["exponential"] = &exponential;
         m["f8f2"] = &f8f2;
+        m["fletcherpowell"] = &fletcherpowell;
         m["forrester"] = &forrester;
         m["foxholes"] = &foxholes;
+        m["freudensteinroth"] = &freudensteinroth;
         m["friedman1"] = [](const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
             return friedman1(x, false);
         };
+
         m["friedman2"] = [](const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
             return friedman2(x, 0.0);
         };
