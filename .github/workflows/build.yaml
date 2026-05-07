@@ -88,6 +88,10 @@ jobs:
       env:
         CIBW_ARCHS_MACOS: universal2
         CIBW_ARCHS_WINDOWS: AMD64 ARM64
+        CIBW_ENVIRONMENT_MACOS: |
+          CMAKE_PREFIX_PATH=$(brew --prefix libomp)
+          LDFLAGS="-L$(brew --prefix libomp)/lib"
+          CPPFLAGS="-I$(brew --prefix libomp)/include"
 
     - name: Verify clean directory
       run: git diff --exit-code
