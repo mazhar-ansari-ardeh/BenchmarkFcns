@@ -143,15 +143,21 @@ BenchmarkFcn get_function_ptr(const std::string &name) {
         };
         m["hartmann3"] = &hartmann3;
         m["hartmann6"] = &hartmann6;
+        m["helicalvalley"] = &helicalvalley;
         m["himmelblau"] = &himmelblau;
         m["holdertable"] = &holdertable;
         m["hosaki"] = &hosaki;
         m["ishigami"] = [](const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
             return ishigami(x, 7.0, 0.1);
         };
+        m["jennrichsampson"] = &jennrichsampson;
+        m["judge"] = &judge;
         m["katsuura"] = &katsuura;
         m["keane"] = &keane;
+        m["kowalik"] = &kowalik;
+        m["kulnevich"] = &kulnevich;
         m["langermann"] = &langermann;
+
         m["leon"] = &leon;
         m["levin13"] = &levin13;
         m["levy"] = &levy;

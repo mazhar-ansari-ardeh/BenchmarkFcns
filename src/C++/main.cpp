@@ -1873,6 +1873,19 @@ PYBIND11_MODULE(_core, m) {
         benchmarkfcns.info/doc/hartmann6fcn
     )pbdoc");
 
+    m.def("helicalvalley", &helicalvalley, R"pbdoc(
+        Computes the value of the Helical Valley benchmark function.
+        SCORES = helicalvalley(X) computes the value of the function at
+        point X. `helicalvalley` accepts a matrix of size M-by-3 and returns a
+        vector SCORES of size M-by-1.
+        Properties:
+        - Global minimum: 0
+        - Location of global minimum: (1, 0, 0)
+        - Number of dimensions: 3
+        - Recommended domain: [-10, 10]^3
+        - Modality: unimodal
+    )pbdoc");
+
     m.def("himmelblau", &himmelblau, R"pbdoc(
         Computes the value of the Himmelblau's benchmark function.
         SCORES = himmelblau(X) computes the value of the Himmelblau's
@@ -1957,6 +1970,32 @@ PYBIND11_MODULE(_core, m) {
         - Modality: multimodal
     )pbdoc");
 
+    m.def("jennrichsampson", &jennrichsampson, R"pbdoc(
+        Computes the value of the Jennrich-Sampson benchmark function.
+        SCORES = jennrichsampson(X) computes the value of the function at
+        point X. `jennrichsampson` accepts a matrix of size M-by-2 and returns a
+        vector SCORES of size M-by-1.
+        Properties:
+        - Global minimum: 124.36218
+        - Location of global minimum: (0.257825, 0.257825)
+        - Number of dimensions: 2
+        - Recommended domain: [-1, 1]^2
+        - Modality: multimodal
+    )pbdoc");
+
+    m.def("judge", &judge, R"pbdoc(
+        Computes the value of the Judge benchmark function.
+        SCORES = judge(X) computes the value of the function at
+        point X. `judge` accepts a matrix of size M-by-2 and returns a
+        vector SCORES of size M-by-1.
+        Properties:
+        - Global minimum: 16.0817
+        - Location of global minimum: (0.8648, 1.2357)
+        - Number of dimensions: 2
+        - Recommended domain: [-10, 10]^2
+        - Modality: multimodal
+    )pbdoc");
+
     m.def("katsuura", &katsuura, R"pbdoc(
         Computes the value of the Katsuura benchmark function.
         SCORES = katsuura(X) computes the value of the Katsuura function at point X.
@@ -1995,6 +2034,32 @@ PYBIND11_MODULE(_core, m) {
         - Differentiable: Yes
         For more information, please visit:
         benchmarkfcns.info/doc/keanefcn
+    )pbdoc");
+
+    m.def("kowalik", &kowalik, R"pbdoc(
+        Computes the value of the Kowalik benchmark function.
+        SCORES = kowalik(X) computes the value of the function at
+        point X. `kowalik` accepts a matrix of size M-by-4 and returns a
+        vector SCORES of size M-by-1.
+        Properties:
+        - Global minimum: 0.0003075
+        - Location of global minimum: (0.1928, 0.1928, 0.1231, 0.1358)
+        - Number of dimensions: 4
+        - Recommended domain: [-5, 5]^4
+        - Modality: multimodal
+    )pbdoc");
+
+    m.def("kulnevich", &kulnevich, R"pbdoc(
+        Computes the value of the Kulnevich benchmark function.
+        SCORES = kulnevich(X) computes the value of the function at
+        point X. `kulnevich` accepts a matrix of size M-by-2 and returns a
+        vector SCORES of size M-by-1.
+        Properties:
+        - Global minimum: -1.0 (approx)
+        - Location of global minimum: (0, 0)
+        - Number of dimensions: 2
+        - Recommended domain: [-5, 5]^2
+        - Modality: multimodal
     )pbdoc");
 
     m.def("langermann", &langermann, R"pbdoc(

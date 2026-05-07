@@ -1050,15 +1050,19 @@ VectorXd hartmann6(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &
     });
 }
 
-VectorXd ishigami(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x, double a_param,
-                  double b_param) {
+VectorXd helicalvalley(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     if (x.cols() != 3)
-        throw std::invalid_argument("The Ishigami function is only defined on a 3D space.");
-    return apply_parallel(x, [a_param, b_param](const auto &a) {
-        const auto x1 = a.col(0);
-        const auto x2 = a.col(1);
-        const auto x3 = a.col(2);
-        return VectorXd(x1.sin() + a_param * x2.sin().square() + b_param * x3.pow(4) * x1.sin());
+        throw std::invalid_argument("The Helical Valley function only accepts 3D inputs.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto X1 = a.col(0);
+        const auto X2 = a.col(1);
+        const auto X3 = a.col(2);
+        const auto theta = (0.5 / M_PI) * a.col(1).binaryExpr(a.col(0), [](double x2, double x1) {
+            return std::atan2(x2, x1);
+        });
+        return VectorXd(100.0 * ((X3 - 10.0 * theta).square() +
+                                 ((X1.square() + X2.square()).sqrt() - 1.0).square()) +
+                        X3.square());
     });
 }
 
@@ -1094,6 +1098,57 @@ VectorXd hosaki(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) 
     });
 }
 
+VectorXd ishigami(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x, double a_param,
+                  double b_param) {
+    if (x.cols() != 3)
+        throw std::invalid_argument("The Ishigami function is only defined on a 3D space.");
+    return apply_parallel(x, [a_param, b_param](const auto &a) {
+        const auto x1 = a.col(0);
+        const auto x2 = a.col(1);
+        const auto x3 = a.col(2);
+        return VectorXd(x1.sin() + a_param * x2.sin().square() + b_param * x3.pow(4) * x1.sin());
+    });
+}
+
+VectorXd jennrichsampson(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("The Jennrich-Sampson function only accepts 2D inputs.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto X1 = a.col(0);
+        const auto X2 = a.col(1);
+        VectorXd res = VectorXd::Zero(a.rows());
+        for (int i = 1; i <= 10; ++i) {
+            res += (((double)i * X1).exp() + ((double)i * X2).exp() - (2.0 + 2.0 * i))
+                       .square()
+                       .matrix();
+        }
+        return res;
+    });
+}
+
+VectorXd judge(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("The Judge function only accepts 2D inputs.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto X1 = a.col(0);
+        const auto X2 = a.col(1);
+        static constexpr double A[] = {4.284, 4.149, 3.877, 0.533, 2.211, 2.389, 2.145,
+                                       3.231, 1.998, 1.379, 2.106, 1.428, 1.011, 2.179,
+                                       2.858, 1.388, 1.651, 1.593, 1.046, 2.152};
+        static constexpr double B[] = {0.286, 0.973, 0.384, 0.276, 0.973, 0.543, 0.957,
+                                       0.948, 0.543, 0.797, 0.936, 0.889, 0.006, 0.828,
+                                       0.399, 0.617, 0.939, 0.784, 0.072, 0.889};
+        static constexpr double C[] = {0.645, 0.585, 0.310, 0.058, 0.455, 0.779, 0.259,
+                                       0.202, 0.028, 0.099, 0.142, 0.296, 0.175, 0.180,
+                                       0.842, 0.039, 0.103, 0.620, 0.158, 0.704};
+        VectorXd res = VectorXd::Zero(a.rows());
+        for (int i = 0; i < 20; ++i) {
+            res += (X1 + B[i] * X2 + C[i] * X2.square() - A[i]).square().matrix();
+        }
+        return res;
+    });
+}
+
 VectorXd katsuura(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     const int n = x.cols();
     const double n_inv_sq = 10.0 / (n * n);
@@ -1121,6 +1176,40 @@ VectorXd keane(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
         const auto Y = a.col(1);
         return VectorXd(-((X - Y).sin().square() * (X + Y).sin().square()) /
                         (X.square() + Y.square()).sqrt());
+    });
+}
+
+VectorXd kowalik(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 4)
+        throw std::invalid_argument("The Kowalik function only accepts 4D inputs.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto X1 = a.col(0);
+        const auto X2 = a.col(1);
+        const auto X3 = a.col(2);
+        const auto X4 = a.col(3);
+        static constexpr double A[] = {0.1957, 0.1947, 0.1735, 0.1600, 0.0844, 0.0627,
+                                       0.0456, 0.0342, 0.0323, 0.0235, 0.0246};
+        static constexpr double B[] = {4.0,   2.0, 1.0,    0.5,    0.25,  0.167,
+                                       0.125, 0.1, 0.0833, 0.0714, 0.0625};
+        VectorXd res = VectorXd::Zero(a.rows());
+        for (int i = 0; i < 11; ++i) {
+            auto term = A[i] - (X1 * (B[i] * B[i] + B[i] * X2)) / (B[i] * B[i] + B[i] * X3 + X4);
+            res += term.square().matrix();
+        }
+        return res;
+    });
+}
+
+VectorXd kulnevich(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("The Kulnevich function only accepts 2D inputs.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto X = a.col(0);
+        const auto Y = a.col(1);
+        auto t1 = 1.0 / (1.0 + (X - 2.0).square() + (Y - 2.0).square());
+        auto t2 = 1.0 / (1.0 + (X + 2.0).square() + (Y + 2.0).square());
+        auto t3 = 1.0 / (1.0 + X.square() + Y.square());
+        return VectorXd(-(t1 + t2 + t3));
     });
 }
 

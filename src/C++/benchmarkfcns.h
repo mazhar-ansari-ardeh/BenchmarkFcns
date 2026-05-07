@@ -164,6 +164,8 @@ VectorXd hartmann3(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &
 
 VectorXd hartmann6(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
 
+VectorXd helicalvalley(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
+
 VectorXd himmelblau(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
 
 VectorXd holdertable(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
@@ -173,12 +175,19 @@ VectorXd hosaki(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
 VectorXd ishigami(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x, double a = 7.0,
                   double b = 0.1);
 
+VectorXd jennrichsampson(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
+
+VectorXd judge(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
+
 VectorXd katsuura(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
 
 VectorXd keane(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
 
-VectorXd langermann(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
+VectorXd kowalik(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
 
+VectorXd kulnevich(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
+
+VectorXd langermann(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
 VectorXd leon(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
 
 VectorXd levin13(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x);
