@@ -67,6 +67,8 @@ jobs:
         echo "CMAKE_PREFIX_PATH=$(brew --prefix libomp)" >> $GITHUB_ENV
         echo "CMAKE_CXX_FLAGS=-Xpreprocessor -fopenmp -I$(brew --prefix libomp)/include" >> $GITHUB_ENV
         echo "CMAKE_EXE_LINKER_FLAGS=-L$(brew --prefix libomp)/lib -lomp" >> $GITHUB_ENV
+        echo "LDFLAGS=-L$(brew --prefix libomp)/lib" >> $GITHUB_ENV
+        echo "CPPFLAGS=-I$(brew --prefix libomp)/include" >> $GITHUB_ENV
 
     - name: Pre-seed virtualenv.pyz
       shell: bash
