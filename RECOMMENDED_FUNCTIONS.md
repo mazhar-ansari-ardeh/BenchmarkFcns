@@ -16,11 +16,11 @@ These functions represent the "missing links" from the foundational literature (
 9. Fletcher-Powell [DONE]
 10. Freudenstein-Roth [DONE]
 11. Hansen [DONE]
-12. Helical Valley
-13. Jennrich-Sampson
-14. Judge
-15. Kowalik
-16. Kulnevich
+12. Helical Valley [DONE]
+13. Jennrich-Sampson [DONE]
+14. Judge [DONE]
+15. Kowalik [DONE]
+16. Kulnevich [DONE]
 17. Meyer
 18. Miele-Cantrell
 19. Mishra N. 1 to N. 12 (12 functions)

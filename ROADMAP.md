@@ -16,7 +16,7 @@ This roadmap outlines the strategic direction for the **Benchmark Functions** li
 - [ ] **CI/CD Enhancement**: Add automated testing to the wheel-building pipeline.
 
 ## Phase 3: Library Expansion
-- [ ] **Implement Classic Functions**: Add the 100 missing classic single-objective functions identified in [RECOMMENDED_FUNCTIONS.md](RECOMMENDED_FUNCTIONS.md). (10/100 completed)
+- [ ] **Implement Classic Functions**: Add the 100 missing classic single-objective functions identified in [RECOMMENDED_FUNCTIONS.md](RECOMMENDED_FUNCTIONS.md). (15/100 completed)
 - [ ] **Expand Multi-Objective Support**: Implement the WFG suite and CEC 2009 UF/CF sets.
 - [ ] **Build Multi-Fidelity Library**: Implement physical surrogates and bi-fidelity adaptations for all major benchmarks.
 
