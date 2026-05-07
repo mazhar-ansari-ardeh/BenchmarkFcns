@@ -14,12 +14,41 @@ find_package(Python3 REQUIRED COMPONENTS Interpreter Development.Module)
 find_package(pybind11 CONFIG REQUIRED)
 
 if(APPLE)
-  # Explicitly set OpenMP paths for macOS
-  set(OpenMP_CXX_FLAGS
-      "-Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include")
-  set(OpenMP_CXX_LIB_NAMES "omp")
-  set(OpenMP_CXX_LIBRARIES "/opt/homebrew/opt/libomp/lib/libomp.dylib")
-  set(OpenMP_CXX_INCLUDE_DIRS "/opt/homebrew/opt/libomp/include")
+  # Try to find libomp via Homebrew or provided prefixes
+  if(NOT OpenMP_ROOT AND DEFINED ENV{CMAKE_PREFIX_PATH})
+    set(OpenMP_ROOT $ENV{CMAKE_PREFIX_PATH})
+  endif()
+
+  find_library(
+    OpenMP_omp_LIBRARY
+    NAMES omp
+    HINTS ${OpenMP_ROOT}/lib /opt/homebrew/opt/libomp/lib
+          /usr/local/opt/libomp/lib)
+  find_path(
+    OpenMP_CXX_INCLUDE_DIR
+    NAMES omp.h
+    HINTS ${OpenMP_ROOT}/include /opt/homebrew/opt/libomp/include
+          /usr/local/opt/libomp/include)
+
+  if(OpenMP_omp_LIBRARY AND OpenMP_CXX_INCLUDE_DIR)
+    # Help FindOpenMP by providing the flags it struggles to find with Apple
+    # Clang
+    set(OpenMP_CXX_FLAGS
+        "-Xpreprocessor -fopenmp -I${OpenMP_CXX_INCLUDE_DIR}"
+        CACHE STRING "")
+    set(OpenMP_CXX_LIB_NAMES
+        "omp"
+        CACHE STRING "")
+    set(OpenMP_omp_LIBRARY
+        "${OpenMP_omp_LIBRARY}"
+        CACHE FILEPATH "")
+    set(OpenMP_CXX_LIBRARIES
+        "${OpenMP_omp_LIBRARY}"
+        CACHE STRING "")
+    set(OpenMP_CXX_INCLUDE_DIRS
+        "${OpenMP_CXX_INCLUDE_DIR}"
+        CACHE STRING "")
+  endif()
 endif()
 
 find_package(OpenMP REQUIRED)
