@@ -23,6 +23,15 @@ endif()
 
 find_package(OpenMP REQUIRED)
 
+if(OPENMP_FOUND)
+  message(STATUS "OpenMP found")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
+  set(CMAKE_EXE_LINKER_FLAGS
+      "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS}")
+else()
+  message(FATAL_ERROR "OpenMP not found")
+endif()
+
 pybind11_add_module(
   _core src/C++/main.cpp src/C++/benchmarkfcns.cpp src/C++/multifidelity.cpp
   src/C++/multiobjective.cpp src/C++/composition.cpp)
