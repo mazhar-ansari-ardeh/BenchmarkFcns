@@ -60,8 +60,7 @@ jobs:
           C:\Users\runneradmin\AppData\Local\pypa\cibuildwheel\Cache\
         key: cibw-virtualenv-20.30.0-${{ runner.os }}
 
-    - name: Install OpenMP on macOS
-      if: runner.os == 'macOS'
+    - name: Install OpenMP
       run: |
         brew install libomp
         echo "CMAKE_PREFIX_PATH=$(brew --prefix libomp)" >> $GITHUB_ENV

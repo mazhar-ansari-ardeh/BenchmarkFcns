@@ -14,11 +14,12 @@ find_package(Python3 REQUIRED COMPONENTS Interpreter Development.Module)
 find_package(pybind11 CONFIG REQUIRED)
 
 if(APPLE)
-  # macOS Apple Clang doesn't support OpenMP directly, so we use Homebrew's
-  # libomp
-  if(NOT DEFINED OpenMP_ROOT)
-    set(OpenMP_ROOT "/opt/homebrew/opt/libomp")
-  endif()
+  # Explicitly set OpenMP paths for macOS
+  set(OpenMP_CXX_FLAGS
+      "-Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include")
+  set(OpenMP_CXX_LIB_NAMES "omp")
+  set(OpenMP_CXX_LIBRARIES "/opt/homebrew/opt/libomp/lib/libomp.dylib")
+  set(OpenMP_CXX_INCLUDE_DIRS "/opt/homebrew/opt/libomp/include")
 endif()
 
 find_package(OpenMP REQUIRED)
@@ -27,7 +28,7 @@ if(OpenMP_CXX_FOUND)
   message(STATUS "OpenMP found")
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
   set(CMAKE_EXE_LINKER_FLAGS
-      "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_EXE_LINKER_FLAGS}")
+      "${CMAKE_EXE_LINKER_FLAGS} ${OpenMP_CXX_LIBRARIES}")
 else()
   message(FATAL_ERROR "OpenMP not found")
 endif()
