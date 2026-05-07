@@ -61,6 +61,7 @@ jobs:
         key: cibw-virtualenv-20.30.0-${{ runner.os }}
 
     - name: Install OpenMP
+      if: runner.os == 'macOS'
       run: |
         brew install libomp
         echo "CMAKE_PREFIX_PATH=$(brew --prefix libomp)" >> $GITHUB_ENV
