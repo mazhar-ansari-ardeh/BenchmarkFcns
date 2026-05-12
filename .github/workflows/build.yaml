@@ -105,6 +105,7 @@ jobs:
           CMAKE_PREFIX_PATH=$(brew --prefix libomp)
           LDFLAGS="-L$(brew --prefix libomp)/lib"
           CPPFLAGS="-I$(brew --prefix libomp)/include"
+          MACOSX_DEPLOYMENT_TARGET=$(sw_vers -productVersion | cut -d. -f1).0
 
     - name: Verify clean directory
       run: git diff --exit-code
