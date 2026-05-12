@@ -67,15 +67,18 @@ jobs:
         echo "CMAKE_PREFIX_PATH=$(brew --prefix libomp)" >> $GITHUB_ENV
         echo "LDFLAGS=-L$(brew --prefix libomp)/lib" >> $GITHUB_ENV
         echo "CPPFLAGS=-I$(brew --prefix libomp)/include" >> $GITHUB_ENV
+        echo "MACOSX_DEPLOYMENT_TARGET=$(sw_vers -productVersion | cut -d. -f1).0" >> $GITHUB_ENV
 
     - name: Debug Environment
       run: |
         echo "CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH"
         echo "LDFLAGS=$LDFLAGS"
         echo "CPPFLAGS=$CPPFLAGS"
+        echo "MACOSX_DEPLOYMENT_TARGET=$MACOSX_DEPLOYMENT_TARGET"
         if [ "$RUNNER_OS" == "macOS" ]; then
           ls -l $(brew --prefix libomp)
         fi
+      shell: bash
 
     - name: Pre-seed virtualenv.pyz
       shell: bash
@@ -102,10 +105,10 @@ jobs:
         CIBW_ARCHS_MACOS: native
         CIBW_ARCHS_WINDOWS: AMD64 ARM64
         CIBW_ENVIRONMENT_MACOS: |
-          CMAKE_PREFIX_PATH=$(brew --prefix libomp)
-          LDFLAGS="-L$(brew --prefix libomp)/lib"
-          CPPFLAGS="-I$(brew --prefix libomp)/include"
-          MACOSX_DEPLOYMENT_TARGET=$(sw_vers -productVersion | cut -d. -f1).0
+          CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH
+          LDFLAGS=$LDFLAGS
+          CPPFLAGS=$CPPFLAGS
+          MACOSX_DEPLOYMENT_TARGET=$MACOSX_DEPLOYMENT_TARGET
 
     - name: Verify clean directory
       run: git diff --exit-code
