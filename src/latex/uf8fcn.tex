@@ -1,0 +1,7 @@
+f_1 = \cos(0.5\pi x_1) \cos(0.5\pi x_2) + \frac{2}{|J_1|} \sum_{j \in J_1} y_j^2 \\
+f_2 = \cos(0.5\pi x_1) \sin(0.5\pi x_2) + \frac{2}{|J_2|} \sum_{j \in J_2} y_j^2 \\
+f_3 = \sin(0.5\pi x_1) + \frac{2}{|J_3|} \sum_{j \in J_3} y_j^2 \\
+y_j = x_j - 2x_2 \sin(2\pi x_1 + \frac{j\pi}{n}) \\
+J_1 = \{j | 3 \le j \le n, j-1 \text{ is multiple of } 3\} \\
+J_2 = \{j | 3 \le j \le n, j-2 \text{ is multiple of } 3\} \\
+J_3 = \{j | 3 \le j \le n, j \text{ is multiple of } 3\}

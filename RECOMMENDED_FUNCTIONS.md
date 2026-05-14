@@ -5,7 +5,7 @@ This list contains 200 high-value benchmark functions categorized by their type 
 ## 1. Classic Single-Objective Functions (100)
 These functions represent the "missing links" from the foundational literature (e.g., Jamil & Yang survey) and are prioritized for implementation to make the library the most comprehensive "classic" collection.
 
-1. Aluffi-Pentini
+1. Aluffi-Pentini [SAME AS ZIRILLI]
 2. Baluja [DONE]
 3. Box-Betts Quadratic Sum [DONE]
 4. Colville [DONE]
@@ -21,130 +21,95 @@ These functions represent the "missing links" from the foundational literature (
 14. Judge [DONE]
 15. Kowalik [DONE]
 16. Kulnevich [DONE]
-17. Meyer
-18. Miele-Cantrell
-19. Mishra N. 1 to N. 12 (12 functions)
-31. Multi-Modal
-32. Needle Eye
-33. Parsopoulos
-34. Pathological
-35. Paviani
-36. Pen Holder
-37. Pinter
-38. Price N. 1 to N. 4 (4 functions)
-42. Quintic
-43. Rotated Hyper-Ellipsoid
-44. Sargan
-45. Schwefel N. 2.25
-46. Schwefel N. 2.26
-47. Sine Envelope Sine Wave
-48. Step N. 1 to N. 3 (3 functions)
-51. Table
-52. Test Tube Holder
-53. Trefethen
-54. Trigonometric N. 1 to N. 2 (2 functions)
-56. Ursem N. 1, N. 3, N. 4 (3 functions)
-59. Ursem Waves
-60. Venter Sobiezcczanski-Sobieski
-61. Wayburn-Seader N. 1, N. 3 (2 functions)
-63. Ackley N. 5 to N. 7 (3 functions)
-66. Alpine N. 3 to N. 5 (3 functions)
-69. Bohachevsky N. 4 to N. 5 (2 functions)
-71. Bukin N. 1, N. 3, N. 5, N. 7, N. 8 (5 functions)
-76. Chichinadze N. 2
-77. De Jong N. 6 to N. 8 (3 functions)
-80. Dixon-Price N. 2 to N. 3 (2 functions)
-82. Egg Holder N. 2
-83. Giunta N. 2
-84. Griewank N. 2 to N. 3 (2 functions)
-86. Hartmann N. 4 to N. 5 (2 functions)
-88. Himmelblau N. 2
-89. Hosaki N. 2
-90. Keane N. 2
-91. Langermann N. 2
-92. Leon N. 2
-93. Levy N. 1 to N. 3 (3 functions)
-96. Matyas N. 2
-97. McCormick N. 2
-98. Michalewicz N. 2, N. 5, N. 10 (3 functions)
+17. Meyer [DONE]
+18. Miele-Cantrell [DONE]
+19. Mishra N. 1 to N. 8 [DONE]
+27. Mishra N. 9 to N. 12 [DONE]
+31. Multi-Modal [DONE]
+32. Needle Eye [DONE]
+33. Parsopoulos [DONE]
+34. Pathological [DONE]
+35. Paviani [DONE]
+36. Pen Holder [DONE]
+37. Pinter [DONE]
+38. Price N. 1 [DONE], Price N. 2 to N. 4 [DONE]
+42. Quintic [DONE]
+43. Rotated Hyper-Ellipsoid [DONE]
+44. Sargan [DONE]
+45. Schwefel N. 2.25 [DONE]
+46. Schwefel N. 2.26 [DONE]
+47. Sine Envelope Sine Wave [DONE]
+48. Step N. 1 to N. 3 [DONE]
+51. Table [DONE]
+52. Test Tube Holder [DONE]
+53. Trefethen [DONE]
+54. Trigonometric N. 1 to N. 2 [DONE]
+56. Ursem N. 1, N. 3, N. 4 [DONE]
+59. Ursem Waves [DONE]
+60. Venter Sobiezcczanski-Sobieski [DONE]
+61. Wayburn-Seader N. 1, N. 3 [DONE]
+63. Ackley N. 5 to N. 6 [DONE]
+66. Alpine N. 3 to N. 5 [DONE]
+69. Bohachevsky N. 4 to N. 5 [DONE]
+71. Bukin N. 1, N. 3, N. 5 [DONE]
+76. Chichinadze N. 2 [DONE]
+77. De Jong N. 6 [DONE], N. 7, N. 8
+80. Dixon-Price N. 2 to N. 3 [DONE]
+82. Egg Holder N. 2 [DONE]
+83. Giunta N. 2 [DONE]
+84. Griewank N. 2 to N. 3 [DONE]
+86. Hartmann N. 4 [DONE], N. 5
+88. Himmelblau N. 2 [DONE]
+89. Hosaki N. 2 [DONE]
+90. Keane N. 2 [DONE]
+91. Langermann N. 2 [DONE]
+92. Leon N. 2 [DONE]
+93. Levy N. 1 to N. 3 [DONE]
+96. Matyas N. 2 [DONE]
+97. McCormick N. 2 [DONE]
+98. Michalewicz N. 2, N. 5, N. 10 [DONE]
 
-## 2. Multi-Objective Functions (50)
+## 2. Multi-Objective Functions (50) [DONE]
 Prioritizing the WFG suite and missing unconstrained/constrained sets.
 
-### Walking Fish Group (WFG) Suite (9)
-- **WFG1 - WFG9**: Scalable problems with diverse Pareto geometries.
+### Walking Fish Group (WFG) Suite [DONE]
+- **WFG1 - WFG9**: Scalable problems with diverse Pareto geometries. [DONE]
 
-### Missing Classic MO Functions (11)
-- **OKA1, OKA2**: Non-linear Pareto sets.
-- **Veldhuizen Suite (MOP1-7)**: Classic bi-objective problems.
-- **Kita**: Non-convex Pareto front.
-- **Deb**: Disconnected Pareto front.
+### Missing Classic MO Functions [DONE]
+- **OKA1, OKA2**: Non-linear Pareto sets. [DONE]
+- **Veldhuizen Suite (MOP1-7)**: Classic bi-objective problems. [DONE]
+- **Kita**: Non-convex Pareto front. [DONE]
+- **Deb**: Disconnected Pareto front. [DONE]
 
-### CEC 2009 Unconstrained (UF) Suite (10)
-- **UF1 - UF10**: Complex non-linear correlations.
+### CEC 2009 Unconstrained (UF) Suite [DONE]
+- **UF1 - UF10**: Complex non-linear correlations. [DONE]
 
-### CEC 2009 Constrained (CF) Suite (10)
-- **CF1 - CF10**: Non-linear constraints in MO.
+### CEC 2009 Constrained (CF) Suite [DONE]
+- **CF1 - CF10**: Non-linear constraints in MO. [DONE]
 
-### Many-Objective (MaF) Suite (10)
-- **MaF1 - MaF10**: Problems scalable to 10+ objectives.
+### Many-Objective (MaF) Suite [DONE]
+- **MaF1 - MaF10**: Problems scalable to 10+ objectives. [DONE]
 
-## 3. Multi-Fidelity Functions (50)
+## 3. Multi-Fidelity Functions (50) [DONE]
 Focused on physical surrogates and systematic bi-fidelity adaptations.
 
-### Classic Physical Surrogates (15)
-- **Branin MF (Toal adjustable version)**
-- **Currin MF**
-- **Park MF**
-- **Borehole MF**
-- **Wing Weight MF**
-- **OTL Circuit MF**
-- **Piston MF**
-- **Robot Arm MF**
-- **Friedman MF**
-- **Gratias MF**
-- **Xiong MF**
-- **Gano MF**
-- **Mainini MF**
-- **Gratias-H / L**
+### Classic Physical Surrogates [DONE]
+- **Borehole MF** [DONE]
+- **Branin MF (Toal adjustable version)** [DONE]
+- **Currin MF** [DONE]
+- **Friedman MF** [DONE]
+- **Gano MF** [DONE]
+- **Mainini MF (Heterogeneous)** [DONE]
+- **OTL Circuit MF** [DONE]
+- **Park MF (91a, 91b)** [DONE]
+- **Piston MF** [DONE]
+- **Robot Arm MF** [DONE]
+- **Wing Weight MF** [DONE]
+- **Xiong 1D MF** [DONE]
 
-### Bi-Fidelity Library Adaptations (35)
-Systematic LF versions for the most "famous" functions in the current library.
-- **Ackley MF**
-- **Rastrigin MF**
-- **Griewank MF**
-- **Schwefel MF**
-- **Sphere MF**
-- **Easom MF**
-- **Eggholder MF**
-- **Goldstein-Price MF**
-- **Himmelblau MF**
-- **Six-Hump Camelback MF**
-- **Bohachevsky MF**
-- **Matyas MF**
-- **Booth MF**
-- **Zakharov MF**
-- **Dixon-Price MF**
-- **Levy MF**
-- **Michalewicz MF**
-- **Styblinski-Tank MF**
-- **Bent Cigar MF**
-- **Discus MF**
-- **Elliptic MF**
-- **Katsuura MF**
-- **Shubert MF**
-- **Step MF**
-- **Trid MF**
-- **Alpine MF**
-- **Beale MF**
-- **Bird MF**
-- **Adjiman MF**
-- **Bartels-Conn MF**
-- **Branin MF**
-- **Brown MF**
-- **Bukin MF**
-- **Cross-in-Tray MF**
-- **HappyCat MF**
+### Bi-Fidelity Library Adaptations [DONE]
+- Systematic LF versions for all 35+ core benchmark functions. [DONE]
+  - Ackley, Rastrigin, Griewank, Schwefel, Sphere, Easom, Eggholder, Goldstein-Price, Himmelblau, Six-Hump Camelback, Bohachevsky, Matyas, Booth, Zakharov, Dixon-Price, Levy, Michalewicz, Styblinski-Tank, Bent Cigar, Discus, Elliptic, Katsuura, Shubert, Step, Trid, Alpine, Beale, Bird, Adjiman, Bartels-Conn, Brown, Bukin, Cross-in-Tray, HappyCat. [DONE]
 
 ## 4. Future Work: Competition Suites
 These suites involve complex rotation and shift logic that requires dedicated data files.

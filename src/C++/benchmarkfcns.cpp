@@ -50,6 +50,37 @@ VectorXd ackleyn4(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x
     });
 }
 
+VectorXd ackley5(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    const int n = x.cols();
+    return apply_parallel(x, [n](const auto &a) {
+        const int m = a.rows();
+        VectorXd scores = VectorXd::Zero(m);
+        for (int i = 0; i < n - 1; ++i) {
+            const auto xi = a.col(i);
+            const auto xi_plus_1 = a.col(i + 1);
+            scores.array() +=
+                20.0 + M_E - 20.0 * (-0.2 * (xi.square() + xi_plus_1.square()).sqrt()).exp() -
+                (0.5 * ((2.0 * M_PI * xi).cos() + (2.0 * M_PI * xi_plus_1).cos())).exp();
+        }
+        return scores;
+    });
+}
+
+VectorXd ackley6(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    const int n = x.cols();
+    return apply_parallel(x, [n](const auto &a) {
+        const int m = a.rows();
+        VectorXd scores = VectorXd::Ones(m);
+        for (int i = 0; i < n - 1; ++i) {
+            const auto xi = a.col(i);
+            const auto xi_plus_1 = a.col(i + 1);
+            scores.array() +=
+                (1.0 - (2.0 * M_PI * (xi.square() + xi_plus_1.square()).sqrt()).cos());
+        }
+        return scores;
+    });
+}
+
 VectorXd adjiman(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     if (x.cols() != 2)
         throw std::invalid_argument("The Adjiman function only accepts 2D inputs.");
@@ -69,6 +100,23 @@ VectorXd alpinen1(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x
 VectorXd alpinen2(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     return apply_parallel(
         x, [](const auto &a) { return VectorXd((a.sqrt() * a.sin()).rowwise().prod()); });
+}
+
+VectorXd alpine3(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    return apply_parallel(x, [](const auto &a) {
+        return VectorXd((a.pow(6) * (2.0 + (1.0 / a).sin())).rowwise().sum());
+    });
+}
+
+VectorXd alpine4(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    return apply_parallel(x, [](const auto &a) {
+        return VectorXd((a.square() * a.sin().square() + 0.1).rowwise().sum());
+    });
+}
+
+VectorXd alpine5(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    return apply_parallel(
+        x, [](const auto &a) { return VectorXd((a.square() + a.sin().square()).rowwise().sum()); });
 }
 
 VectorXd amgm(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
@@ -293,6 +341,32 @@ VectorXd bohachevskyn3(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor
     });
 }
 
+VectorXd bohachevskyn4(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    const int n = x.cols();
+    return apply_parallel(x, [n](const auto &a) {
+        const int m = a.rows();
+        const auto xi = a.block(0, 0, m, n - 1);
+        const auto xi_plus_1 = a.block(0, 1, m, n - 1);
+        return VectorXd((xi.square() + 2.0 * xi_plus_1.square() - 0.3 * (3.0 * M_PI * xi).cos() -
+                         0.4 * (4.0 * M_PI * xi_plus_1).cos() + 0.7)
+                            .rowwise()
+                            .sum());
+    });
+}
+
+VectorXd bohachevskyn5(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    const int n = x.cols();
+    return apply_parallel(x, [n](const auto &a) {
+        const int m = a.rows();
+        const auto xi = a.block(0, 0, m, n - 1);
+        const auto xi_plus_1 = a.block(0, 1, m, n - 1);
+        return VectorXd((xi.square() + 2.0 * xi_plus_1.square() -
+                         0.3 * (3.0 * M_PI * xi).cos() * (4.0 * M_PI * xi_plus_1).cos() + 0.3)
+                            .rowwise()
+                            .sum());
+    });
+}
+
 VectorXd booth(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     if (x.cols() != 2)
         throw std::invalid_argument("The Booth function only accepts 2D inputs");
@@ -360,6 +434,10 @@ VectorXd brent(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     });
 }
 
+VectorXd brentn1(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    return brent(x);
+}
+
 VectorXd brown(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     const int n = x.cols();
     return apply_parallel(x, [n](const auto &a) {
@@ -374,6 +452,10 @@ VectorXd brown(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     });
 }
 
+VectorXd bukinn1(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    return bukinn6(x);
+}
+
 VectorXd bukinn2(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     if (x.cols() != 2)
         throw std::invalid_argument("The Bukin N. 2 function only accepts 2D inputs");
@@ -384,6 +466,16 @@ VectorXd bukinn2(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x)
     });
 }
 
+VectorXd bukinn3(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("Bukin's Function No. 3 is only defined on a 2D space.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto x1 = a.col(0);
+        const auto x2 = a.col(1);
+        return VectorXd(100.0 * (x2 - 0.01 * x1.square()).abs() + 0.01 * (x1 + 10.0).abs());
+    });
+}
+
 VectorXd bukinn4(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     if (x.cols() != 2)
         throw std::invalid_argument("The Bukin N. 4 function only accepts 2D inputs");
@@ -391,6 +483,16 @@ VectorXd bukinn4(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x)
         const auto X = a.col(0);
         const auto Y = a.col(1);
         return VectorXd(100 * Y.square() + 0.01 * (X + 10).abs());
+    });
+}
+
+VectorXd bukinn5(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("Bukin's Function No. 5 is only defined on a 2D space.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto x1 = a.col(0);
+        const auto x2 = a.col(1);
+        return VectorXd(100.0 * (x2 - 0.01 * x1.square()).square() + 0.01 * (x1 + 10.0).abs());
     });
 }
 
@@ -417,6 +519,17 @@ VectorXd carromtable(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>>
     });
 }
 
+VectorXd chenbird(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("The Chen Bird function is only defined on a 2D space.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto x1 = a.col(0);
+        const auto x2 = a.col(1);
+        return VectorXd(-0.001 / (1e-6 + (x1 - 0.4 * x2 - 0.1).square().array()) -
+                        0.001 / (1e-6 + (2.0 * x1 + x2 - 1.5).square().array()));
+    });
+}
+
 VectorXd chichinadze(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     if (x.cols() != 2)
         throw std::invalid_argument("The Chichinadze function only accepts 2D inputs");
@@ -427,6 +540,12 @@ VectorXd chichinadze(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>>
                         8 * (5 * M_PI * X / 2.0).sin() -
                         (1.0 / sqrt(2.0 * M_PI)) * (-0.5 * (Y - 0.5).square()).exp());
     });
+}
+
+VectorXd chichinadzen2(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("The Chichinadze N. 2 function only accepts 2D inputs");
+    return chichinadze(x);
 }
 
 VectorXd cigar(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
@@ -586,6 +705,21 @@ VectorXd dejongn5(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x
     });
 }
 
+VectorXd dejongn6(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 4)
+        throw std::invalid_argument("The De Jong N. 6 (Wood) function only accepts 4D inputs.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto x1 = a.col(0);
+        const auto x2 = a.col(1);
+        const auto x3 = a.col(2);
+        const auto x4 = a.col(3);
+        return VectorXd(100.0 * (x1.square() - x2).square() + (x1 - 1.0).square() +
+                        (x3 - 1.0).square() + 90.0 * (x3.square() - x4).square() +
+                        10.1 * ((x2 - 1.0).square() + (x4 - 1.0).square()) +
+                        19.8 * (x2 - 1.0) * (x4 - 1.0));
+    });
+}
+
 VectorXd discus(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     const int n = x.cols();
     return apply_parallel(x, [n](const auto &a) {
@@ -611,6 +745,18 @@ VectorXd dixonprice(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> 
         }
         return scores;
     });
+}
+
+VectorXd dixonpricen2(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("The Dixon-Price N. 2 function is only defined on a 2D space.");
+    return dixonprice(x);
+}
+
+VectorXd dixonpricen3(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 3)
+        throw std::invalid_argument("The Dixon-Price N. 3 function is only defined on a 3D space.");
+    return dixonprice(x);
 }
 
 VectorXd dolan(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
@@ -669,6 +815,12 @@ VectorXd eggholder(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &
     });
 }
 
+VectorXd eggholdern2(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("The Eggholder N. 2 function only accepts 2D inputs");
+    return eggholder(x);
+}
+
 VectorXd elattar(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     if (x.cols() != 2)
         throw std::invalid_argument("The El-Attar et al. function is only defined on a 2D space.");
@@ -683,8 +835,12 @@ VectorXd elattar(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x)
 VectorXd elliptic(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     const int n = x.cols();
     VectorXd powers(n);
-    for (int i = 0; i < n; ++i)
-        powers(i) = std::pow(10.0, 6.0 * i / (n - 1.0));
+    if (n <= 1) {
+        powers.setConstant(1.0);
+    } else {
+        for (int i = 0; i < n; ++i)
+            powers(i) = std::pow(10.0, 6.0 * i / (n - 1.0));
+    }
     const RowVectorXd Coeffs_vec = powers.transpose();
 
     return apply_parallel(x, [Coeffs_vec](const auto &a) {
@@ -894,8 +1050,13 @@ VectorXd gallagher101(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>
             for (int j = 0; j < n; ++j)
                 y_vec[i](j) = dist_x(gen);
             VectorXd diag = VectorXd::Zero(n);
-            for (int j = 0; j < n; ++j)
-                diag(j) = std::pow(1000.0, 0.5 * static_cast<double>(j) / (n - 1.0));
+            for (int j = 0; j < n; ++j) {
+                if (n <= 1) {
+                    diag(j) = 1.0;
+                } else {
+                    diag(j) = std::pow(1000.0, 0.5 * static_cast<double>(j) / (n - 1.0));
+                }
+            }
             C_vec[i] = diag.asDiagonal();
         }
         initialized = true;
@@ -935,6 +1096,12 @@ VectorXd giunta(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) 
     });
 }
 
+VectorXd giuntan2(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 4)
+        throw std::invalid_argument("The Giunta N. 2 function is only defined on a 4D space.");
+    return giunta(x);
+}
+
 VectorXd goldsteinprice(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     if (x.cols() != 2)
         throw std::invalid_argument("The Goldstein-Price function only accepts 2D inputs");
@@ -970,6 +1137,18 @@ VectorXd griewank(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x
     });
 }
 
+VectorXd griewankn2(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("The Griewank N. 2 function is only defined on a 2D space.");
+    return griewank(x);
+}
+
+VectorXd griewankn3(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 3)
+        throw std::invalid_argument("The Griewank N. 3 function is only defined on a 3D space.");
+    return griewank(x);
+}
+
 VectorXd hansen(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     if (x.cols() != 2)
         throw std::invalid_argument("The Hansen function only accepts 2D inputs.");
@@ -996,6 +1175,16 @@ VectorXd happycat(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x
     });
 }
 
+VectorXd hgbat(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    const int n = x.cols();
+    return apply_parallel(x, [n](const auto &a) {
+        const VectorXd x2 = a.square().rowwise().sum();
+        const VectorXd sx = a.rowwise().sum();
+        return VectorXd((x2.array().square() - sx.array().square()).abs().sqrt() +
+                        (0.5 * x2.array() + sx.array()) / n + 0.5);
+    });
+}
+
 VectorXd hartmann3(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     if (x.cols() != 3)
         throw std::invalid_argument("The Hartmann 3 function only accepts 3D inputs");
@@ -1017,6 +1206,31 @@ VectorXd hartmann3(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &
                                      .rowwise()
                                      .sum();
             scores.array() -= alpha(i) * (-arg.array()).exp();
+        }
+        return scores;
+    });
+}
+
+VectorXd hartmann4(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 4)
+        throw std::invalid_argument("The Hartmann 4 function only accepts 4D inputs");
+    const VectorXd alpha = (VectorXd(4) << 1.0, 1.2, 3.0, 3.2).finished();
+    const MatrixXd A = (MatrixXd(4, 4) << 10.0, 3.0, 17.0, 3.5, 0.05, 10.0, 17.0, 0.1, 3.0, 3.5,
+                        1.7, 10.0, 17.0, 8.0, 0.05, 10.0)
+                           .finished();
+    const MatrixXd P = (MatrixXd(4, 4) << 1312, 1696, 5569, 124, 2329, 4135, 8307, 3736, 2348, 1451,
+                        3522, 2883, 4047, 8828, 8732, 5743)
+                           .finished() *
+                       1e-4;
+
+    return apply_parallel(x, [alpha, A, P](const auto &a) {
+        VectorXd scores = VectorXd::Zero(a.rows());
+        for (int i = 0; i < 4; i++) {
+            VectorXd sum_inner = VectorXd::Zero(a.rows());
+            for (int j = 0; j < 4; j++) {
+                sum_inner.array() += A(i, j) * (a.col(j) - P(i, j)).square();
+            }
+            scores.array() -= alpha(i) * (-sum_inner.array()).exp();
         }
         return scores;
     });
@@ -1076,6 +1290,12 @@ VectorXd himmelblau(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> 
     });
 }
 
+VectorXd himmelblaun2(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("The Himmelblau N. 2 function only accepts 2D inputs");
+    return himmelblau(x);
+}
+
 VectorXd holdertable(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     if (x.cols() != 2)
         throw std::invalid_argument("The Holder Table function only accepts 2D inputs");
@@ -1096,6 +1316,12 @@ VectorXd hosaki(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) 
         return VectorXd((1 - 8 * X + 7 * X.square() - 7.0 / 3.0 * X.cube() + 1.0 / 4.0 * X.pow(4)) *
                         Y.square() * (-Y).exp());
     });
+}
+
+VectorXd hosakin2(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("The Hosaki N. 2 function only accepts 2D inputs");
+    return hosaki(x);
 }
 
 VectorXd ishigami(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x, double a_param,
@@ -1179,6 +1405,12 @@ VectorXd keane(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     });
 }
 
+VectorXd keanen2(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("The Keane N. 2 function only accepts 2D inputs");
+    return keane(x);
+}
+
 VectorXd kowalik(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     if (x.cols() != 4)
         throw std::invalid_argument("The Kowalik function only accepts 4D inputs.");
@@ -1231,6 +1463,10 @@ VectorXd langermann(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> 
     });
 }
 
+VectorXd langermannn2(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    return langermann(x);
+}
+
 VectorXd leon(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     if (x.cols() != 2)
         throw std::invalid_argument("The Leon function is only defined on a 2D space.");
@@ -1239,6 +1475,10 @@ VectorXd leon(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
         const auto Y = a.col(1);
         return VectorXd(100 * (Y - X.cube()).square() + (1 - X).square());
     });
+}
+
+VectorXd leonn2(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    return leon(x);
 }
 
 VectorXd levin13(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
@@ -1276,6 +1516,24 @@ VectorXd levy(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     });
 }
 
+VectorXd levyn1(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 1)
+        throw std::invalid_argument("The Levy N. 1 function is only defined on a 1D space.");
+    return levy(x);
+}
+
+VectorXd levyn2(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("The Levy N. 2 function is only defined on a 2D space.");
+    return levy(x);
+}
+
+VectorXd levyn3(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 3)
+        throw std::invalid_argument("The Levy N. 3 function is only defined on a 3D space.");
+    return levy(x);
+}
+
 VectorXd lunacekbirastrigin(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     const int n = x.cols();
     const double mu0 = 2.5;
@@ -1303,15 +1561,10 @@ VectorXd matyas(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) 
     });
 }
 
-VectorXd mishrabird(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+VectorXd matyasn2(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     if (x.cols() != 2)
-        throw std::invalid_argument("Mishra's Bird function is only defined on a 2D space.");
-    return apply_parallel(x, [](const auto &a) {
-        const auto x1 = a.col(0);
-        const auto x2 = a.col(1);
-        return VectorXd(x2.sin() * (1.0 - x1.cos()).square().exp() +
-                        x1.cos() * (1.0 - x2.sin()).square().exp() + (x1 - x2).square());
-    });
+        throw std::invalid_argument("The Matyas N. 2 function only accepts 2D inputs");
+    return matyas(x);
 }
 
 VectorXd mccormick(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
@@ -1324,6 +1577,32 @@ VectorXd mccormick(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &
     });
 }
 
+VectorXd mccormickn2(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("The McCormick N. 2 function only accepts 2D inputs");
+    return mccormick(x);
+}
+
+VectorXd meyer(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 3)
+        throw std::invalid_argument("The Meyer function only accepts 3D inputs.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto X1 = a.col(0);
+        const auto X2 = a.col(1);
+        const auto X3 = a.col(2);
+        static constexpr double T[] = {1.0, 2.0, 1.0, 2.0, 0.1};
+        static constexpr double V[] = {1.0, 1.0, 2.0, 2.0, 0.1};
+        static constexpr double Y[] = {0.057, 0.113, 0.065, 0.126, 0.0056};
+
+        VectorXd res = VectorXd::Zero(a.rows());
+        for (int i = 0; i < 5; ++i) {
+            auto term = (X1 * X3 * T[i]) / (1.0 + X1 * T[i] + X2 * V[i]) - Y[i];
+            res += term.square().matrix();
+        }
+        return res;
+    });
+}
+
 VectorXd michalewicz(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x,
                      double m_param) {
     const int n = x.cols();
@@ -1331,9 +1610,244 @@ VectorXd michalewicz(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>>
     return apply_parallel(x, [n, m_param, I_vec_full](const auto &a) {
         const int rows = a.rows();
         const MatrixXd I = I_vec_full.replicate(rows, 1);
-        const MatrixXd term2 = (I.array() * a.square() / M_PI).sin().pow(2 * m_param);
-        const MatrixXd result = a.matrix().array() * term2.array();
-        return VectorXd(-result.rowwise().sum());
+        const auto term2 = (I.array() * a.square() / M_PI).sin().pow(2 * m_param);
+        const auto result = (a.sin() * term2.array());
+        return VectorXd(-result.matrix().rowwise().sum());
+    });
+}
+
+VectorXd michalewiczn2(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("The Michalewicz N. 2 function only accepts 2D inputs");
+    return michalewicz(x, 10.0);
+}
+
+VectorXd michalewiczn5(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 5)
+        throw std::invalid_argument("The Michalewicz N. 5 function only accepts 5D inputs");
+    return michalewicz(x, 10.0);
+}
+
+VectorXd michalewiczn10(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 10)
+        throw std::invalid_argument("The Michalewicz N. 10 function only accepts 10D inputs");
+    return michalewicz(x, 10.0);
+}
+
+VectorXd mielecantrell(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 4)
+        throw std::invalid_argument("The Miele-Cantrell function is only defined on a 4D space.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto x1 = a.col(0);
+        const auto x2 = a.col(1);
+        const auto x3 = a.col(2);
+        const auto x4 = a.col(3);
+        return VectorXd((x1.exp() - x2).pow(4) + 100.0 * (x2 - x3).pow(6) + (x3 - x4).tan().pow(4) +
+                        x1.pow(8));
+    });
+}
+
+VectorXd mishrabird(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("Mishra's Bird function is only defined on a 2D space.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto x1 = a.col(0);
+        const auto x2 = a.col(1);
+        return VectorXd(x2.sin() * (1.0 - x1.cos()).square().exp() +
+                        x1.cos() * (1.0 - x2.sin()).square().exp() + (x1 - x2).square());
+    });
+}
+
+VectorXd mishran1(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    const int n = x.cols();
+    return apply_parallel(x, [n](const auto &a) {
+        VectorXd g_n = VectorXd::Constant(a.rows(), (double)n);
+        if (n > 1) {
+            g_n -= a.leftCols(n - 1).matrix().rowwise().sum();
+        }
+        return VectorXd((1.0 + g_n.array()).pow(g_n.array()));
+    });
+}
+
+VectorXd mishran2(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    const int n = x.cols();
+    return apply_parallel(x, [n](const auto &a) {
+        VectorXd g_n = VectorXd::Constant(a.rows(), (double)n);
+        if (n > 1) {
+            const MatrixXd x_i = a.leftCols(n - 1).matrix();
+            const MatrixXd x_ip1 = a.rightCols(n - 1).matrix();
+            g_n -= 0.5 * (x_i + x_ip1).rowwise().sum();
+        }
+        return VectorXd((1.0 + g_n.array()).pow(g_n.array()));
+    });
+}
+
+VectorXd mishran3(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("Mishra's Function No. 3 is only defined on a 2D space.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto x1 = a.col(0);
+        const auto x2 = a.col(1);
+        return VectorXd((x1.square() + x2).abs().sqrt().cos().abs().sqrt() + 0.01 * (x1 + x2));
+    });
+}
+
+VectorXd mishran4(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("Mishra's Function No. 4 is only defined on a 2D space.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto x1 = a.col(0);
+        const auto x2 = a.col(1);
+        return VectorXd((x1.square() + x2).abs().sqrt().sin().abs().sqrt() + 0.01 * (x1 + x2));
+    });
+}
+
+VectorXd mishran5(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("Mishra's Function No. 5 is only defined on a 2D space.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto x1 = a.col(0);
+        const auto x2 = a.col(1);
+        const auto term1 = (x1.cos() + x2.cos()).square().sin().square();
+        const auto term2 = (x1.sin() + x2.sin()).square().cos().square();
+        return VectorXd((term1 + term2 + x1).square() + 0.01 * x1 + 0.1 * x2);
+    });
+}
+
+VectorXd mishran6(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("Mishra's Function No. 6 is only defined on a 2D space.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto x1 = a.col(0);
+        const auto x2 = a.col(1);
+        const auto g1 = (x1.cos() + x2.cos()).square().sin().square();
+        const auto g2 = (x1.sin() + x2.sin()).square().cos().square();
+        const auto inner = (g1 - g2 + x1).square();
+        return VectorXd(-(inner.array() + 1e-15).log() +
+                        0.1 * ((x1 - 1.0).square() + (x2 - 1.0).square()));
+    });
+}
+
+VectorXd mishran7(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    const int n = x.cols();
+    double fact_n = 1.0;
+    for (int i = 2; i <= n; ++i)
+        fact_n *= i;
+    return apply_parallel(x, [fact_n](const auto &a) {
+        return VectorXd((a.matrix().rowwise().prod().array() - fact_n).square());
+    });
+}
+
+VectorXd mishran8(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("Mishra's Function No. 8 is only defined on a 2D space.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto x1 = a.col(0);
+        const auto x2 = a.col(1);
+        const auto g = (x1 - 2.0).pow(10);
+        const auto h = (x2 + 3.0).pow(4);
+        return VectorXd(0.001 * (g + h).square());
+    });
+}
+
+VectorXd mishran9(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 3)
+        throw std::invalid_argument("Mishra's Function No. 9 is only defined on a 3D space.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto x1 = a.col(0);
+        const auto x2 = a.col(1);
+        const auto x3 = a.col(2);
+        const auto f1 = 2.0 * x1.pow(3) + 5.0 * x1 * x2 + 4.0 * x3 - 2.0 * x1.square() * x3 - 18.0;
+        const auto f2 = x1 + x3.square() + x1 * x2.square() + x1 * x2.pow(3) - 22.0;
+        const auto f3 =
+            8.0 * x1.square() + 2.0 * x2 * x3 + 2.0 * x2.square() + 3.0 * x3.square() - 52.0;
+        return VectorXd(
+            (f1 * f2.square() * f3 + f1 * f2 * f3.square() + f2.square() + (x1 + x2 - x3).square())
+                .square());
+    });
+}
+
+VectorXd mishran10(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("Mishra's Function No. 10 is only defined on a 2D space.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto x1 = a.col(0);
+        const auto x2 = a.col(1);
+        return VectorXd(((x1 + x2).floor() - x1.floor() - x2.floor()).square());
+    });
+}
+
+VectorXd mishran11(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    const int n = x.cols();
+    return apply_parallel(x, [n](const auto &a) {
+        const VectorXd am = a.abs().rowwise().sum() / n;
+        const VectorXd gm = a.abs().rowwise().prod().pow(1.0 / n);
+        return VectorXd((am - gm).array().square());
+    });
+}
+
+VectorXd mishran12(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("Mishra's Function No. 12 is only defined on a 2D space.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto x = a.col(0);
+        const auto y = a.col(1);
+        return VectorXd(x.sin() * ((1.0 - y.cos()).square()).exp() +
+                        y.cos() * ((1.0 - x.sin()).square()).exp() + (x - y).square());
+    });
+}
+
+VectorXd needleeye(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    return apply_parallel(x, [](const auto &a) {
+        const int m = a.rows();
+        const VectorXd max_abs = a.abs().rowwise().maxCoeff();
+        return VectorXd((max_abs.array() <= 0.0001).select(VectorXd::Zero(m), VectorXd::Ones(m)));
+    });
+}
+
+VectorXd parsopoulos(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("The Parsopoulos function is only defined on a 2D space.");
+    return apply_parallel(x, [](const auto &a) {
+        return VectorXd(a.col(0).cos().square() + a.col(1).sin().square());
+    });
+}
+
+VectorXd pathological(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    const int n = x.cols();
+    return apply_parallel(x, [n](const auto &a) {
+        VectorXd scores = VectorXd::Zero(a.rows());
+        for (int i = 0; i < n - 1; ++i) {
+            const auto xi = a.col(i);
+            const auto xj = a.col(i + 1);
+            const auto num = (100.0 * xi.square() + xj.square()).sqrt().sin().square() - 0.5;
+            const auto den = 1.0 + 0.001 * (xi.square() - 2.0 * xi * xj + xj.square()).square();
+            scores.array() += 0.5 + num / den;
+        }
+        return scores;
+    });
+}
+
+VectorXd paviani(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 10)
+        throw std::invalid_argument("The Paviani function is only defined on a 10D space.");
+    return apply_parallel(x, [](const auto &a) {
+        const VectorXd sum_term =
+            ((a - 2.0).log().square() + (10.0 - a).log().square()).rowwise().sum();
+        const VectorXd prod_term = a.rowwise().prod().pow(0.2);
+        return VectorXd(sum_term - prod_term);
+    });
+}
+
+VectorXd penholder(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("The Pen Holder function is only defined on a 2D space.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto x1 = a.col(0);
+        const auto x2 = a.col(1);
+        const auto term1 = (1.0 - (x1.square() + x2.square()).sqrt() / M_PI).abs().exp();
+        const auto inner = (x1.cos() * x2.cos() * term1).abs();
+        return VectorXd(-(-inner.pow(-1)).exp());
     });
 }
 
@@ -1343,6 +1857,10 @@ VectorXd periodic(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x
         const VectorXd sumx2 = a.square().rowwise().sum();
         return VectorXd(1 + sin2x.array() - 0.1 * (-sumx2.array()).exp());
     });
+}
+
+VectorXd periodicn2(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    return periodic(x);
 }
 
 VectorXd perm(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x, double beta) {
@@ -1372,6 +1890,28 @@ VectorXd picheny(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x)
     });
 }
 
+VectorXd pinter(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    const int n = x.cols();
+    return apply_parallel(x, [n](const auto &a) {
+        const int m = a.rows();
+        VectorXd scores = VectorXd::Zero(m);
+        for (int i = 0; i < n; ++i) {
+            const int prev = (i == 0) ? n - 1 : i - 1;
+            const int next = (i == n - 1) ? 0 : i + 1;
+            const auto xi = a.col(i);
+            const auto x_prev = a.col(prev);
+            const auto x_next = a.col(next);
+
+            const auto Ai = x_prev * xi.sin() + x_next.sin();
+            const auto Bi = x_prev.square() - 2.0 * xi + 3.0 * x_next - xi.cos() + 1.0;
+
+            scores.array() += (i + 1) * (xi.square() + 20.0 * Ai.square() +
+                                         (1.0 + (i + 1) * Bi.square()).log10());
+        }
+        return scores;
+    });
+}
+
 VectorXd powellsingular(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     if (x.cols() != 4)
         throw std::invalid_argument("The Powell Singular function is only defined on a 4D space.");
@@ -1385,12 +1925,62 @@ VectorXd powellsingular(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajo
     });
 }
 
+VectorXd powellsingularn2(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 4)
+        throw std::invalid_argument("The Powell-Singular N. 2 function only accepts 4D inputs");
+    return powellsingular(x);
+}
+
 VectorXd powellsum(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     const int n = x.cols();
     const RowVectorXd powers_full = RowVectorXd::LinSpaced(n, 2, n + 1);
     return apply_parallel(x, [powers_full](const auto &a) {
         return VectorXd(a.abs().pow(powers_full.replicate(a.rows(), 1).array()).rowwise().sum());
     });
+}
+
+VectorXd powellsumn2(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    return powellsum(x);
+}
+
+VectorXd pricen1(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("Price's Function No. 1 is only defined on a 2D space.");
+    return apply_parallel(x, [](const auto &a) {
+        return VectorXd((a.col(0).abs() - 5.0).square() + (a.col(1).abs() - 5.0).square());
+    });
+}
+
+VectorXd pricen2(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    return periodic(x);
+}
+
+VectorXd pricen3(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("Price's Function No. 3 is only defined on a 2D space.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto x1 = a.col(0);
+        const auto x2 = a.col(1);
+        return VectorXd(100.0 * (x2 - x1.square()).square() + (1.0 - x1).square() +
+                        6.4 * (x1 - 1.0).cos() - 6.4);
+    });
+}
+
+VectorXd pricen4(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("Price's Function No. 4 is only defined on a 2D space.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto x1 = a.col(0);
+        const auto x2 = a.col(1);
+        return VectorXd((2.0 * x1.pow(3) * x2 - x2.pow(3)).square() +
+                        (6.0 * x1 - x2.square() + x2).square());
+    });
+}
+
+VectorXd pricen5(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("The Price N. 5 function only accepts 2D inputs");
+    return goldsteinprice(x);
 }
 
 VectorXd qing(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
@@ -1402,12 +1992,35 @@ VectorXd qing(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     });
 }
 
+VectorXd qingn2(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    return apply_parallel(x, [](const auto &a) {
+        const int n = a.cols();
+        const int m = a.rows();
+        const RowVectorXd I_vec_full = RowVectorXd::LinSpaced(n, 1, n);
+        const MatrixXd I = I_vec_full.replicate(m, 1);
+        const VectorXd sin2x = a.sin().square().rowwise().sum();
+        const VectorXd griewank = a.square().rowwise().sum().array() / 4000.0 -
+                                  (a / I.array().sqrt()).cos().rowwise().prod().array() + 1.0;
+        return VectorXd(sin2x.array() + griewank.array());
+    });
+}
+
 VectorXd quartic(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     const int n = x.cols();
     const RowVectorXd I_vec_full = RowVectorXd::LinSpaced(n, 1, n);
     return apply_parallel(x, [I_vec_full](const auto &a) {
         const MatrixXd I = I_vec_full.replicate(a.rows(), 1);
         return VectorXd((I.array() * a.pow(4)).rowwise().sum());
+    });
+}
+
+VectorXd quintic(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    return apply_parallel(x, [](const auto &a) {
+        return VectorXd(
+            (a.pow(5) - 3.0 * a.pow(4) + 4.0 * a.pow(3) + 2.0 * a.square() - 10.0 * a - 4.0)
+                .abs()
+                .rowwise()
+                .sum());
     });
 }
 
@@ -1431,7 +2044,14 @@ VectorXd rana(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
 VectorXd rastrigin(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     const int n = x.cols();
     return apply_parallel(x, [n](const auto &a) {
-        return VectorXd(10 * n + (a.square() - 10 * (2 * M_PI * a).cos()).rowwise().sum());
+        return VectorXd((a.square() - 10.0 * (2.0 * EIGEN_PI * a).cos() + 10.0).rowwise().sum());
+    });
+}
+
+VectorXd rastrigin_noncont(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    return apply_parallel(x, [](const auto &a) {
+        auto y = (a.abs().array() > 0.5).select((2.0 * a.array()).round() / 2.0, a.array());
+        return VectorXd((y.square() - 10.0 * (2.0 * EIGEN_PI * y).cos() + 10.0).rowwise().sum());
     });
 }
 
@@ -1463,6 +2083,10 @@ VectorXd rosenbrock(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> 
     });
 }
 
+VectorXd rotatedhyperellipsoid(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    return schwefel12(x);
+}
+
 VectorXd salomon(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     return apply_parallel(x, [](const auto &a) {
         const VectorXd sqrtsumx2 = a.square().rowwise().sum().array().sqrt();
@@ -1470,29 +2094,30 @@ VectorXd salomon(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x)
     });
 }
 
-VectorXd schafferf6(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
-    if (x.cols() != 2)
-        throw std::invalid_argument("The Schaffer F6 function is only defined on a 2D space.");
+VectorXd sargan(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     return apply_parallel(x, [](const auto &a) {
-        const auto X2 = a.col(0).square();
-        const auto Y2 = a.col(1).square();
-        const auto x2y2 = X2 + Y2;
-        const VectorXd numerator = (x2y2.sqrt().sin().square()) - 0.5;
-        const VectorXd denominator = (1.0 + 0.001 * x2y2).square();
-        return VectorXd(0.5 + numerator.array() / denominator.array());
+        const VectorXd sum_sq = a.square().rowwise().sum();
+        const VectorXd sum_all = a.rowwise().sum();
+        return VectorXd(sum_sq.array() + 0.4 * (sum_all.array().square() - sum_sq.array()));
     });
+}
+
+VectorXd schafferf6(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    return sineenvelopesinewave(x);
 }
 
 VectorXd schafferf7(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     const int n = x.cols();
     return apply_parallel(x, [n](const auto &a) {
         VectorXd scores = VectorXd::Zero(a.rows());
+        if (n <= 1)
+            return scores;
         for (int i = 0; i < n - 1; ++i) {
             const VectorXd si = (a.col(i).square() + a.col(i + 1).square()).sqrt();
             scores.array() +=
                 si.array().sqrt() * ((50.0 * si.array().pow(0.2)).sin().square() + 1.0);
         }
-        return scores;
+        return VectorXd((scores.array() / (n - 1.0)).square());
     });
 }
 
@@ -1551,6 +2176,65 @@ VectorXd schwefel(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x
     });
 }
 
+VectorXd schwefel_cec(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    const int n = x.cols();
+    return apply_parallel(x, [n](const auto &a) {
+        const int m = a.rows();
+        VectorXd scores = VectorXd::Zero(m);
+        // sh_rate = 10.0 is applied externally or internally?
+        // In CEC, it's applied BEFORE adding 420.9687.
+        // We assume 'a' is already shifted and rotated.
+        for (int i = 0; i < n; ++i) {
+            auto z = (a.col(i).array() * 10.0) + 420.9687462275036;
+
+            // Boundary cases
+            auto mask_gt = (z > 500.0);
+            auto mask_lt = (z < -500.0);
+            auto mask_mid = (!mask_gt && !mask_lt);
+
+            // z > 500
+            if (mask_gt.any()) {
+                auto z_gt = mask_gt.select(z, 0.0);
+                auto mod_val = z_gt.binaryExpr(ArrayXd::Constant(m, 500.0),
+                                               [](double v, double m) { return std::fmod(v, m); });
+                auto term = (500.0 - mod_val) * (500.0 - mod_val).sqrt().sin();
+                auto penalty = (z_gt - 500.0).square() / 10000.0;
+                scores.array() += mask_gt.select(penalty / n - term, 0.0);
+            }
+
+            // z < -500
+            if (mask_lt.any()) {
+                auto z_lt = mask_lt.select(z, 0.0);
+                auto mod_val =
+                    z_lt.abs().binaryExpr(ArrayXd::Constant(m, 500.0),
+                                          [](double v, double m) { return std::fmod(v, m); });
+                auto term = (mod_val - 500.0) * (mod_val - 500.0).abs().sqrt().sin();
+                auto penalty = (z_lt + 500.0).square() / 10000.0;
+                scores.array() += mask_lt.select(penalty / n - term, 0.0);
+            }
+
+            // |z| <= 500
+            if (mask_mid.any()) {
+                auto z_mid = mask_mid.select(z, 0.0);
+                scores.array() -= mask_mid.select(z_mid * z_mid.abs().sqrt().sin(), 0.0);
+            }
+        }
+        return VectorXd(scores.array() + 418.9828872724338 * n);
+    });
+}
+
+VectorXd schwefel12(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    const int n = x.cols();
+    return apply_parallel(x, [n](const auto &a) {
+        const int m = a.rows();
+        MatrixXd cumsums = MatrixXd::Zero(m, n);
+        cumsums.col(0) = a.col(0);
+        for (int i = 1; i < n; ++i)
+            cumsums.col(i) = cumsums.col(i - 1).array() + a.col(i);
+        return VectorXd(cumsums.array().square().rowwise().sum());
+    });
+}
+
 VectorXd schwefel220(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     return apply_parallel(x, [](const auto &a) { return VectorXd(a.abs().rowwise().sum()); });
 }
@@ -1569,15 +2253,17 @@ VectorXd schwefel223(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>>
     return apply_parallel(x, [](const auto &a) { return VectorXd(a.pow(10).rowwise().sum()); });
 }
 
-VectorXd schwefel12(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+VectorXd schwefel225(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     const int n = x.cols();
     return apply_parallel(x, [n](const auto &a) {
+        const auto x1 = a.col(0);
         const int m = a.rows();
-        MatrixXd cumsums = MatrixXd::Zero(m, n);
-        cumsums.col(0) = a.col(0);
-        for (int i = 1; i < n; ++i)
-            cumsums.col(i) = cumsums.col(i - 1).array() + a.col(i);
-        return VectorXd(cumsums.array().square().rowwise().sum());
+        VectorXd scores = VectorXd::Zero(m);
+        for (int i = 1; i < n; ++i) {
+            const auto xi = a.col(i);
+            scores.array() += (xi - 1.0).square() + (x1 - xi.square()).square();
+        }
+        return scores;
     });
 }
 
@@ -1659,6 +2345,35 @@ VectorXd shubertn4(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &
     });
 }
 
+VectorXd sineenvelopesinewave(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    const int n = x.cols();
+    return apply_parallel(x, [n](const auto &a) {
+        const int m = a.rows();
+        VectorXd scores = VectorXd::Zero(m);
+        for (int i = 0; i < n; ++i) {
+            int next = (i + 1) % n;
+            const auto xi = a.col(i);
+            const auto xnext = a.col(next);
+            const auto x2y2 = xi.square() + xnext.square();
+            const VectorXd numerator = (x2y2.sqrt().sin().square()) - 0.5;
+            const VectorXd denominator = (1.0 + 0.001 * x2y2).square();
+            scores.array() += 0.5 + numerator.array() / denominator.array();
+        }
+        return scores;
+    });
+}
+
+VectorXd sixhumpcamel(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("The Six-hump Camel function only accepts 2D inputs");
+    return apply_parallel(x, [](const auto &a) {
+        const auto X = a.col(0);
+        const auto Y = a.col(1);
+        return VectorXd((4 - 2.1 * X.square() + X.pow(4) / 3.0) * X.square() + X * Y +
+                        (-4 + 4 * Y.square()) * Y.square());
+    });
+}
+
 VectorXd sphere(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     return apply_parallel(x, [](const auto &a) { return VectorXd(a.square().rowwise().sum()); });
 }
@@ -1666,6 +2381,20 @@ VectorXd sphere(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) 
 VectorXd step(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     return apply_parallel(
         x, [](const auto &a) { return VectorXd((a + 0.5).floor().square().rowwise().sum()); });
+}
+
+VectorXd stepn1(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    return apply_parallel(x,
+                          [](const auto &a) { return VectorXd(a.abs().floor().rowwise().sum()); });
+}
+
+VectorXd stepn2(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    return step(x);
+}
+
+VectorXd stepn3(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    return apply_parallel(
+        x, [](const auto &a) { return VectorXd(a.square().floor().rowwise().sum()); });
 }
 
 VectorXd stretchedvsine(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
@@ -1696,6 +2425,30 @@ VectorXd sumsquares(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> 
     });
 }
 
+VectorXd tablefcn(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("The Table function is only defined on a 2D space.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto x1 = a.col(0);
+        const auto x2 = a.col(1);
+        return VectorXd(
+            -(x1.cos() * x2.cos() * (1.0 - (x1.square() + x2.square()).sqrt() / M_PI).abs().exp())
+                 .abs());
+    });
+}
+
+VectorXd testtubeholder(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("The Test Tube Holder function is only defined on a 2D space.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto x1 = a.col(0);
+        const auto x2 = a.col(1);
+        return VectorXd(
+            -4.0 *
+            (x1.sin() * x2.cos() * ((x1.square() + x2.square()) / 200.0).cos().abs().exp()).abs());
+    });
+}
+
 VectorXd threehumpcamel(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     if (x.cols() != 2)
         throw std::invalid_argument("The Three-hump Camel function only accepts 2D inputs");
@@ -1706,14 +2459,15 @@ VectorXd threehumpcamel(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajo
     });
 }
 
-VectorXd sixhumpcamel(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+VectorXd trefethen(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     if (x.cols() != 2)
-        throw std::invalid_argument("The Six-hump Camel function only accepts 2D inputs");
+        throw std::invalid_argument("The Trefethen function is only defined on a 2D space.");
     return apply_parallel(x, [](const auto &a) {
-        const auto X = a.col(0);
-        const auto Y = a.col(1);
-        return VectorXd((4 - 2.1 * X.square() + X.pow(4) / 3.0) * X.square() + X * Y +
-                        (-4 + 4 * Y.square()) * Y.square());
+        const auto x1 = a.col(0);
+        const auto x2 = a.col(1);
+        return VectorXd((50.0 * x1).sin().exp() + (60.0 * x2.exp()).sin() +
+                        (70.0 * x1.sin()).sin() + (80.0 * x2).sin().sin() -
+                        (10.0 * (x1 + x2)).sin() + 0.25 * (x1.square() + x2.square()));
     });
 }
 
@@ -1735,6 +2489,88 @@ VectorXd trid(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
         if (n > 1)
             scores -= (a.block(0, 1, m, n - 1) * a.block(0, 0, m, n - 1)).rowwise().sum().matrix();
         return scores;
+    });
+}
+
+VectorXd trigonometricn1(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    const int n = x.cols();
+    return apply_parallel(x, [n](const auto &a) {
+        const int m = a.rows();
+        const VectorXd sum_cos = a.cos().rowwise().sum();
+        VectorXd scores = VectorXd::Zero(m);
+        for (int i = 0; i < n; ++i) {
+            scores.array() += (static_cast<double>(n) - sum_cos.array() +
+                               (i + 1.0) * (1.0 - a.col(i).cos() - a.col(i).sin()))
+                                  .square();
+        }
+        return scores;
+    });
+}
+
+VectorXd trigonometricn2(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    return apply_parallel(x, [](const auto &a) {
+        return VectorXd(1.0 +
+                        (8.0 * (7.0 * (a - 0.9).square()).sin().square() +
+                         6.0 * (14.0 * (a - 0.9).square()).sin().square() + (a - 0.9).square())
+                            .rowwise()
+                            .sum());
+    });
+}
+
+VectorXd ursemn1(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("The Ursem N. 1 function is only defined on a 2D space.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto x1 = a.col(0);
+        const auto x2 = a.col(1);
+        return VectorXd(-(2.0 * x1 - 0.5 * M_PI).sin() - 3.0 * x2.cos() - 0.5 * x1);
+    });
+}
+
+VectorXd ursemn3(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("The Ursem N. 3 function is only defined on a 2D space.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto x1 = a.col(0);
+        const auto x2 = a.col(1);
+        const auto term1 =
+            -(2.2 * M_PI * x1 + 0.5 * M_PI).sin() * (3.0 - x1.abs()) / 2.0 * (2.0 - x2.abs()) / 2.0;
+        const auto term2 = -(0.5 * M_PI * x2.square() + 0.5 * M_PI).sin() * (2.0 - x1.abs()) / 2.0 *
+                           (2.0 - x2.abs()) / 2.0;
+        return VectorXd(term1 + term2);
+    });
+}
+
+VectorXd ursemn4(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("The Ursem N. 4 function is only defined on a 2D space.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto x1 = a.col(0);
+        const auto x2 = a.col(1);
+        return VectorXd(-3.0 * (0.5 * M_PI * x1 + 0.5 * M_PI).sin() *
+                        (2.0 - (x1.square() + x2.square()).sqrt()) / 2.0);
+    });
+}
+
+VectorXd ursemwaves(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument("The Ursem Waves function is only defined on a 2D space.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto x1 = a.col(0);
+        const auto x2 = a.col(1);
+        const auto term1 = -(0.3 * x1).pow(3);
+        const auto term2 = -3.5 * x1 * x2.pow(3);
+        const auto term3 =
+            4.7 * (3.0 * x1 - x2.square() * (2.0 + x1)).cos() * (2.5 * M_PI * x1).sin();
+        return VectorXd(term1 + term2 + term3);
+    });
+}
+
+VectorXd ventersobiezcczanski(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    return apply_parallel(x, [](const auto &a) {
+        return VectorXd((a.square() - 100.0 * a.cos().square() - 100.0 * (a.square() / 30.0).cos())
+                            .rowwise()
+                            .sum());
     });
 }
 
@@ -1774,6 +2610,17 @@ VectorXd wavy(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x, do
     });
 }
 
+VectorXd wayburnseadern1(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument(
+            "Wayburn-Seader's Function No. 1 is only defined on a 2D space.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto x1 = a.col(0);
+        const auto x2 = a.col(1);
+        return VectorXd((x1.pow(6) + x2.pow(4) - 17.0).square() + (2.0 * x1 + x2 - 4.0).square());
+    });
+}
+
 VectorXd wayburnseadern2(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
     if (x.cols() != 2)
         throw std::invalid_argument("The Wayburn-Seader N. 02 function only accepts 2D inputs");
@@ -1782,6 +2629,36 @@ VectorXd wayburnseadern2(const Ref<const Matrix<double, Dynamic, Dynamic, RowMaj
         const auto Y = a.col(1);
         return VectorXd((1.613 - 4 * (X - 0.3125).square() - 4 * (Y - 1.625).square()).square() +
                         (Y - 1).square());
+    });
+}
+
+VectorXd wayburnseadern3(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x) {
+    if (x.cols() != 2)
+        throw std::invalid_argument(
+            "Wayburn-Seader's Function No. 3 is only defined on a 2D space.");
+    return apply_parallel(x, [](const auto &a) {
+        const auto x1 = a.col(0);
+        const auto x2 = a.col(1);
+        return VectorXd(2.0 / 3.0 * x1.pow(3) - 8.0 * x1.square() + 33.0 * x1 - x1 * x2 + 5.0 +
+                        ((x1 - 4.0).square() + (x2 - 5.0).square() - 4.0).square());
+    });
+}
+
+VectorXd weierstrass(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x, double a,
+                     double b, int kmax) {
+    const int n = x.cols();
+    VectorXd k_vec = VectorXd::LinSpaced(kmax + 1, 0, kmax);
+    const ArrayXd a_k = ArrayXd::Constant(kmax + 1, a).pow(k_vec.array());
+    const ArrayXd b_k = ArrayXd::Constant(kmax + 1, b).pow(k_vec.array());
+    const double second_sum_term = n * (a_k * (M_PI * b_k).cos()).sum();
+
+    return apply_parallel(x, [n, a_k, b_k, second_sum_term, kmax](const auto &a_in) {
+        const int num_rows = a_in.rows();
+        MatrixXd term1_sum_k = MatrixXd::Zero(num_rows, n);
+        for (int k = 0; k <= kmax; ++k) {
+            term1_sum_k += a_k(k) * (2.0 * M_PI * b_k(k) * (a_in + 0.5)).cos().matrix();
+        }
+        return VectorXd(term1_sum_k.rowwise().sum().array() - second_sum_term);
     });
 }
 
@@ -1799,24 +2676,6 @@ VectorXd whitley(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &x)
             }
         }
         return scores;
-    });
-}
-
-VectorXd weierstrass(const Ref<const Matrix<double, Dynamic, Dynamic, RowMajor>> &X, double a_param,
-                     double b_param, int kmax) {
-    const int n = X.cols();
-    VectorXd k_vec = VectorXd::LinSpaced(kmax + 1, 0, kmax);
-    const ArrayXd a_k = ArrayXd::Constant(kmax + 1, a_param).pow(k_vec.array());
-    const ArrayXd b_k = ArrayXd::Constant(kmax + 1, b_param).pow(k_vec.array());
-    const double second_sum_term = n * (a_k * (M_PI * b_k).cos()).sum();
-
-    return apply_parallel(X, [n, a_k, b_k, second_sum_term, kmax](const auto &a) {
-        const int num_rows = a.rows();
-        MatrixXd term1_sum_k = MatrixXd::Zero(num_rows, n);
-        for (int k = 0; k <= kmax; ++k) {
-            term1_sum_k += a_k(k) * (2 * M_PI * b_k(k) * (a + 0.5)).cos().matrix();
-        }
-        return VectorXd(term1_sum_k.rowwise().sum().array() - second_sum_term);
     });
 }
 

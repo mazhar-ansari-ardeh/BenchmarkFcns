@@ -65,8 +65,14 @@ else()
 endif()
 
 pybind11_add_module(
-  _core src/C++/main.cpp src/C++/benchmarkfcns.cpp src/C++/multifidelity.cpp
-  src/C++/multiobjective.cpp src/C++/composition.cpp)
+  _core
+  src/C++/main.cpp
+  src/C++/benchmarkfcns.cpp
+  src/C++/multifidelity.cpp
+  src/C++/multiobjective.cpp
+  src/C++/composition.cpp
+  src/C++/cec_data.cpp
+  src/C++/cec.cpp)
 target_link_libraries(_core PRIVATE Python3::Module OpenMP::OpenMP_CXX)
 target_include_directories(_core PRIVATE ./src/C++/eigen-3.4.0)
 target_link_libraries(_core PRIVATE pybind11::module)

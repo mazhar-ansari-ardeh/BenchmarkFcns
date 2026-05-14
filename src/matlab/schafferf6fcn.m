@@ -11,14 +11,18 @@
 % Please forward any comments or bug reports to mazhar.ansari.ardeh at
 % Google's e-mail service or feel free to kindly modify the repository.
 function scores = schafferf6fcn(x)
-    n = size(x, 2);
-    assert(n == 2, 'The Schaffer F6 function is only defined on a 2D space.');
+    [m, n] = size(x);
 
-    X2 = x(:, 1).^2;
-    Y2 = x(:, 2).^2;
-    x2y2 = X2 + Y2;
+    scores = zeros(m, 1);
+    for i = 1:n
+        j = i + 1;
+        if j > n
+            j = 1;
+        end
 
-    numerator = (sin(sqrt(x2y2))).^2 - 0.5;
-    denominator = (1.0 + 0.001 * x2y2).^2;
-    scores = 0.5 + numerator ./ denominator;
+        x2y2 = x(:, i).^2 + x(:, j).^2;
+        numerator = (sin(sqrt(x2y2))).^2 - 0.5;
+        denominator = (1.0 + 0.001 * x2y2).^2;
+        scores = scores + (0.5 + numerator ./ denominator);
+    end
 end

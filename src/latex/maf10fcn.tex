@@ -1,0 +1,6 @@
+\begin{aligned}
+f_i(\textbf{x}) &= y_M + 2i \cdot h_i(y_1, \dots, y_{M-1}) \\
+h_1 &= \prod_{j=1}^{M-1} (1 - \cos(\frac{\pi}{2} y_j)) \\
+h_i &= [ \prod_{j=1}^{M-i} (1 - \cos(\frac{\pi}{2} y_j)) ] (1 - \sin(\frac{\pi}{2} y_{M-i+1})), \quad i=2, \dots, M-1 \\
+h_M &= 1 - y_1 - \frac{\cos(10\pi y_1 + \pi/2)}{10\pi}
+\end{aligned}

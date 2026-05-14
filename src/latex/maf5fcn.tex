@@ -1,0 +1,4 @@
+\begin{aligned}
+f_i(\textbf{x}) &= 10^{i-1} (1 + g(\textbf{x}_M)) \prod_{j=1}^{M-i} \cos(\frac{\pi}{2}x_j^{100}) \times \begin{cases} \sin(\frac{\pi}{2}x_{M-i+1}^{100}) & \text{if } i > 1 \\ 1 & \text{if } i = 1 \end{cases} \\
+g(\textbf{x}_M) &= \sum_{x_j \in \textbf{x}_M} (x_j - 0.5)^2
+\end{aligned}

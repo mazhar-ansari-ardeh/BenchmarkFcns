@@ -1,0 +1,7 @@
+\begin{aligned}
+f_1(\textbf{x}) &= x_1 + \frac{2}{|J_1|} [4 \sum_{j \in J_1} y_j^2 - 2 \prod_{j \in J_1} \cos(\frac{20y_j\pi}{\sqrt{j}}) + 2] \\
+f_2(\textbf{x}) &= 1 - x_1^2 + \frac{2}{|J_2|} [4 \sum_{j \in J_2} y_j^2 - 2 \prod_{j \in J_2} \cos(\frac{20y_j\pi}{\sqrt{j}}) + 2] \\
+y_j &= x_j - \sin(6\pi x_1 + \frac{j\pi}{n}) \\
+\text{Subject to: } & f_2 + f_1^2 - a \sin(N\pi(f_1^2 - f_2 + 1)) - 1 \ge 0 \\
+& x_1 \in [0, 1], x_j \in [-2, 2], \quad N=2, a=1
+\end{aligned}

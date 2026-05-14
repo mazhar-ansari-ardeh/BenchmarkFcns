@@ -12,8 +12,13 @@ function scores = schafferf7fcn(x)
     m = size(x, 1);
     scores = zeros(m, 1);
 
+    if n < 2
+        return;
+    end
+
     for i = 1:n-1
         si = sqrt(x(:, i).^2 + x(:, i+1).^2);
         scores = scores + sqrt(si) .* (sin(50.0 * si.^0.2).^2 + 1.0);
     end
+    scores = (scores / (n - 1.0)).^2;
 end

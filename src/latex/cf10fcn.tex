@@ -1,0 +1,8 @@
+\begin{aligned}
+f_1(\textbf{x}) &= \cos(0.5x_1\pi) \cos(0.5x_2\pi) + \frac{2}{|J_1|} \sum_{j \in J_1} [4y_j^2 - 2\cos(\frac{20\pi y_j}{\sqrt{j}}) + 2] \\
+f_2(\textbf{x}) &= \cos(0.5x_1\pi) \sin(0.5x_2\pi) + \frac{2}{|J_2|} \sum_{j \in J_2} [4y_j^2 - 2\cos(\frac{20\pi y_j}{\sqrt{j}}) + 2] \\
+f_3(\textbf{x}) &= \sin(0.5x_1\pi) + \frac{2}{|J_3|} \sum_{j \in J_3} [4y_j^2 - 2\cos(\frac{20\pi y_j}{\sqrt{j}}) + 2] \\
+y_j &= x_j - 2x_2 \sin(2\pi x_1 + \frac{j\pi}{n}) \\
+\text{Subject to: } & 1.0 - (f_1^2 + f_2^2 + f_3^2) + \sin(2\pi (f_1^2 + f_2^2 + f_3^2)) \ge 0 \\
+& x_1, x_2 \in [0, 1], x_j \in [-2, 2]
+\end{aligned}

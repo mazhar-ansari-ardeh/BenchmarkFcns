@@ -12,8 +12,9 @@ For the documentation of the implemented functions and their features, please vi
 - **High Performance**: Optimized C++ core using Eigen and OpenMP.
 - **Parallel Execution**: Automatic multi-core processing for large batches of data.
 - **SIMD Optimized**: Leverages modern CPU instruction sets for fast vector math.
-- **Comprehensive Library**: Includes 100+ single-objective, multi-fidelity, and multi-objective functions.
-- **Composition Engine**: Create hybrid benchmark landscapes with shifting, rotation, and scaling.
+- **Comprehensive Library**: 310+ functions including Classic (100+), CEC suites (2005-2022), Multi-Fidelity (49), and Multi-Objective (50).
+- **CEC Competition Suites**: Built-in support for official CEC 2005, 2014, 2017, 2019, 2020, and 2022 competition functions with embedded shift, rotation, and shuffle data.
+- **Parallel Composition Engine**: Advanced framework for creating hybrid landscapes, now fully parallelized for high-performance batch evaluations.
 
 # How to use
 ## Python
@@ -208,6 +209,31 @@ X = np.random.uniform(-5, 5, (50, 10))
 results = f15(X)
 ```
 
+#### Example: CEC Competition Functions
+The library includes full support for multiple CEC Single-Objective suites with official data embedded in the binary.
+```python
+from benchmarkfcns import cec
+import numpy as np
+
+# Evaluate CEC 2017 Function 11 (Hybrid Function 1) for a 10D point
+x = np.random.uniform(-100, 100, (1, 10))
+score_2017 = cec.evaluate_2017(x, fid=11)
+
+# Evaluate CEC 2022 Function 1 (Zakharov)
+score_2022 = cec.evaluate_2022(x, fid=1)
+```
+
+#### Example: Multi-objective Optimization
+The `multiobjective` submodule provides 50 standard problems including the MaF suite.
+```python
+from benchmarkfcns import multiobjective
+import numpy as np
+
+# Evaluate MaF1 (Inverted DTLZ1) with 3 objectives
+x = np.random.uniform(0, 1, (10, 10))
+scores = multiobjective.maf1(x, num_objectives=3) # Returns (10, 3) matrix
+```
+
 ## MATLAB
 As a reference, the repository also contains the implementation of the functions in MATLAB. To install and use the MATLAB implementation, it is just required to add the project folders to MATLAB's path. For example, to use the functions in the 'benchmarks/MATLAB' folder, just navigate to this folder with MATLAB's directory explorer or use the command `addpath` with path to the folder on your PC (e.g. `addpath /path/to/benchmarks`).
 
@@ -225,8 +251,7 @@ Any bug reports, code contributions, suggestions, feedback and insights are grea
     Mazhar Ansari Ardeh and cmutnik. (2025). Benchmarkfcns. Zenodo. https://doi.org/10.5281/zenodo.14556621
     ```
 
-*   **For the latest version of the repository (v3.7.0):**
+*   **For the latest version of the repository (v3.8.0):**
     ```
-    Mazhar Ansari Ardeh and cmutnik. (2026). Benchmarkfcns (version v3.7.0). Zenodo. https://doi.org/10.5281/zenodo.18912792
-
+    Mazhar Ansari Ardeh and cmutnik. (2026). Benchmarkfcns (version v3.8.0). Zenodo. https://doi.org/10.5281/zenodo.18912792
     ```

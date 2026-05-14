@@ -1,0 +1,21 @@
+https://infinity77.net/go_2021/scipy_test_functions_nd_C.html
+
+https://www.mathworks.com/matlabcentral/fileexchange/23147-test-functions-for-global-optimization-algorithms/files/single-objective-unconstrained/wood.m
+
+https://github.com/scipy/scipy/blob/main/benchmarks/benchmarks/go_benchmark_functions/go_funcs_W.py
+
+https://github.com/sjvrijn/mf2/tree/main/mf2
+
+https://github.com/AxelThevenot/Python_Benchmark_Test_Optimization_Function_Single_Objective/blob/main/pybenchfunction/function.py
+
+Das S, Suganthan PN (2010) Problem definitions and evaluation criteria for cec 2011 competition on testing evolutionary algorithms on real world optimization problems. Jadavpur University,
+
+https://github.com/thieu1995/opfunu/blob/master/opfunu/cec_based/cec2005.py
+
+https://ieeexplore.ieee.org/document/8672851
+
+GH Pages:
+Bukin 02
+Bukin 04
+Chichinadze
+Treccani
