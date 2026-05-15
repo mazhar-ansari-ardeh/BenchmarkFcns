@@ -68,18 +68,16 @@ jobs:
         cd openmp-12.0.1.src
         mkdir build && cd build
         # Build specifically for arm64 targeting macOS 11.0
+        # We use CMAKE_INSTALL_PREFIX to avoid manual path errors
         cmake -DCMAKE_BUILD_TYPE=Release \
               -DCMAKE_OSX_ARCHITECTURES="arm64" \
               -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 \
+              -DCMAKE_INSTALL_PREFIX=$HOME/libomp \
               -DLIBOMP_ENABLE_SHARED=ON \
               -DOPENMP_ENABLE_LIBOMPTARGET=OFF \
               ..
         make -j4 omp
-
-        # Install to a local directory
-        mkdir -p $HOME/libomp/lib $HOME/libomp/include
-        cp runtime/src/libomp.dylib $HOME/libomp/lib/
-        cp ../runtime/src/omp.h $HOME/libomp/include/
+        make install
 
         # Export paths for the compiler and cibuildwheel
         echo "CMAKE_PREFIX_PATH=$HOME/libomp" >> $GITHUB_ENV
@@ -98,7 +96,6 @@ jobs:
           otool -l $HOME/libomp/lib/libomp.dylib | grep -A 3 LC_BUILD_VERSION || true
         fi
       shell: bash
-
     - name: Pre-seed virtualenv.pyz
       shell: bash
       run: |
