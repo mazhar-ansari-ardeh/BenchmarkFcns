@@ -79,7 +79,11 @@ jobs:
         make -j4 omp
         make install
 
+        # Force the dylib to have an absolute ID so the linker records it and delocate can find it.
+        install_name_tool -id ${{ github.workspace }}/libomp/lib/libomp.dylib ${{ github.workspace }}/libomp/lib/libomp.dylib
+
         # Export paths for the compiler and cibuildwheel
+
         echo "CMAKE_PREFIX_PATH=${{ github.workspace }}/libomp" >> $GITHUB_ENV
         echo "LDFLAGS=-L${{ github.workspace }}/libomp/lib" >> $GITHUB_ENV
         echo "CPPFLAGS=-I${{ github.workspace }}/libomp/include" >> $GITHUB_ENV
@@ -121,8 +125,6 @@ jobs:
       env:
         CIBW_ARCHS_MACOS: arm64
         CIBW_ARCHS_WINDOWS: AMD64 ARM64
-        CIBW_REPAIR_WHEEL_COMMAND_MACOS: >
-          delocate-wheel --libpath ${{ github.workspace }}/libomp/lib --require-archs {delocate_archs} -w {dest_dir} {wheel}
         CIBW_ENVIRONMENT_MACOS: |
           CMAKE_PREFIX_PATH=${{ github.workspace }}/libomp
           LDFLAGS=-L${{ github.workspace }}/libomp/lib
