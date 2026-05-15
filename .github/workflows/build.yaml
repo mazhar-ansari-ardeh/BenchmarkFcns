@@ -64,18 +64,18 @@ jobs:
       if: runner.os == 'macOS'
       run: |
         # Download and build a Universal (x86_64 + arm64) libomp targeting macOS 11.0.
-        # This avoids the version mismatch error with Homebrew's macOS 15-only bottle.
-        # Building from source ensures we can support Intel cross-compilation on ARM64 runners.
-        curl -L https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/openmp-18.1.8.src.tar.xz | tar -xJ
-        cd openmp-18.1.8.src
+        # We use the full llvm-project source to ensure all required CMake modules are present.
+        curl -L https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/llvm-project-18.1.8.src.tar.xz | tar -xJ
+        cd llvm-project-18.1.8.src/openmp
         mkdir build && cd build
         cmake -DCMAKE_OSX_ARCHITECTURES="x86_64;arm64" \
               -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 \
               -DLIBOMP_ENABLE_SHARED=ON \
               -DOPENMP_ENABLE_LIBOMPTARGET=OFF \
+              -DLIBOMP_INSTALL_ALIASES=OFF \
               -DCMAKE_BUILD_TYPE=Release \
               ..
-        make -j4 libomp
+        make -j4 omp
 
         # Organize headers and library for the build
         mkdir -p $HOME/libomp/lib $HOME/libomp/include
