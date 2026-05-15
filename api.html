@@ -237,32 +237,6 @@
         <article role="main" id="furo-main-content">
           <section id="api-reference">
 <h1>API Reference<a class="headerlink" href="#api-reference" title="Link to this heading">¶</a></h1>
-<section id="test-function">
-<h2>Test Function<a class="headerlink" href="#test-function" title="Link to this heading">¶</a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="benchmarkfcns.ackley">
-<span class="sig-prename descclassname"><span class="pre">benchmarkfcns.</span></span><span class="sig-name descname"><span class="pre">ackley</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.typing.NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'[m,</span> <span class="pre">n]'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'flags.c_contiguous'</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.typing.NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'[m,</span> <span class="pre">1]'</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#benchmarkfcns.ackley" title="Link to this definition">¶</a></dt>
-<dd><p>Computes the value of Ackley benchmark function.
-SCORES = ackley(X) computes the value of the Ackley function at point
-X. <cite>ackley</cite> accepts a matrix of size M-by-N and returns a vector SCORES
-of size M-by-1 in which each row contains the function value for each row
-of X.
-Properties:
-- Global minimum: 0
-- Location of global minimum: (0, 0, …, 0)
-- Number of dimensions: N
-- Recommended domain: [-35, 35]^N
-- Number of local minima: many
-- Number of global minima: 1
-- Convexity: non-convex
-- Separability: non-separable
-- Modality: multimodal
-- Symmetry: radial symmetry
-For more information, please visit:
-benchmarkfcns.info/doc/ackleyfcn</p>
-</dd></dl>
-
-</section>
 <section id="module-benchmarkfcns">
 <span id="core-functions"></span><h2>Core Functions<a class="headerlink" href="#module-benchmarkfcns" title="Link to this heading">¶</a></h2>
 <section id="benchmarkfcns-a-collection-of-benchmark-test-functions-for-optimization-problems">
@@ -327,8 +301,8 @@ Defaults to Identity matrix.</p></li>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="id0">
-<span class="sig-prename descclassname"><span class="pre">benchmarkfcns.</span></span><span class="sig-name descname"><span class="pre">ackley</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.typing.NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'[m,</span> <span class="pre">n]'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'flags.c_contiguous'</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.typing.NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'[m,</span> <span class="pre">1]'</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="benchmarkfcns.ackley">
+<span class="sig-prename descclassname"><span class="pre">benchmarkfcns.</span></span><span class="sig-name descname"><span class="pre">ackley</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.typing.NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'[m,</span> <span class="pre">n]'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'flags.c_contiguous'</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.typing.NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'[m,</span> <span class="pre">1]'</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#benchmarkfcns.ackley" title="Link to this definition">¶</a></dt>
 <dd><p>Computes the value of Ackley benchmark function.
 SCORES = ackley(X) computes the value of the Ackley function at point
 X. <cite>ackley</cite> accepts a matrix of size M-by-N and returns a vector SCORES
@@ -6460,10 +6434,6 @@ X : np.ndarray</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">API Reference</a><ul>
-<li><a class="reference internal" href="#test-function">Test Function</a><ul>
-<li><a class="reference internal" href="#benchmarkfcns.ackley"><code class="docutils literal notranslate"><span class="pre">ackley()</span></code></a></li>
-</ul>
-</li>
 <li><a class="reference internal" href="#module-benchmarkfcns">Core Functions</a><ul>
 <li><a class="reference internal" href="#benchmarkfcns-a-collection-of-benchmark-test-functions-for-optimization-problems">BenchmarkFcns - A collection of benchmark test functions for optimization problems.</a></li>
 <li><a class="reference internal" href="#benchmarkfcns.Composition"><code class="docutils literal notranslate"><span class="pre">Composition</span></code></a><ul>
@@ -6471,7 +6441,7 @@ X : np.ndarray</p>
 <li><a class="reference internal" href="#benchmarkfcns.Composition.evaluate"><code class="docutils literal notranslate"><span class="pre">Composition.evaluate()</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">ackley()</span></code></a></li>
+<li><a class="reference internal" href="#benchmarkfcns.ackley"><code class="docutils literal notranslate"><span class="pre">ackley()</span></code></a></li>
 <li><a class="reference internal" href="#benchmarkfcns.ackley5"><code class="docutils literal notranslate"><span class="pre">ackley5()</span></code></a></li>
 <li><a class="reference internal" href="#benchmarkfcns.ackley6"><code class="docutils literal notranslate"><span class="pre">ackley6()</span></code></a></li>
 <li><a class="reference internal" href="#benchmarkfcns.ackleyn2"><code class="docutils literal notranslate"><span class="pre">ackleyn2()</span></code></a></li>
