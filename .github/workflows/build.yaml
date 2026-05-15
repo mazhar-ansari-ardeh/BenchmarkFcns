@@ -124,6 +124,7 @@ jobs:
           CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH
           LDFLAGS=$LDFLAGS
           CPPFLAGS=$CPPFLAGS
+          DYLD_LIBRARY_PATH=$HOME/libomp/lib
 
     - name: Verify clean directory
       run: git diff --exit-code
