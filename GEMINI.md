@@ -30,7 +30,7 @@ The project is structured to prioritize performance while maintaining cross-lang
 - `src/python/benchmarkfcns`: Python wrappers and the advanced `Composition` class.
 - `src/matlab`: MATLAB-native implementations.
 - `src/latex`: TeX definitions and mathematical properties for documentation.
-- `optimiser`: Implementations of optimizers like Artificial Bee Colony (ABC).
+- `src/tests`: Automated test suites (GoogleTest & pytest).
 
 ## Building and Running
 
