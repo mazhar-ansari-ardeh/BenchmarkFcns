@@ -63,29 +63,10 @@ jobs:
     - name: Install OpenMP
       if: runner.os == 'macOS'
       run: |
-        # Download and build a Universal (x86_64 + arm64) libomp targeting macOS 11.0.
-        # We use the full llvm-project source to ensure all required CMake modules are present.
-        curl -L https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/llvm-project-18.1.8.src.tar.xz | tar -xJ
-        cd llvm-project-18.1.8.src/openmp
-        mkdir build && cd build
-        cmake -DCMAKE_OSX_ARCHITECTURES="x86_64;arm64" \
-              -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 \
-              -DLIBOMP_ENABLE_SHARED=ON \
-              -DOPENMP_ENABLE_LIBOMPTARGET=OFF \
-              -DLIBOMP_INSTALL_ALIASES=OFF \
-              -DCMAKE_BUILD_TYPE=Release \
-              ..
-        make -j4 omp
-
-        # Organize headers and library for the build
-        mkdir -p $HOME/libomp/lib $HOME/libomp/include
-        cp runtime/src/libomp.dylib $HOME/libomp/lib/
-        cp ../runtime/src/omp.h $HOME/libomp/include/
-
-        echo "CMAKE_PREFIX_PATH=$HOME/libomp" >> $GITHUB_ENV
-        echo "LDFLAGS=-L$HOME/libomp/lib" >> $GITHUB_ENV
-        echo "CPPFLAGS=-I$HOME/libomp/include" >> $GITHUB_ENV
-        echo "MACOSX_DEPLOYMENT_TARGET=11.0" >> $GITHUB_ENV
+        brew install libomp
+        echo "CMAKE_PREFIX_PATH=$(brew --prefix libomp)" >> $GITHUB_ENV
+        echo "LDFLAGS=-L$(brew --prefix libomp)/lib" >> $GITHUB_ENV
+        echo "CPPFLAGS=-I$(brew --prefix libomp)/include" >> $GITHUB_ENV
 
     - name: Debug Environment
       run: |
@@ -94,7 +75,7 @@ jobs:
         echo "CPPFLAGS=$CPPFLAGS"
         echo "MACOSX_DEPLOYMENT_TARGET=$MACOSX_DEPLOYMENT_TARGET"
         if [ "$RUNNER_OS" == "macOS" ]; then
-          ls -R $HOME/libomp
+          ls -l $(brew --prefix libomp)
         fi
       shell: bash
 
@@ -120,13 +101,12 @@ jobs:
 
     - uses: pypa/cibuildwheel@v2.23.3
       env:
-        CIBW_ARCHS_MACOS: x86_64 arm64
+        CIBW_ARCHS_MACOS: arm64
         CIBW_ARCHS_WINDOWS: AMD64 ARM64
         CIBW_ENVIRONMENT_MACOS: |
           CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH
           LDFLAGS=$LDFLAGS
           CPPFLAGS=$CPPFLAGS
-          MACOSX_DEPLOYMENT_TARGET=$MACOSX_DEPLOYMENT_TARGET
 
     - name: Verify clean directory
       run: git diff --exit-code
