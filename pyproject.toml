@@ -46,6 +46,11 @@ classifiers = [
   "Programming Language :: Python :: 3.13",
 ]
 
+[project.optional-dependencies]
+ai = [
+    "gymnasium>=0.29.1",
+]
+
 [tool.scikit-build]
 minimum-version = "0.10"
 wheel.expand-macos-universal-tags = true

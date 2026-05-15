@@ -25,8 +25,8 @@ This roadmap outlines the strategic direction for the **Benchmark Functions** li
 - [x] **Automated Documentation**: Generate searchable API and mathematical documentation using Sphinx/Doxygen.
 - [ ] **Benchmarking Dashboard**: Create an automated system to track performance regressions.
 
-## Phase 5: AI & Reinforcement Learning Integration (Planned)
-- [ ] **Gymnasium Environment Wrappers**: Implement standardized `gym.Env` wrappers for all major benchmark functions to support RL training.
+## Phase 5: AI & Reinforcement Learning Integration (In Progress)
+- [x] **Gymnasium Environment Wrappers**: Standardized `gym.Env` wrappers for all major benchmark functions to support RL training.
 - [ ] **Optimization-as-a-Service**: Develop a lightweight Python API for using benchmark functions as black-box training environments.
 - [ ] **Baseline AI Agents**: Provide example training scripts using popular libraries like `Stable Baselines3` or `CleanRL`.
 - [ ] **Hyperparameter Benchmarking**: Create a suite for testing the sensitivity of AI optimizers to function landscapes (noise, ruggedness, etc.).
