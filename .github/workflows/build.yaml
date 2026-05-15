@@ -68,11 +68,11 @@ jobs:
         cd openmp-12.0.1.src
         mkdir build && cd build
         # Build specifically for arm64 targeting macOS 11.0
-        # We use CMAKE_INSTALL_PREFIX to avoid manual path errors
+        # We use CMAKE_INSTALL_PREFIX with an absolute workspace path
         cmake -DCMAKE_BUILD_TYPE=Release \
               -DCMAKE_OSX_ARCHITECTURES="arm64" \
               -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 \
-              -DCMAKE_INSTALL_PREFIX=$HOME/libomp \
+              -DCMAKE_INSTALL_PREFIX=${{ github.workspace }}/libomp \
               -DLIBOMP_ENABLE_SHARED=ON \
               -DOPENMP_ENABLE_LIBOMPTARGET=OFF \
               ..
@@ -80,9 +80,9 @@ jobs:
         make install
 
         # Export paths for the compiler and cibuildwheel
-        echo "CMAKE_PREFIX_PATH=$HOME/libomp" >> $GITHUB_ENV
-        echo "LDFLAGS=-L$HOME/libomp/lib" >> $GITHUB_ENV
-        echo "CPPFLAGS=-I$HOME/libomp/include" >> $GITHUB_ENV
+        echo "CMAKE_PREFIX_PATH=${{ github.workspace }}/libomp" >> $GITHUB_ENV
+        echo "LDFLAGS=-L${{ github.workspace }}/libomp/lib" >> $GITHUB_ENV
+        echo "CPPFLAGS=-I${{ github.workspace }}/libomp/include" >> $GITHUB_ENV
         echo "MACOSX_DEPLOYMENT_TARGET=11.0" >> $GITHUB_ENV
 
     - name: Debug Environment
@@ -92,10 +92,11 @@ jobs:
         echo "CPPFLAGS=$CPPFLAGS"
         echo "MACOSX_DEPLOYMENT_TARGET=$MACOSX_DEPLOYMENT_TARGET"
         if [ "$RUNNER_OS" == "macOS" ]; then
-          ls -R $HOME/libomp
-          otool -l $HOME/libomp/lib/libomp.dylib | grep -A 3 LC_BUILD_VERSION || true
+          ls -R ${{ github.workspace }}/libomp
+          otool -l ${{ github.workspace }}/libomp/lib/libomp.dylib | grep -A 3 LC_BUILD_VERSION || true
         fi
       shell: bash
+
     - name: Pre-seed virtualenv.pyz
       shell: bash
       run: |
@@ -121,12 +122,13 @@ jobs:
         CIBW_ARCHS_MACOS: arm64
         CIBW_ARCHS_WINDOWS: AMD64 ARM64
         CIBW_REPAIR_WHEEL_COMMAND_MACOS: >
-          delocate-wheel --libpath $HOME/libomp/lib --require-archs {delocate_archs} -w {dest_dir} {wheel}
+          delocate-wheel --libpath ${{ github.workspace }}/libomp/lib --require-archs {delocate_archs} -w {dest_dir} {wheel}
         CIBW_ENVIRONMENT_MACOS: |
-          CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH
-          LDFLAGS=$LDFLAGS
-          CPPFLAGS=$CPPFLAGS
-          DYLD_LIBRARY_PATH=$HOME/libomp/lib
+          CMAKE_PREFIX_PATH=${{ github.workspace }}/libomp
+          LDFLAGS=-L${{ github.workspace }}/libomp/lib
+          CPPFLAGS=-I${{ github.workspace }}/libomp/include
+          DYLD_LIBRARY_PATH=${{ github.workspace }}/libomp/lib
+          MACOSX_DEPLOYMENT_TARGET=11.0
 
     - name: Verify clean directory
       run: git diff --exit-code
