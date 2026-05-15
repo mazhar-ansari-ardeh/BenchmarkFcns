@@ -3,7 +3,6 @@ API Reference
 
 Core Functions
 --------------
-
 .. automodule:: benchmarkfcns
    :members:
    :undoc-members:
@@ -12,7 +11,6 @@ Core Functions
 
 Multi-Objective
 ---------------
-
 .. automodule:: benchmarkfcns.multiobjective
    :members:
    :undoc-members:
@@ -21,7 +19,6 @@ Multi-Objective
 
 Multi-Fidelity
 --------------
-
 .. automodule:: benchmarkfcns.multifidelity
    :members:
    :undoc-members:
@@ -30,7 +27,6 @@ Multi-Fidelity
 
 Composition Engine
 ------------------
-
 .. automodule:: benchmarkfcns.composition
    :members:
    :undoc-members:
@@ -39,7 +35,6 @@ Composition Engine
 
 Plotting Utilities
 ------------------
-
 .. automodule:: benchmarkfcns.plotting
    :members:
    :undoc-members:
