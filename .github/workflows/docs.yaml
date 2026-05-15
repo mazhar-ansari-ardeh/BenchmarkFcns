@@ -31,6 +31,10 @@ jobs:
       - name: Build documentation
         run: |
           sphinx-build -b html docs/source docs/build/html
+          # Prevent GitHub Pages from ignoring folders starting with underscores
+          touch docs/build/html/.nojekyll
+          # Recreate CNAME for custom domain
+          echo "benchmarkfcns.info" > docs/build/html/CNAME
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4

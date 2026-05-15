@@ -25,6 +25,7 @@ exclude_patterns = []
 html_theme = 'furo'
 html_static_path = ['_static']
 html_title = "BenchmarkFcns Documentation"
+html_baseurl = "https://benchmarkfcns.info"
 
 # -- Extension configuration -------------------------------------------------
 # MyST settings for Markdown support
