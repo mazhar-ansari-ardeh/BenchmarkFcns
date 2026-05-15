@@ -23,10 +23,13 @@ jobs:
 
       - name: Install dependencies
         run: |
-          # Install the package so sphinx can import it
           pip install .
-          # Install documentation tools
           pip install sphinx furo myst-parser sphinx-autodoc-typehints
+
+      - name: Verify package installation
+        run: |
+          python -c "import benchmarkfcns; print(f'Core functions found: {len(benchmarkfcns.__all__)}')"
+          python -c "import benchmarkfcns.multiobjective; print(f'Multi-objective found: {len(benchmarkfcns.multiobjective.__all__)}')"
 
       - name: Build documentation
         run: |

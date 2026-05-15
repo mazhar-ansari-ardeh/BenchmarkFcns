@@ -3,50 +3,40 @@ API Reference
 
 Core Functions
 --------------
-The core module contains standard single-objective benchmark functions.
-
-.. autosummary::
-   :toctree: generated/
-   :recursive:
-
-   benchmarkfcns
+.. automodule:: benchmarkfcns
+   :members:
+   :undoc-members:
+   :imported-members:
+   :show-inheritance:
 
 Multi-Objective
 ---------------
-Functions with multiple conflicting objectives.
-
-.. autosummary::
-   :toctree: generated/
-   :recursive:
-
-   benchmarkfcns.multiobjective
+.. automodule:: benchmarkfcns.multiobjective
+   :members:
+   :undoc-members:
+   :imported-members:
+   :show-inheritance:
 
 Multi-Fidelity
 --------------
-Functions with different levels of accuracy and cost.
-
-.. autosummary::
-   :toctree: generated/
-   :recursive:
-
-   benchmarkfcns.multifidelity
+.. automodule:: benchmarkfcns.multifidelity
+   :members:
+   :undoc-members:
+   :imported-members:
+   :show-inheritance:
 
 Composition Engine
 ------------------
-Engine for creating complex hybrid landscapes.
-
-.. autosummary::
-   :toctree: generated/
-   :recursive:
-
-   benchmarkfcns.composition
+.. automodule:: benchmarkfcns.composition
+   :members:
+   :undoc-members:
+   :imported-members:
+   :show-inheritance:
 
 Plotting Utilities
 ------------------
-Tools for visualizing function landscapes.
-
-.. autosummary::
-   :toctree: generated/
-   :recursive:
-
-   benchmarkfcns.plotting
+.. automodule:: benchmarkfcns.plotting
+   :members:
+   :undoc-members:
+   :imported-members:
+   :show-inheritance:
