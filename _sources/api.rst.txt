@@ -1,6 +1,10 @@
 API Reference
 =============
 
+Test Function
+-------------
+.. autofunction:: benchmarkfcns.ackley
+
 Core Functions
 --------------
 .. automodule:: benchmarkfcns
