@@ -1,0 +1,145 @@
+name: Wheels
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+     - master
+  release:
+    types:
+      - published
+
+env:
+  FORCE_COLOR: 3
+  # CMAKE_FIND_DEBUG_MODE: "ON"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build_sdist:
+    name: Build SDist
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: true
+
+    - name: Build SDist
+      run: pipx run build --sdist
+
+    - name: Check metadata
+      run: pipx run twine check dist/*
+
+    - uses: actions/upload-artifact@v4
+      with:
+        path: dist/*.tar.gz
+
+  build_wheels:
+    name: Wheels on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-13, macos-latest, windows-latest]
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: true
+
+    # Added cache for cibuildwheel virtualenv.pyz
+    - name: Cache cibuildwheel virtualenv artifacts
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.cache/cibuildwheel
+          ~/Library/Caches/cibuildwheel
+          C:\Users\runneradmin\AppData\Local\pypa\cibuildwheel\Cache\
+        key: cibw-virtualenv-20.30.0-${{ runner.os }}
+
+    - name: Install OpenMP
+      if: runner.os == 'macOS'
+      run: |
+        brew install libomp
+        echo "CMAKE_PREFIX_PATH=$(brew --prefix libomp)" >> $GITHUB_ENV
+        echo "LDFLAGS=-L$(brew --prefix libomp)/lib" >> $GITHUB_ENV
+        echo "CPPFLAGS=-I$(brew --prefix libomp)/include" >> $GITHUB_ENV
+        echo "MACOSX_DEPLOYMENT_TARGET=$(sw_vers -productVersion | cut -d. -f1).0" >> $GITHUB_ENV
+
+    - name: Debug Environment
+      run: |
+        echo "CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH"
+        echo "LDFLAGS=$LDFLAGS"
+        echo "CPPFLAGS=$CPPFLAGS"
+        echo "MACOSX_DEPLOYMENT_TARGET=$MACOSX_DEPLOYMENT_TARGET"
+        if [ "$RUNNER_OS" == "macOS" ]; then
+          ls -l $(brew --prefix libomp)
+        fi
+      shell: bash
+
+    - name: Pre-seed virtualenv.pyz
+      shell: bash
+      run: |
+        if [ "$RUNNER_OS" == "Windows" ]; then
+          CACHE_DIR="C:/Users/runneradmin/AppData/Local/pypa/cibuildwheel/Cache"
+        elif [ "$RUNNER_OS" == "macOS" ]; then
+          CACHE_DIR="$HOME/Library/Caches/cibuildwheel"
+        else
+          CACHE_DIR="$HOME/.cache/cibuildwheel"
+        fi
+
+        mkdir -p "$CACHE_DIR"
+
+        echo "Downloading virtualenv.pyz to $CACHE_DIR..."
+        curl -L "https://github.com/pypa/get-virtualenv/blob/20.30.0/public/virtualenv.pyz?raw=true" \
+              -o "$CACHE_DIR/virtualenv-20.30.0.pyz" \
+              --retry 5 \
+              --retry-delay 5 \
+              --retry-all-errors
+
+    - uses: pypa/cibuildwheel@v2.23.3
+      env:
+        CIBW_ARCHS_MACOS: native
+        CIBW_ARCHS_WINDOWS: AMD64 ARM64
+        CIBW_ENVIRONMENT_MACOS: |
+          CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH
+          LDFLAGS=$LDFLAGS
+          CPPFLAGS=$CPPFLAGS
+          MACOSX_DEPLOYMENT_TARGET=$MACOSX_DEPLOYMENT_TARGET
+
+    - name: Verify clean directory
+      run: git diff --exit-code
+      shell: bash
+
+    - uses: actions/upload-artifact@v4
+      with:
+        name: "wheels-${{ matrix.os }}-${{ github.run_id }}"
+        path: wheelhouse/*.whl
+
+  upload_all:
+    name: Upload if release
+    needs: [build_wheels, build_sdist]
+    runs-on: ${{ matrix.os }}
+    if: github.event_name == 'release' && github.event.action == 'published'
+    environment: pypi
+    permissions:
+      id-token: write
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        python-version: [3.11, 3.12, 3.13]
+
+    steps:
+    - uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - uses: actions/download-artifact@v4
+      with:
+        name: artifact
+        path: dist
+
+    - uses: pypa/gh-action-pypi-publish@release/v1

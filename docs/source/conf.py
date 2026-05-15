@@ -16,6 +16,13 @@ extensions = [
     'sphinx_autodoc_typehints',
 ]
 
+autodoc_default_options = {
+    'members': True,
+    'undoc-members': True,
+    'imported-members': True,
+    'show-inheritance': True,
+}
+
 autosummary_generate = True
 
 templates_path = ['_templates']

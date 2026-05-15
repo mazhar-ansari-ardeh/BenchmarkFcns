@@ -33,8 +33,8 @@ jobs:
 
       - name: Verify package installation
         run: |
-          python -c "import benchmarkfcns; print(f'Core functions found: {len(benchmarkfcns.__all__)}')"
-          python -c "import benchmarkfcns.multiobjective; print(f'Multi-objective found: {len(benchmarkfcns.multiobjective.__all__)}')"
+          python -c "import benchmarkfcns; print(f'Core functions in __all__: {len(benchmarkfcns.__all__)}'); print(f'ackley in dir: {\"ackley\" in dir(benchmarkfcns)}')"
+          python -c "import benchmarkfcns.multiobjective; print(f'Multi-objective in __all__: {len(benchmarkfcns.multiobjective.__all__)}')"
 
       - name: Build documentation
         run: |
