@@ -12,6 +12,8 @@ For the documentation of the implemented functions and their features, please vi
 - **High Performance**: Optimized C++ core using Eigen and OpenMP.
 - **Parallel Execution**: Automatic multi-core processing for large batches of data.
 - **SIMD Optimized**: Leverages modern CPU instruction sets for fast vector math.
+- **AI Ready**: Standardized Gymnasium (OpenAI Gym) environments for RL training.
+- **Optimizer Agnostic**: Designed for seamless integration with SciPy, PyGMO, and Nevergrad.
 - **Comprehensive Library**: 310+ functions including Classic (100+), CEC suites (2005-2022), Multi-Fidelity (49), and Multi-Objective (50).
 - **CEC Competition Suites**: Built-in support for official CEC 2005, 2014, 2017, 2019, 2020, and 2022 competition functions with embedded shift, rotation, and shuffle data.
 - **Parallel Composition Engine**: Advanced framework for creating hybrid landscapes, now fully parallelized for high-performance batch evaluations.
@@ -55,6 +57,38 @@ print(results)
 data = np.array([[0, 0, 0], [1, 1, 1]])
 results = rastrigin(data)
 print(results)
+```
+
+### Integration with External Optimizers
+`BenchmarkFcns` is designed to be the high-performance fitness engine for established optimization libraries. By leveraging our C++ backend's support for batch evaluations, you can significantly accelerate the optimization process.
+
+Detailed integration scripts can be found in the [examples/](examples/) directory, covering:
+- **SciPy**: Global optimization with `differential_evolution` (including vectorized mode).
+- **Nevergrad**: Meta AI's toolbox for derivative-free optimization.
+- **Optuna**: Hyperparameter optimization and Bayesian search.
+- **Pymoo**: Multi-objective optimization (NSGA-II, NSGA-III, etc.).
+- **CMA-ES**: The gold standard for continuous black-box optimization.
+
+#### Quick Example: SciPy (Vectorized)
+```python
+from scipy.optimize import differential_evolution
+from benchmarkfcns import ackley
+import numpy as np
+
+# benchmarkfcns handles the entire population in parallel via OpenMP
+result = differential_evolution(ackley, bounds=[(-32, 32)]*10, vectorized=True)
+print(f"Global Minimum: {result.fun}")
+```
+
+### AI & Reinforcement Learning
+The library provides (planned) standardized Gymnasium environments to train RL agents on complex landscapes.
+
+```python
+import gymnasium as gym
+import benchmarkfcns.environments
+
+# Create an Ackley environment for RL training
+env = gym.make("BenchmarkFcns/Ackley-v0", dims=10)
 ```
 
 ### Plotting the functions
