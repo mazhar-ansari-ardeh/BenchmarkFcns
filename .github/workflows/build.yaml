@@ -63,10 +63,29 @@ jobs:
     - name: Install OpenMP
       if: runner.os == 'macOS'
       run: |
-        brew install libomp
-        echo "CMAKE_PREFIX_PATH=$(brew --prefix libomp)" >> $GITHUB_ENV
-        echo "LDFLAGS=-L$(brew --prefix libomp)/lib" >> $GITHUB_ENV
-        echo "CPPFLAGS=-I$(brew --prefix libomp)/include" >> $GITHUB_ENV
+        # Download a lightweight, standalone OpenMP source (only ~1MB)
+        curl -L https://github.com/llvm/llvm-project/releases/download/llvmorg-12.0.1/openmp-12.0.1.src.tar.xz | tar -xJ
+        cd openmp-12.0.1.src
+        mkdir build && cd build
+        # Build specifically for arm64 targeting macOS 11.0
+        cmake -DCMAKE_BUILD_TYPE=Release \
+              -DCMAKE_OSX_ARCHITECTURES="arm64" \
+              -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 \
+              -DLIBOMP_ENABLE_SHARED=ON \
+              -DOPENMP_ENABLE_LIBOMPTARGET=OFF \
+              ..
+        make -j4 omp
+
+        # Install to a local directory
+        mkdir -p $HOME/libomp/lib $HOME/libomp/include
+        cp runtime/src/libomp.dylib $HOME/libomp/lib/
+        cp ../runtime/src/omp.h $HOME/libomp/include/
+
+        # Export paths for the compiler and cibuildwheel
+        echo "CMAKE_PREFIX_PATH=$HOME/libomp" >> $GITHUB_ENV
+        echo "LDFLAGS=-L$HOME/libomp/lib" >> $GITHUB_ENV
+        echo "CPPFLAGS=-I$HOME/libomp/include" >> $GITHUB_ENV
+        echo "MACOSX_DEPLOYMENT_TARGET=11.0" >> $GITHUB_ENV
 
     - name: Debug Environment
       run: |
@@ -75,7 +94,8 @@ jobs:
         echo "CPPFLAGS=$CPPFLAGS"
         echo "MACOSX_DEPLOYMENT_TARGET=$MACOSX_DEPLOYMENT_TARGET"
         if [ "$RUNNER_OS" == "macOS" ]; then
-          ls -l $(brew --prefix libomp)
+          ls -R $HOME/libomp
+          otool -l $HOME/libomp/lib/libomp.dylib | grep -A 3 LC_BUILD_VERSION || true
         fi
       shell: bash
 
