@@ -63,10 +63,28 @@ jobs:
     - name: Install OpenMP
       if: runner.os == 'macOS'
       run: |
-        brew install libomp
-        echo "CMAKE_PREFIX_PATH=$(brew --prefix libomp)" >> $GITHUB_ENV
-        echo "LDFLAGS=-L$(brew --prefix libomp)/lib" >> $GITHUB_ENV
-        echo "CPPFLAGS=-I$(brew --prefix libomp)/include" >> $GITHUB_ENV
+        # Download and build a Universal (x86_64 + arm64) libomp targeting macOS 11.0.
+        # This avoids the version mismatch error with Homebrew's macOS 15-only bottle.
+        # Building from source ensures we can support Intel cross-compilation on ARM64 runners.
+        curl -L https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/openmp-18.1.8.src.tar.xz | tar -xJ
+        cd openmp-18.1.8.src
+        mkdir build && cd build
+        cmake -DCMAKE_OSX_ARCHITECTURES="x86_64;arm64" \
+              -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 \
+              -DLIBOMP_ENABLE_SHARED=ON \
+              -DOPENMP_ENABLE_LIBOMPTARGET=OFF \
+              -DCMAKE_BUILD_TYPE=Release \
+              ..
+        make -j4 libomp
+
+        # Organize headers and library for the build
+        mkdir -p $HOME/libomp/lib $HOME/libomp/include
+        cp runtime/src/libomp.dylib $HOME/libomp/lib/
+        cp ../runtime/src/omp.h $HOME/libomp/include/
+
+        echo "CMAKE_PREFIX_PATH=$HOME/libomp" >> $GITHUB_ENV
+        echo "LDFLAGS=-L$HOME/libomp/lib" >> $GITHUB_ENV
+        echo "CPPFLAGS=-I$HOME/libomp/include" >> $GITHUB_ENV
         echo "MACOSX_DEPLOYMENT_TARGET=11.0" >> $GITHUB_ENV
 
     - name: Debug Environment
@@ -76,7 +94,7 @@ jobs:
         echo "CPPFLAGS=$CPPFLAGS"
         echo "MACOSX_DEPLOYMENT_TARGET=$MACOSX_DEPLOYMENT_TARGET"
         if [ "$RUNNER_OS" == "macOS" ]; then
-          ls -l $(brew --prefix libomp)
+          ls -R $HOME/libomp
         fi
       shell: bash
 
