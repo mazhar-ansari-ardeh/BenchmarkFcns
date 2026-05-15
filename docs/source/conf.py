@@ -11,9 +11,12 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.napoleon',
     'sphinx.ext.mathjax',
+    'sphinx.ext.autosummary',
     'myst_parser',
     'sphinx_autodoc_typehints',
 ]
+
+autosummary_generate = True
 
 templates_path = ['_templates']
 exclude_patterns = []
