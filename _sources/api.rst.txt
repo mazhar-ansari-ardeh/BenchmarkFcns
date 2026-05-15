@@ -7,6 +7,7 @@ Core Functions
 .. automodule:: benchmarkfcns
    :members:
    :undoc-members:
+   :imported-members:
    :show-inheritance:
 
 Multi-Objective
@@ -15,6 +16,7 @@ Multi-Objective
 .. automodule:: benchmarkfcns.multiobjective
    :members:
    :undoc-members:
+   :imported-members:
    :show-inheritance:
 
 Multi-Fidelity
@@ -23,6 +25,7 @@ Multi-Fidelity
 .. automodule:: benchmarkfcns.multifidelity
    :members:
    :undoc-members:
+   :imported-members:
    :show-inheritance:
 
 Composition Engine
@@ -31,6 +34,7 @@ Composition Engine
 .. automodule:: benchmarkfcns.composition
    :members:
    :undoc-members:
+   :imported-members:
    :show-inheritance:
 
 Plotting Utilities
@@ -39,4 +43,5 @@ Plotting Utilities
 .. automodule:: benchmarkfcns.plotting
    :members:
    :undoc-members:
+   :imported-members:
    :show-inheritance:
