@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/paviani.png
+.. image:: /../../assets/plots/pavianifcn.png
    :alt: paviani landscape
    :align: center
    :width: 600px

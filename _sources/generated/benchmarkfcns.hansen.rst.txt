@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/hansen.png
+.. image:: /../../assets/plots/hansenfcn.png
    :alt: hansen landscape
    :align: center
    :width: 600px

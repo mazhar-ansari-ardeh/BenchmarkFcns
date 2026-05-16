@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/debn1.png
+.. image:: /../../assets/plots/debn1fcn.png
    :alt: debn1 landscape
    :align: center
    :width: 600px

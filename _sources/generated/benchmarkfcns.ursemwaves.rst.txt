@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/ursemwaves.png
+.. image:: /../../assets/plots/ursemwavesfcn.png
    :alt: ursemwaves landscape
    :align: center
    :width: 600px

@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/elattar.png
+.. image:: /../../assets/plots/elattarfcn.png
    :alt: elattar landscape
    :align: center
    :width: 600px

@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/exponential.png
+.. image:: /../../assets/plots/exponentialfcn.png
    :alt: exponential landscape
    :align: center
    :width: 600px

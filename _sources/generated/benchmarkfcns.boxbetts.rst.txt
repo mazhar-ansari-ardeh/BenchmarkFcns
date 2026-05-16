@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/boxbetts.png
+.. image:: /../../assets/plots/boxbettsfcn.png
    :alt: boxbetts landscape
    :align: center
    :width: 600px

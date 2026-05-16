@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/bartelsconn.png
+.. image:: /../../assets/plots/bartelsconnfcn.png
    :alt: bartelsconn landscape
    :align: center
    :width: 600px

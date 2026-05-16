@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/parsopoulos.png
+.. image:: /../../assets/plots/parsopoulosfcn.png
    :alt: parsopoulos landscape
    :align: center
    :width: 600px

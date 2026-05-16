@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/bukinn4.png
+.. image:: /../../assets/plots/bukinn4fcn.png
    :alt: bukinn4 landscape
    :align: center
    :width: 600px

@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/treccani.png
+.. image:: /../../assets/plots/treccanifcn.png
    :alt: treccani landscape
    :align: center
    :width: 600px

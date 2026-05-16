@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/hartmann4.png
+.. image:: /../../assets/plots/hartmann4fcn.png
    :alt: hartmann4 landscape
    :align: center
    :width: 600px

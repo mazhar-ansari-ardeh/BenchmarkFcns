@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/bentcigar.png
+.. image:: /../../assets/plots/bentcigarfcn.png
    :alt: bentcigar landscape
    :align: center
    :width: 600px

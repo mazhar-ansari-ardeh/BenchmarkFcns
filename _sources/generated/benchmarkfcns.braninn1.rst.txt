@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/braninn1.png
+.. image:: /../../assets/plots/braninn1fcn.png
    :alt: braninn1 landscape
    :align: center
    :width: 600px

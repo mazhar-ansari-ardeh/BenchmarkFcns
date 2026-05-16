@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/zdt2.png
+.. image:: /../../assets/plots/zdt2fcn.png
    :alt: zdt2 landscape
    :align: center
    :width: 600px

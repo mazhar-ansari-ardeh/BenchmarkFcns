@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/otlcircuit.png
+.. image:: /../../assets/plots/otlcircuitfcn.png
    :alt: otlcircuit landscape
    :align: center
    :width: 600px

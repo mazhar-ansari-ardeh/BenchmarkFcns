@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/viennet1.png
+.. image:: /../../assets/plots/viennet1fcn.png
    :alt: viennet1 landscape
    :align: center
    :width: 600px

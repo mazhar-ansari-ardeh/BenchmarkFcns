@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/sphere.png
+.. image:: /../../assets/plots/spherefcn.png
    :alt: sphere landscape
    :align: center
    :width: 600px

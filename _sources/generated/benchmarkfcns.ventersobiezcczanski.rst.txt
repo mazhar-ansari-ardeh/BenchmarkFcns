@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/ventersobiezcczanski.png
+.. image:: /../../assets/plots/ventersobiezcczanskifcn.png
    :alt: ventersobiezcczanski landscape
    :align: center
    :width: 600px

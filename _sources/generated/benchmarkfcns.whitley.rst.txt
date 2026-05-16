@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/whitley.png
+.. image:: /../../assets/plots/whitleyfcn.png
    :alt: whitley landscape
    :align: center
    :width: 600px

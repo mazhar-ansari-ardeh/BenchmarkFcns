@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/stretchedvsine.png
+.. image:: /../../assets/plots/stretchedvsinefcn.png
    :alt: stretchedvsine landscape
    :align: center
    :width: 600px

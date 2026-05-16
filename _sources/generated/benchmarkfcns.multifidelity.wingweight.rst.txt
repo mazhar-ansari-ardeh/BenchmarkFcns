@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/wingweight.png
+.. image:: /../../assets/plots/wingweightfcn.png
    :alt: wingweight landscape
    :align: center
    :width: 600px

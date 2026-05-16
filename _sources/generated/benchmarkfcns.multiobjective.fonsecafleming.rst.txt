@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/fonsecafleming.png
+.. image:: /../../assets/plots/fonsecaflemingfcn.png
    :alt: fonsecafleming landscape
    :align: center
    :width: 600px

@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/easom.png
+.. image:: /../../assets/plots/easomfcn.png
    :alt: easom landscape
    :align: center
    :width: 600px

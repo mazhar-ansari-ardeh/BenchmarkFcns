@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/beale.png
+.. image:: /../../assets/plots/bealefcn.png
    :alt: beale landscape
    :align: center
    :width: 600px

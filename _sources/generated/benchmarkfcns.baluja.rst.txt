@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/baluja.png
+.. image:: /../../assets/plots/balujafcn.png
    :alt: baluja landscape
    :align: center
    :width: 600px

@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/biggsexp02.png
+.. image:: /../../assets/plots/biggsexp02fcn.png
    :alt: biggsexp02 landscape
    :align: center
    :width: 600px

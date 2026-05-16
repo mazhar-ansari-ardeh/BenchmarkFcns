@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/branin.png
+.. image:: /../../assets/plots/braninfcn.png
    :alt: branin landscape
    :align: center
    :width: 600px

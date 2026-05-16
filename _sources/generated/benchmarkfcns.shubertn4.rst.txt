@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/shubertn4.png
+.. image:: /../../assets/plots/shubertn4fcn.png
    :alt: shubertn4 landscape
    :align: center
    :width: 600px

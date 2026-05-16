@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/robotarm.png
+.. image:: /../../assets/plots/robotarmfcn.png
    :alt: robotarm landscape
    :align: center
    :width: 600px

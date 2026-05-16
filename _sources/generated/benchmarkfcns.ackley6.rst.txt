@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/ackley6.png
+.. image:: /../../assets/plots/ackley6fcn.png
    :alt: ackley6 landscape
    :align: center
    :width: 600px

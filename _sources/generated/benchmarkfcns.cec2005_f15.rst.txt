@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/cec2005_f15.png
+.. image:: /../../assets/plots/cec2005_f15fcn.png
    :alt: cec2005_f15 landscape
    :align: center
    :width: 600px

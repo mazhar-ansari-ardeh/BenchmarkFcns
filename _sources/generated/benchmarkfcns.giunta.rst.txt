@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/giunta.png
+.. image:: /../../assets/plots/giuntafcn.png
    :alt: giunta landscape
    :align: center
    :width: 600px

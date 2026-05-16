@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/wavy.png
+.. image:: /../../assets/plots/wavyfcn.png
    :alt: wavy landscape
    :align: center
    :width: 600px

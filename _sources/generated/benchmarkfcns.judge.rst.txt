@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/judge.png
+.. image:: /../../assets/plots/judgefcn.png
    :alt: judge landscape
    :align: center
    :width: 600px

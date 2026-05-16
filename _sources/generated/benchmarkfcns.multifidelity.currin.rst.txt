@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/currin.png
+.. image:: /../../assets/plots/currinfcn.png
    :alt: currin landscape
    :align: center
    :width: 600px

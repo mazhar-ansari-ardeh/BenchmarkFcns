@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/deb.png
+.. image:: /../../assets/plots/debfcn.png
    :alt: deb landscape
    :align: center
    :width: 600px

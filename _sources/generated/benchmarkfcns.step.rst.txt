@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/step.png
+.. image:: /../../assets/plots/stepfcn.png
    :alt: step landscape
    :align: center
    :width: 600px

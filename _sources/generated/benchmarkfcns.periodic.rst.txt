@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/periodic.png
+.. image:: /../../assets/plots/periodicfcn.png
    :alt: periodic landscape
    :align: center
    :width: 600px

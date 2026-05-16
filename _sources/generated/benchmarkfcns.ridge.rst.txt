@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/ridge.png
+.. image:: /../../assets/plots/ridgefcn.png
    :alt: ridge landscape
    :align: center
    :width: 600px

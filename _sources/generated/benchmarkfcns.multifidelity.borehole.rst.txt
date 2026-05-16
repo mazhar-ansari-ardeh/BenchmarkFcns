@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/borehole.png
+.. image:: /../../assets/plots/boreholefcn.png
    :alt: borehole landscape
    :align: center
    :width: 600px

@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/mop4.png
+.. image:: /../../assets/plots/mop4fcn.png
    :alt: mop4 landscape
    :align: center
    :width: 600px

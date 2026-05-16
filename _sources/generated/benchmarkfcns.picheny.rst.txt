@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/picheny.png
+.. image:: /../../assets/plots/pichenyfcn.png
    :alt: picheny landscape
    :align: center
    :width: 600px

@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/fletcherpowell.png
+.. image:: /../../assets/plots/fletcherpowellfcn.png
    :alt: fletcherpowell landscape
    :align: center
    :width: 600px

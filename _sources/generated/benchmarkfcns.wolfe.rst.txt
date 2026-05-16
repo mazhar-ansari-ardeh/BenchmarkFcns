@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/wolfe.png
+.. image:: /../../assets/plots/wolfefcn.png
    :alt: wolfe landscape
    :align: center
    :width: 600px

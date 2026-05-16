@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/tanaka.png
+.. image:: /../../assets/plots/tanakafcn.png
    :alt: tanaka landscape
    :align: center
    :width: 600px

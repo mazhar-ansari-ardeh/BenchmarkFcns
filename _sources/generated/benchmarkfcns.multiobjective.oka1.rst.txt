@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/oka1.png
+.. image:: /../../assets/plots/oka1fcn.png
    :alt: oka1 landscape
    :align: center
    :width: 600px

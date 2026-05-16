@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/amgm.png
+.. image:: /../../assets/plots/amgmfcn.png
    :alt: amgm landscape
    :align: center
    :width: 600px

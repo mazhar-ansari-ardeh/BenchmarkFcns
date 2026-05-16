@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/ursemn3.png
+.. image:: /../../assets/plots/ursemn3fcn.png
    :alt: ursemn3 landscape
    :align: center
    :width: 600px

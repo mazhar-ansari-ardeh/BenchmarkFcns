@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/griewankn2.png
+.. image:: /../../assets/plots/griewankn2fcn.png
    :alt: griewankn2 landscape
    :align: center
    :width: 600px

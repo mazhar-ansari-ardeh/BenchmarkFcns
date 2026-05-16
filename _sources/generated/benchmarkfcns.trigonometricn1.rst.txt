@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/trigonometricn1.png
+.. image:: /../../assets/plots/trigonometricn1fcn.png
    :alt: trigonometricn1 landscape
    :align: center
    :width: 600px

@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/michalewicz.png
+.. image:: /../../assets/plots/michalewiczfcn.png
    :alt: michalewicz landscape
    :align: center
    :width: 600px

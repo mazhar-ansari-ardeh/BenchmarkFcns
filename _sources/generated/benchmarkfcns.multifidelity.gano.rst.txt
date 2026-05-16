@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/gano.png
+.. image:: /../../assets/plots/ganofcn.png
    :alt: gano landscape
    :align: center
    :width: 600px

@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/quintic.png
+.. image:: /../../assets/plots/quinticfcn.png
    :alt: quintic landscape
    :align: center
    :width: 600px

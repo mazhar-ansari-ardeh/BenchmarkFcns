@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/osyczkakundu.png
+.. image:: /../../assets/plots/osyczkakundufcn.png
    :alt: osyczkakundu landscape
    :align: center
    :width: 600px

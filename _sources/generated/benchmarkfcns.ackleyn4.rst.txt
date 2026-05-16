@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/ackleyn4.png
+.. image:: /../../assets/plots/ackleyn4fcn.png
    :alt: ackleyn4 landscape
    :align: center
    :width: 600px

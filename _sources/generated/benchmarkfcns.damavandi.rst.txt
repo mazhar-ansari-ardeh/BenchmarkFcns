@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/damavandi.png
+.. image:: /../../assets/plots/damavandifcn.png
    :alt: damavandi landscape
    :align: center
    :width: 600px

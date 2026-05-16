@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/tablefcn.png
+.. image:: /../../assets/plots/tablefcnfcn.png
    :alt: tablefcn landscape
    :align: center
    :width: 600px

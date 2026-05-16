@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/himmelblau.png
+.. image:: /../../assets/plots/himmelblaufcn.png
    :alt: himmelblau landscape
    :align: center
    :width: 600px

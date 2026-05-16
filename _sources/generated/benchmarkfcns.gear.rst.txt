@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/gear.png
+.. image:: /../../assets/plots/gearfcn.png
    :alt: gear landscape
    :align: center
    :width: 600px

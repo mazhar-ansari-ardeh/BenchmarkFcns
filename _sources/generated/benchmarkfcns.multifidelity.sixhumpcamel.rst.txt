@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/sixhumpcamel.png
+.. image:: /../../assets/plots/sixhumpcamelfcn.png
    :alt: sixhumpcamel landscape
    :align: center
    :width: 600px

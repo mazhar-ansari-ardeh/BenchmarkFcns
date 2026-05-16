@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/attractivesector.png
+.. image:: /../../assets/plots/attractivesectorfcn.png
    :alt: attractivesector landscape
    :align: center
    :width: 600px

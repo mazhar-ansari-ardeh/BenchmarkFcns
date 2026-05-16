@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/carromtable.png
+.. image:: /../../assets/plots/carromtablefcn.png
    :alt: carromtable landscape
    :align: center
    :width: 600px

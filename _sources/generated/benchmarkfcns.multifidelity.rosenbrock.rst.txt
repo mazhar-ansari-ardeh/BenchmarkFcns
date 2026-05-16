@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/rosenbrock.png
+.. image:: /../../assets/plots/rosenbrockfcn.png
    :alt: rosenbrock landscape
    :align: center
    :width: 600px

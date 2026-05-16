@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/colville.png
+.. image:: /../../assets/plots/colvillefcn.png
    :alt: colville landscape
    :align: center
    :width: 600px

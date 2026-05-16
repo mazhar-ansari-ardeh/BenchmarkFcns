@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/meyer.png
+.. image:: /../../assets/plots/meyerfcn.png
    :alt: meyer landscape
    :align: center
    :width: 600px

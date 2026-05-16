@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/rastrigin_parallel.png
+.. image:: /../../assets/plots/rastrigin_parallelfcn.png
    :alt: rastrigin_parallel landscape
    :align: center
    :width: 600px

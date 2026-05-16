@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/chichinadzen2.png
+.. image:: /../../assets/plots/chichinadzen2fcn.png
    :alt: chichinadzen2 landscape
    :align: center
    :width: 600px

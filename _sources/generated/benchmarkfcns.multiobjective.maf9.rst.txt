@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/maf9.png
+.. image:: /../../assets/plots/maf9fcn.png
    :alt: maf9 landscape
    :align: center
    :width: 600px

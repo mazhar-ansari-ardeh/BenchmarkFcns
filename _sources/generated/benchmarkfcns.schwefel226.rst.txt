@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/schwefel226.png
+.. image:: /../../assets/plots/schwefel226fcn.png
    :alt: schwefel226 landscape
    :align: center
    :width: 600px

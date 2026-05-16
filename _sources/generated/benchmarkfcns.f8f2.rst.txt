@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/f8f2.png
+.. image:: /../../assets/plots/f8f2fcn.png
    :alt: f8f2 landscape
    :align: center
    :width: 600px

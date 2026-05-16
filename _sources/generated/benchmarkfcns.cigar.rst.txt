@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/cigar.png
+.. image:: /../../assets/plots/cigarfcn.png
    :alt: cigar landscape
    :align: center
    :width: 600px

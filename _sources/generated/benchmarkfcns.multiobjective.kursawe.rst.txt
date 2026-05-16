@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/kursawe.png
+.. image:: /../../assets/plots/kursawefcn.png
    :alt: kursawe landscape
    :align: center
    :width: 600px

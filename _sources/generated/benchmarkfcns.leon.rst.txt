@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/leon.png
+.. image:: /../../assets/plots/leonfcn.png
    :alt: leon landscape
    :align: center
    :width: 600px

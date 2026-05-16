@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/mccormick.png
+.. image:: /../../assets/plots/mccormickfcn.png
    :alt: mccormick landscape
    :align: center
    :width: 600px

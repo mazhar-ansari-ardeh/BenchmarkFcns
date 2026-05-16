@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/elliptic.png
+.. image:: /../../assets/plots/ellipticfcn.png
    :alt: elliptic landscape
    :align: center
    :width: 600px

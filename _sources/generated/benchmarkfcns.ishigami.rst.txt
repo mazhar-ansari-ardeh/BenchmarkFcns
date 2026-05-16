@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/ishigami.png
+.. image:: /../../assets/plots/ishigamifcn.png
    :alt: ishigami landscape
    :align: center
    :width: 600px

@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/eggholdern2.png
+.. image:: /../../assets/plots/eggholdern2fcn.png
    :alt: eggholdern2 landscape
    :align: center
    :width: 600px

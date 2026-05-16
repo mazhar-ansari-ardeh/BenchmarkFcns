@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/engvall.png
+.. image:: /../../assets/plots/engvallfcn.png
    :alt: engvall landscape
    :align: center
    :width: 600px

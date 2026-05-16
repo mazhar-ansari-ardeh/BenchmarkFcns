@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/csendes.png
+.. image:: /../../assets/plots/csendesfcn.png
    :alt: csendes landscape
    :align: center
    :width: 600px

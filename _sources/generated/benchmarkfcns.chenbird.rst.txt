@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/chenbird.png
+.. image:: /../../assets/plots/chenbirdfcn.png
    :alt: chenbird landscape
    :align: center
    :width: 600px

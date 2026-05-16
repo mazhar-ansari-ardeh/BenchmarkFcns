@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/alpinen1.png
+.. image:: /../../assets/plots/alpinen1fcn.png
    :alt: alpinen1 landscape
    :align: center
    :width: 600px

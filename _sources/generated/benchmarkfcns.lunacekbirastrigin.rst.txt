@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/lunacekbirastrigin.png
+.. image:: /../../assets/plots/lunacekbirastriginfcn.png
    :alt: lunacekbirastrigin landscape
    :align: center
    :width: 600px

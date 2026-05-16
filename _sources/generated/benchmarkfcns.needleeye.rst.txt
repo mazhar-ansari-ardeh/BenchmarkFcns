@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/needleeye.png
+.. image:: /../../assets/plots/needleeyefcn.png
    :alt: needleeye landscape
    :align: center
    :width: 600px

@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/hosaki.png
+.. image:: /../../assets/plots/hosakifcn.png
    :alt: hosaki landscape
    :align: center
    :width: 600px

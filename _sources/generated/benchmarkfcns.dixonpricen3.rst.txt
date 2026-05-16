@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/dixonpricen3.png
+.. image:: /../../assets/plots/dixonpricen3fcn.png
    :alt: dixonpricen3 landscape
    :align: center
    :width: 600px

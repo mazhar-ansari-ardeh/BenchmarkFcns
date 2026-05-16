@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/jennrichsampson.png
+.. image:: /../../assets/plots/jennrichsampsonfcn.png
    :alt: jennrichsampson landscape
    :align: center
    :width: 600px

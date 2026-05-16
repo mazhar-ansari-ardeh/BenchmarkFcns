@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/xiong1d.png
+.. image:: /../../assets/plots/xiong1dfcn.png
    :alt: xiong1d landscape
    :align: center
    :width: 600px

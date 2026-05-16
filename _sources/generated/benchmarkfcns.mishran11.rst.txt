@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/mishran11.png
+.. image:: /../../assets/plots/mishran11fcn.png
    :alt: mishran11 landscape
    :align: center
    :width: 600px

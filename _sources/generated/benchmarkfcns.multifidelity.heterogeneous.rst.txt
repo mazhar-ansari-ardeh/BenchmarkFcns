@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/heterogeneous.png
+.. image:: /../../assets/plots/heterogeneousfcn.png
    :alt: heterogeneous landscape
    :align: center
    :width: 600px

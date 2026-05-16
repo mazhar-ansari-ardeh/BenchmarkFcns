@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/vincent.png
+.. image:: /../../assets/plots/vincentfcn.png
    :alt: vincent landscape
    :align: center
    :width: 600px

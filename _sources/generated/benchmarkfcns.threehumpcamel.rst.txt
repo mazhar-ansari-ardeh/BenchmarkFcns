@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/threehumpcamel.png
+.. image:: /../../assets/plots/threehumpcamelfcn.png
    :alt: threehumpcamel landscape
    :align: center
    :width: 600px

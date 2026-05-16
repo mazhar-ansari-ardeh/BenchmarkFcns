@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/mielecantrell.png
+.. image:: /../../assets/plots/mielecantrellfcn.png
    :alt: mielecantrell landscape
    :align: center
    :width: 600px

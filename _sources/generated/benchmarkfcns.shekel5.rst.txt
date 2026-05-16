@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/shekel5.png
+.. image:: /../../assets/plots/shekel5fcn.png
    :alt: shekel5 landscape
    :align: center
    :width: 600px

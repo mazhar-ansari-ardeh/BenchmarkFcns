@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/zirilli.png
+.. image:: /../../assets/plots/zirillifcn.png
    :alt: zirilli landscape
    :align: center
    :width: 600px

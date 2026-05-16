@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/booth.png
+.. image:: /../../assets/plots/boothfcn.png
    :alt: booth landscape
    :align: center
    :width: 600px

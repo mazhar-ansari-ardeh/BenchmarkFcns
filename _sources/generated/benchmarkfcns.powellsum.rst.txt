@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/powellsum.png
+.. image:: /../../assets/plots/powellsumfcn.png
    :alt: powellsum landscape
    :align: center
    :width: 600px

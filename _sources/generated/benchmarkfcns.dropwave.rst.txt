@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/dropwave.png
+.. image:: /../../assets/plots/dropwavefcn.png
    :alt: dropwave landscape
    :align: center
    :width: 600px

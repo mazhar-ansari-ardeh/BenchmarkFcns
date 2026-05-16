@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/maf7.png
+.. image:: /../../assets/plots/maf7fcn.png
    :alt: maf7 landscape
    :align: center
    :width: 600px

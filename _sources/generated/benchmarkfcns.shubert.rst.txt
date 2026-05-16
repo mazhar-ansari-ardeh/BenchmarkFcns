@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/shubert.png
+.. image:: /../../assets/plots/shubertfcn.png
    :alt: shubert landscape
    :align: center
    :width: 600px

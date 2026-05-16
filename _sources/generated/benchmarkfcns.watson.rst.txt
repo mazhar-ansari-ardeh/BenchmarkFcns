@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/watson.png
+.. image:: /../../assets/plots/watsonfcn.png
    :alt: watson landscape
    :align: center
    :width: 600px

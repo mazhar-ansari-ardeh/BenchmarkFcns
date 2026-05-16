@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/zdt3.png
+.. image:: /../../assets/plots/zdt3fcn.png
    :alt: zdt3 landscape
    :align: center
    :width: 600px

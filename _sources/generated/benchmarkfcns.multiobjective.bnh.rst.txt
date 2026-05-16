@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/bnh.png
+.. image:: /../../assets/plots/bnhfcn.png
    :alt: bnh landscape
    :align: center
    :width: 600px

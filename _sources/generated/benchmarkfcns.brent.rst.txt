@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/brent.png
+.. image:: /../../assets/plots/brentfcn.png
    :alt: brent landscape
    :align: center
    :width: 600px

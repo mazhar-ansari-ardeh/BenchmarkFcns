@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/pinter.png
+.. image:: /../../assets/plots/pinterfcn.png
    :alt: pinter landscape
    :align: center
    :width: 600px

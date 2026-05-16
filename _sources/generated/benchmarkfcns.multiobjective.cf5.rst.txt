@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/cf5.png
+.. image:: /../../assets/plots/cf5fcn.png
    :alt: cf5 landscape
    :align: center
    :width: 600px

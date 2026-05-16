@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/piston.png
+.. image:: /../../assets/plots/pistonfcn.png
    :alt: piston landscape
    :align: center
    :width: 600px

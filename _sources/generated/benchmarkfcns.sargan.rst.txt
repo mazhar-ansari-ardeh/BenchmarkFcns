@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/sargan.png
+.. image:: /../../assets/plots/sarganfcn.png
    :alt: sargan landscape
    :align: center
    :width: 600px

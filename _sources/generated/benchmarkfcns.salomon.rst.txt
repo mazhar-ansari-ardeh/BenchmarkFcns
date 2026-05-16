@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/salomon.png
+.. image:: /../../assets/plots/salomonfcn.png
    :alt: salomon landscape
    :align: center
    :width: 600px

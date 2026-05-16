@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/levin13.png
+.. image:: /../../assets/plots/levin13fcn.png
    :alt: levin13 landscape
    :align: center
    :width: 600px

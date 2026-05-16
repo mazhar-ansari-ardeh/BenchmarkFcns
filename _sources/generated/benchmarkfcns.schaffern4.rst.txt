@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/schaffern4.png
+.. image:: /../../assets/plots/schaffern4fcn.png
    :alt: schaffern4 landscape
    :align: center
    :width: 600px

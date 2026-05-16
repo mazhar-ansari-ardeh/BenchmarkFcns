@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/pathological.png
+.. image:: /../../assets/plots/pathologicalfcn.png
    :alt: pathological landscape
    :align: center
    :width: 600px

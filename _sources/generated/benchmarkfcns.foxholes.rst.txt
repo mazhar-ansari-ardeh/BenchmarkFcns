@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/foxholes.png
+.. image:: /../../assets/plots/foxholesfcn.png
    :alt: foxholes landscape
    :align: center
    :width: 600px

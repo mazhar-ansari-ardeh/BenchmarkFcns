@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/zettel.png
+.. image:: /../../assets/plots/zettelfcn.png
    :alt: zettel landscape
    :align: center
    :width: 600px

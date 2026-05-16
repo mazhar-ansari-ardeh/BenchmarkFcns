@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/rotatedhyperellipsoid.png
+.. image:: /../../assets/plots/rotatedhyperellipsoidfcn.png
    :alt: rotatedhyperellipsoid landscape
    :align: center
    :width: 600px

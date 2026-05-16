@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/meshgrid.png
+.. image:: /../../assets/plots/meshgridfcn.png
    :alt: meshgrid landscape
    :align: center
    :width: 600px

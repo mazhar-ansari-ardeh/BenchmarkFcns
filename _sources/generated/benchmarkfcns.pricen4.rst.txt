@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/pricen4.png
+.. image:: /../../assets/plots/pricen4fcn.png
    :alt: pricen4 landscape
    :align: center
    :width: 600px

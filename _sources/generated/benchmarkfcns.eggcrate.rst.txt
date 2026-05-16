@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/eggcrate.png
+.. image:: /../../assets/plots/eggcratefcn.png
    :alt: eggcrate landscape
    :align: center
    :width: 600px

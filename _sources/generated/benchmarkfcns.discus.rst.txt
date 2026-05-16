@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/discus.png
+.. image:: /../../assets/plots/discusfcn.png
    :alt: discus landscape
    :align: center
    :width: 600px

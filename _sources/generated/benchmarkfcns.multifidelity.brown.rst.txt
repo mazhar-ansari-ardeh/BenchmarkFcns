@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/brown.png
+.. image:: /../../assets/plots/brownfcn.png
    :alt: brown landscape
    :align: center
    :width: 600px

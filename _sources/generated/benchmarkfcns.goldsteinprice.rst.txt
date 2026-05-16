@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/goldsteinprice.png
+.. image:: /../../assets/plots/goldsteinpricefcn.png
    :alt: goldsteinprice landscape
    :align: center
    :width: 600px

@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/wfg5.png
+.. image:: /../../assets/plots/wfg5fcn.png
    :alt: wfg5 landscape
    :align: center
    :width: 600px

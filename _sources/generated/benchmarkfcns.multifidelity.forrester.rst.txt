@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/forrester.png
+.. image:: /../../assets/plots/forresterfcn.png
    :alt: forrester landscape
    :align: center
    :width: 600px

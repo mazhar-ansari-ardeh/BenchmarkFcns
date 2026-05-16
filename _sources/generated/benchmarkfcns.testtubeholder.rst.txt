@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/testtubeholder.png
+.. image:: /../../assets/plots/testtubeholderfcn.png
    :alt: testtubeholder landscape
    :align: center
    :width: 600px

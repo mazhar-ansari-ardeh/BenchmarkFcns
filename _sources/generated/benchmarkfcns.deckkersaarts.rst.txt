@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/deckkersaarts.png
+.. image:: /../../assets/plots/deckkersaartsfcn.png
    :alt: deckkersaarts landscape
    :align: center
    :width: 600px

@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/quartic.png
+.. image:: /../../assets/plots/quarticfcn.png
    :alt: quartic landscape
    :align: center
    :width: 600px

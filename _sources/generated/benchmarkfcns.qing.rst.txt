@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/qing.png
+.. image:: /../../assets/plots/qingfcn.png
    :alt: qing landscape
    :align: center
    :width: 600px

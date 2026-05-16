@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/trid.png
+.. image:: /../../assets/plots/tridfcn.png
    :alt: trid landscape
    :align: center
    :width: 600px

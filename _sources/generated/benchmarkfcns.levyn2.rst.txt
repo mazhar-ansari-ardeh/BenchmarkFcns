@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/levyn2.png
+.. image:: /../../assets/plots/levyn2fcn.png
    :alt: levyn2 landscape
    :align: center
    :width: 600px

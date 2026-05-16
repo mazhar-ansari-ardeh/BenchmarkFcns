@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/keanen2.png
+.. image:: /../../assets/plots/keanen2fcn.png
    :alt: keanen2 landscape
    :align: center
    :width: 600px

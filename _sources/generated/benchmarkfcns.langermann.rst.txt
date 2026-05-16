@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/langermann.png
+.. image:: /../../assets/plots/langermannfcn.png
    :alt: langermann landscape
    :align: center
    :width: 600px

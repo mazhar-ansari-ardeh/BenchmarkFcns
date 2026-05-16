@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/katsuura.png
+.. image:: /../../assets/plots/katsuurafcn.png
    :alt: katsuura landscape
    :align: center
    :width: 600px

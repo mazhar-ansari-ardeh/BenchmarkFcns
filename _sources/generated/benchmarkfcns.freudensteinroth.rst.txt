@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/freudensteinroth.png
+.. image:: /../../assets/plots/freudensteinrothfcn.png
    :alt: freudensteinroth landscape
    :align: center
    :width: 600px

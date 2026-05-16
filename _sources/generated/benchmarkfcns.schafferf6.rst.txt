@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/schafferf6.png
+.. image:: /../../assets/plots/schafferf6fcn.png
    :alt: schafferf6 landscape
    :align: center
    :width: 600px

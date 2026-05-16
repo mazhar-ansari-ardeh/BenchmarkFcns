@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/trefethen.png
+.. image:: /../../assets/plots/trefethenfcn.png
    :alt: trefethen landscape
    :align: center
    :width: 600px

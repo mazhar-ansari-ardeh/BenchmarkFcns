@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/weierstrass.png
+.. image:: /../../assets/plots/weierstrassfcn.png
    :alt: weierstrass landscape
    :align: center
    :width: 600px

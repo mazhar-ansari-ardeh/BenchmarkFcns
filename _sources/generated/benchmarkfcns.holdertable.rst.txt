@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/holdertable.png
+.. image:: /../../assets/plots/holdertablefcn.png
    :alt: holdertable landscape
    :align: center
    :width: 600px

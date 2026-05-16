@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/zimmerman.png
+.. image:: /../../assets/plots/zimmermanfcn.png
    :alt: zimmerman landscape
    :align: center
    :width: 600px

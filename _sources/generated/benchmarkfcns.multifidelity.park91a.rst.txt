@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/park91a.png
+.. image:: /../../assets/plots/park91afcn.png
    :alt: park91a landscape
    :align: center
    :width: 600px

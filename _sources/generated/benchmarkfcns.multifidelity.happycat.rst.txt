@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/happycat.png
+.. image:: /../../assets/plots/happycatfcn.png
    :alt: happycat landscape
    :align: center
    :width: 600px

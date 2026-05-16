@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/penholder.png
+.. image:: /../../assets/plots/penholderfcn.png
    :alt: penholder landscape
    :align: center
    :width: 600px

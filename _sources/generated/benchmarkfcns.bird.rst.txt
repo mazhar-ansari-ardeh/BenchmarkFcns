@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/bird.png
+.. image:: /../../assets/plots/birdfcn.png
    :alt: bird landscape
    :align: center
    :width: 600px

@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/kita.png
+.. image:: /../../assets/plots/kitafcn.png
    :alt: kita landscape
    :align: center
    :width: 600px

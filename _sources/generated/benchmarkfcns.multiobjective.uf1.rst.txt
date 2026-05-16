@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/uf1.png
+.. image:: /../../assets/plots/uf1fcn.png
    :alt: uf1 landscape
    :align: center
    :width: 600px

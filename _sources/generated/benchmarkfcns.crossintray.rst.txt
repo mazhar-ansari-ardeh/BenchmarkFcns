@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/crossintray.png
+.. image:: /../../assets/plots/crossintrayfcn.png
    :alt: crossintray landscape
    :align: center
    :width: 600px

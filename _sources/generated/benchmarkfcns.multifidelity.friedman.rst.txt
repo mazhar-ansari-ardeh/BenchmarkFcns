@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/friedman.png
+.. image:: /../../assets/plots/friedmanfcn.png
    :alt: friedman landscape
    :align: center
    :width: 600px

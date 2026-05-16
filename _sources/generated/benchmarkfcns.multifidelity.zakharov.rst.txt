@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/zakharov.png
+.. image:: /../../assets/plots/zakharovfcn.png
    :alt: zakharov landscape
    :align: center
    :width: 600px

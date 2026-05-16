@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/corana.png
+.. image:: /../../assets/plots/coranafcn.png
    :alt: corana landscape
    :align: center
    :width: 600px

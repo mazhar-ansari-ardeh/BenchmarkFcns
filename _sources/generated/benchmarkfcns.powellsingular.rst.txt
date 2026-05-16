@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/powellsingular.png
+.. image:: /../../assets/plots/powellsingularfcn.png
    :alt: powellsingular landscape
    :align: center
    :width: 600px

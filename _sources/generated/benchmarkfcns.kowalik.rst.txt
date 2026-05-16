@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/kowalik.png
+.. image:: /../../assets/plots/kowalikfcn.png
    :alt: kowalik landscape
    :align: center
    :width: 600px

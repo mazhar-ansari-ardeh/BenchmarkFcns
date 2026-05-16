@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/matyas.png
+.. image:: /../../assets/plots/matyasfcn.png
    :alt: matyas landscape
    :align: center
    :width: 600px

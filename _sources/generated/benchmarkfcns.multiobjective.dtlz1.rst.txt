@@ -21,7 +21,7 @@
 
 .. rubric:: Visualization
 
-.. image:: /../../assets/dtlz1.png
+.. image:: /../../assets/plots/dtlz1fcn.png
    :alt: dtlz1 landscape
    :align: center
    :width: 600px
