@@ -1,0 +1,27 @@
+﻿benchmarkfcns.quartic
+=====================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: quartic
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/quartic.png
+   :alt: quartic landscape
+   :align: center
+   :width: 600px

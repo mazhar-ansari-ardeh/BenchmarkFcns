@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multiobjective.cf7
+================================
+
+.. currentmodule:: benchmarkfcns.multiobjective
+
+.. autofunction:: cf7
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/cf7.png
+   :alt: cf7 landscape
+   :align: center
+   :width: 600px

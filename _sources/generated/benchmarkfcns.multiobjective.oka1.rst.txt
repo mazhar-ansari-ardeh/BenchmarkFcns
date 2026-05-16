@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multiobjective.oka1
+=================================
+
+.. currentmodule:: benchmarkfcns.multiobjective
+
+.. autofunction:: oka1
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/oka1.png
+   :alt: oka1 landscape
+   :align: center
+   :width: 600px

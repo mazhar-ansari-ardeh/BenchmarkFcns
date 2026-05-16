@@ -1,0 +1,27 @@
+﻿benchmarkfcns.paviani
+=====================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: paviani
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/paviani.png
+   :alt: paviani landscape
+   :align: center
+   :width: 600px

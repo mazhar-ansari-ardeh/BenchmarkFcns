@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multifidelity.piston
+==================================
+
+.. currentmodule:: benchmarkfcns.multifidelity
+
+.. autofunction:: piston
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/piston.png
+   :alt: piston landscape
+   :align: center
+   :width: 600px

@@ -1,0 +1,27 @@
+﻿benchmarkfcns.meyer
+===================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: meyer
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/meyer.png
+   :alt: meyer landscape
+   :align: center
+   :width: 600px

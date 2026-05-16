@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multifidelity.griewank
+====================================
+
+.. currentmodule:: benchmarkfcns.multifidelity
+
+.. autofunction:: griewank
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/griewank.png
+   :alt: griewank landscape
+   :align: center
+   :width: 600px

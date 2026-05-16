@@ -1,0 +1,27 @@
+﻿benchmarkfcns.judge
+===================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: judge
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/judge.png
+   :alt: judge landscape
+   :align: center
+   :width: 600px

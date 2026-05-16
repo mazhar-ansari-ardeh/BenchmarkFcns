@@ -1,0 +1,27 @@
+﻿benchmarkfcns.lunacekbirastrigin
+================================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: lunacekbirastrigin
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/lunacekbirastrigin.png
+   :alt: lunacekbirastrigin landscape
+   :align: center
+   :width: 600px

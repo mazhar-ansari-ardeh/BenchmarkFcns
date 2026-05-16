@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multiobjective.wfg6
+=================================
+
+.. currentmodule:: benchmarkfcns.multiobjective
+
+.. autofunction:: wfg6
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/wfg6.png
+   :alt: wfg6 landscape
+   :align: center
+   :width: 600px

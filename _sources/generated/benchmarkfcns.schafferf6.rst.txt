@@ -1,0 +1,27 @@
+﻿benchmarkfcns.schafferf6
+========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: schafferf6
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/schafferf6.png
+   :alt: schafferf6 landscape
+   :align: center
+   :width: 600px

@@ -1,0 +1,27 @@
+﻿benchmarkfcns.forrester
+=======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: forrester
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/forrester.png
+   :alt: forrester landscape
+   :align: center
+   :width: 600px

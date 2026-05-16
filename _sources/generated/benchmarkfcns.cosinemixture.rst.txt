@@ -1,0 +1,27 @@
+﻿benchmarkfcns.cosinemixture
+===========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: cosinemixture
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/cosinemixture.png
+   :alt: cosinemixture landscape
+   :align: center
+   :width: 600px

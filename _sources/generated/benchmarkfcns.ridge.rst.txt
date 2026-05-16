@@ -1,0 +1,27 @@
+﻿benchmarkfcns.ridge
+===================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: ridge
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/ridge.png
+   :alt: ridge landscape
+   :align: center
+   :width: 600px

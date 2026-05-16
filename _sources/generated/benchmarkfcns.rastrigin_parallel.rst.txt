@@ -1,0 +1,27 @@
+﻿benchmarkfcns.rastrigin\_parallel
+=================================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: rastrigin_parallel
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/rastrigin_parallel.png
+   :alt: rastrigin_parallel landscape
+   :align: center
+   :width: 600px

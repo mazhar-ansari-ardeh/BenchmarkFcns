@@ -1,0 +1,27 @@
+﻿benchmarkfcns.dropwave
+======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: dropwave
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/dropwave.png
+   :alt: dropwave landscape
+   :align: center
+   :width: 600px

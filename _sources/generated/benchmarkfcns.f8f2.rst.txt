@@ -1,0 +1,27 @@
+﻿benchmarkfcns.f8f2
+==================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: f8f2
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/f8f2.png
+   :alt: f8f2 landscape
+   :align: center
+   :width: 600px

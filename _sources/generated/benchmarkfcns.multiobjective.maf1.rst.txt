@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multiobjective.maf1
+=================================
+
+.. currentmodule:: benchmarkfcns.multiobjective
+
+.. autofunction:: maf1
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/maf1.png
+   :alt: maf1 landscape
+   :align: center
+   :width: 600px

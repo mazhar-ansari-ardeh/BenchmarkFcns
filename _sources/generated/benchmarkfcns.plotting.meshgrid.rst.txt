@@ -1,0 +1,27 @@
+﻿benchmarkfcns.plotting.meshgrid
+===============================
+
+.. currentmodule:: benchmarkfcns.plotting
+
+.. autofunction:: meshgrid
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/meshgrid.png
+   :alt: meshgrid landscape
+   :align: center
+   :width: 600px

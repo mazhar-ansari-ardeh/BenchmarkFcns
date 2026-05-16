@@ -1,0 +1,27 @@
+﻿benchmarkfcns.zettel
+====================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: zettel
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/zettel.png
+   :alt: zettel landscape
+   :align: center
+   :width: 600px

@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multiobjective.viennet1
+=====================================
+
+.. currentmodule:: benchmarkfcns.multiobjective
+
+.. autofunction:: viennet1
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/viennet1.png
+   :alt: viennet1 landscape
+   :align: center
+   :width: 600px

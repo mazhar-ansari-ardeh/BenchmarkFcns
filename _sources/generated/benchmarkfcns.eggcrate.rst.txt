@@ -1,0 +1,27 @@
+﻿benchmarkfcns.eggcrate
+======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: eggcrate
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/eggcrate.png
+   :alt: eggcrate landscape
+   :align: center
+   :width: 600px

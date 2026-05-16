@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multiobjective.bnh
+================================
+
+.. currentmodule:: benchmarkfcns.multiobjective
+
+.. autofunction:: bnh
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/bnh.png
+   :alt: bnh landscape
+   :align: center
+   :width: 600px

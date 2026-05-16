@@ -1,0 +1,27 @@
+﻿benchmarkfcns.mccormickn2
+=========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: mccormickn2
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/mccormickn2.png
+   :alt: mccormickn2 landscape
+   :align: center
+   :width: 600px

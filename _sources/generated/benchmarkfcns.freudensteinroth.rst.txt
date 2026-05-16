@@ -1,0 +1,27 @@
+﻿benchmarkfcns.freudensteinroth
+==============================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: freudensteinroth
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/freudensteinroth.png
+   :alt: freudensteinroth landscape
+   :align: center
+   :width: 600px

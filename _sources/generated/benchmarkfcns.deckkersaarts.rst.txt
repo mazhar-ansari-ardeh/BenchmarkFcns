@@ -1,0 +1,27 @@
+﻿benchmarkfcns.deckkersaarts
+===========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: deckkersaarts
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/deckkersaarts.png
+   :alt: deckkersaarts landscape
+   :align: center
+   :width: 600px

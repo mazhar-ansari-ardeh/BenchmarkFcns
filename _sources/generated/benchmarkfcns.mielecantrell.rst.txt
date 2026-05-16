@@ -1,0 +1,27 @@
+﻿benchmarkfcns.mielecantrell
+===========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: mielecantrell
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/mielecantrell.png
+   :alt: mielecantrell landscape
+   :align: center
+   :width: 600px

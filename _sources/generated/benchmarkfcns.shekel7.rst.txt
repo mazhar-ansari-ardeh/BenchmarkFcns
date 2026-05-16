@@ -1,0 +1,27 @@
+﻿benchmarkfcns.shekel7
+=====================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: shekel7
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/shekel7.png
+   :alt: shekel7 landscape
+   :align: center
+   :width: 600px

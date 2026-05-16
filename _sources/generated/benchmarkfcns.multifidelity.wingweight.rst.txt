@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multifidelity.wingweight
+======================================
+
+.. currentmodule:: benchmarkfcns.multifidelity
+
+.. autofunction:: wingweight
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/wingweight.png
+   :alt: wingweight landscape
+   :align: center
+   :width: 600px

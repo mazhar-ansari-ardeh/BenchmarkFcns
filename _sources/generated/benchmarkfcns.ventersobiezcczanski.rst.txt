@@ -1,0 +1,27 @@
+﻿benchmarkfcns.ventersobiezcczanski
+==================================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: ventersobiezcczanski
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/ventersobiezcczanski.png
+   :alt: ventersobiezcczanski landscape
+   :align: center
+   :width: 600px

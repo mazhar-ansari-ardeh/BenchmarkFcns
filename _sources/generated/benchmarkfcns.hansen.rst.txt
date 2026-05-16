@@ -1,0 +1,27 @@
+﻿benchmarkfcns.hansen
+====================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: hansen
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/hansen.png
+   :alt: hansen landscape
+   :align: center
+   :width: 600px

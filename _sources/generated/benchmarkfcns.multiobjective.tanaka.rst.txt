@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multiobjective.tanaka
+===================================
+
+.. currentmodule:: benchmarkfcns.multiobjective
+
+.. autofunction:: tanaka
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/tanaka.png
+   :alt: tanaka landscape
+   :align: center
+   :width: 600px

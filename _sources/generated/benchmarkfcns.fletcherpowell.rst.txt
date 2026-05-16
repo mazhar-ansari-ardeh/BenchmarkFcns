@@ -1,0 +1,27 @@
+﻿benchmarkfcns.fletcherpowell
+============================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: fletcherpowell
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/fletcherpowell.png
+   :alt: fletcherpowell landscape
+   :align: center
+   :width: 600px

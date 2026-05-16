@@ -1,0 +1,27 @@
+﻿benchmarkfcns.periodic
+======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: periodic
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/periodic.png
+   :alt: periodic landscape
+   :align: center
+   :width: 600px

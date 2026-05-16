@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multiobjective.dtlz2
+==================================
+
+.. currentmodule:: benchmarkfcns.multiobjective
+
+.. autofunction:: dtlz2
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/dtlz2.png
+   :alt: dtlz2 landscape
+   :align: center
+   :width: 600px

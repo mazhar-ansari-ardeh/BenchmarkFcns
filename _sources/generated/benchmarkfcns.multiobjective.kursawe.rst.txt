@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multiobjective.kursawe
+====================================
+
+.. currentmodule:: benchmarkfcns.multiobjective
+
+.. autofunction:: kursawe
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/kursawe.png
+   :alt: kursawe landscape
+   :align: center
+   :width: 600px

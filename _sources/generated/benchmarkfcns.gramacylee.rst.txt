@@ -1,0 +1,27 @@
+﻿benchmarkfcns.gramacylee
+========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: gramacylee
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/gramacylee.png
+   :alt: gramacylee landscape
+   :align: center
+   :width: 600px

@@ -1,0 +1,27 @@
+﻿benchmarkfcns.mishran8
+======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: mishran8
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/mishran8.png
+   :alt: mishran8 landscape
+   :align: center
+   :width: 600px

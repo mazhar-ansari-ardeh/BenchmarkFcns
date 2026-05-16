@@ -1,0 +1,27 @@
+﻿benchmarkfcns.vincent
+=====================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: vincent
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/vincent.png
+   :alt: vincent landscape
+   :align: center
+   :width: 600px

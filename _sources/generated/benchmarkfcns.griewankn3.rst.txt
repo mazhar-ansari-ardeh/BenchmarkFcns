@@ -1,0 +1,27 @@
+﻿benchmarkfcns.griewankn3
+========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: griewankn3
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/griewankn3.png
+   :alt: griewankn3 landscape
+   :align: center
+   :width: 600px

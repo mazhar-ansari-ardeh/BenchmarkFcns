@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multifidelity.bird
+================================
+
+.. currentmodule:: benchmarkfcns.multifidelity
+
+.. autofunction:: bird
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/bird.png
+   :alt: bird landscape
+   :align: center
+   :width: 600px

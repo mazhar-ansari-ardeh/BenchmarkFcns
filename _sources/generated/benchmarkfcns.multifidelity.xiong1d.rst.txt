@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multifidelity.xiong1d
+===================================
+
+.. currentmodule:: benchmarkfcns.multifidelity
+
+.. autofunction:: xiong1d
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/xiong1d.png
+   :alt: xiong1d landscape
+   :align: center
+   :width: 600px

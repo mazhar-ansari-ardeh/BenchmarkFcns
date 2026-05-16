@@ -1,0 +1,27 @@
+﻿benchmarkfcns.carromtable
+=========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: carromtable
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/carromtable.png
+   :alt: carromtable landscape
+   :align: center
+   :width: 600px

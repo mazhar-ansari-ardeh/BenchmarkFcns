@@ -1,0 +1,27 @@
+﻿benchmarkfcns.colville
+======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: colville
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/colville.png
+   :alt: colville landscape
+   :align: center
+   :width: 600px

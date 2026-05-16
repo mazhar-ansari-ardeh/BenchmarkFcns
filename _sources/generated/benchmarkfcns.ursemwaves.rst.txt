@@ -1,0 +1,27 @@
+﻿benchmarkfcns.ursemwaves
+========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: ursemwaves
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/ursemwaves.png
+   :alt: ursemwaves landscape
+   :align: center
+   :width: 600px

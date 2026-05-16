@@ -1,0 +1,27 @@
+﻿benchmarkfcns.langermann
+========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: langermann
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/langermann.png
+   :alt: langermann landscape
+   :align: center
+   :width: 600px

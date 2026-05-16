@@ -1,0 +1,27 @@
+﻿benchmarkfcns.qing
+==================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: qing
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/qing.png
+   :alt: qing landscape
+   :align: center
+   :width: 600px

@@ -1,0 +1,27 @@
+﻿benchmarkfcns.stretchedvsine
+============================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: stretchedvsine
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/stretchedvsine.png
+   :alt: stretchedvsine landscape
+   :align: center
+   :width: 600px

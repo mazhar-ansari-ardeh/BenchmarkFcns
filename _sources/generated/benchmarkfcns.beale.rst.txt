@@ -1,0 +1,27 @@
+﻿benchmarkfcns.beale
+===================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: beale
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/beale.png
+   :alt: beale landscape
+   :align: center
+   :width: 600px

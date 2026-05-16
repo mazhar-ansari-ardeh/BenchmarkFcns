@@ -1,0 +1,27 @@
+﻿benchmarkfcns.xinsheyangn4
+==========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: xinsheyangn4
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/xinsheyangn4.png
+   :alt: xinsheyangn4 landscape
+   :align: center
+   :width: 600px

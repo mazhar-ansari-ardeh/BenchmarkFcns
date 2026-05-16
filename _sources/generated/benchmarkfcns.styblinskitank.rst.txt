@@ -1,0 +1,27 @@
+﻿benchmarkfcns.styblinskitank
+============================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: styblinskitank
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/styblinskitank.png
+   :alt: styblinskitank landscape
+   :align: center
+   :width: 600px

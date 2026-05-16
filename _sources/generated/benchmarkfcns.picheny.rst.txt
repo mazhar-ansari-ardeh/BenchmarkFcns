@@ -1,0 +1,27 @@
+﻿benchmarkfcns.picheny
+=====================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: picheny
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/picheny.png
+   :alt: picheny landscape
+   :align: center
+   :width: 600px

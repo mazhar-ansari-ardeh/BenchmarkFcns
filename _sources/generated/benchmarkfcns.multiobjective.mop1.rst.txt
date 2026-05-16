@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multiobjective.mop1
+=================================
+
+.. currentmodule:: benchmarkfcns.multiobjective
+
+.. autofunction:: mop1
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/mop1.png
+   :alt: mop1 landscape
+   :align: center
+   :width: 600px

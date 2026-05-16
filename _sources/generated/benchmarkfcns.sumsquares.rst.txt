@@ -1,0 +1,27 @@
+﻿benchmarkfcns.sumsquares
+========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: sumsquares
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/sumsquares.png
+   :alt: sumsquares landscape
+   :align: center
+   :width: 600px

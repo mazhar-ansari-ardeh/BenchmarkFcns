@@ -1,0 +1,27 @@
+﻿benchmarkfcns.threehumpcamel
+============================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: threehumpcamel
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/threehumpcamel.png
+   :alt: threehumpcamel landscape
+   :align: center
+   :width: 600px

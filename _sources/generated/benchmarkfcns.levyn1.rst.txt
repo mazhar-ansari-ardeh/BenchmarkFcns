@@ -1,0 +1,27 @@
+﻿benchmarkfcns.levyn1
+====================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: levyn1
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/levyn1.png
+   :alt: levyn1 landscape
+   :align: center
+   :width: 600px

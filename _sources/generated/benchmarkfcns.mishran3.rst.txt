@@ -1,0 +1,27 @@
+﻿benchmarkfcns.mishran3
+======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: mishran3
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/mishran3.png
+   :alt: mishran3 landscape
+   :align: center
+   :width: 600px

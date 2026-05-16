@@ -1,0 +1,27 @@
+﻿benchmarkfcns.sineenvelopesinewave
+==================================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: sineenvelopesinewave
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/sineenvelopesinewave.png
+   :alt: sineenvelopesinewave landscape
+   :align: center
+   :width: 600px

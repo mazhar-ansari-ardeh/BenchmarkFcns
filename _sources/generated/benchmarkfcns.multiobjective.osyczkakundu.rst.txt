@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multiobjective.osyczkakundu
+=========================================
+
+.. currentmodule:: benchmarkfcns.multiobjective
+
+.. autofunction:: osyczkakundu
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/osyczkakundu.png
+   :alt: osyczkakundu landscape
+   :align: center
+   :width: 600px

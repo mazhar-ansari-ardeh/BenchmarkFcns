@@ -1,0 +1,27 @@
+﻿benchmarkfcns.dixonpricen2
+==========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: dixonpricen2
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/dixonpricen2.png
+   :alt: dixonpricen2 landscape
+   :align: center
+   :width: 600px

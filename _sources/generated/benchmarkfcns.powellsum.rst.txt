@@ -1,0 +1,27 @@
+﻿benchmarkfcns.powellsum
+=======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: powellsum
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/powellsum.png
+   :alt: powellsum landscape
+   :align: center
+   :width: 600px

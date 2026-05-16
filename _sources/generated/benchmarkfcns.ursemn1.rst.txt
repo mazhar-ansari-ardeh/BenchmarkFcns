@@ -1,0 +1,27 @@
+﻿benchmarkfcns.ursemn1
+=====================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: ursemn1
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/ursemn1.png
+   :alt: ursemn1 landscape
+   :align: center
+   :width: 600px

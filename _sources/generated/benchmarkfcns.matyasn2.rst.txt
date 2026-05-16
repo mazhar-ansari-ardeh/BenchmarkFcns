@@ -1,0 +1,27 @@
+﻿benchmarkfcns.matyasn2
+======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: matyasn2
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/matyasn2.png
+   :alt: matyasn2 landscape
+   :align: center
+   :width: 600px

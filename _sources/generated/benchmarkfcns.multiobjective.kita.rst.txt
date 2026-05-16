@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multiobjective.kita
+=================================
+
+.. currentmodule:: benchmarkfcns.multiobjective
+
+.. autofunction:: kita
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/kita.png
+   :alt: kita landscape
+   :align: center
+   :width: 600px

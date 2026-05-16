@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multifidelity.dixonprice
+======================================
+
+.. currentmodule:: benchmarkfcns.multifidelity
+
+.. autofunction:: dixonprice
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/dixonprice.png
+   :alt: dixonprice landscape
+   :align: center
+   :width: 600px

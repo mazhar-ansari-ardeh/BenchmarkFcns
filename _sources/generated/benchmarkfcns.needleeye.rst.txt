@@ -1,0 +1,27 @@
+﻿benchmarkfcns.needleeye
+=======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: needleeye
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/needleeye.png
+   :alt: needleeye landscape
+   :align: center
+   :width: 600px

@@ -1,0 +1,26 @@
+﻿benchmarkfcns.Composition
+=========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autoclass:: Composition
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Composition.__init__
+      ~Composition.add
+      ~Composition.add_component
+      ~Composition.evaluate
+      ~Composition.set_constant_C
+   
+   
+
+   
+   
+   

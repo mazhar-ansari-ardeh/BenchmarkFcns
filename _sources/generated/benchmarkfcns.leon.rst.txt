@@ -1,0 +1,27 @@
+﻿benchmarkfcns.leon
+==================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: leon
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/leon.png
+   :alt: leon landscape
+   :align: center
+   :width: 600px

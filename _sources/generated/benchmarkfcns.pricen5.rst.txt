@@ -1,0 +1,27 @@
+﻿benchmarkfcns.pricen5
+=====================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: pricen5
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/pricen5.png
+   :alt: pricen5 landscape
+   :align: center
+   :width: 600px

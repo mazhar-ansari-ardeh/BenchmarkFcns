@@ -1,0 +1,27 @@
+﻿benchmarkfcns.giunta
+====================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: giunta
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/giunta.png
+   :alt: giunta landscape
+   :align: center
+   :width: 600px

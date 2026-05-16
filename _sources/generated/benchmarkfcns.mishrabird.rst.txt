@@ -1,0 +1,27 @@
+﻿benchmarkfcns.mishrabird
+========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: mishrabird
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/mishrabird.png
+   :alt: mishrabird landscape
+   :align: center
+   :width: 600px

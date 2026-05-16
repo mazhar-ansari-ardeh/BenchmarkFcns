@@ -1,0 +1,27 @@
+﻿benchmarkfcns.keanen2
+=====================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: keanen2
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/keanen2.png
+   :alt: keanen2 landscape
+   :align: center
+   :width: 600px

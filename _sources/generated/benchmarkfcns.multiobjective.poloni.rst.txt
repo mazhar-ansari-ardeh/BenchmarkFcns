@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multiobjective.poloni
+===================================
+
+.. currentmodule:: benchmarkfcns.multiobjective
+
+.. autofunction:: poloni
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/poloni.png
+   :alt: poloni landscape
+   :align: center
+   :width: 600px

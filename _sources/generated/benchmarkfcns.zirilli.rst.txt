@@ -1,0 +1,27 @@
+﻿benchmarkfcns.zirilli
+=====================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: zirilli
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/zirilli.png
+   :alt: zirilli landscape
+   :align: center
+   :width: 600px

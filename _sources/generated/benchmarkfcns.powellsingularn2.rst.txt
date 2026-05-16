@@ -1,0 +1,27 @@
+﻿benchmarkfcns.powellsingularn2
+==============================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: powellsingularn2
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/powellsingularn2.png
+   :alt: powellsingularn2 landscape
+   :align: center
+   :width: 600px

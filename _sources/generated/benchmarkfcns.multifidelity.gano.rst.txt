@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multifidelity.gano
+================================
+
+.. currentmodule:: benchmarkfcns.multifidelity
+
+.. autofunction:: gano
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/gano.png
+   :alt: gano landscape
+   :align: center
+   :width: 600px

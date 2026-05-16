@@ -1,0 +1,27 @@
+﻿benchmarkfcns.eggholder
+=======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: eggholder
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/eggholder.png
+   :alt: eggholder landscape
+   :align: center
+   :width: 600px

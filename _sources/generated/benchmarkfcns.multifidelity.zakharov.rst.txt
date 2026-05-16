@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multifidelity.zakharov
+====================================
+
+.. currentmodule:: benchmarkfcns.multifidelity
+
+.. autofunction:: zakharov
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/zakharov.png
+   :alt: zakharov landscape
+   :align: center
+   :width: 600px

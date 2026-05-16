@@ -1,0 +1,711 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html"><link rel="next" title="benchmarkfcns.multifidelity.schwefel" href="benchmarkfcns.multifidelity.schwefel.html"><link rel="prev" title="benchmarkfcns.multifidelity.robotarm" href="benchmarkfcns.multifidelity.robotarm.html">
+        <link rel="canonical" href="https://benchmarkfcns.info/generated/benchmarkfcns.multifidelity.rosenbrock.html">
+
+    <!-- Generated with Sphinx 9.0.4 and Furo 2025.12.19 -->
+        <title>benchmarkfcns.multifidelity.rosenbrock - BenchmarkFcns Documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">BenchmarkFcns Documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <span class="sidebar-brand-text">BenchmarkFcns Documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage Guide</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../api.html">API Reference</a><input aria-label="Toggle navigation of API Reference" checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.ackley.html">benchmarkfcns.ackley</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.ackleyn2.html">benchmarkfcns.ackleyn2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.ackleyn3.html">benchmarkfcns.ackleyn3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.ackleyn4.html">benchmarkfcns.ackleyn4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.ackley5.html">benchmarkfcns.ackley5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.ackley6.html">benchmarkfcns.ackley6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.adjiman.html">benchmarkfcns.adjiman</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.alpinen1.html">benchmarkfcns.alpinen1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.alpinen2.html">benchmarkfcns.alpinen2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.alpine3.html">benchmarkfcns.alpine3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.alpine4.html">benchmarkfcns.alpine4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.alpine5.html">benchmarkfcns.alpine5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.amgm.html">benchmarkfcns.amgm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.attractivesector.html">benchmarkfcns.attractivesector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.baluja.html">benchmarkfcns.baluja</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.bartelsconn.html">benchmarkfcns.bartelsconn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.beale.html">benchmarkfcns.beale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.bentcigar.html">benchmarkfcns.bentcigar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.biggsexp02.html">benchmarkfcns.biggsexp02</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.biggsexp03.html">benchmarkfcns.biggsexp03</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.biggsexp04.html">benchmarkfcns.biggsexp04</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.biggsexp05.html">benchmarkfcns.biggsexp05</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.biggsexp06.html">benchmarkfcns.biggsexp06</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.bird.html">benchmarkfcns.bird</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.bohachevskyn1.html">benchmarkfcns.bohachevskyn1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.bohachevskyn2.html">benchmarkfcns.bohachevskyn2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.bohachevskyn3.html">benchmarkfcns.bohachevskyn3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.bohachevskyn4.html">benchmarkfcns.bohachevskyn4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.bohachevskyn5.html">benchmarkfcns.bohachevskyn5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.booth.html">benchmarkfcns.booth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.boxbetts.html">benchmarkfcns.boxbetts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.braninn1.html">benchmarkfcns.braninn1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.braninn2.html">benchmarkfcns.braninn2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.brent.html">benchmarkfcns.brent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.brentn1.html">benchmarkfcns.brentn1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.brown.html">benchmarkfcns.brown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.bukinn1.html">benchmarkfcns.bukinn1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.bukinn2.html">benchmarkfcns.bukinn2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.bukinn3.html">benchmarkfcns.bukinn3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.bukinn4.html">benchmarkfcns.bukinn4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.bukinn5.html">benchmarkfcns.bukinn5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.bukinn6.html">benchmarkfcns.bukinn6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.carromtable.html">benchmarkfcns.carromtable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.chenbird.html">benchmarkfcns.chenbird</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.chichinadze.html">benchmarkfcns.chichinadze</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.chichinadzen2.html">benchmarkfcns.chichinadzen2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.cigar.html">benchmarkfcns.cigar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.colville.html">benchmarkfcns.colville</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.corana.html">benchmarkfcns.corana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.cosinemixture.html">benchmarkfcns.cosinemixture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.crossintray.html">benchmarkfcns.crossintray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.crosslegintray.html">benchmarkfcns.crosslegintray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.crownedcross.html">benchmarkfcns.crownedcross</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.csendes.html">benchmarkfcns.csendes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.cubefcn.html">benchmarkfcns.cubefcn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.damavandi.html">benchmarkfcns.damavandi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.debn1.html">benchmarkfcns.debn1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.deckkersaarts.html">benchmarkfcns.deckkersaarts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.dejongn5.html">benchmarkfcns.dejongn5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.dejongn6.html">benchmarkfcns.dejongn6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.discus.html">benchmarkfcns.discus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.dixonprice.html">benchmarkfcns.dixonprice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.dixonpricen2.html">benchmarkfcns.dixonpricen2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.dixonpricen3.html">benchmarkfcns.dixonpricen3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.dolan.html">benchmarkfcns.dolan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.dropwave.html">benchmarkfcns.dropwave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.easom.html">benchmarkfcns.easom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.eggcrate.html">benchmarkfcns.eggcrate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.eggholder.html">benchmarkfcns.eggholder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.eggholdern2.html">benchmarkfcns.eggholdern2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.elattar.html">benchmarkfcns.elattar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.elliptic.html">benchmarkfcns.elliptic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.engvall.html">benchmarkfcns.engvall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.exponential.html">benchmarkfcns.exponential</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.f8f2.html">benchmarkfcns.f8f2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.fletcherpowell.html">benchmarkfcns.fletcherpowell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.forrester.html">benchmarkfcns.forrester</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.foxholes.html">benchmarkfcns.foxholes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.freudensteinroth.html">benchmarkfcns.freudensteinroth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.friedman1.html">benchmarkfcns.friedman1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.friedman2.html">benchmarkfcns.friedman2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.friedman3.html">benchmarkfcns.friedman3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.gallagher101.html">benchmarkfcns.gallagher101</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.gear.html">benchmarkfcns.gear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.giunta.html">benchmarkfcns.giunta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.giuntan2.html">benchmarkfcns.giuntan2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.goldsteinprice.html">benchmarkfcns.goldsteinprice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.gramacylee.html">benchmarkfcns.gramacylee</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.griewank.html">benchmarkfcns.griewank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.griewankn2.html">benchmarkfcns.griewankn2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.griewankn3.html">benchmarkfcns.griewankn3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.hansen.html">benchmarkfcns.hansen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.happycat.html">benchmarkfcns.happycat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.hartmann3.html">benchmarkfcns.hartmann3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.hartmann4.html">benchmarkfcns.hartmann4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.hartmann6.html">benchmarkfcns.hartmann6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.helicalvalley.html">benchmarkfcns.helicalvalley</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.himmelblau.html">benchmarkfcns.himmelblau</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.himmelblaun2.html">benchmarkfcns.himmelblaun2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.holdertable.html">benchmarkfcns.holdertable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.hosaki.html">benchmarkfcns.hosaki</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.hosakin2.html">benchmarkfcns.hosakin2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.ishigami.html">benchmarkfcns.ishigami</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.jennrichsampson.html">benchmarkfcns.jennrichsampson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.judge.html">benchmarkfcns.judge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.katsuura.html">benchmarkfcns.katsuura</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.keane.html">benchmarkfcns.keane</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.keanen2.html">benchmarkfcns.keanen2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.kowalik.html">benchmarkfcns.kowalik</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.kulnevich.html">benchmarkfcns.kulnevich</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.langermann.html">benchmarkfcns.langermann</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.langermannn2.html">benchmarkfcns.langermannn2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.leon.html">benchmarkfcns.leon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.leonn2.html">benchmarkfcns.leonn2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.levin13.html">benchmarkfcns.levin13</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.levy.html">benchmarkfcns.levy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.levyn1.html">benchmarkfcns.levyn1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.levyn2.html">benchmarkfcns.levyn2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.levyn3.html">benchmarkfcns.levyn3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.lunacekbirastrigin.html">benchmarkfcns.lunacekbirastrigin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.matyas.html">benchmarkfcns.matyas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.matyasn2.html">benchmarkfcns.matyasn2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.mccormick.html">benchmarkfcns.mccormick</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.mccormickn2.html">benchmarkfcns.mccormickn2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.meyer.html">benchmarkfcns.meyer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.michalewicz.html">benchmarkfcns.michalewicz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.michalewiczn10.html">benchmarkfcns.michalewiczn10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.michalewiczn2.html">benchmarkfcns.michalewiczn2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.michalewiczn5.html">benchmarkfcns.michalewiczn5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.mielecantrell.html">benchmarkfcns.mielecantrell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.mishrabird.html">benchmarkfcns.mishrabird</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.mishran1.html">benchmarkfcns.mishran1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.mishran2.html">benchmarkfcns.mishran2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.mishran3.html">benchmarkfcns.mishran3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.mishran4.html">benchmarkfcns.mishran4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.mishran5.html">benchmarkfcns.mishran5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.mishran6.html">benchmarkfcns.mishran6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.mishran7.html">benchmarkfcns.mishran7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.mishran8.html">benchmarkfcns.mishran8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.mishran9.html">benchmarkfcns.mishran9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.mishran10.html">benchmarkfcns.mishran10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.mishran11.html">benchmarkfcns.mishran11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.mishran12.html">benchmarkfcns.mishran12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.needleeye.html">benchmarkfcns.needleeye</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.parsopoulos.html">benchmarkfcns.parsopoulos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.pathological.html">benchmarkfcns.pathological</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.paviani.html">benchmarkfcns.paviani</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.penholder.html">benchmarkfcns.penholder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.periodic.html">benchmarkfcns.periodic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.periodicn2.html">benchmarkfcns.periodicn2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.perm.html">benchmarkfcns.perm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.picheny.html">benchmarkfcns.picheny</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.pinter.html">benchmarkfcns.pinter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.powellsingular.html">benchmarkfcns.powellsingular</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.powellsingularn2.html">benchmarkfcns.powellsingularn2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.powellsum.html">benchmarkfcns.powellsum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.powellsumn2.html">benchmarkfcns.powellsumn2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.pricen1.html">benchmarkfcns.pricen1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.pricen2.html">benchmarkfcns.pricen2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.pricen3.html">benchmarkfcns.pricen3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.pricen4.html">benchmarkfcns.pricen4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.pricen5.html">benchmarkfcns.pricen5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.qing.html">benchmarkfcns.qing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.qingn2.html">benchmarkfcns.qingn2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.quartic.html">benchmarkfcns.quartic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.quintic.html">benchmarkfcns.quintic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.rana.html">benchmarkfcns.rana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.rastrigin.html">benchmarkfcns.rastrigin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.rastrigin_parallel.html">benchmarkfcns.rastrigin_parallel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.ridge.html">benchmarkfcns.ridge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.rosenbrock.html">benchmarkfcns.rosenbrock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.rotatedhyperellipsoid.html">benchmarkfcns.rotatedhyperellipsoid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.salomon.html">benchmarkfcns.salomon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.sargan.html">benchmarkfcns.sargan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.schafferf6.html">benchmarkfcns.schafferf6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.schafferf7.html">benchmarkfcns.schafferf7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.schaffern1.html">benchmarkfcns.schaffern1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.schaffern2.html">benchmarkfcns.schaffern2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.schaffern3.html">benchmarkfcns.schaffern3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.schaffern4.html">benchmarkfcns.schaffern4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.schwefel.html">benchmarkfcns.schwefel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.schwefel12.html">benchmarkfcns.schwefel12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.schwefel220.html">benchmarkfcns.schwefel220</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.schwefel221.html">benchmarkfcns.schwefel221</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.schwefel222.html">benchmarkfcns.schwefel222</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.schwefel223.html">benchmarkfcns.schwefel223</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.schwefel225.html">benchmarkfcns.schwefel225</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.schwefel226.html">benchmarkfcns.schwefel226</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.shekel10.html">benchmarkfcns.shekel10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.shekel5.html">benchmarkfcns.shekel5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.shekel7.html">benchmarkfcns.shekel7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.shubert.html">benchmarkfcns.shubert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.shubertn3.html">benchmarkfcns.shubertn3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.shubertn4.html">benchmarkfcns.shubertn4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.sixhumpcamel.html">benchmarkfcns.sixhumpcamel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.sphere.html">benchmarkfcns.sphere</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.sineenvelopesinewave.html">benchmarkfcns.sineenvelopesinewave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.step.html">benchmarkfcns.step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.stepn1.html">benchmarkfcns.stepn1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.stepn2.html">benchmarkfcns.stepn2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.stepn3.html">benchmarkfcns.stepn3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.stretchedvsine.html">benchmarkfcns.stretchedvsine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.styblinskitank.html">benchmarkfcns.styblinskitank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.sumsquares.html">benchmarkfcns.sumsquares</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.tablefcn.html">benchmarkfcns.tablefcn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.testtubeholder.html">benchmarkfcns.testtubeholder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.threehumpcamel.html">benchmarkfcns.threehumpcamel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.trefethen.html">benchmarkfcns.trefethen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.treccani.html">benchmarkfcns.treccani</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.trid.html">benchmarkfcns.trid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.trigonometricn1.html">benchmarkfcns.trigonometricn1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.trigonometricn2.html">benchmarkfcns.trigonometricn2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.ursemn1.html">benchmarkfcns.ursemn1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.ursemn3.html">benchmarkfcns.ursemn3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.ursemn4.html">benchmarkfcns.ursemn4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.ursemwaves.html">benchmarkfcns.ursemwaves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.ventersobiezcczanski.html">benchmarkfcns.ventersobiezcczanski</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.vincent.html">benchmarkfcns.vincent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.watson.html">benchmarkfcns.watson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.wavy.html">benchmarkfcns.wavy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.wayburnseadern1.html">benchmarkfcns.wayburnseadern1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.wayburnseadern2.html">benchmarkfcns.wayburnseadern2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.wayburnseadern3.html">benchmarkfcns.wayburnseadern3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.weierstrass.html">benchmarkfcns.weierstrass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.whitley.html">benchmarkfcns.whitley</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.wolfe.html">benchmarkfcns.wolfe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.xinsheyangn1.html">benchmarkfcns.xinsheyangn1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.xinsheyangn2.html">benchmarkfcns.xinsheyangn2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.xinsheyangn3.html">benchmarkfcns.xinsheyangn3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.xinsheyangn4.html">benchmarkfcns.xinsheyangn4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.zakharov.html">benchmarkfcns.zakharov</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.zerosum.html">benchmarkfcns.zerosum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.zettel.html">benchmarkfcns.zettel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.zimmerman.html">benchmarkfcns.zimmerman</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.zirilli.html">benchmarkfcns.zirilli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.bnh.html">benchmarkfcns.multiobjective.bnh</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.cf1.html">benchmarkfcns.multiobjective.cf1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.cf2.html">benchmarkfcns.multiobjective.cf2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.cf3.html">benchmarkfcns.multiobjective.cf3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.cf4.html">benchmarkfcns.multiobjective.cf4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.cf5.html">benchmarkfcns.multiobjective.cf5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.cf6.html">benchmarkfcns.multiobjective.cf6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.cf7.html">benchmarkfcns.multiobjective.cf7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.cf8.html">benchmarkfcns.multiobjective.cf8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.cf9.html">benchmarkfcns.multiobjective.cf9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.cf10.html">benchmarkfcns.multiobjective.cf10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.deb.html">benchmarkfcns.multiobjective.deb</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.dtlz1.html">benchmarkfcns.multiobjective.dtlz1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.dtlz2.html">benchmarkfcns.multiobjective.dtlz2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.dtlz3.html">benchmarkfcns.multiobjective.dtlz3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.dtlz4.html">benchmarkfcns.multiobjective.dtlz4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.dtlz5.html">benchmarkfcns.multiobjective.dtlz5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.dtlz6.html">benchmarkfcns.multiobjective.dtlz6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.dtlz7.html">benchmarkfcns.multiobjective.dtlz7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.fonsecafleming.html">benchmarkfcns.multiobjective.fonsecafleming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.kita.html">benchmarkfcns.multiobjective.kita</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.kursawe.html">benchmarkfcns.multiobjective.kursawe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.maf1.html">benchmarkfcns.multiobjective.maf1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.maf2.html">benchmarkfcns.multiobjective.maf2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.maf3.html">benchmarkfcns.multiobjective.maf3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.maf4.html">benchmarkfcns.multiobjective.maf4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.maf5.html">benchmarkfcns.multiobjective.maf5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.maf6.html">benchmarkfcns.multiobjective.maf6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.maf7.html">benchmarkfcns.multiobjective.maf7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.maf8.html">benchmarkfcns.multiobjective.maf8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.maf9.html">benchmarkfcns.multiobjective.maf9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.maf10.html">benchmarkfcns.multiobjective.maf10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.mop1.html">benchmarkfcns.multiobjective.mop1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.mop2.html">benchmarkfcns.multiobjective.mop2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.mop3.html">benchmarkfcns.multiobjective.mop3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.mop4.html">benchmarkfcns.multiobjective.mop4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.mop5.html">benchmarkfcns.multiobjective.mop5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.mop6.html">benchmarkfcns.multiobjective.mop6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.mop7.html">benchmarkfcns.multiobjective.mop7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.oka1.html">benchmarkfcns.multiobjective.oka1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.oka2.html">benchmarkfcns.multiobjective.oka2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.osyczkakundu.html">benchmarkfcns.multiobjective.osyczkakundu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.poloni.html">benchmarkfcns.multiobjective.poloni</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.tanaka.html">benchmarkfcns.multiobjective.tanaka</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.uf1.html">benchmarkfcns.multiobjective.uf1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.uf2.html">benchmarkfcns.multiobjective.uf2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.uf3.html">benchmarkfcns.multiobjective.uf3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.uf4.html">benchmarkfcns.multiobjective.uf4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.uf5.html">benchmarkfcns.multiobjective.uf5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.uf6.html">benchmarkfcns.multiobjective.uf6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.uf7.html">benchmarkfcns.multiobjective.uf7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.uf8.html">benchmarkfcns.multiobjective.uf8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.uf9.html">benchmarkfcns.multiobjective.uf9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.uf10.html">benchmarkfcns.multiobjective.uf10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.viennet1.html">benchmarkfcns.multiobjective.viennet1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.viennet2.html">benchmarkfcns.multiobjective.viennet2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.viennet3.html">benchmarkfcns.multiobjective.viennet3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.wfg1.html">benchmarkfcns.multiobjective.wfg1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.wfg2.html">benchmarkfcns.multiobjective.wfg2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.wfg3.html">benchmarkfcns.multiobjective.wfg3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.wfg4.html">benchmarkfcns.multiobjective.wfg4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.wfg5.html">benchmarkfcns.multiobjective.wfg5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.wfg6.html">benchmarkfcns.multiobjective.wfg6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.wfg7.html">benchmarkfcns.multiobjective.wfg7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.wfg8.html">benchmarkfcns.multiobjective.wfg8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.wfg9.html">benchmarkfcns.multiobjective.wfg9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.zdt1.html">benchmarkfcns.multiobjective.zdt1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.zdt2.html">benchmarkfcns.multiobjective.zdt2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.zdt3.html">benchmarkfcns.multiobjective.zdt3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.zdt4.html">benchmarkfcns.multiobjective.zdt4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multiobjective.zdt6.html">benchmarkfcns.multiobjective.zdt6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.ackley.html">benchmarkfcns.multifidelity.ackley</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.adjiman.html">benchmarkfcns.multifidelity.adjiman</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.alpinen1.html">benchmarkfcns.multifidelity.alpinen1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.bartelsconn.html">benchmarkfcns.multifidelity.bartelsconn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.beale.html">benchmarkfcns.multifidelity.beale</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.bentcigar.html">benchmarkfcns.multifidelity.bentcigar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.bird.html">benchmarkfcns.multifidelity.bird</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.bohachevskyn1.html">benchmarkfcns.multifidelity.bohachevskyn1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.booth.html">benchmarkfcns.multifidelity.booth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.borehole.html">benchmarkfcns.multifidelity.borehole</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.branin.html">benchmarkfcns.multifidelity.branin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.brown.html">benchmarkfcns.multifidelity.brown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.bukinn6.html">benchmarkfcns.multifidelity.bukinn6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.crossintray.html">benchmarkfcns.multifidelity.crossintray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.currin.html">benchmarkfcns.multifidelity.currin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.discus.html">benchmarkfcns.multifidelity.discus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.dixonprice.html">benchmarkfcns.multifidelity.dixonprice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.easom.html">benchmarkfcns.multifidelity.easom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.eggholder.html">benchmarkfcns.multifidelity.eggholder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.elliptic.html">benchmarkfcns.multifidelity.elliptic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.forrester.html">benchmarkfcns.multifidelity.forrester</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.friedman.html">benchmarkfcns.multifidelity.friedman</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.gano.html">benchmarkfcns.multifidelity.gano</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.goldsteinprice.html">benchmarkfcns.multifidelity.goldsteinprice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.griewank.html">benchmarkfcns.multifidelity.griewank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.happycat.html">benchmarkfcns.multifidelity.happycat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.heterogeneous.html">benchmarkfcns.multifidelity.heterogeneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.himmelblau.html">benchmarkfcns.multifidelity.himmelblau</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.katsuura.html">benchmarkfcns.multifidelity.katsuura</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.levy.html">benchmarkfcns.multifidelity.levy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.matyas.html">benchmarkfcns.multifidelity.matyas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.michalewicz.html">benchmarkfcns.multifidelity.michalewicz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.otlcircuit.html">benchmarkfcns.multifidelity.otlcircuit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.park91a.html">benchmarkfcns.multifidelity.park91a</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.park91b.html">benchmarkfcns.multifidelity.park91b</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.piston.html">benchmarkfcns.multifidelity.piston</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.rastrigin.html">benchmarkfcns.multifidelity.rastrigin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.robotarm.html">benchmarkfcns.multifidelity.robotarm</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">benchmarkfcns.multifidelity.rosenbrock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.schwefel.html">benchmarkfcns.multifidelity.schwefel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.shubert.html">benchmarkfcns.multifidelity.shubert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.sixhumpcamel.html">benchmarkfcns.multifidelity.sixhumpcamel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.sphere.html">benchmarkfcns.multifidelity.sphere</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.step.html">benchmarkfcns.multifidelity.step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.styblinskitank.html">benchmarkfcns.multifidelity.styblinskitank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.trid.html">benchmarkfcns.multifidelity.trid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.wingweight.html">benchmarkfcns.multifidelity.wingweight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.xiong1d.html">benchmarkfcns.multifidelity.xiong1d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.multifidelity.zakharov.html">benchmarkfcns.multifidelity.zakharov</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.Composition.html">benchmarkfcns.Composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.cec2005_f15.html">benchmarkfcns.cec2005_f15</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarkfcns.plotting.meshgrid.html">benchmarkfcns.plotting.meshgrid</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Integration Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Project Roadmap</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../_sources/generated/benchmarkfcns.multifidelity.rosenbrock.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="benchmarkfcns-multifidelity-rosenbrock">
+<h1>benchmarkfcns.multifidelity.rosenbrock<a class="headerlink" href="#benchmarkfcns-multifidelity-rosenbrock" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="benchmarkfcns.multifidelity.rosenbrock">
+<span class="sig-prename descclassname"><span class="pre">benchmarkfcns.multifidelity.</span></span><span class="sig-name descname"><span class="pre">rosenbrock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.typing.NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'[m,</span> <span class="pre">n]'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'flags.c_contiguous'</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Annotated</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.typing.NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.float64</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'[m,</span> <span class="pre">n]'</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#benchmarkfcns.multifidelity.rosenbrock" title="Link to this definition">¶</a></dt>
+<dd><p>Computes the value of the multi-fidelity Rosenbrock benchmark function.
+SCORES = rosenbrock(X) computes the value of the Rosenbrock function
+at point X. <cite>multifidelity.rosenbrock</cite> accepts a matrix of size M-by-N and returns
+a matrix SCORES of size M-by-2 in which each row contains the function value
+for the corresponding row of X and each column contains the function value
+for the corresponding fidelity level.
+Properties (High-fidelity):</p>
+<ul class="simple">
+<li><p>Global minimum: 0</p></li>
+<li><p>Location of global minimum: (1, 1, …, 1)</p></li>
+<li><p>Number of dimensions: n</p></li>
+<li><p>Recommended domain: [-5, 5]^n</p></li>
+<li><p>Number of local minima: many (the “banana-shaped” valley creates a long, narrow region of local minima)</p></li>
+<li><p>Number of global minima: 1</p></li>
+<li><p>Convexity: non-convex</p></li>
+<li><p>Separability: non-separable</p></li>
+<li><p>Modality: unimodal</p></li>
+<li><p>Symmetry: non-symmetric</p></li>
+<li><p>Differentiable: Yes</p></li>
+</ul>
+<p>For more information, please visit:
+arxiv.org/pdf/2204.07867</p>
+</dd></dl>
+
+<div style="clear: both"></div><p class="rubric">Mathematical Definition</p>
+<div class="math-wrapper docutils container">
+<div class="math notranslate nohighlight">
+</div></div>
+<p class="rubric">Visualization</p>
+<a class="reference internal image-reference" href="../../assets/rosenbrock.png"><img alt="rosenbrock landscape" class="align-center" src="../../assets/rosenbrock.png" style="width: 600px;" />
+</a>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="benchmarkfcns.multifidelity.schwefel.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">benchmarkfcns.multifidelity.schwefel</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="benchmarkfcns.multifidelity.robotarm.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">benchmarkfcns.multifidelity.robotarm</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, Mazhar Ansari Ardeh
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">benchmarkfcns.multifidelity.rosenbrock</a><ul>
+<li><a class="reference internal" href="#benchmarkfcns.multifidelity.rosenbrock"><code class="docutils literal notranslate"><span class="pre">rosenbrock()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=42d1b3bd"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    </body>
+</html>

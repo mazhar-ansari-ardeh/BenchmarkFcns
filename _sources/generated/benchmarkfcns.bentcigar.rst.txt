@@ -1,0 +1,27 @@
+﻿benchmarkfcns.bentcigar
+=======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: bentcigar
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/bentcigar.png
+   :alt: bentcigar landscape
+   :align: center
+   :width: 600px

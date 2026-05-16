@@ -1,0 +1,27 @@
+﻿benchmarkfcns.schwefel226
+=========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: schwefel226
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/schwefel226.png
+   :alt: schwefel226 landscape
+   :align: center
+   :width: 600px

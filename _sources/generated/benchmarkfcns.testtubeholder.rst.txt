@@ -1,0 +1,27 @@
+﻿benchmarkfcns.testtubeholder
+============================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: testtubeholder
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/testtubeholder.png
+   :alt: testtubeholder landscape
+   :align: center
+   :width: 600px

@@ -1,0 +1,27 @@
+﻿benchmarkfcns.braninn1
+======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: braninn1
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/braninn1.png
+   :alt: braninn1 landscape
+   :align: center
+   :width: 600px

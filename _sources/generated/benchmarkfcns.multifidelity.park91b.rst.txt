@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multifidelity.park91b
+===================================
+
+.. currentmodule:: benchmarkfcns.multifidelity
+
+.. autofunction:: park91b
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/park91b.png
+   :alt: park91b landscape
+   :align: center
+   :width: 600px

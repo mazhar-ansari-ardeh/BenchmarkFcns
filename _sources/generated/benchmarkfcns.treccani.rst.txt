@@ -1,0 +1,27 @@
+﻿benchmarkfcns.treccani
+======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: treccani
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/treccani.png
+   :alt: treccani landscape
+   :align: center
+   :width: 600px

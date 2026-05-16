@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multifidelity.levy
+================================
+
+.. currentmodule:: benchmarkfcns.multifidelity
+
+.. autofunction:: levy
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/levy.png
+   :alt: levy landscape
+   :align: center
+   :width: 600px

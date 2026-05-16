@@ -1,0 +1,27 @@
+﻿benchmarkfcns.friedman1
+=======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: friedman1
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/friedman1.png
+   :alt: friedman1 landscape
+   :align: center
+   :width: 600px

@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multifidelity.schwefel
+====================================
+
+.. currentmodule:: benchmarkfcns.multifidelity
+
+.. autofunction:: schwefel
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/schwefel.png
+   :alt: schwefel landscape
+   :align: center
+   :width: 600px

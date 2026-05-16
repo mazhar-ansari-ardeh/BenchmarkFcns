@@ -1,0 +1,27 @@
+﻿benchmarkfcns.pathological
+==========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: pathological
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/pathological.png
+   :alt: pathological landscape
+   :align: center
+   :width: 600px

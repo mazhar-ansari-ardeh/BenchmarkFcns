@@ -1,0 +1,27 @@
+﻿benchmarkfcns.cigar
+===================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: cigar
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/cigar.png
+   :alt: cigar landscape
+   :align: center
+   :width: 600px

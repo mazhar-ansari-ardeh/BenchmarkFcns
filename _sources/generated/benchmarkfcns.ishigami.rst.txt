@@ -1,0 +1,27 @@
+﻿benchmarkfcns.ishigami
+======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: ishigami
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/ishigami.png
+   :alt: ishigami landscape
+   :align: center
+   :width: 600px

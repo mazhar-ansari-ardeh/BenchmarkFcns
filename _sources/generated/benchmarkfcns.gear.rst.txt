@@ -1,0 +1,27 @@
+﻿benchmarkfcns.gear
+==================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: gear
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/gear.png
+   :alt: gear landscape
+   :align: center
+   :width: 600px

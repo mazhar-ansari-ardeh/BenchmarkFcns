@@ -1,0 +1,27 @@
+﻿benchmarkfcns.happycat
+======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: happycat
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/happycat.png
+   :alt: happycat landscape
+   :align: center
+   :width: 600px

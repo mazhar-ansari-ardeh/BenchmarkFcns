@@ -1,0 +1,27 @@
+﻿benchmarkfcns.trefethen
+=======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: trefethen
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/trefethen.png
+   :alt: trefethen landscape
+   :align: center
+   :width: 600px

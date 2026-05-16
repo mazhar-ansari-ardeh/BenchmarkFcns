@@ -1,0 +1,27 @@
+﻿benchmarkfcns.wavy
+==================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: wavy
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/wavy.png
+   :alt: wavy landscape
+   :align: center
+   :width: 600px

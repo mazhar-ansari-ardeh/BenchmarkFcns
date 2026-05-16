@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multiobjective.uf1
+================================
+
+.. currentmodule:: benchmarkfcns.multiobjective
+
+.. autofunction:: uf1
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/uf1.png
+   :alt: uf1 landscape
+   :align: center
+   :width: 600px

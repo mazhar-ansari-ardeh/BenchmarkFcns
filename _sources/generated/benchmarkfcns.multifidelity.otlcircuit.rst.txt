@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multifidelity.otlcircuit
+======================================
+
+.. currentmodule:: benchmarkfcns.multifidelity
+
+.. autofunction:: otlcircuit
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/otlcircuit.png
+   :alt: otlcircuit landscape
+   :align: center
+   :width: 600px

@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multifidelity.brown
+=================================
+
+.. currentmodule:: benchmarkfcns.multifidelity
+
+.. autofunction:: brown
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/brown.png
+   :alt: brown landscape
+   :align: center
+   :width: 600px

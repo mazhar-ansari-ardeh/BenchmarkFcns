@@ -1,0 +1,27 @@
+﻿benchmarkfcns.bartelsconn
+=========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: bartelsconn
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/bartelsconn.png
+   :alt: bartelsconn landscape
+   :align: center
+   :width: 600px

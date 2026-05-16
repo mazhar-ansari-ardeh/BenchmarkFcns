@@ -1,0 +1,27 @@
+﻿benchmarkfcns.csendes
+=====================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: csendes
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/csendes.png
+   :alt: csendes landscape
+   :align: center
+   :width: 600px

@@ -1,0 +1,27 @@
+﻿benchmarkfcns.shubertn4
+=======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: shubertn4
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/shubertn4.png
+   :alt: shubertn4 landscape
+   :align: center
+   :width: 600px

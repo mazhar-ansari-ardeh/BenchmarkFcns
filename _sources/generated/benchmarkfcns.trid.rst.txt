@@ -1,0 +1,27 @@
+﻿benchmarkfcns.trid
+==================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: trid
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/trid.png
+   :alt: trid landscape
+   :align: center
+   :width: 600px

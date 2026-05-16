@@ -1,0 +1,27 @@
+﻿benchmarkfcns.ackleyn4
+======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: ackleyn4
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/ackleyn4.png
+   :alt: ackleyn4 landscape
+   :align: center
+   :width: 600px

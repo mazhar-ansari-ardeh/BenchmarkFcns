@@ -1,0 +1,27 @@
+﻿benchmarkfcns.kulnevich
+=======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: kulnevich
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/kulnevich.png
+   :alt: kulnevich landscape
+   :align: center
+   :width: 600px

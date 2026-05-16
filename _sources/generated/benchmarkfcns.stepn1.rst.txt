@@ -1,0 +1,27 @@
+﻿benchmarkfcns.stepn1
+====================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: stepn1
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/stepn1.png
+   :alt: stepn1 landscape
+   :align: center
+   :width: 600px

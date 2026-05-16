@@ -1,0 +1,27 @@
+﻿benchmarkfcns.michalewiczn2
+===========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: michalewiczn2
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/michalewiczn2.png
+   :alt: michalewiczn2 landscape
+   :align: center
+   :width: 600px

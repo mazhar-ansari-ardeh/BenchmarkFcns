@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multiobjective.zdt3
+=================================
+
+.. currentmodule:: benchmarkfcns.multiobjective
+
+.. autofunction:: zdt3
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/zdt3.png
+   :alt: zdt3 landscape
+   :align: center
+   :width: 600px

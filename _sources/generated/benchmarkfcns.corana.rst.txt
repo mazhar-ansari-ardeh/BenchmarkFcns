@@ -1,0 +1,27 @@
+﻿benchmarkfcns.corana
+====================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: corana
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/corana.png
+   :alt: corana landscape
+   :align: center
+   :width: 600px

@@ -1,0 +1,27 @@
+﻿benchmarkfcns.booth
+===================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: booth
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/booth.png
+   :alt: booth landscape
+   :align: center
+   :width: 600px

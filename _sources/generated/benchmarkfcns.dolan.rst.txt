@@ -1,0 +1,27 @@
+﻿benchmarkfcns.dolan
+===================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: dolan
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/dolan.png
+   :alt: dolan landscape
+   :align: center
+   :width: 600px

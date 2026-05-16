@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multifidelity.sixhumpcamel
+========================================
+
+.. currentmodule:: benchmarkfcns.multifidelity
+
+.. autofunction:: sixhumpcamel
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/sixhumpcamel.png
+   :alt: sixhumpcamel landscape
+   :align: center
+   :width: 600px

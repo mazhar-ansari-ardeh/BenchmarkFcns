@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multifidelity.michalewicz
+=======================================
+
+.. currentmodule:: benchmarkfcns.multifidelity
+
+.. autofunction:: michalewicz
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/michalewicz.png
+   :alt: michalewicz landscape
+   :align: center
+   :width: 600px

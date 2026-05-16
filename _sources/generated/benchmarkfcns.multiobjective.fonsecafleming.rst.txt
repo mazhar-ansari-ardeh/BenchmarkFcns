@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multiobjective.fonsecafleming
+===========================================
+
+.. currentmodule:: benchmarkfcns.multiobjective
+
+.. autofunction:: fonsecafleming
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/fonsecafleming.png
+   :alt: fonsecafleming landscape
+   :align: center
+   :width: 600px

@@ -1,0 +1,27 @@
+﻿benchmarkfcns.crosslegintray
+============================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: crosslegintray
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/crosslegintray.png
+   :alt: crosslegintray landscape
+   :align: center
+   :width: 600px

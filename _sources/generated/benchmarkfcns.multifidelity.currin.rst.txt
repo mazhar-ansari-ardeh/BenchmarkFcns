@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multifidelity.currin
+==================================
+
+.. currentmodule:: benchmarkfcns.multifidelity
+
+.. autofunction:: currin
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/currin.png
+   :alt: currin landscape
+   :align: center
+   :width: 600px

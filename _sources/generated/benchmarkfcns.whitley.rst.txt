@@ -1,0 +1,27 @@
+﻿benchmarkfcns.whitley
+=====================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: whitley
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/whitley.png
+   :alt: whitley landscape
+   :align: center
+   :width: 600px

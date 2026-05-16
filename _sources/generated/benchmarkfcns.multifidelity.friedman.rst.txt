@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multifidelity.friedman
+====================================
+
+.. currentmodule:: benchmarkfcns.multifidelity
+
+.. autofunction:: friedman
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/friedman.png
+   :alt: friedman landscape
+   :align: center
+   :width: 600px

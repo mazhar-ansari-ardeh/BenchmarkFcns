@@ -1,0 +1,27 @@
+﻿benchmarkfcns.hosaki
+====================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: hosaki
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/hosaki.png
+   :alt: hosaki landscape
+   :align: center
+   :width: 600px

@@ -1,0 +1,27 @@
+﻿benchmarkfcns.bukinn1
+=====================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: bukinn1
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/bukinn1.png
+   :alt: bukinn1 landscape
+   :align: center
+   :width: 600px

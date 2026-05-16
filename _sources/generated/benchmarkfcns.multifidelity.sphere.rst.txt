@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multifidelity.sphere
+==================================
+
+.. currentmodule:: benchmarkfcns.multifidelity
+
+.. autofunction:: sphere
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+   :nowrap:
+
+   
+
+.. rubric:: Visualization
+
+.. image:: /../../assets/sphere.png
+   :alt: sphere landscape
+   :align: center
+   :width: 600px
