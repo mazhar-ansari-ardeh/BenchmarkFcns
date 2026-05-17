@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    g(\mathbf{x}_M) = \sum_{x_i \in \mathbf{x}_M} x_i^{0.1} \\
 \theta_1 = x_1 \pi/2 \\

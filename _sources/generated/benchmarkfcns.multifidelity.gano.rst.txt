@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    \begin{aligned}
 f_{hf}(x_1, x_2) &= 4x_1^2 + x_2^3 + x_1x_2 \\

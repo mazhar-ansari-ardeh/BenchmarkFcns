@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    f_1 = x_1 + \frac{2}{|J_1|} \left[ 4 \sum_{j \in J_1} y_j^2 - 2 \prod_{j \in J_1} \cos\left(\frac{20y_j\pi}{\sqrt{j}}\right) + 2 \right] \\
 f_2 = 1 - \sqrt{x_1} + \frac{2}{|J_2|} \left[ 4 \sum_{j \in J_2} y_j^2 - 2 \prod_{j \in J_2} \cos\left(\frac{20y_j\pi}{\sqrt{j}}\right) + 2 \right] \\

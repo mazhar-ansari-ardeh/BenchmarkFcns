@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    f(\mathbf{x}) = \sum_{i=1}^n i x_i^2 + \sum_{i=1}^n 20i \sin^2(A_i) + \sum_{i=1}^n i \log_{10}(1 + i B_i^2) \\
 \text{where: } \\

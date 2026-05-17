@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    \begin{aligned}
 V_{b1} &= \frac{12 R_{b2}}{R_{b1} + R_{b2}} \\

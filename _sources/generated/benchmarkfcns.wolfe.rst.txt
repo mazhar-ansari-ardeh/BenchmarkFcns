@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    f(x, y, z) = \frac{4}{3}(x^2 + y^2 - xy)^{0.75} + z
 

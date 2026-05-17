@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    f(x, y) = \frac{1}{4} + (x^2 - 2x +y^2)^2
 

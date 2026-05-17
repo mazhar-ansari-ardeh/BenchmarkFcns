@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    \begin{aligned}
 f_1(\textbf{x}) &= \cos(0.5x_1\pi) \cos(0.5x_2\pi) + \frac{2}{|J_1|} \sum_{j \in J_1} [4y_j^2 - 2\cos(\frac{20\pi y_j}{\sqrt{j}}) + 2] \\

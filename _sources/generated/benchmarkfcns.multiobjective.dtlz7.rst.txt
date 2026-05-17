@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    f_i(\textbf{x}) = x_i, \quad i = 1, \dots, M-1 \\
 f_M(\textbf{x}) = (1 + g(\textbf{x})) h(f_1, \dots, f_{M-1}, g) \\

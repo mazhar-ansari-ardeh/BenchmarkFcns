@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    f(x) = -\sum_{i=1}^{4} \alpha_i \exp \left( -\sum_{j=1}^{6} A_{ij} (x_j - P_{ij})^2 \right) \\
 A = \begin{bmatrix}10 & 3 & 17 & 3.5 & 1.7 & 10 \\ 0.05 & 10 & 17 & 8 & 0.1 & 14 \\ 3 & 3.5 & 1.7 & 10 & 17 & 8 \\ 17 & 8 & 0.05 & 10 & 0.1 & 14\end{bmatrix} \\

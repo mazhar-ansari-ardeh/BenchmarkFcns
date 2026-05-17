@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    f(\textbf{x}) = \sum_{i=1}^{n} \lfloor x_i^2 \rfloor
 

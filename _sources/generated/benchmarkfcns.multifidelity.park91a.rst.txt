@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    \begin{aligned}
 f_{hf}(\mathbf{x}) &= \frac{x_1}{2} [\sqrt{1 + (x_2 + x_3^2) \frac{x_4}{x_1^2}} - 1] + (x_1 + 3x_4) \exp(1 + \sin(x_3)) \\

@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    f_1(\textbf{x}) = 1 - \exp(-4x_1) \sin^6(6\pi x_1) \\
 f_2(\textbf{x}) = g(\textbf{x}) h(f_1, g) \\

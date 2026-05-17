@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    f_1 = \cos(0.5\pi x_1) \cos(0.5\pi x_2) + \frac{2}{|J_1|} \sum_{j \in J_1} y_j^2 \\
 f_2 = \cos(0.5\pi x_1) \sin(0.5\pi x_2) + \frac{2}{|J_2|} \sum_{j \in J_2} y_j^2 \\

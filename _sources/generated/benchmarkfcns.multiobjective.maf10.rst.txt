@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    \begin{aligned}
 f_i(\textbf{x}) &= y_M + 2i \cdot h_i(y_1, \dots, y_{M-1}) \\

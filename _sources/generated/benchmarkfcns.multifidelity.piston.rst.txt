@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    \begin{aligned}
 A &= P_0 S + 19.62M - \frac{k V_0}{S} \\

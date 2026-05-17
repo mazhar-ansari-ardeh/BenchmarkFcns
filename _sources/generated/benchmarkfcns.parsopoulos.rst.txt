@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    f(x_1, x_2) = \cos^2(x_1) + \sin^2(x_2)
 

@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    F2(\mathbf{x}, \mathbf{y}) = 100(x^2 - y)^2 + (x - 1)^2 \\
 F8(\mathbf{x}) = \frac{x^2}{4000} - \cos(x) + 1 \\

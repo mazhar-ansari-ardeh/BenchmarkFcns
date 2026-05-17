@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    \begin{aligned}
 x_1' &= x_1 \cos(\frac{\pi}{12}) - x_2 \sin(\frac{\pi}{12}) \\

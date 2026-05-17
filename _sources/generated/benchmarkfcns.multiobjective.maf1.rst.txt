@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    \begin{aligned}
 f_i(\textbf{x}) &= 0.5(1 + g(\textbf{x}_M)) [ 1 - \prod_{j=1}^{M-i} x_j \times \begin{cases} 1 - x_{M-i+1} & \text{if } i > 1 \\ 1 & \text{if } i = 1 \end{cases} ] \\

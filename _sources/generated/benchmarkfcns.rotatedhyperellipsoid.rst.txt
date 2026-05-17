@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    f(\textbf{x}) = \sum_{i=1}^{n} \left( \sum_{j=1}^{i} x_j \right)^2
 

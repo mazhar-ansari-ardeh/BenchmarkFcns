@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    f(x,y)=2x^2-1.05x^4+\frac{x^6}{6}+xy+y^2
 

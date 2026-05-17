@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    f(x, y) = \sin(x + y) + (x - y)^2 - 1.5x + 2.5y + 1
 

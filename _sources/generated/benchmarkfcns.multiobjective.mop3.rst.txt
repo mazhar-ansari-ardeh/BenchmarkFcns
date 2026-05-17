@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    \begin{aligned}
 f_1(x_1, x_2) &= 1 + (A_1 - B_1)^2 + (A_2 - B_2)^2 \\

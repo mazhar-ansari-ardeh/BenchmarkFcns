@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    \begin{aligned}
 f_{hf}(\mathbf{x}) &= -(x_2+47)\sin\left(\sqrt{|x_1/2 + x_2 + 47|}\right) - x_1\sin\left(\sqrt{|x_1 - (x_2 + 47)|}\right) \

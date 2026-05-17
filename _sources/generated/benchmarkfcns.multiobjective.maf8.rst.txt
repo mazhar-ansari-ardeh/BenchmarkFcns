@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    \begin{aligned}
 f_i(\textbf{x}) &= \sqrt{(x_1 - p_{i,1})^2 + (x_2 - p_{i,2})^2} \\

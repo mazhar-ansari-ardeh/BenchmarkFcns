@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    \begin{aligned}
 f_1(\textbf{x}) &= x_1 + \frac{2}{|J_1|} \sum_{j \in J_1} [2y_j^2 - \cos(4\pi y_j) + 1] \\

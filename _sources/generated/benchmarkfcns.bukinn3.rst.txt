@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    f(x_1, x_2) = 100 |x_2 - 0.01x_1^2| + 0.01 |x_1 + 10|
 

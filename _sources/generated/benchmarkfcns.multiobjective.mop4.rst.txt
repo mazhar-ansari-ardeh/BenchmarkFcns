@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    \begin{aligned}
 f_1(\textbf{x}) &= \sum_{i=1}^{n-1} [-10 \exp(-0.2 \sqrt{x_i^2 + x_{i+1}^2})] \\

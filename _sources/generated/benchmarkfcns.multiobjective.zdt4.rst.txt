@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    f_1(\textbf{x}) = x_1 \\
 f_2(\textbf{x}) = g(\textbf{x}) h(f_1, g) \\

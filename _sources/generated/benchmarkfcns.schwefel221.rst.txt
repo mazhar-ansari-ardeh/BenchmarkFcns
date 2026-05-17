@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    f(\mathbf{x})=f(x_1, ..., x_n)=\max_{i=1,...,n}|x_i|
 

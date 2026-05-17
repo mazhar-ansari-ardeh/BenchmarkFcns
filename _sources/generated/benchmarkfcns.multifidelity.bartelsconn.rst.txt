@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    f(x,y)=|x^2 + y^2 + xy| + |sin(x)| + |cos(y)|
 

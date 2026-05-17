@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    \begin{aligned}
 f_1(x_1, x_2) &= 0.5(x_1^2 + x_2^2) + \sin(x_1^2 + x_2^2) \\

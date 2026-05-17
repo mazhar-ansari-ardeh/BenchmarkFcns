@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    f(\mathbf{x}) = \left[ \lfloor x_1 + x_2 \rfloor - \lfloor x_1 \rfloor - \lfloor x_2 \rfloor \right]^2
 

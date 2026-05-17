@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    \begin{aligned}
 f_i(\textbf{x}) &= x_i, \quad i=1, \dots, M-1 \\

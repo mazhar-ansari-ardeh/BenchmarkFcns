@@ -14,7 +14,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    \begin{aligned}
 f_{hf}(x) &= \sin(30(x - 0.9)^4) \cos(2(x - 0.9)) + \frac{x - 0.9}{2} \\
