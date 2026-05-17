@@ -42,20 +42,36 @@ html_baseurl = "https://benchmarkfcns.info"
 
 # -- Extension configuration -------------------------------------------------
 def add_plots_to_context(app, pagename, templatename, context, doctree):
-    if templatename == "autosummary/function.rst":
+    # Print for debugging in CI logs
+    # print(f"DEBUG: pagename={pagename}, templatename={templatename}")
+
+    if "function.rst" in templatename:
         objname = context.get("objname")
         if objname:
             import os
-            plots_dir = os.path.abspath(os.path.join(app.srcdir, "../../assets/plots"))
+            # Try a few ways to find the assets directory
+            possible_paths = [
+                os.path.abspath(os.path.join(app.srcdir, "../../assets/plots")),
+                os.path.abspath(os.path.join(os.getcwd(), "assets/plots")),
+                "/home/runner/work/BenchmarkFcns/BenchmarkFcns/assets/plots"
+            ]
+
+            plots_dir = None
+            for p in possible_paths:
+                if os.path.exists(p):
+                    plots_dir = p
+                    break
+
             all_plots = []
-            if os.path.exists(plots_dir):
-                # Find all files starting with objname + "fcn"
+            if plots_dir:
                 prefix = objname + "fcn"
                 for f in sorted(os.listdir(plots_dir)):
                     if f.startswith(prefix) and f.endswith(".png"):
-                        # Use a relative path from the doc source to the asset
-                        # Sphinx will handle the path resolution
                         all_plots.append(f)
+
+            # if not all_plots:
+            #    print(f"DEBUG: No plots found for {objname} in {plots_dir}")
+
             context["available_plots"] = all_plots
 
 def setup(app):
