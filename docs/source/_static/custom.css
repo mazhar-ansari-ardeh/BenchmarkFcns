@@ -1,0 +1,10 @@
+/* Remove borders from the visualization table */
+.borderless, .borderless td, .borderless th, .borderless tr {
+    border: 0 !important;
+}
+
+/* Ensure images don't overflow */
+.borderless img {
+    max-width: 100%;
+    height: auto;
+}
