@@ -25,7 +25,12 @@ autodoc_default_options = {
 
 autosummary_generate = True
 
-templates_path = ['_templates']
+templates_path = [
+    '_templates',
+    '../../src/latex',
+    '../../src/latex/multiobjective',
+    '../../src/latex/multifidelity'
+]
 exclude_patterns = []
 
 # -- Options for HTML output -------------------------------------------------

@@ -8,8 +8,7 @@
 
    <div style="clear: both"></div>
 
-{% set tex_file = "src/latex/" + objname + "fcn.tex" %}
-{% set plot_file = "assets/plots/" + objname + "fcn.png" %}
+{% set tex_file = objname + "fcn.tex" %}
 
 .. rubric:: Mathematical Definition
 
@@ -20,6 +19,7 @@
 
 .. rubric:: Visualization
 
+{% set plot_file = "assets/plots/" + objname + "fcn.png" %}
 .. image:: /../../{{ plot_file }}
    :alt: {{ objname }} landscape
    :align: center
