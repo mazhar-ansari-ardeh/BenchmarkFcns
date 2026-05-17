@@ -22,6 +22,7 @@ Features
    api
    examples
    roadmap
+   about
 
 Indices and tables
 ==================
