@@ -600,14 +600,16 @@
 <h1>BenchmarkFcns<a class="headerlink" href="#benchmarkfcns" title="Link to this heading">¶</a></h1>
 <a class="reference external image-reference" href="https://github.com/mazhar-ansari-ardeh/BenchmarkFcns/actions/workflows/build.yaml"><img alt="https://github.com/mazhar-ansari-ardeh/BenchmarkFcns/actions/workflows/build.yaml/badge.svg" src="https://github.com/mazhar-ansari-ardeh/BenchmarkFcns/actions/workflows/build.yaml/badge.svg" />
 </a>
-<p><strong>BenchmarkFcns</strong> is a high-performance library providing a comprehensive suite of mathematical benchmark functions for optimization algorithms.</p>
-<section id="features">
-<h2>Features<a class="headerlink" href="#features" title="Link to this heading">¶</a></h2>
+<p><strong>BenchmarkFcns</strong> is a high-performance library providing a comprehensive suite of over 310 mathematical benchmark functions designed for the rigorous testing and evaluation of optimization algorithms.</p>
+<p>By combining a core engine implemented in <strong>C++ with Eigen</strong> and multi-core parallelization via <strong>OpenMP</strong>, the library offers extremely fast evaluation speeds, often providing <strong>10x-30x speedups</strong> over traditional pure-Python implementations. This makes it an ideal choice for large-scale tasks, Reinforcement Learning training, and high-fidelity surrogate modeling.</p>
+<section id="core-benefits">
+<h2>Core Benefits<a class="headerlink" href="#core-benefits" title="Link to this heading">¶</a></h2>
 <ul class="simple">
-<li><p><strong>High Performance</strong>: Optimized C++ core using Eigen and OpenMP.</p></li>
-<li><p><strong>AI Ready</strong>: Standardized Gymnasium (OpenAI Gym) environments.</p></li>
-<li><p><strong>Optimizer Agnostic</strong>: Seamless integration with SciPy, Nevergrad, and more.</p></li>
-<li><p><strong>Comprehensive</strong>: 310+ functions including Classic, CEC suites, and Multi-Objective.</p></li>
+<li><p><strong>High Performance</strong>: Optimized C++ core leveraging modern SIMD instruction sets.</p></li>
+<li><p><strong>AI &amp; RL Ready</strong>: Standardized <strong>Gymnasium</strong> (OpenAI Gym) environments for training agents on complex landscapes.</p></li>
+<li><p><strong>Massive Batch Support</strong>: Native vectorization allows evaluating millions of data points in parallel.</p></li>
+<li><p><strong>Comprehensive Coverage</strong>: Includes Classic (100+), Multi-Objective (50), Multi-Fidelity (49), and official CEC Competition suites (2005-2022).</p></li>
+<li><p><strong>Cross-Language Consistency</strong>: Mathematically verified implementations ensuring consistent results across Python, C++, and MATLAB.</p></li>
 </ul>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
@@ -702,7 +704,7 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">BenchmarkFcns</a><ul>
-<li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#core-benefits">Core Benefits</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
