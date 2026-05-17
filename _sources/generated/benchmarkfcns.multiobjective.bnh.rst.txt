@@ -21,7 +21,4 @@ f_2(x_1, x_2) = (x_1 - 5)^2 + (x_2 - 5)^2
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/bnhfcn.png
-   :alt: bnh landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

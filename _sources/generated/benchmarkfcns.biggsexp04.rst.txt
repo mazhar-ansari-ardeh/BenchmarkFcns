@@ -22,7 +22,4 @@ y_i: e^{-t_i} - 10e^{-10t_i} \text{for} i = 1, \dots, 10
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/biggsexp04fcn.png
-   :alt: biggsexp04 landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

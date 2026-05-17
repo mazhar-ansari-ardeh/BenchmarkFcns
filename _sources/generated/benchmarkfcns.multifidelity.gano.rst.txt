@@ -25,7 +25,4 @@ g_{lf}(x_1, x_2) &= \frac{1}{x_1} + \frac{1}{x_2 + 0.1} - 2.001 \le 0
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/ganofcn.png
-   :alt: gano landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

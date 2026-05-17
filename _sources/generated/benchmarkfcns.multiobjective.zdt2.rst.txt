@@ -23,7 +23,4 @@ h(f_1, g) = 1 - \left(\frac{f_1}{g}\right)^2
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/zdt2fcn.png
-   :alt: zdt2 landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

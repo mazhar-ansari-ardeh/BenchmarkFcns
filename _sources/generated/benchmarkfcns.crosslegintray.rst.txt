@@ -20,7 +20,4 @@
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/crosslegintrayfcn.png
-   :alt: crosslegintray landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

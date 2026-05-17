@@ -26,7 +26,4 @@ zp(t) = 10000 (1 + t)
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/zimmermanfcn.png
-   :alt: zimmerman landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

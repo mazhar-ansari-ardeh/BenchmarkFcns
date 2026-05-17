@@ -25,7 +25,4 @@ f_{lf}(\textbf{x}) &= f_{hf}(\textbf{x}) + 10.0
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/pistonfcn.png
-   :alt: piston landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

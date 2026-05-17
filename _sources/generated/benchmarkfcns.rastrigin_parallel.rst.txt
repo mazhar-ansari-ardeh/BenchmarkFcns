@@ -20,7 +20,4 @@
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/rastrigin_parallelfcn.png
-   :alt: rastrigin_parallel landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

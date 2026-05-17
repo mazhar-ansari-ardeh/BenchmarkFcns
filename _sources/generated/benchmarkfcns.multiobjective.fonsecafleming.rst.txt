@@ -21,7 +21,4 @@ f_2(\mathbf{x}) = 1 - \exp\left(-\sum_{i=1}^n \left(x_i + \frac{1}{\sqrt{n}}\rig
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/fonsecaflemingfcn.png
-   :alt: fonsecafleming landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

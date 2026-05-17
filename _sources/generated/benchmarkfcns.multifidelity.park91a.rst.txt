@@ -23,7 +23,4 @@ f_{lf}(\mathbf{x}) &= [1 + \frac{\sin(x_1)}{10}] f_{hf}(\mathbf{x}) - 2x_1^2 + x
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/park91afcn.png
-   :alt: park91a landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

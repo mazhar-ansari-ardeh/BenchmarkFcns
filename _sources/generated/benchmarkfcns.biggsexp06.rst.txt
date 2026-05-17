@@ -22,7 +22,4 @@ y_i: e^{-t_i} - 5e^{-10i} + 3e^{-4t_i}
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/biggsexp06fcn.png
-   :alt: biggsexp06 landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

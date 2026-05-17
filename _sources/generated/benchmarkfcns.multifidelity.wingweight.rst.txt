@@ -23,7 +23,4 @@ f_{lf}(\mathbf{x}) &= 0.9 f_{hf}(\mathbf{x}) + 10.0
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/wingweightfcn.png
-   :alt: wingweight landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

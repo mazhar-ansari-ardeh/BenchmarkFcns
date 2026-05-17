@@ -22,7 +22,4 @@ f_3(x_1, x_2) = \frac{(x_1 + 2x_2 - 1)^2}{175} + \frac{(2x_1 - x_2)^2}{17} - 13
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/viennet2fcn.png
-   :alt: viennet2 landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

@@ -22,7 +22,4 @@ f_3(x_1, x_2) = (x_1 - 1)^2 + x_2^2 + 2
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/viennet1fcn.png
-   :alt: viennet1 landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

@@ -27,7 +27,4 @@ y_j &= x_j - 2x_2 \sin(2\pi x_1 + \frac{j\pi}{n}) \\
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/cf10fcn.png
-   :alt: cf10 landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

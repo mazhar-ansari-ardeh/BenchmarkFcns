@@ -23,7 +23,4 @@ f_2(\textbf{x}) &= \sum_{i=1}^n [|x_i|^{0.8} + 5 \sin(x_i^3)]
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/mop4fcn.png
-   :alt: mop4 landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

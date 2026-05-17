@@ -24,7 +24,4 @@ f_{lf}(\textbf{x}) &= \frac{(V_{b1} + 0.74) \beta (R_{c2} + 9)}{\beta (R_{c2} + 
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/otlcircuitfcn.png
-   :alt: otlcircuit landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

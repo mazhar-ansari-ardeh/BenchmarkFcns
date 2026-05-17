@@ -23,7 +23,4 @@ f_i(\textbf{x}) &= | x_1 \cos(\alpha_i) + x_2 \sin(\alpha_i) - \cos(\frac{\pi}{M
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/maf9fcn.png
-   :alt: maf9 landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

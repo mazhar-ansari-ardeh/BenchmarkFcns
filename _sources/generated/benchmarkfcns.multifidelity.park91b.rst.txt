@@ -23,7 +23,4 @@ f_{lf}(\mathbf{x}) &= 1.2 f_{hf}(\mathbf{x}) - 1.0
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/park91bfcn.png
-   :alt: park91b landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

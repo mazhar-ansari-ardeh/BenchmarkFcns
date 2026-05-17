@@ -24,7 +24,4 @@ f_3(x_1, x_2) &= \frac{1}{x_1^2 + x_2^2 + 1} - 1.1 \exp(-(x_1^2 + x_2^2))
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/mop7fcn.png
-   :alt: mop7 landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

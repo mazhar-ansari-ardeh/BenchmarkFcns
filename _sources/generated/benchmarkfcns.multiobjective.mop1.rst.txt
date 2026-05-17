@@ -23,7 +23,4 @@ f_2(x) &= (x - 2)^2
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/mop1fcn.png
-   :alt: mop1 landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

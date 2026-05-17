@@ -23,7 +23,4 @@ f_{lf}(\mathbf{x}) &= 0.5 f_{hf}(\mathbf{x}) + 0.1 (x_1 + x_2)
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/eggholderfcn.png
-   :alt: eggholder landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

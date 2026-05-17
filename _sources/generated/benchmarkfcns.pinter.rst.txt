@@ -23,7 +23,4 @@ B_i = (x_{i-1}^2 - 2x_i + 3x_{i+1} - \cos(x_i) + 1)
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/pinterfcn.png
-   :alt: pinter landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

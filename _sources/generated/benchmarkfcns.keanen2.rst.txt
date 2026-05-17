@@ -20,7 +20,4 @@
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/keanen2fcn.png
-   :alt: keanen2 landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

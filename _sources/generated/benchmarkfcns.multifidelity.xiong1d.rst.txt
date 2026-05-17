@@ -23,7 +23,4 @@ f_{lf}(x) &= 0.5 f_{hf}(x) + 10(x - 0.5)
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/xiong1dfcn.png
-   :alt: xiong1d landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

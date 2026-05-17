@@ -24,7 +24,4 @@ g(\textbf{x}) &= 1 + \frac{9}{n-1} \sum_{i=2}^n x_i
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/debfcn.png
-   :alt: deb landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

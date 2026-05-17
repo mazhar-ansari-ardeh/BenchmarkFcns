@@ -21,7 +21,4 @@
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/zerosumfcn.png
-   :alt: zerosum landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

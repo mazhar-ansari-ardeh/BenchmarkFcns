@@ -25,7 +25,4 @@ f_M(\mathbf{x}) = (1 + g(\mathbf{x}_M)) \sin(\theta_1)
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/dtlz6fcn.png
-   :alt: dtlz6 landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

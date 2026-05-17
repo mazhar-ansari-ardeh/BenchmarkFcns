@@ -23,7 +23,4 @@ h(f_1, g) = 1 - \sqrt{\frac{f_1}{g}}
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/zdt1fcn.png
-   :alt: zdt1 landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

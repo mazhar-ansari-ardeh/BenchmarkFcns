@@ -20,7 +20,4 @@
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/dixonpricen3fcn.png
-   :alt: dixonpricen3 landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

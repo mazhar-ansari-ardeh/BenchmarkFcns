@@ -24,7 +24,4 @@ J_1, J_2, J_3 \text{ same as UF8}
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/uf10fcn.png
-   :alt: uf10 landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

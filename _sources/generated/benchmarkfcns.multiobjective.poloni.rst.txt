@@ -25,7 +25,4 @@ f_2(x_1, x_2) = (x_1 + 3)^2 + (x_2 + 1)^2
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/polonifcn.png
-   :alt: poloni landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

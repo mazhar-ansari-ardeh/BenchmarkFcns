@@ -22,7 +22,4 @@ g(\textbf{x}_M) = \sum_{x_j \in \textbf{x}_M} (x_j - 0.5)^2 \\
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/dtlz2fcn.png
-   :alt: dtlz2 landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

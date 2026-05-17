@@ -22,7 +22,4 @@ f(\mathbf{x}) = \sum_{i=1}^{n-1} F8(F2(x_i, x_{i+1})) + F8(F2(x_n, x_1))
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/f8f2fcn.png
-   :alt: f8f2 landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.

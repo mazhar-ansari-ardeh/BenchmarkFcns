@@ -21,7 +21,4 @@ f(\mathbf{x}) = \min\left(\sum_{i=1}^n (x_i - \mu_0)^2, dn + s \sum_{i=1}^n (x_i
 .. rubric:: Visualization
 
 
-.. image:: /../../assets/plots/lunacekbirastriginfcn.png
-   :alt: lunacekbirastrigin landscape
-   :align: center
-   :width: 600px
+No visualization available for this function.
