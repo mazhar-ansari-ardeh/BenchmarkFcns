@@ -13,7 +13,6 @@
 .. rubric:: Mathematical Definition
 
 .. math::
-   :nowrap:
 
    {% include tex_file ignore missing %}
 
