@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(\textbf{x}) = 1 + \sum_{i=1}^{n} \sin^2(x_i) - 0.1 \exp(-\sum_{i=1}^{n} x_i^2)
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/periodicn2fcn.png
    :alt: periodicn2 landscape

@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(\textbf{x})=\left[\left(||\textbf{x}||^2 - n\right)^2\right]^\alpha + \frac{1}{n}\left(\frac{1}{2}||\textbf{x}||^2+\sum_{i=1}^{n}x_i\right)+\frac{1}{2}
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/happycatfcn.png
    :alt: happycat landscape

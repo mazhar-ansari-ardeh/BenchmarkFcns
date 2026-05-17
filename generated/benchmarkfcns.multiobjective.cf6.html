@@ -615,7 +615,14 @@ Properties:</p>
 <div style="clear: both"></div><p class="rubric">Mathematical Definition</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
-</div></div>
+\begin{aligned}</div></div>
+<p>f_1(textbf{x}) &amp;= x_1 + frac{2}{<a href="#id1"><span class="problematic" id="id2">|J_1|</span></a>} sum_{j in J_1} y_j^2 \
+f_2(textbf{x}) &amp;= (1 - x_1)^2 + frac{2}{<a href="#id3"><span class="problematic" id="id4">|J_2|</span></a>} sum_{j in J_2} y_j^2 \
+y_j &amp;= begin{cases} x_j - 0.8x_1 cos(6pi x_1 + frac{jpi}{n}) &amp; j in J_1 \ x_j - 0.8x_1 sin(6pi x_1 + frac{jpi}{n}) &amp; j in J_2 end{cases} \
+text{Subject to: } &amp; x_2 - 0.8x_1 sin(6pi x_1 + frac{2pi}{n}) - 0.5x_1 + 0.25 ge 0 \
+&amp; x_4 - 0.8x_1 sin(6pi x_1 + frac{4pi}{n}) - 0.5x_1 + 0.25 ge 0 \
+&amp; x_1 in [0, 1], x_j in [-2, 2]
+end{aligned}</p>
 <p class="rubric">Visualization</p>
 <a class="reference internal image-reference" href="../../assets/plots/cf6fcn.png"><img alt="cf6 landscape" class="align-center" src="../../assets/plots/cf6fcn.png" style="width: 600px;" />
 </a>

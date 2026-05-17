@@ -614,7 +614,11 @@ Properties (High-fidelity):</p>
 <div style="clear: both"></div><p class="rubric">Mathematical Definition</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
-</div></div>
+\begin{aligned}</div></div>
+<p>f(x_1, x_2) &amp;= [1 - exp(-frac{1}{2x_2})] frac{2300x_1^3 + 1900x_1^2 + 2092x_1 + 60}{100x_1^3 + 500x_1^2 + 4x_1 + 20} \
+f_{hf}(mathbf{x}) &amp;= f(x_1, x_2) \
+f_{lf}(mathbf{x}) &amp;= frac{1}{4} [f(x_1+0.05, x_2+0.05) + f(x_1+0.05, x_2-0.05) + f(x_1-0.05, x_2+0.05) + f(x_1-0.05, x_2-0.05)]
+end{aligned}</p>
 <p class="rubric">Visualization</p>
 <a class="reference internal image-reference" href="../../assets/plots/currinfcn.png"><img alt="currin landscape" class="align-center" src="../../assets/plots/currinfcn.png" style="width: 600px;" />
 </a>

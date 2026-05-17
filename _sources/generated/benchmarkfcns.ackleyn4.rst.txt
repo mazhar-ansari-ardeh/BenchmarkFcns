@@ -11,7 +11,6 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
@@ -20,6 +19,7 @@
    
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/ackleyn4fcn.png
    :alt: ackleyn4 landscape

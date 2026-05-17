@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(x)= (6x - 2)^{2}sin(12x - 4)
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/forresterfcn.png
    :alt: forrester landscape

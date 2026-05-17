@@ -615,7 +615,12 @@ Properties:</p>
 <div style="clear: both"></div><p class="rubric">Mathematical Definition</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
-</div></div>
+\begin{aligned}</div></div>
+<p>f_1(textbf{x}) &amp;= x_1 + frac{2}{<a href="#id1"><span class="problematic" id="id2">|J_1|</span></a>} sum_{j in J_1} [x_j - sin(6pi x_1 + frac{jpi}{n})]^2 \
+f_2(textbf{x}) &amp;= 1 - sqrt{x_1} + frac{2}{<a href="#id3"><span class="problematic" id="id4">|J_2|</span></a>} sum_{j in J_2} [x_j - cos(6pi x_1 + frac{jpi}{n})]^2 \
+text{Subject to: } &amp; f_2 + sqrt{f_1} - a sin(Npi(sqrt{f_1} - f_2 + 1)) - 1 ge 0 \
+&amp; x_1 in [0, 1], x_j in [-1, 1], quad N=2, a=1
+end{aligned}</p>
 <p class="rubric">Visualization</p>
 <a class="reference internal image-reference" href="../../assets/plots/cf2fcn.png"><img alt="cf2 landscape" class="align-center" src="../../assets/plots/cf2fcn.png" style="width: 600px;" />
 </a>

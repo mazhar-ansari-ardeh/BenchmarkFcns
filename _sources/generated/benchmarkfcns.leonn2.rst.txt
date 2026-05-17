@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(x, y) = 100(y - x^3)^2 + (1 - x)^2
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/leonn2fcn.png
    :alt: leonn2 landscape

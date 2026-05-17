@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(x, y)=0.26(x^2+y^2) -0.48xy
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/matyasfcn.png
    :alt: matyas landscape

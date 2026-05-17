@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(\textbf{x}) = \sum_{i=1}^{n-1} \left[ 0.5 + \frac{\sin^2\left(\sqrt{x_{i+1}^2 + x_i^2}\right) - 0.5}{\left[1 + 0.001(x_{i+1}^2 + x_i^2)\right]^2} \right]
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/sineenvelopesinewavefcn.png
    :alt: sineenvelopesinewave landscape

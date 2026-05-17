@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(\mathbf{x}) = \left( \prod_{i=1}^n x_i - n! \right)^2
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/mishran7fcn.png
    :alt: mishran7 landscape

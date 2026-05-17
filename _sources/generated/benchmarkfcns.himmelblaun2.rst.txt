@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(x, y) = (x^2 + y - 11)^2 + (x + y^2 - 7)^2
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/himmelblaun2fcn.png
    :alt: himmelblaun2 landscape

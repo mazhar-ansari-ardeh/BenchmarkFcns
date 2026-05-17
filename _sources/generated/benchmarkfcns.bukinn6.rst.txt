@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(x,y)=100\sqrt{|y-0.01x^2|}+0.01|x+10|
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/bukinn6fcn.png
    :alt: bukinn6 landscape

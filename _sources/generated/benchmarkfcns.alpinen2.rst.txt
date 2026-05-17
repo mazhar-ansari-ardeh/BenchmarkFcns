@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(\mathbf x)=f(x_1, ..., x_n) = \prod_{i=1}^{n}\sqrt{x_i}sin(x_i)
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/alpinen2fcn.png
    :alt: alpinen2 landscape

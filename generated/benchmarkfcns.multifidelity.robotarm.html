@@ -614,7 +614,12 @@ Properties (High-fidelity):</p>
 <div style="clear: both"></div><p class="rubric">Mathematical Definition</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
-</div></div>
+\begin{aligned}</div></div>
+<p>u &amp;= sum_{i=1}^4 L_i cos(sum_{j=1}^i theta_j), quad v = sum_{i=1}^4 L_i sin(sum_{j=1}^i theta_j) \
+f(theta, textbf{L}) &amp;= sqrt{u^2 + v^2} \
+f_{hf}(mathbf{x}) &amp;= f(theta, textbf{L}) \
+f_{lf}(mathbf{x}) &amp;= f(theta, textbf{L} + 0.05)
+end{aligned}</p>
 <p class="rubric">Visualization</p>
 <a class="reference internal image-reference" href="../../assets/plots/robotarmfcn.png"><img alt="robotarm landscape" class="align-center" src="../../assets/plots/robotarmfcn.png" style="width: 600px;" />
 </a>

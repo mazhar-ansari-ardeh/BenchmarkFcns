@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(\textbf{x}) = \sum_{i=1}^{n} x_i^6 (2 + \sin(\frac{1}{x_i}))
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/alpine3fcn.png
    :alt: alpine3 landscape

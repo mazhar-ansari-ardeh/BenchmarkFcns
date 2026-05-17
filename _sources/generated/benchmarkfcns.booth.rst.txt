@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(x, y)=(x+2y-7)^2 + (2x+y-5)^2
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/boothfcn.png
    :alt: booth landscape

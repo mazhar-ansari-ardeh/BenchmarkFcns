@@ -11,15 +11,16 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f_1(x_1, x_2) = 4x_1^2 + 4x_2^2 \\
+f_2(x_1, x_2) = (x_1 - 5)^2 + (x_2 - 5)^2
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/bnhfcn.png
    :alt: bnh landscape

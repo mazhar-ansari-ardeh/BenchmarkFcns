@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   \sum_{i=1}^n x_i^{2}+(\sum_{i=1}^n 0.5ix_i)^2 + (\sum_{i=1}^n 0.5ix_i)^4
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/zakharovfcn.png
    :alt: zakharov landscape

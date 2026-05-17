@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(x, y)=0.5 + \frac{sin(cos(|x^2-y^2|))-0.5}{(1+0.001(x^2+y^2))^2}
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/schaffern3fcn.png
    :alt: schaffern3 landscape

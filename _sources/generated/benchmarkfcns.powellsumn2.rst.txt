@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(\textbf{x}) = \sum_{i=1}^{n} |x_i|^{i+1}
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/powellsumn2fcn.png
    :alt: powellsumn2 landscape

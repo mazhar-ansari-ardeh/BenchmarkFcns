@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(\mathbf{x}) = \sum_{i=1}^{n} \left [ \sum_{k=0}^{kmax} a^k \cos \left( 2 \pi b^k (x_i + 0.5) \right) - n \sum_{k=0}^{kmax} a^k \cos(\pi b^k) \right ] 
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/weierstrassfcn.png
    :alt: weierstrass landscape

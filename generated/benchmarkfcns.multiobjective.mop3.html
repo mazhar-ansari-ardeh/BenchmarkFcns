@@ -609,7 +609,14 @@ a matrix SCORES of size M-by-2.</p>
 <div style="clear: both"></div><p class="rubric">Mathematical Definition</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
-</div></div>
+\begin{aligned}</div></div>
+<p>f_1(x_1, x_2) &amp;= 1 + (A_1 - B_1)^2 + (A_2 - B_2)^2 \
+f_2(x_1, x_2) &amp;= (x_1 + 3)^2 + (x_2 + 1)^2 \
+A_1 &amp;= 0.5 sin(1) - 2 cos(1) + sin(2) - 1.5 cos(2) \
+A_2 &amp;= 1.5 sin(1) - cos(1) + 2 sin(2) - 0.5 cos(2) \
+B_1 &amp;= 0.5 sin(x_1) - 2 cos(x_1) + sin(x_2) - 1.5 cos(x_2) \
+B_2 &amp;= 1.5 sin(x_1) - cos(x_1) + 2 sin(x_2) - 0.5 cos(x_2)
+end{aligned}</p>
 <p class="rubric">Visualization</p>
 <a class="reference internal image-reference" href="../../assets/plots/mop3fcn.png"><img alt="mop3 landscape" class="align-center" src="../../assets/plots/mop3fcn.png" style="width: 600px;" />
 </a>

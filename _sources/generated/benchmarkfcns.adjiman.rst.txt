@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(x, y)=cos(x)sin(y) - \frac{x}{y^2+1}
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/adjimanfcn.png
    :alt: adjiman landscape

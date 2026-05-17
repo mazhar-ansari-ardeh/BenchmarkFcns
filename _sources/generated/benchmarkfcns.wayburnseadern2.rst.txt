@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(x, y) = \left(1.613 - 4(x - 0.3125)^2 - 4(y - 1.625)^2\right)^2 + (y - 1)^2
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/wayburnseadern2fcn.png
    :alt: wayburnseadern2 landscape

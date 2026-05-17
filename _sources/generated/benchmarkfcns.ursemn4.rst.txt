@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(x_1, x_2) = -3\sin(0.5\pi x_1 + 0.5\pi) \frac{2 - \sqrt{x_1^2 + x_2^2}}{2}
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/ursemn4fcn.png
    :alt: ursemn4 landscape

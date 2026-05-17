@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(\textbf{x}) = f(x_1, \dots, x_4) = -\sum_{i=1}^{7} \frac{1}{\sum_{j=1}^{4} (x_j - C_{ji})^2 + \beta_i}
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/shekel7fcn.png
    :alt: shekel7 landscape

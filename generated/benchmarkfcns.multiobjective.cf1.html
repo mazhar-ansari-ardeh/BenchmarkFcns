@@ -615,7 +615,12 @@ Properties:</p>
 <div style="clear: both"></div><p class="rubric">Mathematical Definition</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
-</div></div>
+\begin{aligned}</div></div>
+<p>f_1(textbf{x}) &amp;= x_1 + frac{2}{<a href="#id1"><span class="problematic" id="id2">|J_1|</span></a>} sum_{j in J_1} [x_j - x_1^{0.5(1.0 + frac{3(j-2)}{n-2})}]^2 \
+f_2(textbf{x}) &amp;= 1 - x_1 + frac{2}{<a href="#id3"><span class="problematic" id="id4">|J_2|</span></a>} sum_{j in J_2} [x_j - x_1^{0.5(1.0 + frac{3(j-2)}{n-2})}]^2 \
+text{Subject to: } &amp; f_1 + f_2 - a <a href="#id5"><span class="problematic" id="id6">|\sin(N\pi(f_1 - f_2 + 1))|</span></a> - 1 ge 0 \
+&amp; x_i in [0, 1], quad N=10, a=1
+end{aligned}</p>
 <p class="rubric">Visualization</p>
 <a class="reference internal image-reference" href="../../assets/plots/cf1fcn.png"><img alt="cf1 landscape" class="align-center" src="../../assets/plots/cf1fcn.png" style="width: 600px;" />
 </a>

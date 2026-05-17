@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(\mathbf{x}) = \sum_{i=1}^n (A_i - B_i(\mathbf{x}))^2
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/fletcherpowellfcn.png
    :alt: fletcherpowell landscape

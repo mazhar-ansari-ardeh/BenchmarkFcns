@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(x_1, x_2) = [\sin^2((\cos x_1 + \cos x_2)^2) + \cos^2((\sin x_1 + \sin x_2)^2) + x_1]^2 + 0.01x_1 + 0.1x_2
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/mishran5fcn.png
    :alt: mishran5 landscape

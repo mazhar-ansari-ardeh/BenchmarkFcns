@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(x,y)=-|sin(x)cos(y)exp(|1-\frac{\sqrt{x^2+y^2}}{\pi}|)|
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/holdertablefcn.png
    :alt: holdertable landscape

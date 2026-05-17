@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(\textbf{x}) = \sum_{i=1}^{n} (x_i^2 + \sin^2(x_i))
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/alpine5fcn.png
    :alt: alpine5 landscape

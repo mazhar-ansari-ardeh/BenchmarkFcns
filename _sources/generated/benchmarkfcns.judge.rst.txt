@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(x_1, x_2) = \sum_{i=1}^{20} \left[ (x_1 + B_i x_2 + C_i x_2^2) - A_i \right]^2
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/judgefcn.png
    :alt: judge landscape

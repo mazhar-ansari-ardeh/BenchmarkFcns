@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(x, y) = x^2 + 2y^2 - 0.3 \cos(3\pi x + 4\pi y) + 0.3
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/bohachevskyn3fcn.png
    :alt: bohachevskyn3 landscape

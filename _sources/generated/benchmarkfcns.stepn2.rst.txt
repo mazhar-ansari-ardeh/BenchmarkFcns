@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(\textbf{x}) = \sum_{i=1}^{n} \lfloor x_i + 0.5 \rfloor^2
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/stepn2fcn.png
    :alt: stepn2 landscape

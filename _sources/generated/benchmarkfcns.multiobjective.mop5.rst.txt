@@ -11,15 +11,19 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   \begin{aligned}
+f_1(x_1, x_2) &= x_1^2 + (x_2 - 1)^2 \\
+f_2(x_1, x_2) &= x_1^2 + (x_2 + 1)^2 + 1 \\
+f_3(x_1, x_2) &= (x_1 - 1)^2 + x_2^2 + 2
+\end{aligned}
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/mop5fcn.png
    :alt: mop5 landscape

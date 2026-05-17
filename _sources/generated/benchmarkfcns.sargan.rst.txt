@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(\textbf{x}) = \sum_{i=1}^{n} x_i^2 + 0.4 \left( \left( \sum_{i=1}^{n} x_i \right)^2 - \sum_{i=1}^{n} x_i^2 \right)
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/sarganfcn.png
    :alt: sargan landscape

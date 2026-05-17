@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(\textbf{x}) = \begin{cases} 0 & \text{if } \max(|x_i|) \le 0.0001 \\ 1 & \text{otherwise} \end{cases}
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/needleeyefcn.png
    :alt: needleeye landscape

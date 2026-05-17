@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(x) = \sin^2(\pi w_1) + (w_1-1)^2 [1 + \sin^2(2\pi w_1)], \quad w_1 = 1 + \frac{x-1}{4}
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/levyn1fcn.png
    :alt: levyn1 landscape

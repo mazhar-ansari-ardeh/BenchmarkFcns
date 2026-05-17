@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(\mathbf{x})=f(x_1, ..., x_n)=\sum_{i=1}^{n}|x_i|+\prod_{i=1}^{n}|x_i|
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/schwefel222fcn.png
    :alt: schwefel222 landscape

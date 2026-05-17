@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(\textbf{x}) = \sum_{i=1}^{n} \sin^2(x_i) + \sum_{i=1}^{n} \frac{x_i^2}{4000} - \prod_{i=1}^{n} \cos(\frac{x_i}{\sqrt{i}}) + 1
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/qingn2fcn.png
    :alt: qingn2 landscape

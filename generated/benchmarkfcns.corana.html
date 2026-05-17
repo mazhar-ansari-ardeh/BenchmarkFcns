@@ -623,7 +623,8 @@ Properties:</p>
 <div style="clear: both"></div><p class="rubric">Mathematical Definition</p>
 <div class="math-wrapper docutils container">
 <div class="math notranslate nohighlight">
-</div></div>
+f(\mathbf{x}) = \sum_{i=1}^{n} \begin{cases} 0.15 \cdot (z_i - 0.05 \cdot \text{sgn}(z_i))^2 \cdot d_i &amp; \text{if } |x_i - z_i| &lt; 0.05 \\ d_i \cdot x_i^2 &amp; \text{otherwise} \end{cases} \\</div></div>
+<p>text{where } z_i = 0.2 cdot lfloor <a href="#id1"><span class="problematic" id="id2">|x_i / 0.2|</span></a> + 0.49 rfloor cdot text{sgn}(x_i)</p>
 <p class="rubric">Visualization</p>
 <a class="reference internal image-reference" href="../../assets/plots/coranafcn.png"><img alt="corana landscape" class="align-center" src="../../assets/plots/coranafcn.png" style="width: 600px;" />
 </a>

@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(x, y) = -\left[ \frac{1}{1 + (x-2)^2 + (y-2)^2} + \frac{1}{1 + (x+2)^2 + (y+2)^2} + \frac{1}{1 + x^2 + y^2} \right]
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/kulnevichfcn.png
    :alt: kulnevich landscape

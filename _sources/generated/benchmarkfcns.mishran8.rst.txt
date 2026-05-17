@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(x_1, x_2) = 0.001 \left( (x_1 - 2)^{10} + (x_2 + 3)^4 \right)^2
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/mishran8fcn.png
    :alt: mishran8 landscape

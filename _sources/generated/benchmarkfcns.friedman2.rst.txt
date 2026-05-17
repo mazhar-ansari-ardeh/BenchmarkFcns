@@ -11,7 +11,6 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
@@ -20,6 +19,7 @@
    
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/friedman2fcn.png
    :alt: friedman2 landscape

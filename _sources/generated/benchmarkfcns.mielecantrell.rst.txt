@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(x_1, x_2, x_3, x_4) = (e^{x_1} - x_2)^4 + 100(x_2 - x_3)^6 + [\tan(x_3 - x_4)]^4 + x_1^8
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/mielecantrellfcn.png
    :alt: mielecantrell landscape

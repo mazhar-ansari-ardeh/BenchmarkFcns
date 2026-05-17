@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(x, y) = (x + 10)^2 + (y + 10)^2 + e^{-x^2 - y^2}
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/brentfcn.png
    :alt: brent landscape

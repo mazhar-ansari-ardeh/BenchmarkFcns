@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(\mathbf{x}) = \sum_{i=1}^{10} \left[ (\ln(x_i - 2))^2 + (\ln(10 - x_i))^2 \right] - \left( \prod_{i=1}^{10} x_i \right)^{0.2}
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/pavianifcn.png
    :alt: paviani landscape

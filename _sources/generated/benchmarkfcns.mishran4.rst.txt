@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(x_1, x_2) = \sqrt{|\sin(\sqrt{|x_1^2 + x_2|})|} + 0.01(x_1 + x_2)
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/mishran4fcn.png
    :alt: mishran4 landscape

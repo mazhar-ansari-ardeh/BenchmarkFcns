@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(x, y) = (x^2 + y - 10)^2 + (x + y^2 - 7)^2 + (x^2 + y^3 - 1)^2
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/elattarfcn.png
    :alt: elattar landscape

@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(x_1, x_2) = (x_1^6 + x_2^4 - 17)^2 + (2x_1 + x_2 - 4)^2
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/wayburnseadern1fcn.png
    :alt: wayburnseadern1 landscape

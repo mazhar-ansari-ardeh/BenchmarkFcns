@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(x_1, x_2) = (x_1 - 1)^2 + 2(2x_2^2 - x_1)^2
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/dixonpricen2fcn.png
    :alt: dixonpricen2 landscape

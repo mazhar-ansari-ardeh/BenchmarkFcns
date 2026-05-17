@@ -11,15 +11,15 @@
 
 
 
-
 .. rubric:: Mathematical Definition
 
 .. math::
    :nowrap:
 
-   
+   f(x, y) = sin^2(3\pi x)+(x-1)^2(1+sin^2(3\pi y))+(y-1)^2(1+sin^2(2\pi y))
 
 .. rubric:: Visualization
+
 
 .. image:: /../../assets/plots/levin13fcn.png
    :alt: levin13 landscape
