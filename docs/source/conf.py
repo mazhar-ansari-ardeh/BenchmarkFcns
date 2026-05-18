@@ -42,41 +42,26 @@ html_baseurl = "https://benchmarkfcns.info"
 
 # -- Extension configuration -------------------------------------------------
 def add_plots_to_context(app, pagename, templatename, context, doctree):
-    # Print for debugging in CI logs
-    # print(f"DEBUG: pagename={pagename}, templatename={templatename}")
+    # Use objname or name from the context
+    objname = context.get("objname") or context.get("name")
 
-    if "function.rst" in templatename:
-        objname = context.get("objname")
-        if objname:
-            import os
-            # Try a few ways to find the assets directory
-            possible_paths = [
-                os.path.abspath(os.path.join(app.srcdir, "../../assets/plots")),
-                os.path.abspath(os.path.join(os.getcwd(), "assets/plots")),
-                "/home/runner/work/BenchmarkFcns/BenchmarkFcns/assets/plots"
-            ]
+    if objname:
+        import os
+        # Path resolution that works both locally and in CI
+        base_dir = os.path.abspath(os.path.join(app.srcdir, "../.."))
+        plots_dir = os.path.join(base_dir, "assets/plots")
 
-            plots_dir = None
-            for p in possible_paths:
-                if os.path.exists(p):
-                    plots_dir = p
-                    break
+        all_plots = []
+        if os.path.exists(plots_dir):
+            prefix = objname + "fcn"
+            for f in sorted(os.listdir(plots_dir)):
+                if f.startswith(prefix) and f.endswith(".png"):
+                    all_plots.append(f)
 
-            all_plots = []
-            if plots_dir:
-                prefix = objname + "fcn"
-                for f in sorted(os.listdir(plots_dir)):
-                    if f.startswith(prefix) and f.endswith(".png"):
-                        all_plots.append(f)
-
-            # if not all_plots:
-            #    print(f"DEBUG: No plots found for {objname} in {plots_dir}")
-
-            context["available_plots"] = all_plots
+        context["available_plots"] = all_plots
 
 def setup(app):
     app.connect("html-page-context", add_plots_to_context)
-
 # MyST settings for Markdown support
 myst_enable_extensions = [
     "amsmath",
