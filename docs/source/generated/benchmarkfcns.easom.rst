@@ -1,0 +1,22 @@
+﻿benchmarkfcns.easom
+===================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: easom
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(x,y)=?cos(x_1)cos(x_2) exp(?(x ? \pi)^2?(y ? \pi)^2)
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.easom

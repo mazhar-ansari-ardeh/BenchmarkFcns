@@ -1,0 +1,22 @@
+﻿benchmarkfcns.langermannn2
+==========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: langermannn2
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(\textbf{x}) = -\sum_{i=1}^{5} c_i \exp(-\frac{1}{\pi} \sum_{j=1}^{2} (x_j - A_{ij})^2) \cos(\pi \sum_{j=1}^{2} (x_j - A_{ij})^2)
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.langermannn2

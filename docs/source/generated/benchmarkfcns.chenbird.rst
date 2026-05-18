@@ -1,0 +1,22 @@
+﻿benchmarkfcns.chenbird
+======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: chenbird
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(x_1, x_2) = -\frac{0.001}{0.001^2 + (x_1 - 0.4x_2 - 0.1)^2} - \frac{0.001}{0.001^2 + (2x_1 + x_2 - 1.5)^2}
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.chenbird

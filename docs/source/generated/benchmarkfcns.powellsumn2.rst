@@ -1,0 +1,22 @@
+﻿benchmarkfcns.powellsumn2
+=========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: powellsumn2
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(\textbf{x}) = \sum_{i=1}^{n} |x_i|^{i+1}
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.powellsumn2

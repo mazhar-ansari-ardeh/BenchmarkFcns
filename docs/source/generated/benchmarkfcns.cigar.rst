@@ -1,0 +1,22 @@
+﻿benchmarkfcns.cigar
+===================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: cigar
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.cigar

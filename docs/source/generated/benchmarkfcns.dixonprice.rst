@@ -1,0 +1,22 @@
+﻿benchmarkfcns.dixonprice
+========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: dixonprice
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(\mathbf{x}) = (x_1 - 1)^2 + \sum_{i=2}^{n} i (2x_i^2 - x_{i-1})^2
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.dixonprice

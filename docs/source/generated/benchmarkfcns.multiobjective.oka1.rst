@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multiobjective.oka1
+=================================
+
+.. currentmodule:: benchmarkfcns.multiobjective
+
+.. autofunction:: oka1
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   \begin{aligned}
+x_1' &= x_1 \cos(\frac{\pi}{12}) - x_2 \sin(\frac{\pi}{12}) \\
+x_2' &= x_1 \sin(\frac{\pi}{12}) + x_2 \cos(\frac{\pi}{12}) \\
+f_1(x) &= x_1' \\
+f_2(x) &= \sqrt{2\pi} - \sqrt{|x_1'|} + 2|x_2' - 3 \cos(x_1') - 3|^{1/3}
+\end{aligned}
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.multiobjective.oka1

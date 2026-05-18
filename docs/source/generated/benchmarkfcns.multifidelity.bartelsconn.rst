@@ -1,0 +1,22 @@
+﻿benchmarkfcns.multifidelity.bartelsconn
+=======================================
+
+.. currentmodule:: benchmarkfcns.multifidelity
+
+.. autofunction:: bartelsconn
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(x,y)=|x^2 + y^2 + xy| + |sin(x)| + |cos(y)|
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.multifidelity.bartelsconn

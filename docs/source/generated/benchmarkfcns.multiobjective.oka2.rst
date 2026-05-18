@@ -1,0 +1,25 @@
+﻿benchmarkfcns.multiobjective.oka2
+=================================
+
+.. currentmodule:: benchmarkfcns.multiobjective
+
+.. autofunction:: oka2
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   \begin{aligned}
+f_1(x) &= x_1 \\
+f_2(x) &= 1 - \frac{1}{4\pi^2} (x_1 + \pi)^2 + |x_2 - 5 \cos(x_1)|^{1/3} + |x_3 - 5 \sin(x_1)|^{1/3}
+\end{aligned}
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.multiobjective.oka2

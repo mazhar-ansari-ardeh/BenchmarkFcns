@@ -1,0 +1,22 @@
+﻿benchmarkfcns.multifidelity.rosenbrock
+======================================
+
+.. currentmodule:: benchmarkfcns.multifidelity
+
+.. autofunction:: rosenbrock
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(x, y)=\sum_{i=1}^{n}[b (x_{i+1} - x_i^2)^ 2 + (a - x_i)^2]
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.multifidelity.rosenbrock

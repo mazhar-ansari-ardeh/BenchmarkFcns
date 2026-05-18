@@ -1,0 +1,26 @@
+﻿benchmarkfcns.multiobjective.maf7
+=================================
+
+.. currentmodule:: benchmarkfcns.multiobjective
+
+.. autofunction:: maf7
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   \begin{aligned}
+f_i(\textbf{x}) &= x_i, \quad i=1, \dots, M-1 \\
+f_M(\textbf{x}) &= (1 + g(\textbf{x}_M)) [ M - \sum_{i=1}^{M-1} \frac{x_i}{1+g} (1 + \sin(3\pi x_i)) ] \\
+g(\textbf{x}_M) &= 1 + \frac{9}{|x_M|} \sum_{x_j \in \textbf{x}_M} x_j
+\end{aligned}
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.multiobjective.maf7

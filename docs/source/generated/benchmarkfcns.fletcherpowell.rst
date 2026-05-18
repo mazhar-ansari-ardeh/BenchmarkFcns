@@ -1,0 +1,22 @@
+﻿benchmarkfcns.fletcherpowell
+============================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: fletcherpowell
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(\mathbf{x}) = \sum_{i=1}^n (A_i - B_i(\mathbf{x}))^2
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.fletcherpowell

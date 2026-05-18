@@ -1,0 +1,22 @@
+﻿benchmarkfcns.ackleyn2
+======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: ackleyn2
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(x, y) = -200e^{-0.2\sqrt{x^2 + y^2}}
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.ackleyn2

@@ -1,0 +1,23 @@
+﻿benchmarkfcns.multiobjective.dtlz3
+==================================
+
+.. currentmodule:: benchmarkfcns.multiobjective
+
+.. autofunction:: dtlz3
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f_i(\textbf{x}) = (1 + g(\textbf{x})) \prod_{j=1}^{M-i} \cos(x_j \pi / 2) \cdot \begin{cases} 1 & i = 1 \\ \sin(x_{M-i+1} \pi / 2) & i > 1 \end{cases} \\
+g(\textbf{x}) = 100 \left[ k + \sum_{i=n-k+1}^n ((x_i - 0.5)^2 - \cos(20 \pi (x_i - 0.5))) \right]
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.multiobjective.dtlz3

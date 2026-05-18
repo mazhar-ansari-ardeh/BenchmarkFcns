@@ -1,0 +1,22 @@
+﻿benchmarkfcns.ursemn3
+=====================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: ursemn3
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(x_1, x_2) = -\sin(2.2\pi x_1 + 0.5\pi) \frac{3 - |x_1|}{2} \frac{2 - |x_2|}{2} - \sin(0.5\pi x_2^2 + 0.5\pi) \frac{2 - |x_1|}{2} \frac{2 - |x_2|}{2}
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.ursemn3

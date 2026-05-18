@@ -1,0 +1,22 @@
+﻿benchmarkfcns.michalewicz
+=========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: michalewicz
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(\mathbf{x}) = -\sum_{i=1}^{n} \sin(x_i) \left[ \sin\left(\frac{i \cdot x_i^2}{\pi}\right) \right]^{2m}
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.michalewicz

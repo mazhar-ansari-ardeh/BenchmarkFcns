@@ -1,0 +1,22 @@
+﻿benchmarkfcns.hartmann4
+=======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: hartmann4
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(\textbf{x}) = -\sum_{i=1}^4 \alpha_i \exp(-\sum_{j=1}^4 A_{ij} (x_j - P_{ij})^2)
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.hartmann4

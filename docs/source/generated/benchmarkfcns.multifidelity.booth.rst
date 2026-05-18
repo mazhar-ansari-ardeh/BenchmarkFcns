@@ -1,0 +1,22 @@
+﻿benchmarkfcns.multifidelity.booth
+=================================
+
+.. currentmodule:: benchmarkfcns.multifidelity
+
+.. autofunction:: booth
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(x, y)=(x+2y-7)^2 + (2x+y-5)^2
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.multifidelity.booth

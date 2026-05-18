@@ -18,22 +18,4 @@
 
 .. rubric:: Visualization
 
-{% if available_plots %}
-.. list-table::
-   :widths: 50 50
-   :header-rows: 0
-   :class: borderless
-
-   {% for i in range(0, available_plots|length, 2) %}
-   * - .. image:: /../../assets/plots/{{ available_plots[i] }}
-          :width: 100%
-          :align: center
-     - {% if i+1 < available_plots|length %}
-       .. image:: /../../assets/plots/{{ available_plots[i+1] }}
-          :width: 100%
-          :align: center
-       {% endif %}
-   {% endfor %}
-{% else %}
-No visualization available for this function.
-{% endif %}
+.. function-plots:: {{ fullname }}

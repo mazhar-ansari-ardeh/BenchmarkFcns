@@ -1,0 +1,22 @@
+﻿benchmarkfcns.alpinen2
+======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: alpinen2
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(\mathbf x)=f(x_1, ..., x_n) = \prod_{i=1}^{n}\sqrt{x_i}sin(x_i)
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.alpinen2

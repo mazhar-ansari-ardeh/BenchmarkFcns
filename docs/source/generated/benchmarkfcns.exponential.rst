@@ -1,0 +1,22 @@
+﻿benchmarkfcns.exponential
+=========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: exponential
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(\mathbf{x})=f(x_1, ..., x_n)=-exp(-0.5\sum_{i=1}^n{x_i^2})
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.exponential

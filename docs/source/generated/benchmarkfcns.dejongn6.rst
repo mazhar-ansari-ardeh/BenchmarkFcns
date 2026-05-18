@@ -1,0 +1,22 @@
+﻿benchmarkfcns.dejongn6
+======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: dejongn6
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(x_1, x_2, x_3, x_4) = 100(x_1^2 - x_2)^2 + (x_1 - 1)^2 + (x_3 - 1)^2 + 90(x_3^2 - x_4)^2 + 10.1((x_2 - 1)^2 + (x_4 - 1)^2) + 19.8(x_2 - 1)(x_4 - 1)
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.dejongn6

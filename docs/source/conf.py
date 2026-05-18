@@ -1,3 +1,6 @@
+import os
+from docutils import nodes
+from docutils.parsers.rst import Directive
 
 # -- Project information -----------------------------------------------------
 project = 'BenchmarkFcns'
@@ -41,35 +44,54 @@ html_title = "BenchmarkFcns Documentation"
 html_baseurl = "https://benchmarkfcns.info"
 
 # -- Extension configuration -------------------------------------------------
-def add_plots_to_context(app, pagename, templatename, context, doctree):
-    # For autosummary generated pages, pagename is usually 'generated/module.function'
-    objname = None
-    if pagename.startswith("generated/"):
-        objname = pagename.split(".")[-1]
 
-    # Fallback to context
-    if not objname:
-        objname = context.get("objname") or context.get("name")
+class FunctionPlotsDirective(Directive):
+    has_content = False
+    required_arguments = 1
 
-    if objname:
-        import os
-        # Base dir is the project root (where assets/ lives)
-        # app.srcdir is '.../docs/source'
-        base_dir = os.path.abspath(os.path.join(app.srcdir, "../.."))
-        plots_dir = os.path.join(base_dir, "assets/plots")
+    def run(self):
+        full_name = self.arguments[0]
+        objname = full_name.split(".")[-1]
+        env = self.state.document.settings.env
+
+        # New plots directory inside docs/source/_static/plots
+        plots_dir = os.path.abspath(os.path.join(env.srcdir, "_static/plots"))
 
         all_plots = []
         if os.path.exists(plots_dir):
             prefix = objname + "fcn"
             for f in sorted(os.listdir(plots_dir)):
-                # We check for exact match or suffix matches like _2, _contour
                 if (f == prefix + ".png") or (f.startswith(prefix + "_") and f.endswith(".png")):
                     all_plots.append(f)
 
-        context["available_plots"] = all_plots
+        if not all_plots:
+            return [nodes.paragraph('', 'No visualization available for this function.')]
+
+        # Create a list-table for the plots
+        table_content = """
+.. list-table::
+   :widths: 50 50
+   :header-rows: 0
+   :class: borderless
+
+"""
+        for i in range(0, len(all_plots), 2):
+            p1 = all_plots[i]
+            table_content += f"   * - .. image:: ../_static/plots/{p1}\n          :width: 100%\n          :align: center\n"
+            if i + 1 < len(all_plots):
+                p2 = all_plots[i+1]
+                table_content += f"     - .. image:: ../_static/plots/{p2}\n          :width: 100%\n          :align: center\n"
+            else:
+                table_content += "     - \n"
+
+        # Parse the generated RST into nodes
+        include_lines = table_content.splitlines()
+        self.state_machine.insert_input(include_lines, 'function-plots-directive')
+        return []
 
 def setup(app):
-    app.connect("html-page-context", add_plots_to_context)
+    app.add_directive("function-plots", FunctionPlotsDirective)
+
 # MyST settings for Markdown support
 myst_enable_extensions = [
     "amsmath",

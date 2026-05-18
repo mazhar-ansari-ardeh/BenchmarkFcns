@@ -1,0 +1,22 @@
+﻿benchmarkfcns.eggholdern2
+=========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: eggholdern2
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(x_1, x_2) = -(x_2 + 47) \sin(\sqrt{|x_2 + \frac{x_1}{2} + 47|}) - x_1 \sin(\sqrt{|x_1 - (x_2 + 47)|})
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.eggholdern2

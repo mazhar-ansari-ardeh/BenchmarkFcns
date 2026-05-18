@@ -1,0 +1,22 @@
+﻿benchmarkfcns.damavandi
+=======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: damavandi
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(x_1, x_2) = \left[ 1 - \left| \frac{\sin(\pi(x_1-2))\sin(\pi(x_2-2))}{\pi^2(x_1-2)(x_2-2)} \right|^5 \right] \left[ 2 + (x_1-7)^2 + 2(x_2-7)^2 \right]
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.damavandi

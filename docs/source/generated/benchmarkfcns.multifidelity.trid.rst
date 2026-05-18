@@ -1,0 +1,22 @@
+﻿benchmarkfcns.multifidelity.trid
+================================
+
+.. currentmodule:: benchmarkfcns.multifidelity
+
+.. autofunction:: trid
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(\mathbf{x})=\sum_{i=1}^{n}(x_i-1)^2-\sum_{i=2}^{n}(x_ix_{i-1})
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.multifidelity.trid

@@ -1,0 +1,23 @@
+﻿benchmarkfcns.multiobjective.fonsecafleming
+===========================================
+
+.. currentmodule:: benchmarkfcns.multiobjective
+
+.. autofunction:: fonsecafleming
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f_1(\mathbf{x}) = 1 - \exp\left(-\sum_{i=1}^n \left(x_i - \frac{1}{\sqrt{n}}\right)^2\right) \\
+f_2(\mathbf{x}) = 1 - \exp\left(-\sum_{i=1}^n \left(x_i + \frac{1}{\sqrt{n}}\right)^2\right)
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.multiobjective.fonsecafleming

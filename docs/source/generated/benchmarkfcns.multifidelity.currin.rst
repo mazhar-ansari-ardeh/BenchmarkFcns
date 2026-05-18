@@ -1,0 +1,26 @@
+﻿benchmarkfcns.multifidelity.currin
+==================================
+
+.. currentmodule:: benchmarkfcns.multifidelity
+
+.. autofunction:: currin
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   \begin{aligned}
+f(x_1, x_2) &= [1 - \exp(-\frac{1}{2x_2})] \frac{2300x_1^3 + 1900x_1^2 + 2092x_1 + 60}{100x_1^3 + 500x_1^2 + 4x_1 + 20} \\
+f_{hf}(\mathbf{x}) &= f(x_1, x_2) \\
+f_{lf}(\mathbf{x}) &= \frac{1}{4} [f(x_1+0.05, x_2+0.05) + f(x_1+0.05, x_2-0.05) + f(x_1-0.05, x_2+0.05) + f(x_1-0.05, x_2-0.05)]
+\end{aligned}
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.multifidelity.currin

@@ -1,0 +1,23 @@
+﻿benchmarkfcns.multiobjective.wfg6
+=================================
+
+.. currentmodule:: benchmarkfcns.multiobjective
+
+.. autofunction:: wfg6
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f_m(\mathbf{x}) = x_M + 2m \cdot h_m(x_1, \dots, x_{M-1})
+\text{ where } h_{1 \dots M-1} \text{ are concave}.
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.multiobjective.wfg6

@@ -1,0 +1,22 @@
+﻿benchmarkfcns.periodicn2
+========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: periodicn2
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(\textbf{x}) = 1 + \sum_{i=1}^{n} \sin^2(x_i) - 0.1 \exp(-\sum_{i=1}^{n} x_i^2)
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.periodicn2

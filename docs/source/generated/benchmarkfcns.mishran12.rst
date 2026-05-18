@@ -1,0 +1,22 @@
+﻿benchmarkfcns.mishran12
+=======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: mishran12
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(x, y) = \sin(x) e^{(1-\cos(y))^2} + \cos(y) e^{(1-\sin(x))^2} + (x-y)^2
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.mishran12

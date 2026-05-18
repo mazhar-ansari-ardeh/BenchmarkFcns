@@ -1,0 +1,22 @@
+﻿benchmarkfcns.xinsheyangn1
+==========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: xinsheyangn1
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(\mathbf x)=f(x_1, ...,x_n)=\sum_{i=1}^{n}\epsilon_i|x_i|^i
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.xinsheyangn1

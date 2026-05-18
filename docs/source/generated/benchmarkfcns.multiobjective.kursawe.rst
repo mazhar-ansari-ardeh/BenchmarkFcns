@@ -1,0 +1,23 @@
+﻿benchmarkfcns.multiobjective.kursawe
+====================================
+
+.. currentmodule:: benchmarkfcns.multiobjective
+
+.. autofunction:: kursawe
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f_1(\textbf{x}) = \sum_{i=1}^{n-1} -10 \exp \left( -0.2 \sqrt{x_i^2 + x_{i+1}^2} \right) \\
+f_2(\textbf{x}) = \sum_{i=1}^{n} \left( |x_i|^{0.8} + 5 \sin(x_i^3) \right)
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.multiobjective.kursawe

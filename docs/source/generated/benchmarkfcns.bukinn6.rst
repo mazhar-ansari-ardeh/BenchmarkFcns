@@ -1,0 +1,22 @@
+﻿benchmarkfcns.bukinn6
+=====================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: bukinn6
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(x,y)=100\sqrt{|y-0.01x^2|}+0.01|x+10|
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.bukinn6

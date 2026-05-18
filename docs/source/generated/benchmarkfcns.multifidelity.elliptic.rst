@@ -1,0 +1,22 @@
+﻿benchmarkfcns.multifidelity.elliptic
+====================================
+
+.. currentmodule:: benchmarkfcns.multifidelity
+
+.. autofunction:: elliptic
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(\mathbf{x}) = \sum_{i=1}^n 10^{6 \frac{i-1}{n-1}} x_i^2
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.multifidelity.elliptic

@@ -1,0 +1,22 @@
+﻿benchmarkfcns.keane
+===================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: keane
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(x,y)=-\frac{\sin^2(x-y)\sin^2(x+y)}{\sqrt{x^2+y^2}}
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.keane

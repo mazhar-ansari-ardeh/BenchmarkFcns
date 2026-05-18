@@ -1,0 +1,22 @@
+﻿benchmarkfcns.bird
+==================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: bird
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(x, y) = sin(x)e^{(1-cos(y))^2}+cos(y)e^{(1-sin(x))^2}+(x-y)^2
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.bird

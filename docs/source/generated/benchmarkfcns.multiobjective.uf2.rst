@@ -1,0 +1,28 @@
+﻿benchmarkfcns.multiobjective.uf2
+================================
+
+.. currentmodule:: benchmarkfcns.multiobjective
+
+.. autofunction:: uf2
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f_1 = x_1 + \frac{2}{|J_1|} \sum_{j \in J_1} y_j^2 \\
+f_2 = 1 - \sqrt{x_1} + \frac{2}{|J_2|} \sum_{j \in J_2} y_j^2 \\
+y_j = \begin{cases}
+x_j - [0.3x_1^2 \cos(24\pi x_1 + \frac{4j\pi}{n}) + 0.6x_1] \cos(6\pi x_1 + \frac{j\pi}{n}) & j \in J_1 \\
+x_j - [0.3x_1^2 \cos(24\pi x_1 + \frac{4j\pi}{n}) + 0.6x_1] \sin(6\pi x_1 + \frac{j\pi}{n}) & j \in J_2
+\end{cases} \\
+J_1 = \{j | j \text{ is odd and } 2 \le j \le n\}, J_2 = \{j | j \text{ is even and } 2 \le j \le n\}
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.multiobjective.uf2

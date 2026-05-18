@@ -1,0 +1,22 @@
+﻿benchmarkfcns.sphere
+====================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: sphere
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(\textbf{x}) = f(x_1, x_2, ..., x_n) = {\sum_{i=1}^{n} x_i^{2}}
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.sphere

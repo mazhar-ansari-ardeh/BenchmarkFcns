@@ -1,0 +1,25 @@
+﻿benchmarkfcns.multiobjective.mop1
+=================================
+
+.. currentmodule:: benchmarkfcns.multiobjective
+
+.. autofunction:: mop1
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   \begin{aligned}
+f_1(x) &= x^2 \\
+f_2(x) &= (x - 2)^2
+\end{aligned}
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.multiobjective.mop1

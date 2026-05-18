@@ -1,0 +1,22 @@
+﻿benchmarkfcns.ursemn1
+=====================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: ursemn1
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(x_1, x_2) = -\sin(2x_1 - 0.5\pi) - 3\cos(x_2) - 0.5x_1
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.ursemn1

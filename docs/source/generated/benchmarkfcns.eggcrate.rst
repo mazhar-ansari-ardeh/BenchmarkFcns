@@ -1,0 +1,22 @@
+﻿benchmarkfcns.eggcrate
+======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: eggcrate
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(x,y)=x^2 + y^2 + 25(sin^2(x) + sin^2(y))
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.eggcrate

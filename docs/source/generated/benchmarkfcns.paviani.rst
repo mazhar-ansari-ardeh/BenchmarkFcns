@@ -1,0 +1,22 @@
+﻿benchmarkfcns.paviani
+=====================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: paviani
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(\mathbf{x}) = \sum_{i=1}^{10} \left[ (\ln(x_i - 2))^2 + (\ln(10 - x_i))^2 \right] - \left( \prod_{i=1}^{10} x_i \right)^{0.2}
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.paviani

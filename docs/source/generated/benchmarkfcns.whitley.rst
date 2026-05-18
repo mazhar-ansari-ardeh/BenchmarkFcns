@@ -1,0 +1,22 @@
+﻿benchmarkfcns.whitley
+=====================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: whitley
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(\mathbf{x}) = \sum_{i=1}^{n} \sum_{j=1}^{n} \left[ \frac{(100(x_i^2 - x_j)^2 + (1 - x_j)^2)^2}{4000} - \cos(100(x_i^2 - x_j)^2 + (1 - x_j)^2) + 1 \right]
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.whitley
