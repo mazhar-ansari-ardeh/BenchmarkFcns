@@ -42,12 +42,19 @@ html_baseurl = "https://benchmarkfcns.info"
 
 # -- Extension configuration -------------------------------------------------
 def add_plots_to_context(app, pagename, templatename, context, doctree):
-    # Use objname or name from the context
-    objname = context.get("objname") or context.get("name")
+    # For autosummary generated pages, pagename is usually 'generated/module.function'
+    objname = None
+    if pagename.startswith("generated/"):
+        objname = pagename.split(".")[-1]
+
+    # Fallback to context
+    if not objname:
+        objname = context.get("objname") or context.get("name")
 
     if objname:
         import os
-        # Path resolution that works both locally and in CI
+        # Base dir is the project root (where assets/ lives)
+        # app.srcdir is '.../docs/source'
         base_dir = os.path.abspath(os.path.join(app.srcdir, "../.."))
         plots_dir = os.path.join(base_dir, "assets/plots")
 
@@ -55,7 +62,8 @@ def add_plots_to_context(app, pagename, templatename, context, doctree):
         if os.path.exists(plots_dir):
             prefix = objname + "fcn"
             for f in sorted(os.listdir(plots_dir)):
-                if f.startswith(prefix) and f.endswith(".png"):
+                # We check for exact match or suffix matches like _2, _contour
+                if (f == prefix + ".png") or (f.startswith(prefix + "_") and f.endswith(".png")):
                     all_plots.append(f)
 
         context["available_plots"] = all_plots
