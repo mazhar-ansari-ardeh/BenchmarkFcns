@@ -24,5 +24,4 @@ f_2(\textbf{x}) &= 1 - x_1 + \frac{2}{|J_2|} \sum_{j \in J_2} [x_j - \sin(6\pi x
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.multiobjective.cf4

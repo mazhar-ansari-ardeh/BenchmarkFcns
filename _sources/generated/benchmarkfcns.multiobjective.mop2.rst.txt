@@ -22,5 +22,4 @@ f_2(\textbf{x}) &= 1 - \exp(-\sum_{i=1}^n (x_i + \frac{1}{\sqrt{n}})^2)
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.multiobjective.mop2

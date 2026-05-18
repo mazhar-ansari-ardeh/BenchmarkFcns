@@ -23,5 +23,4 @@ g(\textbf{x}_M) &= 1 + \frac{9}{|x_M|} \sum_{x_j \in \textbf{x}_M} x_j
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.multiobjective.maf7

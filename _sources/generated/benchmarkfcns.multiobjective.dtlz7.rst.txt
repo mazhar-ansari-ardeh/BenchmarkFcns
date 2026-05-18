@@ -22,5 +22,4 @@ h(f_1, \dots, f_{M-1}, g) = M - \sum_{i=1}^{M-1} \left[ \frac{f_i}{1+g} (1 + \si
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.multiobjective.dtlz7

@@ -22,5 +22,4 @@ P = \begin{bmatrix}0.1312 & 0.1696 & 0.5569 & 0.0124 & 0.8283 & 0.5886 \\ 0.2329
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.hartmann6

@@ -22,5 +22,4 @@ f_{lf}(\mathbf{x}) &= 10 \sin(\pi x_1 x_2) + 20(x_3 - 0.5)^2 + 5x_4 + 2.5x_5
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.multifidelity.friedman

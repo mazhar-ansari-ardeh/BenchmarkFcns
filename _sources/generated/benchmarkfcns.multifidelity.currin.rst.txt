@@ -23,5 +23,4 @@ f_{lf}(\mathbf{x}) &= \frac{1}{4} [f(x_1+0.05, x_2+0.05) + f(x_1+0.05, x_2-0.05)
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.multifidelity.currin

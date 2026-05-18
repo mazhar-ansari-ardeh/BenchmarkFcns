@@ -22,5 +22,4 @@ f_{lf}(\mathbf{x}) &= 1.2 f_{hf}(\mathbf{x}) - 1.0
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.multifidelity.park91b

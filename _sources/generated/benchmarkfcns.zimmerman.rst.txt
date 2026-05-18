@@ -25,5 +25,4 @@ zp(t) = 10000 (1 + t)
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.zimmerman

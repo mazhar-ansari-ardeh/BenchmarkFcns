@@ -22,5 +22,4 @@ h(f_1, g) = 1 - \sqrt{\frac{f_1}{g}}
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.multiobjective.zdt4

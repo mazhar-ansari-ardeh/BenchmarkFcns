@@ -22,5 +22,4 @@ C_2(\mathbf{x}): (x_1 - 0.5)^2 + (x_2 - 0.5)^2 \le 0.5
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.multiobjective.tanaka

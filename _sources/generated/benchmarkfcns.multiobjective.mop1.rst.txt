@@ -22,5 +22,4 @@ f_2(x) &= (x - 2)^2
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.multiobjective.mop1

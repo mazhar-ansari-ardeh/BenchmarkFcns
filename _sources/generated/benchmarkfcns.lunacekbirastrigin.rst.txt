@@ -20,5 +20,4 @@ f(\mathbf{x}) = \min\left(\sum_{i=1}^n (x_i - \mu_0)^2, dn + s \sum_{i=1}^n (x_i
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.lunacekbirastrigin

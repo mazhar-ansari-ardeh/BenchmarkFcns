@@ -22,5 +22,4 @@ g_i(\textbf{x}_M) &= \sum_{x_j \in S_i} (x_j - 0.5)^2
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.multiobjective.maf2

@@ -24,5 +24,4 @@ h_M &= 1 - y_1 - \frac{\cos(10\pi y_1 + \pi/2)}{10\pi}
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.multiobjective.maf10

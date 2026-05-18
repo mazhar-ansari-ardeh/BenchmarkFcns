@@ -19,5 +19,4 @@
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.sixhumpcamel

@@ -23,5 +23,4 @@ f_3 = 8x_1^2 + 2x_2x_3 + 2x_2^2 + 3x_3^2 - 52
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.mishran9

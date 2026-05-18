@@ -22,5 +22,4 @@ f_{hf}(x) &= \frac{f_{lf}(x) - 1.0 + x}{1.0 + 0.25x}
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.multifidelity.heterogeneous

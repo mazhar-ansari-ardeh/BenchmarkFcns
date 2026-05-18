@@ -25,5 +25,4 @@ f_3(\textbf{x}) &= \sin(0.5x_1\pi) + \frac{2}{|J_3|} \sum_{j \in J_3} (x_j - 2x_
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.multiobjective.cf9

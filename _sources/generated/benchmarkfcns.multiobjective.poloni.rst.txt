@@ -24,5 +24,4 @@ f_2(x_1, x_2) = (x_1 + 3)^2 + (x_2 + 1)^2
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.multiobjective.poloni

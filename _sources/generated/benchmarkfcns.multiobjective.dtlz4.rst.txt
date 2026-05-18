@@ -22,5 +22,4 @@ f_M(\mathbf{x}) = (1 + g(\mathbf{x}_M)) \sin(x_1^\alpha \pi/2)
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.multiobjective.dtlz4

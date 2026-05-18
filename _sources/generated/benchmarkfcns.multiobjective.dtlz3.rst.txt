@@ -20,5 +20,4 @@ g(\textbf{x}) = 100 \left[ k + \sum_{i=n-k+1}^n ((x_i - 0.5)^2 - \cos(20 \pi (x_
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.multiobjective.dtlz3

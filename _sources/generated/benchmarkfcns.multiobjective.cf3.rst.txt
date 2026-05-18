@@ -25,5 +25,4 @@ y_j &= x_j - \sin(6\pi x_1 + \frac{j\pi}{n}) \\
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.multiobjective.cf3

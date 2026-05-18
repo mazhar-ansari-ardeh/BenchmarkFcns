@@ -22,5 +22,4 @@ f_{lf}(x) &= 0.5 f_{hf}(x) + 10(x - 0.5)
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.multifidelity.xiong1d

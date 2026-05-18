@@ -24,5 +24,4 @@ f_2(x) &= \sqrt{2\pi} - \sqrt{|x_1'|} + 2|x_2' - 3 \cos(x_1') - 3|^{1/3}
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.multiobjective.oka1

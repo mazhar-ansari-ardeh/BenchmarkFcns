@@ -22,5 +22,4 @@ f_{lf}(\mathbf{x}) &= 0.9 f_{hf}(\mathbf{x}) + 10.0
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.multifidelity.wingweight

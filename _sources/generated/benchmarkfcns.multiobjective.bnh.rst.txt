@@ -20,5 +20,4 @@ f_2(x_1, x_2) = (x_1 - 5)^2 + (x_2 - 5)^2
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.multiobjective.bnh

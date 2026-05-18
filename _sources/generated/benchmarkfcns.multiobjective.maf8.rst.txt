@@ -22,5 +22,4 @@ p_{i,1} &= \sin(\frac{2\pi(i-1)}{M}), \quad p_{i,2} = \cos(\frac{2\pi(i-1)}{M})
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.multiobjective.maf8

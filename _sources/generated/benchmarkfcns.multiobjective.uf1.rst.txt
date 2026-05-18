@@ -21,5 +21,4 @@ J_1 = \{j | j \text{ is odd and } 2 \le j \le n\}, J_2 = \{j | j \text{ is even 
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.multiobjective.uf1

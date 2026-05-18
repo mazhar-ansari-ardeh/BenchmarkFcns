@@ -22,5 +22,4 @@ f_{lf}(\mathbf{x}) &= \frac{5 T_u (H_u - H_l)}{\ln(r/r_w) \left[ 1.5 + \frac{2 L
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.multifidelity.borehole

@@ -23,5 +23,4 @@ f_3(x_1, x_2) &= (x_1 - 1)^2 + x_2^2 + 2
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.multiobjective.mop5

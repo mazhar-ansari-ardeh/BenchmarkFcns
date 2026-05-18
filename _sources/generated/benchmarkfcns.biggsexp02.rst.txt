@@ -21,5 +21,4 @@ y_i = e^{-t_i} - 5e^{-10t_i}
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.biggsexp02

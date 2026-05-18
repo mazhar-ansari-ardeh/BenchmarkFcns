@@ -24,5 +24,4 @@ J_1, J_2, J_3 \text{ same as UF8}
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.multiobjective.uf9

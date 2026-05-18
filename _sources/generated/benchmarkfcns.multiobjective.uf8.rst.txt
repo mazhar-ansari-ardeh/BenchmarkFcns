@@ -25,5 +25,4 @@ J_3 = \{j | 3 \le j \le n, j \text{ is multiple of } 3\}
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.multiobjective.uf8

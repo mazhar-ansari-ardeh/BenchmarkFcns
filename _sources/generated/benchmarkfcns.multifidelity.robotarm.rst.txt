@@ -24,5 +24,4 @@ f_{lf}(\mathbf{x}) &= f(\theta, \textbf{L} + 0.05)
 
 .. rubric:: Visualization
 
-
-No visualization available for this function.
+.. function-plots:: benchmarkfcns.multifidelity.robotarm
