@@ -1,8 +1,3 @@
-![example workflow](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns/actions/workflows/build.yaml/badge.svg)
-[![Downloads](https://static.pepy.tech/badge/benchmarkfcns)](https://pepy.tech/project/benchmarkfcns)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14556621.svg)](https://doi.org/10.5281/zenodo.14556621)
-
-
 # BenchmarkFcns: High-Performance Optimization Benchmark Functions
 [![PyPI version](https://badge.fury.io/py/benchmarkfcns.svg)](https://badge.fury.io/py/benchmarkfcns)
 ![example workflow](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns/actions/workflows/build.yaml/badge.svg)
