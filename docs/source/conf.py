@@ -17,7 +17,12 @@ extensions = [
     'sphinx.ext.autosummary',
     'myst_parser',
     'sphinx_autodoc_typehints',
+    'sphinx_sitemap',
 ]
+
+# Sitemap configuration
+html_baseurl = 'https://benchmarkfcns.info/'
+sitemap_url_scheme = "{link}"
 
 autodoc_default_options = {
     'members': True,
@@ -41,7 +46,6 @@ html_theme = 'furo'
 html_static_path = ['_static']
 html_css_files = ['custom.css']
 html_title = "BenchmarkFcns Documentation"
-html_baseurl = "https://benchmarkfcns.info"
 
 # -- Extension configuration -------------------------------------------------
 

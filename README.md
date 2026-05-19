@@ -3,22 +3,30 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14556621.svg)](https://doi.org/10.5281/zenodo.14556621)
 
 
-# BenchmarkFcns
-Benchmarkfcns is an effort to provide a high-performant, public and free implementation of well-known benchmark functions for mathematical optimization algorithms in Python. The Python library is implemented in C++ and utilizes powerful **SIMD vector calculations combined with multi-core parallel processing (via OpenMP)** to offer extremely fast and efficient evaluation of functions on massive datasets.
+# BenchmarkFcns: High-Performance Optimization Benchmark Functions
+[![PyPI version](https://badge.fury.io/py/benchmarkfcns.svg)](https://badge.fury.io/py/benchmarkfcns)
+![example workflow](https://github.com/mazhar-ansari-ardeh/BenchmarkFcns/actions/workflows/build.yaml/badge.svg)
+[![Downloads](https://static.pepy.tech/badge/benchmarkfcns)](https://pepy.tech/project/benchmarkfcns)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14556621.svg)](https://doi.org/10.5281/zenodo.14556621)
 
-For the documentation of the implemented functions and their features, please visit [https://benchmarkfcns.info](https://benchmarkfcns.info).
+**BenchmarkFcns** is the high-performance fitness engine for the global optimization and reinforcement learning communities. It provides a comprehensive, C++-accelerated library of mathematical objective functions (Ackley, Rastrigin, Rosenbrock, etc.) and official competition suites (CEC 2005-2022).
 
-# Key Features
-- **High Performance**: Optimized C++ core using Eigen and OpenMP.
-- **Parallel Execution**: Automatic multi-core processing for large batches of data.
-- **SIMD Optimized**: Leverages modern CPU instruction sets for fast vector math.
-- **AI Ready**: Standardized Gymnasium (OpenAI Gym) environments for RL training.
-- **Optimizer Agnostic**: Designed for seamless integration with SciPy, PyGMO, and Nevergrad.
-- **Comprehensive Library**: 310+ functions including Classic (100+), CEC suites (2005-2022), Multi-Fidelity (49), and Multi-Objective (50).
-- **CEC Competition Suites**: Built-in support for official CEC 2005, 2014, 2017, 2019, 2020, and 2022 competition functions with embedded shift, rotation, and shuffle data.
-- **Parallel Composition Engine**: Advanced framework for creating hybrid landscapes, now fully parallelized for high-performance batch evaluations.
+Designed for **Black-Box Optimization**, **Evolutionary Computation**, and **AI Training**, the library leverages **SIMD vectorization** and **OpenMP multi-core parallel processing** to deliver up to 30x speedups over pure NumPy implementations.
 
-# How to use
+---
+### 🌐 [Documentation & Function Gallery](https://benchmarkfcns.info) | 📦 [PyPI Package](https://pypi.org/project/benchmarkfcns/) | 📝 [Cite this Work](#citation)
+---
+
+## 🚀 Key Features
+- **High Performance**: Optimized C++17 core using Eigen and OpenMP.
+- **CEC Competition Suites**: Built-in support for official **CEC 2005, 2014, 2017, 2019, 2020, and 2022** suites with embedded shift, rotation, and shuffle data.
+- **Parallel Execution**: Automatic multi-core processing for large-scale batch evaluations and population-based algorithms.
+- **AI-Ready Environments**: Standardized **Gymnasium** (OpenAI Gym) wrappers for Reinforcement Learning training.
+- **Comprehensive Library**: 310+ functions including Classic (100+), Multi-Fidelity (49), and Multi-Objective (50) suites (WFG, MaF, UF, CF).
+- **Optimizer Agnostic**: Native integration examples for **SciPy**, **Nevergrad**, **Optuna**, **CMA-ES**, and **PyMOO**.
+- **Advanced Composition Engine**: Framework for creating custom hybrid landscapes with shifting, rotation, and exponential blending.
+
+## 🛠️ Quick Start
 ## Python
 ### Installation
 The library is packaged and available on the PyPI index. To install, simply run `pip install benchmarkfcns`.
@@ -274,18 +282,24 @@ As a reference, the repository also contains the implementation of the functions
 # Local development and compilation
 The library is built with the [pybind11](https://pybind11.readthedocs.io/), [scikit-build-core](scikit-build-core) and [Eigen](https://eigen.tuxfamily.org/) libraries. To compile the library, you will need to have CMake version 3.15 or above installed and configured. The easiest way to compile and install the package locally is to clone the repository into a directory, e.g. `BenchmarkFcns`, with submodules initialized using `git submodule update --init --recursive`, and then run `pip install ./BenchmarkFcns`. Although optional, it is highly recommended to install the package into a virtual environment.
 
-# Contribution
-Any suggestions and contributions are welcomed. The best way to contribute to the library is to fork the repository, apply the contributions and create a pull request.
+# 🤝 Contribution
+Contributions are welcome! Whether it's adding new functions, improving documentation, or optimizing the C++ core. Please fork the repository and create a pull request.
 
-# Support
-Any bug reports, code contributions, suggestions, feedback and insights are greatly appreciated. If you are using this library in a research publication, please kindly consider citing the repository using the following:
+# 📜 Citation
+If you use **BenchmarkFcns** in your research or project, please cite it using the following format. You can also use the **"Cite this repository"** button on GitHub to export the citation in BibTeX or APA formats.
 
-*   **For the general reference of the repository:**
-    ```
-    Mazhar Ansari Ardeh and cmutnik. (2025). Benchmarkfcns. Zenodo. https://doi.org/10.5281/zenodo.14556621
-    ```
+```bibtex
+@software{ansari_ardeh_2026_14556621,
+  author       = {Mazhar Ansari Ardeh},
+  title        = {BenchmarkFcns: High-performance Benchmark Functions for Optimization},
+  month        = may,
+  year         = 2026,
+  publisher    = {Zenodo},
+  version      = {4.1.0},
+  doi          = {10.5281/zenodo.14556621},
+  url          = {https://github.com/mazhar-ansari-ardeh/BenchmarkFcns}
+}
+```
 
-*   **For the latest version of the repository (v3.8.0):**
-    ```
-    Mazhar Ansari Ardeh and cmutnik. (2026). Benchmarkfcns (version v3.8.0). Zenodo. https://doi.org/10.5281/zenodo.18912792
-    ```
+# ⚖️ License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "Ansari Ardeh"
+    given-names: "Mazhar"
+    orcid: "https://orcid.org/0000-0002-3903-8273"
+title: "BenchmarkFcns: High-performance Benchmark Functions for Optimization"
+version: 4.1.0
+doi: 10.5281/zenodo.14556621
+date-released: 2026-05-18
+url: "https://github.com/mazhar-ansari-ardeh/BenchmarkFcns"
+keywords:
+  - optimization
+  - benchmarking
+  - "evolutionary algorithms"
+  - "global optimization"
+  - "black-box optimization"
+  - "CEC benchmarks"
+  - "mathematical optimization"
+  - "C++"
+  - "Python"
+  - "SIMD"
+  - "OpenMP"
