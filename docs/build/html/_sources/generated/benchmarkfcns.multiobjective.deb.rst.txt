@@ -1,0 +1,26 @@
+﻿benchmarkfcns.multiobjective.deb
+================================
+
+.. currentmodule:: benchmarkfcns.multiobjective
+
+.. autofunction:: deb
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   \begin{aligned}
+f_1(x_1) &= x_1 \\
+f_2(\textbf{x}) &= g(\textbf{x}) [1 - \sqrt{f_1/g} - (f_1/g) \sin(10\pi f_1)] \\
+g(\textbf{x}) &= 1 + \frac{9}{n-1} \sum_{i=2}^n x_i
+\end{aligned}
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.multiobjective.deb

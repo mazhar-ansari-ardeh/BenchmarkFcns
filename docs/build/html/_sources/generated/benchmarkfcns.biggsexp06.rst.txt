@@ -1,0 +1,24 @@
+﻿benchmarkfcns.biggsexp06
+========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: biggsexp06
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f_{\text{BiggsExp06}}(\mathbf{x}) = \sum_{i=1}^{10} \left( x_3 e^{-t_i x_1} - x_4 e^{-t_i x_2} + x_6 e^{-t_i x_5} - y_i \right)^2 \\
+t_i: 0.1i \text{for} i = 1, \dots, 10 \\
+y_i: e^{-t_i} - 5e^{-10i} + 3e^{-4t_i}
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.biggsexp06

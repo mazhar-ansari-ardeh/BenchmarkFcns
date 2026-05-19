@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multiobjective.cf1
+================================
+
+.. currentmodule:: benchmarkfcns.multiobjective
+
+.. autofunction:: cf1
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   \begin{aligned}
+f_1(\textbf{x}) &= x_1 + \frac{2}{|J_1|} \sum_{j \in J_1} [x_j - x_1^{0.5(1.0 + \frac{3(j-2)}{n-2})}]^2 \\
+f_2(\textbf{x}) &= 1 - x_1 + \frac{2}{|J_2|} \sum_{j \in J_2} [x_j - x_1^{0.5(1.0 + \frac{3(j-2)}{n-2})}]^2 \\
+\text{Subject to: } & f_1 + f_2 - a |\sin(N\pi(f_1 - f_2 + 1))| - 1 \ge 0 \\
+& x_i \in [0, 1], \quad N=10, a=1
+\end{aligned}
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.multiobjective.cf1

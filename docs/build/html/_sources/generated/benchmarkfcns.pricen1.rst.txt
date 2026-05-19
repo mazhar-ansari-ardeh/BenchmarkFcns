@@ -1,0 +1,22 @@
+﻿benchmarkfcns.pricen1
+=====================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: pricen1
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(x_1, x_2) = (|x_1| - 5)^2 + (|x_2| - 5)^2
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.pricen1

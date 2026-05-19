@@ -1,0 +1,22 @@
+﻿benchmarkfcns.alpine5
+=====================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: alpine5
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(\textbf{x}) = \sum_{i=1}^{n} (x_i^2 + \sin^2(x_i))
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.alpine5

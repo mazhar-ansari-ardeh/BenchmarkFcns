@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multifidelity.piston
+==================================
+
+.. currentmodule:: benchmarkfcns.multifidelity
+
+.. autofunction:: piston
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   \begin{aligned}
+A &= P_0 S + 19.62M - \frac{k V_0}{S} \\
+V &= \frac{S}{2A} [\sqrt{A^2 + 4k(V_0 + \frac{P_0 V_0}{T_0} T_a)} - A] \\
+f_{hf}(\textbf{x}) &= 2\pi \sqrt{\frac{M}{k + S^2 \frac{P_0 V_0}{T_0} \frac{T_a}{V^2}}} \\
+f_{lf}(\textbf{x}) &= f_{hf}(\textbf{x}) + 10.0
+\end{aligned}
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.multifidelity.piston

@@ -1,0 +1,22 @@
+﻿benchmarkfcns.griewankn3
+========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: griewankn3
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(x_1, x_2, x_3) = \frac{x_1^2 + x_2^2 + x_3^2}{4000} - \cos(x_1) \cos(\frac{x_2}{\sqrt{2}}) \cos(\frac{x_3}{\sqrt{3}}) + 1
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.griewankn3

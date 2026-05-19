@@ -1,0 +1,22 @@
+﻿benchmarkfcns.goldsteinprice
+============================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: goldsteinprice
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(x,y)=[1 + (x + y + 1)^2(19 ? 14x+3x^2? 14y + 6xy + 3y^2)][30 + (2x ? 3y)^2(18 ? 32x + 12x^2 + 4y ? 36xy + 27y^2)]
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.goldsteinprice

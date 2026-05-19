@@ -1,0 +1,22 @@
+﻿benchmarkfcns.mielecantrell
+===========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: mielecantrell
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(x_1, x_2, x_3, x_4) = (e^{x_1} - x_2)^4 + 100(x_2 - x_3)^6 + [\tan(x_3 - x_4)]^4 + x_1^8
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.mielecantrell

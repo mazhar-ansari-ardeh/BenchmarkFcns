@@ -1,0 +1,22 @@
+﻿benchmarkfcns.wayburnseadern3
+=============================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: wayburnseadern3
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(x_1, x_2) = \frac{2}{3}x_1^3 - 8x_1^2 + 33x_1 - x_1x_2 + 5 + [(x_1 - 4)^2 + (x_2 - 5)^2 - 4]^2
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.wayburnseadern3

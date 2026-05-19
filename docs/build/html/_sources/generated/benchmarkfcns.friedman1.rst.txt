@@ -1,0 +1,22 @@
+﻿benchmarkfcns.friedman1
+=======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: friedman1
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.friedman1

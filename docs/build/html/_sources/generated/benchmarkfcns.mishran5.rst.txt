@@ -1,0 +1,22 @@
+﻿benchmarkfcns.mishran5
+======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: mishran5
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(x_1, x_2) = [\sin^2((\cos x_1 + \cos x_2)^2) + \cos^2((\sin x_1 + \sin x_2)^2) + x_1]^2 + 0.01x_1 + 0.1x_2
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.mishran5

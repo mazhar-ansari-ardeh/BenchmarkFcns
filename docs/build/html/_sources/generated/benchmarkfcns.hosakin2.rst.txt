@@ -1,0 +1,22 @@
+﻿benchmarkfcns.hosakin2
+======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: hosakin2
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(x_1, x_2) = (1 - 8x_1 + 7x_1^2 - \frac{7}{3}x_1^3 + \frac{1}{4}x_1^4)x_2^2 e^{-x_2}
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.hosakin2

@@ -1,0 +1,22 @@
+﻿benchmarkfcns.engvall
+=====================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: engvall
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(x_1, x_2) = x_1^4 + x_2^4 + 2x_1^2 x_2^2 - 4x_1 + 3
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.engvall

@@ -1,0 +1,22 @@
+﻿benchmarkfcns.debn1
+===================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: debn1
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.debn1

@@ -1,0 +1,22 @@
+﻿benchmarkfcns.cec2005\_f15
+==========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: cec2005_f15
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.cec2005_f15

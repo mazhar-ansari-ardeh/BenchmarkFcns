@@ -1,0 +1,26 @@
+﻿benchmarkfcns.multiobjective.maf6
+=================================
+
+.. currentmodule:: benchmarkfcns.multiobjective
+
+.. autofunction:: maf6
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   \begin{aligned}
+f_i(\textbf{x}) &= (1 + g(\textbf{x}_M)) \prod_{j=1}^{M-i} \cos(\theta_j) \times \begin{cases} \sin(\theta_{M-i+1}) & \text{if } i > 1 \\ 1 & \text{if } i = 1 \end{cases} \\
+\theta_j &= \begin{cases} \frac{\pi}{2}x_j & \text{if } j < 2 \\ \frac{\pi}{4(1+g)} (1 + 2gx_j) & \text{if } j \ge 2 \end{cases} \\
+g(\textbf{x}_M) &= \sum_{x_j \in \textbf{x}_M} (x_j - 0.5)^2
+\end{aligned}
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.multiobjective.maf6

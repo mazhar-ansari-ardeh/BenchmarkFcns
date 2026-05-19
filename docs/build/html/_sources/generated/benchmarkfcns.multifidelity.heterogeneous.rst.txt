@@ -1,0 +1,25 @@
+﻿benchmarkfcns.multifidelity.heterogeneous
+=========================================
+
+.. currentmodule:: benchmarkfcns.multifidelity
+
+.. autofunction:: heterogeneous
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   \begin{aligned}
+f_{lf}(x) &= \sin(30(x - 0.9)^4) \cos(2(x - 0.9)) + \frac{x - 0.9}{2} \\
+f_{hf}(x) &= \frac{f_{lf}(x) - 1.0 + x}{1.0 + 0.25x}
+\end{aligned}
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.multifidelity.heterogeneous

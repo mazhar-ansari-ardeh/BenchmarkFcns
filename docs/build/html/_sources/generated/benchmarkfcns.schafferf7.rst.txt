@@ -1,0 +1,22 @@
+﻿benchmarkfcns.schafferf7
+========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: schafferf7
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(\mathbf{x}) = \sum_{i=1}^{n-1} (x_i^2 + x_{i+1}^2)^{0.25} \left[ \sin^2(50(x_i^2 + x_{i+1}^2)^{0.1}) + 1.0 \right]
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.schafferf7

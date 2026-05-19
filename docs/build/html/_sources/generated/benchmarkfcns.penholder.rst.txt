@@ -1,0 +1,22 @@
+﻿benchmarkfcns.penholder
+=======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: penholder
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(x_1, x_2) = -\exp\left( -\left| \cos(x_1)\cos(x_2)\exp\left( \left| 1 - \frac{\sqrt{x_1^2 + x_2^2}}{\pi} \right| \right) \right|^{-1} \right)
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.penholder

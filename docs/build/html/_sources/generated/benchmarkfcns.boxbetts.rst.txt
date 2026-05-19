@@ -1,0 +1,22 @@
+﻿benchmarkfcns.boxbetts
+======================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: boxbetts
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(x_1, x_2, x_3) = \sum_{i=1}^{10} \left[ e^{-0.1(i+1)x_1} - e^{-0.1(i+1)x_2} - (e^{-0.1(i+1)} - e^{-(i+1)})x_3 \right]^2
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.boxbetts

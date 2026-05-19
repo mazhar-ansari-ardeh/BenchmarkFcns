@@ -1,0 +1,22 @@
+﻿benchmarkfcns.leon
+==================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: leon
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(x, y) = 100(y ? x^{3})^2 + (1 ? x)^2
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.leon

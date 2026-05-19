@@ -1,0 +1,22 @@
+﻿benchmarkfcns.multifidelity.griewank
+====================================
+
+.. currentmodule:: benchmarkfcns.multifidelity
+
+.. autofunction:: griewank
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(\textbf{x}) = f(x_1, ..., x_n) = 1 + \sum_{i=1}^{n} \frac{x_i^{2}}{4000} - \prod_{i=1}^{n}cos(\frac{x_i}{\sqrt{i}})
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.multifidelity.griewank

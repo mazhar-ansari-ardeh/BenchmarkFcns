@@ -1,0 +1,25 @@
+﻿benchmarkfcns.multiobjective.tanaka
+===================================
+
+.. currentmodule:: benchmarkfcns.multiobjective
+
+.. autofunction:: tanaka
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f_1(x_1, x_2) = x_1 \\
+f_2(x_1, x_2) = x_2 \\
+C_1(\mathbf{x}): x_1^2 + x_2^2 - 1 - 0.1 \cos(16 \arctan(x_1, x_2)) \ge 0 \\
+C_2(\mathbf{x}): (x_1 - 0.5)^2 + (x_2 - 0.5)^2 \le 0.5
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.multiobjective.tanaka

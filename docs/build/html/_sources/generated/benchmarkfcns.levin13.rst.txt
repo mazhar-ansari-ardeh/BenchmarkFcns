@@ -1,0 +1,22 @@
+﻿benchmarkfcns.levin13
+=====================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: levin13
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(x, y) = sin^2(3\pi x)+(x-1)^2(1+sin^2(3\pi y))+(y-1)^2(1+sin^2(2\pi y))
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.levin13

@@ -1,0 +1,22 @@
+﻿benchmarkfcns.mishrabird
+========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: mishrabird
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(x, y) = \sin(y) \exp((1 - \cos(x))^2) + \cos(x) \exp((1 - \sin(y))^2) + (x - y)^2
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.mishrabird

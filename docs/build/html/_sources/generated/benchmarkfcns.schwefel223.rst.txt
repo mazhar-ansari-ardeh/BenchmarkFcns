@@ -1,0 +1,22 @@
+﻿benchmarkfcns.schwefel223
+=========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: schwefel223
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(\mathbf{x})=f(x_1, ..., x_n)=\sum_{i=1}^{n}x_i^{10}
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.schwefel223

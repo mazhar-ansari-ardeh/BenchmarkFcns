@@ -1,0 +1,27 @@
+﻿benchmarkfcns.multifidelity.robotarm
+====================================
+
+.. currentmodule:: benchmarkfcns.multifidelity
+
+.. autofunction:: robotarm
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   \begin{aligned}
+u &= \sum_{i=1}^4 L_i \cos(\sum_{j=1}^i \theta_j), \quad v = \sum_{i=1}^4 L_i \sin(\sum_{j=1}^i \theta_j) \\
+f(\theta, \textbf{L}) &= \sqrt{u^2 + v^2} \\
+f_{hf}(\mathbf{x}) &= f(\theta, \textbf{L}) \\
+f_{lf}(\mathbf{x}) &= f(\theta, \textbf{L} + 0.05)
+\end{aligned}
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.multifidelity.robotarm

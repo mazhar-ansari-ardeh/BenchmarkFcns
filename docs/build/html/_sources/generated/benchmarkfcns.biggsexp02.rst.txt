@@ -1,0 +1,24 @@
+﻿benchmarkfcns.biggsexp02
+========================
+
+.. currentmodule:: benchmarkfcns
+
+.. autofunction:: biggsexp02
+
+.. raw:: html
+
+   <div style="clear: both"></div>
+
+
+
+.. rubric:: Mathematical Definition
+
+.. math::
+
+   f(\mathbf{x}) = \sum_{i=1}^{10} \left( e^{-t_i x_1} - 5e^{-t_i x_2} - y_i \right)^2\\
+t_i = 0.1i, \quad \text{for } i = 1, \dots, 10 \\
+y_i = e^{-t_i} - 5e^{-10t_i}
+
+.. rubric:: Visualization
+
+.. function-plots:: benchmarkfcns.biggsexp02
