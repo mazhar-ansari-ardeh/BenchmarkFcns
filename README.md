@@ -141,7 +141,7 @@ plt.show()
 ```
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/mazhar-ansari-ardeh/BenchmarkFcns/master/assets/ackley.png" alt="drawing" width="700"/>
+    <img src="docs/source/_static/plots/ackleyfcn.png" alt="Ackley Function Visualization" width="700"/>
 </p>
 
 ### Plotting Multi-fidelity Functions ###
@@ -198,7 +198,7 @@ plt.show()
 ```
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/mazhar-ansari-ardeh/BenchmarkFcns/master/assets/forrester-mf.png" alt="drawing" width="700"/>
+    <img src="docs/source/_static/plots/forresterfcn.png" alt="Forrester Multi-fidelity Visualization" width="700"/>
 </p>
 
 ### Advanced Composition Engine ###
