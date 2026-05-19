@@ -14,7 +14,7 @@
 Designed for **Black-Box Optimization**, **Evolutionary Computation**, and **AI Training**, the library leverages **SIMD vectorization** and **OpenMP multi-core parallel processing** to deliver up to 30x speedups over pure NumPy implementations.
 
 ---
-### 🌐 [Documentation & Function Gallery](https://benchmarkfcns.info) | 📦 [PyPI Package](https://pypi.org/project/benchmarkfcns/) | 📝 [Cite this Work](#citation)
+### 🌐 [Documentation & Function Gallery](https://benchmarkfcns.info) | 📦 [PyPI Package](https://pypi.org/project/benchmarkfcns/) | 📝 [Cite this Work](#-citation)
 ---
 
 ## 🚀 Key Features
