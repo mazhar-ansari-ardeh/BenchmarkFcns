@@ -141,7 +141,7 @@ plt.show()
 ```
 
 <p align="center">
-    <img src="docs/source/_static/plots/ackleyfcn.png" alt="Ackley Function Visualization" width="700"/>
+    <img src="assets/ackley.png" alt="Ackley Function Visualization" width="700"/>
 </p>
 
 ### Plotting Multi-fidelity Functions ###
@@ -198,7 +198,7 @@ plt.show()
 ```
 
 <p align="center">
-    <img src="docs/source/_static/plots/forresterfcn.png" alt="Forrester Multi-fidelity Visualization" width="700"/>
+    <img src="assets/forrester-mf.png" alt="Forrester Multi-fidelity Visualization" width="700"/>
 </p>
 
 ### Advanced Composition Engine ###
