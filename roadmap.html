@@ -174,7 +174,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
       </label>
     </div>
@@ -592,13 +592,61 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
           </label>
         </div>
         <article role="main" id="furo-main-content">
           <section id="project-roadmap">
 <h1>Project Roadmap<a class="headerlink" href="#project-roadmap" title="Link to this heading">¶</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h2>Project Roadmap<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<p>This roadmap outlines the strategic direction for the <strong>Benchmark Functions</strong> library, focusing on performance, scalability, and comprehensiveness.</p>
+<section id="phase-1-high-performance-core-completed">
+<h3>Phase 1: High-Performance Core (Completed)<a class="headerlink" href="#phase-1-high-performance-core-completed" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>[x] Implement <code class="docutils literal notranslate"><span class="pre">apply_parallel</span></code> utility for multi-core execution.</p></li>
+<li><p>[x] Refactor all single-objective functions to use parallel backends.</p></li>
+<li><p>[x] Parallelize multi-fidelity and multi-objective libraries.</p></li>
+<li><p>[x] Integrate <code class="docutils literal notranslate"><span class="pre">clang-format</span></code> for automated C++ code quality.</p></li>
+<li><p>[x] Verify speedups (up to 32x) compared to NumPy/Serial implementations.</p></li>
+</ul>
+</section>
+<section id="phase-2-optimization-integration-completed">
+<h3>Phase 2: Optimization &amp; Integration (Completed)<a class="headerlink" href="#phase-2-optimization-integration-completed" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>[x] <strong>Integration Examples</strong>: Provide high-quality examples for integrating <code class="docutils literal notranslate"><span class="pre">BenchmarkFcns</span></code> with established libraries like <code class="docutils literal notranslate"><span class="pre">SciPy</span></code>, <code class="docutils literal notranslate"><span class="pre">PyGMO</span></code>, and <code class="docutils literal notranslate"><span class="pre">Nevergrad</span></code>.</p></li>
+<li><p>[x] <strong>Composition Engine Optimization</strong>: Parallelize the outer evaluation loop of the hybrid composition engine.</p></li>
+<li><p>[ ] <strong>Standardized Test Suite</strong>: Implement a comprehensive <code class="docutils literal notranslate"><span class="pre">pytest</span></code> and <code class="docutils literal notranslate"><span class="pre">GoogleTest</span></code> suite to ensure mathematical correctness across all platforms.</p></li>
+<li><p>[ ] <strong>CI/CD Enhancement</strong>: Add automated testing to the wheel-building pipeline.</p></li>
+</ul>
+</section>
+<section id="phase-3-library-expansion-completed">
+<h3>Phase 3: Library Expansion (Completed)<a class="headerlink" href="#phase-3-library-expansion-completed" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>[x] <strong>Implement Classic Functions</strong>: Add the 100 missing classic single-objective functions identified in <a class="reference internal" href="#RECOMMENDED_FUNCTIONS.md"><span class="xref myst">RECOMMENDED_FUNCTIONS.md</span></a>.</p></li>
+<li><p>[x] <strong>Expand Multi-Objective Support</strong>: Implement the WFG suite, CEC 2009 UF/CF sets, and Many-Objective (MaF) suite.</p></li>
+<li><p>[x] <strong>Build Multi-Fidelity Library</strong>: Implement physical surrogates and bi-fidelity adaptations for all major benchmarks.</p></li>
+</ul>
+</section>
+<section id="phase-4-long-term-goals-completed">
+<h3>Phase 4: Long-Term Goals (Completed)<a class="headerlink" href="#phase-4-long-term-goals-completed" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>[x] <strong>CEC Competition Suites</strong>: Integrated full support for CEC 2005, 2014, 2017, 2019, 2020, and 2022 suites with embedded data.</p></li>
+<li><p>[x] <strong>Automated Documentation</strong>: Generate searchable API and mathematical documentation using Sphinx/Doxygen.</p></li>
+<li><p>[ ] <strong>Benchmarking Dashboard</strong>: Create an automated system to track performance regressions.</p></li>
+</ul>
+</section>
+<section id="phase-5-ai-reinforcement-learning-integration-in-progress">
+<h3>Phase 5: AI &amp; Reinforcement Learning Integration (In Progress)<a class="headerlink" href="#phase-5-ai-reinforcement-learning-integration-in-progress" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>[x] <strong>Gymnasium Environment Wrappers</strong>: Standardized <code class="docutils literal notranslate"><span class="pre">gym.Env</span></code> wrappers for all major benchmark functions to support RL training.</p></li>
+<li><p>[ ] <strong>Optimization-as-a-Service</strong>: Develop a lightweight Python API for using benchmark functions as black-box training environments.</p></li>
+<li><p>[x] <strong>Baseline AI Agents</strong>: Provided example training scripts using popular libraries like <code class="docutils literal notranslate"><span class="pre">Stable</span> <span class="pre">Baselines3</span></code>.</p></li>
+<li><p>[ ] <strong>Hyperparameter Benchmarking</strong>: Create a suite for testing the sensitivity of AI optimizers to function landscapes (noise, ruggedness, etc.).</p></li>
+</ul>
+</section>
+</section>
 </section>
 
         </article>
@@ -644,8 +692,34 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Project Roadmap</a><ul>
+<li><a class="reference internal" href="#id1">Project Roadmap</a><ul>
+<li><a class="reference internal" href="#phase-1-high-performance-core-completed">Phase 1: High-Performance Core (Completed)</a></li>
+<li><a class="reference internal" href="#phase-2-optimization-integration-completed">Phase 2: Optimization &amp; Integration (Completed)</a></li>
+<li><a class="reference internal" href="#phase-3-library-expansion-completed">Phase 3: Library Expansion (Completed)</a></li>
+<li><a class="reference internal" href="#phase-4-long-term-goals-completed">Phase 4: Long-Term Goals (Completed)</a></li>
+<li><a class="reference internal" href="#phase-5-ai-reinforcement-learning-integration-in-progress">Phase 5: AI &amp; Reinforcement Learning Integration (In Progress)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
