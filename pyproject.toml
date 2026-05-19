@@ -50,6 +50,8 @@ classifiers = [
 [project.optional-dependencies]
 ai = [
     "gymnasium>=0.29.1",
+    "stable-baselines3>=2.1.0",
+    "shimmy>=1.3.0",
 ]
 
 [tool.scikit-build]

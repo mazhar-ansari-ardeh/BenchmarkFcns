@@ -84,15 +84,32 @@ print(f"Global Minimum: {result.fun}")
 ```
 
 ### AI & Reinforcement Learning
-The library provides (planned) standardized Gymnasium environments to train RL agents on complex landscapes.
+The library provides standardized **Gymnasium** (formerly OpenAI Gym) environments to train RL agents on complex mathematical landscapes. This allows researchers to benchmark RL algorithms against high-performance, C++-accelerated fitness functions.
+
+#### Example: Stable Baselines3 (PPO)
+Training an AI agent to solve a 5-dimensional Ackley function:
 
 ```python
 import gymnasium as gym
 import benchmarkfcns.environments
+from stable_baselines3 import PPO
 
-# Create an Ackley environment for RL training
-env = gym.make("BenchmarkFcns/Ackley-v0", dims=10)
+# 1. Create the environment
+env = gym.make("BenchmarkFcns/Ackley-v0", dimensions=5, relative_actions=True)
+
+# 2. Train the agent
+model = PPO("MlpPolicy", env, verbose=1).learn(total_timesteps=20000)
+
+# 3. Use the agent to find the minimum
+obs, info = env.reset()
+for _ in range(100):
+    action, _ = model.predict(obs)
+    obs, reward, terminated, truncated, info = env.step(action)
+
+print(f"Final Value found by AI: {info['value']}")
 ```
+
+Full training and evaluation scripts can be found in [examples/stable_baselines3_integration.py](examples/stable_baselines3_integration.py).
 
 ### Plotting the functions
 This library is implemented to be as compatible as possible with all the mainstream plotting libraries. As a result, you are free to select your favourite plotting library to plot the functions in this library.
