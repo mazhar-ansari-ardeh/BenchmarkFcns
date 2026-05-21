@@ -12,7 +12,7 @@ This roadmap outlines the strategic direction for the **Benchmark Functions** li
 ## Phase 2: Optimization & Integration (Completed)
 - [x] **Integration Examples**: Provide high-quality examples for integrating `BenchmarkFcns` with established libraries like `SciPy`, `PyGMO`, and `Nevergrad`.
 - [x] **Composition Engine Optimization**: Parallelize the outer evaluation loop of the hybrid composition engine.
-- [ ] **Standardized Test Suite**: Implement a comprehensive `pytest` and `GoogleTest` suite to ensure mathematical correctness across all platforms.
+- [ ] **Standardized Test Suite**: Implement a comprehensive `pytest` and `GoogleTest` suite to ensure mathematical correctness across all platforms. (In Progress)
 - [ ] **CI/CD Enhancement**: Add automated testing to the wheel-building pipeline.
 
 ## Phase 3: Library Expansion (Completed)
@@ -23,10 +23,7 @@ This roadmap outlines the strategic direction for the **Benchmark Functions** li
 ## Phase 4: Long-Term Goals (Completed)
 - [x] **CEC Competition Suites**: Integrated full support for CEC 2005, 2014, 2017, 2019, 2020, and 2022 suites with embedded data.
 - [x] **Automated Documentation**: Generate searchable API and mathematical documentation using Sphinx/Doxygen.
-- [ ] **Benchmarking Dashboard**: Create an automated system to track performance regressions.
 
-## Phase 5: AI & Reinforcement Learning Integration (In Progress)
+## Phase 5: AI & Reinforcement Learning Integration (Completed)
 - [x] **Gymnasium Environment Wrappers**: Standardized `gym.Env` wrappers for all major benchmark functions to support RL training.
-- [ ] **Optimization-as-a-Service**: Develop a lightweight Python API for using benchmark functions as black-box training environments.
 - [x] **Baseline AI Agents**: Provided example training scripts using popular libraries like `Stable Baselines3`.
-- [ ] **Hyperparameter Benchmarking**: Create a suite for testing the sensitivity of AI optimizers to function landscapes (noise, ruggedness, etc.).
