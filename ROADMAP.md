@@ -27,3 +27,16 @@ This roadmap outlines the strategic direction for the **Benchmark Functions** li
 ## Phase 5: AI & Reinforcement Learning Integration (Completed)
 - [x] **Gymnasium Environment Wrappers**: Standardized `gym.Env` wrappers for all major benchmark functions to support RL training.
 - [x] **Baseline AI Agents**: Provided example training scripts using popular libraries like `Stable Baselines3`.
+
+## Phase 6: Optimization Intelligence (Upcoming)
+- [ ] **Automatic Differentiation**: Integrate C++ autodiff to provide exact gradients and Hessians for all 310+ functions.
+- [ ] **Exploratory Landscape Analysis (ELA)**: Implement modules to calculate ruggedness, separability, and basin size to help users classify their own problems.
+- [ ] **Stochastic & Constrained Suites**: Add official support for noisy fitness landscapes and complex constraint handling (CEC standard).
+
+## Phase 7: Massive Scale & Portability (Upcoming)
+- [ ] **GPU Acceleration**: Implement a CUDA/SYCL backend for the evaluation engine to support billion-scale batch evaluations.
+- [ ] **Rust & Julia Bindings**: Leverage the C++ core to provide high-performance native libraries for the Rust and Julia ecosystems.
+
+## Continuous Quality & Expansion (Ongoing)
+- [ ] **100% Mathematical Coverage**: Expand the `pytest` suite to verify every single function in the library against ground-truth optima.
+- [ ] **Library Growth**: Continue adding modern benchmarks from the latest optimization literature (Physical Surrogates, Quantum-inspired landscapes).
